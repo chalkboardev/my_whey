@@ -20,10 +20,18 @@
             "text": "FREE SHIPPING ON ORDERS OVER R600",
             "link": ""
           }
+        },
+        "announcement_pNF8Xg": {
+          "type": "announcement",
+          "settings": {
+            "text": "HAVE IT YOUR WAY WITH MY-WHEY",
+            "link": ""
+          }
         }
       },
       "block_order": [
-        "announcement-bar-0"
+        "announcement-bar-0",
+        "announcement_pNF8Xg"
       ],
       "settings": {
         "color_scheme": "scheme-5",
