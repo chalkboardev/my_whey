@@ -45,7 +45,7 @@
       ],
       "settings": {
         "video_url": "https://cdn.shopify.com/videos/c/o/v/a487343da3b24ea5a0666c2edc7e7d82.mp4",
-        "desktop_content_position": "bottom-left",
+        "desktop_content_position": "middle-left",
         "show_text_box": false,
         "desktop_content_alignment": "left",
         "color_scheme": "scheme-3",
