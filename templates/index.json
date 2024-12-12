@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "video_banner_687P9e": {
@@ -15,14 +6,14 @@
         "heading_ze9dmB": {
           "type": "heading",
           "settings": {
-            "heading": "<strong>Celebrate the Season with Wellness</strong>",
+            "heading": "<strong>Celebrate the Season with Wellness<\/strong>",
             "heading_size": "h1"
           }
         },
         "text_mL9Ma6": {
           "type": "text",
           "settings": {
-            "text": "Curated, Clean Supplements <strong>Made for You</strong>",
+            "text": "Curated, Clean Supplements <strong>Made for You<\/strong>",
             "text_style": "subtitle"
           }
         },
@@ -44,7 +35,7 @@
         "buttons_PFLXYi"
       ],
       "settings": {
-        "video_url": "https://cdn.shopify.com/videos/c/o/v/a487343da3b24ea5a0666c2edc7e7d82.mp4",
+        "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/a487343da3b24ea5a0666c2edc7e7d82.mp4",
         "desktop_content_position": "middle-left",
         "show_text_box": false,
         "desktop_content_alignment": "left",
@@ -66,7 +57,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
+            "button_link_1": "shopify:\/\/collections\/all",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
