@@ -9,21 +9,6 @@
  */
 {
   "sections": {
-    "video_B9zPgg": {
-      "type": "video",
-      "settings": {
-        "heading": "sdf",
-        "heading_size": "h1",
-        "enable_video_looping": false,
-        "video": "shopify://files/videos/bg1.mp4",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "description": "",
-        "full_width": true,
-        "color_scheme": "",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -50,7 +35,6 @@
         "heading",
         "button"
       ],
-      "disabled": true,
       "settings": {
         "image_overlay_opacity": 40,
         "image_height": "large",
@@ -94,7 +78,6 @@
     }
   },
   "order": [
-    "video_B9zPgg",
     "image_banner",
     "featured_collection"
   ]
