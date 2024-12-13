@@ -61,7 +61,5 @@ fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
 .DS_Store
-.DS_Store
-.DS_Store
 shop_test-main.zip
 dawn_custom/theme_export__my-whey-store-myshopify-com-dawn__11DEC2024-1128pm.zip
