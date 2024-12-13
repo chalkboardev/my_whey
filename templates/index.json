@@ -52,6 +52,9 @@
         "mobile_content_alignment": "center"
       }
     },
+    "custom-slideshow": {
+      "type": "custom-slideshow"
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
