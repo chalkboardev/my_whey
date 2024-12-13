@@ -10,6 +10,7 @@ slideshow-component .slideshow.banner {
   margin: 0;
   gap: 0;
   overflow-y: hidden;
+  height: 600px !important;
 }
 
 .slideshow__slide {
