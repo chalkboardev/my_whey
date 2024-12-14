@@ -119,11 +119,35 @@
         "padding_top": 44,
         "padding_bottom": 36
       }
+    },
+    "custom_slideshow_wMQLCP": {
+      "type": "custom-slideshow",
+      "blocks": {
+        "video_7VPAtJ": {
+          "type": "video",
+          "settings": {
+            "video_link": "https://cdn.shopify.com/videos/c/o/v/a487343da3b24ea5a0666c2edc7e7d82.mp4",
+            "video_image": "shopify://shop_images/oleg-laptev-7jQh3EiS8Bs-unsplash.jpg",
+            "title": "Video slide",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "color_text": "#ffffff",
+            "button_label": "",
+            "button_link": "",
+            "color_btn_bg": "#ffffff",
+            "color_btn_text": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "video_7VPAtJ"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "video_banner_687P9e",
     "image_banner",
-    "featured_collection"
+    "featured_collection",
+    "custom_slideshow_wMQLCP"
   ]
 }
