@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded',  function() {
   <style>
    .swiper {
   width: 100%;
-  height: auto;
+  height: 100vh-165px;
 }
   .main-content .videoBackground {
    
@@ -339,7 +339,7 @@ document.addEventListener('DOMContentLoaded',  function() {
    
   position: relative;
    
-  min-height: calc(100vh - 265px);
+  min-height: calc(100vh - 165px);
    
   height: auto;
    
@@ -475,7 +475,7 @@ document.addEventListener('DOMContentLoaded',  function() {
    
   .videoBackground .videoBox {
    
-  min-height: 300px;
+  min-height: 684px;
    
   height: 100%;
    
@@ -489,7 +489,7 @@ document.addEventListener('DOMContentLoaded',  function() {
    
   position: relative;
    
-  min-height: 300px;
+  min-height: 100vh;
    
   z-index: -2;
    
@@ -498,13 +498,14 @@ document.addEventListener('DOMContentLoaded',  function() {
   .videoBackground .videoBoxInfo {
    
   padding: 2px 20px;
-   
-  width: 100%;
+        top: 33%;
+        position: absolute;
+        width: 100%;
    
   }
    
   .videoBoxInfoTitle, .videoBackground .videoBoxInfoBtn {
-  display: none;
+  /* display: none; */
    
   }
    
