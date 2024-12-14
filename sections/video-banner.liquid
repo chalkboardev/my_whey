@@ -10,7 +10,7 @@
 
 <div
   id="Banner-{{ section.id }}"
-  class="banner video-background banner--content-align-{{ section.settings.desktop_content_alignment }} banner--content-align-mobile-{{ section.settings.mobile_content_alignment }} banner{% if section.settings.show_text_below %} banner--mobile-bottom{%- endif -%}{% if section.settings.show_text_box == false %} banner--desktop-transparent{% endif %}"
+  class="banner video-background banner--content-align-{{ section.settings.desktop_content_position }} banner--content-align-mobile-{{ section.settings.mobile_content_alignment }} banner{% if section.settings.show_text_below %} banner--mobile-bottom{%- endif -%}{% if section.settings.show_text_box == false %} banner--desktop-transparent{% endif %}"
 >
   <div class="banner__media media video-background">  
   	<video autoplay muted loop playsinline id="myVideo">
