@@ -3,11 +3,11 @@
 
 
 <div class="main-banner-wrapper">
-  <div class="banner-inner-wrapper">
-    <div class="banner-slider">
+  <div class="custom-slideshow-section banner-inner-wrapper">
+    <div class="slideshow-container banner-slider">
       {% for block in section.blocks %}
         <div class="banner-slide">
-          <div class="banner-img">
+          <div class="banner-img slide">
             {% case block.type %}
               {% when 'image' %}
                 <img src="{{ block.settings.image | img_url: '1000x' }}" alt="img" />
