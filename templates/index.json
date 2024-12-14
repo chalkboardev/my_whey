@@ -16,6 +16,7 @@
           "type": "image",
           "settings": {
             "color_bg": "#16165b",
+            "image_bg": "shopify://shop_images/starter.png",
             "overlay_opacity": 0,
             "title": "Image slide",
             "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
