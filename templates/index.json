@@ -119,58 +119,11 @@
         "padding_top": 44,
         "padding_bottom": 36
       }
-    },
-    "custom_slideshow_KTVcxW": {
-      "type": "custom-slideshow",
-      "blocks": {
-        "slide_jP4jpN": {
-          "type": "slide",
-          "settings": {
-            "heading": "Image slide",
-            "heading_size": "h1",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": true,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "",
-            "text_alignment_mobile": "center"
-          }
-        },
-        "video_YJqxjr": {
-          "type": "video",
-          "settings": {
-            "title": "Video Slider",
-            "text": "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>",
-            "btn_text": "Learn More",
-            "btn_url": "",
-            "video_url_mp4": "https://cdn.shopify.com/videos/c/o/v/a487343da3b24ea5a0666c2edc7e7d82.mp4"
-          }
-        }
-      },
-      "block_order": [
-        "slide_jP4jpN",
-        "video_YJqxjr"
-      ],
-      "settings": {
-        "layout": "full_bleed",
-        "slide_height": "medium",
-        "slider_visual": "counter",
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "image_behavior": "none",
-        "show_text_below": true,
-        "accessibility_info": "Slideshow about our brand"
-      }
     }
   },
   "order": [
     "video_banner_687P9e",
     "image_banner",
-    "featured_collection",
-    "custom_slideshow_KTVcxW"
+    "featured_collection"
   ]
 }
