@@ -1,33 +1,4 @@
-<div class="main-banner-wrapper">
-  <div class="banner-inner-wrapper">
-    <div class="banner-slider">
-      {% for block in section.blocks %}
-        <div class="banner-slide">
-          <div class="custom_slideshow banner-img">
-            {% case block.type %}
-              {% when 'image' %}
-                <img src="{{ block.settings.image | img_url: '1000x' }}" alt="img" />
-              {% when 'video' %}
-                <video
-                  autoplay
-                  muted
-                  loop>
-                  <source class="custom_slideshow_video" src="{{ block.settings.video_url_mp4 }}" type="video/mp4">
-                </video>
-            {% endcase %}
-          </div>
-          <div class="banner-content">
-            <div class="text">
-              <h2>{{ block.settings.title }}</h2>
-              <p>{{ block.settings.text }}</p>
-              <a href="{{ block.settings.btn_url }}" class="btn">{{ block.settings.btn_text }}</a>
-            </div>
-          </div>
-        </div>
-      {% endfor %}
-    </div>
-  </div>
-</div>
+
 
 <section class="custom-slideshow-section">
   <div class="slideshow-container">
