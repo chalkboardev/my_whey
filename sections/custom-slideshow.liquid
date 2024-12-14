@@ -121,7 +121,6 @@
         tabindex="-1"
       >
         <div class="slideshow__media banner__media media{% if block.settings.image == blank %} placeholder{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}">
-
           {%- if block.settings.video -%}
             <video
                   autoplay
@@ -129,7 +128,8 @@
                   loop>
                   <source src="{{ block.settings.video_url_mp4 }}" type="video/mp4">
                 </video>
-          {%- elsif block.settings.image -%}
+              {%- endif -%}
+          {%- if block.settings.image -%}
             {%- liquid
               assign height = block.settings.image.width | divided_by: block.settings.image.aspect_ratio | round
               if section.settings.image_behavior == 'ambient'
