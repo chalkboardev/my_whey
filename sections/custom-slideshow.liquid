@@ -2,17 +2,17 @@
 
 
 
-<div class="main-banner-wrapper">
-  <div class="banner-inner-wrapper">
+<div class="custom-slideshow-section main-banner-wrapper">
+  <div class="slideshow-container banner-inner-wrapper">
     <div class="banner-slider">
       {% for block in section.blocks %}
         <div class="banner-slide">
-          <div class="banner-img">
+          <div class="banner-img slide">
             {% case block.type %}
               {% when 'image' %}
                 <img src="{{ block.settings.image | img_url: '1000x' }}" alt="img" />
               {% when 'video' %}
-                <video
+                <video class="custom video"
                   autoplay
                   muted
                   loop>
