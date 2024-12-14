@@ -1,8 +1,13 @@
 
 
-<section class="custom-slideshow-section">
-  <div class="slideshow-container">
-              <div class="custom_slideshow banner-img">
+
+
+<div class="main-banner-wrapper">
+  <div class="banner-inner-wrapper">
+    <div class="banner-slider">
+      {% for block in section.blocks %}
+        <div class="banner-slide">
+          <div class="banner-img">
             {% case block.type %}
               {% when 'image' %}
                 <img src="{{ block.settings.image | img_url: '1000x' }}" alt="img" />
@@ -11,24 +16,22 @@
                   autoplay
                   muted
                   loop>
-                  <source class="custom_slideshow_video" src="{{ block.settings.video_url_mp4 }}" type="video/mp4">
+                  <source src="{{ block.settings.video_url_mp4 }}" type="video/mp4">
                 </video>
             {% endcase %}
           </div>
-    {% for block in section.blocks %}
-      <div class="slide">
-        <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.title }}">
-        <div class="slide-content">
-          <h2>{{ block.settings.title }}</h2>
-          <p>{{ block.settings.description }}</p>
-          {% if block.settings.link != blank %}
-            <a href="{{ block.settings.link }}" class="slide-link">Learn More</a>
-          {% endif %}
+          <div class="banner-content">
+            <div class="text">
+              <h2>{{ block.settings.title }}</h2>
+              <p>{{ block.settings.text }}</p>
+              <a href="{{ block.settings.btn_url }}" class="btn">{{ block.settings.btn_text }}</a>
+            </div>
+          </div>
         </div>
-      </div>
-    {% endfor %}
+      {% endfor %}
+    </div>
   </div>
-</section>
+</div>
 
 <style>
 .custom-slideshow-section {
