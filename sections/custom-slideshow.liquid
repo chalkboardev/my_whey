@@ -3,7 +3,7 @@
     <div class="banner-slider">
       {% for block in section.blocks %}
         <div class="banner-slide">
-          <div class="banner-img">
+          <div class="custom_slideshow banner-img">
             {% case block.type %}
               {% when 'image' %}
                 <img src="{{ block.settings.image | img_url: '1000x' }}" alt="img" />
