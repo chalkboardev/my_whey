@@ -1,146 +1,926 @@
-{% schema %}
-  {
-    "name": "Custom Slideshow",
-    "settings": [
-      {
-        "type": "number",
-        "id": "slide_duration",
-        "label": "Slide Duration (seconds)",
-        "default": 5,
-        "min": 1,
-        "max": 60
-      }
-    ],
-    "blocks": [
-      {
-        "type": "slide",
-        "name": "Slide",
-        "settings": [
-          {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Slide Image"
-          },
-          {
-            "type": "text",
-            "id": "title",
-            "label": "Slide Title",
-            "default": "Slide Title"
-          },
-          {
-            "type": "textarea",
-            "id": "description",
-            "label": "Slide Description",
-            "default": "Slide Description"
-          },
-          {
-            "type": "url",
-            "id": "link",
-            "label": "Slide Link"
-          }
-        ]
-      }
-    ],
-    "presets": [
-      {
-        "name": "Custom Slideshow",
-        "category": "Custom"
-      }
-    ]
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+{%- if section.blocks.size > 0 -%}
+
+
+     <!-- Slider main container -->
+<div class="swiper">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+
+
+  {%- for block in section.blocks -%}
+       <!-- Slides -->
+       <div class="swiper-slide">
+  {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+   
+   
+   
+  {% if block.type == 'video' %}
+   
+  <div class="videoBox" style="{%- if block.settings.video_link == blank -%}background-image: url('{{ block.settings.video_image  | img_url: 'master' }}');{%- endif -%}">
+   
+   
+   
+  {%- if block.settings.video_link != blank -%}
+   
+  <div class="fullscreen-video-wrap">
+   
+  <video class="video-js" loop autoplay preload="none" muted playsinline
+   
+  poster="https:{{ block.settings.video_image | img_url: 'master' }}">
+   
+  <source src="{{ block.settings.video_link }}" type="video/mp4">
+   
+  </video>
+   
+  </div>
+   
+  {% endif %}
+   
+   
+   
+   
+  <div class="videoBoxInfo">
+   
+  {% if block.settings.title != blank %}
+   
+  <h1 class="videoBoxInfoTitle" style="color: {{ block.settings.color_text }}">
+   
+  {{ block.settings.title | escape }}
+   
+  </h1>
+   
+  {% endif %}
+   
+   
+   
+  {%- style -%}
+   
+  .videoBackground .imageBoxInfoDescription p {
+   
+  color: {{ block.settings.color_text }}!important;
+   
   }
-  {% endschema %}
-  
-  <section class="custom-slideshow-section">
-    <div class="slideshow-container">
-      {% for block in section.blocks %}
-        <div class="slide">
-          <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.title }}">
-          <div class="slide-content">
-            <h2>{{ block.settings.title }}</h2>
-            <p>{{ block.settings.description }}</p>
-            {% if block.settings.link != blank %}
-              <a href="{{ block.settings.link }}" class="slide-link">Learn More</a>
-            {% endif %}
-          </div>
-        </div>
-      {% endfor %}
-    </div>
-  </section>
-  
+   
+  {%- endstyle -%}
+   
+   
+   
+  {% if block.settings.text != blank %}
+   
+  <div class="imageBoxInfoDescription" id="{{ block.id }}" style="color: {{ block.settings.color_text }}">
+   
+  {{ block.settings.text }}
+   
+  </div>
+   
+  {% endif %}
+   
+   
+   
+  {% if block.settings.button_link != blank and block.settings.button_label != blank %}
+   
+  <a href="{{ block.settings.button_link }}" class="videoBoxInfoBtn" style="color: {{ block.settings.color_btn_text }}; background: {{ block.settings.color_btn_bg }}">
+   
+  {{ block.settings.button_label | escape }}
+   
+  </a>
+   
+  {% endif %}
+   
+  </div>
+   
+  </div>
+   
+  {% else %}
+   
+  <div class="imageBox" style="background-color: {{ block.settings.color_bg }}; {%- if block.settings.image_bg != blank -%}background-image: url('{{ block.settings.image_bg | img_url: 'master' }}');{%- endif -%}">
+   
+   
+   
+   
+   
+   
+  <div class="imageBoxInfo">
+   
+  {% if block.settings.title != blank %}
+   
+  <h1 class="imageBoxInfoTitle" style="color: {{ block.settings.color_text }}">
+   
+  {{ block.settings.title | escape }}
+   
+  </h1>
+   
+  {% endif %}
+   
+   
+   
+  {%- style -%}
+   
+  .videoBackground .imageBoxInfoDescription p {
+   
+  color: {{ block.settings.color_text }}!important;
+   
+  }
+   
+  {%- endstyle -%}
+   
+   
+   
+  {% if block.settings.text != blank %}
+   
+  <div class="imageBoxInfoDescription" id="{{ block.id }}" style="color: {{ block.settings.color_text }}">
+   
+  {{ block.settings.text }}
+   
+  </div>
+   
+  {% endif %}
+   
+   
+   
+  {% if block.settings.button_link != blank and block.settings.button_label != blank %}
+   
+  <a href="{{ block.settings.button_link }}" class="imageBoxInfoBtn" style="color: {{ block.settings.color_btn_text }}; background: {{ block.settings.color_btn_bg }}">
+   
+  {{ block.settings.button_label | escape }}
+   
+  </a>
+   
+  {% endif %}
+   
+  </div>
+   
+  </div>
+   
+  {% endif %}
+  </div>
+  {%- endfor -%}
+   
+  </div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  <!-- If we need scrollbar -->
+  <div class="swiper-scrollbar"></div>
+</div>
+ 
+   
+   
+  {% else %}
+   
+  <div class="placeholderNoblocks">
+   
+  This section doesn’t currently include any content. Add content to this section using the sidebar.
+   
+      </div>
+   
+  {%- endif -%}
+   
+
+
+<script>
+document.addEventListener('DOMContentLoaded',  function() {
+      const swiper = new Swiper('.swiper', {
+      // Optional parameters
+        // Optional parameters
+        direction: 'horizontal',
+        lazy: {
+          enabled: true,
+          checkInView: true,
+          loadOnTransitionStart: true,
+          loadPrevNext: true,
+          loadPrevNextAmount: 1
+      },
+
+      loop: true,
+    
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true,
+      },
+    
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    
+      // And if we need scrollbar
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+    });
+})
+</script>
+   
   <style>
-  .custom-slideshow-section {
-    position: relative;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+   .swiper {
+  width: 100%;
+  height: 300px;
+}
+  .main-content .videoBackground {
+   
+  margin-top: -55px;
+   
   }
-  
-  .slideshow-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
+   
+  .videoBackground {
+   
+  position: relative;
+   
   }
-  
-  .slide {
-    display: none;
-    position: relative;
+   
+  .videoBackground .fullscreen-video-wrap {
+   
+  position: absolute;
+   
+  top: 0;
+   
+  left: 0;
+   
+  min-width: 100%;
+   
+  width: 100%;
+   
+  height: 100%;
+   
+  overflow: hidden;
+   
   }
-  
-  .slide img {
-    width: 100%;
-    display: block;
+   
+  .videoBackground .fullscreen-video-wrap .video-js {
+   
+  position: absolute;
+   
+  top: 0;
+   
+  left: 0;
+   
+  min-height: 100%;
+   
+  min-width: 100%;
+   
+  width: 100%;
+   
+  height: 100%;
+   
+  object-fit: cover;
+   
   }
-  
-  .slide-content {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
+   
+  .videoBackground .fullscreen-video-wrap video {
+   
+  min-height: 100%;
+   
+  min-width: 100%;
+   
+  object-fit: cover;
+   
   }
-  
-  .slide-content h2 {
-    margin: 0;
-    font-size: 1.5em;
+   
+  .videoBackground .videoBox {
+   
+  display: flex;
+   
+  align-items: center;
+   
+  justify-content: flex-end;
+   
+  flex-direction: column;
+   
+  padding: 100px 20px 80px;
+   
+  background-size: cover;
+   
+  background-position: center;
+   
+  background-repeat: no-repeat;
+   
+  min-height: 500px;
+   
+  max-height: 800px;
+   
+          height: calc(100vh - 165px);
+   
+  position: relative;
+   
   }
-  
-  .slide-content p {
-    margin: 5px 0 0;
+   
+  .videoBackground .imageBox {
+   
+  display: flex;
+   
+  align-items: center;
+   
+  justify-content: flex-end;
+   
+  flex-direction: column;
+   
+  padding: 100px 20px 80px;
+   
+  background-size: cover;
+   
+  background-position: center;
+   
+  background-repeat: no-repeat;
+   
+  position: relative;
+   
+  min-height: calc(100vh - 165px);
+   
+  height: auto;
+   
   }
-  
-  .slide-link {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 15px;
-    background-color: #fff;
-    color: #000;
-    text-decoration: none;
-    border-radius: 5px;
+   
+  .videoBackground .videoBoxInfo, .videoBackground .imageBoxInfo {
+   
+  z-index: 2;
+    
+  margin: auto;
+   
+  text-align: center;
+   
   }
-  
-  .slide-link:hover {
-    background-color: #eee;
+   
+  .videoBackground .overlay {
+   
+  content: "";
+   
+  position: absolute;
+   
+  top: 0;
+   
+  right: 0;
+   
+  bottom: 0;
+   
+  left: 0;
+   
+  background: #000;
+   
+  z-index: 1;
+   
   }
+   
+  .videoBackground .videoBoxInfoBtn, .videoBackground .imageBoxInfoBtn {
+   
+  -moz-user-select: none;
+   
+  -ms-user-select: none;
+   
+  -webkit-user-select: none;
+   
+  user-select: none;
+   
+  -webkit-appearance: none;
+   
+  -moz-appearance: none;
+   
+  appearance: none;
+   
+  display: inline-block;
+   
+  width: auto;
+   
+  text-decoration: none;
+   
+  text-align: center;
+   
+  vertical-align: middle;
+   
+  cursor: pointer;
+   
+  border: 1px solid transparent;
+   
+  border-radius: 2px;
+   
+  padding: 10px 30px;
+   
+  font-style: normal;
+   
+  font-weight: normal;
+   
+  letter-spacing: 0.06em;
+   
+  white-space: normal;
+   
+  font-size: 16px;
+   
+  margin-top: 20px;
+   
+  }
+   
+  .videoBackground .videoBoxInfoTitle, .videoBackground .imageBoxInfoTitle {
+   
+  color: #FFF;
+    
+  font-size: 65px;
+   
+  line-height: 40px;
+   
+  }
+   
+  .videoBackground .videoBoxInfoDescription, .videoBackground .imageBoxInfoDescription {
+   
+  max-width: 500px;
+   
+  margin: 0 auto;
+   
+  }
+   
+  .videoBackground .videoBoxInfoDescription p, .videoBackground .imageBoxInfoDescription p {
+    
+  font-size: 17px;
+   
+  line-height: 28px;
+   
+  }
+   
+  .videoBackground .placeholderNoblocks {
+   
+  text-align: center;
+   
+  max-width: 500px;
+   
+  margin: 0 auto;
+   
+  }
+   
+      @media screen and (max-width: 767px) {
+   
+  .main-content .videoBackground {
+   
+  margin-top: -35px;
+   
+  }
+   
+  .videoBackground .fullscreen-video-wrap {
+   
+  z-index: 3;
+   
+  }
+   
+  .videoBackground .videoBox {
+   
+  min-height: 300px;
+   
+  height: 100%;
+   
+  position: relative;
+   
+  padding: 0;
+   
+  }
+   
+  .videoBackground .fullscreen-video-wrap {
+   
+  position: relative;
+   
+  min-height: 300px;
+   
+  z-index: -2;
+   
+  }
+   
+  .videoBackground .videoBoxInfo {
+   
+  padding: 2px 20px;
+   
+  width: 100%;
+   
+  }
+   
+  .videoBoxInfoTitle, .videoBackground .videoBoxInfoBtn {
+  display: none;
+   
+  }
+   
+      }
+   
   </style>
-  
-  <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var slides = document.querySelectorAll('.custom-slideshow-section .slide');
-    var slideIndex = 0;
-    var slideDuration = {{ section.settings.slide_duration | default: 5 }} * 1000;
-  
-    function showSlides() {
-      slides.forEach(function(slide) {
-        slide.style.display = 'none';
-      });
-      slideIndex++;
-      if (slideIndex > slides.length) {slideIndex = 1}
-      slides[slideIndex-1].style.display = 'block';
-      setTimeout(showSlides, slideDuration);
-    }
-  
-    showSlides();
-  });
-  </script>
+   
+   
+   
+  {% schema %}
+   
+  {
+   
+  "name": {
+   
+  "en": "Video Backgroundz"
+   
+  },
+   
+  "class": "videoBackground",
+   
+  "max_blocks": 3,
+   
+  "blocks": [
+   
+  {
+   
+  "type": "video",
+   
+  "name": "Video",
+   
+  "settings": [
+   
+  {
+   
+  "type": "url",
+   
+  "id": "video_link",
+   
+  "label": {
+   
+  "en": "Video link"
+   
+  }
+   
+  },
+   
+  {
+   
+  "type": "image_picker",
+   
+  "id": "video_image",
+   
+  "label": {
+   
+  "en": "Cover image"
+   
+  }
+   
+  },
+   
+  {
+   
+   
+  "type": "header",
+   
+  "content": {
+   
+  "en": "Text"
+   
+  }
+   
+  },
+   
+  {
+   
+  "type": "text",
+   
+  "id": "title",
+   
+  "label": {
+   
+  "en": "Heading"
+   
+  },
+   
+  "default": "Video slide"
+   
+  },
+   
+  {
+   
+  "type": "richtext",
+   
+  "id": "text",
+   
+  "label": {
+   
+  "en": "Description"
+   
+  },
+   
+  "default": {
+   
+  "en": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+   
+  }
+   
+  },
+   
+  {
+   
+  "type": "color",
+   
+  "id": "color_text",
+   
+  "label": {
+   
+  "en": "Text color"
+   
+  },
+   
+  "default": "#ffffff"
+   
+  },
+   
+  {
+   
+  "type": "text",
+   
+  "id": "button_label",
+   
+  "label": {
+   
+  "en": "Button label"
+   
+  }
+   
+  },
+   
+  {
+   
+  "type": "url",
+   
+  "id": "button_link",
+   
+  "label": {
+   
+  "en": "Button link"
+   
+  }
+   
+  },
+   
+  {
+   
+  "type": "color",
+   
+  "id": "color_btn_bg",
+   
+  "label": {
+   
+  "en": "Background button color"
+   
+  },
+   
+  "default": "#ffffff"
+   
+  },
+   
+  {
+   
+  "type": "color",
+   
+  "id": "color_btn_text",
+   
+  "label": {
+   
+  "en": "Button text color"
+   
+  },
+   
+  "default": "#ffffff"
+   
+  }
+   
+  ]
+   
+  },
+   
+  {
+   
+  "type": "image",
+   
+  "name": "Image",
+   
+  "settings": [
+   
+  {
+   
+  "type": "color",
+   
+  "id": "color_bg",
+   
+  "label": {
+   
+  "en": "Background color (optional)"
+   
+  },
+   
+  "default": "#16165b"
+   
+  },
+   
+  {
+   
+  "type": "image_picker",
+   
+  "id": "image_bg",
+   
+  "label": {
+   
+  "en": "or use an image (required)"
+   
+  }
+   
+  },
+   
+  {
+   
+  "type": "range",
+   
+  "id": "overlay_opacity",
+   
+  "label": {
+   
+  "en": "Overlay opacity"
+   
+  },
+   
+  "min": 0,
+   
+  "max": 99,
+   
+  "step": 1,
+   
+  "unit": {
+   
+  "en": "%"
+   
+  },
+   
+  "default": 0
+   
+  },
+   
+  {
+   
+  "type": "header",
+   
+  "content": {
+   
+  "en": "Text"
+   
+  }
+   
+  },
+   
+  {
+   
+  "type": "text",
+   
+  "id": "title",
+   
+  "default": "Image slide",
+   
+  "label": {
+   
+  "en": "Heading"
+   
+  }
+   
+  },
+   
+  {
+   
+  "type": "richtext",
+   
+  "id": "text",
+   
+  "label": {
+   
+  "en": "Description"
+   
+  },
+   
+  "default": {
+   
+  "en": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+   
+  }
+   
+  },
+   
+  {
+   
+  "type": "color",
+   
+  "id": "color_text",
+   
+  "label": {
+   
+  "en": "Text color"
+   
+  },
+   
+  "default": "#ffffff"
+   
+  },
+   
+  {
+   
+  "type": "text",
+   
+  "id": "button_label",
+   
+  "label": {
+   
+  "en": "Button label"
+   
+  }
+   
+  },
+   
+  {
+   
+  "type": "url",
+   
+  "id": "button_link",
+   
+  "label": {
+   
+  "en": "Button link"
+   
+  }
+   
+  },
+   
+  {
+   
+  "type": "color",
+   
+  "id": "color_btn_bg",
+   
+  "label": {
+   
+  "en": "Background button color"
+   
+  },
+   
+  "default": "#ffffff"
+   
+  },
+   
+  {
+   
+  "type": "color",
+   
+  "id": "color_btn_text",
+   
+  "label": {
+   
+  "en": "Button text color"
+   
+  },
+   
+  "default": "#ffffff"
+   
+  }
+   
+  ]
+   
+  }
+   
+  ],
+   
+  "presets": [
+   
+  {
+   
+  "name": {
+   
+  "en": "Video Backgroundz"
+   
+  },
+   
+  "category": {
+   
+  "en": "Main"
+   
+  },
+   
+  "blocks": [
+   
+  {
+   
+  "type": "video"
+   
+  }
+   
+  ]
+   
+  }
+   
+  ]
+   
+  }
+   
+  {% endschema %}
