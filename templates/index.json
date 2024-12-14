@@ -123,6 +123,20 @@
     "custom_slideshow_wMQLCP": {
       "type": "custom-slideshow",
       "blocks": {
+        "image_kpaBih": {
+          "type": "image",
+          "settings": {
+            "color_bg": "#16165b",
+            "overlay_opacity": 0,
+            "title": "Image slide",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "color_text": "#ffffff",
+            "button_label": "",
+            "button_link": "",
+            "color_btn_bg": "#ffffff",
+            "color_btn_text": "#ffffff"
+          }
+        },
         "video_7VPAtJ": {
           "type": "video",
           "settings": {
@@ -139,6 +153,7 @@
         }
       },
       "block_order": [
+        "image_kpaBih",
         "video_7VPAtJ"
       ],
       "settings": {}
