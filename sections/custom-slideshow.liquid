@@ -28,6 +28,102 @@
     </div>
   </div>
 </div>
+
+<section class="custom-slideshow-section">
+  <div class="slideshow-container">
+    {% for block in section.blocks %}
+      <div class="slide">
+        <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.title }}">
+        <div class="slide-content">
+          <h2>{{ block.settings.title }}</h2>
+          <p>{{ block.settings.description }}</p>
+          {% if block.settings.link != blank %}
+            <a href="{{ block.settings.link }}" class="slide-link">Learn More</a>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<style>
+.custom-slideshow-section {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  display: block;
+}
+
+.slide-content {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.slide-content h2 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.slide-content p {
+  margin: 5px 0 0;
+}
+
+.slide-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #fff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.slide-link:hover {
+  background-color: #eee;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var slides = document.querySelectorAll('.custom-slideshow-section .slide');
+  var slideIndex = 0;
+  var slideDuration = {{ section.settings.slide_duration | default: 5 }} * 1000;
+
+  function showSlides() {
+    slides.forEach(function(slide) {
+      slide.style.display = 'none';
+    });
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex-1].style.display = 'block';
+    setTimeout(showSlides, slideDuration);
+  }
+
+  showSlides();
+});
+</script>
+
 {% schema %}
   {
     "name": "Custom Slide Shower",
