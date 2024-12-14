@@ -1,144 +1,111 @@
-{% schema %}
-{
-  "name": "Custom Slideshow",
-  "settings": [
-    {
-      "type": "number",
-      "id": "slide_duration",
-      "label": "Slide Duration (seconds)",
-      "default": 5
-    }
-  ],
-  "blocks": [
-    {
-      "type": "slide",
-      "name": "Slide",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Slide Image"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Slide Title",
-          "default": "Slide Title"
-        },
-        {
-          "type": "textarea",
-          "id": "description",
-          "label": "Slide Description",
-          "default": "Slide Description"
-        },
-        {
-          "type": "url",
-          "id": "link",
-          "label": "Slide Link"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Custom Slideshow",
-      "category": "Custom"
-    }
-  ]
-}
-{% endschema %}
-
-<section class="custom-slideshow-section">
-  <div class="slideshow-container">
-    {% for block in section.blocks %}
-      <div class="slide">
-        <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.title }}">
-        <div class="slide-content">
-          <h2>{{ block.settings.title }}</h2>
-          <p>{{ block.settings.description }}</p>
-          {% if block.settings.link != blank %}
-            <a href="{{ block.settings.link }}" class="slide-link">Learn More</a>
-          {% endif %}
+<div class="main-banner-wrapper">
+  <div class="banner-inner-wrapper">
+    <div class="banner-slider">
+      {% for block in section.blocks %}
+        <div class="banner-slide">
+          <div class="banner-img">
+            {% case block.type %}
+              {% when 'image' %}
+                <img src="{{ block.settings.image | img_url: '1000x' }}" alt="img" />
+              {% when 'video' %}
+                <video
+                  autoplay
+                  muted
+                  loop>
+                  <source src="{{ block.settings.video_url_mp4 }}" type="video/mp4">
+                </video>
+            {% endcase %}
+          </div>
+          <div class="banner-content">
+            <div class="text">
+              <h2>{{ block.settings.title }}</h2>
+              <p>{{ block.settings.text }}</p>
+              <a href="{{ block.settings.btn_url }}" class="btn">{{ block.settings.btn_text }}</a>
+            </div>
+          </div>
         </div>
-      </div>
-    {% endfor %}
+      {% endfor %}
+    </div>
   </div>
-</section>
-
-<style>
-.custom-slideshow-section {
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.slideshow-container {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.slide {
-  display: none;
-  position: relative;
-}
-
-.slide img {
-  width: 100%;
-  display: block;
-}
-
-.slide-content {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-.slide-content h2 {
-  margin: 0;
-  font-size: 1.5em;
-}
-
-.slide-content p {
-  margin: 5px 0 0;
-}
-
-.slide-link {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 15px;
-  background-color: #fff;
-  color: #000;
-  text-decoration: none;
-  border-radius: 5px;
-}
-
-.slide-link:hover {
-  background-color: #eee;
-}
-</style>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  var slides = document.querySelectorAll('.custom-slideshow-section .slide');
-  var slideIndex = 0;
-  var slideDuration = {{ section.settings.slide_duration | default: 5 }} * 1000;
-
-  function showSlides() {
-    slides.forEach(function(slide) {
-      slide.style.display = 'none';
-    });
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}
-    slides[slideIndex-1].style.display = 'block';
-    setTimeout(showSlides, slideDuration);
+</div>
+{% schema %}
+  {
+    "name": "Custom Slide Shower",
+    "settings": [],
+    "blocks": [
+      {
+        "name": "image",
+        "type": "image",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Image Slider"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "default": "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>"
+          },
+          {
+            "type": "text",
+            "id": "btn_text",
+            "label": "Botton text",
+            "default": "Learn More"
+          },
+          {
+            "type": "url",
+            "id": "btn_url",
+            "label": "Button url"
+          }, 
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }
+        ]
+      }, {
+        "name": "video",
+        "type": "video",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Video Slider"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "default": "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>"
+          },
+          {
+            "type": "text",
+            "id": "btn_text",
+            "label": "Botton text",
+            "default": "Learn More"
+          },
+          {
+            "type": "url",
+            "id": "btn_url",
+            "label": "Button url"
+          }, {
+            "type": "text",
+            "id": "video_url_mp4",
+            "label": "Video URL",
+            "placeholder": "Use a MP4 Video URL",
+            "info": "Use a MP4 Video URL"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom Slide Shower"
+      }
+    ]
   }
-
-  showSlides();
-});
-</script>
+{% endschema %}
