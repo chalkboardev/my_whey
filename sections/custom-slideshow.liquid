@@ -192,7 +192,16 @@
 document.addEventListener('DOMContentLoaded',  function() {
       const swiper = new Swiper('.swiper', {
       // Optional parameters
-      direction: 'vertical',
+        // Optional parameters
+        direction: 'horizontal',
+        lazy: {
+          enabled: true,
+          checkInView: true,
+          loadOnTransitionStart: true,
+          loadPrevNext: true,
+          loadPrevNextAmount: 1
+      },
+
       loop: true,
     
       // If we need pagination
