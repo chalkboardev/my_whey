@@ -2,6 +2,19 @@
 
 <section class="custom-slideshow-section">
   <div class="slideshow-container">
+              <div class="custom_slideshow banner-img">
+            {% case block.type %}
+              {% when 'image' %}
+                <img src="{{ block.settings.image | img_url: '1000x' }}" alt="img" />
+              {% when 'video' %}
+                <video
+                  autoplay
+                  muted
+                  loop>
+                  <source class="custom_slideshow_video" src="{{ block.settings.video_url_mp4 }}" type="video/mp4">
+                </video>
+            {% endcase %}
+          </div>
     {% for block in section.blocks %}
       <div class="slide">
         <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.title }}">
