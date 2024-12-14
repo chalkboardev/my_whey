@@ -136,15 +136,16 @@
                     loop>
                     <source src="{{ block.settings.video_url_mp4 }}" type="video/mp4">
                   </video>
+                  <div class="banner-content">
+                    <div class="text">
+                      <h2>{{ block.settings.title }}</h2>
+                      <p>{{ block.settings.text }}</p>
+                      <a href="{{ block.settings.btn_url }}" class="btn">{{ block.settings.btn_text }}</a>
+                    </div>
+                  </div>
               {% endcase %}
               </div>
-              <div class="banner-content">
-                <div class="text">
-                  <h2>{{ block.settings.title }}</h2>
-                  <p>{{ block.settings.text }}</p>
-                  <a href="{{ block.settings.btn_url }}" class="btn">{{ block.settings.btn_text }}</a>
-                </div>
-              </div>
+
             </div>
           {% endfor %}
 
