@@ -6,9 +6,17 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 {%- if section.blocks.size > 0 -%}
- 
+
+
+     <!-- Slider main container -->
+<div class="swiper">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+
+
   {%- for block in section.blocks -%}
-   
+       <!-- Slides -->
+       <div class="swiper-slide">
   {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
    
    
@@ -152,9 +160,21 @@
   </div>
    
   {% endif %}
-   
+  </div>
   {%- endfor -%}
    
+  </div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  <!-- If we need scrollbar -->
+  <div class="swiper-scrollbar"></div>
+</div>
+ 
    
    
   {% else %}
@@ -167,26 +187,7 @@
    
   {%- endif -%}
    
-   <!-- Slider main container -->
-<div class="swiper">
-  <!-- Additional required wrapper -->
-  <div class="swiper-wrapper">
-    <!-- Slides -->
-    <div class="swiper-slide">Slide 1</div>
-    <div class="swiper-slide">Slide 2</div>
-    <div class="swiper-slide">Slide 3</div>
-    ...
-  </div>
-  <!-- If we need pagination -->
-  <div class="swiper-pagination"></div>
 
-  <!-- If we need navigation buttons -->
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
-
-  <!-- If we need scrollbar -->
-  <div class="swiper-scrollbar"></div>
-</div>
 
 <script>
 document.addEventListener('DOMContentLoaded',  function() {
