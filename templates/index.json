@@ -52,9 +52,6 @@
         "mobile_content_alignment": "center"
       }
     },
-    "custom-slideshow": {
-      "type": "custom-slideshow"
-    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -122,68 +119,11 @@
         "padding_top": 44,
         "padding_bottom": 36
       }
-    },
-    "slideshow_my_fP6mzV": {
-      "type": "slideshow_my",
-      "blocks": {
-        "slide_nnNeek": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/mobile.png",
-            "heading": "Image slide",
-            "heading_size": "h1",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": true,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "scheme-4",
-            "text_alignment_mobile": "center"
-          }
-        },
-        "slide_7pR9kz": {
-          "type": "slide",
-          "settings": {
-            "heading": "Image slide",
-            "heading_size": "h1",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": true,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "",
-            "text_alignment_mobile": "center"
-          }
-        }
-      },
-      "block_order": [
-        "slide_nnNeek",
-        "slide_7pR9kz"
-      ],
-      "disabled": true,
-      "settings": {
-        "layout": "full_bleed",
-        "slide_height": "large",
-        "slider_visual": "counter",
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "image_behavior": "none",
-        "show_text_below": false,
-        "accessibility_info": "Slideshow about our brand"
-      }
     }
   },
   "order": [
     "video_banner_687P9e",
-    "custom-slideshow",
     "image_banner",
-    "featured_collection",
-    "slideshow_my_fP6mzV"
+    "featured_collection"
   ]
 }
