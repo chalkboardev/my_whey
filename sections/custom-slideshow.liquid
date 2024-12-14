@@ -109,3 +109,23 @@
     ]
   }
 {% endschema %}
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var slides = document.querySelectorAll('.custom-slideshow-section .slide');
+  var slideIndex = 0;
+  var slideDuration = {{ section.settings.slide_duration | default: 5 }} * 1000;
+
+  function showSlides() {
+    slides.forEach(function(slide) {
+      slide.style.display = 'none';
+    });
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex-1].style.display = 'block';
+    setTimeout(showSlides, slideDuration);
+  }
+
+  showSlides();
+});
+</script>
