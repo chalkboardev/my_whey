@@ -113,7 +113,7 @@
    
    
    
-  <div class="imageBoxInfo">
+  <div class="imageBoxInfo {{ block.settings.desktop_content_position_image }} ">
    
   {% if block.settings.title != blank %}
 
@@ -436,7 +436,7 @@ document.addEventListener('DOMContentLoaded',  function() {
           },
           {
           "type": "select",
-          "id": "desktop_content_position",
+          "id": "desktop_content_position_image",
           "options": [
             {
               "value": "header-top-left",
