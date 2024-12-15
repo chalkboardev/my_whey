@@ -14,6 +14,7 @@
       "blocks": {
         "video_7VPAtJ": {
           "type": "video",
+          "disabled": true,
           "settings": {
             "video_link": "https://cdn.shopify.com/videos/c/o/v/a487343da3b24ea5a0666c2edc7e7d82.mp4",
             "video_image": "shopify://shop_images/oleg-laptev-7jQh3EiS8Bs-unsplash.jpg",
@@ -32,14 +33,14 @@
           "type": "image",
           "settings": {
             "color_bg": "#16165b",
-            "image_bg": "shopify://shop_images/starter.png",
+            "image_bg": "shopify://shop_images/header_a.jpg",
             "overlay_opacity": 0,
             "desktop_content_position": "header-middle-left",
             "title": "Image slide",
             "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
             "color_text": "#ffffff",
-            "button_label": "",
-            "button_link": "",
+            "button_label": "Shop Best Sellers",
+            "button_link": "shopify://collections/all",
             "color_scheme": "",
             "color_btn_bg": "#ffffff",
             "color_btn_text": "#ffffff"
