@@ -21,8 +21,9 @@
             "title": "Celebrate the Season with Wellness",
             "text": "<p>Curated, Clean Supplements <strong>Made for You</strong></p>",
             "color_text": "#ffffff",
-            "button_label": "",
-            "button_link": "",
+            "button_label": "dfsfd",
+            "button_link": "shopify://pages/contact",
+            "color_scheme": "scheme-5",
             "color_btn_bg": "#ffffff",
             "color_btn_text": "#ffffff"
           }
@@ -39,6 +40,7 @@
             "color_text": "#ffffff",
             "button_label": "",
             "button_link": "",
+            "color_scheme": "",
             "color_btn_bg": "#ffffff",
             "color_btn_text": "#ffffff"
           }
