@@ -37,7 +37,7 @@
             "overlay_opacity": 0,
             "desktop_content_position": "header-middle-left",
             "title": "Tailor made",
-            "text": "<p>Use this text to share information about your brand <strong>with your customers. </strong></p>",
+            "text": "<p>Use this text to <strong>share information</strong> about your brand with your <em>customers</em>. </p>",
             "color_text": "#ffffff",
             "button_label": "Shop Best Sellers",
             "button_link": "shopify://collections/all",
