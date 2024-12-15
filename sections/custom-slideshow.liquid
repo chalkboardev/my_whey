@@ -116,12 +116,12 @@
   <div class="imageBoxInfo">
    
   {% if block.settings.title != blank %}
-   
-  <h1 class="imageBoxInfoTitle" style="color: {{ block.settings.color_text }}">
-   
-  {{ block.settings.title | escape }}
-   
-  </h1>
+
+  <h2 class="h1 imageBoxInfoTitle" style="color: {{ block.settings.color_text }}">
+   <strong>
+    {{ block.settings.title | escape }}
+   </strong>
+  </h2>
    
   {% endif %}
    
@@ -431,27 +431,21 @@ document.addEventListener('DOMContentLoaded',  function() {
   }
    
   .videoBackground .videoBoxInfoTitle, .videoBackground .imageBoxInfoTitle {
-   
-  color: #FFF;
-    
-  font-size: 65px;
-   
-  line-height: 40px;
-   
+    color: #FFF;
+    /* font-size: 65px; */
+    font-size: calc(var(--font-heading-scale)* 4rem) !important;
+    font-weight: 800;
+    line-height: 40px;
   }
    
   .videoBackground .videoBoxInfoDescription, .videoBackground .imageBoxInfoDescription {
-   
-  max-width: 500px;
-  margin-top: -20px !important;
-  /* margin: 0 auto; */
-   
+      max-width: 500px;
+      margin-top: -20px !important;
+      /* margin: 0 auto; */
   }
    
   .videoBackground .videoBoxInfoDescription p, .videoBackground .imageBoxInfoDescription p {
-    
   font-size: 17px;
-   
   line-height: 28px;
    
   }
