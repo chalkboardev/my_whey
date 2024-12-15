@@ -30,7 +30,6 @@
         },
         "image_kpaBih": {
           "type": "image",
-          "disabled": true,
           "settings": {
             "color_bg": "#16165b",
             "image_bg": "shopify://shop_images/header_a.jpg",
