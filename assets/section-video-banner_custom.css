@@ -27,7 +27,9 @@
 .videoBoxInfo_padding {
   padding: 0 7rem;
 }
-
+.imageBoxInfo_padding {
+  padding: 0 7rem;
+}
 /* .swiper-pagination {
   position: relative !important;
   text-align: center;
