@@ -14,7 +14,6 @@
       "blocks": {
         "video_7VPAtJ": {
           "type": "video",
-          "disabled": true,
           "settings": {
             "video_link": "https://cdn.shopify.com/videos/c/o/v/a487343da3b24ea5a0666c2edc7e7d82.mp4",
             "video_image": "shopify://shop_images/oleg-laptev-7jQh3EiS8Bs-unsplash.jpg",
@@ -31,6 +30,7 @@
         },
         "image_kpaBih": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "color_bg": "#16165b",
             "image_bg": "shopify://shop_images/header_a.jpg",
