@@ -18,16 +18,12 @@
 
   {%- for block in section.blocks -%}
        <!-- Slides -->
-       <div class="swiper-slide">
+       <div class="swiper-slide" data-swiper-autoplay="7500">
   {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
-   
-   
    
   {% if block.type == 'video' %}
    
   <div class="videoBox" style="{%- if block.settings.video_link == blank -%}background-image: url('{{ block.settings.video_image  | img_url: 'master' }}');{%- endif -%}">
-   
-   
    
   {%- if block.settings.video_link != blank -%}
    
@@ -197,19 +193,27 @@
 document.addEventListener('DOMContentLoaded',  function() {
       const swiper = new Swiper('.swiper', {
       // Optional parameters
-        // Optional parameters
+        // speed: 400,
+        // autoplay: {
+        //   delay: 9500,
+        //   disableOnInteraction: false,
+        // },
+        // slidesPerView: 1,
+        // spaceBetween: 0,
+        // slidesOffsetAfter:0,
+        // freeMode: true,
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        autoplay: true,
+        delay: 9500,
         direction: 'horizontal',
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: false,
-        },
         lazy: {
           enabled: true,
           checkInView: true,
           loadOnTransitionStart: true,
           loadPrevNext: true,
           loadPrevNextAmount: 1
-      },
+        },
 
       loop: true,
     
