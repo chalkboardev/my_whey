@@ -78,9 +78,9 @@
   {% endif %}
    
    
-  {% if block.settings.button_link != blank and block.settings.button_label != blank %}
+  {% if block.settings.button_link != blank and block.settings.button_label != blank %} 
    
-  <a href="{{ block.settings.button_link }}" class="videoBoxInfoBtn" style="color: {{ block.settings.color_btn_text }}; background: {{ block.settings.color_btn_bg }}">
+  <a href="{{ block.settings.button_link }}" class="videoBoxInfoBtn color-{{ block.settings.color_scheme }}">
    
   {{ block.settings.button_label | escape }}
    
