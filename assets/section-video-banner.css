@@ -140,6 +140,235 @@
   width: 100%;
 }
 
+.videoBackground .videoBoxInfoTitle, .videoBackground .imageBoxInfoTitle {
+  font-size: 4rem !important;
+  font-weight: 800 !important;
+  line-height: 40px;
+}
+
+
+/*
+// START CUSTOM SLIDESHOW (custom-slideshow.liquid)
+*/
+.swiper {
+  width: 100%;
+  height: 84vh;
+}
+.main-content .videoBackground {
+  margin-top: -55px;
+}
+   
+.videoBackground {
+  position: relative;
+}
+   
+.videoBackground .fullscreen-video-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+   
+}
+   
+.videoBackground .fullscreen-video-wrap .video-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100%;
+  min-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+   
+.videoBackground .fullscreen-video-wrap video {
+  min-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+}
+   
+.videoBackground .videoBox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  padding: 100px 20px 80px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 500px;
+  max-height: 800px;
+  height: calc(100vh - 165px);
+  position: relative;
+}
+   
+.videoBackground .imageBox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  padding: 100px 20px 80px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: calc(100vh - 165px);
+  height: auto;
+}
+   
+.videoBackground .videoBoxInfo, .videoBackground .imageBoxInfo {
+  align-items: center;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  z-index: 2;
+  margin: auto;
+  height: 75vh;
+}
+   
+.videoBackground .overlay {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #000;
+  z-index: 1;
+ }
+
+.videoBackground .videoBoxInfoBtn, .videoBackground .imageBoxInfoBtn {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  width: auto;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  padding: 10px 30px;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 0.06em;
+  white-space: normal;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+
+.videoBackground .videoBoxInfoDescription, .videoBackground .imageBoxInfoDescription {
+  max-width: 500px;
+  margin-top: -20px !important;
+  /* margin: 0 auto; */
+}
+
+.videoBackground .videoBoxInfoDescription p, .videoBackground .imageBoxInfoDescription p {
+  font-size: 17px;
+  line-height: 28px;
+}
+
+.videoBackground .placeholderNoblocks {
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+   
+@media screen and (max-width: 767px) {
+   
+  .main-content .videoBackground {
+      margin-top: -35px;
+  }
+    
+  .videoBackground .fullscreen-video-wrap {
+      z-index: 3;
+  }
+    
+  .videoBackground .videoBox {
+      min-height: 684px;
+      height: 100%;
+      position: relative;
+      padding: 0;
+  }
+    
+  .videoBackground .fullscreen-video-wrap {
+      position: relative;
+      min-height: 100vh;
+      z-index: -2;
+  }
+   
+  .videoBackground .videoBoxInfo {
+      padding: 2px 20px;
+      /* top: 33%; */
+      top: 0;
+      position: absolute;
+      /* width: 100%; */
+      width: 89vw;
+  }
+   
+  .videoBoxInfoTitle, .videoBackground .videoBoxInfoBtn {
+  /* display: none; */
+  }
+   
+}
+
+
+   .header-top-left {
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+   }
+   .header-top-center {
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: center !important;
+   }
+   .header-top-right {
+    align-items: flex-end !important;
+    text-align: end !important;
+    justify-content: flex-start !important;
+   }
+   .header-middle-left {
+    align-items: flex-start !important;
+    justify-content: center !important;
+   }
+   .header-middle-center {
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+   }
+   .header-middle-right {
+    align-items: end !important;
+    text-align: right !important;
+    justify-content: center !important;
+   }
+   .header-bottom-left {
+    align-items: flex-start !important;
+    justify-content: end !important;
+   }
+   .header-bottom-center {
+    align-items: center !important;
+    justify-content: flex-end !important;
+    text-align: center !important;
+   }
+   .header-bottom-right {
+    align-items: flex-end !important;
+    justify-content: end !important;
+    text-align: right !important;
+   }
+/*
+// END CUSTOM SLIDESHOW (custom-slideshow.liquid)
+*/
+
 /*
 // START Normal MOBILE devices (portrait phones)
 */
