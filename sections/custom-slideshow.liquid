@@ -242,450 +242,296 @@ document.addEventListener('DOMContentLoaded',  function() {
   {% schema %}
    
   {
-   
   "name": {
-   
-  "en": "My-Whey Slider"
-   
+      "en": "My-Whey Slider"
   },
-   
   "class": "videoBackground",
-   
   "max_blocks": 3,
-   
   "blocks": [
-   
-  {
-   
-  "type": "video",
-   
-  "name": "Video",
-   
-  "settings": [
-   
-  {
-   
-  "type": "url",
-   
-  "id": "video_link",
-   
-  "label": {
-   
-  "en": "Video link"
-   
-  }
-   
-  },
-   
-  {
-   
-  "type": "image_picker",
-   
-  "id": "video_image",
-   
-  "label": {
-   
-  "en": "Cover image"
-   
-  }
-   
-  },
-  {
-      "type": "select",
-      "id": "desktop_content_position",
-      "options": [
-        {
-          "value": "header-top-left",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__1.label"
-        },
-        {
-          "value": "header-top-center",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__2.label"
-        },
-        {
-          "value": "header-top-right",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__3.label"
-        },
-        {
-          "value": "header-middle-left",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__4.label"
-        },
-        {
-          "value": "header-middle-center",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__5.label"
-        },
-        {
-          "value": "header-middle-right",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__6.label"
-        },
-        {
-          "value": "header-bottom-left",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__7.label"
-        },
-        {
-          "value": "header-bottom-center",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__8.label"
-        },
-        {
-          "value": "header-bottom-right",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__9.label"
-        }
-      ],
-      "default": "header-middle-left ",
-      "label": "t:sections.image-banner.settings.desktop_content_position.label"
-    },
-   
-  {
-   
-   
-  "type": "header",
-   
-  "content": {
-   
-  "en": "Text"
-   
-  }
-   
-  },
-   
-  {
-   
-  "type": "text",
-   
-  "id": "title",
-   
-  "label": {
-   
-  "en": "Heading"
-   
-  },
-   
-  "default": "Video slide"
-   
-  },
-   
-  {
-   
-  "type": "richtext",
-   
-  "id": "text",
-   
-  "label": {
-   
-  "en": "Description"
-   
-  },
-   
-  "default": {
-   
-  "en": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
-   
-  }
-   
-  },
-   
-  {
-   
-  "type": "color",
-   
-  "id": "color_text",
-   
-  "label": {
-   
-  "en": "Text color"
-   
-  },
-   
-  "default": "#ffffff"
-   
-  },
-   
-  {
-   
-  "type": "text",
-   
-  "id": "button_label",
-   
-  "label": {
-   
-  "en": "Button label"
-   
-  }
-   
-  },
-   
-  {
-   
-  "type": "url",
-   
-  "id": "button_link",
-   
-  "label": {
-   
-  "en": "Button link"
-   
-  }
-   
-  },
-   
-  {
-   
-  "type": "color",
-   
-  "id": "color_btn_bg",
-   
-  "label": {
-   
-  "en": "Background button color"
-   
-  },
-   
-  "default": "#ffffff"
-   
-  },
-   
-  {
-   
-  "type": "color",
-   
-  "id": "color_btn_text",
-   
-  "label": {
-   
-  "en": "Button text color"
-   
-  },
-   
-  "default": "#ffffff"
-   
-  }
-   
-  ]
-   
-  },
-   
-  {
-   
-  "type": "image",
-   
-  "name": "Image",
-   
-  "settings": [
-   
-  {
-   
-  "type": "color",
-   
-  "id": "color_bg",
-   
-  "label": {
-   
-  "en": "Background color (optional)"
-   
-  },
-   
-  "default": "#16165b"
-   
-  },
-   
-  {
-   
-  "type": "image_picker",
-   
-  "id": "image_bg",
-   
-  "label": {
-   
-  "en": "or use an image (required)"
-   
-  }
-   
-  },
-   
-  {
-   
-  "type": "range",
-   
-  "id": "overlay_opacity",
-   
-  "label": {
-   
-  "en": "Overlay opacity"
-   
-  },
-   
-  "min": 0,
-   
-  "max": 99,
-   
-  "step": 1,
-   
-  "unit": {
-   
-  "en": "%"
-   
-  },
-   
-  "default": 0
-   
-  },
-   
-  {
-   
-  "type": "header",
-   
-  "content": {
-   
-  "en": "Text"
-   
-  }
-   
-  },
-   
-  {
-   
-  "type": "text",
-   
-  "id": "title",
-   
-  "default": "Image slide",
-   
-  "label": {
-   
-  "en": "Heading"
-   
-  }
-   
-  },
-   
-  {
-   
-  "type": "richtext",
-   
-  "id": "text",
-   
-  "label": {
-   
-  "en": "Description"
-   
-  },
-   
-  "default": {
-   
-  "en": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
-   
-  }
-   
-  },
-   
-  {
-   
-  "type": "color",
-   
-  "id": "color_text",
-   
-  "label": {
-   
-  "en": "Text color"
-   
-  },
-   
-  "default": "#ffffff"
-   
-  },
-   
-  {
-   
-  "type": "text",
-   
-  "id": "button_label",
-   
-  "label": {
-   
-  "en": "Button label"
-   
-  }
-   
-  },
-   
-  {
-   
-  "type": "url",
-   
-  "id": "button_link",
-   
-  "label": {
-   
-  "en": "Button link"
-   
-  }
-   
-  },
-   
-  {
-   
-  "type": "color",
-   
-  "id": "color_btn_bg",
-   
-  "label": {
-   
-  "en": "Background button color"
-   
-  },
-   
-  "default": "#ffffff"
-   
-  },
-   
-  {
-   
-  "type": "color",
-   
-  "id": "color_btn_text",
-   
-  "label": {
-   
-  "en": "Button text color"
-   
-  },
-   
-  "default": "#ffffff"
-   
-  }
-   
-  ]
-   
-  }
-   
+          {
+          "type": "video",
+          "name": "Video",
+          "settings": [
+          {
+          "type": "url",
+          "id": "video_link",
+          "label": {
+              "en": "Video link"
+          }
+          },
+          {
+          "type": "image_picker",
+          "id": "video_image",
+          "label": {
+              "en": "Cover image"
+          }
+          },
+          {
+          "type": "select",
+          "id": "desktop_content_position",
+          "options": [
+            {
+              "value": "header-top-left",
+              "label": "t:sections.image-banner.settings.desktop_content_position.options__1.label"
+            },
+            {
+              "value": "header-top-center",
+              "label": "t:sections.image-banner.settings.desktop_content_position.options__2.label"
+            },
+            {
+              "value": "header-top-right",
+              "label": "t:sections.image-banner.settings.desktop_content_position.options__3.label"
+            },
+            {
+              "value": "header-middle-left",
+              "label": "t:sections.image-banner.settings.desktop_content_position.options__4.label"
+            },
+            {
+              "value": "header-middle-center",
+              "label": "t:sections.image-banner.settings.desktop_content_position.options__5.label"
+            },
+            {
+              "value": "header-middle-right",
+              "label": "t:sections.image-banner.settings.desktop_content_position.options__6.label"
+            },
+            {
+              "value": "header-bottom-left",
+              "label": "t:sections.image-banner.settings.desktop_content_position.options__7.label"
+            },
+            {
+              "value": "header-bottom-center",
+              "label": "t:sections.image-banner.settings.desktop_content_position.options__8.label"
+            },
+            {
+              "value": "header-bottom-right",
+              "label": "t:sections.image-banner.settings.desktop_content_position.options__9.label"
+            }
+          ],
+          "default": "header-middle-left ",
+          "label": "t:sections.image-banner.settings.desktop_content_position.label"
+          },
+          {
+          "type": "header",
+          "content": {
+          "en": "Text"
+          }
+          },
+          {
+          "type": "text",
+          "id": "title",
+          "label": {
+          "en": "Heading"
+          },
+          "default": "Video slide"
+          },
+          {
+          "type": "richtext",
+          "id": "text",
+          "label": {
+              "en": "Description"
+          },
+          "default": {
+          "en": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+          },
+          {
+          "type": "color",
+          "id": "color_text",
+          "label": {
+          "en": "Text color"
+          },
+          "default": "#ffffff"
+          },
+          {
+          "type": "text",
+          "id": "button_label",
+          "label": {
+          "en": "Button label"
+          }
+          },
+          {
+          "type": "url",
+          "id": "button_link",
+          "label": {
+          "en": "Button link"
+          }
+          },
+          {
+          
+          "type": "color",
+          "id": "color_btn_bg",
+          "label": {
+          "en": "Background button color"
+          },
+          "default": "#ffffff"
+          },
+          {
+          "type": "color",
+          "id": "color_btn_text",
+          "label": {
+          "en": "Button text color"
+          },
+          "default": "#ffffff"
+          }
+          ]
+          },
+          {
+          "type": "image",
+          "name": "Image",
+          "settings": [
+          {
+          "type": "color",
+          "id": "color_bg",
+          "label": {
+          "en": "Background color (optional)"
+          },
+          "default": "#16165b"
+          },
+          {
+          
+          "type": "image_picker",
+          "id": "image_bg",
+          "label": {
+          "en": "or use an image (required)"
+          }
+          },
+          {
+          "type": "range",
+          "id": "overlay_opacity",
+          "label": {
+          "en": "Overlay opacity"
+          },
+          "min": 0,
+          "max": 99,
+          "step": 1,
+          "unit": {
+          "en": "%"
+          },
+          "default": 0
+          },
+          {
+          "type": "header",
+          "content": {
+          "en": "Text"
+          }
+          },
+          {
+          
+          "type": "text",
+          "id": "title",
+          "default": "Image slide",
+          "label": {
+          "en": "Heading"
+          }
+          },
+          {
+          "type": "richtext",
+          "id": "text",
+          "label": {
+          "en": "Description"
+          },
+          "default": {
+          "en": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+          },
+          {
+          "type": "select",
+          "id": "desktop_content_position",
+          "options": [
+            {
+              "value": "header-top-left",
+              "label": "t:sections.image-banner.settings.desktop_content_position.options__1.label"
+            },
+            {
+              "value": "header-top-center",
+              "label": "t:sections.image-banner.settings.desktop_content_position.options__2.label"
+            },
+            {
+              "value": "header-top-right",
+              "label": "t:sections.image-banner.settings.desktop_content_position.options__3.label"
+            },
+            {
+              "value": "header-middle-left",
+              "label": "t:sections.image-banner.settings.desktop_content_position.options__4.label"
+            },
+            {
+              "value": "header-middle-center",
+              "label": "t:sections.image-banner.settings.desktop_content_position.options__5.label"
+            },
+            {
+              "value": "header-middle-right",
+              "label": "t:sections.image-banner.settings.desktop_content_position.options__6.label"
+            },
+            {
+              "value": "header-bottom-left",
+              "label": "t:sections.image-banner.settings.desktop_content_position.options__7.label"
+            },
+            {
+              "value": "header-bottom-center",
+              "label": "t:sections.image-banner.settings.desktop_content_position.options__8.label"
+            },
+            {
+              "value": "header-bottom-right",
+              "label": "t:sections.image-banner.settings.desktop_content_position.options__9.label"
+            }
+          ],
+          "default": "header-middle-left ",
+          "label": "t:sections.image-banner.settings.desktop_content_position.label"
+          },
+          {
+          "type": "color",
+          "id": "color_text",
+          "label": {
+          "en": "Text color"
+          },
+          "default": "#ffffff"
+          },
+          {
+          "type": "text",
+          "id": "button_label",
+          "label": {
+          "en": "Button label"
+          }
+          },
+          {
+          "type": "url",
+          "id": "button_link",
+          "label": {
+          "en": "Button link"
+          }
+          },
+          {
+          "type": "color",
+          "id": "color_btn_bg",
+          "label": {
+          "en": "Background button color"
+          },
+          "default": "#ffffff"
+          },
+          {
+          "type": "color",
+          "id": "color_btn_text",
+          "label": {
+          "en": "Button text color"
+          },
+          "default": "#ffffff"
+          }
+          ]
+          }
   ],
-   
   "presets": [
-   
   {
-   
-  "name": {
-   
-  "en": "My-Whey Slider"
-   
-  },
-   
-  "category": {
-   
-  "en": "Main"
-   
-  },
-   
-  "blocks": [
-   
-  {
-   
-  "type": "video"
-   
-  }
-   
-  ]
-   
+    "name": {
+    "en": "My-Whey Slider"
+    },
+    "category": {
+    "en": "Main"
+    },
+    "blocks": [
+    {
+    "type": "video"
+    }
+    ]
   }
    
   ]
