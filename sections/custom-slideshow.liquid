@@ -93,59 +93,6 @@
    
    
    
-   <div class="banner__content banner__content--{{ block.settings.desktop_content_position }} page-width videoBoxInfo">
-  {% comment %} <div class="videoBoxInfo"> {% endcomment %}
-   
-  {% if block.settings.title != blank %}
-   
-  <h1 class="videoBoxInfoTitle" style="color: {{ block.settings.color_text }}">
-   
-  {{ block.settings.title | escape }}
-   
-  </h1>
-   
-  {% endif %}
-   
-   
-   
-  {%- style -%}
-   
-  .videoBackground .imageBoxInfoDescription p {
-   
-  color: {{ block.settings.color_text }}!important;
-   
-  }
-   
-  {%- endstyle -%}
-   
-   
-   
-  {% if block.settings.text != blank %}
-   
-  <div class="imageBoxInfoDescription" id="{{ block.id }}" style="color: {{ block.settings.color_text }}">
-   
-  {{ block.settings.text }}
-   
-  </div>
-   
-  {% endif %}
-   
-   
-   
-  {% if block.settings.button_link != blank and block.settings.button_label != blank %}
-   
-  <a href="{{ block.settings.button_link }}" class="videoBoxInfoBtn" style="color: {{ block.settings.color_btn_text }}; background: {{ block.settings.color_btn_bg }}">
-   
-  {{ block.settings.button_label | escape }}
-   
-  </a>
-   
-  {% endif %}
-   
-  </div>
-   
-  </div>
-   
   {% else %}
    
   <div class="imageBox" style="background-color: {{ block.settings.color_bg }}; {%- if block.settings.image_bg != blank -%}background-image: url('{{ block.settings.image_bg | img_url: 'master' }}');{%- endif -%}">
