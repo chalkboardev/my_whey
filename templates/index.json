@@ -37,6 +37,7 @@
             "title": "Image slide",
             "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
             "color_text": "#ffffff",
+            "desktop_content_position_image": "header-middle-left",
             "button_label": "",
             "button_link": "",
             "color_btn_bg": "#ffffff",
