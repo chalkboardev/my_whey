@@ -352,7 +352,7 @@
       z-index: -2;
   }
    
-  .videoBackground .videoBoxInfo {
+  .videoBackground .videoBoxInfo .imageBoxInfo {
       padding: 2px 20px;
       /* top: 33%; */
       top: 0;
