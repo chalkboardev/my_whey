@@ -69,7 +69,7 @@
    
   {% if block.settings.text != blank %}
    
-  <div class="imageBoxInfoDescription banner__content--{{ block.settings.desktop_content_position }}" id="{{ block.id }}" style="color: {{ block.settings.color_text }}">
+  <div class="imageBoxInfoDescription {{ block.settings.desktop_txt_head_position }}" id="{{ block.id }}" style="color: {{ block.settings.color_text }}">
    
   {{ block.settings.text }}
    
@@ -602,7 +602,50 @@ document.addEventListener('DOMContentLoaded',  function() {
       "default": "middle-center",
       "label": "t:sections.image-banner.settings.desktop_content_position.label"
     },
-   
+    {
+      "type": "select",
+      "id": "desktop_txt_head_position",
+      "options": [
+        {
+          "value": "top-left",
+          "label": "t:sections.image-banner.settings.desktop_content_position_text.options__1.label"
+        },
+        {
+          "value": "top-center",
+          "label": "t:sections.image-banner.settings.desktop_content_position_text.options__2.label"
+        },
+        {
+          "value": "top-right",
+          "label": "t:sections.image-banner.settings.desktop_content_position_text.options__3.label"
+        },
+        {
+          "value": "middle-left",
+          "label": "t:sections.image-banner.settings.desktop_content_position_text.options__4.label"
+        },
+        {
+          "value": "middle-center",
+          "label": "t:sections.image-banner.settings.desktop_content_position_text.options__5.label"
+        },
+        {
+          "value": "middle-right",
+          "label": "t:sections.image-banner.settings.desktop_content_position_text.options__6.label"
+        },
+        {
+          "value": "bottom-left",
+          "label": "t:sections.image-banner.settings.desktop_content_position_text.options__7.label"
+        },
+        {
+          "value": "bottom-center",
+          "label": "t:sections.image-banner.settings.desktop_content_position_text.options__8.label"
+        },
+        {
+          "value": "bottom-right",
+          "label": "t:sections.image-banner.settings.desktop_content_position_text.options__9.label"
+        }
+      ],
+      "default": "middle-center",
+      "label": "t:sections.image-banner.settings.desktop_content_position_text.label"
+    },
   {
    
    
