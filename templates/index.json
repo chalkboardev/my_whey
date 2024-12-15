@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
-{
+ {
   "sections": {
     "custom_slideshow_wMQLCP": {
       "type": "custom-slideshow",
@@ -49,6 +49,49 @@
         "image_kpaBih"
       ],
       "settings": {}
+    },
+    "video_banner_687P9e": {
+      "type": "video-banner",
+      "blocks": {
+        "heading_ze9dmB": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Celebrate the Season with Wellness</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_mL9Ma6": {
+          "type": "text",
+          "settings": {
+            "text": "Curated, Clean Supplements <strong>Made for You</strong>",
+            "text_style": "subtitle"
+          }
+        },
+        "buttons_PFLXYi": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "SHOP BEST SELLERS",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_ze9dmB",
+        "text_mL9Ma6",
+        "buttons_PFLXYi"
+      ],
+      "settings": {
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/a487343da3b24ea5a0666c2edc7e7d82.mp4",
+        "desktop_content_position": "middle-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "scheme-3",
+        "mobile_content_alignment": "center"
+      }
     },
     "image_banner": {
       "type": "image-banner",
