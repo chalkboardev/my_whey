@@ -375,7 +375,43 @@ document.addEventListener('DOMContentLoaded',  function() {
           "type": "image",
           "name": "Image",
           "settings": [
-            {
+          {
+          "type": "color",
+          "id": "color_bg",
+          "label": {
+          "en": "Background color (optional)"
+          },
+          "default": "#16165b"
+          },
+          {
+          
+          "type": "image_picker",
+          "id": "image_bg",
+          "label": {
+          "en": "or use an image (required)"
+          }
+          },
+          {
+          "type": "range",
+          "id": "overlay_opacity",
+          "label": {
+          "en": "Overlay opacity"
+          },
+          "min": 0,
+          "max": 99,
+          "step": 1,
+          "unit": {
+          "en": "%"
+          },
+          "default": 0
+          },
+          {
+          "type": "header",
+          "content": {
+          "en": "Text"
+          }
+          },
+          {
           "type": "select",
           "id": "desktop_content_position",
           "options": [
@@ -418,42 +454,6 @@ document.addEventListener('DOMContentLoaded',  function() {
           ],
           "default": "header-middle-left",
           "label": "t:sections.image-banner.settings.desktop_content_position.label"
-          },
-          {
-          "type": "color",
-          "id": "color_bg",
-          "label": {
-          "en": "Background color (optional)"
-          },
-          "default": "#16165b"
-          },
-          {
-          
-          "type": "image_picker",
-          "id": "image_bg",
-          "label": {
-          "en": "or use an image (required)"
-          }
-          },
-          {
-          "type": "range",
-          "id": "overlay_opacity",
-          "label": {
-          "en": "Overlay opacity"
-          },
-          "min": 0,
-          "max": 99,
-          "step": 1,
-          "unit": {
-          "en": "%"
-          },
-          "default": 0
-          },
-          {
-          "type": "header",
-          "content": {
-          "en": "Text"
-          }
           },
           {
           
