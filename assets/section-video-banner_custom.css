@@ -27,9 +27,7 @@
 .videoBoxInfo_padding {
   padding: 0 7rem;
 }
-.imageBoxInfo_padding {
-  padding: 0 7rem;
-}
+
 /* .swiper-pagination {
   position: relative !important;
   text-align: center;
@@ -250,20 +248,6 @@
   position: relative;
 }
    
-.videoBackground .imageBox {
-  display: block;
-  align-items: center;
-  justify-content: flex-end;
-  flex-direction: column;
-  padding: 0px 20px 80px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  min-height: calc(100vh - 165px);
-  height: auto;
-}
-   
 .videoBackground .videoBoxInfo, .videoBackground .imageBoxInfo {
   align-items: center;
   position: relative;
@@ -328,8 +312,36 @@
   max-width: 500px;
   margin: 0 auto;
 }
+
+.videoBackground .imageBox {
+  display: block;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  padding: 0px 7rem 80px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: calc(100vh - 165px);
+  height: auto;
+}
    
 @media screen and (max-width: 767px) {
+
+  .videoBackground .imageBox {
+    display: block;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding: 0px 20px 80px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    min-height: calc(100vh - 165px);
+    height: auto;
+  }
    
   .main-content .videoBackground {
       margin-top: -35px;
@@ -352,7 +364,7 @@
       z-index: -2;
   }
    
-  .videoBackground .videoBoxInfo .imageBoxInfo {
+  .videoBackground .videoBoxInfo {
       padding: 2px 20px;
       /* top: 33%; */
       top: 0;
