@@ -40,7 +40,7 @@
  
 
   <!-- --------------------------------------------- START INFO DIV --------------------------------------------- -->
-  <div class="page-width videoBoxInfo {{ block.settings.desktop_content_position }} ">
+  <div class="videoBoxInfo_padding videoBoxInfo {{ block.settings.desktop_content_position }} ">
   {% comment %} <div class="videoBoxInfo"> {% endcomment %}
    
   {% if block.settings.title != blank %}
@@ -107,7 +107,7 @@
   <div class="imageBox" style="background-color: {{ block.settings.color_bg }}; {%- if block.settings.image_bg != blank -%}background-image: url('{{ block.settings.image_bg | img_url: 'master' }}');{%- endif -%}">
    
    
-  <div class="imageBoxInfo {{ block.settings.desktop_content_position }} ">
+  <div class="page-width imageBoxInfo {{ block.settings.desktop_content_position }} ">
    
   {% if block.settings.title != blank %}
 
@@ -168,8 +168,8 @@
   <div class="swiper-pagination"></div>
 
   <!-- If we need navigation buttons -->
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"> </div>
+  <div class="swiper-button-next"> </div>
 
   <!-- If we need scrollbar -->
   {% comment %} <div class="swiper-scrollbar"></div> {% endcomment %}
