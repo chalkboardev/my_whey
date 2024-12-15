@@ -39,19 +39,15 @@
    
   </video>
 
-  <h1 class="videoBoxInfoTitle" style="color: {{ block.settings.color_text }}">
-   
-  {{ block.settings.title | escape }}
-   
-  </h1>
-  
+ 
+
   <!-- --------------------------------------------- START INFO DIV --------------------------------------------- -->
-  <div class="banner__content banner__content--{{ block.settings.desktop_content_position }} page-width videoBoxInfo">
+  <div class="page-width videoBoxInfo">
   {% comment %} <div class="videoBoxInfo"> {% endcomment %}
    
   {% if block.settings.title != blank %}
-   
-  <h1 class="videoBoxInfoTitle" style="color: {{ block.settings.color_text }}">
+    
+  <h1 class="videoBoxInfoTitle {{ block.settings.desktop_content_position }} " style="color: {{ block.settings.color_text }}">
    
   {{ block.settings.title | escape }}
    
@@ -356,6 +352,10 @@ document.addEventListener('DOMContentLoaded',  function() {
   }
    
   .videoBackground .videoBoxInfo, .videoBackground .imageBoxInfo {
+    align-items: center;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
   flex-direction: column;
   z-index: 2;
   margin: auto;
@@ -507,7 +507,11 @@ document.addEventListener('DOMContentLoaded',  function() {
   }
    
       }
-   
+
+
+   .header-top-left {
+    position: relative;
+   }
   </style>
    
    
@@ -568,7 +572,7 @@ document.addEventListener('DOMContentLoaded',  function() {
       "id": "desktop_content_position",
       "options": [
         {
-          "value": "top-left",
+          "value": "header-top-left",
           "label": "t:sections.image-banner.settings.desktop_content_position.options__1.label"
         },
         {
