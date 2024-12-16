@@ -12,14 +12,14 @@
 
 .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
   content: 'next';
-  font-size: 20px !important;
+  font-size: 14px !important;
   font-weight: 800;
   color: #fff;
 }
 
 .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
   content: 'prev';
-  font-size: 20px !important;
+  font-size: 14px !important;
   font-weight: 800;
   color: #fff;
 }
@@ -299,7 +299,7 @@
   vertical-align: middle;
   cursor: pointer;
   border: 1px solid transparent;
-  border-radius: 2px;
+  border-radius: 30px;
   padding: 10px 30px;
   font-style: normal;
   font-weight: normal;
@@ -346,7 +346,7 @@
     
   .videoBackground .fullscreen-video-wrap {
       position: relative;
-      min-height: 100vh;
+      /* min-height: 100vh; */
       z-index: -2;
   }
    
@@ -357,6 +357,7 @@
       position: absolute;
       /* width: 100%; */
       width: 89vw;
+      height: 75vh;
   }
    
   .videoBoxInfoTitle, .videoBackground .videoBoxInfoBtn {
@@ -412,9 +413,7 @@
 // END CUSTOM SLIDESHOW (custom-slideshow.liquid)
 */
 
-/*
-// START Normal MOBILE devices (portrait phones)
-*/
+
 
 .videoBackground .videoBoxInfoTitle, .videoBackground .imageBoxInfoTitle {
   font-size: 5rem !important;
@@ -436,7 +435,32 @@
   height: auto;
 }
 
+.swiper-button-next, .swiper-button-prev {
+  position: absolute;
+  filter: invert(1);
+  /* padding: 10px; */
+  border-radius: 50%;
+  background: #000000;
+  top: var(--swiper-navigation-top-offset, 80%) !important;
+  width: var(--swiper-navigation-size) !important;
+  height: var(--swiper-navigation-size);
+  margin-top: calc(0px -(var(--swiper-navigation-size) / 2));
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--swiper-navigation-color, var(--swiper-theme-color));
+}
+
+/*
+// START Normal MOBILE devices (portrait phones)
+*/
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+
+  .swiper-button-next, .swiper-button-prev {
+    display: none !important;
+  }
 
   .videoBackground .imageBox {
     display: block;
