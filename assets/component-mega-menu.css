@@ -68,11 +68,27 @@
   padding-right: 2.4rem;
 }
 
-.mega-menu__link:hover,
+.mega-menu__list a {
+  /* transition: text-decoration var(--duration-short) ease; */
+  background: linear-gradient(currentColor 0 0) 
+  bottom left/
+  var(--underline-width, 0%) 0.1em
+  no-repeat;
+text-decoration: none;
+transition: background-size 0.5s;
+}
+
+.mega-menu__list:hover a {
+  /* text-decoration: underline;
+  text-underline-offset: 0.3rem; */
+  --underline-width: calc(100vw - 100%);
+}
+
+/* .mega-menu__link:hover,
 .mega-menu__link--active {
   color: rgb(var(--color-foreground));
   text-decoration: underline;
-}
+} */
 
 .mega-menu__link--active:hover {
   text-decoration-thickness: 0.2rem;

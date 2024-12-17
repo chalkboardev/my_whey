@@ -2813,16 +2813,25 @@ details[open] > .header__submenu {
 }
 
 .header__menu-item span {
-  transition: text-decoration var(--duration-short) ease;
+  /* transition: text-decoration var(--duration-short) ease; */
+  background: linear-gradient(currentColor 0 0) 
+  bottom left/
+  var(--underline-width, 0%) 0.1em
+  no-repeat;
+text-decoration: none;
+transition: background-size 0.5s;
 }
 
+
 .header__menu-item:hover span {
-  text-decoration: underline;
-  text-underline-offset: 0.3rem;
+  /* text-decoration: underline;
+  text-underline-offset: 0.3rem; */
+  --underline-width: 100%;
 }
 
 details[open] > .header__menu-item {
-  text-decoration: underline;
+  /* text-decoration: underline; */
+  text-decoration: none;
 }
 
 details[open]:hover > .header__menu-item {
