@@ -30,10 +30,15 @@
                 class="mega-menu__content color-{{ section.settings.menu_color_scheme }} gradient motion-reduce global-settings-popup"
                 tabindex="-1"
               >
+         
                 <ul
                   class="mega-menu__list page-width{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}"
                   role="list"
-                >
+                >    
+                    <h2>
+                    {{- link.title | escape -}}
+                    </h2> 
+                    
                   {%- for childlink in link.links -%}
                     <li>
                       <a

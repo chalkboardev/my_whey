@@ -68,17 +68,17 @@
   padding-right: 2.4rem;
 }
 
-.mega-menu__list a {
+.mega-menu__link {
   /* transition: text-decoration var(--duration-short) ease; */
   background: linear-gradient(currentColor 0 0) 
   bottom left/
-  var(--underline-width, 0%) 0.1em
+  var(--underline-width, 0%) 0.05em
   no-repeat;
 text-decoration: none;
 transition: background-size 0.5s;
 }
 
-.mega-menu__list:hover a {
+.mega-menu__link:hover {
   /* text-decoration: underline;
   text-underline-offset: 0.3rem; */
   --underline-width: calc(100vw - 100%);
