@@ -195,7 +195,7 @@
 */
 .swiper {
   width: 100%;
-  height: 84vh;
+  height: 88vh;
 }
 .main-content .videoBackground {
   margin-top: -55px;
@@ -451,6 +451,13 @@
   align-items: center;
   justify-content: center;
   color: var(--swiper-navigation-color, var(--swiper-theme-color));
+}
+
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+  bottom: var(--swiper-pagination-bottom, 9%) !important;
+  top: var(--swiper-pagination-top, auto);
+  left: 0;
+  width: 100%;
 }
 
 /*
