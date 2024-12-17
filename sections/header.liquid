@@ -46,7 +46,10 @@
     display: inline-flex;
     flex-wrap: wrap;
   }
-
+  .mega-menu__content {
+    z-index: 9;
+    border-top: 1px solid #99999945 !important;
+  }
   summary.list-menu__item {
     padding-right: 2.7rem;
   }
@@ -54,7 +57,8 @@
   .list-menu__item {
     display: flex;
     align-items: center;
-    line-height: calc(1 + 0.3 / var(--font-body-scale));
+    /* line-height: calc(1 + 0.3 / var(--font-body-scale)); */
+    line-height:50px;
   }
 
   .list-menu__item--link {
@@ -90,8 +94,10 @@
 
   @media screen and (min-width: 990px) {
     .header {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
+      /* padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px; */
+      padding-top: 0;
+      padding-bottom: 0;
     }
   }
 {%- endstyle -%}
@@ -644,18 +650,5 @@
 {% endschema %}
 
   <script>
-  let items = document.querySelector(".header__inline-menu").querySelectorAll("details");
-  console.log(items)
-  items.forEach(item => {
-    item.addEventListener("mouseover", () => {
-      item.setAttribute("open", true);
-      item.querySelector("ul").addEventListener("mouseleave", () => {
-        item.removeAttribute("open");
-      });
-    item.addEventListener("mouseleave", () => {
-      item.removeAttribute("open");
-    });
-  });
-  
-  });
+
 </script>
