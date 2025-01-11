@@ -436,20 +436,43 @@ table:not([class]) th {
   border: 0.1rem solid rgba(var(--color-foreground), 0.2);
 }
 
-
+.shopify-section-header-sticky .mega-menu__content {
+  max-height: unset !important;
+}
 /* ---------- ONLY MOBILE ONLY START ---------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .menu-drawer__navigation {
     padding: 1rem 0 !important;
 }
+.shopify-section-header-sticky .mega-menu__content {
+  max-height: 100vh !important;
+}
 
 }
 /* ---------- ONLY MOBILE ONLY END ---------- */
+.home > .red ~ .red {
+  border: none;
+}
+
+.mega-menu__link--level-2:nth-of-type(1) {
+  font-size: 32px !important;
+}
+.mega-menu__link--level-2:nth-of-type(2) {
+  font-size: 22px !important;
+}
+.mega-menu__link--level-2:nth-of-type(3) {
+  font-size: 22px !important;
+}
+
+/* .mega-menu__list > .mega-menu__link  ~ .mega-menu__link {
+  font-size: 32px !important;
+} */
+
 
 /* --------- ONLY MEDIUM SIZE SCREENS START --------- */ 
 @media screen and (min-width: 990px) {
   .mega-menu[open] .mega-menu__content {
-    padding: 3rem 4rem 1rem 5rem !important;
+    padding: 3rem 4rem 3rem 5rem !important;
 }
 }
 /* --------- ONLY MEDIUM SIZE SCREENS  END --------- */ 
