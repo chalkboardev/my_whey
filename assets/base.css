@@ -142,13 +142,12 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
   }
 }
 
-@media screen and (min-width: 1440px) {
 
+@media screen and (min-width: 1440px) {
   .header:not(.drawer-menu).page-width {
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
- 
 }
 
 .isolate {
@@ -436,6 +435,43 @@ table:not([class]) th {
   padding: 1em;
   border: 0.1rem solid rgba(var(--color-foreground), 0.2);
 }
+
+
+/* ---------- ONLY MOBILE ONLY START ---------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .menu-drawer__navigation {
+    padding: 1rem 0 !important;
+}
+
+}
+/* ---------- ONLY MOBILE ONLY END ---------- */
+
+/* --------- ONLY MEDIUM SIZE SCREENS START --------- */ 
+@media screen and (min-width: 990px) {
+  .mega-menu[open] .mega-menu__content {
+    padding: 3rem 4rem 1rem 5rem !important;
+}
+}
+/* --------- ONLY MEDIUM SIZE SCREENS  END --------- */ 
+
+/* --------- ONLY DESKTOP ONLY START --------- */ 
+@media screen and (max-width: 749px) {
+
+}
+/* --------- ONLY DESKTOP ONLY END --------- */ 
+
+/* ---------- EXTRA LARGE SCREEN 1440px START ---------- */
+@media screen and (min-width: 1440px) {
+  body:has(.section-header .header:not(.drawer-menu)) .utility-bar .page-width {
+    padding-left: 3.8rem !important;
+    padding-right: 3.8rem !important;
+  }
+  .header:not(.drawer-menu).page-width {
+    padding-left: 3.9rem;
+    padding-right: 3.9rem;
+  }
+}
+/* ---------- EXTRA LARGE SCREEN 1440px END ---------- */
 
 @media screen and (max-width: 749px) {
   .small-hide {
@@ -2785,7 +2821,7 @@ details[open] > .header__submenu {
 }
 
 .mega-menu[open] .mega-menu__content {
-  padding: 4rem;
+  padding: 4rem 4rem 4rem 5rem; 
 }
 
 @media screen and (min-width: 990px) {
