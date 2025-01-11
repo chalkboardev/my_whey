@@ -1,6 +1,5 @@
 .mega-menu {
   position: static;
-  height: 100%;
 }
 
 .mega-menu__content {
@@ -69,17 +68,14 @@
   padding-right: 2.4rem;
 }
 
-.mega-menu__link {
+.menu_link_a {
   /* transition: text-decoration var(--duration-short) ease; */
-  background: linear-gradient(currentColor 0 0) 
-  bottom left/
-  var(--underline-width, 0%) 0.05em
-  no-repeat;
-text-decoration: none;
-transition: background-size 0.5s;
+  background: linear-gradient(currentColor 0 0) bottom left/ var(--underline-width, 0%) 0.05em no-repeat;
+  text-decoration: none;
+  transition: background-size 1.5s;
 }
 
-.mega-menu__link:hover {
+.menu_link_a:hover {
   /* text-decoration: underline;
   text-underline-offset: 0.3rem; */
   --underline-width: calc(100vw - 100%);
