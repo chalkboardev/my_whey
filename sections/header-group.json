@@ -45,6 +45,20 @@
     },
     "header": {
       "type": "header",
+      "blocks": {
+        "menu_image_AnNkjf": {
+          "type": "menu-image",
+          "settings": {
+            "link_name": "Shop",
+            "link_image": "shopify://shop_images/menu_img1.jpg",
+            "link_title": "Menu Img",
+            "link_url": "#"
+          }
+        }
+      },
+      "block_order": [
+        "menu_image_AnNkjf"
+      ],
       "settings": {
         "logo_position": "middle-center",
         "menu": "main-menu",
