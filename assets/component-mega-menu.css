@@ -1,5 +1,6 @@
 .mega-menu {
   position: static;
+  height: 100%;
 }
 
 .mega-menu__content {
