@@ -52,7 +52,7 @@
             "link_name": "Shop",
             "link_image": "shopify://shop_images/menu_img1.jpg",
             "link_title": "Menu Img",
-            "link_url": "#"
+            "link_url": "shopify://collections/all"
           }
         }
       },
