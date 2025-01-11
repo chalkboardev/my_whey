@@ -454,19 +454,10 @@ table:not([class]) th {
   border: none;
 }
 
-.mega-menu__link--level-2:nth-of-type(1) {
-  font-size: 32px !important;
-}
-.mega-menu__link--level-2:nth-of-type(2) {
-  font-size: 22px !important;
-}
-.mega-menu__link--level-2:nth-of-type(3) {
-  font-size: 22px !important;
+.mega-menu__list li:first-child > .mega-menu__link--level-2 {
+  font-size: 26px !important;
 }
 
-/* .mega-menu__list > .mega-menu__link  ~ .mega-menu__link {
-  font-size: 32px !important;
-} */
 
 
 /* --------- ONLY MEDIUM SIZE SCREENS START --------- */ 
