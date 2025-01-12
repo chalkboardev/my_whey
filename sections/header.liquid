@@ -253,37 +253,7 @@ transform: scale(1.03);
                           {{- 'icon-caret.svg' | inline_asset_content -}}
                         </span>
                       </summary>
-                      <script>
-                        function change_it(summary) {
-                          console.log('hi...');
-                          // $(summary).children('span').eq(1).attr("id")
-                          var the_svg_span = $(summary).children('span').eq(1).children('svg').eq(0);
-                          //console.log();
-
-                          if($(the_svg_span).hasClass('flip_svg')){
-                            $(the_svg_span).removeClass('flip_svg');
-                            //$(the_svg_span).hide();
-                            // $("#svg_is").css('transform','rotate(180deg)');
-                          } else {
-                            $(the_svg_span).addClass('flip_svg');
-                           // $(the_svg_span).show();
-                          }
-                          
-                          // if( $(the_svg_span).css('transform') == 'rotate(180deg)') {
-                          //   alert('already rotated...');
-                          //   //$(the_svg_span).css('transform','rotate(90deg)');
-                          // } else {
-                          //   alert('needs rotating...');
-                          //   $(the_svg_span).css('transform','rotate(180deg)');
-                          // }
-                          // if($(the_svg_span).is(':visible')){
-                          //   //$(the_svg_span).hide();
-                          //   // $("#svg_is").css('transform','rotate(180deg)');
-                          // } else {
-                          //  // $(the_svg_span).show();
-                          // }
-                        }
-                      </script>
+                     
                       <div
                         id="link-{{ link.handle | escape }}"
                         class="menu-drawer__submenu has-submenu gradient motion-reduce"
@@ -462,6 +432,43 @@ transform: scale(1.03);
               {%- endfor -%}
             </ul>
           </nav>
+
+          <script>
+            function change_it(summary) {
+              console.log('hi...');
+              // $(summary).children('span').eq(1).attr("id")
+              var the_svg_span = $(summary).children('span').eq(1).children('svg').eq(0);
+              //console.log();
+
+              if($(the_svg_span).hasClass('flip_svg')){
+                $(the_svg_span).removeClass('flip_svg');
+                //$(the_svg_span).hide();
+                // $("#svg_is").css('transform','rotate(180deg)');
+              } else {
+                $(the_svg_span).addClass('flip_svg');
+               // $(the_svg_span).show();
+              }
+              
+              // if( $(the_svg_span).css('transform') == 'rotate(180deg)') {
+              //   alert('already rotated...');
+              //   //$(the_svg_span).css('transform','rotate(90deg)');
+              // } else {
+              //   alert('needs rotating...');
+              //   $(the_svg_span).css('transform','rotate(180deg)');
+              // }
+              // if($(the_svg_span).is(':visible')){
+              //   //$(the_svg_span).hide();
+              //   // $("#svg_is").css('transform','rotate(180deg)');
+              // } else {
+              //  // $(the_svg_span).show();
+              // }
+            }
+
+            $(".header__icon--summary").click(function (){
+              $('.icon-caret').removeClass('flip_svg');
+            });
+          </script>
+
           <div class="menu-drawer__utility-links">
             {%- if shop.customer_accounts_enabled -%}
               <a
@@ -837,7 +844,7 @@ transform: scale(1.03);
       {% render 'header-search', input_id: 'Search-In-Modal' %}
 
       {%- if shop.customer_accounts_enabled -%}
-        <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
+        <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} {% endif %}">
           {%- if section.settings.enable_customer_avatar -%}
             <account-icon>
               {%- if customer and customer.has_avatar? -%}

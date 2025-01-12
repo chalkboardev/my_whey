@@ -453,6 +453,7 @@ table:not([class]) th {
   font-weight: 600;
   letter-spacing: 2px;
   background: unset !important;
+  -webkit-tap-highlight-color: transparent !important;
 }
 
 .menu-drawer__menu .list-menu a {
