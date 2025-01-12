@@ -448,14 +448,36 @@ table:not([class]) th {
   max-height: 100vh !important;
 }
 
-.menu-drawer__menu-item {
+.menu-drawer__menu-item  {
   font-size: 22px !important;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: unset !important;
+}
+
+.menu-drawer__menu .list-menu a {
+  font-size: 16px !important;
+  font-weight: unset !important;
+  letter-spacing: unset !important;
+}
+
+.shop_submenu {
+  font-size: 18px !important;
+  font-weight: 600;
+}
+
+.drawer__menu-item:hover {
+  background: unset !important;
+}
+
+.flip_svg {
+  transform: rotate(180deg) !important;
 }
 
 }
 /* ---------- ONLY MOBILE ONLY END ---------- */
 
-/* .js .menu-drawer__navigation .submenu-open {
+.js .menu-drawer__navigation .submenu-open {
   visibility: visible !important;
 }
 
@@ -467,7 +489,7 @@ table:not([class]) th {
 
 body .menu-drawer__close-button {
   display: none;
-} */
+}
 
 
 .mega-menu__link--level-2 {

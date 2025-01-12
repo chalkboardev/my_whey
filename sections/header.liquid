@@ -68,6 +68,7 @@
     align-items: center;
     line-height: calc(1 + 0.3 / var(--font-body-scale));
     height: 100%;
+    letter-spacing: 2px;
   }
 
   .list-menu__item--link {
@@ -240,7 +241,7 @@ transform: scale(1.03);
                          {%- endfor -%}
                          {%- if link.links != blank or imagesPresent -%}
                     <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
-                      <summary
+                      <summary onclick="change_it(this)"
                         id="HeaderDrawer-{{ link.handle }}"
                         class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}"
                       >
@@ -248,10 +249,41 @@ transform: scale(1.03);
                         <span class="svg-wrapper">
                           {{- 'icon-arrow.svg' | inline_asset_content -}}
                         </span>
-                        <span class="svg-wrapper">
+                        <span id="svg_is" class="svg-wrapper">
                           {{- 'icon-caret.svg' | inline_asset_content -}}
                         </span>
                       </summary>
+                      <script>
+                        function change_it(summary) {
+                          console.log('hi...');
+                          // $(summary).children('span').eq(1).attr("id")
+                          var the_svg_span = $(summary).children('span').eq(1).children('svg').eq(0);
+                          //console.log();
+
+                          if($(the_svg_span).hasClass('flip_svg')){
+                            $(the_svg_span).removeClass('flip_svg');
+                            //$(the_svg_span).hide();
+                            // $("#svg_is").css('transform','rotate(180deg)');
+                          } else {
+                            $(the_svg_span).addClass('flip_svg');
+                           // $(the_svg_span).show();
+                          }
+                          
+                          // if( $(the_svg_span).css('transform') == 'rotate(180deg)') {
+                          //   alert('already rotated...');
+                          //   //$(the_svg_span).css('transform','rotate(90deg)');
+                          // } else {
+                          //   alert('needs rotating...');
+                          //   $(the_svg_span).css('transform','rotate(180deg)');
+                          // }
+                          // if($(the_svg_span).is(':visible')){
+                          //   //$(the_svg_span).hide();
+                          //   // $("#svg_is").css('transform','rotate(180deg)');
+                          // } else {
+                          //  // $(the_svg_span).show();
+                          // }
+                        }
+                      </script>
                       <div
                         id="link-{{ link.handle | escape }}"
                         class="menu-drawer__submenu has-submenu gradient motion-reduce"
@@ -279,10 +311,56 @@ transform: scale(1.03);
                                     {{ childlink.title | escape }}
                                   </a>
                                 {%- else -%}
+
+                    {%- if childlink.handle == "shop" -%}
+                      {% comment %} shop menu! {% endcomment %}
+                                <ul
+                                  class="menu-drawer__menu list-menu"
+                                  role="list"
+                                  tabindex="-1"
+                                >
+                                  {%- for grandchildlink in childlink.links -%}
+                                    <li>
+                                      <a
+                                        id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
+                                        href="{{ grandchildlink.url }}"
+                                        class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"
+                                        {% if grandchildlink.current %}
+                                          aria-current="page"
+                                        {% endif %}
+                                      >
+                                        {{ grandchildlink.title | escape }}
+                                      </a>
+                                    </li>
+                                  {%- endfor -%}
+                                </ul>
+                    {%   elsif childlink.handle == "learn" %}
+                                <ul
+                                  class="menu-drawer__menu list-menu"
+                                  role="list"
+                                  tabindex="-1"
+                                >
+                                  {%- for grandchildlink in childlink.links -%}
+                                    <li>
+                                      <a
+                                        id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
+                                        href="{{ grandchildlink.url }}"
+                                        class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"
+                                        {% if grandchildlink.current %}
+                                          aria-current="page"
+                                        {% endif %}
+                                      >
+                                        {{ grandchildlink.title | escape }}
+                                      </a>
+                                    </li>
+                                  {%- endfor -%}
+                                </ul>
+                    {%- else -%}
+                                  {% comment %} not main shop menu! {% endcomment %}
                                   <details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}">
-                                    <summary
+                                    <summary onclick="change_it(this)"
                                       id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}"
-                                      class="menu-drawer__menu-item link link--text list-menu__item focus-inset"
+                                      class="shop_submenu menu-drawer__menu-item link link--text list-menu__item focus-inset"
                                     >
                                       {{ childlink.title | escape }}
                                       <span class="svg-wrapper">
@@ -327,6 +405,9 @@ transform: scale(1.03);
                                       </ul>
                                     </div>
                                   </details>
+                                {%- endif -%}
+
+                                  
                                 {%- endif -%}
                               </li>
                             {%- endfor -%}

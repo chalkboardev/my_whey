@@ -124,7 +124,13 @@ details[open].menu-opening > .menu-drawer__submenu {
 .js .menu-drawer__menu-item .icon-caret {
   display: none;
 }
+.js .menu-drawer__menu-item .icon.icon-caret {
+  display: block;
+}
 
+.js .menu-drawer__menu-item .icon.icon-arrow {
+  display: none;
+}
 .menu-drawer__menu-item > .svg-wrapper {
   width: 15px;
   position: absolute;
