@@ -448,10 +448,30 @@ table:not([class]) th {
   max-height: 100vh !important;
 }
 
+.menu-drawer__menu-item {
+  font-size: 22px !important;
+}
+
 }
 /* ---------- ONLY MOBILE ONLY END ---------- */
-.home > .red ~ .red {
-  border: none;
+
+/* .js .menu-drawer__navigation .submenu-open {
+  visibility: visible !important;
+}
+
+.js .menu-drawer__submenu {
+  position: static !important;
+  visibility: visible !important;
+  transform: translate(0) !important;
+}
+
+body .menu-drawer__close-button {
+  display: none;
+} */
+
+
+.mega-menu__link--level-2 {
+  font-size: 20px !important;
 }
 
 .mega-menu__list li:first-child > .mega-menu__link--level-2 {
@@ -463,7 +483,7 @@ table:not([class]) th {
 /* --------- ONLY MEDIUM SIZE SCREENS START --------- */ 
 @media screen and (min-width: 990px) {
   .mega-menu[open] .mega-menu__content {
-    padding: 3rem 4rem 3rem 5rem !important;
+    padding: 2rem 4rem 3rem 5rem !important;
 }
 }
 /* --------- ONLY MEDIUM SIZE SCREENS  END --------- */ 
@@ -551,7 +571,7 @@ h6:empty {
   text-underline-offset: 0.3rem;
   color: rgb(var(--color-link));
   background-color: transparent;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-family: inherit;
 }
 
@@ -2832,6 +2852,7 @@ details[open] > .header__submenu {
 
 .mega-menu {
   height: 100%;
+  min-height: 80px;
 }
 
 .mega-menu[open] .mega-menu__content {
@@ -2863,6 +2884,7 @@ details[open] > .header__submenu {
 
 .header__menu-item {
   padding: 1.2rem;
+  padding: 0 1.2rem 0 1.2rem;
   text-decoration: none;
   color: rgba(var(--color-foreground), 0.75);
 }

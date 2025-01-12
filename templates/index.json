@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "custom_slideshow_wMQLCP": {
@@ -15,14 +6,14 @@
         "video_7VPAtJ": {
           "type": "video",
           "settings": {
-            "video_link": "https://cdn.shopify.com/videos/c/o/v/a487343da3b24ea5a0666c2edc7e7d82.mp4",
-            "video_image": "shopify://shop_images/oleg-laptev-7jQh3EiS8Bs-unsplash.jpg",
+            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/a487343da3b24ea5a0666c2edc7e7d82.mp4",
+            "video_image": "shopify:\/\/shop_images\/oleg-laptev-7jQh3EiS8Bs-unsplash.jpg",
             "desktop_content_position": "header-middle-left",
             "title": "Have it your way with My-Whey",
-            "text": "<p><strong>Do it your way with </strong>Customised, Curated, Clean <em>Supplements</em> <strong>Made for You</strong></p>",
+            "text": "<p><strong>Do it your way with <\/strong>Customised, Curated, Clean <em>Supplements<\/em> <strong>Made for You<\/strong><\/p>",
             "color_text": "#ffffff",
             "button_label": "Shop Best Sellers",
-            "button_link": "shopify://pages/contact",
+            "button_link": "shopify:\/\/pages\/contact",
             "color_scheme": "scheme-5",
             "color_btn_bg": "#ffffff",
             "color_btn_text": "#ffffff"
@@ -32,14 +23,14 @@
           "type": "image",
           "settings": {
             "color_bg": "#16165b",
-            "image_bg": "shopify://shop_images/header_a.jpg",
+            "image_bg": "shopify:\/\/shop_images\/header_a.jpg",
             "overlay_opacity": 0,
             "desktop_content_position": "header-middle-left",
             "title": "Tailor made",
-            "text": "<p><strong>Elevate your wellness</strong> routine with our specially formulated customised supplements. S<em>tarting now</em>.. </p>",
+            "text": "<p><strong>Elevate your wellness<\/strong> routine with our specially formulated customised supplements. S<em>tarting now<\/em>.. <\/p>",
             "color_text": "#ffffff",
             "button_label": "Shop Best Sellers",
-            "button_link": "shopify://collections/all",
+            "button_link": "shopify:\/\/collections\/all",
             "color_scheme": "",
             "color_btn_bg": "#ffffff",
             "color_btn_text": "#ffffff"
@@ -58,14 +49,14 @@
         "heading_ze9dmB": {
           "type": "heading",
           "settings": {
-            "heading": "<strong>Celebrate the Season with Wellness</strong>",
+            "heading": "<strong>Celebrate the Season with Wellness<\/strong>",
             "heading_size": "h1"
           }
         },
         "text_mL9Ma6": {
           "type": "text",
           "settings": {
-            "text": "Curated, Clean Supplements <strong>Made for You</strong>",
+            "text": "Curated, Clean Supplements <strong>Made for You<\/strong>",
             "text_style": "subtitle"
           }
         },
@@ -88,7 +79,7 @@
       ],
       "disabled": true,
       "settings": {
-        "video_url": "https://cdn.shopify.com/videos/c/o/v/a487343da3b24ea5a0666c2edc7e7d82.mp4",
+        "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/a487343da3b24ea5a0666c2edc7e7d82.mp4",
         "desktop_content_position": "middle-left",
         "show_text_box": false,
         "desktop_content_alignment": "left",
@@ -110,7 +101,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
+            "button_link_1": "shopify:\/\/collections\/all",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",

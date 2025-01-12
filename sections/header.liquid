@@ -122,7 +122,7 @@ transform: scale(1.03);
     display: flex;
     padding: 0;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     row-gap: 20px;
 }
 @media (min-width: 768px) {
@@ -232,7 +232,7 @@ transform: scale(1.03);
             <ul class="menu-drawer__menu has-submenu list-menu" role="list">
               {%- for link in section.settings.menu.links -%}
                 <li>
-                                     {%- assign imagesPresent = false -%}
+                        {%- assign imagesPresent = false -%}
                          {%- for block in section.blocks -%}
                               {%- if block.settings.link_name == link.title  -%}
                                   {%- assign imagesPresent = true -%}
