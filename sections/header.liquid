@@ -136,7 +136,7 @@ transform: scale(1.03);
   }
 }
 .mega_menu_img.slide{
-  width:100%;
+    flex: 0 0 260px;
     max-width: 100%;
     margin: 0;
     padding-right: 15px;
@@ -797,20 +797,20 @@ transform: scale(1.03);
                                       enabled: true,
                                       delay: 1,
                                     },
-                                    lazy: {
-                                        enabled: true,
-                                        checkInView: true,
-                                        loadOnTransitionStart: true,
-                                        loadPrevNext: true,
-                                        loadPrevNextAmount: 1
-                                    },
+                                    // lazy: {
+                                    //     enabled: true,
+                                    //     checkInView: true,
+                                    //     loadOnTransitionStart: true,
+                                    //     loadPrevNext: true,
+                                    //     loadPrevNextAmount: 1
+                                    // },
                                     loop: false,
-                                    slidesPerView: "1.2"
+                                    slidesPerView: "auto"
                                   });
                                 }); 
                                 document.addEventListener("shopify:section:load", function(){
                                   var swiper = new Swiper(".menu_swiper", {
-                                    slidesPerView: "1.2"
+                                    slidesPerView: "auto"
                                   });
                                 }); 
                               </script>
