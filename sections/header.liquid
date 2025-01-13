@@ -130,13 +130,13 @@ transform: scale(1.03);
   .mega-menu__list > li{
       list-style: none;
       display: block;
-      flex: 0 0 20%;
-      max-width: 25%;
+      flex: 0 0 16%;
+      max-width: 16%;
       padding-right: 15px;  
   }
 }
 .mega_menu_img.slide{
-    flex: 0 0 260px;
+  width:100%;
     max-width: 100%;
     margin: 0;
     padding-right: 15px;
@@ -152,10 +152,19 @@ transform: scale(1.03);
   /* margin-top: 15px;  */
   padding: 0 3rem;
 }  
+
 .menu_swiper {
-  width:20% !important;
+  width:36% !important;
   height: 100% !important;
-} 
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    display: block;
+}
 .swiper .mega-menu__link .title{
   text-align: start;
 }
@@ -761,11 +770,11 @@ transform: scale(1.03);
                               {%- endfor -%} {% endcomment %}
 
 
-                              <div class="menu_swiper swiper">
+                              <div class="menu_swiper">
                                 <div class="swiper-wrapper">
                                 {%- for block in section.blocks -%}
                                 {%- if link.title == block.settings.link_name -%}
-                                  <li class="mega_menu_img slide swiper-slide">
+                                  <li data-swiper-autoplay="3500" class="mega_menu_img slide swiper-slide">
                                     <a class="mega-menu__link" href="{{ block.settings.link_url}}">
                                       <div>
                                       {{ block.settings.link_image | image_url: width: 500  | image_tag  }} 
@@ -781,27 +790,27 @@ transform: scale(1.03);
                             {%- if section.blocks.size  >= 2 -%}
                               <script>
                                 document.addEventListener("DOMContentLoaded", function(){
-                                  var swiper = new Swiper(".swiper", {
+                                  var swiper = new Swiper(".menu_swiper", {
                                     spaceBetween: 0,
-                                    speed: 5000,
+                                    // speed: 5000,
                                     autoplay: {
                                       enabled: true,
                                       delay: 1,
                                     },
-                                    // lazy: {
-                                    //     enabled: true,
-                                    //     checkInView: true,
-                                    //     loadOnTransitionStart: true,
-                                    //     loadPrevNext: true,
-                                    //     loadPrevNextAmount: 1
-                                    // },
-                                    loop: true,
-                                    slidesPerView: "auto"
+                                    lazy: {
+                                        enabled: true,
+                                        checkInView: true,
+                                        loadOnTransitionStart: true,
+                                        loadPrevNext: true,
+                                        loadPrevNextAmount: 1
+                                    },
+                                    loop: false,
+                                    slidesPerView: "1.2"
                                   });
                                 }); 
                                 document.addEventListener("shopify:section:load", function(){
-                                  var swiper = new Swiper(".swiper", {
-                                    slidesPerView: "auto"
+                                  var swiper = new Swiper(".menu_swiper", {
+                                    slidesPerView: "1.2"
                                   });
                                 }); 
                               </script>
