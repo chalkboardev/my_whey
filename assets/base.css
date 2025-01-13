@@ -439,6 +439,34 @@ table:not([class]) th {
 .shopify-section-header-sticky .mega-menu__content {
   max-height: unset !important;
 }
+
+
+/* ---------- THIS HIDES MEGA MENU HEADING (SUBMENU) ON MENU NAVIGATION AND ALLOWS DROPDOWN STYLE START ---------- */
+.js .menu-drawer__navigation .submenu-open {
+  visibility: visible !important;
+}
+
+.js .menu-drawer__submenu {
+  position: static !important;
+  visibility: visible !important;
+  transform: translate(0) !important;
+}
+
+body .menu-drawer__close-button {
+  display: none;
+}
+/* ---------- THIS HIDES MEGA MENU HEADING (SUBMENU) ON MENU NAVIGATION AND ALLOWS DROPDOWN STYLE END ---------- */
+
+
+.mega-menu__link--level-2 {
+  font-size: 20px !important;
+}
+
+.mega-menu__list li:first-child > .mega-menu__link--level-2 {
+  font-size: 26px !important;
+}
+
+
 /* ---------- ONLY MOBILE ONLY START ---------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .menu-drawer__navigation {
@@ -478,30 +506,6 @@ table:not([class]) th {
 }
 /* ---------- ONLY MOBILE ONLY END ---------- */
 
-.js .menu-drawer__navigation .submenu-open {
-  visibility: visible !important;
-}
-
-.js .menu-drawer__submenu {
-  position: static !important;
-  visibility: visible !important;
-  transform: translate(0) !important;
-}
-
-body .menu-drawer__close-button {
-  display: none;
-}
-
-
-.mega-menu__link--level-2 {
-  font-size: 20px !important;
-}
-
-.mega-menu__list li:first-child > .mega-menu__link--level-2 {
-  font-size: 26px !important;
-}
-
-
 
 /* --------- ONLY MEDIUM SIZE SCREENS START --------- */ 
 @media screen and (min-width: 990px) {
@@ -511,11 +515,13 @@ body .menu-drawer__close-button {
 }
 /* --------- ONLY MEDIUM SIZE SCREENS  END --------- */ 
 
+
 /* --------- ONLY DESKTOP ONLY START --------- */ 
 @media screen and (max-width: 749px) {
 
 }
 /* --------- ONLY DESKTOP ONLY END --------- */ 
+
 
 /* ---------- EXTRA LARGE SCREEN 1440px START ---------- */
 @media screen and (min-width: 1440px) {
