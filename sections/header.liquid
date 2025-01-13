@@ -152,7 +152,10 @@ transform: scale(1.03);
   /* margin-top: 15px;  */
   padding: 0 3rem;
 }  
-
+.menu_swiper {
+  width:20% !important;
+  height: 100% !important;
+} 
 .swiper .mega-menu__link .title{
   text-align: start;
 }
@@ -744,7 +747,7 @@ transform: scale(1.03);
                       {%- endif -%}
                     </li>
                   {%- endfor -%}
-                       {%- for block in section.blocks -%}
+                       {% comment %} {%- for block in section.blocks -%}  
                                 {%- if link.title == block.settings.link_name -%}
                                   <li class="mega_menu_img">
                                     <a class="mega-menu__link" href="{{ block.settings.link_url}}">
@@ -755,7 +758,51 @@ transform: scale(1.03);
                                     </a>
                                   </li> 
                                   {%- endif -%}
-                              {%- endfor -%}
+                              {%- endfor -%} {% endcomment %}
+
+
+                              <div class="menu_swiper swiper">
+                                <div class="swiper-wrapper">
+                                {%- for block in section.blocks -%}
+                                {%- if link.title == block.settings.link_name -%}
+                                  <li class="mega_menu_img slide swiper-slide">
+                                    <a class="mega-menu__link" href="{{ block.settings.link_url}}">
+                                      <div>
+                                      {{ block.settings.link_image | image_url: width: 500  | image_tag  }} 
+                                      </div>
+                                      <div class="title">{{ block.settings.link_title}}</div>
+                                    </a>
+                                  </li> 
+                                  {%- endif -%}
+                                {%- endfor -%}
+                                </div>
+                              {% comment %} <div class="swiper-pagination"></div> {% endcomment %}
+                            </div>
+                            {%- if section.blocks.size  >= 2 -%}
+                              <script>
+                                document.addEventListener("DOMContentLoaded", function(){
+                                  var swiper = new Swiper(".swiper", {
+                                    spaceBetween: 0,
+                                    lazy: {
+                                        enabled: true,
+                                        checkInView: true,
+                                        loadOnTransitionStart: true,
+                                        loadPrevNext: true,
+                                        loadPrevNextAmount: 1
+                                    },
+                                    loop: false,
+                                    slidesPerView: "auto"
+                                  });
+                                }); 
+                                document.addEventListener("shopify:section:load", function(){
+                                  var swiper = new Swiper(".swiper", {
+                                    slidesPerView: "auto"
+                                  });
+                                }); 
+                              </script>
+                            {%- endif -%}
+                              
+
                 </ul>
               </div>
             </details>
