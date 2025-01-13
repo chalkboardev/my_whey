@@ -783,14 +783,19 @@ transform: scale(1.03);
                                 document.addEventListener("DOMContentLoaded", function(){
                                   var swiper = new Swiper(".swiper", {
                                     spaceBetween: 0,
-                                    lazy: {
-                                        enabled: true,
-                                        checkInView: true,
-                                        loadOnTransitionStart: true,
-                                        loadPrevNext: true,
-                                        loadPrevNextAmount: 1
+                                    speed: 5000,
+                                    autoplay: {
+                                      enabled: true,
+                                      delay: 1,
                                     },
-                                    loop: false,
+                                    // lazy: {
+                                    //     enabled: true,
+                                    //     checkInView: true,
+                                    //     loadOnTransitionStart: true,
+                                    //     loadPrevNext: true,
+                                    //     loadPrevNextAmount: 1
+                                    // },
+                                    loop: true,
                                     slidesPerView: "auto"
                                   });
                                 }); 
