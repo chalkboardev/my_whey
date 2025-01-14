@@ -12,11 +12,14 @@
             "title": "Have it your way with My-Whey",
             "text": "<p><strong>Do it your way with <\/strong>Customised, Curated, Clean <em>Supplements<\/em> <strong>Made for You<\/strong><\/p>",
             "color_text": "#ffffff",
-            "button_label": "Shop Best Sellers",
-            "button_link": "shopify:\/\/pages\/contact",
-            "color_scheme": "scheme-5",
-            "color_btn_bg": "#ffffff",
-            "color_btn_text": "#ffffff"
+            "button_video_label_1": "Shop Best Sellers",
+            "button_link_video_1": "shopify:\/\/pages\/contact",
+            "color_scheme_video_btn_1": "scheme-5",
+            "button_video_label_2": "Take Quiz",
+            "button_link_video_2": "shopify:\/\/pages\/contact",
+            "color_scheme_video_btn_2": "scheme-5"
+            // "color_btn_bg": "#ffffff",
+            // "color_btn_text": "#ffffff"
           }
         },
         "image_kpaBih": {
