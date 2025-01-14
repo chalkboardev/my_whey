@@ -440,15 +440,16 @@ table:not([class]) th {
   max-height: unset !important;
 }
 
-.color-scheme-2 {
+.header_buttons .color-scheme-2 {
   border: 2px solid #fff !important;
   background: #ffffff12;
   color: #fff;
 }
 
-.header_buttons {
-  
+.header_buttons .videoBoxInfoBtn {
+margin-right: 6px;
 }
+
 
 
 /* ---------- THIS HIDES MEGA MENU HEADING (SUBMENU) ON MENU NAVIGATION AND ALLOWS DROPDOWN STYLE START ---------- */
