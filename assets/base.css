@@ -440,6 +440,11 @@ table:not([class]) th {
   max-height: unset !important;
 }
 
+.color-scheme-2 {
+  border: 2px solid #fff !important;
+  background: #ffffff12;
+  color: #fff;
+}
 
 /* ---------- THIS HIDES MEGA MENU HEADING (SUBMENU) ON MENU NAVIGATION AND ALLOWS DROPDOWN STYLE START ---------- */
 .js .menu-drawer__navigation .submenu-open {
