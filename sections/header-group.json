@@ -54,10 +54,20 @@
             "link_title": "PRODUCT 1",
             "link_url": "shopify://collections/all"
           }
+        },
+        "menu_image_7zgeGj": {
+          "type": "menu-image",
+          "settings": {
+            "link_name": "SHOP",
+            "link_image": "shopify://shop_images/menu_img1.jpg",
+            "link_title": "PRODUCT 2",
+            "link_url": "shopify://collections/all"
+          }
         }
       },
       "block_order": [
-        "menu_image_iYXLJq"
+        "menu_image_iYXLJq",
+        "menu_image_7zgeGj"
       ],
       "settings": {
         "logo_position": "middle-center",
