@@ -454,8 +454,8 @@
   color: var(--swiper-navigation-color, var(--swiper-theme-color));
 }
 
-.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
-  bottom: var(--swiper-pagination-bottom, 9%) !important;
+.videoBackground .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+  bottom: var(--swiper-pagination-bottom, 9%);
   top: var(--swiper-pagination-top, auto);
   left: 0;
   width: 100%;
@@ -466,8 +466,8 @@
 */
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
 
-  .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
-    bottom: var(--swiper-pagination-bottom, 15%) !important;
+  .videoBackground .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: var(--swiper-pagination-bottom, 15%);
     top: var(--swiper-pagination-top, auto);
     left: 0;
     width: 100%;

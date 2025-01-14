@@ -446,9 +446,26 @@ table:not([class]) th {
   color: #fff;
 }
 
-.header_buttons .videoBoxInfoBtn {
-margin-right: 6px;
+.header_buttons .color-scheme-5 {
+  border: 2px solid #ecff7a !important;
 }
+
+.header_buttons .videoBoxInfoBtn {
+  margin-right: 6px;
+  letter-spacing: 2px !important;
+}
+.header_buttons .videoBoxInfoBtn:hover {
+border: 2px solid #ecff7a !important;
+background-color: #ffffff12;
+background: #ffffff12;
+color: #ecff7a !important;
+}
+/* .header_buttons .color-scheme-2:hover {
+  border: 2px solid #ecff7a !important;
+  background-color: #ffffff12;
+  background: #ffffff12;
+  color: #ecff7a !important;
+  } */
 
 
 
@@ -471,6 +488,8 @@ body .menu-drawer__close-button {
 
 .mega-menu__link--level-2 {
   font-size: 20px !important;
+  letter-spacing: 2px !important;
+
 }
 
 .mega-menu__list li:first-child > .mega-menu__link--level-2 {
@@ -611,8 +630,16 @@ h6:empty {
   text-underline-offset: 0.3rem;
   color: rgb(var(--color-link));
   background-color: transparent;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-family: inherit;
+}
+
+.menu_link_a {
+  font-size: 1.6rem !important;
+}
+
+.header .header__menu-item  {
+  font-family: sans-serif !important;
 }
 
 .link--text {

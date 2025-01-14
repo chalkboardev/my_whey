@@ -155,11 +155,11 @@
    
    
    
-  {% if block.settings.button_link != blank and block.settings.button_label != blank %}
+  {% if block.settings.img_button_1_link != blank and block.settings.img_button_1_label != blank %}
    
-  <a href="{{ block.settings.button_link }}" class="imageBoxInfoBtn color-{{ block.settings.color_scheme }}">
+  <a href="{{ block.settings.img_button_1_link }}" class="imageBoxInfoBtn color-{{ block.settings.img_button_1_color_scheme }}">
    
-  {{ block.settings.button_label | escape }}
+  {{ block.settings.img_button_1_label | escape }}
    
   </a>
    
@@ -534,39 +534,40 @@ document.addEventListener('DOMContentLoaded',  function() {
           },
           {
           "type": "text",
-          "id": "button_label",
+          "id": "img_button_1_label",
           "label": {
-          "en": "Button label"
+          "en": "Button 1 label"
           }
           },
           {
           "type": "url",
-          "id": "button_link",
+          "id": "img_button_1_link",
           "label": {
-          "en": "Button link"
+          "en": "Button 1 link"
           }
           },
           {
             "type": "color_scheme",
-            "id": "color_scheme",
-            "label": "t:sections.all.colors.label",
+            "id": "img_button_1_color_scheme",
+            // "label": "t:sections.all.colors.label",
+            "label": "Button 1 Color Scheme",
             "default": "scheme-5"
           },
           {
-          "type": "color",
-          "id": "color_btn_bg",
-          "label": {
-          "en": "Background button color"
-          },
-          "default": "#ffffff"
-          },
-          {
-          "type": "color",
-          "id": "color_btn_text",
-          "label": {
-          "en": "Button text color"
-          },
-          "default": "#ffffff"
+          // "type": "color",
+          // "id": "color_btn_bg",
+          // "label": {
+          // "en": "Background button color"
+          // },
+          // "default": "#ffffff"
+          // },
+          // {
+          // "type": "color",
+          // "id": "color_btn_text",
+          // "label": {
+          // "en": "Button text color"
+          // },
+          // "default": "#ffffff"
           }
           ]
           }
