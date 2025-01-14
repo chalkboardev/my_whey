@@ -87,6 +87,16 @@
   </a>
    
   {% endif %}
+
+  {% if block.settings.button_link_video_2 != blank and block.settings.button_video_label_2 != blank %} 
+   
+    <a href="{{ block.settings.button_link_video_2 }}" class="videoBoxInfoBtn color-{{ block.settings.color_scheme_video_btn_2 }}">
+     
+    {{ block.settings.button_video_label_2 | escape }}
+     
+    </a>
+     
+    {% endif %}
    
   </div>
    
@@ -363,10 +373,33 @@ document.addEventListener('DOMContentLoaded',  function() {
           },
           {
             "type": "color_scheme",
-            "id": "color_scheme_video_btn_1",
+            "id": "color_scheme_video_btn_2",
             // "label": "t:sections.all.colors.label",
             "label": {
-            "en": "Color Scheme Button 1"
+            "en": "Color Scheme Button 2"
+            },
+            "default": "scheme-5"
+          },
+          {
+          "type": "text",
+          "id": "button_video_label_2",
+          "label": {
+          "en": "Button 2 label"
+          }
+          },
+          {
+          "type": "url",
+          "id": "button_link_video_2",
+          "label": {
+          "en": "Button link 2"
+          }
+          },
+          {
+            "type": "color_scheme",
+            "id": "color_scheme_video_btn_2",
+            // "label": "t:sections.all.colors.label",
+            "label": {
+            "en": "Color Scheme Button 2"
             },
             "default": "scheme-5"
           }
