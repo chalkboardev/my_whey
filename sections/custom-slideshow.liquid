@@ -78,11 +78,11 @@
   {% endif %}
    
    
-  {% if block.settings.button_link != blank and block.settings.button_label != blank %} 
+  {% if block.settings.button_link_video_1 != blank and block.settings.button_video_label_1 != blank %} 
    
-  <a href="{{ block.settings.button_link }}" class="videoBoxInfoBtn color-{{ block.settings.color_scheme }}">
+  <a href="{{ block.settings.button_link_video_1 }}" class="videoBoxInfoBtn color-{{ block.settings.color_scheme }}">
    
-  {{ block.settings.button_label | escape }}
+  {{ block.settings.button_video_label_1 | escape }}
    
   </a>
    
@@ -349,16 +349,16 @@ document.addEventListener('DOMContentLoaded',  function() {
           },
           {
           "type": "text",
-          "id": "button_label",
+          "id": "button_video_label_1",
           "label": {
-          "en": "Button label"
+          "en": "Button 1 label"
           }
           },
           {
           "type": "url",
-          "id": "button_link",
+          "id": "button_link_video_1",
           "label": {
-          "en": "Button link"
+          "en": "Button link 1"
           }
           },
           {
