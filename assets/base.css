@@ -496,6 +496,15 @@ body .menu-drawer__close-button {
   font-size: 26px !important;
 }
 
+.first_submenu {
+margin-top: -10px;
+}
+
+.first_submenu_li {
+  /* font-weight: 500 !important; */
+  font-size: 1.8rem !important;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
@@ -635,7 +644,7 @@ h6:empty {
 }
 
 .menu_link_a {
-  font-size: 1.6rem !important;
+  font-size: 1.6rem;
 }
 
 .header .header__menu-item  {

@@ -70,15 +70,16 @@
 
 .menu_link_a {
   /* transition: text-decoration var(--duration-short) ease; */
-  background: linear-gradient(currentColor 0 0) bottom left/ var(--underline-width, 0%) 0.05em no-repeat;
+  background: linear-gradient(currentColor 0 0) bottom left/ var(--underline-width, 0%) 0.04em no-repeat;
   text-decoration: none;
-  transition: background-size 1.5s;
+  transition: background-size 0.8s;
 }
 
 .menu_link_a:hover {
   /* text-decoration: underline;
   text-underline-offset: 0.3rem; */
   --underline-width: calc(100vw - 100%);
+  transition: background-size 2.5s;
 }
 
 /* .mega-menu__link:hover,
