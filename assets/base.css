@@ -460,6 +460,16 @@ background-color: #ffffff12;
 background: #ffffff12;
 color: #ecff7a !important;
 }
+.header_buttons .imageBoxInfoBtn {
+  margin-right: 6px;
+  letter-spacing: 2px !important;
+}
+.header_buttons .imageBoxInfoBtn:hover {
+border: 2px solid #ecff7a !important;
+background-color: #ffffff12;
+background: #ffffff12;
+color: #ecff7a !important;
+}
 /* .header_buttons .color-scheme-2:hover {
   border: 2px solid #ecff7a !important;
   background-color: #ffffff12;
