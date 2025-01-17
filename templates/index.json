@@ -39,9 +39,12 @@
             "title": "Tailor made",
             "text": "<p><strong>Elevate your wellness</strong> routine with our specially formulated customised supplements. S<em>tarting now</em>.. </p>",
             "color_text": "#ffffff",
-            "button_label": "SHOP BEST SELLERS",
-            "button_link": "#",
-            "color_scheme": "",
+            "img_button_1_label": "SHOP BEST SELLERS",
+            "img_button_1_link": "#",
+            "img_button_1_color_scheme": "",
+            "img_button_2_label": "SHOP BEST SELLERS",
+            "img_button_2_link": "#",
+            "color_scheme_img_btn_2": "",
             "color_btn_bg": "#ffffff",
             "color_btn_text": "#ffffff"
           }
