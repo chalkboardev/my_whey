@@ -26,7 +26,7 @@
             "color_scheme_video_btn_1": "scheme-5",
             "button_video_label_2": "Take Quiz",
             "button_link_video_2": "shopify://pages/contact",
-            "color_scheme_video_btn_2": "scheme-2" 
+            "color_scheme_video_btn_2": "scheme-2"
           }
         },
         "image_kpaBih": {
@@ -39,9 +39,11 @@
             "title": "Tailor made",
             "text": "<p><strong>Elevate your wellness</strong> routine with our specially formulated customised supplements. S<em>tarting now</em>.. </p>",
             "color_text": "#ffffff",
-            "img_button_1_label": "Shop Best Sellers", 
-            "img_button_1_link": "shopify://collections/all",
-            "img_button_1_color_scheme": ""
+            "button_label": "SHOP BEST SELLERS",
+            "button_link": "#",
+            "color_scheme": "",
+            "color_btn_bg": "#ffffff",
+            "color_btn_text": "#ffffff"
           }
         }
       },
