@@ -253,7 +253,7 @@ transform: scale(1.03);
   endfor
 -%}
 
-<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}{% if section.settings.remove_announcement_scroll %} remove_announcement_on_scroll{% endif %} ">
+<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}{% if section.settings.keep_announcement_scroll %} keep_announcement_on_scroll{% endif %} ">
   {%- liquid
     assign social_links = false
     assign localization_forms = false
@@ -1134,7 +1134,7 @@ transform: scale(1.03);
     connectedCallback() {
       this.header = document.querySelector('.section-header');
       this.headerIsAlwaysSticky = this.getAttribute('data-sticky-type') === 'always' || this.getAttribute('data-sticky-type') === 'reduce-logo-size';
-      this.announcement_bar_setting = $(this).hasClass('remove_announcement_on_scroll');
+      this.announcement_bar_setting = $(this).hasClass('keep_announcement_on_scroll');
       this.headerBounds = {};
 
       this.setHeaderHeight();
@@ -1367,7 +1367,7 @@ transform: scale(1.03);
     },
     {
       "type": "checkbox",
-      "id": "remove_announcement_scroll",
+      "id": "keep_announcement_scroll",
       "default": true,
       "label": "Remove announcement bar on scroll"
     },
