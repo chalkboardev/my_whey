@@ -84,7 +84,7 @@
         "menu": "main-menu",
         "menu_type_desktop": "mega",
         "sticky_header_type": "always",
-        "keep_announcement_scroll": true,
+        "keep_announcement_scroll": false,
         "show_line_separator": true,
         "color_scheme": "scheme-1",
         "menu_color_scheme": "scheme-1",
