@@ -518,8 +518,48 @@ margin-top: -10px;
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+
+
+details:not([open]) > .header__icon--menu .icon-close {
+  visibility: hidden;
+  opacity: 0;
+  left: 0;
+  transform: scale(0.8);
+  /* transition: all 150ms !important; */
+}
+details[open] > .header__icon--menu .icon-close {
+  right: auto !important;
+  top: -26px;
+  width: 50px;
+  height: 50px;
+  padding: 16px;
+  left: 80%;
+  z-index: 6;
+  /* transition: left 1s !important; */
+}
+.menu-drawer {
+  padding-top: 10px !important;
+  top: -36px !important;
+  height: 100vh !important;
+}
+.menu-drawer__inner-container {
+  position: relative;
+  height: 80% !important;
+}
+.mobile_menu_logo {
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex !important;
+  border-bottom: 1px solid #e1e1e1 !important;
+  padding: 10px 0 2px 0 !important;
+}
+.mobile_menu_logo img {
+  width: 68px !important
+}
   .menu-drawer__navigation {
-    padding: 1rem 0 !important;
+    padding: 10px 0 1rem 0 !important;
 }
 .shopify-section-header-sticky .mega-menu__content {
   max-height: 100vh !important;
@@ -822,7 +862,7 @@ summary {
 
 summary .icon-caret {
   position: absolute;
-  height: 0.6rem;
+  height: 0.8rem;
   right: 1.5rem;
   top: calc(50% - 0.2rem);
 }
@@ -2499,7 +2539,7 @@ input[type='checkbox'] {
 }
 
 .shopify-section-group-header-group {
-  z-index: 4;
+  z-index: 3;
 }
 
 .section-header ~ .shopify-section-group-header-group {
