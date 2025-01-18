@@ -1144,11 +1144,11 @@ transform: scale(1.03);
       if (this.headerIsAlwaysSticky) {
         if (this.announcement_bar_setting) {
           console.log('on...');
-          this.header.classList.add('shopify-section-header-sticky');
+   
         } else {
           console.log('off...');
         }
-      
+        this.header.classList.add('shopify-section-header-sticky');
       };
 
       this.currentScrollTop = 0;
@@ -1368,7 +1368,7 @@ transform: scale(1.03);
     {
       "type": "checkbox",
       "id": "remove_announcement_scroll",
-      "default": true,
+      "default": false,
       "label": "Remove announcement bar on scroll"
     },
     {
