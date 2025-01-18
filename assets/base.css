@@ -515,7 +515,15 @@ margin-top: -10px;
   font-size: 1.8rem !important;
 }
 
-
+.announcement-bar-section {
+  position: sticky !important;
+  top: 0;
+}
+.section-header {
+  position: sticky !important;
+  top: 36px;
+  margin-bottom: 0px;
+}
 /* ---------- ONLY MOBILE ONLY START ---------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
 

@@ -1141,7 +1141,10 @@ transform: scale(1.03);
       window.matchMedia('(max-width: 990px)').addEventListener('change', this.setHeaderHeight.bind(this));
 
       if (this.headerIsAlwaysSticky) {
+      {% if section.settings.keep_announcement_scroll %} 
         this.header.classList.add('shopify-section-header-sticky');
+      {% endif %}
+       // this.header.classList.add('shopify-section-header-sticky');
       };
 
       this.currentScrollTop = 0;
@@ -1357,6 +1360,12 @@ transform: scale(1.03);
       ],
       "default": "on-scroll-up",
       "label": "t:sections.header.settings.sticky_header_type.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "keep_announcement_scroll",
+      "default": true,
+      "label": "Keep announcement bar on scroll"
     },
     {
       "type": "checkbox",
