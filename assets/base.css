@@ -530,10 +530,17 @@ margin-top: -10px;
 }
 /* ---------- ONLY MOBILE ONLY END ---------- */
 
-
+.header__icon .svg-wrapper {
+  width: 30px;
+  height: 30px;
+}
 
 
 @media only screen and (max-width: 749px) {
+  .utility_links .header__icon .svg-wrapper {
+    width: 30px !important;
+    height: 30px !important;
+  }
   details:not([open]) > .header__icon--menu .icon-close {
     visibility: hidden;
     opacity: 0;
@@ -572,14 +579,14 @@ margin-top: -10px;
   }
   .menu-drawer__navigation-container {
     /* height: 100vh !important; */
-    height:calc(100vh - 50vh) !important;
+    height:calc(100vh - 56vh) !important;
   }
   .menu-drawer__utility-links {
     position: sticky !important;
     display: flex;
     flex-direction: row;
     width: 100%;
-    bottom: 50vh;
+    bottom: 56vh;
     height: 300px;
     padding: 1rem 3rem 2rem 3rem !important;
     background: #fff !important;
@@ -605,14 +612,16 @@ margin-top: -10px;
     transform: rotate(270deg);
     width: 1.2rem !important;
     margin-left: 6px;
-    margin-top: 2px;
+    margin-top: 0px;
   }
   .utility_cart_link {
+    height: auto !important;
     width: 100% !important;
     justify-content: flex-start !important;
-    padding: 2rem 2rem 2rem 0 !important;
+    padding: 2rem 2rem 2rem 0px !important;
   }
   .utility_quiz_btn {
+    margin-top: 20px;
     color: #ffffff;
     background-color: #1e534d;
     background: #1e534d;
@@ -640,6 +649,7 @@ margin-top: -10px;
     justify-content: center;
     text-align: center;
   }
+
   .mobile_menu_logo {
     width: 100%;
     flex-direction: column;
@@ -2837,8 +2847,13 @@ input[type='checkbox'] {
 }
 
 .header__icon .svg-wrapper {
-  width: 44px;
-  height: 44px;
+  width: 26px;
+  height: 26px;
+}
+
+.header__icon .svg-wrapper_my {
+  width: 26px;
+  height: 26px;
 }
 
 .header__icon::after {

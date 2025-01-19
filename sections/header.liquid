@@ -612,14 +612,15 @@ transform: scale(1.03);
           </a>
 
           <a
-            href="#" class="utility_cart_link menu-drawer__account link focus-inset h5 medium-hide large-up-hide">
+            href="#" class="utility_cart_link menu-drawer__account header__icon header__icon--cart link focus-inset h5 medium-hide large-up-hide">
+          
           {% if cart == empty %}
-              <span class="svg-wrapper">{{'icon-cart-empty.svg' | inline_asset_content }}</span>
+              <span class="svg-wrapper_my">{{'icon-cart-empty.svg' | inline_asset_content }}</span>
           {% else %}
-              <span class="svg-wrapper">{{'icon-cart.svg' | inline_asset_content }}</span>
+              <span class="svg-wrapper_my">{{'icon-cart.svg' | inline_asset_content }}</span>
           {% endif %}
           <span >{{ 'templates.cart.cart' | t }}</span> 
-          <span class="svg-wrapper utility_link_icon_right">
+          <span class="svg-wrapper_my utility_link_icon_right">
             {{- 'icon-caret.svg' | inline_asset_content -}}
           </span>
           {%- if cart != empty -%}
