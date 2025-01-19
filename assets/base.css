@@ -2863,8 +2863,18 @@ input[type='checkbox'] {
 }
 
 .header__icon .svg-wrapper_my {
-  width: 26px;
-  height: 26px;
+  width: 27px;
+  height: 27px;
+}
+
+.burger_icon {
+  width: 20px;
+  height: 20px;
+}
+
+.burger_icon:hover {
+  width: 24px;
+  height: 24px;
 }
 
 .utility_cart_link .svg-wrapper_my {
@@ -2878,8 +2888,8 @@ input[type='checkbox'] {
 }
 
 .header__icons .svg-wrapper_my:hover {
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   transition: all 150ms;
 }
 

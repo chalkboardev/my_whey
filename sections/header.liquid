@@ -283,7 +283,7 @@ transform: scale(1.03);
       aria-label="{{ 'sections.header.menu' | t }}"
     >
       <span id="menu_icons">
-        {{- 'icon-hamburger.svg' | inline_asset_content -}}
+        {{- 'icon-hamburger.svg' | inline_asset_content | replace: '<svg', '<svg class="burger_icon"' }}
         {{- 'icon-close.svg' | inline_asset_content  | replace: 'icon icon-close', 'icon icon-close menu_close_svg' -}}
       </span>
     </summary>
@@ -1137,11 +1137,15 @@ transform: scale(1.03);
               {%- if customer and customer.has_avatar? -%}
                 {{ customer | avatar }}
               {%- else -%}
-                <span class="svg-wrapper">{{ 'icon-account.svg' | inline_asset_content }}</span>
+                <span class="svg-wrapper">
+                  {{ 'icon-account.svg' | inline_asset_content | replace: '<svg', '<svg class="account_icon"' }}
+                </span>
               {%- endif -%}
             </account-icon>
           {%- else -%}
-            <span class="svg-wrapper">{{ 'icon-account.svg' | inline_asset_content }}</span>
+                <span class="svg-wrapper">
+                  {{ 'icon-account.svg' | inline_asset_content | replace: '<svg', '<svg class="account_icon"' }}
+                </span>
           {%- endif -%}
           <span class="visually-hidden">
             {%- liquid
@@ -1558,7 +1562,7 @@ transform: scale(1.03);
       "id": "padding_top",
       "min": 0,
       "max": 36,
-      "step": 4,
+      "step": 2,
       "unit": "px",
       "label": "t:sections.all.padding.padding_top",
       "default": 0
@@ -1568,7 +1572,7 @@ transform: scale(1.03);
       "id": "padding_bottom",
       "min": 0,
       "max": 36,
-      "step": 4,
+      "step": 2,
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 0
