@@ -563,12 +563,13 @@ details[open] > .header__icon--menu .icon-close {
   height: auto !important;
 }
 .menu-drawer__utility-links {
-  position: absolute !important;
+  position: sticky !important;
   display: flex;
   flex-direction: row;
   width: 100%;
   bottom: 0;
   height: auto;
+  background: #333 !important;
 }
 .mobile_menu_logo {
   width: 100%;
