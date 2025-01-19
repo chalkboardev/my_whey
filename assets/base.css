@@ -581,7 +581,7 @@ margin-top: -10px;
     width: 100%;
     bottom: 50vh;
     height: 300px;
-    padding-bottom: 39px !important;
+    padding: 1rem 3rem 2rem 3rem !important;
     background: #fff !important;
     border-top: 0.01px solid #cccccc;
     box-shadow: 0 1px 10px 0px #b7b7b7;
@@ -590,18 +590,55 @@ margin-top: -10px;
     display: flex;
     width: 100% !important;
     flex-flow: column;
-    row-gap: 4px;
+    row-gap: 10px;
     padding-top: 16px;
+    text-transform: uppercase;
   }
   .utility_links > a:first-child {
     border-bottom:1px solid #333 !important
   }
   .utility_links a {
-    padding: 2rem 2rem;
+    font-size: 16px;
+    padding: 2rem 2rem 2rem 0; 
   }
   .utility_link_icon_right {
     transform: rotate(270deg);
     width: 1.2rem !important;
+    margin-left: 6px;
+    margin-top: 2px;
+  }
+  .utility_cart_link {
+    width: 100% !important;
+    justify-content: flex-start !important;
+    padding: 2rem 2rem 2rem 0 !important;
+  }
+  .utility_quiz_btn {
+    color: #ffffff;
+    background-color: #1e534d;
+    background: #1e534d;
+    border-color: #1e534d;
+    /* outline-color: ; */
+    /* font-family: 'Halyard Display'; */
+    font-size: 14px;
+    line-height: 15px;
+    font-weight: 500;
+    opacity: 1;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-style: normal;
+    white-space: nowrap;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    padding-left: 36px;
+    padding-right: 36px;
+    min-height: ;
+    border-width: 2px;
+    border-radius: 50px;
+    gap: 0;
+    box-shadow: none;
+    justify-content: center;
+    text-align: center;
   }
   .mobile_menu_logo {
     width: 100%;
