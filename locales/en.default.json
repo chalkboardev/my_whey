@@ -430,7 +430,7 @@
       "delete": "Delete",
       "delete_confirm": "Are you sure you wish to delete this address?"
     },
-    "log_in": "Log in",
+    "log_in": "Sign In",
     "log_out": "Log out",
     "login_page": {
       "cancel": "Cancel",
@@ -537,7 +537,7 @@
   "shopify": {
     "checkout": {
       "customer_account": {
-        "sign_in_link_label": "Sign In"
+        "sign_in_link_label": "Log In"
       }
     }
   }
