@@ -563,7 +563,7 @@ details[open] > .header__icon--menu .icon-close {
   height: auto !important;
 }
 .menu-drawer__utility-links {
-  position: sticky !important;
+  position: stick !important;
   display: flex;
   flex-direction: row;
   width: 100%;
