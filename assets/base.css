@@ -570,13 +570,16 @@ margin-top: -10px;
     height: auto !important;
   }
   .menu-drawer__utility-links {
-    position: stick !important;
+    position: sticky !important;
     display: flex;
     flex-direction: row;
     width: 100%;
     bottom: 0;
     height: auto;
-    background: #333 !important;
+    background: #dedede !important;
+  }
+  ..menu-drawer__navigation-container {
+    height: 100vh !important;
   }
   .mobile_menu_logo {
     width: 100%;
