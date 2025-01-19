@@ -529,106 +529,108 @@ margin-top: -10px;
 
 }
 /* ---------- ONLY MOBILE ONLY END ---------- */
-details:not([open]) > .header__icon--menu .icon-close {
-  visibility: hidden;
-  opacity: 0;
-  left: 0;
-  transform: scale(0.8);
-  /* transition: all 150ms !important; */
-}
-details[open] > .header__icon--menu .icon-close {
-  right: auto !important;
-  top: -26px;
-  width: 50px;
-  height: 50px;
-  padding: 16px;
-  left: 80%;
-  z-index: 6;
-    transition: opacity 2s !important;
-  /* transition: left 1s !important; */
-}
-.adjust_mobile_menu {
-  top: 0px !important;
-}
-.adjust_close_btn {
-  top: 10px !important;
-}
-.announcement_present {
-  top: -36px !important;
-}
-.menu-drawer {
-  height: 100vh !important;
-  top:-36px;
-}
-.menu-drawer__inner-container {
-  position: relative;
-  height: auto !important;
-}
-.menu-drawer__utility-links {
-  position: stick !important;
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  bottom: 0;
-  height: auto;
-  background: #333 !important;
-}
-.mobile_menu_logo {
-  width: 100%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  display: flex !important;
-  border-bottom: 1px solid #e1e1e1 !important;
-  padding: 10px 0 2px 0 !important;
-}
-.mobile_menu_logo img {
-  width: 68px !important
-}
-  .menu-drawer__navigation {
-    padding: 10px 0 1rem 0 !important;
-}
-.shopify-section-header-sticky .mega-menu__content {
-  max-height: 100vh !important;
-}
-
-.menu-drawer__menu-item  {
-  font-size: 22px !important;
-  font-weight: 600;
-  letter-spacing: 2px;
-  background: unset !important;
-  -webkit-tap-highlight-color: transparent !important;
-}
-
-.menu-drawer__menu .list-menu a {
-  font-size: 16px !important;
-  font-weight: unset !important;
-  letter-spacing: unset !important;
-}
-
-.shop_submenu {
-  font-size: 18px !important;
-  font-weight: 600;
-}
-
-.drawer__menu-item:hover {
-  background: unset !important;
-}
-
-.flip_svg {
-  transform: rotate(180deg) !important;
-  transition: all 500ms !important;
-}
-.icon-caret {
-  transition: all 500ms !important;
-}
-.menu-drawer-container {
-  -webkit-tap-highlight-color: transparent !important;
-}
 
 
 
 
+@media only screen and (max-width: 767px) {
+  details:not([open]) > .header__icon--menu .icon-close {
+    visibility: hidden;
+    opacity: 0;
+    left: 0;
+    transform: scale(0.8);
+    /* transition: all 150ms !important; */
+  }
+  details[open] > .header__icon--menu .icon-close {
+    right: auto !important;
+    top: -26px;
+    width: 50px;
+    height: 50px;
+    padding: 16px;
+    left: 80%;
+    z-index: 6;
+      transition: opacity 2s !important;
+    /* transition: left 1s !important; */
+  }
+  .adjust_mobile_menu {
+    top: 0px !important;
+  }
+  .adjust_close_btn {
+    top: 10px !important;
+  }
+  .announcement_present {
+    top: -36px !important;
+  }
+  .menu-drawer {
+    height: 100vh !important;
+    top:-36px;
+  }
+  .menu-drawer__inner-container {
+    position: relative;
+    height: auto !important;
+  }
+  .menu-drawer__utility-links {
+    position: stick !important;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    bottom: 0;
+    height: auto;
+    background: #333 !important;
+  }
+  .mobile_menu_logo {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex !important;
+    border-bottom: 1px solid #e1e1e1 !important;
+    padding: 10px 0 2px 0 !important;
+  }
+  .mobile_menu_logo img {
+    width: 68px !important
+  }
+    .menu-drawer__navigation {
+      padding: 10px 0 1rem 0 !important;
+  }
+  .shopify-section-header-sticky .mega-menu__content {
+    max-height: 100vh !important;
+  }
+  
+  .menu-drawer__menu-item  {
+    font-size: 22px !important;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: unset !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+  
+  .menu-drawer__menu .list-menu a {
+    font-size: 16px !important;
+    font-weight: unset !important;
+    letter-spacing: unset !important;
+  }
+  
+  .shop_submenu {
+    font-size: 18px !important;
+    font-weight: 600;
+  }
+  
+  .drawer__menu-item:hover {
+    background: unset !important;
+  }
+  
+  .flip_svg {
+    transform: rotate(180deg) !important;
+    transition: all 500ms !important;
+  }
+  .icon-caret {
+    transition: all 500ms !important;
+  }
+  .menu-drawer-container {
+    -webkit-tap-highlight-color: transparent !important;
+  }
+}
 
 /* --------- ONLY MEDIUM SIZE SCREENS START --------- */ 
 @media screen and (min-width: 990px) {
