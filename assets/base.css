@@ -543,16 +543,32 @@ details[open] > .header__icon--menu .icon-close {
   padding: 16px;
   left: 80%;
   z-index: 6;
+    transition: opacity 2s !important;
   /* transition: left 1s !important; */
 }
-.menu-drawer {
-  padding-top: 10px !important;
+.adjust_mobile_menu {
+  top: 0px !important;
+}
+.adjust_close_btn {
+  top: 10px !important;
+}
+.announcement_present {
   top: -36px !important;
+}
+.menu-drawer {
   height: 100vh !important;
 }
 .menu-drawer__inner-container {
   position: relative;
-  height: 80% !important;
+  height: auto !important;
+}
+.menu-drawer__utility-links {
+  position: absolute !important;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  bottom: 0;
+  height: auto;
 }
 .mobile_menu_logo {
   width: 100%;
@@ -598,7 +614,15 @@ details[open] > .header__icon--menu .icon-close {
 
 .flip_svg {
   transform: rotate(180deg) !important;
+  transition: all 500ms !important;
 }
+.icon-caret {
+  transition: all 500ms !important;
+}
+.menu-drawer-container {
+  -webkit-tap-highlight-color: transparent !important;
+}
+
 
 }
 /* ---------- ONLY MOBILE ONLY END ---------- */

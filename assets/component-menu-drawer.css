@@ -31,7 +31,8 @@ menu-drawer > details[open] > summary::before {
   visibility: hidden;
   z-index: 3;
   left: 0;
-  top: 100%;
+  /* top: 100%; */
+  top:-36px;
   width: 100%;
   padding: 0;
   background-color: rgb(var(--color-background));
