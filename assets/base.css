@@ -526,12 +526,38 @@ margin-top: -10px;
 }
 /* ---------- ONLY MOBILE ONLY START ---------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
-
+  details[open] > .header__icon--menu .icon-close {
+    right: auto !important;
+    top: -26px;
+    width: 50px;
+    height: 50px;
+    padding: 16px;
+    left: calc(40rem - 10rem) !important;
+    z-index: 6;
+    transition: opacity 2s !important;
+    /* transition: left 1s !important; */
+  }
+  .menu-drawer__navigation-container {
+    /* height: 100vh !important; */
+    height:calc(100vh - 56vh) !important;
+  }
+  .menu-drawer__utility-links {
+    position: sticky !important;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    bottom: 56vh !important;
+    height: 300px;
+    padding: 1rem 3rem 2rem 3rem !important;
+    background: #fff !important;
+    border-top: 0.01px solid #cccccc;
+    box-shadow: 0 1px 10px 0px #b7b7b7;
+  }
 }
 /* ---------- ONLY MOBILE ONLY END ---------- */
 
 
-@media only screen and (max-width: 749px) {
+@media only screen and (max-width: 989px) {
   .utility_links .header__icon .svg-wrapper {
     width: 30px !important;
     height: 30px !important;
@@ -549,9 +575,9 @@ margin-top: -10px;
     width: 50px;
     height: 50px;
     padding: 16px;
-    left: 80%;
+    left: calc(40rem - 7.5rem);
     z-index: 6;
-      transition: opacity 2s !important;
+    transition: opacity 2s !important;
     /* transition: left 1s !important; */
   }
   .adjust_mobile_menu {
@@ -574,14 +600,14 @@ margin-top: -10px;
   }
   .menu-drawer__navigation-container {
     /* height: 100vh !important; */
-    height:calc(100vh - 56vh) !important;
+    height:calc(100vh - 48vh) !important;
   }
   .menu-drawer__utility-links {
     position: sticky !important;
     display: flex;
     flex-direction: row;
     width: 100%;
-    bottom: 56vh;
+    bottom: 48vh;
     height: 300px;
     padding: 1rem 3rem 2rem 3rem !important;
     background: #fff !important;
@@ -616,7 +642,7 @@ margin-top: -10px;
     padding: 2rem 2rem 2rem 0px !important;
   }
   .utility_quiz_btn {
-    margin-top: 20px;
+    margin-top: 4px;
     color: #ffffff;
     background-color: #1e534d;
     background: #1e534d;
@@ -2853,6 +2879,18 @@ input[type='checkbox'] {
 
 .utility_cart_link .svg-wrapper_my {
   margin-right: 0.8rem;
+}
+
+.header__icons .svg-wrapper:hover {
+  width: 28px;
+  height: 28px;
+  transition: all 150ms;
+}
+
+.header__icons .svg-wrapper_my:hover {
+  width: 32px;
+  height: 32px;
+  transition: all 150ms;
 }
 
 .menu-drawer__account account-icon > .svg-wrapper {
