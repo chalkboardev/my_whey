@@ -530,11 +530,6 @@ margin-top: -10px;
 }
 /* ---------- ONLY MOBILE ONLY END ---------- */
 
-.header__icon .svg-wrapper {
-  width: 30px;
-  height: 30px;
-}
-
 
 @media only screen and (max-width: 749px) {
   .utility_links .header__icon .svg-wrapper {
@@ -2847,13 +2842,23 @@ input[type='checkbox'] {
 }
 
 .header__icon .svg-wrapper {
-  width: 26px;
-  height: 26px;
+  width: 24px;
+  height: 24px;
 }
 
 .header__icon .svg-wrapper_my {
   width: 26px;
   height: 26px;
+}
+
+.utility_cart_link .svg-wrapper_my {
+  margin-right: 0.8rem;
+}
+
+.menu-drawer__account account-icon > .svg-wrapper {
+  height: 24px !important;
+  width: 24px !important;
+  margin-right: 1rem;
 }
 
 .header__icon::after {
