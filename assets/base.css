@@ -527,7 +527,8 @@ margin-top: -10px;
 /* ---------- ONLY MOBILE ONLY START ---------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
 
-
+}
+/* ---------- ONLY MOBILE ONLY END ---------- */
 details:not([open]) > .header__icon--menu .icon-close {
   visibility: hidden;
   opacity: 0;
@@ -626,8 +627,7 @@ details[open] > .header__icon--menu .icon-close {
 }
 
 
-}
-/* ---------- ONLY MOBILE ONLY END ---------- */
+
 
 
 /* --------- ONLY MEDIUM SIZE SCREENS START --------- */ 
