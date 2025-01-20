@@ -76,6 +76,10 @@
 
 /* base */
 
+a {
+  -webkit-tap-highlight-color: transparent !important;
+}
+
 .page-width {
   max-width: var(--page-width);
   margin: 0 auto;
@@ -2866,6 +2870,8 @@ input[type='checkbox'] {
   width: 27px;
   height: 27px;
 }
+
+
 
 .burger_icon {
   width: 20px;
