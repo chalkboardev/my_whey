@@ -221,7 +221,7 @@ transform: scale(1.03);
 
 {%- style -%}
   .header {
-    padding: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px 3rem {{ section.settings.padding_bottom | times: 0.5 | round: 0 }}px 3rem;
+    padding: {{ section.settings.padding_top | times: 1.5 | round: 0 }}px 3rem {{ section.settings.padding_bottom | times: 1.5 | round: 0 }}px 3rem;
   }
 
   .section-header {
@@ -884,170 +884,63 @@ transform: scale(1.03);
                         {% endif %}
                       >
                         {{ childlink.title | escape }}
-                        {%- if childlink.title == link.title -%}
-                              {%- if childlink.links != blank -%}
-                                <ul class="first_submenu list-unstyled" role="list">
-                                  {%- for grandchildlink in childlink.links -%}
-                                    <li>
-                                      <a
-                                        id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
-                                        href="{{ grandchildlink.url }}"
-                                        class="first_submenu_li menu_link_a mega-menu__link link{% if grandchildlink.current %} mega-menu__link--active{% endif %}"
-                                        {% if grandchildlink.current %}
-                                          aria-current="page"
-                                        {% endif %}
-                                      >
-                                        {{ grandchildlink.title | escape }}
-                                      </a>
-                                    </li>
-                                  {%- endfor -%}
-                                </ul>
-                              {%- endif -%}
-                          {%- else -%}
-                                {%- if childlink.links != blank -%}
-                                  <ul class="list-unstyled" role="list">
-                                    {%- for grandchildlink in childlink.links -%}
-                                      <li>
-                                        <a
-                                          id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
-                                          href="{{ grandchildlink.url }}"
-                                          class="menu_link_a mega-menu__link link{% if grandchildlink.current %} mega-menu__link--active{% endif %}"
-                                          {% if grandchildlink.current %}
-                                            aria-current="page"
-                                          {% endif %}
-                                        >
-                                          {{ grandchildlink.title | escape }}
-                                        </a>
-                                      </li>
-                                    {%- endfor -%}                   
-                                  </ul>
-                                {%- endif -%}
-                        {%- endif -%}
                       </a>
-                  
+                      {%- if childlink.links != blank -%}
+                        <ul class="list-unstyled" role="list">
+                          {%- for grandchildlink in childlink.links -%}
+                            <li>
+                              <a
+                                id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
+                                href="{{ grandchildlink.url }}"
+                                class="mega-menu__link link{% if grandchildlink.current %} mega-menu__link--active{% endif %}"
+                                {% if grandchildlink.current %}
+                                  aria-current="page"
+                                {% endif %}
+                              >
+                                {{ grandchildlink.title | escape }}
+                              </a>
+                            </li>
+                          {%- endfor -%}                   
+                        </ul>
+                      {%- endif -%}
                     </li>
                   {%- endfor -%}
-                       {% comment %} {%- for block in section.blocks -%}  
-                                {%- if link.title == block.settings.link_name -%}
-                                  <li class="mega_menu_img">
-                                    <a class="mega-menu__link" href="{{ block.settings.link_url}}">
-                                      <div>
-                                      {{ block.settings.link_image | image_url: width: 500  | image_tag  }} 
-                                      </div>
-                                      <div class="title">{{ block.settings.link_title}}</div>
-                                    </a>
-                                  </li> 
-                                  {%- endif -%}
-                              {%- endfor -%} {% endcomment %}
-
-
-                              <div class="menu_swiper">
-                                <div class="swiper-wrapper">
-                                {%- for block in section.blocks -%}
-                               
-                                  <li data-swiper-autoplay="3500" class="mega_menu_img slide swiper-slide">
-                                    <a class="mega-menu__link" href="{{ block.settings.link_url}}">
-                                      <div>
-                                      {{ block.settings.link_image | image_url: width: 500  | image_tag  }} 
-                                      </div>
-                                      <div class="title">{{ block.settings.link_title}}</div>
-                                    </a>
-                                  </li> 
-                                 
-                                {%- endfor -%}
-                                </div>
-                              {% comment %} <div class="menu_swipe swiper-pagination"></div> {% endcomment %}
-                            </div>
-                            {%- if section.blocks.size  >= 2 -%}
-                              {% comment %} Block count: {{ section.blocks.size }} {% endcomment %}
-                              <script>
-                                document.addEventListener("DOMContentLoaded", function(){
-                                  var swiper_slider = new Swiper(".menu_swiper", {
-                                    initialSlide: 0,
-                                    effect: "coverflow",
-                                    grabCursor: true,
-                                    allowTouchMove: true,
-                                    centeredSlides: true,
-                                    slidesPerView: "auto",
-                                    // loopedSlides: 3,
-                                    coverflowEffect: {
-                                      rotate: 50,
-                                      stretch: 0,
-                                      depth: 100,
-                                      modifier: 1,
-                                      slideShadows: true,
-                                    },
-                                    navigation: {
-                                      nextEl: ".swiper-button-next",
-                                      prevEl: ".swiper-button-prev",
-                                    },
-                                    pagination: {
-                                      el: ".swiper-pagination",
-                                      clickable: true
-                                    },
-                                    loop: false,
-                                    autoplay: {
-                                      enabled: true,
-                                      disableOnInteraction: false
-                                    },
-                                    // freeMode: {
-                                    //   enabled: true,
-                                    //   sticky: true,
-                                    //   momentum: true,
-                                    // },
-                                    // slideToClickedSlide: true,
-                                    // speed: 5000,
-                                    // centeredSlides: true,
-                                    // lazy: {
-                                    //     enabled: true,
-                                    //     checkInView: true,
-                                    //     loadOnTransitionStart: true,
-                                    //     loadPrevNext: true,
-                                    //     loadPrevNextAmount: 1
-                                    // }
-                                    // Responsive breakpoints
-                                    // breakpoints: {
-                                    //     0: {
-                                    //       slidesPerView: "auto",
-                                    //       spaceBetween: 10
-                                    //     },
-
-                                    //     360: {
-                                    //       slidesPerView: "auto",
-                                    //       spaceBetween: 10
-                                    //     },
-
-                                    //     425: {
-                                    //       slidesPerView:"auto",
-                                    //       spaceBetween: 10
-                                    //     },
-
-                                    //     768: {
-                                    //       slidesPerView: "auto",
-                                    //       spaceBetween: 10
-                                    //     },
-
-                                    //     1200: {
-                                    //       slidesPerView: "auto",
-                                    //       spaceBetween: 10
-                                    //     }
-                                    // },
-                                  });
-                                }); 
-                                document.addEventListener("shopify:section:load", function(){
-                                  var swiper_slider = new Swiper(".menu_swiper", {
-                                    slidesPerView: "auto"
-                                  });
-                                }); 
-                              </script>
-                            {%- endif -%}
-                              
-
-                </ul>
+                  <div class="menu_swiper">
+                    <div class="swiper-wrapper">
+                    {%- for block in section.blocks -%}
+                    {%- if link.title == block.settings.link_name -%}
+                      <li class="mega_menu_img slide swiper-slide">
+                        <a class="mega-menu__link" href="{{ block.settings.link_url}}">
+                          <div>
+                          {{ block.settings.link_image | image_url: width: 500  | image_tag  }} 
+                          </div>
+                          <div class="title">{{ block.settings.link_title}}</div>
+                        </a>
+                      </li> 
+                      {%- endif -%}
+                    {%- endfor -%}
+                    </div>
+                    {% comment %} <div class="swiper-pagination"></div> {% endcomment %}
+                  </div>
+                  {%- if section.blocks.size  >= 2 -%}
+                  <script>
+                    document.addEventListener("DOMContentLoaded", function(){
+                      var menu_swiper = new Swiper(".menu_swiper", {
+                        slidesPerView: "auto"
+                      });
+                    }); 
+                    document.addEventListener("shopify:section:load", function(){
+                      var menu_swiper = new Swiper(".menu_swiper", {
+                        slidesPerView: "auto"
+                      });
+                    }); 
+                  </script>
+                  {%- endif -%}
+          </ul>
               </div>
             </details>
           </header-menu>
-        {%- else -%}
+        {%- else -%}  
           <a
             id="HeaderMenu-{{ link.handle }}"
             href="{{ link.url }}"
@@ -1069,6 +962,7 @@ transform: scale(1.03);
     {%- endfor -%}
   </ul>
 </nav>
+
 
      {%   endif  %} 
    {%   endif  %}
