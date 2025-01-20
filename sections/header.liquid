@@ -581,7 +581,7 @@ transform: scale(1.03);
           <div class="utility_links">
           <a
             href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
-            class="menu-drawer__account link focus-inset h5 medium-hide large-up-hide"
+            class="menu-drawer__account link focus-inset"
           >
           
             {%- if section.settings.enable_customer_avatar -%}
@@ -612,7 +612,7 @@ transform: scale(1.03);
           </a>
 
           <a
-            href="#" class="utility_cart_link menu-drawer__account header__icon header__icon--cart link focus-inset h5 medium-hide large-up-hide">
+            href="#" class="utility_cart_link menu-drawer__account header__icon header__icon--cart link focus-inset">
           
           {% if cart == empty %}
               <span class="svg-wrapper_my">{{'icon-cart-empty.svg' | inline_asset_content }}</span>

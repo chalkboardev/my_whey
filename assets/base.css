@@ -2881,6 +2881,7 @@ input[type='checkbox'] {
 .burger_icon:hover {
   width: 24px;
   height: 24px;
+  transition: all 150ms;
 }
 
 .utility_cart_link .svg-wrapper_my {
