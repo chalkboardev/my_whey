@@ -552,15 +552,15 @@ margin-top: -10px;
   text-align: center;
   position: relative;
   color: #ffffff;
-  background: #1e534d;
-  border: 2px solid #1e534d;
+  background: #333;
+  border: 2px solid #333;
   text-decoration: none;
     transition: all 350ms;
 }
 .button_secondary:hover {
   color: #333;
   background: #fff;
-  border: 2px solid #1e534d;
+  border: 2px solid #333;
   text-decoration: none;
   transition: all 350ms;
 }
@@ -685,8 +685,8 @@ margin-top: -10px;
   .utility_quiz_btn {
     margin-top: 0;
     color: #ffffff;
-    background: #1e534d;
-    border-color: #1e534d;
+    background: #333;
+    border-color: #333;
     line-height: 15px;
     font-weight: 500;
     opacity: 1;
