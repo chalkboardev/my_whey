@@ -544,7 +544,7 @@ margin-top: -10px;
   flex-basis: max-content;
   font-size: 14px;
   font-weight: 600;
-  padding: 0.8rem 5rem 0.8rem 5rem !important;
+  padding: 0.8rem 5rem 0.8rem 5rem;
   text-transform: uppercase;
   height: 100%;
   border-radius: 50px;
@@ -557,6 +557,11 @@ margin-top: -10px;
   text-decoration: none;
     transition: all 350ms;
 }
+
+.utility_links .button_secondary {
+  padding: 1.5rem 5rem 1.5rem 5rem !important;
+}
+
 .button_secondary:hover {
   color: #333;
   background: #fff;
