@@ -599,6 +599,14 @@ margin-top: -10px;
 
 
 @media only screen and (max-width: 989px) {
+  .header {
+    grid-template-columns: 1fr 1fr 1fr !important;
+  }
+  .header__icon, .header__icon--cart .icon {
+    height: auto;
+    width: 4.4rem !important;
+    padding: 0;
+  }
   .utility_links .header__icon .svg-wrapper {
     width: 30px !important;
     height: 30px !important;
