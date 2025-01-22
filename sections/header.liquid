@@ -314,7 +314,7 @@ transform: scale(1.03);
       <div class="menu-drawer__inner-container">
         <div class="menu-drawer__navigation-container">
           <nav class="menu-drawer__navigation">
-            <ul class="menu-drawer__menu has-submenu list-menu" role="list">
+            <ul class="menu-drawer__menu has-submenu list-menu submenu-open" role="list">
               {%- for link in section.settings.menu.links -%}
                 <li>
                         {%- assign imagesPresent = false -%}
@@ -324,18 +324,31 @@ transform: scale(1.03);
                               {%- endif -%}
                          {%- endfor -%}
                          {%- if link.links != blank or imagesPresent -%}
-                    <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
+                    <details id="Details-menu-drawer-menu-item-{{ forloop.index }}" {%- if link.title == 'SHOP' -%} class="menu-opening" open  {% endif %}>
                       <summary onclick="change_it(this)"
+                        {%- if link.title == 'SHOP' -%} aria-expanded="true" {% endif %}
                         id="HeaderDrawer-{{ link.handle }}"
                         class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}"
                       >
                         {{ link.title | escape }}
-                        <span class="svg-wrapper">
-                          {{- 'icon-arrow.svg' | inline_asset_content -}}
-                        </span>
-                        <span id="svg_is" class="svg-wrapper">
-                          {{- 'icon-caret.svg' | inline_asset_content -}}
-                        </span>
+
+                        {%- if link.title == 'SHOP' -%}
+                              <span class="svg-wrapper">
+                                {{- 'icon-arrow.svg' | inline_asset_content -}}
+                              </span>
+                              <span id="svg_is" class="svg-wrapper">
+                                {{- 'icon-caret.svg' | inline_asset_content | replace: '<svg class="icon icon-caret"', '<svg class="icon icon-caret flip_svg"' -}}
+                              </span>
+                        {%- else -%}
+                              <span class="svg-wrapper">
+                                {{- 'icon-arrow.svg' | inline_asset_content -}}
+                              </span>
+                              <span id="svg_is" class="svg-wrapper">
+                                {{- 'icon-caret.svg' | inline_asset_content -}}
+                              </span>
+                        {% endif %}
+
+                        
                       </summary>
                      
                       <div
@@ -535,7 +548,7 @@ transform: scale(1.03);
 
           <script>
             function change_it(summary) {
-              console.log('hi...');
+              //console.log('hi...');
               // $(summary).children('span').eq(1).attr("id")
               var the_svg_span = $(summary).children('span').eq(1).children('svg').eq(0);
               //console.log();
@@ -564,7 +577,7 @@ transform: scale(1.03);
               // }
             }
 
-            $(".header__icon--summary").click(function (){
+            $(".menu_close_svg").click(function (){
               $('.icon-caret').removeClass('flip_svg');
             });
           </script>
