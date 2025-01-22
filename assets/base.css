@@ -599,6 +599,9 @@ margin-top: -10px;
 
 
 @media only screen and (max-width: 989px) {
+  .header__icon--cart {
+    margin-right: -1.8rem !important;
+  }
   .header {
     grid-template-columns: 1fr 1fr 1fr !important;
   }
@@ -718,7 +721,8 @@ margin-top: -10px;
     padding: 10px 0 2px 0 !important;
   }
   .mobile_menu_logo img {
-    width: 68px !important
+    width: 100px !important;
+    padding: 8px 0 0 0;
   }
     .menu-drawer__navigation {
       padding: 10px 0 1rem 0 !important;
