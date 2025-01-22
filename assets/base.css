@@ -544,7 +544,7 @@ margin-top: -10px;
   flex-basis: max-content;
   font-size: 14px;
   font-weight: 600;
-  padding: 0.8rem 5rem 0.8rem 5rem;
+  padding: 0.8rem 5rem 0.8rem 5rem !important;
   text-transform: uppercase;
   height: 100%;
   border-radius: 50px;
