@@ -602,15 +602,17 @@ margin-top: -10px;
   .blurry_menu {
     backdrop-filter: blur(0px) !important;
   }
+  .cart_blurry {
+    backdrop-filter: blur(0px) !important;
+  }
 }
 /* ---------- ONLY MOBILE ONLY END ---------- */
 
-.blurry {
+.cart_blurry {
     width: 100vw;
     height: 100vh;
     background: #ffffff00;
     position: absolute;
-    filter: blur(3px);
     z-index: 12;
     backdrop-filter: blur(6px);
     display: flex !important;
