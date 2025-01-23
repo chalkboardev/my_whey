@@ -568,6 +568,7 @@ class HeaderDrawer extends MenuDrawer {
       `${parseInt(this.header.getBoundingClientRect().bottom - this.borderOffset)}px`
     );
     this.header.classList.add('menu-open');
+    document.getElementById('menu_backdrop').classList.add('blurry_menu');
 
     setTimeout(() => {
       this.mainDetailsToggle.classList.add('menu-opening');
@@ -584,6 +585,7 @@ class HeaderDrawer extends MenuDrawer {
     super.closeMenuDrawer(event, elementToFocus);
     this.header.classList.remove('menu-open');
     window.removeEventListener('resize', this.onResize);
+    document.getElementById('menu_backdrop').classList.remove('blurry_menu');
   }
 
   onResize = () => {

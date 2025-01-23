@@ -602,8 +602,38 @@ margin-top: -10px;
 }
 /* ---------- ONLY MOBILE ONLY END ---------- */
 
+.blurry {
+    width: 100vw;
+    height: 100vh;
+    background: #ffffff00;
+    position: absolute;
+    filter: blur(3px);
+    z-index: 12;
+    backdrop-filter: blur(6px);
+    display: flex !important;
+}
+
+.blurry_menu {
+  width: 100vw;
+  height: 100vh;
+  background: #ffffff00;
+  position: absolute;
+  filter: blur(6px);
+  z-index: 3;
+  left: 0;
+  bottom: 0;
+  top: -40px;
+  right: 0;
+  backdrop-filter: blur(1px);
+  display: flex !important;
+}
 
 @media only screen and (max-width: 989px) {
+  .drawer__inner {
+    height: 100%;
+    width: 100vw;
+    max-width: calc(100vw) !important;
+}
   .header__icon--cart {
     margin-right: -1.8rem !important;
   }
@@ -627,12 +657,12 @@ margin-top: -10px;
     /* transition: all 150ms !important; */
   }
   details[open] > .header__icon--menu .icon-close {
-    right: auto !important;
+    right: 4rem !important;
     top: -26px;
     width: 50px;
     height: 50px;
     padding: 16px;
-    left: calc(40rem - 7.5rem);
+    /* left: calc(40rem - 7.5rem); */
     z-index: 6;
     transition: opacity 2s !important;
     /* transition: left 1s !important; */
@@ -775,7 +805,7 @@ margin-top: -10px;
 @media screen and (min-width: 990px) {
   .mega-menu[open] .mega-menu__content {
     padding: 2rem 4rem 3rem 5rem !important;
-}
+  }
 }
 /* --------- ONLY MEDIUM SIZE SCREENS  END --------- */ 
 
@@ -818,6 +848,22 @@ margin-top: -10px;
   }
 }
 
+@media screen and (min-width: 750px) {
+  .menu-drawer {
+      width: 60rem !important;
+  }
+  details[open] > .header__icon--menu .icon-close {
+    right: auto !important;
+    top: -26px;
+    width: 50px;
+    height: 50px;
+    padding: 16px;
+    left: calc(60rem - 9rem) !important;
+    z-index: 6;
+    transition: opacity 2s !important;
+  }
+}
+
 @media screen and (min-width: 750px) and (max-width: 989px) {
   .medium-hide {
     display: none !important;
@@ -827,6 +873,9 @@ margin-top: -10px;
 @media screen and (min-width: 990px) {
   .large-up-hide {
     display: none !important;
+  }
+  .blurry_menu {
+    display:none !important;
   }
 }
 

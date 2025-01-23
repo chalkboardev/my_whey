@@ -275,7 +275,7 @@ transform: scale(1.03);
   Usage:
   {% render 'header-drawer' %}
 {% endcomment %}
-
+<div id="menu_backdrop"></div>
 <header-drawer data-breakpoint="{% if section.settings.menu_type_desktop == 'drawer' %}desktop{% else %}tablet{% endif %}">
   <details id="Details-menu-drawer-container" class="menu-drawer-container">
     <summary
@@ -287,7 +287,8 @@ transform: scale(1.03);
         {{- 'icon-close.svg' | inline_asset_content  | replace: 'icon icon-close', 'icon icon-close menu_close_svg' -}}
       </span>
     </summary>
-    <div id="menu-drawer" style="padding: 0 !important" class="gradient menu-drawer motion-reduce color-{{ section.settings.menu_color_scheme }} {% if section.settings.keep_announcement_scroll %} announcement_present {% else %} announcement_removed{% endif %}"> 
+ 
+    <div id="menu-drawer" style="padding: 0 !important" class="gradient menu-drawer motion-reduce color-{{ section.settings.menu_color_scheme }} {% if section.settings.keep_announcement_scroll %} announcement_present {% else %}announcement_removed{% endif %}"> 
 
       <span class="header__heading-link mobile_menu_logo link link--text focus-inset">
         {%- if settings.logo != blank -%} 
@@ -314,8 +315,8 @@ transform: scale(1.03);
       <div class="menu-drawer__inner-container">
         <div class="menu-drawer__navigation-container">
           <nav class="menu-drawer__navigation">
-            <ul class="menu-drawer__menu has-submenu list-menu submenu-open" role="list">
-              {%- for link in section.settings.menu.links -%}
+            <ul class="menu-drawer__menu has-submenu list-menu" role="list">
+              {%- for link in section.settings.menu.links limit: 2 -%}
                 <li>
                         {%- assign imagesPresent = false -%}
                          {%- for block in section.blocks -%}
@@ -324,31 +325,18 @@ transform: scale(1.03);
                               {%- endif -%}
                          {%- endfor -%}
                          {%- if link.links != blank or imagesPresent -%}
-                    <details id="Details-menu-drawer-menu-item-{{ forloop.index }}" {%- if link.title == 'SHOP' -%} class="menu-opening" open  {% endif %}>
+                    <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
                       <summary onclick="change_it(this)"
-                        {%- if link.title == 'SHOP' -%} aria-expanded="true" {% endif %}
                         id="HeaderDrawer-{{ link.handle }}"
                         class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}"
                       >
                         {{ link.title | escape }}
-
-                        {%- if link.title == 'SHOP' -%}
-                              <span class="svg-wrapper">
-                                {{- 'icon-arrow.svg' | inline_asset_content -}}
-                              </span>
-                              <span id="svg_is" class="svg-wrapper">
-                                {{- 'icon-caret.svg' | inline_asset_content | replace: '<svg class="icon icon-caret"', '<svg class="icon icon-caret flip_svg"' -}}
-                              </span>
-                        {%- else -%}
-                              <span class="svg-wrapper">
-                                {{- 'icon-arrow.svg' | inline_asset_content -}}
-                              </span>
-                              <span id="svg_is" class="svg-wrapper">
-                                {{- 'icon-caret.svg' | inline_asset_content -}}
-                              </span>
-                        {% endif %}
-
-                        
+                        <span class="svg-wrapper">
+                          {{- 'icon-arrow.svg' | inline_asset_content -}}
+                        </span>
+                        <span id="svg_is" class="svg-wrapper">
+                          {{- 'icon-caret.svg' | inline_asset_content -}}
+                        </span>
                       </summary>
                      
                       <div
@@ -548,7 +536,7 @@ transform: scale(1.03);
 
           <script>
             function change_it(summary) {
-              //console.log('hi...');
+              console.log('hi...');
               // $(summary).children('span').eq(1).attr("id")
               var the_svg_span = $(summary).children('span').eq(1).children('svg').eq(0);
               //console.log();
@@ -577,9 +565,16 @@ transform: scale(1.03);
               // }
             }
 
-            $(".menu_close_svg").click(function (){
+            $(".header__icon--summary").click(function (){
               $('.icon-caret').removeClass('flip_svg');
+              //alert('hi...');
+              $("#HeaderDrawer-shop").click();
             });
+
+            
+            // $("#HeaderDrawer-shop").click(function (){
+            //   // alert('hi...');
+            // });
           </script>
           
    {% comment %} -------- UTILITY LINKS DIV USUALLY HERE - BUT WITHOUT A FIXED (ABSOLUTE CSS) POSITION  START -------- {% endcomment %}

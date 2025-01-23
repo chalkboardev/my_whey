@@ -15,6 +15,8 @@ class CartDrawer extends HTMLElement {
     cartLink.setAttribute('aria-haspopup', 'dialog');
     cartLink.addEventListener('click', (event) => {
       event.preventDefault();
+      // document.body.classList.add('blurry');
+      document.getElementById('cart_backdrop').classList.add('blurry');
       this.open(cartLink);
     });
     cartLink.addEventListener('keydown', (event) => {
@@ -53,6 +55,7 @@ class CartDrawer extends HTMLElement {
     this.classList.remove('active');
     removeTrapFocus(this.activeElement);
     document.body.classList.remove('overflow-hidden');
+    document.getElementById('cart_backdrop').classList.remove('blurry');
   }
 
   setSummaryAccessibility(cartDrawerNote) {
