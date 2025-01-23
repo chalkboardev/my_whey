@@ -580,7 +580,7 @@ margin-top: -10px;
     padding: 16px;
     left: calc(40rem - 10rem) !important;
     z-index: 6;
-    transition: opacity 2s !important;
+    transition: opacity 1s !important;
     /* transition: left 1s !important; */
   }
   .menu-drawer__navigation-container {
@@ -598,6 +598,9 @@ margin-top: -10px;
     background: #fff !important;
     border-top: 0.01px solid #cccccc;
     box-shadow: 0 1px 10px 0px #b7b7b7;
+  }
+  .blurry_menu {
+    backdrop-filter: blur(0px) !important;
   }
 }
 /* ---------- ONLY MOBILE ONLY END ---------- */
@@ -618,13 +621,12 @@ margin-top: -10px;
   height: 100vh;
   background: #ffffff00;
   position: absolute;
-  filter: blur(6px);
   z-index: 3;
   left: 0;
   bottom: 0;
   top: -40px;
   right: 0;
-  backdrop-filter: blur(1px);
+  backdrop-filter: blur(6px);
   display: flex !important;
 }
 
@@ -664,7 +666,7 @@ margin-top: -10px;
     padding: 16px;
     /* left: calc(40rem - 7.5rem); */
     z-index: 6;
-    transition: opacity 2s !important;
+    transition: opacity 1s !important;
     /* transition: left 1s !important; */
   }
   .adjust_mobile_menu {
@@ -860,7 +862,7 @@ margin-top: -10px;
     padding: 16px;
     left: calc(60rem - 9rem) !important;
     z-index: 6;
-    transition: opacity 2s !important;
+    transition: opacity 1s !important;
   }
 }
 
