@@ -622,7 +622,7 @@ margin-top: -10px;
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   details[open] > .header__icon--menu .icon-close {
     right: auto !important;
-    top: -22px !important;
+    top: -22px;
     width: 48px !important;
     height: 48px !important;
     padding: 16px;
