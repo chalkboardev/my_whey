@@ -73,7 +73,7 @@
   .list-menu__item {
     display: flex;
     align-items: center;
-    line-height: calc(1 + 0.3 / var(--font-body-scale));
+    line-height: calc(1 + 0.6 / var(--font-body-scale));
     height: 100%;
     letter-spacing: 2px;
   }
@@ -149,8 +149,8 @@ transform: scale(1.03);
   .mega-menu__list > li{
       list-style: none;
       display: block;
-      flex: 0 0 17%;
-      max-width: 17%;
+      flex: 0 0 15%;
+      max-width: 15%;
       padding-right: 15px;  
   }
 }
@@ -894,7 +894,12 @@ transform: scale(1.03);
                   role="list"
                 >
                   {%- for childlink in link.links -%}
-                    <li>
+                    {%- if childlink.title == "SHOP" -%}
+                      <li class="border_right">
+                    {%- else -%}  
+                      <li>
+                    {% endif %}
+                   
                       <a
                         id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
                         href="{{ childlink.url }}"
