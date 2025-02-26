@@ -1130,20 +1130,20 @@ transform: scale(1.03);
       {%- endfor -%}
 
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
-          {% if cart == empty %}
+          {% comment %} {% if cart == empty %} {% endcomment %}
             <span class="svg-wrapper_my">{{'icon-cart-empty.svg' | inline_asset_content }}</span>
-          {% else %}
+          {% comment %} {% else %}
             <span class="svg-wrapper_my">{{'icon-cart-empty.svg' | inline_asset_content }}</span>
-          {% endif %}
+          {% endif %} {% endcomment %}
         <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
-        {%- if cart != empty -%}
+        {% comment %} {%- if cart != empty -%} {% endcomment %}
           <div class="cart-count-bubble">
             {%- if cart.item_count < 100 -%}
               <span aria-hidden="true">{{ cart.item_count }}</span>
             {%- endif -%}
             <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
           </div>
-        {%- endif -%}
+        {% comment %} {%- endif -%} {% endcomment %}
       </a>
     </div>
   </header>
