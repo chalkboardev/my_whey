@@ -227,6 +227,12 @@ transform: scale(1.03);
       min-height: {{ section.settings.minimum_height }}px;
   }
 
+  @media only screen and (max-width: 989px) {
+    .mobile_mega_menu {
+      min-height: {{ section.settings.minimum_height_mobile }}px;
+    }
+  }
+
   .section-header {
     position: sticky; /* This is for fixing a Safari z-index issue. PR #2147 */
     margin-bottom: {{ section.settings.margin_bottom | times: 0.75 | round: 0 }}px;
@@ -272,7 +278,7 @@ transform: scale(1.03);
       assign localization_forms = true
     endif
   -%}
-  <header class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
+  <header class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu  {% else %} mobile_mega_menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
     
      {%- if section.settings.menu != blank -%}
 {% comment %}
@@ -1485,7 +1491,7 @@ transform: scale(1.03);
     },
     {
       "type": "header",
-      "content": "Menu Bar Height"
+      "content": "Menu Bar Height Desktop"
     },
     {
       "type": "range",
@@ -1494,7 +1500,21 @@ transform: scale(1.03);
       "max": 120,
       "step": 2,
       "unit": "px",
-      "label": "Minimum Height",
+      "label": "Minimum Height Desktop",
+      "default": 90
+    },
+    {
+      "type": "header",
+      "content": "Menu Bar Height Mobile"
+    },
+    {
+      "type": "range",
+      "id": "minimum_height_mobile",
+      "min": 90,
+      "max": 140,
+      "step": 2,
+      "unit": "px",
+      "label": "Minimum Height Mobile",
       "default": 90
     }
   ],
