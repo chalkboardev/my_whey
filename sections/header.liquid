@@ -149,8 +149,8 @@ transform: scale(1.03);
   .mega-menu__list > li{
       list-style: none;
       display: block;
-      flex: 0 0 15%;
-      max-width: 15%;
+      flex: 0 0 16%;
+      max-width: 16%;
       padding-right: 15px;  
   }
 }
@@ -967,7 +967,13 @@ transform: scale(1.03);
                   <script>
                     document.addEventListener("DOMContentLoaded", function(){
                       var menu_swiper = new Swiper(".menu_swiper", {
-                        slidesPerView: "auto"
+                        slidesPerView: "auto",
+                              autoplay: {
+                                stopOnLastSlide: false,
+                                enabled: true,
+                                delay: 4000,
+                              },
+                              loop: false,
                       });
                     }); 
                     document.addEventListener("shopify:section:load", function(){
