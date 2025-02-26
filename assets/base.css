@@ -715,6 +715,7 @@ margin-top: -10px;
     height: 50px;
     padding: 16px;
     /* left: calc(40rem - 7.5rem); */
+    left: unset !important;
     z-index: 6;
     transition: opacity 1s !important;
     /* transition: left 1s !important; */
