@@ -38,13 +38,24 @@ if (!customElements.get('product-form')) {
             this.cart.getSectionsToRender().map((section) => section.id)
           );
           formData.append('sections_url', window.location.pathname);
-          alert(this.cart.getSectionsToRender().map((section) => section.id));
-          alert(window.location.pathname);
           this.cart.setActiveElement(document.activeElement);
         }
         config.body = formData;
 
-        fetch(`${routes.cart_add_url}`, config)
+        //alert(window.location.hostname);
+        const the_server = window.location.hostname;
+        if (the_server == '127.0.0.1'){
+          //alert('Localhost!');
+          var new_route = "http://127.0.0.1:9292/cart/add/";
+        } else {
+          //alert('Live Server!');
+          var new_route = `${routes.cart_add_url}`;
+        }
+        //alert(`${routes.cart_add_url}`);
+        // const local_add_to_cart = "http://127.0.0.1:9292/cart/add/";
+        // fetch(local_add_to_cart, config)
+
+        fetch(new_route, config)
           .then((response) => response.json())
           .then((response) => {
             if (response.status) {
