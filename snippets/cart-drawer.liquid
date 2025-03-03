@@ -42,9 +42,12 @@
                   {{- 'icon-close.svg' | inline_asset_content -}}
                 </span>
               </button>
-              <a href="{{ routes.all_products_collection_url }}" class="button">
+              <a href="{{ routes.all_products_collection_url }}" class="button_secondary">
                 {{ 'general.continue_shopping' | t }}
               </a>
+
+              <p>Fuel your health with supplements
+                designed to help you feel your best.</p>
 
               {%- if shop.customer_accounts_enabled and customer == null -%}
                 <p class="cart__login-title h3">{{ 'sections.cart.login.title' | t }}</p>
@@ -61,7 +64,19 @@
           {%- endif -%}
         </div>
       {%- endif -%}
-      <div class="drawer__header">
+      
+      <div class="drawer__header">    
+
+        <span class="cart_count">
+        <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+        <div class="cart-count-bubble">
+          {%- if cart.item_count < 100 -%}
+            <span aria-hidden="true">({{ cart.item_count }})</span>
+          {%- endif -%}
+          <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+        </div>
+      </span>
+
         <h2 class="drawer__heading">{{ 'sections.cart.title' | t }}</h2>
         <button
           class="drawer__close"
