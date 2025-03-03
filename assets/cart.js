@@ -144,6 +144,7 @@ class CartItems extends HTMLElement {
   }
 
   updateQuantity(line, quantity, name, variantId) {
+
     this.enableLoading(line);
 
     const body = JSON.stringify({
@@ -153,7 +154,17 @@ class CartItems extends HTMLElement {
       sections_url: window.location.pathname,
     });
 
-    fetch(`${routes.cart_change_url}`, { ...fetchConfig(), ...{ body } })
+    //alert(`${routes.cart_change_url}`);
+    const the_server = window.location.hostname;
+    if (the_server == '127.0.0.1'){
+      //alert('Localhost!');
+      var new_route = "http://127.0.0.1:9292/cart/change/";
+    } else {
+      //alert('Live Server!');
+      var new_route = `${routes.cart_change_url}`;
+    }
+    
+    fetch(new_route, { ...fetchConfig(), ...{ body } })
       .then((response) => {
         return response.text();
       })
