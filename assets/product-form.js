@@ -38,6 +38,8 @@ if (!customElements.get('product-form')) {
             this.cart.getSectionsToRender().map((section) => section.id)
           );
           formData.append('sections_url', window.location.pathname);
+          alert(this.cart.getSectionsToRender().map((section) => section.id));
+          alert(window.location.pathname);
           this.cart.setActiveElement(document.activeElement);
         }
         config.body = formData;
