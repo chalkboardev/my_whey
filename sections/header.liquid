@@ -1069,16 +1069,20 @@ transform: scale(1.03);
       {% render 'header-search', input_id: 'Search-In-Modal' %}
       
     {%- if customer -%}
-      signedin
+      <span>
+      <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="sign_in_span small-hide medium-hide header__menu-item list-menu__item link link--text focus-inset">
+        <span>SIGN IN</span> 
+      </a> 
+    </span>
       {%- else -%}
-      signedout
+      <span>
+      <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="sign_in_span small-hide medium-hide header__menu-item list-menu__item link link--text focus-inset">
+        <span>ACCOUNT</span> 
+      </a> 
+    </span>
     {%- endif -%}
 
-    <span>
-    <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="sign_in_span small-hide medium-hide header__menu-item list-menu__item link link--text focus-inset">
-      <span>SIGN IN</span> 
-    </a> 
-  </span>
+
 
      {% comment %} <header-menu>
         <details id="Details-HeaderMenu-2" class="mega-menu">
