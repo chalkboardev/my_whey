@@ -1071,13 +1071,13 @@ transform: scale(1.03);
     {%- if customer -%}
       <span>
       <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="sign_in_span small-hide medium-hide header__menu-item list-menu__item link link--text focus-inset">
-        <span>SIGN IN</span> 
+        <span>ACCOUNT</span> 
       </a> 
     </span>
       {%- else -%}
       <span>
       <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="sign_in_span small-hide medium-hide header__menu-item list-menu__item link link--text focus-inset">
-        <span>ACCOUNT</span> 
+        <span>SIGN IN</span> 
       </a> 
     </span>
     {%- endif -%}
