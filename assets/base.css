@@ -672,6 +672,21 @@ margin-top: -10px;
   line-height: calc(1 + 0.1 / var(--font-body-scale));
 }
 
+.featured_title {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #707070;
+}
+.collection__description p {
+  text-align: center;
+  font-size: 3rem;
+  line-height: 1.2;
+  font-weight: 600;
+  padding-bottom:20px;
+}
 /* ---------- ONLY MOBILE ONLY START ---------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .cart_count {
