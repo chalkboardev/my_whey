@@ -141,9 +141,9 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
+        "title": "OUR FORMULAS",
         "heading_size": "h2",
-        "description": "",
+        "description": "<p>Science-Backed with Proven Ingredients</p>",
         "show_description": false,
         "description_style": "body",
         "collection": "all",
@@ -159,7 +159,7 @@
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
-        "quick_add": "none",
+        "quick_add": "standard",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
         "padding_top": 44,
