@@ -687,6 +687,12 @@ margin-top: -10px;
   font-weight: 600;
   padding-bottom:20px;
 }
+
+.brand_div_heading {
+
+}
+
+
 /* ---------- ONLY MOBILE ONLY START ---------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .cart_count {

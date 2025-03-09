@@ -152,12 +152,21 @@
 .footer-block__heading {
   margin-bottom: 2rem;
   margin-top: 0;
-  font-size: calc(var(--font-heading-scale) * 1.6rem);
+  font-size: calc(var(--font-heading-scale) * 1.8rem);
+  font-family: sans-serif !important;
+}
+
+.brand_div_heading {
+  font-size: calc(var(--font-heading-scale) * 3rem) !important;
 }
 
 @media screen and (min-width: 990px) {
   .footer-block__heading {
-    font-size: calc(var(--font-heading-scale) * 1.8rem);
+    font-size: calc(var(--font-heading-scale) * 2rem);
+    font-family: sans-serif !important;
+  }
+  .brand_div_heading {
+    font-size: calc(var(--font-heading-scale) * 2.9rem) !important;
   }
 }
 
@@ -414,6 +423,7 @@
 
 .footer-block__brand-info {
   text-align: left;
+  padding-right: 20px;
 }
 
 .footer-block:only-child .footer-block__brand-info {
