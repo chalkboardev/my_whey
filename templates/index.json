@@ -33,7 +33,7 @@
           "type": "image",
           "settings": {
             "color_bg": "#16165b",
-            "image_bg": "shopify://shop_images/header_a.jpg",
+            "image_bg": "shopify://shop_images/header_b.jpg",
             "overlay_opacity": 0,
             "desktop_content_position": "header-middle-left",
             "title": "Tailor made",
