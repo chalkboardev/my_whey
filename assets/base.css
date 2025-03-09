@@ -691,7 +691,9 @@ margin-top: -10px;
 .brand_div_heading {
 
 }
-
+.brand_div_description > *:last-child {
+  font-size: 14px;
+}
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {

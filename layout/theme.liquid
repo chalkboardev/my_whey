@@ -255,7 +255,15 @@
         }
       }
     {% endstyle %}
-
+<style>
+  @font-face {
+    font-family: "Super Rad";
+    src: url("https://cdn.shopify.com/s/files/1/0713/8685/7724/files/Super_Rad.otf?v=1741553075");
+  }
+  .header__inline-menu ul li a{
+  font-family: "Super Rad" !important;
+  }
+  </style>
     {{ 'base.css' | asset_url | stylesheet_tag }}
     <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
 
