@@ -17,13 +17,21 @@
         "link_list_H4xBhk": {
           "type": "link_list",
           "settings": {
-            "heading": "Quick links",
+            "heading": "SHOP",
+            "menu": "footer"
+          }
+        },
+        "link_list_Dr6hTK": {
+          "type": "link_list",
+          "settings": {
+            "heading": "LEARN",
             "menu": "footer"
           }
         }
       },
       "block_order": [
-        "link_list_H4xBhk"
+        "link_list_H4xBhk",
+        "link_list_Dr6hTK"
       ],
       "settings": {
         "color_scheme": "scheme-1",
