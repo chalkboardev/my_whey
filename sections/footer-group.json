@@ -17,7 +17,7 @@
         "brand_information_WGBB9d": {
           "type": "brand_information",
           "settings": {
-            "show_social": false
+            "show_social": true
           }
         },
         "link_list_Dr6hTK": {
