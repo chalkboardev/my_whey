@@ -693,6 +693,7 @@ margin-top: -10px;
 }
 .brand_div_description > *:last-child {
   font-size: 14px;
+  margin-top: -6px !important;
 }
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
