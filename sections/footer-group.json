@@ -14,6 +14,12 @@
     "footer": {
       "type": "footer",
       "blocks": {
+        "brand_information_WGBB9d": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        },
         "link_list_Dr6hTK": {
           "type": "link_list",
           "settings": {
@@ -37,6 +43,7 @@
         }
       },
       "block_order": [
+        "brand_information_WGBB9d",
         "link_list_Dr6hTK",
         "link_list_H4xBhk",
         "link_list_x9z7LY"
@@ -46,7 +53,7 @@
         "newsletter_enable": false,
         "newsletter_heading": "Subscribe to our emails",
         "enable_follow_on_shop": true,
-        "show_social": true,
+        "show_social": false,
         "enable_country_selector": true,
         "enable_language_selector": true,
         "payment_enable": true,
