@@ -718,7 +718,7 @@ margin-top: -10px;
 .icon_grid {
   display:grid;
   place-items:center;
-  grid-gap:2em;
+  grid-gap:1em;
   grid-template-columns:
   repeat(2, 1fr);
 }
@@ -1570,7 +1570,7 @@ summary::-webkit-details-marker {
   }
 
   .info_multi .title-wrapper-with-link {
-    margin: 5rem 0 -10px 0 !important;
+    margin: 3rem 0 -10px 0 !important;
   }
 
   .title--primary {
