@@ -1014,7 +1014,9 @@ margin-top: -10px;
   align-content: center;
   grid-area: announcements;
 }
-
+.first_image_mutli {
+  display:none;
+}
 }
 /* --------- ONLY DESKTOP ONLY END --------- */ 
 
@@ -1036,6 +1038,9 @@ margin-top: -10px;
 /* ---------- EXTRA LARGE SCREEN 1440px END ---------- */
 
 @media screen and (max-width: 749px) {
+  .last_image_mutli {
+    display:none;
+  }
   .small-hide {
     display: none !important;
   }
