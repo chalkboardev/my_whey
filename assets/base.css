@@ -704,6 +704,10 @@ margin-top: -10px;
 .brand_div_heading {
   font-size: calc(var(--font-heading-scale) * 3rem) !important;
 }
+
+.my_multicolumn .multicolumn-card {
+  background:none !important;
+}
 /* ---------- ONLY MOBILE ONLY START ---------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .brand_div_heading {
