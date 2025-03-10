@@ -158,7 +158,17 @@
                   <div class="about_large_title rte">{{ block.settings.title }}</div>
                 {%- endif -%}
                 {%- if block.settings.text != blank -%}
-                  <div class="rte">{{ block.settings.text }}</div>
+                  <div class="icon_grid">
+                    <span class="svg-wrapper"
+                      ><span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span></span
+                    >
+                    <div class="rte">{{ block.settings.text }}</div>
+                    <div class="rte">{{ block.settings.text }}</div>
+                    <div class="rte">{{ block.settings.text }}</div>
+                    <div class="rte">{{ block.settings.text }}</div>
+                  </div>
+
+
                 {%- endif -%}
                 {%- if block.settings.link_label != blank -%}
                   <a

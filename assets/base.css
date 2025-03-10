@@ -715,8 +715,23 @@ margin-top: -10px;
       padding-right: 0 !important;
   }
 }
+.icon_grid {
+  display:grid;
+  place-items:center;
+  grid-gap:2em;
+  grid-template-columns:
+  repeat(2, 1fr);
+}
+
 /* ---------- ONLY MOBILE ONLY START ---------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .icon_grid {
+    display:grid;
+    place-items:center;
+    grid-gap:2em;
+    grid-template-columns:
+    repeat(1, 1fr);
+  }
   .brand_div_heading {
     font-size: calc(var(--font-heading-scale)* 2.4rem) !important;
 }
