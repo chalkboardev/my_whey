@@ -708,6 +708,13 @@ margin-top: -10px;
 .my_multicolumn .multicolumn-card {
   background:none !important;
 }
+
+@media screen and (max-width: 749px) {
+  .my_multicolumn:not(.slider) {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+  }
+}
 /* ---------- ONLY MOBILE ONLY START ---------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .brand_div_heading {
