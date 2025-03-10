@@ -220,6 +220,24 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "image_with_text_QnRYJR": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify://shop_images/my-whey.gif",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -227,6 +245,7 @@
     "video_banner_687P9e",
     "image_banner",
     "featured_collection",
-    "multicolumn_new_9dH7mP"
+    "multicolumn_new_9dH7mP",
+    "image_with_text_QnRYJR"
   ]
 }
