@@ -688,9 +688,6 @@ margin-top: -10px;
   padding-bottom:20px;
 }
 
-.brand_div_heading {
-
-}
 .brand_div_description > *:last-child {
   font-size: 14px;
   margin-top: -6px !important;
@@ -704,9 +701,14 @@ margin-top: -10px;
   padding: 0.8rem;
 }
 
-
+.brand_div_heading {
+  font-size: calc(var(--font-heading-scale) * 3rem) !important;
+}
 /* ---------- ONLY MOBILE ONLY START ---------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .brand_div_heading {
+    font-size: calc(var(--font-heading-scale)* 2.4rem) !important;
+}
   .cart_count {
     position: absolute;
     left: 17% !important;
@@ -1012,6 +1014,7 @@ margin-top: -10px;
   align-content: center;
   grid-area: announcements;
 }
+
 }
 /* --------- ONLY DESKTOP ONLY END --------- */ 
 
