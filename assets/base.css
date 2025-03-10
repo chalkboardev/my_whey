@@ -1025,9 +1025,6 @@ margin-top: -10px;
   align-content: center;
   grid-area: announcements;
 }
-.first_image_mutli {
-  display:none;
-}
 }
 /* --------- ONLY DESKTOP ONLY END --------- */ 
 
@@ -1049,6 +1046,17 @@ margin-top: -10px;
 /* ---------- EXTRA LARGE SCREEN 1440px END ---------- */
 
 @media screen and (max-width: 749px) {
+  .about_large_title {
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+  .my_multicolumn .multicolumn__title {
+    margin-bottom: 0rem !important;
+  }
+  .featured_title {
+    margin: -20px auto 0 auto !important;
+  }
   .last_image_mutli {
     display:none;
   }
@@ -1074,10 +1082,19 @@ margin-top: -10px;
     top: unset;
     left: unset;
     line-height: calc(1 + 0.1 / var(--font-body-scale));
-}
+  }
 }
 
 @media screen and (min-width: 750px) {
+  .about_large_title {
+    margin-top: 0 !important;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+  .my_multicolumn .multicolumn__title {
+    margin-bottom: 0rem !important;
+  }
   .menu-drawer {
       width: 60rem !important;
   }
@@ -1094,12 +1111,36 @@ margin-top: -10px;
 }
 
 @media screen and (min-width: 750px) and (max-width: 989px) {
+  .about_large_title {
+    margin-top: inherit !important;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+  .my_multicolumn .multicolumn__title {
+    margin-bottom: 0rem !important;
+  }
+  .featured_title {
+    margin: -20px auto 0 auto !important;
+  }
   .medium-hide {
     display: none !important;
+  }
+  .last_image_mutli {
+    display:none;
   }
 }
 
 @media screen and (min-width: 990px) {
+  .about_large_title {
+    margin-top: 1rem !important;
+    margin: inherit;
+    text-align: left;
+    padding-bottom: 10px;
+  }
+  .first_image_mutli {
+    display:none;
+  }
   .large-up-hide {
     display: none !important;
   }
@@ -1484,7 +1525,11 @@ summary::-webkit-details-marker {
 @media screen and (min-width: 990px) {
   .title,
   .title-wrapper-with-link {
-    margin: 5rem 0 3rem;
+    margin: 5rem 0 0rem;
+  }
+
+  .info_multi .title-wrapper-with-link {
+    margin: 5rem 0 -10px 0 !important;
   }
 
   .title--primary {
