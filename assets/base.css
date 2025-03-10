@@ -722,6 +722,16 @@ margin-top: -10px;
   grid-template-columns:
   repeat(2, 1fr);
 }
+.about_icons {
+  display: block;
+  text-align: center;
+}
+
+.about_info_text {
+  padding-top:8px;
+  font-size: 14px;
+  text-align: center;
+}
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {

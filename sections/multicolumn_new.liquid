@@ -159,10 +159,15 @@
                 {%- endif -%}
                 {%- if block.settings.text != blank -%}
                   <div class="icon_grid">
-                    <span class="svg-wrapper"
-                      ><span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span></span
-                    >
-                    <div class="rte">{{ block.settings.text }}</div>
+                   
+                    <div class="about_info_text rte"> 
+                      <span class="my_svg-wrapper about_icons">
+                          <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
+                      </span>
+                      <h3 style="text-align: center;margin-bottom:8px;"><strong>Clean &amp; Effective</strong></h3>
+                    {{ block.settings.text }}
+                    </div>
+
                     <div class="rte">{{ block.settings.text }}</div>
                     <div class="rte">{{ block.settings.text }}</div>
                     <div class="rte">{{ block.settings.text }}</div>
