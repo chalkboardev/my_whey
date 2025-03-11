@@ -166,8 +166,8 @@
                       </span>
 
                       <h3 style="text-align: center;margin-bottom:8px;"> 
-                      {%- if block.settings.info_heading != blank -%} 
-                          {{ block.settings.info_heading }}
+                      {%- if block.settings.text2 != blank -%} 
+                          {{ block.settings.text2 }}
                         {%- endif -%}
                       </h3>
                       {%- if block.settings.text != blank -%} 
@@ -478,10 +478,10 @@
           "label": "t:sections.multicolumn.blocks.column.settings.title.label"
         },
         {
-          "type": "richtext",
-          "id": "info_heading",
-          "default": "<strong>Info Block Heading</strong>",
-          "label": "Info Block Heading"
+          "type": "inline_richtext",
+          "id": "text2",
+          "default": "Info or description here...",
+          "label": "Info Block Description"
         },
         {
           "type": "richtext",
