@@ -157,7 +157,7 @@
                 {%- if block.settings.title != blank -%}
                   <div class="about_large_title rte">{{ block.settings.title }}</div>
                 {%- endif -%}
-                {%- if block.settings.text != blank -%}
+                {%- if block.settings.text != blank -%} 
                   <div class="icon_grid">
                    
                     <div class="about_info_text rte"> 
@@ -469,6 +469,12 @@
           "id": "title",
           "default": "t:sections.multicolumn.blocks.column.settings.title.default",
           "label": "t:sections.multicolumn.blocks.column.settings.title.label"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "t:sections.multicolumn.blocks.column.settings.text.default",
+          "label": "t:sections.multicolumn.blocks.column.settings.text.label"
         },
         {
           "type": "richtext",
