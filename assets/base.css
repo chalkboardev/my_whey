@@ -1067,7 +1067,7 @@ margin-top: -10px;
 /* ---------- EXTRA LARGE SCREEN 1440px START ---------- */
 @media screen and (min-width: 1440px) {
   .last_image_mutli .media--adapt {
-    padding-bottom: 105% !important;
+    padding-bottom: 60rem !important;
   }
   .mega-menu[open] .mega-menu__content {
     padding: 2rem 4rem 3rem 5rem !important;
