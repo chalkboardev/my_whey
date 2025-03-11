@@ -175,13 +175,22 @@
                       {%- endif -%}
                     </div>
 
-                    <div class="about_info_text rte">
+                    <div class="about_info_text rte"> 
                       <span class="my_svg-wrapper about_icons">
                           <span class="icon-wrap">&nbsp;{{ 'Icon-Quiz.svg' | inline_asset_content }}</span>
                       </span>
-                      <h3 style="text-align: center;margin-bottom:8px;"><strong>Made For You</strong></h3>
-                      Proven ingredients, free from artificial’s, crafted by experts for optimal effectiveness
+
+                      <h3 style="text-align: center;margin-bottom:8px;"> 
+                      {%- if block.settings.info_block_heading_2 != blank -%} 
+                          {{ block.settings.info_block_heading_2 }}
+                        {%- endif -%}
+                      </h3>
+                      {%- if block.settings.text2 != blank -%} 
+                        {{ block.settings.text2 }}
+                      {%- endif -%}
                     </div>
+
+      
                     <div class="about_info_text rte">
                     <span class="my_svg-wrapper about_icons">
                         <span class="icon-wrap">&nbsp;{{ 'Icon-Support.svg' | inline_asset_content }}</span>
