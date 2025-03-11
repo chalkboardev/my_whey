@@ -739,9 +739,15 @@ margin-top: -10px;
   .icon_grid {
     display:grid;
     place-items:center;
-    grid-gap:1em;
+    grid-gap:2em;
     grid-template-columns:
     repeat(1, 1fr);
+  }
+  .about_info_text {
+    min-height: auto;
+    padding-top:0px;
+    font-size: 14px;
+    text-align: center;
   }
   .brand_div_heading {
     font-size: calc(var(--font-heading-scale)* 2.4rem) !important;
