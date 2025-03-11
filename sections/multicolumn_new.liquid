@@ -158,6 +158,7 @@
                   <div class="about_large_title rte">{{ block.settings.title }}</div>
                 {%- endif -%}
  
+                {%- if block.settings.info_block_heading_1 != blank -%}
                   <div class="icon_grid">
                    
                     <div class="about_info_text rte"> 
@@ -206,7 +207,7 @@
                     Proven ingredients, free from artificial’s, crafted by experts for optimal effectiveness
                     </div>
                   </div>
-
+                {%- endif -%}
 
               
                 {%- if block.settings.link_label != blank -%}
