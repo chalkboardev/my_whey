@@ -191,14 +191,21 @@
                       {%- endif -%}
                     </div>
 
-      
-                    <div class="about_info_text rte">
-                    <span class="my_svg-wrapper about_icons">
-                        <span class="icon-wrap">&nbsp;{{ 'Icon-Support.svg' | inline_asset_content }}</span>
-                    </span>
-                    <h3 style="text-align: center;margin-bottom:8px;"><strong>Backed By Science</strong></h3>
-                    Proven ingredients, free from artificial’s, crafted by experts for optimal effectiveness
+                    <div class="about_info_text rte"> 
+                      <span class="my_svg-wrapper about_icons">
+                          <span class="icon-wrap">&nbsp;{{ 'Icon-Support.svg' | inline_asset_content }}</span>
+                      </span>
+
+                      <h3 style="text-align: center;margin-bottom:8px;"> 
+                      {%- if block.settings.info_block_heading_3 != blank -%} 
+                          {{ block.settings.info_block_heading_3 }}
+                        {%- endif -%}
+                      </h3>
+                      {%- if block.settings.text3 != blank -%} 
+                        {{ block.settings.text3 }}
+                      {%- endif -%}
                     </div>
+
                     <div class="about_info_text rte">
                     <span class="my_svg-wrapper about_icons">
                         <span class="icon-wrap">&nbsp;{{ 'Icon-Check.svg' | inline_asset_content }}</span>
@@ -518,6 +525,22 @@
           "id": "text2",
           "default": "",
           "label": "Info Block 2 Text"
+        },
+           {
+          "type": "header",
+          "content": "Info Block 3"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "info_block_heading_3",
+          "default": "",
+          "label": "Info Block 3 Heading"
+        },
+        {
+          "type": "text",
+          "id": "text3",
+          "default": "",
+          "label": "Info Block 3 Text"
         },
         {
           "type": "text",
