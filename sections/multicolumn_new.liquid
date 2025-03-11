@@ -170,8 +170,8 @@
                           {{ block.settings.info_block_heading_1 }}
                         {%- endif -%}
                       </h3>
-                      {%- if block.settings.text != blank -%} 
-                        {{ block.settings.text }}
+                      {%- if block.settings.text1 != blank -%} 
+                        {{ block.settings.text1 }}
                       {%- endif -%}
                     </div>
 
@@ -478,15 +478,31 @@
           "label": "t:sections.multicolumn.blocks.column.settings.title.label"
         },
         {
+          "type": "header",
+          "content": "Info Block 1"
+        },
+        {
           "type": "inline_richtext",
           "id": "info_block_heading_1",
-          "default": "<strong>Info Block Heading</strong>",
+          "default": "<strong>Info Block Heading 1</strong>",
           "label": "Info Block 1 Heading"
         },
         {
-      "type": "header",
-      "content": "Hello"
-    },
+          "type": "text",
+          "id": "text1",
+          "default": "Block 1 Text Here...",
+          "label": "Info Block 1 Text"
+        },
+        {
+          "type": "header",
+          "content": "Info Block 2"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "info_block_heading_2",
+          "default": "<strong>Info Block Heading 2</strong>",
+          "label": "Info Block 2 Heading"
+        },
         {
           "type": "text",
           "id": "text",
