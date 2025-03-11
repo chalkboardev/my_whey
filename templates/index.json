@@ -174,8 +174,10 @@
           "settings": {
             "image": "shopify://shop_images/my-whey_about_1_b41a755a-9d25-4934-8437-fd8d3c0c38d0.png",
             "title": "",
+            "info_block_heading_1": "<strong>Info Block Heading 1</strong>",
+            "text1": "Block 1 Text Here...",
+            "info_block_heading_2": "<strong>Info Block Heading 2</strong>",
             "text2": "Info or description here...",
-            "text": "",
             "link_label": "",
             "link": ""
           }
@@ -186,6 +188,8 @@
             "title": "<h1>Clean Supplements </h1><h1><strong>Made For You </strong></h1>",
             "info_block_heading_1": "<strong>Clean & Effective</strong>",
             "text1": "Proven ingredients, free from artificial’s, crafted by experts for optimal effectiveness",
+            "info_block_heading_2": "<strong>Info Block Heading 2</strong>",
+            "text2": "Block 2 Text Here...",
             "link_label": "",
             "link": ""
           }
@@ -195,6 +199,8 @@
           "settings": {
             "image": "shopify://shop_images/my-whey_about_1_b41a755a-9d25-4934-8437-fd8d3c0c38d0.png",
             "title": "",
+            "info_block_heading_1": "",
+            "text1": "",
             "info_block_heading_2": "<strong>Clean & Effective</strong>",
             "text2": "Info or description here...",
             "link_label": "",
