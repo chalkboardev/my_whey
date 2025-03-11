@@ -157,15 +157,22 @@
                 {%- if block.settings.title != blank -%}
                   <div class="about_large_title rte">{{ block.settings.title }}</div>
                 {%- endif -%}
-                {%- if block.settings.text != blank -%} 
+ 
                   <div class="icon_grid">
                    
                     <div class="about_info_text rte"> 
                       <span class="my_svg-wrapper about_icons">
                           <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
                       </span>
-                      <h3 style="text-align: center;margin-bottom:8px;"><strong>Clean &amp; Effective</strong></h3>
-                    {{ block.settings.text }}
+
+                      <h3 style="text-align: center;margin-bottom:8px;"> 
+                      {%- if block.settings.text2 != blank -%} 
+                          {{ block.settings.text2 }}
+                        {%- endif -%}
+                      </h3>
+                      {%- if block.settings.text != blank -%} 
+                        {{ block.settings.text }}
+                      {%- endif -%}
                     </div>
 
                     <div class="about_info_text rte">
@@ -192,7 +199,7 @@
                   </div>
 
 
-                {%- endif -%}
+              
                 {%- if block.settings.link_label != blank -%}
                   <a
                     class="link animate-arrow"
