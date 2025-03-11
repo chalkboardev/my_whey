@@ -206,14 +206,24 @@
                       {%- endif -%}
                     </div>
 
-                    <div class="about_info_text rte">
-                    <span class="my_svg-wrapper about_icons">
-                        <span class="icon-wrap">&nbsp;{{ 'Icon-Check.svg' | inline_asset_content }}</span>
-                    </span>
-                    <h3 style="text-align: center;margin-bottom:8px;"><strong>We Make It Easy</strong></h3>
-                    Proven ingredients, free from artificial’s, crafted by experts for optimal effectiveness
+                    <div class="about_info_text rte"> 
+                      <span class="my_svg-wrapper about_icons">
+                          <span class="icon-wrap">&nbsp;{{ 'Icon-Check.svg' | inline_asset_content }}</span>
+                      </span>
+
+                      <h3 style="text-align: center;margin-bottom:8px;"> 
+                      {%- if block.settings.info_block_heading_4 != blank -%} 
+                          {{ block.settings.info_block_heading_4 }}
+                        {%- endif -%}
+                      </h3>
+                      {%- if block.settings.text4 != blank -%} 
+                        {{ block.settings.text4 }}
+                      {%- endif -%}
                     </div>
+
+
                   </div>
+
                 {%- endif -%}
 
               
@@ -541,6 +551,22 @@
           "id": "text3",
           "default": "Info Block 3 Text",
           "label": "Info Block 3 Text"
+        },
+        {
+          "type": "header",
+          "content": "Info Block 4"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "info_block_heading_4",
+          "default": "<strong>Info Block 4 Heading</strong>",
+          "label": "Info Block 4 Heading"
+        },
+        {
+          "type": "text",
+          "id": "text4",
+          "default": "Info Block 4 Text",
+          "label": "Info Block 4 Text"
         },
         {
           "type": "text",
