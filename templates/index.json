@@ -178,6 +178,10 @@
             "text1": "Block 1 Text Here...",
             "info_block_heading_2": "<strong>Info Block Heading 2</strong>",
             "text2": "Info or description here...",
+            "info_block_heading_3": "<strong>Info Block 3 Heading</strong>",
+            "text3": "Info Block 3 Text",
+            "info_block_heading_4": "<strong>Info Block 4 Heading</strong>",
+            "text4": "Info Block 4 Text",
             "link_label": "",
             "link": ""
           }
@@ -190,6 +194,10 @@
             "text1": "Proven ingredients, free from artificial’s, crafted by experts for optimal effectiveness",
             "info_block_heading_2": "<strong>Made For You</strong>",
             "text2": "Performance is personal. Personalised & customizable products for your needs, body and goals",
+            "info_block_heading_3": "<strong>Backed By Science</strong>",
+            "text3": "No proprietary blends, only ingredients you recognise",
+            "info_block_heading_4": "<strong>We Make It Easy</strong>",
+            "text4": "Customisable solutions & guidance means you get just what you need & nothing more",
             "link_label": "",
             "link": ""
           }
@@ -203,6 +211,10 @@
             "text1": "",
             "info_block_heading_2": "<strong>Clean & Effective</strong>",
             "text2": "Info or description here...",
+            "info_block_heading_3": "<strong>Info Block 3 Heading</strong>",
+            "text3": "Info Block 3 Text",
+            "info_block_heading_4": "<strong>Info Block 4 Heading</strong>",
+            "text4": "Info Block 4 Text",
             "link_label": "",
             "link": ""
           }
