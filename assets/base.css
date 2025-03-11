@@ -728,7 +728,8 @@ margin-top: -10px;
 }
 
 .about_info_text {
-  padding-top:8px;
+  min-height: 200px;
+  padding-top:0px;
   font-size: 14px;
   text-align: center;
 }
@@ -1032,6 +1033,9 @@ margin-top: -10px;
     left: 27%;
     top: 26%;
   }
+  .last_image_mutli .media--adapt {
+    padding-bottom: 66rem !important;
+  }
 }
 /* --------- ONLY MEDIUM SIZE SCREENS  END --------- */ 
 
@@ -1053,9 +1057,18 @@ margin-top: -10px;
 }
 /* --------- ONLY DESKTOP ONLY END --------- */ 
 
+/* ---------- LARGE SCREEN 1200px START ---------- */
+@media screen and (min-width: 1120px) {
+  .last_image_mutli .media--adapt {
+    padding-bottom: 61rem !important;
+  }
+}
 
 /* ---------- EXTRA LARGE SCREEN 1440px START ---------- */
 @media screen and (min-width: 1440px) {
+  .last_image_mutli .media--adapt {
+    padding-bottom: 105% !important;
+  }
   .mega-menu[open] .mega-menu__content {
     padding: 2rem 4rem 3rem 5rem !important;
   }
@@ -1074,7 +1087,7 @@ margin-top: -10px;
   .about_large_title {
     margin: 0 auto;
     text-align: center;
-    padding-bottom: 10px;
+    padding-bottom: 44px;
   }
   .about_large_title h1 {
     padding: 0;
@@ -1119,7 +1132,7 @@ margin-top: -10px;
     margin-top: 0 !important;
     margin: 0 auto;
     text-align: center;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
   }
   .about_large_title h1 {
     padding: 0;
@@ -1148,7 +1161,7 @@ margin-top: -10px;
     margin-top: inherit !important;
     margin: 0 auto;
     text-align: center;
-    padding-bottom: 10px;
+    padding-bottom: 54px;
   }
   .about_large_title h1 {
     padding: 0;
@@ -1173,7 +1186,7 @@ margin-top: -10px;
     margin-top: 1rem !important;
     margin: inherit;
     text-align: left;
-    padding-bottom: 10px;
+    padding-bottom: 36px;
   }
   .about_large_title h1 {
     padding: 0;
