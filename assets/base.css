@@ -734,6 +734,15 @@ margin-top: -10px;
   text-align: center;
 }
 
+.about_info_link {
+  margin: 0px auto;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  padding: 0rem 0 0 0;
+}
+
+
 /* ---------- ONLY MOBILE ONLY START ---------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .icon_grid {
