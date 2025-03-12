@@ -169,7 +169,9 @@
                       {%- if block.settings.info_block_heading_1 != blank -%}
                       {{
                         block.settings.block_icon_img
+                        
                       }}
+                      <img src="{{ block.settings.block_icon_img | inline_asset_content }}" alt="Your SVG Image" /> 
                       {%- endif -%}
                       {% comment %} <div class="custom-svg"> 
                       <img src="{{ 'your-svg-file.svg' | asset_url }}" alt="Your SVG Image" /> 
