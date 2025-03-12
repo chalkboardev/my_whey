@@ -170,10 +170,10 @@
                         <span class="my_svg-wrapper about_icons">
                           <span class="icon-wrap">&nbsp;{{ block.settings.block_icon_img | inline_asset_content  }}</span>
                       </span>
-                      <span class="my_svg-wrapper about_icons">     
-                        <image xlink:href="{{ block.settings.block_icon_img | inline_asset_content }}"  width="30" height="30"/>    
+                      <svg width="190" height="190">       
+                        <image xlink:href="{{ block.settings.block_icon_img | asset_url }}"  width="90" height="90"/>    
                    </svg>
-                      <img src="{{ block.settings.block_icon_img | inline_asset_content }}" alt="Your SVG Image" /> 
+                      <img src="{{ block.settings.block_icon_img | asset_url }}" alt="Your SVG Image" /> 
                       {%- endif -%}
                       {% comment %} <div class="custom-svg"> 
                       <img src="{{ 'your-svg-file.svg' | asset_url }}" alt="Your SVG Image" /> 
