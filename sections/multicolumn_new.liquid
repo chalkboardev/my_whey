@@ -143,7 +143,7 @@
               {%- if forloop.index != 3 and forloop.index != 1 -%}
               {%- unless section.settings.title == blank -%}
                 <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin multicolumn__title">
-                  <h2 class="wow featured_title title inline-richtext {{ section.settings.heading_size }}">
+                  <h2 class="featured_title title inline-richtext {{ section.settings.heading_size }}">
                     {{ section.settings.title }}
                   </h2>
                   {%- if section.settings.button_label != blank and show_mobile_slider -%}
@@ -156,31 +156,31 @@
             {%- endif -%}  
 
                 {%- if block.settings.title != blank -%}
-                  <div class="wow about_large_title rte">{{ block.settings.title }}</div>
+                  <div class="about_large_title rte">{{ block.settings.title }}</div>
                 {%- endif -%}
  
                 {%- if block.settings.info_block_heading_1 != blank -%}
                   <div class="icon_grid">
                    
                     <div class="about_info_text rte"> 
-                      {% comment %} <span class="wow animate_me my_svg-wrapper about_icons">
+                      {% comment %} <span class="my_svg-wrapper about_icons">
                           <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
                       </span> {% endcomment %}
 
                       {% if block.settings.block_icon_img1 == 'Icon-Clean' %}
-                        <span class="wow animate_me my_svg-wrapper about_icons">
+                        <span class="my_svg-wrapper about_icons">
                           <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
                         </span>
                       {% elsif block.settings.block_icon_img1 == 'Icon-Quiz' %}
-                        <span class="wow animate_me my_svg-wrapper about_icons">
+                        <span class="my_svg-wrapper about_icons">
                           <span class="icon-wrap">&nbsp;{{ 'Icon-Quiz.svg' | inline_asset_content }}</span>
                         </span>
                       {% elsif block.settings.block_icon_img1 == 'Icon-Support' %}
-                        <span class="wow animate_me my_svg-wrapper about_icons">
+                        <span class="my_svg-wrapper about_icons">
                           <span class="icon-wrap">&nbsp;{{ 'Icon-Support.svg' | inline_asset_content }}</span>
                         </span>
                       {% elsif block.settings.block_icon_img1 == 'Icon-Check' %}
-                        <span class="wow animate_me my_svg-wrapper about_icons">
+                        <span class="my_svg-wrapper about_icons">
                           <span class="icon-wrap">&nbsp;{{ 'Icon-Check.svg' | inline_asset_content }}</span>
                         </span>
                       {% else %}
@@ -202,19 +202,19 @@
                     <div class="about_info_text rte"> 
 
                     {% if block.settings.block_icon_img2 == 'Icon-Clean' %}
-                      <span class="wow animate_me my_svg-wrapper about_icons">
+                      <span class="my_svg-wrapper about_icons">
                         <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
                       </span>
                     {% elsif block.settings.block_icon_img2 == 'Icon-Quiz' %}
-                      <span class="wow animate_me my_svg-wrapper about_icons">
+                      <span class="my_svg-wrapper about_icons">
                         <span class="icon-wrap">&nbsp;{{ 'Icon-Quiz.svg' | inline_asset_content }}</span>
                       </span>
                     {% elsif block.settings.block_icon_img2 == 'Icon-Support' %}
-                      <span class="wow animate_me my_svg-wrapper about_icons">
+                      <span class="my_svg-wrapper about_icons">
                         <span class="icon-wrap">&nbsp;{{ 'Icon-Support.svg' | inline_asset_content }}</span>
                       </span>
                     {% elsif block.settings.block_icon_img2 == 'Icon-Check' %}
-                      <span class="wow animate_me my_svg-wrapper about_icons">
+                      <span class="my_svg-wrapper about_icons">
                         <span class="icon-wrap">&nbsp;{{ 'Icon-Check.svg' | inline_asset_content }}</span>
                       </span>
                     {% else %}
@@ -234,19 +234,19 @@
                     <div class="about_info_text rte"> 
                      
                     {% if block.settings.block_icon_img3 == 'Icon-Clean' %}
-                      <span class="wow animate_me my_svg-wrapper about_icons">
+                      <span class="my_svg-wrapper about_icons">
                         <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
                       </span>
                     {% elsif block.settings.block_icon_img3 == 'Icon-Quiz' %}
-                      <span class="wow animate_me my_svg-wrapper about_icons">
+                      <span class="my_svg-wrapper about_icons">
                         <span class="icon-wrap">&nbsp;{{ 'Icon-Quiz.svg' | inline_asset_content }}</span>
                       </span>
                     {% elsif block.settings.block_icon_img3 == 'Icon-Support' %}
-                      <span class="wow animate_me my_svg-wrapper about_icons">
+                      <span class="my_svg-wrapper about_icons">
                         <span class="icon-wrap">&nbsp;{{ 'Icon-Support.svg' | inline_asset_content }}</span>
                       </span>
                     {% elsif block.settings.block_icon_img3 == 'Icon-Check' %}
-                      <span class="wow animate_me my_svg-wrapper about_icons">
+                      <span class="my_svg-wrapper about_icons">
                         <span class="icon-wrap">&nbsp;{{ 'Icon-Check.svg' | inline_asset_content }}</span>
                       </span>
                     {% else %}
@@ -266,19 +266,19 @@
                     <div class="about_info_text rte"> 
 
                     {% if block.settings.block_icon_img4 == 'Icon-Clean' %}
-                      <span class="wow my_svg-wrapper about_icons">
+                      <span class="my_svg-wrapper about_icons">
                         <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
                       </span>
                     {% elsif block.settings.block_icon_img4 == 'Icon-Quiz' %}
-                      <span class="wow animate_me my_svg-wrapper about_icons">
+                      <span class="my_svg-wrapper about_icons">
                         <span class="icon-wrap">&nbsp;{{ 'Icon-Quiz.svg' | inline_asset_content }}</span>
                       </span>
                     {% elsif block.settings.block_icon_img4 == 'Icon-Support' %}
-                      <span class="wow animate_me my_svg-wrapper about_icons">
+                      <span class="my_svg-wrapper about_icons">
                         <span class="icon-wrap">&nbsp;{{ 'Icon-Support.svg' | inline_asset_content }}</span>
                       </span>
                     {% elsif block.settings.block_icon_img4 == 'Icon-Check' %}
-                      <span class="wow animate_me my_svg-wrapper about_icons">
+                      <span class="my_svg-wrapper about_icons">
                         <span class="icon-wrap">&nbsp;{{ 'Icon-Check.svg' | inline_asset_content }}</span>
                       </span>
                     {% else %}

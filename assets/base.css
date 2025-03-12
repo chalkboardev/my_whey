@@ -680,20 +680,14 @@ margin-top: -10px;
   font-weight: 600;
   color: #707070;
 }
-.featured_title { 
-  visibility: visible;
+.animate_it { 
+  /* visibility: visible;
   animation-direction: alternate;
   animation-name: fadeInLeft;
   animation-duration: 2.5s;
-  animation-iteration-count: 1;
+  animation-iteration-count: 1; */
 }
-.about_large_title {
-  visibility: visible;
-  animation-direction: alternate;
-  animation-name: fadeInRight;
-  animation-duration: 2.5s;
-  animation-iteration-count: 1;
-}
+
 .collection__description p {
   text-align: center;
   font-size: 3rem;
@@ -702,13 +696,6 @@ margin-top: -10px;
   padding-bottom:20px;
 }
 
-.animate_me {
-  visibility: visible;
-  animation-direction: alternate;
-  animation-name: flipInY;
-  animation-duration: 2.5s;
-  animation-iteration-count: 1;
-}
 
 .brand_div_description > *:last-child {
   font-size: 14px;
@@ -747,11 +734,6 @@ margin-top: -10px;
 .about_icons {
   display: block;
   text-align: center;
-  visibility: visible;
-  animation-direction: alternate;
-  animation-name: flipInY;
-  animation-duration: 2.5s;
-  animation-iteration-count: 1;
 }
 
 .about_info_text {
