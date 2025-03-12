@@ -166,24 +166,24 @@
                           <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
                       </span> {% endcomment %}
 
-                      {% if block.settings.block_icon_img == 'Icon-Clean' %}
+                      {% if block.settings.block_icon_img1 == 'Icon-Clean' %}
                         <span class="my_svg-wrapper about_icons">
                           <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
                         </span>
-                      {% elsif block.settings.block_icon_img == 'Icon-Quiz' %}
+                      {% elsif block.settings.block_icon_img1 == 'Icon-Quiz' %}
                         <span class="my_svg-wrapper about_icons">
                           <span class="icon-wrap">&nbsp;{{ 'Icon-Quiz.svg' | inline_asset_content }}</span>
                         </span>
-                      {% elsif block.settings.block_icon_img == 'Icon-Support' %}
+                      {% elsif block.settings.block_icon_img1 == 'Icon-Support' %}
                         <span class="my_svg-wrapper about_icons">
                           <span class="icon-wrap">&nbsp;{{ 'Icon-Support.svg' | inline_asset_content }}</span>
                         </span>
-                      {% elsif block.settings.block_icon_img == 'Icon-Check' %}
+                      {% elsif block.settings.block_icon_img1 == 'Icon-Check' %}
                         <span class="my_svg-wrapper about_icons">
                           <span class="icon-wrap">&nbsp;{{ 'Icon-Check.svg' | inline_asset_content }}</span>
                         </span>
                       {% else %}
-                        No SVG Selected
+                       
                       {% endif %}
 
 
@@ -199,9 +199,26 @@
                     </div>
 
                     <div class="about_info_text rte"> 
+
+                    {% if block.settings.block_icon_img2 == 'Icon-Clean' %}
                       <span class="my_svg-wrapper about_icons">
-                          <span class="icon-wrap">&nbsp;{{ 'Icon-Quiz.svg' | inline_asset_content }}</span>
+                        <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
                       </span>
+                    {% elsif block.settings.block_icon_img2 == 'Icon-Quiz' %}
+                      <span class="my_svg-wrapper about_icons">
+                        <span class="icon-wrap">&nbsp;{{ 'Icon-Quiz.svg' | inline_asset_content }}</span>
+                      </span>
+                    {% elsif block.settings.block_icon_img2 == 'Icon-Support' %}
+                      <span class="my_svg-wrapper about_icons">
+                        <span class="icon-wrap">&nbsp;{{ 'Icon-Support.svg' | inline_asset_content }}</span>
+                      </span>
+                    {% elsif block.settings.block_icon_img2 == 'Icon-Check' %}
+                      <span class="my_svg-wrapper about_icons">
+                        <span class="icon-wrap">&nbsp;{{ 'Icon-Check.svg' | inline_asset_content }}</span>
+                      </span>
+                    {% else %}
+                     
+                    {% endif %}
 
                       <h3 style="text-align: center;margin-bottom:8px;"> 
                       {%- if block.settings.info_block_heading_2 != blank -%} 
@@ -532,7 +549,7 @@
         },
         {
             "type": "select",
-            "id": "block_icon_img",
+            "id": "block_icon_img1",
             "label": "Select SVG",
             "options": [
               {
@@ -570,6 +587,30 @@
           "type": "header",
           "content": "Info Block 2"
         },
+        {
+            "type": "select",
+            "id": "block_icon_img2",
+            "label": "Select SVG",
+            "options": [
+              {
+                "value": "Icon-Clean",
+                "label": "Icon-Clean"
+              },
+              {
+                "value": "Icon-Quiz",
+                "label": "Icon-Quiz"
+              },
+              {
+                "value": "Icon-Support",
+                "label": "Icon-Support"
+              },
+              {
+                "value": "Icon-Check",
+                "label": "Icon-Check"
+              }
+            ],
+            "default": "Icon-Quiz"
+          },
         {
           "type": "inline_richtext",
           "id": "info_block_heading_2",
