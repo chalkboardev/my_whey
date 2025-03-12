@@ -758,9 +758,14 @@ margin-top: -10px;
   margin-right: 2.5rem;
 }
 
-.collection .slider-counter 
+/* .collection .slider-counter 
 {
   display: none;
+} */
+
+.collection .slider-buttons {
+  margin-bottom: -3rem;
+  margin-top: -1rem;
 }
 
 /* ---------- ONLY MOBILE ONLY START ---------- */

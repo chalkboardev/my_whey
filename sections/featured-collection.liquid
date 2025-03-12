@@ -156,14 +156,14 @@
             aria-controls="Slider-{{ section.id }}"
           >
             <span class="svg-wrapper">
-              {{- 'icon-caret.svg' | inline_asset_content -}}
+              {{- 'icon-left_arrow.svg' | inline_asset_content -}}
             </span>
           </button>
           <div class="slider-counter caption">
-            <span class="slider-counter--current">1</span>
+            {% comment %} <span class="slider-counter--current">1</span>
             <span aria-hidden="true"> / </span>
             <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
-            <span class="slider-counter--total">{{ products_to_display }}</span>
+            <span class="slider-counter--total">{{ products_to_display }}</span> {% endcomment %}
           </div>
           <button
             type="button"
@@ -173,7 +173,7 @@
             aria-controls="Slider-{{ section.id }}"
           >
             <span class="svg-wrapper">
-              {{- 'icon-caret.svg' | inline_asset_content -}}
+              {{- 'icon-right_arrow.svg' | inline_asset_content -}}
             </span>
           </button>
         </div>
