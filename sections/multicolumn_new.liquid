@@ -166,12 +166,22 @@
                           <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
                       </span>
 
-                      {% if block.settings.svg == 'family' %}
-                        {% include 'svg--family' %}
-                      {% elsif block.settings.svg == 'bottles' %}
-                        {% include 'svg--plastic' %}
-                      {% elsif block.settings.svg == 'globe' %}
-                        {% include 'svg--globe' %}
+                      {% if block.settings.svg == 'Icon-Clean' %}
+                        <span class="my_svg-wrapper about_icons">
+                          <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
+                        </span>
+                      {% elsif block.settings.svg == 'Icon-Quiz' %}
+                        <span class="my_svg-wrapper about_icons">
+                          <span class="icon-wrap">&nbsp;{{ 'Icon-Quiz.svg' | inline_asset_content }}</span>
+                        </span>
+                      {% elsif block.settings.svg == 'Icon-Support' %}
+                        <span class="my_svg-wrapper about_icons">
+                          <span class="icon-wrap">&nbsp;{{ 'Icon-Support.svg' | inline_asset_content }}</span>
+                        </span>
+                      {% elsif block.settings.svg == 'Icon-Check' %}
+                        <span class="my_svg-wrapper about_icons">
+                          <span class="icon-wrap">&nbsp;{{ 'Icon-Check.svg' | inline_asset_content }}</span>
+                        </span>
                       {% else %}
                         No SVG Selected
                       {% endif %}
