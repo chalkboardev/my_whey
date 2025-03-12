@@ -82,6 +82,11 @@
 
   .collection__title.title-wrapper--self-padded-tablet-down {
     padding: 0 5rem;
+    visibility: visible !important;
+    animation-direction: alternate !important;
+    animation-name: fadeInUp !important;
+    animation-duration: 2.5s !important;
+    animation-iteration-count: 1 !important;
   }
 
   .collection slider-component:not(.page-width-desktop) {

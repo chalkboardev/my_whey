@@ -672,7 +672,7 @@ margin-top: -10px;
   line-height: calc(1 + 0.1 / var(--font-body-scale));
 }
 
-.featured_title {
+.featured_title { 
   text-align: center;
   margin: 0 auto;
   font-size: 16px;
@@ -680,12 +680,34 @@ margin-top: -10px;
   font-weight: 600;
   color: #707070;
 }
+.featured_title { 
+  visibility: visible;
+  animation-direction: alternate;
+  animation-name: fadeInLeft;
+  animation-duration: 2.5s;
+  animation-iteration-count: 1;
+}
+.about_large_title {
+  visibility: visible;
+  animation-direction: alternate;
+  animation-name: fadeInRight;
+  animation-duration: 2.5s;
+  animation-iteration-count: 1;
+}
 .collection__description p {
   text-align: center;
   font-size: 3rem;
   line-height: 1.2;
   font-weight: 600;
   padding-bottom:20px;
+}
+
+.animate_me {
+  visibility: visible;
+  animation-direction: alternate;
+  animation-name: flipInY;
+  animation-duration: 2.5s;
+  animation-iteration-count: 1;
 }
 
 .brand_div_description > *:last-child {
@@ -1401,11 +1423,11 @@ details > * {
   --duration-medium: 300ms;
   --duration-long: 500ms;
   --duration-extra-long: 600ms;
-  --duration-extra-longer: 750ms;
+  --duration-extra-longer: 1550ms;
   --duration-extended: 3s;
   --ease-out-slow: cubic-bezier(0, 0, 0.3, 1);
-  --animation-slide-in: slideIn var(--duration-extra-long) var(--ease-out-slow) forwards;
-  --animation-fade-in: fadeIn var(--duration-extra-long) var(--ease-out-slow);
+  --animation-slide-in: slideIn var(--duration-extra-longer) var(--ease-out-slow) forwards;
+  --animation-fade-in: fadeIn var(--duration-extra-longer) var(--ease-out-slow);
 }
 
 .underlined-link,
