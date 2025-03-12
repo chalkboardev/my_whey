@@ -166,10 +166,21 @@
                           <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
                       </span>
 
+                      {% if block.settings.svg == 'family' %}
+                        {% include 'svg--family' %}
+                      {% elsif block.settings.svg == 'bottles' %}
+                        {% include 'svg--plastic' %}
+                      {% elsif block.settings.svg == 'globe' %}
+                        {% include 'svg--globe' %}
+                      {% else %}
+                        No SVG Selected
+                      {% endif %}
+
                       {%- if block.settings.block_icon_img != blank -%}
                         <span class="my_svg-wrapper about_icons">
                           <span class="icon-wrap">&nbsp;{{ block.settings.block_icon_img | asset_url  }}</span>
                       </span>
+                      
                       <img src="{{ block.settings.block_icon_img | asset_url }}" alt="Your SVG Image" /> 
                       {%- endif -%}
                       {% comment %} <div class="custom-svg"> 
@@ -519,10 +530,29 @@
           "content": "Info Block 1"
         },
         {
-          "type": "image_picker",
-          "id": "block_icon_img",
-          "label": "t:sections.multicolumn.blocks.column.settings.image.label"
-        },
+            "type": "select",
+            "id": "block_icon_img",
+            "label": "Select SVG",
+            "options": [
+              {
+                "value": "Icon-Clean",
+                "label": "Icon-Clean"
+              },
+              {
+                "value": "Icon-Quiz",
+                "label": "Icon-Quiz"
+              },
+              {
+                "value": "Icon-Support",
+                "label": "Icon-Support"
+              },
+              {
+                "value": "Icon-Check",
+                "label": "Icon-Check"
+              }
+            ],
+            "default": "family"
+          },
         {
           "type": "inline_richtext",
           "id": "info_block_heading_1",
