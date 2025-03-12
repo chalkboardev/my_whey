@@ -168,9 +168,9 @@
 
                       {%- if block.settings.block_icon_img != blank -%}
                         <span class="my_svg-wrapper about_icons">
-                          <span class="icon-wrap">&nbsp;{{ block.settings.block_icon_img | asset_url  }}</span>
+                          <span class="icon-wrap">&nbsp;{{ block.settings.block_icon_img | inline_asset_content  }}</span>
                       </span>
-                      <img src="{{ block.settings.block_icon_img | asset_url }}" alt="Your SVG Image" /> 
+                      <img src="{{ block.settings.block_icon_img | inline_asset_content }}" alt="Your SVG Image" /> 
                       {%- endif -%}
                       {% comment %} <div class="custom-svg"> 
                       <img src="{{ 'your-svg-file.svg' | asset_url }}" alt="Your SVG Image" /> 
