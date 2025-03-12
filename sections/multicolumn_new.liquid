@@ -183,10 +183,10 @@
                         <span class="my_svg-wrapper about_icons">
                           <span class="icon-wrap">&nbsp;{{ 'Icon-Check.svg' | inline_asset_content }}</span>
                         </span>
-                        {% elsif block.settings.block_icon_img1 == 'icon-apple' %}
+                        {% comment %} {% elsif block.settings.block_icon_img1 == 'icon-apple' %}
                           <span class="my_svg-wrapper about_icons">
                             <span class="icon-wrap">&nbsp;{{ 'icon-apple.svg' | inline_asset_content }}</span>
-                          </span>
+                          </span> {% endcomment %}
                       {% else %}
                        
                       {% endif %}
