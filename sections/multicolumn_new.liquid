@@ -166,6 +166,15 @@
                           <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
                       </span>
 
+                      {%- if block.settings.info_block_heading_1 != blank -%}
+                      {{
+                        block.settings.block_icon_img
+                      }}
+                      {%- endif -%}
+                      {% comment %} <div class="custom-svg"> 
+                      <img src="{{ 'your-svg-file.svg' | asset_url }}" alt="Your SVG Image" /> 
+                      </div> {% endcomment %}
+
                       <h3 style="text-align: center;margin-bottom:8px;"> 
                       {%- if block.settings.info_block_heading_1 != blank -%} 
                           {{ block.settings.info_block_heading_1 }}
@@ -507,6 +516,11 @@
         {
           "type": "header",
           "content": "Info Block 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_icon_img",
+          "label": "t:sections.multicolumn.blocks.column.settings.image.label"
         },
         {
           "type": "inline_richtext",
