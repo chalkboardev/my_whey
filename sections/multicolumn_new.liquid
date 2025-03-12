@@ -231,9 +231,26 @@
                     </div>
 
                     <div class="about_info_text rte"> 
+                     
+                    {% if block.settings.block_icon_img3 == 'Icon-Clean' %}
                       <span class="my_svg-wrapper about_icons">
-                          <span class="icon-wrap">&nbsp;{{ 'Icon-Support.svg' | inline_asset_content }}</span>
+                        <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
                       </span>
+                    {% elsif block.settings.block_icon_img3 == 'Icon-Quiz' %}
+                      <span class="my_svg-wrapper about_icons">
+                        <span class="icon-wrap">&nbsp;{{ 'Icon-Quiz.svg' | inline_asset_content }}</span>
+                      </span>
+                    {% elsif block.settings.block_icon_img3 == 'Icon-Support' %}
+                      <span class="my_svg-wrapper about_icons">
+                        <span class="icon-wrap">&nbsp;{{ 'Icon-Support.svg' | inline_asset_content }}</span>
+                      </span>
+                    {% elsif block.settings.block_icon_img3 == 'Icon-Check' %}
+                      <span class="my_svg-wrapper about_icons">
+                        <span class="icon-wrap">&nbsp;{{ 'Icon-Check.svg' | inline_asset_content }}</span>
+                      </span>
+                    {% else %}
+                     
+                    {% endif %}
 
                       <h3 style="text-align: center;margin-bottom:8px;"> 
                       {%- if block.settings.info_block_heading_3 != blank -%} 
@@ -246,9 +263,26 @@
                     </div>
 
                     <div class="about_info_text rte"> 
+
+                    {% if block.settings.block_icon_img4 == 'Icon-Clean' %}
                       <span class="my_svg-wrapper about_icons">
-                          <span class="icon-wrap">&nbsp;{{ 'Icon-Check.svg' | inline_asset_content }}</span>
+                        <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
                       </span>
+                    {% elsif block.settings.block_icon_img4 == 'Icon-Quiz' %}
+                      <span class="my_svg-wrapper about_icons">
+                        <span class="icon-wrap">&nbsp;{{ 'Icon-Quiz.svg' | inline_asset_content }}</span>
+                      </span>
+                    {% elsif block.settings.block_icon_img4 == 'Icon-Support' %}
+                      <span class="my_svg-wrapper about_icons">
+                        <span class="icon-wrap">&nbsp;{{ 'Icon-Support.svg' | inline_asset_content }}</span>
+                      </span>
+                    {% elsif block.settings.block_icon_img4 == 'Icon-Check' %}
+                      <span class="my_svg-wrapper about_icons">
+                        <span class="icon-wrap">&nbsp;{{ 'Icon-Check.svg' | inline_asset_content }}</span>
+                      </span>
+                    {% else %}
+                     
+                    {% endif %}
 
                       <h3 style="text-align: center;margin-bottom:8px;"> 
                       {%- if block.settings.info_block_heading_4 != blank -%} 
@@ -628,6 +662,30 @@
           "content": "Info Block 3"
         },
         {
+            "type": "select",
+            "id": "block_icon_img3",
+            "label": "Select SVG",
+            "options": [
+              {
+                "value": "Icon-Clean",
+                "label": "Icon-Clean"
+              },
+              {
+                "value": "Icon-Quiz",
+                "label": "Icon-Quiz"
+              },
+              {
+                "value": "Icon-Support",
+                "label": "Icon-Support"
+              },
+              {
+                "value": "Icon-Check",
+                "label": "Icon-Check"
+              }
+            ],
+            "default": "Icon-Support"
+          },
+        {
           "type": "inline_richtext",
           "id": "info_block_heading_3",
           "default": "<strong>Info Block 3 Heading</strong>",
@@ -643,6 +701,30 @@
           "type": "header",
           "content": "Info Block 4"
         },
+        {
+            "type": "select",
+            "id": "block_icon_img4",
+            "label": "Select SVG",
+            "options": [
+              {
+                "value": "Icon-Clean",
+                "label": "Icon-Clean"
+              },
+              {
+                "value": "Icon-Quiz",
+                "label": "Icon-Quiz"
+              },
+              {
+                "value": "Icon-Support",
+                "label": "Icon-Support"
+              },
+              {
+                "value": "Icon-Check",
+                "label": "Icon-Check"
+              }
+            ],
+            "default": "Icon-Check"
+          },
         {
           "type": "inline_richtext",
           "id": "info_block_heading_4",
