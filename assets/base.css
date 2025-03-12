@@ -747,6 +747,11 @@ margin-top: -10px;
 .about_icons {
   display: block;
   text-align: center;
+  visibility: visible;
+  animation-direction: alternate;
+  animation-name: flipInY;
+  animation-duration: 2.5s;
+  animation-iteration-count: 1;
 }
 
 .about_info_text {
