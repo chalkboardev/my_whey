@@ -167,7 +167,9 @@
                       </span>
 
                       {%- if block.settings.block_icon_img != blank -%}
-  
+                        <span class="my_svg-wrapper about_icons">
+                          <span class="icon-wrap">&nbsp;{{ block.settings.block_icon_img | asset_url  }}</span>
+                      </span>
                       <img src="{{ block.settings.block_icon_img | asset_url }}" alt="Your SVG Image" /> 
                       {%- endif -%}
                       {% comment %} <div class="custom-svg"> 
