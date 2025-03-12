@@ -137,7 +137,8 @@
                   </div>
                 </div>
               {%- endif -%}
-              <div class="multicolumn-card__info">
+
+              <div class="info_multi_column multicolumn-card__info">
 
               {%- if forloop.index != 3 and forloop.index != 1 -%}
               {%- unless section.settings.title == blank -%}
@@ -331,12 +332,12 @@
           >
             <span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span>
           </button>
-          <div class="slider-counter caption">
+           <div class="slider-counter caption">
             <span class="slider-counter--current">1</span>
             <span aria-hidden="true"> / </span>
             <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
             <span class="slider-counter--total">{{ section.blocks.size }}</span>
-          </div>
+          </div> 
           <button
             type="button"
             class="slider-button slider-button--next"
