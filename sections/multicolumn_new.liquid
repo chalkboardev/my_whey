@@ -166,9 +166,9 @@
                           <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
                       </span>
 
-                      {%- if block.settings.info_block_heading_1 != blank -%}
+                      {%- if block.settings.block_icon_img != blank -%}
   
-                      <img src="{{ block.settings.info_block_heading_1 | asset_url }}" alt="Your SVG Image" /> 
+                      <img src="{{ block.settings.block_icon_img | asset_url }}" alt="Your SVG Image" /> 
                       {%- endif -%}
                       {% comment %} <div class="custom-svg"> 
                       <img src="{{ 'your-svg-file.svg' | asset_url }}" alt="Your SVG Image" /> 
