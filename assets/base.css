@@ -795,7 +795,7 @@ margin-top: -10px;
   color: #4d4d4d;
 }
 
-/* .field:after, .select:after, .customer .field:after, .customer select:after, .localization-form__select:after {
+.field:after, .select:after, .customer .field:after, .customer select:after, .localization-form__select:after {
   border-radius: 30px !important;
   height: 54px;
 }
@@ -814,7 +814,7 @@ margin-top: -10px;
 }
 .newsletter-form__field-wrapper .field__input {
   border-radius: 20px;
-} */
+}
 
 .about_info_head {
   text-align: center;
