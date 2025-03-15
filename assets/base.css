@@ -831,8 +831,16 @@ margin-top: -10px;
 .footer-block__newsletter {
   width: 100%;
 }
+
+.slider_grid {
+  overflow: hidden;
+}
+
 /* ---------- ONLY MOBILE ONLY START ---------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .collection__title.title-wrapper {
+    margin-bottom: 0;
+}
   .about_info_link {
     margin: 0px auto;
     display: inline-block;
