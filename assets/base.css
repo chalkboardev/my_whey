@@ -789,10 +789,10 @@ margin-top: -10px;
   height: 17px !important;
 }
 .footer_newsletter_txt {
-  font-size: 1.6rem !important;
-  text-transform: uppercase;
+  font-size: 1.5rem !important;
+  /* text-transform: uppercase; */
   font-family: sans-serif !important;
-  color: #4d4d4d;
+  color: #696969;
 }
 
 .field:after, .select:after, .customer .field:after, .customer select:after, .localization-form__select:after {
@@ -828,6 +828,9 @@ margin-top: -10px;
   text-align: center; 
 }
 
+.footer-block__newsletter {
+  width: 100%;
+}
 /* ---------- ONLY MOBILE ONLY START ---------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .about_info_link {
