@@ -847,6 +847,9 @@ margin-top: -10px;
   font-size: 16px;
   padding: 0 0 6px 0;
 }
+.product_card_info {
+  text-decoration: none !important;
+}
 /* ---------- ONLY MOBILE ONLY START ---------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
 
