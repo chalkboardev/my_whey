@@ -146,7 +146,7 @@
       <div class="card__content">
         <div class="card__information">
           <h3
-            class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
+            class="featured_card_title card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
             {% if card_product.featured_media or settings.card_style == 'card' %}
               id="title-{{ section_id }}-{{ card_product.id }}"
             {% endif %}
@@ -160,6 +160,15 @@
               {{ card_product.title | escape }}
             </a>
           </h3>
+          <a 
+          href="{{ card_product.url }}"
+          id="CardLink-{{ section_id }}-{{ card_product.id }}"
+          class="full-unstyled-link"
+          aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}">
+
+          <span>{{ card_product.description | strip_html | truncatewords: 20 }}</span>
+
+        </a>
           <div class="card-information">
             {% comment %} {{ card_product.description  }} {% endcomment %}
             {%- if show_vendor -%}
