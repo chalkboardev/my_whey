@@ -731,9 +731,14 @@ margin-top: -10px;
   grid-template-columns:
   repeat(2, 1fr);
 }
-.about_icons {
+.about_icons { 
+  visibility: visible;
+  animation-direction: alternate;
+  animation-name: fadeInUp;
+  animation-duration: 2.5s;
+  animation-iteration-count: 1;
   display: block;
-  text-align: center;
+  text-align: center; 
 }
 
 .about_info_text {
@@ -775,6 +780,40 @@ margin-top: -10px;
 .collection .slider-buttons {
   margin-bottom: -3rem;
   margin-top: -1rem;
+}
+
+.footer_mail_icon {
+  position: relative;
+  top: 3px;
+  width: 17px !important;
+  height: 17px !important;
+}
+.footer_newsletter_txt {
+  font-size: 1.6rem !important;
+  text-transform: uppercase;
+  font-family: sans-serif !important;
+  color: #4d4d4d;
+}
+
+.field:after, .select:after, .customer .field:after, .customer select:after, .localization-form__select:after {
+  border-radius: 30px !important;
+  height: 54px;
+}
+.field__input:focus, .field__input:not(:placeholder-shown), .field__input:-webkit-autofill, .customer .field input:focus, .customer .field input:not(:placeholder-shown), .customer .field input:-webkit-autofill {
+  border-radius: 30px !important;
+  height: 54px;
+}
+.newsletter-form__field-wrapper .field {
+  height: 54px;
+}
+.field__label, .customer .field label {
+  top: 16px !important;
+}
+.field__input:focus ~ .field__label, .field__input:not(:placeholder-shown) ~ .field__label, .field__input:-webkit-autofill ~ .field__label, .customer .field input:focus ~ label, .customer .field input:not(:placeholder-shown) ~ label, .customer .field input:-webkit-autofill ~ label {
+  top: 11px !important;
+}
+.newsletter-form__field-wrapper .field__input {
+  border-radius: 20px;
 }
 
 /* ---------- ONLY MOBILE ONLY START ---------- */

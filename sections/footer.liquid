@@ -169,10 +169,15 @@
           {%- if section.settings.newsletter_enable -%}
             <div class="footer-block__newsletter">
               {%- if section.settings.newsletter_heading != blank -%}
-                <span class="svg-wrapper">
-                  {{- 'icon-arrow.svg' | inline_asset_content -}}
-                </span>
-                <h2 class="footer-block__heading inline-richtext">{{ section.settings.newsletter_heading }}</h2>
+                
+                <h2 class="footer-block__heading inline-richtext">
+                  <span class="footer_mail_icon svg-wrapper">
+                    {{- 'icon-mail.svg' | inline_asset_content -}}
+                  </span>
+                  <span class="footer_newsletter_txt">
+                    {{ section.settings.newsletter_heading }}
+                  </span>
+                  </h2>
               {%- endif -%}
               {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
                 <input type="hidden" name="contact[tags]" value="newsletter">
