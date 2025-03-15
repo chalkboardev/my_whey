@@ -731,7 +731,7 @@ margin-top: -10px;
   grid-template-columns:
   repeat(2, 1fr);
 }
-.about_icons { 
+.icon_animate { 
   visibility: visible;
   animation-direction: alternate;
   animation-name: fadeInUp;
