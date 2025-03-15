@@ -734,7 +734,7 @@ margin-top: -10px;
 .icon_animate { 
   visibility: visible;
   animation-direction: alternate;
-  animation-name: fadeInUp;
+  animation-name: fadeInUp !important;
   animation-duration: 2.5s;
   animation-iteration-count: 1;
   display: block;
@@ -795,7 +795,7 @@ margin-top: -10px;
   color: #4d4d4d;
 }
 
-.field:after, .select:after, .customer .field:after, .customer select:after, .localization-form__select:after {
+/* .field:after, .select:after, .customer .field:after, .customer select:after, .localization-form__select:after {
   border-radius: 30px !important;
   height: 54px;
 }
@@ -814,6 +814,18 @@ margin-top: -10px;
 }
 .newsletter-form__field-wrapper .field__input {
   border-radius: 20px;
+} */
+
+.about_info_head {
+  text-align: center;
+  margin-bottom:8px;
+  visibility: visible;
+  animation-direction: alternate;
+  animation-name: fadeInUp !important;
+  animation-duration: 2.5s;
+  animation-iteration-count: 1;
+  display: block;
+  text-align: center; 
 }
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
