@@ -852,7 +852,9 @@ margin-top: -10px;
 }
 
 .product_card_title {
-  font-size: 18px;
+  font-size: 20px;
+  max-height: 52px;
+  overflow: hidden;
 }
 
 @media screen and (min-width: 990px) and (max-width: 1100px) {
