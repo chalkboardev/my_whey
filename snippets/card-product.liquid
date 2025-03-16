@@ -214,7 +214,7 @@
               </p>
             {%- endif -%}
 
-           
+            {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
             
             {%- if card_product.quantity_price_breaks_configured? -%}
               {% if card_product.variants.size == 1 and quick_add == 'bulk' %}
@@ -302,7 +302,6 @@
         {% assign product_form_id = 'quick-add-' | append: section_id | append: card_product.id %}
         {% if quick_add == 'standard' %}
           <div class="quick-add no-js-hidden">
-            {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
             {%- liquid
               assign qty_rules = false
               if card_product.selected_or_first_available_variant.quantity_rule.min > 1 or card_product.selected_or_first_available_variant.quantity_rule.max != null or card_product.selected_or_first_available_variant.quantity_rule.increment > 1

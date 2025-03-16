@@ -850,10 +850,7 @@ margin-top: -10px;
 }
 .product_card_info {
   text-decoration: none !important;
-  max-height: 200px;
-  overflow: scroll;
 }
-
 .product_card_title {
   font-size: 20px;
   max-height: 52px;
@@ -906,13 +903,20 @@ margin-top: -10px;
   }
 /* ---------- ONLY MOBILE ONLY START ---------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
-  .card__content {
+  .product_card_info {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+  }
+  /* .card__content {
     display: grid;
     grid-template-rows: minmax(0, 1fr) max-content minmax(0, 1fr);
     padding: 1rem;
     width: 100%;
     flex-grow: 0 !important;
-}
+} */
   .collection__title.title-wrapper {
     margin-bottom: 0;
   }
