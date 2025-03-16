@@ -850,10 +850,8 @@ margin-top: -10px;
 }
 .product_card_info {
   text-decoration: none !important;
-
-  max-height: 190px;
+  max-height: 200px;
   overflow: scroll;
-
 }
 
 .product_card_title {
