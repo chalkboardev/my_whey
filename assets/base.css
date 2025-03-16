@@ -852,7 +852,9 @@ margin-top: -10px;
   text-decoration: none !important;
 }
 .product_card_title {
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color:#1e534d !important;
   max-height: 52px;
   overflow: hidden;
 }
@@ -901,6 +903,11 @@ margin-top: -10px;
   .underline-links-hover:hover a {
     text-decoration: none !important;
   }
+
+  .add_to_cart_btn {
+    border: 1px solid #333 !important;
+    border-radius: 30px !important;
+  }
 /* ---------- ONLY MOBILE ONLY START ---------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .product_card_info {
@@ -918,7 +925,7 @@ margin-top: -10px;
     flex-grow: 0 !important;
 } */
   .collection__title.title-wrapper {
-    margin-bottom: 0;
+    margin-bottom: -8px !important;
   }
   .about_info_link {
     margin: 0px auto;
@@ -2320,9 +2327,18 @@ shopify-accelerated-checkout-cart {
   width: 100%;
 }
 
-.button.loading {
+/* .button.loading {
   color: transparent;
   position: relative;
+} */
+
+.button.loading {
+  color: #00000038;
+  position: relative;
+}
+
+.button, .shopify-challenge__button, .customer button, button.shopify-payment-button__button--unbranded {
+border-radius: 30px !important;
 }
 
 @media screen and (forced-colors: active) {
@@ -2856,6 +2872,7 @@ input[type='checkbox'] {
 }
 
 .quantity:after {
+  border-radius: 30px !important;
   pointer-events: none;
   content: '';
   position: absolute;
