@@ -735,7 +735,7 @@ margin-top: -10px;
   visibility: visible;
   animation-direction: alternate;
   animation-name: fadeIn;
-  animation-duration: 2.5s;
+  animation-duration: 1.5s;
   animation-iteration-count: 1;
   display: block;
   text-align: center; 
