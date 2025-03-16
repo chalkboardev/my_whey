@@ -900,7 +900,7 @@ margin-top: -10px;
     --underline-width: 100%;
   }
   .underline-links-hover:hover a {
-    text-decoration: none;
+    text-decoration: none !important;
   }
 /* ---------- ONLY MOBILE ONLY START ---------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
