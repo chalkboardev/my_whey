@@ -191,12 +191,12 @@
                     {%- endif -%}
                   {%- endif -%}
                 </p>
-              {%- when 'description' -%}
+              {% comment %} {%- when 'description' -%}
                 {%- if product.description != blank -%}
                   <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
                     {{ product.description }}
                   </div>
-                {%- endif -%}
+                {%- endif -%} {% endcomment %}
               {%- when 'sku' -%}
                 <p
                   class="product__sku{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"
@@ -670,6 +670,19 @@
       </div>
     </div>
 
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when '@app' -%}
+          {% render block %}
+    {%- when 'description' -%}
+      {%- if product.description != blank -%}
+        <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
+          {{ product.description }}
+        </div>
+      {%- endif -%}
+    {%- endcase -%}
+  {%- endfor -%}
+  
     <div class="tab-customize">
       <button class="tablinks-cus" onclick="openTab(event, 'tab-1')" id="tab-cus-active" >Information</button>
       <button class="tablinks-cus" onclick="openTab(event, 'tab-2')">Shipping</button>
