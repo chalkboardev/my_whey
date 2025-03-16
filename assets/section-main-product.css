@@ -88,12 +88,23 @@ product-info {
     width: calc(45% - var(--grid-desktop-horizontal-spacing) / 2);
   }
 }
-
+.shopify-payment-button__skeleton::after {
+  content: "Buy it now";
+  position: relative;
+  top: 1.5rem !important;
+}
+.shopify-payment-button__skeleton {
+  /* display: none !important; */
+  border-radius: 30px !important;
+  background-color: #333;
+  background: #333;
+}
 /* Dynamic checkout */
 
 .shopify-payment-button__button {
   font-family: inherit;
   min-height: 4.6rem;
+  border-radius: 30px !important;
 }
 
 .shopify-payment-button__button [role='button'].focused {
