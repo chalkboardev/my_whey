@@ -166,7 +166,7 @@
           class="product_card_info full-unstyled-link"
           aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}">
 
-          <span> {{ card_product.metafields.custom.product_blurb }}</span>
+          <span> {{ card_product.metafields.custom.product_blurb | strip_html | truncatewords: 14 }}</span>
         
         </a> 
           <div class="card-information">
