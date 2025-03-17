@@ -948,6 +948,12 @@ margin-top: -10px;
     border-top: none;
   }
 
+  .product_supp_info_img {
+    max-width:100%;
+    display: flex;
+    margin: 0 auto;
+  }
+
 /* ---------- ONLY MOBILE ONLY START ---------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .tab_customize {
