@@ -908,7 +908,9 @@ margin-top: -10px;
     border: 1px solid #333 !important;
     border-radius: 30px !important;
   }
-
+.product__description {
+  margin: 36px auto 0 auto;
+}
   .tab_customize {
     border: 1px solid #ccc;
     background-color: #f1f1f1;
@@ -916,6 +918,7 @@ margin-top: -10px;
     z-index: 9;
     overflow: auto;
     display: flex;
+    margin: 36px auto 0 auto;
   }
   .tab_customize button {
     white-space: nowrap;
@@ -956,6 +959,9 @@ margin-top: -10px;
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .product__description {
+    margin: 0px auto 0 auto;
+  }
   .tab_customize {
     border: 1px solid #ccc;
     background-color: #f1f1f1;
