@@ -985,7 +985,7 @@ margin-top: -10px;
     background: none;
     padding-bottom: 12px;
     position: relative;
-    z-index: 9;
+    z-index: 2;
     overflow: scroll !important;
     display: flex;
   }
