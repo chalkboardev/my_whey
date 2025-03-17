@@ -908,8 +908,56 @@ margin-top: -10px;
     border: 1px solid #333 !important;
     border-radius: 30px !important;
   }
+
+  .tab_customize {
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    position: relative;
+    z-index: 9;
+    overflow: auto;
+    display: flex;
+  }
+  .tab_customize button {
+    white-space: nowrap;
+    border-left: none;
+    border-right: 1px solid #d2d2d2;
+    border-top: none;
+    border-bottom: none;
+    line-height: calc(1 + 0.6 / var(--font-body-scale));
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-family: var(--font-heading-family);
+    font-size: 16px;
+    background-color: inherit;
+    float: left;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+  }
+  .tab_customize button:hover {
+    background-color: #ddd;
+  }
+  .tab_customize button.active {
+    background-color: #ccc;
+  }
+  .tabcontent-cus {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+
 /* ---------- ONLY MOBILE ONLY START ---------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .tab_customize {
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    position: relative;
+    z-index: 9;
+    overflow: scroll !important;
+    display: flex;
+  }
   .product_card_info {
     text-overflow: ellipsis;
     overflow: hidden;

@@ -687,60 +687,20 @@
       <button class="tablinks-cus" onclick="openTab(event, 'tab-1')" id="tab-cus-active" >Benefits</button>
       <button class="tablinks-cus" onclick="openTab(event, 'tab-2')">How To Use</button>
       <button class="tablinks-cus" onclick="openTab(event, 'tab-3')">Supplemental Facts</button>
+      <button class="tablinks-cus" onclick="openTab(event, 'tab-3')">Warnings</button>
     </div>
     <!-- Tab content -->
     <div id="tab-1" class="tabcontent-cus">
-      {{ product.metafields.custom.product_benefits }}
+      {{ product.metafields.custom.product_benefits | metafield_tag  }}
     </div>
     <div id="tab-2" class="tabcontent-cus ">
       {% comment %} {{ pages.shipping.content }} {% endcomment %}
-      {{ product.metafields.custom.product_benefits }}
+      {{ product.metafields.custom.product_instructions | metafield_tag }}
     </div>
     <div id="tab-3" class="tabcontent-cus ">
       {% comment %} {{ pages.policy.content }} {% endcomment %}
-      {{ product.metafields.custom.product_instructions }}
+      {{ product.metafields.custom.product_instructions | metafield_tag }}
     </div>
-    <style>
-    .tab_customize {
-      overflow: hidden;
-      border: 1px solid #ccc;
-      background-color: #f1f1f1;
-      position: relative;
-      z-index: 9;
-      overflow: scroll;
-      display: zflex;
-    }
-    .tab_customize button {
-      white-space: nowrap;
-      border-left: none;
-      border-right: 1px solid #d2d2d2;
-      border-top: none;
-      border-bottom: none;
-      line-height: calc(1 + 0.6 / var(--font-body-scale));
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      font-family: var(--font-heading-family);
-      font-size: 16px;
-      background-color: inherit;
-      float: left;
-      outline: none;
-      cursor: pointer;
-      padding: 14px 16px;
-      transition: 0.3s;
-    }
-    .tab_customize button:hover {
-      background-color: #ddd;
-    }
-    .tab_customize button.active {
-      background-color: #ccc;
-    }
-    .tabcontent-cus {
-      display: none;
-      padding: 6px 12px;
-      border: 1px solid #ccc;
-      border-top: none;
-    }
-    </style>
 
     {% render 'product-media-modal', variant_images: variant_images %}
 
