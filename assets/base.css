@@ -960,12 +960,12 @@ margin-top: -10px;
     margin: 0 auto;
   }
 
-/* ---------- ONLY MOBILE ONLY START ---------- */
+/* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .tabcontent-cus {
     margin-top: 10px;
     padding-top: 0;
-    }
+    } 
   .tab_customize button {
     min-width: unset !important;
   }
@@ -975,11 +975,11 @@ margin-top: -10px;
   .tab_customize {
     border: none;
     background: none;
+    padding-bottom: 12px;
     position: relative;
     z-index: 9;
     overflow: scroll !important;
-    display: flex
-;
+    display: flex;
   }
   .product_card_info {
     text-overflow: ellipsis;
