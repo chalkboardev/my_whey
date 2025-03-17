@@ -683,29 +683,52 @@
     {%- endcase -%}
   {%- endfor -%}
   
-  <div class="cgt-desc">
-    <ul class="tabs clearfix">
-    <li><a href="#tab-1" class="active">Description</a></li>
-    <li><a href="#tab-2">Size Chart</a></li>
-    <li><a href="#tab-3">Shipping & Return</a></li>
-    <li><a href="#tab-4">Videos</a></li>
-    </ul>
-    <div class="cgt-content">
-    <div id="tab-1" class="tab active">
-    Enter Product Description Over Here.
+    <div class="tab-customize">
+      <button class="tablinks-cus" onclick="openTab(event, 'tab-1')" id="tab-cus-active" >Information</button>
+      <button class="tablinks-cus" onclick="openTab(event, 'tab-2')">Shipping</button>
+      <button class="tablinks-cus" onclick="openTab(event, 'tab-3')">Policy</button>
     </div>
-    <div id="tab-2" class="tab">
-    Enter Size Chart Over here table, images, etc.
+    <!-- Tab content -->
+    <div id="tab-1" class="tabcontent-cus">
+      {{ product.description }}
     </div>
-    <div id="tab-3" class="tab">
-    Enter Shipping & Returns details over here.
+    <div id="tab-2" class="tabcontent-cus ">
+      {{ pages.shipping.content }}
     </div>
-    <div id="tab-4" class="tab">
-    Enter youtube video , vimeo ,etc embed code.
+    <div id="tab-3" class="tabcontent-cus ">
+      {{ pages.policy.content }}
     </div>
-    </div>
-    </div>
-    
+    <style>
+    .tab-customize {
+      overflow: hidden;
+      border: 1px solid #ccc;
+      background-color: #f1f1f1;
+    }
+    .tab-customize button {
+      font-family: var(--font-heading-family);
+      font-size: 16px;
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+    }
+    .tab-customize button:hover {
+      background-color: #ddd;
+    }
+    .tab-customize button.active {
+      background-color: #ccc;
+    }
+    .tabcontent-cus {
+      display: none;
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      border-top: none;
+    }
+    </style>
+
     {% render 'product-media-modal', variant_images: variant_images %}
 
     {% assign popups = section.blocks | where: 'type', 'popup' %}

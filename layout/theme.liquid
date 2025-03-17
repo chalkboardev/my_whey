@@ -406,32 +406,26 @@
 //     });
 // });
 
-
+function openTab(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent-cus");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks-cus");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+document.getElementById("tab-cus-active").click();
 
 $(document).ready(function(){
     $(".utility_cart_link").click(function () {
       $("cart-drawer").addClass('animate active');
       $(".header__icon--menu").click();
     });
-
-    $('ul.tabs').each(function(){
-      var active, content, links = $(this).find('a');
-      active = links.first().addClass('active');
-      content = $(active.attr('href'));
-      links.not(':first').each(function () {
-        $($(this).attr('href')).hide();
-      });
-      $(this).find('a').click(function(e){
-        active.removeClass('active');
-        content.hide();
-        active = $(this);
-        content = $($(this).attr('href'));
-        active.addClass('active');
-        content.show();
-        return false;
-      });
-    });
-
 });
 
 </script>
