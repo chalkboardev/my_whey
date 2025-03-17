@@ -908,9 +908,9 @@ margin-top: -10px;
     border: 1px solid #333 !important;
     border-radius: 30px !important;
   }
-.product__description {
-  margin: 36px auto 0 auto;
-}
+  .product__description {
+    margin: 36px auto 0 auto;
+  }
   .tab_customize {
     padding-bottom: 12px;
     width: 100%;
