@@ -942,10 +942,14 @@ margin-top: -10px;
   }
 
   .tab_customize button:hover {
-    background-color: #ddd !important;
+    background-color: #20534d !important;
+    color: #fff;
+    font-weight: 600;
   }
   .tab_customize button.active {
-    background-color: #ccc !important;
+    background-color: #20534d !important;
+    color: #fff;
+    font-weight: 600;
   }
   .tabcontent-cus {
     display: none;
