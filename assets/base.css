@@ -912,6 +912,7 @@ margin-top: -10px;
   margin: 36px auto 0 auto;
 }
   .tab_customize {
+    padding-bottom: 12px;
     width: 100%;
     border: none;
     background-color: none;
@@ -948,7 +949,7 @@ margin-top: -10px;
   }
   .tabcontent-cus {
     display: none;
-    padding: 6px 12px;
+    padding: 0 12px 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
   }
@@ -963,6 +964,7 @@ margin-top: -10px;
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .tabcontent-cus {
     margin-top: 10px;
+    padding-top: 0;
     }
   .tab_customize button {
     min-width: unset !important;
