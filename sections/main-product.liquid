@@ -690,13 +690,15 @@
     </div>
     <!-- Tab content -->
     <div id="tab-1" class="tabcontent-cus">
-      {{ product.description }}
+      {{ product.metafields.custom.product_benefits }}
     </div>
     <div id="tab-2" class="tabcontent-cus ">
-      {{ pages.shipping.content }}
+      {% comment %} {{ pages.shipping.content }} {% endcomment %}
+      {{ product.metafields.custom.product_benefits }}
     </div>
     <div id="tab-3" class="tabcontent-cus ">
-      {{ pages.policy.content }}
+      {% comment %} {{ pages.policy.content }} {% endcomment %}
+      {{ product.metafields.custom.product_instructions }}
     </div>
     <style>
     .tab_customize {
