@@ -671,22 +671,22 @@
     </div>
 
     {%- for block in section.blocks -%}
-      {%- case block.type -%}
-        {%- when '@app' -%}
-          {% render block %}
-    {%- when 'description' -%}
-      {%- if product.description != blank -%}
-        <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
-          {{ product.description }}
-        </div>
-      {%- endif -%}
-    {%- endcase -%}
-  {%- endfor -%}
+        {%- case block.type -%}
+          {%- when '@app' -%}
+            {% render block %}
+        {%- when 'description' -%}
+          {%- if product.description != blank -%}
+            <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
+              {{ product.description }}
+            </div>
+          {%- endif -%}
+      {%- endcase -%}
+    {%- endfor -%}
   
-    <div class="tab-customize">
-      <button class="tablinks-cus" onclick="openTab(event, 'tab-1')" id="tab-cus-active" >Information</button>
-      <button class="tablinks-cus" onclick="openTab(event, 'tab-2')">Shipping</button>
-      <button class="tablinks-cus" onclick="openTab(event, 'tab-3')">Policy</button>
+    <div class="tab_customize">
+      <button class="tablinks-cus" onclick="openTab(event, 'tab-1')" id="tab-cus-active" >Benefits</button>
+      <button class="tablinks-cus" onclick="openTab(event, 'tab-2')">How To Use</button>
+      <button class="tablinks-cus" onclick="openTab(event, 'tab-3')">Supplemental Facts</button>
     </div>
     <!-- Tab content -->
     <div id="tab-1" class="tabcontent-cus">
@@ -699,26 +699,37 @@
       {{ pages.policy.content }}
     </div>
     <style>
-    .tab-customize {
+    .tab_customize {
       overflow: hidden;
       border: 1px solid #ccc;
       background-color: #f1f1f1;
+      position: relative;
+      z-index: 9;
+      overflow: scroll;
+      display: zflex;
     }
-    .tab-customize button {
+    .tab_customize button {
+      white-space: nowrap;
+      border-left: none;
+      border-right: 1px solid #d2d2d2;
+      border-top: none;
+      border-bottom: none;
+      line-height: calc(1 + 0.6 / var(--font-body-scale));
+      letter-spacing: 3px;
+      text-transform: uppercase;
       font-family: var(--font-heading-family);
       font-size: 16px;
       background-color: inherit;
       float: left;
-      border: none;
       outline: none;
       cursor: pointer;
       padding: 14px 16px;
       transition: 0.3s;
     }
-    .tab-customize button:hover {
+    .tab_customize button:hover {
       background-color: #ddd;
     }
-    .tab-customize button.active {
+    .tab_customize button.active {
       background-color: #ccc;
     }
     .tabcontent-cus {

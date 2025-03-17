@@ -2151,7 +2151,7 @@ deferred-media {
 }
 
 
-@media only screen and (min-width:900px) { 
+@media only screen and (min-width:1080px) { 
   .product--small .thumbnail-list.slider--tablet-up li.thumbnail-list__item.slider__slide {
     transform: rotate(-90deg);
     width: calc(20% - .8rem);
