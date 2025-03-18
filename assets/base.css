@@ -1008,6 +1008,13 @@ margin-top: -10px;
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .product_card_title {
+    font-size: 18px;
+    font-weight: 600;
+    color:#1e534d !important;
+    max-height: 44px;
+    overflow: hidden;
+  }
   .page_width_custom {
     padding:0;
     max-width: var(--page-width);
