@@ -393,7 +393,7 @@
         "scroll_time": "20",
         "margin_top": 10,
         "margin_bottom": 20,
-        "font_size": 8,
+        "font_size": 18,
         "scroll_text_move": "marquee-left",
         "pause_text": "paused",
         "padding_top": 0,
