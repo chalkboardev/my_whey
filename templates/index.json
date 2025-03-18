@@ -381,19 +381,19 @@
     "image_with_text_QnRYJR": {
       "type": "image-with-text",
       "blocks": {
-        "heading_z6mFAK": {
-          "type": "heading",
-          "settings": {
-            "heading": "<strong>MY-WHEY</strong>",
-            "heading_size": "h1"
-          }
-        },
         "caption_jbxpUW": {
           "type": "caption",
           "settings": {
             "caption": "ABOUT",
             "text_style": "caption-with-letter-spacing",
             "text_size": "large"
+          }
+        },
+        "heading_z6mFAK": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>MY-WHEY</strong>",
+            "heading_size": "h1"
           }
         },
         "text_g9TVie": {
@@ -413,8 +413,8 @@
         }
       },
       "block_order": [
-        "heading_z6mFAK",
         "caption_jbxpUW",
+        "heading_z6mFAK",
         "text_g9TVie",
         "button_TDVLLQ"
       ],
