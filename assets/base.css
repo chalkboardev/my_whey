@@ -1480,6 +1480,11 @@ margin-top: -10px;
 }
 
 @media screen and (min-width: 750px) {
+  .page_width_custom {
+    padding: 0 5rem;
+    max-width: var(--page-width);
+    margin: 0 auto;
+  }
   .about_large_title {
     margin-top: 0 !important;
     margin: 0 auto;
