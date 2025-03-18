@@ -3,7 +3,7 @@
 {%- style -%}
   #ImageWithText--{{ section.id }}.image_with_text_div {
     margin: 0 auto 0 20px;
-    background: #f6f3eb !important;
+    background: {{ section.settings.text_div_bg_color }} !important;
     border-radius: 10px !important;
   }
   .section-{{ section.id }}-padding {
@@ -297,6 +297,12 @@
       "id": "full_width_mobile",
       "label": "Make full width on mobile",
       "default": false
+    },
+    {
+      "type": "color",
+      "id": "text_div_bg_color",
+      "label": "Background Color",
+      "default": "#f6f3eb"
     },
     {
       "type": "select",
