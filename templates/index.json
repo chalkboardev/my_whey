@@ -279,7 +279,8 @@
           "type": "block",
           "settings": {
             "text": "Marquee",
-            "image_width": 100
+            "image": "shopify://shop_images/my_whey_logo_b_b4d91dcb-bf1f-451f-83a5-b3406b0dba86.png",
+            "image_width": 20
           }
         },
         "block_wCqat4": {
