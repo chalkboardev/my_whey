@@ -336,7 +336,7 @@
         "block_bHHxqC": {
           "type": "block",
           "settings": {
-            "text": "hello",
+            "text": "Marquee Text",
             "image": "shopify://shop_images/my_whey_logo_b_b4d91dcb-bf1f-451f-83a5-b3406b0dba86.png",
             "image_width": 70,
             "image_invert": true
