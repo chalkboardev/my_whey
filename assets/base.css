@@ -1002,6 +1002,14 @@ margin-top: -10px;
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .page_width_custom {
+    padding:0;
+  }
+  .image_with_text_div {
+    margin: 0 auto;
+    background: #ffffff !important;
+    border-radius: 0 !important;
+}
   .tabcontent-cus {
     margin-top: 10px;
     padding-top: 0;
