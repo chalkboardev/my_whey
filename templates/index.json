@@ -271,6 +271,66 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "custom_marquee_AazeML": {
+      "type": "custom_marquee",
+      "blocks": {
+        "block_bHHxqC": {
+          "type": "block",
+          "settings": {
+            "text": "Marquee",
+            "image": "shopify://shop_images/my_whey_logo_b_b4d91dcb-bf1f-451f-83a5-b3406b0dba86.png",
+            "image_width": 20
+          }
+        },
+        "block_wCqat4": {
+          "type": "block",
+          "settings": {
+            "text": "Marquee",
+            "image_width": 100
+          }
+        },
+        "block_GPiLxy": {
+          "type": "block",
+          "settings": {
+            "text": "Marquee",
+            "image_width": 100
+          }
+        },
+        "block_fhaGmY": {
+          "type": "block",
+          "settings": {
+            "text": "Marquee",
+            "image_width": 100
+          }
+        },
+        "block_RCFdCr": {
+          "type": "block",
+          "settings": {
+            "text": "Marquee",
+            "image_width": 100
+          }
+        }
+      },
+      "block_order": [
+        "block_bHHxqC",
+        "block_wCqat4",
+        "block_GPiLxy",
+        "block_fhaGmY",
+        "block_RCFdCr"
+      ],
+      "settings": {
+        "bg_color": "#1e534d",
+        "font_color": "#ffffff",
+        "scroll_time": "20",
+        "font_size": 14,
+        "scroll_text_move": "marquee-left",
+        "pause_text": "paused",
+        "padding_top": 16,
+        "padding_bottom": 16,
+        "m_padding_top": 16,
+        "m_padding_bottom": 16
+      }
     }
   },
   "order": [
@@ -279,6 +339,7 @@
     "image_banner",
     "featured_collection",
     "multicolumn_new_9dH7mP",
-    "image_with_text_QnRYJR"
+    "image_with_text_QnRYJR",
+    "custom_marquee_AazeML"
   ]
 }
