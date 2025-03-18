@@ -70,23 +70,11 @@
             "text": "Curated, Clean Supplements <strong>Made for You</strong>",
             "text_style": "subtitle"
           }
-        },
-        "buttons_PFLXYi": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "SHOP BEST SELLERS",
-            "button_link_1": "",
-            "button_style_secondary_1": false,
-            "button_label_2": "TAKE QUIZZY",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
         }
       },
       "block_order": [
         "heading_ze9dmB",
-        "text_mL9Ma6",
-        "buttons_PFLXYi"
+        "text_mL9Ma6"
       ],
       "disabled": true,
       "settings": {
@@ -107,22 +95,10 @@
             "heading": "Browse our latest products",
             "heading_size": "h0"
           }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
         }
       },
       "block_order": [
-        "heading",
-        "button"
+        "heading"
       ],
       "disabled": true,
       "settings": {
@@ -405,13 +381,6 @@
     "image_with_text_QnRYJR": {
       "type": "image-with-text",
       "blocks": {
-        "heading_z6mFAK": {
-          "type": "heading",
-          "settings": {
-            "heading": "<strong>MY-WHEY</strong>",
-            "heading_size": "h1"
-          }
-        },
         "caption_jbxpUW": {
           "type": "caption",
           "settings": {
@@ -420,10 +389,17 @@
             "text_size": "large"
           }
         },
+        "heading_z6mFAK": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>MY-WHEY</strong>",
+            "heading_size": "h1"
+          }
+        },
         "text_g9TVie": {
           "type": "text",
           "settings": {
-            "text": "<p>Choosing the right supplements can be challenging. Complicated nutrition labels and unfamiliar ingredients often cause confusion and doubt. </p><p>Gainful was created with a simple mission: to make it easier for people to find the best performance nutrition products for their needs. We believe everyone should have access to nutrition and resources that help them feel and perform at their best. </p><p>Our team is here to support you through every success and setback.</p>",
+            "text": "<p>Choosing the right supplements can be challenging. Complicated nutrition labels and unfamiliar ingredients often cause confusion and doubt. </p><p>My-Whey was created with a simple mission: to make it easier for people to find the best performance nutrition products for their needs. We believe everyone should have access to nutrition and resources that help them feel and perform at their best. </p><p>Our team is here to support you through every success and setback.</p>",
             "text_style": "body"
           }
         },
@@ -437,8 +413,8 @@
         }
       },
       "block_order": [
-        "heading_z6mFAK",
         "caption_jbxpUW",
+        "heading_z6mFAK",
         "text_g9TVie",
         "button_TDVLLQ"
       ],
