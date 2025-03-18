@@ -402,8 +402,8 @@
         "block_ertWby"
       ],
       "settings": {
-        "bg_color": "",
-        "font_color": "#000000",
+        "bg_color": "#1e534d",
+        "font_color": "#ffffff",
         "scroll_time": "10",
         "font_size": 14,
         "scroll_text_move": "marquee-left",
