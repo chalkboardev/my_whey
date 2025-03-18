@@ -368,7 +368,7 @@
         "font_color": "#ffffff",
         "scroll_time": "20",
         "margin_top": 10,
-        "margin_bottom": 20,
+        "margin_bottom": 0,
         "font_size": 18,
         "scroll_text_move": "marquee-left",
         "pause_text": "paused",
