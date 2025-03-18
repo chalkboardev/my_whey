@@ -91,11 +91,11 @@
         <p>{{ block.settings.text }}</p>
         <img
           srcset="{{ block.settings.image | image_url: width: block.settings.image_width }}, {{ block.settings.image | image_url: width: image_size_1x }} 1x"
-          src="{{ block.settings.image | image_url: width: 100 }}"
+          src="{{ block.settings.image | image_url: width: 20 }}"
           alt="{{ block.settings.image.alt | escape }}"
           loading="lazy"
-          width="{{ block.settings.image.width }}"
-          height="{{ block.settings.image.height }}"
+          width="{{ block.settings.image_width }}"
+          height="auto"
         >
       {% endfor %}
     </div>
@@ -105,11 +105,11 @@
         <p>{{ block.settings.text }}</p>
         <img
           srcset="{{ block.settings.image | image_url: width: block.settings.image_width }}, {{ block.settings.image | image_url: width: image_size_1x }} 1x"
-          src="{{ block.settings.image | image_url: width: 100 }}"
+          src="{{ block.settings.image | image_url: width: 20 }}"
           alt="{{ block.settings.image.alt | escape }}"
           loading="lazy"
-          width="{{ block.settings.image.width }}"
-          height="{{ block.settings.image.height }}"
+          width="{{ block.settings.image_width }}"
+          height="auto"
         >
       {% endfor %}
     </div>
@@ -242,7 +242,7 @@
         {
           "type": "image_picker",
           "label": "Add image",
-          "id": "image",
+          "id": "image"
         },
         {
           "type": "range",
