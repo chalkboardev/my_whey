@@ -231,7 +231,7 @@
         "font_color": "#ffffff",
         "scroll_time": "40",
         "margin_top": 10,
-        "margin_bottom_mw": 70,
+        "margin_bottom": 120,
         "font_size": 16,
         "scroll_text_move": "marquee-left",
         "pause_text": "initial",
