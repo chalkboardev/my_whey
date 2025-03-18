@@ -1,6 +1,6 @@
 <style>
   #id-{{ section.id }}.marquee-text-wrapper {
-    --space: 2rem;
+    --space: 4rem;
     display: grid;
     align-content: center;
     overflow: hidden;
@@ -31,6 +31,7 @@
     justify-content: space-around;
     gap: var(--gap);
     min-width: 100%;
+    min-width: {% if section.settings.is_only_images != false %} 84% {% else %} 100% {% endif %};
     animation: scroll var(--duration) linear infinite;
   }
 
@@ -95,6 +96,9 @@
   .marquee_img {
     width: calc(100% - 84%);
   }
+  #id-{{ section.id }}.marquee-text-wrapper {
+    --space: 4rem;
+  }
 }
 </style>
 
@@ -149,6 +153,12 @@
 {
   "name": "Marquee Text",
   "settings": [
+    {
+          "type": "checkbox",
+          "id": "is_only_images",
+          "label": "This marquee is only images",
+          "default": false
+    },
     {
       "type": "color",
       "id": "bg_color",
