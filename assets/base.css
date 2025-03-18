@@ -982,8 +982,9 @@ margin-top: -10px;
   
   .more_btn {
     font-weight: 600 !important;
+    font-size: 16px !important;
     letter-spacing: 2px !important;
-    padding: 0.8rem 4rem !important;
+    padding: 1.5rem 5rem !important;
   }
 
   .mw_sub_header {
