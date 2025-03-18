@@ -404,10 +404,48 @@
     },
     "image_with_text_QnRYJR": {
       "type": "image-with-text",
+      "blocks": {
+        "heading_z6mFAK": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image with text",
+            "heading_size": "h1"
+          }
+        },
+        "text_g9TVie": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_style": "body"
+          }
+        },
+        "caption_jbxpUW": {
+          "type": "caption",
+          "settings": {
+            "caption": "Add a tagline",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "button_TDVLLQ": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_z6mFAK",
+        "text_g9TVie",
+        "caption_jbxpUW",
+        "button_TDVLLQ"
+      ],
       "settings": {
         "image": "shopify://shop_images/my-whey.gif",
         "height": "adapt",
-        "desktop_image_width": "medium",
+        "desktop_image_width": "small",
         "layout": "image_first",
         "desktop_content_position": "top",
         "desktop_content_alignment": "left",
