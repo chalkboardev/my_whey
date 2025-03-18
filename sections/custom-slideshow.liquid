@@ -78,7 +78,7 @@
   {% endif %}
    
    <div class="header_buttons">
-  {% if block.settings.button_link_video_1 != blank and block.settings.button_video_label_1 != blank %} 
+  {% if block.settings.button_link_video_1 != blank and block.settings.button_video_label_1 != "" %} 
    
   <a href="{{ block.settings.button_link_video_1 }}" class="videoBoxInfoBtn color-{{ block.settings.color_scheme_video_btn_1 }}">
    
@@ -88,7 +88,7 @@
    
   {% endif %}
 
-  {% if block.settings.button_link_video_2 != blank and block.settings.button_video_label_2 != blank %} 
+  {% if block.settings.button_link_video_2 != blank and block.settings.button_video_label_2 != "" %} 
    
     <a href="{{ block.settings.button_link_video_2 }}" class="videoBoxInfoBtn color-{{ block.settings.color_scheme_video_btn_2 }}">
      
