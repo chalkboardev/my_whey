@@ -329,24 +329,6 @@
         "padding_bottom": 36
       }
     },
-    "image_with_text_QnRYJR": {
-      "type": "image-with-text",
-      "settings": {
-        "image": "shopify://shop_images/my-whey.gif",
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "custom_marquee_AazeML": {
       "type": "custom_marquee",
       "blocks": {
@@ -408,14 +390,32 @@
         "font_color": "#ffffff",
         "scroll_time": "20",
         "margin_top": 10,
-        "margin_bottom": 10,
+        "margin_bottom": 20,
         "font_size": 8,
         "scroll_text_move": "marquee-left",
         "pause_text": "paused",
         "padding_top": 0,
         "padding_bottom": 0,
-        "m_padding_top": 16,
-        "m_padding_bottom": 16
+        "m_padding_top": 0,
+        "m_padding_bottom": 0
+      }
+    },
+    "image_with_text_QnRYJR": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify://shop_images/my-whey.gif",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
@@ -426,7 +426,7 @@
     "featured_collection",
     "custom_marquee_nigaHz",
     "multicolumn_new_9dH7mP",
-    "image_with_text_QnRYJR",
-    "custom_marquee_AazeML"
+    "custom_marquee_AazeML",
+    "image_with_text_QnRYJR"
   ]
 }
