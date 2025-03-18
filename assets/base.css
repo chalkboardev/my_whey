@@ -993,12 +993,17 @@ margin-top: -10px;
     text-transform: uppercase;
     font-weight: 600;
     color: #707070;
+    padding-bottom: 0.5rem;
   }
 
   .image_with_text_div {
     margin: 0 auto 0 20px;
     background: #f6f3eb !important;
     border-radius: 10px !important;
+  }
+
+  .image-with-text__heading {
+    margin-bottom: 1.5rem;
   }
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
@@ -1440,6 +1445,7 @@ margin-top: -10px;
     margin: 0 auto;
     text-align: center;
     padding-bottom: 44px;
+    margin-top: 0.3rem !important;
   }
   .about_large_title h1 {
     padding: 0;
