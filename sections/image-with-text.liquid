@@ -22,7 +22,13 @@
       padding-top: {{ section.settings.mobile_padding_top }}px;
       padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
     }
+    #ImageWithText--{{ section.id }}.image_with_text_div {
+      margin: 0 auto;
+      background: #ffffff !important;
+      border-radius: 0 !important;
+    }
   }
+  
 {%- endstyle -%}
 
 {%- liquid
