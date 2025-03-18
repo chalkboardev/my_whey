@@ -430,8 +430,8 @@
         "button_TDVLLQ": {
           "type": "button",
           "settings": {
-            "button_label": "Button label",
-            "button_link": "",
+            "button_label": "Learn More",
+            "button_link": "#",
             "button_style_secondary": false
           }
         }
