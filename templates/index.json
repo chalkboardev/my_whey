@@ -278,20 +278,22 @@
         "block_bHHxqC": {
           "type": "block",
           "settings": {
-            "text": "Marquee",
+            "text": "",
             "image": "shopify://shop_images/my_whey_logo_b_b4d91dcb-bf1f-451f-83a5-b3406b0dba86.png",
-            "image_width": 20
+            "image_width": 90
           }
         },
         "block_wCqat4": {
           "type": "block",
           "settings": {
             "text": "Marquee",
+            "image": "shopify://shop_images/my_whey_logo_c.png",
             "image_width": 100
           }
         },
         "block_GPiLxy": {
           "type": "block",
+          "disabled": true,
           "settings": {
             "text": "Marquee",
             "image_width": 100
@@ -299,6 +301,7 @@
         },
         "block_fhaGmY": {
           "type": "block",
+          "disabled": true,
           "settings": {
             "text": "Marquee",
             "image_width": 100
@@ -306,6 +309,7 @@
         },
         "block_RCFdCr": {
           "type": "block",
+          "disabled": true,
           "settings": {
             "text": "Marquee",
             "image_width": 100
