@@ -41,13 +41,14 @@
     font-size: 16px;
     font-weight: 600;
     font-family: sans-serif !important;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     text-transform: uppercase;
   }
 
   #id-{{ section.id }} .marquee__group p {
     color: {{ section.settings.font_color }};
     font-size: {{ section.settings.font_size}}px;
+    /* min-width: 250px; */
   }
 
   #id-{{ section.id }} .marquee-icon {
@@ -87,6 +88,14 @@
       padding-bottom:{{ section.settings.m_padding_bottom }}px;
     }
   }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+
+  }
+  @media only screen and (max-width: 989px) {
+  .marquee_img {
+    width: calc(100% - 84%);
+  }
+}
 </style>
 
 <section class="marquee-text-wrapper" id="id-{{ section.id }}">
