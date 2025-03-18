@@ -986,6 +986,20 @@ margin-top: -10px;
     padding: 0.8rem 4rem !important;
   }
 
+  .mw_sub_header {
+    text-align: left;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #707070;
+  }
+
+  .image_with_text_div {
+    margin: 0 auto 0 20px;
+    background: #f6f3eb !important;
+    border-radius: 10px !important;
+  }
+
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .tabcontent-cus {
