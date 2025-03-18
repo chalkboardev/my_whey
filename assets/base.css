@@ -973,7 +973,7 @@ margin-top: -10px;
   .tabcontent-cus {
     margin-top: 10px;
     padding-top: 0;
-    } 
+  } 
   .tab_customize button {
     min-width: unset !important;
   }
@@ -1110,6 +1110,9 @@ margin-top: -10px;
 }
 
 @media only screen and (max-width: 989px) {
+  .collection .slider-buttons {
+    margin-bottom: 1rem;
+  }
   .info_multi_column {
     background: none !important;
     border-radius: 10px;
