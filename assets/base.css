@@ -980,6 +980,10 @@ margin-top: -10px;
     margin: 0 auto;
   }
   
+  .more_btn {
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
