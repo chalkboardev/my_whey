@@ -356,7 +356,7 @@
           "settings": {
             "text": "",
             "image": "shopify://shop_images/eye2.png",
-            "image_width": 100,
+            "image_width": 80,
             "image_invert": false
           }
         },
