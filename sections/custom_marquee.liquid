@@ -90,6 +90,7 @@
       {% for block in section.blocks %}
         <p>{{ block.settings.text }}</p>
         <img
+          style="filter: invert(1) brightness(2);"
           srcset="{{ block.settings.image | image_url: width: block.settings.image_width }}, {{ block.settings.image | image_url: width: image_size_1x }} 1x"
           src="{{ block.settings.image | image_url: width: 20 }}"
           alt="{{ block.settings.image.alt | escape }}"
@@ -104,6 +105,7 @@
       {% for block in section.blocks %}
         <p>{{ block.settings.text }}</p>
         <img
+          style="filter: invert(1) brightness(2);"
           srcset="{{ block.settings.image | image_url: width: block.settings.image_width }}, {{ block.settings.image | image_url: width: image_size_1x }} 1x"
           src="{{ block.settings.image | image_url: width: 20 }}"
           alt="{{ block.settings.image.alt | escape }}"
