@@ -163,7 +163,82 @@
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "padding_top": 56,
-        "padding_bottom": 36
+        "padding_bottom": 8
+      }
+    },
+    "custom_marquee_nigaHz": {
+      "type": "custom_marquee",
+      "blocks": {
+        "block_6dBweh": {
+          "type": "block",
+          "settings": {
+            "text": "No Artificial Flavours",
+            "image_width": 100,
+            "image_invert": false
+          }
+        },
+        "block_pw6JJx": {
+          "type": "block",
+          "settings": {
+            "text": "No Sweeteners",
+            "image_width": 100,
+            "image_invert": false
+          }
+        },
+        "block_MQend8": {
+          "type": "block",
+          "settings": {
+            "text": "No Soy",
+            "image_width": 100,
+            "image_invert": false
+          }
+        },
+        "block_78N4Li": {
+          "type": "block",
+          "settings": {
+            "text": "No Dyes",
+            "image_width": 100,
+            "image_invert": false
+          }
+        },
+        "block_mLyPje": {
+          "type": "block",
+          "settings": {
+            "text": "No Fillers",
+            "image_width": 100,
+            "image_invert": false
+          }
+        },
+        "block_ertWby": {
+          "type": "block",
+          "settings": {
+            "text": "No Artificial Flavours",
+            "image_width": 100,
+            "image_invert": false
+          }
+        }
+      },
+      "block_order": [
+        "block_6dBweh",
+        "block_pw6JJx",
+        "block_MQend8",
+        "block_78N4Li",
+        "block_mLyPje",
+        "block_ertWby"
+      ],
+      "settings": {
+        "bg_color": "#1e534d",
+        "font_color": "#ffffff",
+        "scroll_time": "40",
+        "margin_top": 10,
+        "margin_bottom": 10,
+        "font_size": 16,
+        "scroll_text_move": "marquee-left",
+        "pause_text": "initial",
+        "padding_top": 16,
+        "padding_bottom": 16,
+        "m_padding_top": 16,
+        "m_padding_bottom": 16
       }
     },
     "multicolumn_new_9dH7mP": {
@@ -252,81 +327,6 @@
         "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
-      }
-    },
-    "custom_marquee_nigaHz": {
-      "type": "custom_marquee",
-      "blocks": {
-        "block_6dBweh": {
-          "type": "block",
-          "settings": {
-            "text": "No Artificial Flavours",
-            "image_width": 100,
-            "image_invert": false
-          }
-        },
-        "block_pw6JJx": {
-          "type": "block",
-          "settings": {
-            "text": "No Sweeteners",
-            "image_width": 100,
-            "image_invert": false
-          }
-        },
-        "block_MQend8": {
-          "type": "block",
-          "settings": {
-            "text": "No Soy",
-            "image_width": 100,
-            "image_invert": false
-          }
-        },
-        "block_78N4Li": {
-          "type": "block",
-          "settings": {
-            "text": "No Dyes",
-            "image_width": 100,
-            "image_invert": false
-          }
-        },
-        "block_mLyPje": {
-          "type": "block",
-          "settings": {
-            "text": "No Fillers",
-            "image_width": 100,
-            "image_invert": false
-          }
-        },
-        "block_ertWby": {
-          "type": "block",
-          "settings": {
-            "text": "No Artificial Flavours",
-            "image_width": 100,
-            "image_invert": false
-          }
-        }
-      },
-      "block_order": [
-        "block_6dBweh",
-        "block_pw6JJx",
-        "block_MQend8",
-        "block_78N4Li",
-        "block_mLyPje",
-        "block_ertWby"
-      ],
-      "settings": {
-        "bg_color": "#1e534d",
-        "font_color": "#ffffff",
-        "scroll_time": "40",
-        "margin_top": 10,
-        "margin_bottom": 10,
-        "font_size": 16,
-        "scroll_text_move": "marquee-left",
-        "pause_text": "initial",
-        "padding_top": 16,
-        "padding_bottom": 16,
-        "m_padding_top": 16,
-        "m_padding_bottom": 16
       }
     },
     "image_with_text_QnRYJR": {
@@ -424,8 +424,8 @@
     "video_banner_687P9e",
     "image_banner",
     "featured_collection",
-    "multicolumn_new_9dH7mP",
     "custom_marquee_nigaHz",
+    "multicolumn_new_9dH7mP",
     "image_with_text_QnRYJR",
     "custom_marquee_AazeML"
   ]
