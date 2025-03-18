@@ -437,6 +437,7 @@
         "image_behavior": "none",
         "full_width_mobile": true,
         "mobile_content_alignment": "left",
+        "style_text_container": true,
         "padding_top": 56,
         "padding_bottom": 56,
         "mobile_padding_top": 0,
