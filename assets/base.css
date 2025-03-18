@@ -1013,6 +1013,7 @@ margin-top: -10px;
     font-weight: 600;
     color:#1e534d !important;
     max-height: 48px;
+    min-height: 48px;
     overflow: hidden;
   }
   .page_width_custom {
