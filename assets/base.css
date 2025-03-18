@@ -1003,7 +1003,7 @@ margin-top: -10px;
   }
 
   .image-with-text__heading {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem !important;
   }
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
