@@ -787,6 +787,7 @@ margin-top: -10px;
   top: 3px;
   width: 17px !important;
   height: 17px !important;
+  opacity: 0.7;
 }
 .footer_newsletter_txt {
   font-size: 1.5rem !important;
