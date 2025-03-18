@@ -1,0 +1,283 @@
+<style>
+  #id-{{ section.id }}.marquee-text-wrapper {
+    --space: 2rem;
+    display: grid;
+    align-content: center;
+    overflow: hidden;
+    gap: var(--space);
+    width: 100%;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    padding-top:{{ section.settings.padding_top}}px;
+    padding-bottom:{{ section.settings.padding_bottom }}px;
+    background-color: {{ section.settings.bg_color }};
+  }
+
+  #id-{{ section.id }} .marquee {
+    --duration: 10s;
+    --gap: var(--space);
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: var(--gap);
+  }
+
+  #id-{{ section.id }} .marquee__group {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: var(--gap);
+    min-width: 100%;
+    animation: scroll var(--duration) linear infinite;
+  }
+
+  #id-{{ section.id }} .marquee__group p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  #id-{{ section.id }} .marquee__group p {
+    color: {{ section.settings.font_color }};
+    font-size: {{ section.settings.font_size}}px;
+  }
+
+  #id-{{ section.id }} .marquee-icon {
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 20px;
+    width: 20px;
+    vertical-align: middle;
+  }
+
+  #id-{{ section.id }} .marquee--borders {
+    padding-block: 0.75rem;
+  }
+
+  #id-{{ section.id }} .marquee--reverse .marquee__group {
+    animation-direction: reverse;
+    animation-delay: calc(var(--duration) / -2);
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+
+  #id-{{ section.id }} .marquee:hover .marquee__group {
+    animation-play-state: {{ section.settings.pause_text }};
+  }
+
+  @media (max-width: 600px) {
+    #id-{{ section.id }}.marquee-text-wrapper {
+      padding-top:{{ section.settings.m_padding_top}}px;
+      padding-bottom:{{ section.settings.m_padding_bottom }}px;
+    }
+  }
+</style>
+
+<section class="marquee-text-wrapper" id="id-{{ section.id }}">
+  <div
+    class="marquee marquee--borders {{ section.settings.scroll_text_move }}"
+    style="--duration: {{ section.settings.scroll_time }}s"
+  >
+    <div class="marquee__group">
+      {% for block in section.blocks %}
+        <p>{{ block.settings.text }}</p>
+        <img
+          srcset="{{ block.settings.image | image_url: width: block.settings.image_width }}, {{ block.settings.image | image_url: width: image_size_1x }} 1x"
+          src="{{ block.settings.image | image_url: width: 100 }}"
+          alt="{{ block.settings.image.alt | escape }}"
+          loading="lazy"
+          width="{{ block.settings.image.width }}"
+          height="{{ block.settings.image.height }}"
+        >
+      {% endfor %}
+    </div>
+
+    <div class="marquee__group">
+      {% for block in section.blocks %}
+        <p>{{ block.settings.text }}</p>
+        <img
+          srcset="{{ block.settings.image | image_url: width: block.settings.image_width }}, {{ block.settings.image | image_url: width: image_size_1x }} 1x"
+          src="{{ block.settings.image | image_url: width: 100 }}"
+          alt="{{ block.settings.image.alt | escape }}"
+          loading="lazy"
+          width="{{ block.settings.image.width }}"
+          height="{{ block.settings.image.height }}"
+        >
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Marquee Text",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color"
+    },
+    {
+      "type": "color",
+      "id": "font_color",
+      "label": "Font color",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "label": "Scroll Time",
+      "id": "scroll_time",
+      "default": "10"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "min": 8,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size",
+      "default": 14
+    },
+    {
+      "type": "select",
+      "id": "scroll_text_move",
+      "label": "Scroll text move from",
+      "options": [
+        {
+          "value": "marquee-left",
+          "label": "Left"
+        },
+        {
+          "value": "marquee--reverse",
+          "label": "Right"
+        }
+      ],
+      "default": "marquee-left"
+    },
+    {
+      "type": "select",
+      "id": "pause_text",
+      "label": "Pause text on mouse hover",
+      "options": [
+        {
+          "value": "paused",
+          "label": "Yes"
+        },
+        {
+          "value": "initial",
+          "label": "No"
+        }
+      ],
+      "default": "paused"
+    },
+    {
+      "type":"header",
+      "content":"Padding for desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 16
+    },
+    {
+      "type":"header",
+      "content":"Padding for mobile"
+    },
+    {
+      "type": "range",
+      "id": "m_padding_top",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "m_padding_bottom",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 16
+    }
+  ],
+  "blocks": [
+    {
+      "name": "mMarquee text",
+      "type": "block",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Add Text",
+          "id": "text",
+          "default":"Marquee"
+        },
+        {
+          "type": "image_picker",
+          "label": "Add image",
+          "id": "image",
+        },
+        {
+          "type": "range",
+          "id": "image_width",
+          "min": 20,
+          "max": 400,
+          "step": 5,
+          "unit": "px",
+          "label": "Image width",
+          "default": 100
+        },
+      ]
+    }
+  ],
+  "presets":[
+    {
+      "name":"Marquee Text",
+      "blocks": [
+        {
+          "type": "block"
+        },
+        {
+          "type": "block"
+        },
+        {
+          "type": "block"
+        },
+        {
+          "type": "block"
+        },
+        {
+          "type": "block"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
