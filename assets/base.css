@@ -1006,11 +1006,6 @@ margin-top: -10px;
   .page_width_custom {
     padding:0;
   }
-  .image_with_text_div {
-    margin: 0 auto;
-    background: #ffffff !important;
-    border-radius: 0 !important;
-}
   .tabcontent-cus {
     margin-top: 10px;
     padding-top: 0;
@@ -1419,6 +1414,11 @@ margin-top: -10px;
 /* ---------- EXTRA LARGE SCREEN 1440px END ---------- */
 
 @media screen and (max-width: 749px) {
+  .image_with_text_div {
+    margin: 0 auto;
+    background: #ffffff !important;
+    border-radius: 0 !important;
+}
   .tab_customize button {
     white-space: nowrap;
     line-height: calc(1 + 0.6 / var(--font-body-scale));
