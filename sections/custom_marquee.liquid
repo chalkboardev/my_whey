@@ -87,7 +87,7 @@
   }
 </style>
 
-<section class="marquee-text-wrapper" id="id-{{ section.id }}" style="margin-top:{{ section.settings.margin_top }}px; margin-bottom:{{ block.settings.margin_bottom_mw }};">
+<section class="marquee-text-wrapper" id="id-{{ section.id }}" style="margin-top:{{ section.settings.margin_top }}px; margin-bottom:{{ block.settings.margin_bottom }}px;">
   <div
     class="marquee marquee--borders {{ section.settings.scroll_text_move }}"
     style="--duration: {{ section.settings.scroll_time }}s;"
@@ -166,7 +166,7 @@
     },
     {
       "type": "range",
-      "id": "margin_bottom_mw",
+      "id": "margin_bottom",
       "min": 0,
       "max": 120,
       "step": 10,
