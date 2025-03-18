@@ -981,8 +981,9 @@ margin-top: -10px;
   }
   
   .more_btn {
-    font-weight: 600;
-    letter-spacing: 2px;
+    font-weight: 600 !important;
+    letter-spacing: 2px !important;
+    padding: 0.8rem 4rem !important;
   }
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
