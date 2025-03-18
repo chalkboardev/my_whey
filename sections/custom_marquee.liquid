@@ -60,7 +60,8 @@
   }
 
   #id-{{ section.id }} .marquee--borders {
-    padding-block: 0.75rem;
+    padding-block:{% if section.settings.is_only_images != false %} 0 {% else %} 0.75rem {% endif %}; 
+
   }
 
   #id-{{ section.id }} .marquee--reverse .marquee__group {
@@ -93,7 +94,7 @@
   }
   @media only screen and (max-width: 989px) {
   .marquee_img {
-    width: calc(100% - 84%);
+    width: calc(100% - 88%);
   }
   #id-{{ section.id }}.marquee-text-wrapper {
     --space: 4rem;
