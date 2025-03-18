@@ -30,7 +30,7 @@
     align-items: center;
     justify-content: space-around;
     gap: var(--gap);
-    min-width:{% if section.settings.is_only_images != false %} 72% {% else %} 100% {% endif %};
+    min-width:{% if section.settings.is_only_images != false %} 72% {% else %} calc(100% + 170px) {% endif %};
     animation: scroll var(--duration) linear infinite;
   }
 
