@@ -93,13 +93,19 @@
 
   }
   @media only screen and (max-width: 989px) {
-  .marquee_img {
-    width: calc(100% - 88%);
+    .marquee_img {
+      width: calc(100% - 88%);
+    }
+    #id-{{ section.id }}.marquee-text-wrapper {
+      --space: 4rem;
+    }
   }
-  #id-{{ section.id }}.marquee-text-wrapper {
-    --space: 4rem;
+  @media screen and (max-width: 749px) {
+    #id-{{ section.id }}.marquee-text-wrapper {
+      margin-top:{{ section.settings.mobile_margin_top}}px;
+      margin-bottom:{{ section.settings.mobile_margin_bottom}}px;
+    }
   }
-}
 </style>
 
 <section class="scroll-trigger animate--slide-in marquee-text-wrapper" id="id-{{ section.id }}">
@@ -200,6 +206,30 @@
       "unit": "px",
       "label": "Margin Bottom",
       "default": 20
+    },
+    {
+      "type":"header",
+      "content":"Mobile Top and Bottom Margin"
+    },
+    {
+      "type": "range",
+      "id": "mobile_margin_top",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "label": "Margin Top",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_margin_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "label": "Margin Bottom",
+      "default": 0
     },
     {
       "type":"header",
