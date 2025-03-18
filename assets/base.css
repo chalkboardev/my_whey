@@ -1110,6 +1110,9 @@ margin-top: -10px;
 }
 
 @media only screen and (max-width: 989px) {
+  .marquee_img {
+    width: calc(100% - 84%);
+  }
   .collection .slider-buttons {
     margin-bottom: 1rem;
   }

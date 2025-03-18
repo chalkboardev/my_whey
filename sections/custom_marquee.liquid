@@ -99,15 +99,18 @@
         {% if block.settings.text != blank %}
           <p>{{ block.settings.text }}</p>
         {% endif %}
+        {% if block.settings.image != blank %}
         <img
+          class="marquee_img"
           style="{% if block.settings.image_invert != false %} filter: invert(1) brightness(2); {% endif %}"
           srcset="{{ block.settings.image | image_url: width: block.settings.image_width }}, {{ block.settings.image | image_url: width: image_size_1x }} 1x"
-          src="{{ block.settings.image | image_url: width: 20 }}"
+          src="{{ block.settings.image | image_url: width: 100 }}"
           alt="{{ block.settings.image.alt | escape }}"
           loading="lazy"
           width="{{ block.settings.image_width }}"
           height="auto"
         >
+      {% endif %}
       {% endfor %}
     </div>
 
@@ -116,7 +119,9 @@
         {% if block.settings.text != blank %}
           <p>{{ block.settings.text }}</p>
         {% endif %}
+        {% if block.settings.image != blank %}
         <img
+          class="marquee_img"
           style="{% if block.settings.image_invert != false %} filter: invert(1) brightness(2); {% endif %}"
           srcset="{{ block.settings.image | image_url: width: block.settings.image_width }}, {{ block.settings.image | image_url: width: image_size_1x }} 1x"
           src="{{ block.settings.image | image_url: width: 20 }}"
@@ -125,6 +130,7 @@
           width="{{ block.settings.image_width }}"
           height="auto"
         >
+      {% endif %}
       {% endfor %}
     </div>
   </div>
