@@ -73,6 +73,7 @@
         },
         "buttons_PFLXYi": {
           "type": "buttons",
+          "disabled": true,
           "settings": {
             "button_label_1": "SHOP BEST SELLERS",
             "button_link_1": "",
@@ -110,6 +111,7 @@
         },
         "button": {
           "type": "buttons",
+          "disabled": true,
           "settings": {
             "button_label_1": "Shop all",
             "button_link_1": "shopify://collections/all",
