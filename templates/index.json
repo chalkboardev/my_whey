@@ -227,6 +227,7 @@
         "block_ertWby"
       ],
       "settings": {
+        "is_only_images": false,
         "bg_color": "#1e534d",
         "font_color": "#ffffff",
         "scroll_time": "40",
@@ -386,6 +387,7 @@
         "block_RCFdCr"
       ],
       "settings": {
+        "is_only_images": true,
         "bg_color": "#1e534d",
         "font_color": "#ffffff",
         "scroll_time": "20",
