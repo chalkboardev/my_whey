@@ -408,16 +408,16 @@
         "heading_z6mFAK": {
           "type": "heading",
           "settings": {
-            "heading": "Image with text",
+            "heading": "<strong>MY-WHEY</strong>",
             "heading_size": "h1"
           }
         },
         "caption_jbxpUW": {
           "type": "caption",
           "settings": {
-            "caption": "Add a tagline",
+            "caption": "ABOUT",
             "text_style": "caption-with-letter-spacing",
-            "text_size": "medium"
+            "text_size": "large"
           }
         },
         "text_g9TVie": {
