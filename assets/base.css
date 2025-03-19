@@ -1011,14 +1011,18 @@ margin-top: -10px;
   }
 
   .product-form__input--pill input[type='radio']:checked + label {
-    background-color: rgb(var(--color-background));
-    border: 3px solid #555555;
-    color: rgb(var(--color-foreground));
+    background-color: rgb(var(--color-background)) !important;
+    -webkit-box-shadow: inset 0px 0px 0px 2px #555555;
+    -moz-box-shadow: inset 0px 0px 0px 2px #555555;
+    box-shadow: inset 0px 0px 0px 2px #555555;
+    color: rgb(var(--color-foreground)) !important;
     font-weight: 600;
-}
+  }
 
 .badge_price {
   text-transform: uppercase;
+  border:none !important;
+  font-weight: 600;
   visibility: visible;
   animation-direction: alternate;
   animation-name: fadeIn;
