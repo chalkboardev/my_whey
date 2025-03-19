@@ -1010,6 +1010,22 @@ margin-top: -10px;
     margin-bottom: 3.5rem !important;
   }
 
+  .product-form__input--pill input[type='radio']:checked + label {
+    background-color: rgb(var(--color-background));
+    border: 3px solid #555555;
+    color: rgb(var(--color-foreground));
+    font-weight: 600;
+}
+
+.badge_price {
+  text-transform: uppercase;
+  visibility: visible;
+  animation-direction: alternate;
+  animation-name: fadeIn;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .product_card_title {
