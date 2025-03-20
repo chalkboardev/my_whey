@@ -1068,6 +1068,40 @@ margin-top: -10px;
   padding-top: 10px;
 }
 
+.mw_corner {
+  background: none !important;
+  background-color: unset !important;
+  width: 0;
+  height: 0;
+  border-top: 90px solid rgb(var(--color-badge-background));
+  border-bottom: 90px solid transparent;
+  border-right: 90px solid transparent;
+  position: absolute;
+  left: 0;
+  top: -1rem;
+}
+
+.mw_corner .badge {
+  background-color: unset !important;
+  background: none !important;
+}
+
+.sale_text_span {
+    color: #333;
+    /* text-shadow: 1px 1px 2px #000; */
+    position: absolute;
+    top: -70px;
+    width: 100px;
+    right: -82px;
+    text-align: center;
+    transform: rotate(315deg);
+    display: block;
+    visibility: visible;
+    animation-direction: alternate;
+    animation-name: fadeIn;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
 
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
