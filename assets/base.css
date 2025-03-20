@@ -700,11 +700,11 @@ margin-top: -10px;
   /* font-weight: 600; */
   padding-bottom:20px;
 }
-.collection__description h1 {
+.collection__description h1,h2,h3,h4 {
   text-align: center;
   margin: 0 auto;
-  font-size: 3rem;
-  line-height: 1.2;
+  /* font-size: 3rem;
+  line-height: 1.2; */
   /* font-weight: 600; */
   padding-bottom:20px;
 }
