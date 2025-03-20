@@ -1016,6 +1016,7 @@ margin-top: -10px;
   }
 
 .badge_price {
+  vertical-align: middle !important;
   text-transform: uppercase;
   border:none !important;
   font-weight: 600;
@@ -1040,10 +1041,66 @@ margin-top: -10px;
   flex-wrap: wrap !important;
   display: flex !important;
 }
+
+.card-information > .price--on-sale .price-item--regular {
+  text-decoration: line-through;
+  /* font-size: 1.4rem !important; */
+  top: 0;
+  position: relative;
+  /* background: #afafaf;
+  color: #fff !important; */
+  padding: 0px 8px 0px 8px;
+  border-radius: 30px;
+  color: rgba(var(--color-foreground), 0.75);
+  font-size: 1.6rem;
+}
+
+.from_price_txt {
+  position: absolute;
+  margin-top: -12px;
+  font-size: 11px;
+  text-transform: uppercase;
+  /* font-weight: 600; */
+  color: #9f9f9f;
+  letter-spacing: 1px;
+}
+.card-information > *:not(.visually-hidden:first-child) + *:not(.rating):not(.card__information-volume-pricing-note) {
+  padding-top: 10px;
+}
+
+
+
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .my_normal_price {
+    position: absolute !important;
+    top: unset !important;
+    margin-top: 20px !important;
+    left: 9px;
+  }
+  .product__info-container .my_normal_price {
+    position: relative !important;
+    top: 0 !important;
+    margin-top: 0px !important;
+    left: 0rem;
+  }
+  .product__info-container .badge_price {
+    vertical-align: bottom !important;
+  }
+  .card-information > .price--on-sale .price-item--regular {
+    text-decoration: line-through;
+    font-size: 1.3rem !important;
+    top: -2px;
+    position: relative;
+    /* background: #afafaf;
+    color: #fff !important; */
+    padding: 0px 8px 0px 0;
+    border-radius: 30px;
+    color: rgba(var(--color-foreground), 0.75);
+    font-size: 1.3rem;
+  }
   .price--on-sale .price__sale {
-    flex-direction: column !important;
+    flex-direction: row !important;
     flex-wrap: wrap !important;
     display: flex !important;
   }
@@ -1534,7 +1591,7 @@ margin-top: -10px;
 
 @media screen and (min-width: 750px) {
   .price--on-sale .price__sale {
-    flex-direction: column !important;
+    flex-direction: row !important;
     flex-wrap: wrap !important;
     display: flex !important;
   }
