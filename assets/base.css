@@ -1079,6 +1079,7 @@ margin-top: -10px;
   position: absolute;
   left: 0;
   top: -1rem;
+  border-radius: 6px !important;
 }
 
 .mw_corner .badge {
@@ -1088,7 +1089,9 @@ margin-top: -10px;
 }
 
 .sale_text_span {
+    text-transform: uppercase;
     color: #333;
+    font-weight: 600;
     /* text-shadow: 1px 1px 2px #000; */
     position: absolute;
     top: -70px;
@@ -1104,17 +1107,25 @@ margin-top: -10px;
     animation-iteration-count: infinite;
 }
 
+.card__media {
+  border-radius:10px !important;
+}
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .card__media {
+    border-radius:6px !important;
+  }
   .mw_corner {
     border-top: 60px solid rgb(var(--color-badge-background));
     border-bottom: 60px solid transparent;
     border-right: 60px solid transparent;
+    border-radius: 6px !important;
   }
   .sale_text_span {
-    top: -48px;
+    top: -46px;
     width: 100px;
+    font-size: 11px !important;
     right: -73px;
   }
   .product-option dt, dd {
