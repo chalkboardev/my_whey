@@ -119,7 +119,7 @@
       "settings": {
         "title": "OUR FORMULAS",
         "heading_size": "h2",
-        "description": "<p>Science-Backed with Proven Ingredients</p>",
+        "description": "<p><strong>Science-Backed with Proven Ingredients</strong></p>",
         "show_description": false,
         "description_style": "body",
         "collection": "all",
@@ -438,6 +438,7 @@
         "full_width_mobile": true,
         "mobile_content_alignment": "left",
         "style_text_container": true,
+        "text_div_bg_color": "#f6f3eb",
         "padding_top": 56,
         "padding_bottom": 56,
         "mobile_padding_top": 0,
