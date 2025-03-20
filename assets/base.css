@@ -1137,6 +1137,9 @@ margin-top: -10px;
   text-align: left;
 }
 
+.collection .card__information h3 a {
+  text-align: left !important;
+}
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .card__media {
