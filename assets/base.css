@@ -1084,6 +1084,7 @@ margin-top: -10px;
 .mw_corner .badge {
   background-color: unset !important;
   background: none !important;
+  border:none !important
 }
 
 .sale_text_span {
@@ -1106,9 +1107,19 @@ margin-top: -10px;
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .mw_corner {
+    border-top: 60px solid rgb(var(--color-badge-background));
+    border-bottom: 60px solid transparent;
+    border-right: 60px solid transparent;
+  }
+  .sale_text_span {
+    top: -48px;
+    width: 100px;
+    right: -73px;
+  }
   .product-option dt, dd {
     font-size: 1.3rem !important;
-}
+  }
   .my_normal_price {
     position: absolute !important;
     top: unset !important;
