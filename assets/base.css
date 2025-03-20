@@ -1094,9 +1094,9 @@ margin-top: -10px;
     font-weight: 600;
     /* text-shadow: 1px 1px 2px #000; */
     position: absolute;
-    top: -69px;
+    top: -67px;
     width: 100px;
-    right: -84px;
+    right: -83px;
     text-align: center;
     transform: rotate(315deg);
     display: block;
@@ -1117,7 +1117,6 @@ margin-top: -10px;
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
-  
   .card__media {
     border-radius:6px !important;
   }
