@@ -1123,6 +1123,20 @@ margin-top: -10px;
   color: #727272;
 }
 
+.backdrop_blur {
+  height: 100%;
+  width: 100%;
+  background: #00000073;
+  position: absolute;
+  z-index: 0;
+  display: inline-block;
+  backdrop-filter: blur(6px);
+}
+
+.quick-add-modal .h1 {
+  text-align: left;
+}
+
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .card__media {
@@ -1661,6 +1675,14 @@ margin-top: -10px;
 }
 
 @media screen and (min-width: 750px) {
+  .quick-add-modal__content {
+    --modal-height-offset: 10rem;
+    margin-top: var(--modal-height-offset);
+    width: 80%;
+    max-height: calc(100% - var(--modal-height-offset)* 2);
+    overflow-y: auto;
+    border-radius: 16px !important;
+}
   .price--on-sale .price__sale {
     flex-direction: row !important;
     flex-wrap: wrap !important;
@@ -2240,6 +2262,14 @@ summary::-webkit-details-marker {
 }
 
 @media screen and (max-width: 749px) {
+  .quick-add-modal__content {
+    --modal-height-offset: 10rem;
+    margin-top: var(--modal-height-offset);
+    width: 90%;
+    max-height: calc(100% - var(--modal-height-offset)* 2);
+    overflow-y: auto;
+    border-radius: 16px !important;
+}
   .grid__item.slider__slide--full-width {
     width: 100%;
     max-width: none;
