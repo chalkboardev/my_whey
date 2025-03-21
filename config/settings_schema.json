@@ -1263,9 +1263,9 @@
       {
         "type": "color",
         "id": "sales_badge_border_color",
-        "label": "Sale badge background color",
-        "default": "#ECFF7A99"
-      }
+        "label": "Sales badge color",
+        "default": "#FFFFFF"
+      },
       {
         "type": "color_scheme",
         "id": "sold_out_badge_color_scheme",
@@ -1274,9 +1274,9 @@
       },
       {
         "type": "color",
-        "id": "sold_out_badge_border_color",
-        "label": "Out of stock badge background color",
-        "default": "#CCCCCC"
+        "id": "so_badge_border_color",
+        "label": "Sold out badge color",
+        "default": "#FFFFFF"
       }
     ]
   },
