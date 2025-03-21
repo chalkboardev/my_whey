@@ -640,7 +640,11 @@ class ModalDialog extends HTMLElement {
     document.body.dispatchEvent(new CustomEvent('modalClosed'));
     this.removeAttribute('open');
     removeTrapFocus(this.openedBy);
-    window.pauseAllMedia();
+    //window.pauseAllMedia();
+    document.querySelectorAll('video').forEach((video) => video.play());
+    document.querySelectorAll('product-model').forEach((model) => {
+      if (model.modelViewerUI) model.modelViewerUI.play();
+    });
   }
 }
 customElements.define('modal-dialog', ModalDialog);
