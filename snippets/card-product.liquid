@@ -136,7 +136,7 @@
               </span>
           </div>
           {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
-            <div style="border-top-color: {{ settings.sales_badge_border_color }} !important" class="mw_corner_sale card__badge color-{{ settings.sale_badge_color_scheme }} {{ settings.badge_position }}">
+            <div style="border-top-color: {{ settings.sales_badge_border_color  | color_modify: 'alpha', 0.85 }} !important" class="mw_corner_sale card__badge color-{{ settings.sale_badge_color_scheme }} {{ settings.badge_position }}">
                 <span
                   id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
                   class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
