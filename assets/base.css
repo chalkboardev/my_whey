@@ -1057,7 +1057,7 @@ margin-top: -10px;
   position: relative;
   /* background: #afafaf;
   color: #fff !important; */
-  padding: 0px 8px 0px 8px;
+  padding: 0px 4px 0px 0px;
   border-radius: 30px;
   color: rgba(var(--color-foreground), 0.75);
   font-size: 1.6rem;
@@ -1142,6 +1142,9 @@ margin-top: -10px;
 }
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .card__information {
+    padding: 1.3rem 0 1.3rem 0 !important;
+  }
   .card__media {
     border-radius:6px !important;
   }
@@ -1182,7 +1185,7 @@ margin-top: -10px;
     position: relative;
     /* background: #afafaf;
     color: #fff !important; */
-    padding: 0px 8px 0px 0;
+    padding: 0px 4px 0px 0;
     border-radius: 30px;
     color: rgba(var(--color-foreground), 0.75);
     font-size: 1.3rem;
@@ -1321,13 +1324,22 @@ margin-top: -10px;
 /* ---------- ONLY MOBILE ONLY END ---------- */
 
 .cart_blurry {
-    width: 100vw;
+    /* width: 100vw;
     height: 100vh;
     background: #ffffff00;
     position: absolute;
     z-index: 12;
     backdrop-filter: blur(6px);
-    display: flex !important;
+    display: flex !important; */
+    width: 100vw;
+    height: 100vh;
+    background: #0000008c;
+    position: fixed;
+    z-index: 12;
+    backdrop-filter: blur(3px) !important;
+    backdrop-filter: blur(24px);
+    display: flex !important
+;
 }
 
 .blurry_menu {
@@ -2265,6 +2277,10 @@ summary::-webkit-details-marker {
 }
 
 @media screen and (max-width: 749px) {
+  .card-information > .price--on-sale .price-item--regular {
+    padding: 0px 4px 0px 0px !important;
+  }
+  
   .quick-add-modal__content {
     --modal-height-offset: 10rem;
     margin-top: var(--modal-height-offset);
