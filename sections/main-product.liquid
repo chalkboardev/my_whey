@@ -26,7 +26,8 @@
   {%- endif -%}
 
   {%- style -%}
-    @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+
+@media screen and (min-width: 479px) {
       .section-{{ section.id }}-padding {
         padding-top: {{ section.settings.padding_top_mobile }}px !important;
         padding-bottom: {{ section.settings.padding_bottom_mobile }}px !important;
