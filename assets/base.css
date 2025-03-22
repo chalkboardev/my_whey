@@ -1180,6 +1180,19 @@ margin-top: -10px;
 .collection .card__information h3 a {
   text-align: left !important;
 }
+
+.product_icons {
+  display: flex;
+  flex-direction: row;
+}
+.dietary_icons {
+  position: relative;
+  top: 7px;
+  font-size: 12px;
+  display: inline-block;
+  left: -59px;
+  width: 80px;
+}
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .videoBackground .videoBoxInfoTitle, .videoBackground .imageBoxInfoTitle {

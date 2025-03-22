@@ -108,12 +108,21 @@
                   </a>
                   <div class="product_icons">
                     {% for prod in product.metafields.shopify.dietary-preferences.value %}
+
                         {% if prod.label contains 'Gluten-free' %}
-                            {% comment %} {{ prod.label }} {% endcomment %}
                             <span class="my_svg-wrapper about_icons">
                               <span class="icon-wrap">&nbsp;{{ 'icon-gluten-free-2.svg' | inline_asset_content }}</span>
+                              <span class="dietary_icons">{{ prod.label }}</span>  
                             </span>
+                       
+                            {% elsif prod.label contains 'Vegan' %}
+                              <span class="my_svg-wrapper about_icons">
+                                <span class="icon-wrap">&nbsp;{{ 'icon-vegan.svg' | inline_asset_content }}</span>
+                                <span class="dietary_icons">{{ prod.label }}</span>  
+                              </span>
+                           
                         {% endif %}
+
                     {% endfor %}​
                     {% comment %} {{ product.metafields.shopify.dietary-preferences.value | json }} {% endcomment %}
                   </div>
