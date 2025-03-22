@@ -39,8 +39,8 @@
     }
     @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
       .section-{{ section.id }}-padding {
-        padding-top: {{ section.settings.padding_top_mobile | times: 0.75 | round: 0 }}px;
-        padding-bottom: {{ section.settings.padding_bottom_mobile | times: 0.75 | round: 0 }}px;
+        padding-top: {{ section.settings.padding_top_mobile | times: 0.75 | round: 0 }}px !important;
+        padding-bottom: {{ section.settings.padding_bottom_mobile | times: 0.75 | round: 0 }}px !important;
       }
     }
   {%- endstyle -%}
