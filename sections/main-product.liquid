@@ -107,7 +107,15 @@
                     </h2>
                   </a>
                   <div class="product_icons">
-                    Dietary: {{ product.metafields.shopify.dietary_preferences | join: ', '  }}
+                    {% for prod in product.metafields.shopify.dietary-preferences.value %}
+                        {% if prod.label contains 'Gluten-free' %}
+                            {{ prod.label }}
+                            <span class="my_svg-wrapper" style="color: rgb(62, 214, 96)">
+                              {{- 'icon-gluten-free-2.svg' | inline_asset_content -}}
+                            </span>
+                        {% endif %}
+                    {% endfor %}​
+                    {% comment %} {{ product.metafields.shopify.dietary-preferences.value | json }} {% endcomment %}
                   </div>
                 </div>
               {%- when 'price' -%}
