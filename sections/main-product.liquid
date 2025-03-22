@@ -106,6 +106,9 @@
                       {{ product.title | escape }}
                     </h2>
                   </a>
+                  <div class="product_icons">
+                    {{ product.metafields.dietary-preferences  }}
+                  </div>
                 </div>
               {%- when 'price' -%}
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
