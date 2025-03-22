@@ -106,27 +106,32 @@
                       {{ product.title | escape }}
                     </h2>
                   </a>
-                  <div class="product_icons">
-                    {% for prod in product.metafields.shopify.dietary-preferences.value %}
-
-                        {% if prod.label contains 'Gluten-free' %}
-                            <span class="my_svg-wrapper about_icons">
-                              <span class="icon-wrap">&nbsp;{{ 'icon-gluten-free-2.svg' | inline_asset_content }}</span>
-                              <span class="dietary_icons">{{ prod.label }}</span>  
-                            </span>
-                       
-                            {% elsif prod.label contains 'Vegan' %}
-                              <span class="my_svg-wrapper about_icons">
-                                <span class="icon-wrap">&nbsp;{{ 'icon-vegan.svg' | inline_asset_content }}</span>
-                                <span class="dietary_icons">{{ prod.label }}</span>  
-                              </span>
-                           
-                        {% endif %}
-
-                    {% endfor %}​
-                    {% comment %} {{ product.metafields.shopify.dietary-preferences.value | json }} {% endcomment %}
-                  </div>
                 </div>
+                <div class="product_icons">
+                    
+                {% for prod in product.metafields.shopify.dietary-preferences.value %}
+
+                    {% if prod.label contains 'Gluten-free' %}
+                      <div class="dietary_icons d-flex flex-column align-items-center">
+                          <span class="d-flex icon-wrap">{{ 'icon-gluten-free-2.svg' | inline_asset_content }}</span>
+                          <p>
+                            {{ prod.label }}
+                          </p>
+                      </div>
+                   
+                        {% elsif prod.label contains 'Vegan' %}
+                          <div class="dietary_icons d-flex flex-column align-items-center">
+                            <span class="d-flex icon-wrap">{{ 'icon-vegan.svg' | inline_asset_content }}</span>
+                            <p>
+                              {{ prod.label }}
+                            </p>
+                        </div>
+                       
+                    {% endif %}
+
+                {% endfor %}​
+                {% comment %} {{ product.metafields.shopify.dietary-preferences.value | json }} {% endcomment %}
+              </div>
               {%- when 'price' -%}
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                   {%- render 'price',
