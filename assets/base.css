@@ -1007,7 +1007,7 @@ margin-top: -10px;
   }
 
   .product-form__input--pill input[type='radio']:checked + label {
-    border:none;
+    border:#ffffff00;
     background-color: rgb(var(--color-background)) !important;
     -webkit-box-shadow: inset 0px 0px 0px 2px #555555;
     -moz-box-shadow: inset 0px 0px 0px 2px #555555;
