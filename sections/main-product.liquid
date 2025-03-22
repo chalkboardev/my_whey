@@ -31,12 +31,6 @@
       padding-bottom: {{ section.settings.padding_top_mobile }}px !important;
     }
 
-    @media screen and (max-width: 749px) {
-      .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top_mobile | times: 0.75 | round: 0 }}px;
-      padding-bottom: {{ section.settings.padding_top_mobile | times: 0.75 | round: 0 }}px;
-      }
-    }
 
     @media screen and (min-width: 750px) {
       .section-{{ section.id }}-padding {
