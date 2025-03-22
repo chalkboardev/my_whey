@@ -107,7 +107,10 @@
                     </h2>
                   </a>
                   <div class="product_icons">
-                    {{ product.metafields.dietary-preferences  }}
+                    {% if product.metafields.shopify.dietary-preferences contains 'gluten-free' %}
+                      <p>This product is vegan.</p>
+                    {% endif %}
+                    Dietary: {{ product.metafields.shopify.dietary-preferences | metafield_tag  }}
                   </div>
                 </div>
               {%- when 'price' -%}
