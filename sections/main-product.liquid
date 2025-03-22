@@ -27,15 +27,15 @@
 
   {%- style -%}
     .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top_mobile }}px !important;
-      padding-bottom: {{ section.settings.padding_top_mobile }}px !important;
+      padding-top: {{ section.settings.padding_top_mobile }}px;
+      padding-bottom: {{ section.settings.padding_top_mobile }}px;
     }
 
 
     @media screen and (min-width: 749px) {
       .section-{{ section.id }}-padding {
-        padding-top: {{ section.settings.padding_top }}px;
-        padding-bottom: {{ section.settings.padding_bottom }}px;
+        padding-top: {{ section.settings.padding_top }}px !important;
+        padding-bottom: {{ section.settings.padding_bottom }}px !important;
       }
     }
     /* @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
