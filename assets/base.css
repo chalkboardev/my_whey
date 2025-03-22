@@ -1773,6 +1773,9 @@ margin-top: -10px;
     padding: 0px 8px 0px 8px;
     border-radius: 30px; */
   }
+  .product__info-container .price--on-sale .price-item--regular {
+    top: -2px;
+  }
   .page_width_custom {
     padding: 0 5rem;
     max-width: var(--page-width);
