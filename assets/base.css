@@ -1764,16 +1764,6 @@ margin-top: -10px;
     display: flex !important;
   }
   .product__info-container .price--on-sale .price-item--regular {
-    /* font-size: 1.5rem !important;
-    position: absolute;
-    margin-top: -28px;
-    margin-left: -2px;
-    background: #afafaf;
-    color: #fff;
-    padding: 0px 8px 0px 8px;
-    border-radius: 30px; */
-  }
-  .product__info-container .price--on-sale .price-item--regular {
     top: -2px;
   }
   .page_width_custom {
