@@ -85,11 +85,7 @@
     flex-wrap: wrap !important;
     display: flex !important;
   }
-  .product__info-container .badge_price {
-    vertical-align: bottom !important;
-  }
 }
-
 
 .price--center {
   display: initial;
