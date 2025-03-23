@@ -38,26 +38,7 @@
         padding-bottom: {{ section.settings.padding_bottom }}px !important;
       }
     }
-    .product-tab-nav {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
 
-    .product-tab-nav li {
-      display: inline-block;
-      padding: 10px;
-      cursor: pointer;
-    }
-
-    .product-tab-content {
-      display: none;
-      padding: 20px;
-    }
-
-    .product-tab-content.active {
-      display: block;
-    }
   {%- endstyle -%}
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
@@ -151,19 +132,6 @@
                 {% endfor %}​
                 {% comment %} {{ product.metafields.shopify.dietary-preferences.value | json }} {% endcomment %}
               </div>
-
-              <div id="product-tabs">
-                <ul class="product-tab-nav">
-                  <li class="active"><a href="#tab-description">Description</a></li>
-                  <li><a href="#tab-specifications">Specifications</a></li>
-                </ul>
-                <div id="tab-description" class="active product-tab-content">
-                  Tab 1
-                </div>
-                <div id="tab-specifications" class="product-tab-content">
-                  Tab 2
-                </div>
-              </div> 
 
               {%- when 'price' -%}
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
