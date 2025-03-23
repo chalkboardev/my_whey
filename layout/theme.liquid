@@ -428,6 +428,32 @@ $(document).ready(function(){
     });
 });
 
+// --------- START TWO TAB ---------
+document.addEventListener('DOMContentLoaded', function() {
+  const tabNav = document.querySelector('.product-tab-nav');
+  const tabContent = document.querySelectorAll('.product-tab-content');
+
+  tabNav.addEventListener('click', function(event) {
+    if (event.target.tagName === 'A') {
+      event.preventDefault();
+
+      // Remove active class from all tabs
+      tabContent.forEach(content => {
+        content.classList.remove('active');
+      });
+
+      // Add active class to the selected tab content
+      const targetId = event.target.getAttribute('href').substring(1);
+      const targetContent = document.getElementById(targetId);
+      targetContent.classList.add('active');
+
+      // Highlight the selected tab
+      tabNav.querySelectorAll('li').forEach(li => li.classList.remove('active'));
+      event.target.parentNode.classList.add('active');
+    }
+  });
+});
+// --------- END TWO TAB ---------
 </script>
 
     {%- if settings.predictive_search_enabled -%}
