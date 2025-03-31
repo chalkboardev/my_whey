@@ -426,6 +426,13 @@ $(document).ready(function(){
       $("cart-drawer").addClass('animate active');
       $(".header__icon--menu").click();
     });
+
+    $(".radio_select").click(function () {
+      alert('hi...');
+      var this_id = $(this).html();
+      alert(this_id);
+    });
+    
 });
 
 </script>
@@ -436,6 +443,10 @@ $(document).ready(function(){
 
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
+
+    {%- if template contains 'product' -%}
+      {% render 'linked-options' %}
     {%- endif -%}
   </body>
 </html>

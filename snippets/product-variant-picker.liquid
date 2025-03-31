@@ -9,6 +9,7 @@
   {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
 {% endcomment %}
 {%- unless product.has_only_default_variant -%}
+  
   <variant-selects
     id="variant-selects-{{ section.id }}"
     data-section="{{ section.id }}"
@@ -43,8 +44,15 @@
             picker_type: picker_type
           %}
         </fieldset>
-      {%- elsif picker_type == 'button' -%}
         
+      {%- elsif picker_type == 'button' -%}
+
+        {% comment %} {{ option.name }} {% endcomment %}
+        
+        {% if option.name == 'Supplement Type' %}
+          {% comment %} dsfdf {% endcomment %}
+        {% endif %}
+
         <fieldset class="js product-form__input product-form__input--pill">
           <legend class="form__label">{{ option.name }}</legend>
           {% render 'product-variant-options',

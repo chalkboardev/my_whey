@@ -1,4 +1,6 @@
 if (!customElements.get('product-info')) {
+  var is_powder = false;
+  var is_capsule = false;
   customElements.define(
     'product-info',
     class ProductInfo extends HTMLElement {
@@ -60,15 +62,67 @@ if (!customElements.get('product-info')) {
         });
       }
 
+      // handleOptionValueChange({ data: { event, target, selectedOptionValues } }) {
+      //   if (!this.contains(event.target)) return;
+
+      //   this.resetProductFormState();
+
+      //   const productUrl = target.dataset.productUrl || this.pendingRequestUrl || this.dataset.url;
+      //   this.pendingRequestUrl = productUrl;
+      //   const shouldSwapProduct = this.dataset.url !== productUrl;
+      //   const shouldFetchFullPage = this.dataset.updateUrl === 'true' && shouldSwapProduct;
+
+      //   this.renderProductInfo({
+      //     requestUrl: this.buildRequestUrlWithParams(productUrl, selectedOptionValues, shouldFetchFullPage),
+      //     targetId: target.id,
+      //     callback: shouldSwapProduct
+      //       ? this.handleSwapProduct(productUrl, shouldFetchFullPage)
+      //       : this.handleUpdateProductInfo(productUrl),
+      //   });
+      // }
+
       handleOptionValueChange({ data: { event, target, selectedOptionValues } }) {
         if (!this.contains(event.target)) return;
 
         this.resetProductFormState();
 
-        const productUrl = target.dataset.productUrl || this.pendingRequestUrl || this.dataset.url;
+              // ---- START get specific pill option clicked -----           
+             console.log(productUrl);
+             console.log(selectedOptionValues);
+             console.log(this.dataset.url);
+             console.log(this.dataset);
+             console.log(this.dataset['productId']);
+             console.log(this.dataset['url']);
+             // console.log(target.id);
+             // console.log(selectedOptionValues);
+             var pill_name = $(event.target).next().contents().filter(function(){
+               return this.nodeType === 3;
+             }).text().trim();
+             console.log("Pill name: " + pill_name);
+             if(pill_name == 'Powder') {
+               alert('Powder Clicked...');
+               is_powder = true;
+               this.dataset.url = this.dataset.url + '?variant=46991917875452';
+               var productUrl = this.dataset.url ;
+               this.pendingRequestUrl = productUrl;
+                 console.log("new: " + this.dataset.url);
+             } else if(pill_name == 'Capsule') {
+               alert('Capsule clicked...');
+               is_capsule = true;
+               this.dataset.url = this.dataset.url + '?variant=47005405905148';
+               var productUrl = this.dataset.url ;
+             } else {
+              this.dataset.url = this.dataset.url;
+              var productUrl = this.dataset.url ;
+             }
+             // ---- END get specific pill option clicked ----- 
+
+        productUrl = target.dataset.productUrl || this.pendingRequestUrl || this.dataset.url;
         this.pendingRequestUrl = productUrl;
         const shouldSwapProduct = this.dataset.url !== productUrl;
         const shouldFetchFullPage = this.dataset.updateUrl === 'true' && shouldSwapProduct;
+
+
 
         this.renderProductInfo({
           requestUrl: this.buildRequestUrlWithParams(productUrl, selectedOptionValues, shouldFetchFullPage),
@@ -164,7 +218,7 @@ if (!customElements.get('product-info')) {
       handleUpdateProductInfo(productUrl) {
         return (html) => {
           const variant = this.getSelectedVariant(html);
-
+          console.log("Variant ID IZZZ: " + variant?.id);
           this.pickupAvailability?.update(variant);
           this.updateOptionValues(html);
           this.updateURL(productUrl, variant?.id);
@@ -212,6 +266,7 @@ if (!customElements.get('product-info')) {
       }
 
       updateVariantInputs(variantId) {
+        console.log("Variant ID: " + variantId);
         this.querySelectorAll(
           `#product-form-${this.dataset.section}, #product-form-installment-${this.dataset.section}`
         ).forEach((productForm) => {
@@ -222,6 +277,16 @@ if (!customElements.get('product-info')) {
       }
 
       updateURL(url, variantId) {
+        // console.log("Powder: " + is_powder);
+        // console.log("Capsule: " + is_capsule);
+        // if(is_powder === true){
+        //   console.log('change the powder url...');
+        // } else if(is_capsule === true){
+        //   console.log('change the capsule url...');
+        // } else {
+
+        // }
+        console.log(`${window.shopUrl}${url}${variantId ? `?variant=${variantId}` : ''}`);
         this.querySelector('share-button')?.updateUrl(
           `${window.shopUrl}${url}${variantId ? `?variant=${variantId}` : ''}`
         );
