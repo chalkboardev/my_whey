@@ -121,7 +121,7 @@ if (!customElements.get('product-info')) {
                 // console.log("new: " + this.dataset.url);
 
              } else if(pill_name == 'Capsule') {
-               //alert('Capsule clicked...');
+               //alert('Capsule clicked...'); 
                setTimeout(function(){
                 //alert('remove...');
                 //alert($(event.target)[0].nodeName);
