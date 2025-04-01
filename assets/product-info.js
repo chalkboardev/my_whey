@@ -107,14 +107,14 @@ if (!customElements.get('product-info')) {
                   //alert('remove...');
                   //alert($(event.target)[0].nodeName);
                   //alert($(event.target).parent().next("fieldset").attr('class'));
-                  $('input[name*="Size-2"]')[0].click(); 
+                   $('input[name*="Size-2"]')[0].click(); 
                   //$(event.target).parent().next("fieldset");
                   //alert($(event.target).parent().next("fieldset").children().eq(0).text());
                   //$(event.target).parent().next("fieldset").remove();
                   
                   }, 600);
               
-                // is_powder = true;
+                is_powder = true;
                 // this.dataset.url = this.dataset.url + '?variant=46991917875452';
                 // var productUrl = this.dataset.url ;
                 // this.pendingRequestUrl = productUrl;
@@ -126,13 +126,13 @@ if (!customElements.get('product-info')) {
                 //alert('remove...');
                 //alert($(event.target)[0].nodeName);
                 //alert($(event.target).parent().next("fieldset").attr('class'));
-                $('input[name*="Size-2"]')[0].click(); 
+                 $('input[name*="Size-2"]')[0].click(); 
                 //$(event.target).parent().next("fieldset");
                 //alert($(event.target).parent().next("fieldset").children().eq(0).text());
                 //$(event.target).parent().next("fieldset").remove();
                 
                 }, 800);
-              //  is_capsule = true;
+               is_capsule = true;
               //  this.dataset.url = this.dataset.url + '?variant=47005405905148';
               //  var productUrl = this.dataset.url ;
              } else {
@@ -157,6 +157,7 @@ if (!customElements.get('product-info')) {
             ? this.handleSwapProduct(productUrl, shouldFetchFullPage)
             : this.handleUpdateProductInfo(productUrl),
         });
+         $(".price").html('...');
       }
 
       resetProductFormState() {
@@ -194,6 +195,7 @@ if (!customElements.get('product-info')) {
       }
 
       renderProductInfo({ requestUrl, targetId, callback }) {
+        //$(".price").html('zzz...');
         this.abortController?.abort();
         this.abortController = new AbortController();
 
@@ -242,6 +244,7 @@ if (!customElements.get('product-info')) {
       }
 
       handleUpdateProductInfo(productUrl) {
+        //$(".price").css('background','#333');
         return (html) => {
           const variant = this.getSelectedVariant(html);
           //alert("Variant ID IZZZ: " + variant?.id);
@@ -292,7 +295,15 @@ if (!customElements.get('product-info')) {
       }
 
       updateVariantInputs(variantId) {
-        console.log("Variant ID: " + variantId);
+        // if(is_powder === true){
+        //   $('input[name*="Size-2"]')[0].click(); 
+        // } else if(is_capsule === true){
+        //   $('input[name*="Size-2"]')[0].click(); 
+        // } else {
+
+        // }
+        //$('input[name*="Size-2"]')[0].click(); 
+        //alert("Variant ID: " + variantId);
         this.querySelectorAll(
           `#product-form-${this.dataset.section}, #product-form-installment-${this.dataset.section}`
         ).forEach((productForm) => {
@@ -312,7 +323,7 @@ if (!customElements.get('product-info')) {
         // } else {
 
         // }
-        console.log(`${window.shopUrl}${url}${variantId ? `?variant=${variantId}` : ''}`);
+        //console.log(`${window.shopUrl}${url}${variantId ? `?variant=${variantId}` : ''}`);
         this.querySelector('share-button')?.updateUrl(
           `${window.shopUrl}${url}${variantId ? `?variant=${variantId}` : ''}`
         );
@@ -327,7 +338,7 @@ if (!customElements.get('product-info')) {
         const selectors = ['price', 'Inventory', 'Sku', 'Price-Per-Item', 'Volume-Note', 'Volume', 'Quantity-Rules']
           .map((id) => `#${id}-${this.dataset.section}`)
           .join(', ');
-        document.querySelectorAll(selectors).forEach(({ classList }) => classList.add('hidden'));
+       // document.querySelectorAll(selectors).forEach(({ classList }) => classList.add('hidden'));
       }
 
       updateMedia(html, variantFeaturedMediaId) {
