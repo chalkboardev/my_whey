@@ -87,34 +87,60 @@ if (!customElements.get('product-info')) {
         this.resetProductFormState();
 
               // ---- START get specific pill option clicked -----           
-             console.log(productUrl);
-             console.log(selectedOptionValues);
-             console.log(this.dataset.url);
-             console.log(this.dataset);
-             console.log(this.dataset['productId']);
-             console.log(this.dataset['url']);
+            //  console.log(productUrl);
+            //  console.log(selectedOptionValues);
+            //  console.log(this.dataset.url);
+            //  console.log(this.dataset);
+            //  console.log(this.dataset['productId']);
+            //  console.log(this.dataset['url']);
              // console.log(target.id);
              // console.log(selectedOptionValues);
+             //alert(selectedOptionValues);
              var pill_name = $(event.target).next().contents().filter(function(){
                return this.nodeType === 3;
              }).text().trim();
-             console.log("Pill name: " + pill_name);
+             //alert("Pill name: " + pill_name);
              if(pill_name == 'Powder') {
-               alert('Powder Clicked...');
-               is_powder = true;
-               this.dataset.url = this.dataset.url + '?variant=46991917875452';
-               var productUrl = this.dataset.url ;
-               this.pendingRequestUrl = productUrl;
-                 console.log("new: " + this.dataset.url);
+                  //alert('Powder Clicked...');
+                //  //$(event.target).nextAll("label").next().first().remove();
+                 setTimeout(function(){
+                  //alert('remove...');
+                  //alert($(event.target)[0].nodeName);
+                  //alert($(event.target).parent().next("fieldset").attr('class'));
+                  $('input[name*="Size-2"]')[0].click(); 
+                  //$(event.target).parent().next("fieldset");
+                  //alert($(event.target).parent().next("fieldset").children().eq(0).text());
+                  //$(event.target).parent().next("fieldset").remove();
+                  
+                  }, 2500);
+              
+                // is_powder = true;
+                // this.dataset.url = this.dataset.url + '?variant=46991917875452';
+                // var productUrl = this.dataset.url ;
+                // this.pendingRequestUrl = productUrl;
+                // console.log("new: " + this.dataset.url);
+
              } else if(pill_name == 'Capsule') {
-               alert('Capsule clicked...');
-               is_capsule = true;
-               this.dataset.url = this.dataset.url + '?variant=47005405905148';
-               var productUrl = this.dataset.url ;
+               //alert('Capsule clicked...');
+               setTimeout(function(){
+                //alert('remove...');
+                //alert($(event.target)[0].nodeName);
+                //alert($(event.target).parent().next("fieldset").attr('class'));
+                $('input[name*="Size-2"]')[0].click(); 
+                //$(event.target).parent().next("fieldset");
+                //alert($(event.target).parent().next("fieldset").children().eq(0).text());
+                //$(event.target).parent().next("fieldset").remove();
+                
+                }, 2500);
+              //  is_capsule = true;
+              //  this.dataset.url = this.dataset.url + '?variant=47005405905148';
+              //  var productUrl = this.dataset.url ;
              } else {
-              this.dataset.url = this.dataset.url;
-              var productUrl = this.dataset.url ;
+              // this.dataset.url = this.dataset.url;
+              // var productUrl = this.dataset.url ;
              }
+             this.dataset.url = this.dataset.url;
+             var productUrl = this.dataset.url ;
              // ---- END get specific pill option clicked ----- 
 
         productUrl = target.dataset.productUrl || this.pendingRequestUrl || this.dataset.url;
@@ -218,7 +244,7 @@ if (!customElements.get('product-info')) {
       handleUpdateProductInfo(productUrl) {
         return (html) => {
           const variant = this.getSelectedVariant(html);
-          console.log("Variant ID IZZZ: " + variant?.id);
+          //alert("Variant ID IZZZ: " + variant?.id);
           this.pickupAvailability?.update(variant);
           this.updateOptionValues(html);
           this.updateURL(productUrl, variant?.id);
