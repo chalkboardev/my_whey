@@ -90,6 +90,10 @@ input {
   -webkit-tap-highlight-color: transparent !important;
 }
 
+.product-form__input--pill input[type='radio'] + label:before {
+  -webkit-tap-highlight-color: transparent !important;
+}
+
 .page-width {
   max-width: var(--page-width);
   margin: 0 auto;
