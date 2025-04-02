@@ -83,6 +83,9 @@ a {
 button {
   -webkit-tap-highlight-color: transparent !important;
 }
+label {
+  -webkit-tap-highlight-color: transparent !important;
+}
 
 .page-width {
   max-width: var(--page-width);
