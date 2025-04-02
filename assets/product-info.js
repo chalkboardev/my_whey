@@ -104,7 +104,7 @@ if (!customElements.get('product-info')) {
                   //alert($(event.target).parent().next("fieldset").children().eq(0).text());
                   //$(event.target).parent().next("fieldset").remove();
                   
-                  }, 2800);
+                  }, 800);
               
                 is_powder = true;
                 // this.dataset.url = this.dataset.url + '?variant=46991917875452';
@@ -123,7 +123,7 @@ if (!customElements.get('product-info')) {
                 //alert($(event.target).parent().next("fieldset").children().eq(0).text());
                 //$(event.target).parent().next("fieldset").remove();
                 
-                }, 2800);
+                }, 800);
                is_capsule = true;
               //  this.dataset.url = this.dataset.url + '?variant=47005405905148';
               //  var productUrl = this.dataset.url ;
