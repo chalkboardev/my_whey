@@ -298,7 +298,7 @@ if (!customElements.get('product-info')) {
           //alert('capsule clicked...');
           $('input[name*="Size-2"]')[0].click(); 
         } else {
-
+          //alert('not capsule nor powder clicked...');
         }
 
         const selectors = ['price', 'Inventory', 'Sku', 'Price-Per-Item', 'Volume-Note', 'Volume', 'Quantity-Rules']
