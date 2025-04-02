@@ -1208,8 +1208,15 @@ margin-bottom:-7px;
       align-items: center;
 }
 
+.gif_price_pad {
+  margin:6px 0 0 0;
+}
+
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .gif_price_pad {
+    margin:5px 0 0 0;
+  }
   .videoBackground .videoBoxInfoTitle, .videoBackground .imageBoxInfoTitle {
     margin: 0 0 1rem 0 !important;
   }

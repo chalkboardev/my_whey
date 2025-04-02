@@ -150,7 +150,7 @@ if (!customElements.get('product-info')) {
             : this.handleUpdateProductInfo(productUrl),
         });
         // $(".price").html('<div class="price__container animate_it"><div class="price__regular">...</div></div>');
-        $(".product_icons").next().html('<div class="price__container"><div class="price__regular"><img style="margin:6px 0 0px 0;" width="16" src="https://cdn.shopify.com/s/files/1/0713/8685/7724/files/loader.gif?v=1743590298" /></div></div>');
+        $(".product_icons").next().html('<div class="price__container"><div class="price__regular"><img class="gif_price_pad" width="16" src="https://cdn.shopify.com/s/files/1/0713/8685/7724/files/loader.gif?v=1743590298" /></div></div>');
       }
 
       resetProductFormState() {
