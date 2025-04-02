@@ -207,7 +207,7 @@ if (!customElements.get('product-info')) {
       }
 
       updateOptionValues(html) {
-        // // $(".price").html('<div class="price__container animate_it"><div class="price__regular">...</div></div>');
+        // $(".price").html('<div class="price__container animate_it"><div class="price__regular">...</div></div>');
         // $(".product_icons").next().html('<div class="gif_price_pad price__container"><div class="price__regular"><span class="fetching_price">Price loading </span><img width="16" src="https://cdn.shopify.com/s/files/1/0713/8685/7724/files/loader.gif?v=1743590298" /></div></div>');
         const variantSelects = html.querySelector('variant-selects');
         if (variantSelects) {
@@ -308,7 +308,8 @@ if (!customElements.get('product-info')) {
           .join(', ');
           //alert(selectors);
           const value = '#price-template--';
-          const isInArray = selectors.includes(value);
+          const value2 = '#price-quickadd-template';
+          const isInArray = selectors.includes(value) || selectors.includes(value2);
           //alert(isInArray); // true
           if(isInArray == true){
             //alert("Yes");
