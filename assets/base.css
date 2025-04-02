@@ -1237,14 +1237,26 @@ margin-bottom:-7px;
 }
 
 .product-form__input {
-  display: inline-flex !important;
+  /* display: inline-flex !important;
   flex-direction: column !important;
   flex: 0 0 100%;
   padding: 0;
   margin: 0 3.2rem 1.2rem 0 !important;
   max-width: 17rem !important;
   min-width: fit-content;
-  border: none;
+  border: none; */
+}
+
+.product-form__submit {
+  margin-bottom: 1rem;
+  max-width: 50% !important;
+  display: inline-block !important;
+}
+
+.shopify-payment-button {
+  max-width: 50% !important;
+  display: inline-block !important;
+  margin-left: 16px !important;
 }
 
 
