@@ -9,7 +9,27 @@
   {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
 {% endcomment %}
 {%- unless product.has_only_default_variant -%}
-  
+              {% comment %} 
+              <div class="product_icons">
+                {% for prod in product.metafields.shopify.dietary-preferences.value %}
+                    {% if prod.label contains 'Gluten-free' %}
+                      <div class="dietary_icons d-flex flex-column align-items-center">
+                          <span class="d-flex icon-wrap">{{ 'icon-gluten-free-2.svg' | inline_asset_content }}</span>
+                          <p>
+                            {{ prod.label }}
+                          </p>
+                      </div>        
+                        {% elsif prod.label contains 'Vegan' %}
+                          <div class="dietary_icons d-flex flex-column align-items-center">
+                            <span class="d-flex icon-wrap">{{ 'icon-vegan.svg' | inline_asset_content }}</span>
+                            <p>
+                              {{ prod.label }}
+                            </p>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+              </div> 
+            {% endcomment %}
   <variant-selects
     id="variant-selects-{{ section.id }}"
     data-section="{{ section.id }}"
