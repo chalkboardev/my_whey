@@ -1209,7 +1209,7 @@ margin-bottom:-7px;
 }
 
 .gif_price_pad {
-  margin:6px 0 0 0;
+  margin:6px 0 18px 0 !important;
 }
 .fetching_price {
   font-size: 14px;
