@@ -86,15 +86,7 @@ if (!customElements.get('product-info')) {
 
         this.resetProductFormState();
 
-              // ---- START get specific pill option clicked -----           
-            //  console.log(productUrl);
-            //  console.log(selectedOptionValues);
-            //  console.log(this.dataset.url);
-            //  console.log(this.dataset);
-            //  console.log(this.dataset['productId']);
-            //  console.log(this.dataset['url']);
-             // console.log(target.id);
-             // console.log(selectedOptionValues);
+              // ---- START get specific pill option clicked -----
              //alert(selectedOptionValues);
              var pill_name = $(event.target).next().contents().filter(function(){
                return this.nodeType === 3;
@@ -112,7 +104,7 @@ if (!customElements.get('product-info')) {
                   //alert($(event.target).parent().next("fieldset").children().eq(0).text());
                   //$(event.target).parent().next("fieldset").remove();
                   
-                  },800);
+                  }, 800);
               
                 is_powder = true;
                 // this.dataset.url = this.dataset.url + '?variant=46991917875452';
@@ -158,7 +150,7 @@ if (!customElements.get('product-info')) {
             : this.handleUpdateProductInfo(productUrl),
         });
         // $(".price").html('<div class="price__container animate_it"><div class="price__regular">...</div></div>');
-        $(".product_icons").next().html('<div class="price__container"><div class="price__regular"><img width="16" src="https://cdn.shopify.com/s/files/1/0713/8685/7724/files/loader.gif?v=1743590298" /></div></div>');
+        $(".product_icons").next().html('<div class="price__container"><div class="price__regular"><img style="margin:6px 0 0px 0;" width="16" src="https://cdn.shopify.com/s/files/1/0713/8685/7724/files/loader.gif?v=1743590298" /></div></div>');
       }
 
       resetProductFormState() {
