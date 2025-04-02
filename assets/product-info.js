@@ -93,40 +93,15 @@ if (!customElements.get('product-info')) {
              }).text().trim();
              //alert("Pill name: " + pill_name);
              if(pill_name == 'Powder') {
+                  is_powder = true;
                   //alert('Powder Clicked...');
-                //  //$(event.target).nextAll("label").next().first().remove();
-                 setTimeout(function(){
-                  //alert('remove...');
                   //alert($(event.target)[0].nodeName);
-                  //alert($(event.target).parent().next("fieldset").attr('class'));
-                   $('input[name*="Size-2"]')[0].click(); 
-                  //$(event.target).parent().next("fieldset");
-                  //alert($(event.target).parent().next("fieldset").children().eq(0).text());
-                  //$(event.target).parent().next("fieldset").remove();
-                  
-                  }, 800);
-              
-                is_powder = true;
-                // this.dataset.url = this.dataset.url + '?variant=46991917875452';
-                // var productUrl = this.dataset.url ;
-                // this.pendingRequestUrl = productUrl;
-                // console.log("new: " + this.dataset.url);
-
+                  ////$(event.target).nextAll("label").next().first().remove();
+                  //$('input[name*="Size-2"]')[0].click();
              } else if(pill_name == 'Capsule') {
-               //alert('Capsule clicked...'); 
-               setTimeout(function(){
-                //alert('remove...');
-                //alert($(event.target)[0].nodeName);
-                //alert($(event.target).parent().next("fieldset").attr('class'));
-                 $('input[name*="Size-2"]')[0].click(); 
-                //$(event.target).parent().next("fieldset");
-                //alert($(event.target).parent().next("fieldset").children().eq(0).text());
-                //$(event.target).parent().next("fieldset").remove();
-                
-                }, 800);
-               is_capsule = true;
-              //  this.dataset.url = this.dataset.url + '?variant=47005405905148';
-              //  var productUrl = this.dataset.url ;
+                  //alert('Capsule clicked...'); 
+                  // $('input[name*="Size-2"]')[0].click();
+                  is_capsule = true;
              } else {
               // this.dataset.url = this.dataset.url;
               // var productUrl = this.dataset.url ;
@@ -288,14 +263,15 @@ if (!customElements.get('product-info')) {
       }
 
       updateVariantInputs(variantId) {
-        // if(is_powder === true){
-        //   $('input[name*="Size-2"]')[0].click(); 
-        // } else if(is_capsule === true){
-        //   $('input[name*="Size-2"]')[0].click(); 
-        // } else {
+        //alert('Updating variant...');
+        if(is_powder === true){
+          $('input[name*="Size-2"]')[0].click(); 
+        } else if(is_capsule === true){
+          $('input[name*="Size-2"]')[0].click(); 
+        } else {
 
-        // }
-        //$('input[name*="Size-2"]')[0].click(); 
+        }
+        
         //alert("Variant ID: " + variantId);
         this.querySelectorAll(
           `#product-form-${this.dataset.section}, #product-form-installment-${this.dataset.section}`
