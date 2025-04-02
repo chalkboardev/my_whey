@@ -112,7 +112,7 @@ if (!customElements.get('product-info')) {
                   //alert($(event.target).parent().next("fieldset").children().eq(0).text());
                   //$(event.target).parent().next("fieldset").remove();
                   
-                  }, 600);
+                  }, 2600);
               
                 is_powder = true;
                 // this.dataset.url = this.dataset.url + '?variant=46991917875452';
@@ -131,7 +131,7 @@ if (!customElements.get('product-info')) {
                 //alert($(event.target).parent().next("fieldset").children().eq(0).text());
                 //$(event.target).parent().next("fieldset").remove();
                 
-                }, 800);
+                }, 2800);
                is_capsule = true;
               //  this.dataset.url = this.dataset.url + '?variant=47005405905148';
               //  var productUrl = this.dataset.url ;
@@ -157,7 +157,8 @@ if (!customElements.get('product-info')) {
             ? this.handleSwapProduct(productUrl, shouldFetchFullPage)
             : this.handleUpdateProductInfo(productUrl),
         });
-         $(".price").html('...');
+        // $(".price").html('<div class="price__container animate_it"><div class="price__regular">...</div></div>');
+        $(".product_icons").next().html('<div class="price__container"><div class="price__regular"><img width="16" src="https://cdn.shopify.com/s/files/1/0713/8685/7724/files/loader.gif?v=1743590298" /></div></div>');
       }
 
       resetProductFormState() {
@@ -338,7 +339,17 @@ if (!customElements.get('product-info')) {
         const selectors = ['price', 'Inventory', 'Sku', 'Price-Per-Item', 'Volume-Note', 'Volume', 'Quantity-Rules']
           .map((id) => `#${id}-${this.dataset.section}`)
           .join(', ');
-       // document.querySelectorAll(selectors).forEach(({ classList }) => classList.add('hidden'));
+          //alert(selectors);
+          const value = '#price-template--';
+          const isInArray = selectors.includes(value);
+          //alert(isInArray); // true
+          if(isInArray == true){
+            //alert("Yes");
+            //document.querySelectorAll(selectors).forEach(({ classList }) => classList.add('hidden'));
+          } else {
+            document.querySelectorAll(selectors).forEach(({ classList }) => classList.add('hidden'));
+          }
+          //document.querySelectorAll(selectors).forEach(({ classList }) => classList.add('hidden'));
       }
 
       updateMedia(html, variantFeaturedMediaId) {

@@ -685,11 +685,11 @@ margin-top: -10px;
   color: #707070;
 }
 .animate_it { 
-  /* visibility: visible;
+  visibility: visible;
   animation-direction: alternate;
-  animation-name: fadeInLeft;
-  animation-duration: 2.5s;
-  animation-iteration-count: 1; */
+  animation-name: pulse;
+  animation-duration: 1s;
+  animation-iteration-count: 10;
 }
 
 .collection__description p {
