@@ -104,7 +104,7 @@ if (!customElements.get('product-info')) {
                   //alert($(event.target).parent().next("fieldset").children().eq(0).text());
                   //$(event.target).parent().next("fieldset").remove();
                   
-                  }, 800);
+                  }, 2800);
               
                 is_powder = true;
                 // this.dataset.url = this.dataset.url + '?variant=46991917875452';
@@ -123,7 +123,7 @@ if (!customElements.get('product-info')) {
                 //alert($(event.target).parent().next("fieldset").children().eq(0).text());
                 //$(event.target).parent().next("fieldset").remove();
                 
-                }, 800);
+                }, 2800);
                is_capsule = true;
               //  this.dataset.url = this.dataset.url + '?variant=47005405905148';
               //  var productUrl = this.dataset.url ;
@@ -150,7 +150,7 @@ if (!customElements.get('product-info')) {
             : this.handleUpdateProductInfo(productUrl),
         });
         // $(".price").html('<div class="price__container animate_it"><div class="price__regular">...</div></div>');
-        $(".product_icons").next().html('<div class="price__container"><div class="price__regular"><img class="gif_price_pad" width="16" src="https://cdn.shopify.com/s/files/1/0713/8685/7724/files/loader.gif?v=1743590298" /></div></div>');
+        $(".product_icons").next().html('<div class="price__container"><div class="price__regular"><span class="fetching_price">Price loading </span><img class="gif_price_pad" width="16" src="https://cdn.shopify.com/s/files/1/0713/8685/7724/files/loader.gif?v=1743590298" /></div></div>');
       }
 
       resetProductFormState() {
