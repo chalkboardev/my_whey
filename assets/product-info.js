@@ -94,6 +94,7 @@ if (!customElements.get('product-info')) {
              //alert("Pill name: " + pill_name);
              if(pill_name == 'Powder') {
                   is_powder = true;
+                  is_capsule = false;
                   //alert('Powder Clicked...');
                   //alert($(event.target)[0].nodeName);
                   ////$(event.target).nextAll("label").next().first().remove();
@@ -101,6 +102,7 @@ if (!customElements.get('product-info')) {
              } else if(pill_name == 'Capsule') {
                   //alert('Capsule clicked...'); 
                   // $('input[name*="Size-2"]')[0].click();
+                  is_powder = false;
                   is_capsule = true;
              } else {
               // this.dataset.url = this.dataset.url;
@@ -263,15 +265,9 @@ if (!customElements.get('product-info')) {
       }
 
       updateVariantInputs(variantId) {
-        //alert('Updating variant...');
-        if(is_powder === true){
-          $('input[name*="Size-2"]')[0].click(); 
-        } else if(is_capsule === true){
-          $('input[name*="Size-2"]')[0].click(); 
-        } else {
+        //alert(variantId);
 
-        }
-        
+
         //alert("Variant ID: " + variantId);
         this.querySelectorAll(
           `#product-form-${this.dataset.section}, #product-form-installment-${this.dataset.section}`
@@ -283,15 +279,6 @@ if (!customElements.get('product-info')) {
       }
 
       updateURL(url, variantId) {
-        // console.log("Powder: " + is_powder);
-        // console.log("Capsule: " + is_capsule);
-        // if(is_powder === true){
-        //   console.log('change the powder url...');
-        // } else if(is_capsule === true){
-        //   console.log('change the capsule url...');
-        // } else {
-
-        // }
         //console.log(`${window.shopUrl}${url}${variantId ? `?variant=${variantId}` : ''}`);
         this.querySelector('share-button')?.updateUrl(
           `${window.shopUrl}${url}${variantId ? `?variant=${variantId}` : ''}`
@@ -303,6 +290,16 @@ if (!customElements.get('product-info')) {
 
       setUnavailable() {
         this.productForm?.toggleSubmitButton(true, window.variantStrings.unavailable);
+
+        if(is_powder === true){
+          //alert('powder clicked...');
+          $('input[name*="Size-2"]')[0].click(); 
+        } else if(is_capsule === true){
+          //alert('capsule clicked...');
+          $('input[name*="Size-2"]')[0].click(); 
+        } else {
+
+        }
 
         const selectors = ['price', 'Inventory', 'Sku', 'Price-Per-Item', 'Volume-Note', 'Volume', 'Quantity-Rules']
           .map((id) => `#${id}-${this.dataset.section}`)
