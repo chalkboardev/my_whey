@@ -1248,15 +1248,20 @@ margin-bottom:-7px;
 }
 
 .product-form__submit {
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem;
   max-width: 50% !important;
-  display: inline-block !important;
+  display: inline-block !important; */
 }
 
-.shopify-payment-button {
+.plplpl {
   max-width: 50% !important;
-  display: inline-block !important;
-  margin-left: 16px !important;
+  display: inline-flex !important;
+  margin-left: 16px !important;  
+  visibility: visible;
+  animation-direction: alternate;
+  animation-name: fadeIn;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
 }
 
 
