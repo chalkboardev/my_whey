@@ -1303,6 +1303,7 @@ margin-bottom:-7px;
 
 .cart-drawer .product-option {
   display: inline-flex !important;
+  white-space: nowrap;
 }
 .cart-drawer .product-option dd {
   display: inline-flex !important;
@@ -1326,6 +1327,10 @@ margin-bottom:-7px;
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .cart-drawer .cart-item__image {
+    height: 50%;
+    object-fit: cover;
+  }
   .product_icons {
     margin-bottom: 22px !important;
   }
