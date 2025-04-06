@@ -538,6 +538,9 @@
     "checkout": {
       "customer_account": {
         "sign_in_link_label": "Log In"
+      },
+      "order_summary": {
+        "vat_label_html": "{{ amount }} VAT Included"
       }
     }
   }
