@@ -110,39 +110,45 @@
                     </h2>
                   </a>
                 </div>
-                <div class="product_icons">
-                    
-                {% for prod in product.metafields.shopify.dietary-preferences.value %}
 
-                    {% if prod.label contains 'Gluten-free' %}
-                      <div class="dietary_icons d-flex flex-column align-items-center">
-                          <span class="d-flex icon-wrap">{{ 'icon-gluten-free-2.svg' | inline_asset_content }}</span>
-                          <p>
-                            {{ prod.label }}
-                          </p>
+                {% if product.metafields.shopify.dietary-preferences.value %}
+                      <div class="product_icons">
+                          {% for prod in product.metafields.shopify.dietary-preferences.value %}
+
+                            {% if prod.label contains 'Gluten-free' %}
+                              <div class="dietary_icons d-flex flex-column align-items-center">
+                                  <span class="d-flex icon-wrap">{{ 'icon-gluten-free-2.svg' | inline_asset_content }}</span>
+                                  <p>
+                                    {{ prod.label }}
+                                  </p>
+                              </div>
+                          
+                            {% elsif prod.label contains 'Vegan' %}
+                                <div class="dietary_icons d-flex flex-column align-items-center">
+                                    <span class="d-flex icon-wrap">{{ 'icon-vegan.svg' | inline_asset_content }}</span>
+                                    <p>
+                                      {{ prod.label }}
+                                    </p>
+                                </div>
+        
+                            {% elsif prod.label contains 'No added sugar' %}
+                                  <div class="dietary_icons d-flex flex-column align-items-center">
+                                      <span class="d-flex icon-wrap">{{ 'icon-no_added_sugar.svg' | inline_asset_content }}</span>
+                                      <p>
+                                        {{ prod.label }}
+                                      </p>
+                                  </div>
+                              
+                            {% endif %}
+        
+                          {% endfor %}​
+                      {% comment %} {{ product.metafields.shopify.dietary-preferences.value | json }} {% endcomment %}
                       </div>
-                   
-                    {% elsif prod.label contains 'Vegan' %}
-                        <div class="dietary_icons d-flex flex-column align-items-center">
-                            <span class="d-flex icon-wrap">{{ 'icon-vegan.svg' | inline_asset_content }}</span>
-                            <p>
-                              {{ prod.label }}
-                            </p>
-                        </div>
+                {% else %}
+                {% comment %} No icons to display {% endcomment %}
+                {% endif %}
 
-                        {% elsif prod.label contains 'No added sugar' %}
-                          <div class="dietary_icons d-flex flex-column align-items-center">
-                              <span class="d-flex icon-wrap">{{ 'icon-no_added_sugar.svg' | inline_asset_content }}</span>
-                              <p>
-                                {{ prod.label }}
-                              </p>
-                          </div>
-                       
-                    {% endif %}
-
-                {% endfor %}​
-                {% comment %} {{ product.metafields.shopify.dietary-preferences.value | json }} {% endcomment %}
-              </div>
+ 
 
               {%- when 'price' -%}
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
@@ -725,15 +731,33 @@
     {%- endfor -%}
   <div style="display: flex;">
     <div class="tab_customize">
-      <button class="tablinks-cus" onclick="openTab(event, 'tab-1')" id="tab-cus-active" >Benefits</button>
+      <button class="tablinks-cus active" onclick="openTab(event, 'tab-1')" id="tab-cus-active" >Benefits</button>
       <button class="tablinks-cus" onclick="openTab(event, 'tab-2')">How To Use</button>
       <button class="tablinks-cus" onclick="openTab(event, 'tab-3')">Content</button>
       <button class="tablinks-cus" onclick="openTab(event, 'tab-4')">Warnings</button>
     </div>
   </div>
 
+  <script>
+function openTab(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent-cus");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks-cus");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+
+  </script>
+
     <!-- Tab content -->
-    <div id="tab-1" class="tabcontent-cus">
+    <div style="display:block" id="tab-1" class="tabcontent-cus">
       {{ product.metafields.custom.product_benefits | metafield_tag  }}
     </div>
     <div id="tab-2" class="tabcontent-cus ">
