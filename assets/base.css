@@ -1361,8 +1361,15 @@ margin-bottom:-7px;
   padding: 1.1rem 2rem 1.1rem 2rem;
 }
 
+.quick-add-modal__content .my_product_thumb {
+  min-height: 400px;
+}
+
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .quick-add-modal__content .my_product_thumb {
+    min-height: unset;
+  }
   .cart-drawer .cart-item {
     /* min-height: 172px; */
   }
