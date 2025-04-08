@@ -1407,7 +1407,7 @@ margin-bottom:-7px;
     background: #fff;
     z-index: 9999;
   }
-  .drawer__footer {
+  /* .drawer__footer {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -1417,7 +1417,7 @@ margin-bottom:-7px;
     margin: 0 !important;
     background: #fff;
     width: 100%;
-  }
+  } */
   .cart-drawer__form {
     padding-bottom: 240px;
   }
