@@ -976,7 +976,7 @@ margin-top: -10px;
   .tabcontent-cus {
     display: none;
     padding: 0 12px 6px 12px;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     border-top: none;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
@@ -1364,6 +1364,11 @@ margin-bottom:-7px;
 .quick-add-modal__content .my_product_thumb {
   min-height: 400px;
 }
+
+.product__tax {
+  margin-top: -2rem !important;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
