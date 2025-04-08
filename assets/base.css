@@ -1401,12 +1401,12 @@ margin-bottom:-7px;
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
-  .cart-drawer .cart-items thead {
+  /* .cart-drawer .cart-items thead {
     position: sticky;
     top: 0;
     background: #fff;
     z-index: 9999;
-  }
+  } */
   /* .drawer__footer {
     position: fixed;
     bottom: 0;
