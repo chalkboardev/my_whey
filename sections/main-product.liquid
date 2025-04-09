@@ -130,6 +130,14 @@
                                       {{ prod.label }}
                                     </p>
                                 </div>
+
+                            {% elsif prod.label contains 'Organic' %}
+                              <div class="dietary_icons d-flex flex-column align-items-center">
+                                  <span class="d-flex icon-wrap">{{ 'icon-organic.svg' | inline_asset_content }}</span>
+                                  <p>
+                                    {{ prod.label }}
+                                  </p>
+                              </div>
         
                             {% elsif prod.label contains 'No added sugar' %}
                                   <div class="dietary_icons d-flex flex-column align-items-center">
@@ -740,7 +748,7 @@
         {%- when 'description' -%}
           {%- if product.description != blank -%}
             <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
-              {{ product.description }} 
+             <h3>Product Description</h3> {{ product.description }} 
             </div>
           {%- endif -%}
       {%- endcase -%}
