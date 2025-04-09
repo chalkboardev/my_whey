@@ -1203,9 +1203,11 @@ margin-top: -10px;
   gap:6px;
   display: flex;
   flex-direction: row;
+  overflow: scroll;
 }
 .dietary_icons {
   min-width: 76px;
+  max-width: 77px;
 }
 .dietary_icons p {
   margin: 0;
@@ -1404,6 +1406,10 @@ margin-bottom:-7px;
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .dietary_icons {
+    min-width: 60px;
+    max-width: 61px;
+  }
   .cart__items .cart-item__image {
     height: 100%;
     min-height: 90px;
@@ -1458,7 +1464,8 @@ margin-bottom:-7px;
     object-fit: cover;
   }
   .product_icons {
-    margin-bottom: 12px !important;
+    margin-bottom: -6px !important;
+    margin-top: -6px !important;
   }
   .my_product_thumb {
     min-height: unset !important;
@@ -1705,6 +1712,10 @@ margin-bottom:-7px;
 }
 
 @media screen and (min-width: 480px) and (max-width: 989px) {
+  .dietary_icons {
+    min-width: 70px;
+    max-width: 71px;
+  }
   .thumbnail-list__item.slider__slide {
     width: calc(24% - 0.6rem) !important;
 }
@@ -2149,7 +2160,11 @@ margin-bottom:-7px;
   }
 }
 
-@media screen and (min-width: 750px) and (max-width: 989px) {
+@media screen and (min-width: 750px) and (max-width: 989px) { 
+  .dietary_icons {
+    min-width: 60px;
+    max-width: 61px;
+  }
   .about_large_title {
     margin-top: inherit !important;
     margin: 0 auto;
