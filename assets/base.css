@@ -792,7 +792,7 @@ margin-top: -10px;
 } */
 
 .collection .slider-buttons {
-  margin-bottom: -3rem;
+  margin-bottom: -4rem;
   margin-top: -1rem;
 }
 
@@ -1403,9 +1403,14 @@ margin-bottom:-7px;
   content: " | ";
   padding: 0 4px 0 4px;
 }
-
+.collection__view-all a:not(.link) {
+  margin-top: -1rem !important;
+}
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .collection__view-all a:not(.link) {
+    margin-top: -1rem !important;
+  }
   .dietary_icons {
     min-width: 60px;
     max-width: 61px;
@@ -1415,7 +1420,7 @@ margin-bottom:-7px;
     min-height: 90px;
     object-fit: cover;
     max-width: 74px;
-}
+  }
   .cart__items dl .product-option:not(:first-of-type) dd {
     width: 100%;
   }
