@@ -1406,8 +1406,12 @@ margin-bottom:-7px;
 .collection__view-all a:not(.link) {
   margin-top: -1rem !important;
 }
+/* .slider-button {
+  width: 150px !important;
+} */
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+
   .collection__view-all a:not(.link) {
     margin-top: -1rem !important;
   }
