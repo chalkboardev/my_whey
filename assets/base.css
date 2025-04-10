@@ -1406,15 +1406,25 @@ margin-bottom:-7px;
 .collection__view-all a:not(.link) {
   margin-top: -1rem !important;
 }
-/* .slider-button {
-  width: 150px !important;
-} */
+.mw_view_all_link {
+  text-decoration: none !important;
+  text-transform: uppercase;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
 
-  .collection__view-all a:not(.link) {
+  /* .collection__view-all a:not(.link) {
+    margin-top: -1rem !important;
+  } */
+
+  .collection__view-all a {
     margin-top: -1rem !important;
   }
+
   .dietary_icons {
     min-width: 60px;
     max-width: 61px;
@@ -2979,28 +2989,28 @@ deferred-media {
     max-height: 200px;
   }
 
-  /* .product--small .thumbnail-list.slider--tablet-up li.thumbnail-list__item.slider__slide {
-    transform: rotate(-90deg);
-    width: calc(20% - .8rem);
-  }
-  .grid__item.product__media-wrapper slider-component.thumbnail-slider {
-    position: absolute;
-    top: 0;
-    transform: rotate(90deg);
-    width: 602px;
-    left: auto;
-    transform-origin: left top;
-    height: 100px;
-    overflow: hidden;
-  }
-  .grid__item.product__media-wrapper {
-    position: relative;
-    padding-left: 100px;
-  }
-  .thumbnail-list.slider--tablet-up li.thumbnail-list__item.slider__slide {
-    transform: rotate(-90deg);
-    width: calc(16.8% - .8rem);
-  } */
+    /* .product--small .thumbnail-list.slider--tablet-up li.thumbnail-list__item.slider__slide {
+      transform: rotate(-90deg);
+      width: calc(20% - .8rem);
+    }
+    .grid__item.product__media-wrapper slider-component.thumbnail-slider {
+      position: absolute;
+      top: 0;
+      transform: rotate(90deg);
+      width: 602px;
+      left: auto;
+      transform-origin: left top;
+      height: 100px;
+      overflow: hidden;
+    }
+    .grid__item.product__media-wrapper {
+      position: relative;
+      padding-left: 100px;
+    }
+    .thumbnail-list.slider--tablet-up li.thumbnail-list__item.slider__slide {
+      transform: rotate(-90deg);
+      width: calc(16.8% - .8rem);
+    } */
 
 }
 
