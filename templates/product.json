@@ -93,7 +93,7 @@
         "columns_desktop": 4,
         "color_scheme": "scheme-1",
         "image_ratio": "square",
-        "image_shape": "default",
+        "image_shape": "parallelogram",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
