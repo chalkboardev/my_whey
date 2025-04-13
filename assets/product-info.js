@@ -217,9 +217,11 @@ if (!customElements.get('product-info')) {
 
       handleUpdateProductInfo(productUrl) {
         //$(".price").css('background','#333');
+        
         return (html) => {
           const variant = this.getSelectedVariant(html);
-          //alert("Variant ID IZZZ: " + variant?.id);
+          // alert("Variant NAME: " + variant?.name);
+          // console.log("Variant NAME: " + variant);
           this.pickupAvailability?.update(variant);
           this.updateOptionValues(html);
           this.updateURL(productUrl, variant?.id);
