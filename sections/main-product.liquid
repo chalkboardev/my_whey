@@ -162,6 +162,14 @@
                                     {{ prod.label }}
                                   </p>
                               </div>
+
+                              {% elsif prod.label contains 'Allergen Free' %}
+                                <div class="dietary_icons d-flex flex-column align-items-center">
+                                    <span class="d-flex icon-wrap">{{ 'icon-no_allergens.svg' | inline_asset_content }}</span>
+                                    <p>
+                                      {{ prod.label }}
+                                    </p>
+                                </div>
                               
                             {% endif %}
         
