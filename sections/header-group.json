@@ -50,9 +50,9 @@
           "type": "menu-image",
           "settings": {
             "link_name": "SHOP",
-            "link_image": "shopify://shop_images/menu_img1.jpg",
-            "link_title": "PRODUCT 1",
-            "link_url": "shopify://collections/all"
+            "link_image": "shopify://shop_images/Lions_Mane_bb5d5696-3ec7-420f-97f3-b382c6dc3e23.jpg",
+            "link_title": "Lions Mane Extract",
+            "link_url": "shopify://products/super-lions-mane-60-veggie-caps"
           }
         },
         "menu_image_7zgeGj": {
@@ -93,8 +93,6 @@
         "enable_customer_avatar": true,
         "mobile_logo_position": "center",
         "margin_bottom": 0,
-        "padding_top": 0,
-        "padding_bottom": 0,
         "minimum_height": 90,
         "minimum_height_mobile": 70
       }
