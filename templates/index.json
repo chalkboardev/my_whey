@@ -40,7 +40,7 @@
             "text": "<p><strong>Elevate your wellness</strong> routine with our specially formulated customised supplements. S<em>tarting now</em>.. </p>",
             "color_text": "#ffffff",
             "img_button_1_label": "SHOP BEST SELLERS",
-            "img_button_1_link": "#",
+            "img_button_1_link": "shopify://collections/all",
             "img_button_1_color_scheme": "",
             "img_button_2_label": "",
             "img_button_2_link": "#",
