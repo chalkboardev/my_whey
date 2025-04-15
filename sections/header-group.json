@@ -68,9 +68,9 @@
           "type": "menu-image",
           "settings": {
             "link_name": "SHOP",
-            "link_image": "shopify://shop_images/menu_img1.jpg",
-            "link_title": "PRODUCT 3",
-            "link_url": "shopify://collections/all"
+            "link_image": "shopify://shop_images/Beta_Alanine.jpg",
+            "link_title": "BCAA 2:1:1 Powder",
+            "link_url": "shopify://products/bcaa-2-1-1-powder"
           }
         }
       },
