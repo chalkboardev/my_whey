@@ -1416,6 +1416,11 @@ margin-bottom:-7px;
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .header__heading-logo-wrapper {
+    width: 66% !important;
+    display: inline-block;
+    transition: width .3s cubic-bezier(.52,0,.61,.99);
+}
 
   /* .collection__view-all a:not(.link) {
     margin-top: -1rem !important;
