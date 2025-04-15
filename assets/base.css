@@ -1428,7 +1428,7 @@ margin-bottom:-7px;
   }
   
   .header__heading-logo-wrapper {
-    width: 66% !important;
+    width: 74% !important;
     display: inline-block;
     transition: width .3s cubic-bezier(.52,0,.61,.99);
 }
