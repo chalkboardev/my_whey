@@ -651,9 +651,10 @@ transform: scale(1.03);
           </a>
 
           {% comment %} <a>Take quiz</a> {% endcomment %}
-          <a href="#" class="button_secondary">
+     
+          {% comment %} <a href="#" class="button_secondary">
           Take The Quiz
-          </a>
+          </a> {% endcomment %}
 
        {% comment %} <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
             {% if cart == empty %}
@@ -1103,9 +1104,9 @@ transform: scale(1.03);
 
       
 
-      <a href="#" class="small-hide medium-hide button_secondary">
+      {% comment %} <a href="#" class="small-hide medium-hide button_secondary">
         Take The Quiz
-        </a>
+        </a> {% endcomment %}
 
       {%- if shop.customer_accounts_enabled -%}
         <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} {% endif %}">
