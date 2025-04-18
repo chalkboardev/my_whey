@@ -1419,6 +1419,20 @@ margin-bottom:-7px;
   margin: 0 auto 3rem auto;
 }
 
+.card__information {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-information {
+  width: 100%;
+  display: flex;
+  position: relative;
+  align-items: end;
+  bottom: 0;
+  flex-grow: 1;
+}
+
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .mw_view_all_btn {
