@@ -1176,7 +1176,11 @@ margin-top: -10px;
 /* ------------ END CARD-PRODUCT NO STOCK SPAN --------------- */
 
 .card__media {
-  border-radius:10px !important;
+  /* border-radius:10px !important; */
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+  border-bottom-right-radius: 3px !important;
+  border-bottom-left-radius: 3px !important;
 }
 
 .backdrop_blur {
@@ -1433,8 +1437,89 @@ margin-bottom:-7px;
   flex-grow: 1;
 }
 
+#ProductGridContainer .mw_price_div {
+  color: #fff;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  justify-content: center;
+  height: auto;
+  padding: 16px 12px 16px 12px;
+  text-align: center;
+  width:100%;
+  color: #ffffff !important;
+  background: #1e534d !important;
+  transition: all 350ms;
+  text-decoration: none !important;
+  flex-grow: 1;
+  display: inline-flex;
+  flex-basis: max-content;
+  font-weight: 600 !important;
+}
+#ProductGridContainer .from_price_txt {
+  position: relative;
+  margin-top: 0;
+  font-size: unset;
+  text-transform: uppercase;
+  /* font-weight: 600; */
+  color: #ecf991;
+  letter-spacing: 1px; 
+}
+
+#ProductGridContainer .card-information > .price--on-sale .price-item--regular {
+    display: none;
+    text-decoration: line-through;
+    font-size: 1.5rem !important;
+    top: -1.7rem;
+    font-weight: 400 !important;
+    width: 100%;
+    left: 7rem;
+    right: 0rem;
+    position: absolute;
+    padding: 0px 4px 0px 0px;
+    border-radius: 30px;
+    color: #999999;
+    font-size: 1.6rem;
+}
+.mw_old_price {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  font-size: 14px !important;
+  right: 1.8rem;
+  margin-top: -2.4rem;
+}
+
+
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .mw_old_price {
+    position: absolute;
+    display: flex;
+    font-size: 12px !important;
+    width: 50%;
+    justify-content: end;
+    right: 1.4rem;
+    margin-top: -1.8rem;
+}
+  #ProductGridContainer .card-information > .price--on-sale .price-item--regular {
+    display: none;
+    text-decoration: line-through;
+    font-size: 1.5rem !important;
+    top: 1.5rem;
+    font-weight: 400 !important;
+    width: 100%;
+    left: 0rem;
+    right: 0rem;
+    position: absolute;
+    padding: 0px 4px 0px 0px;
+    border-radius: 30px;
+    color: #999999;
+    font-size: 1.6rem;
+}
+
   .mw_view_all_btn {
     display:block;
     width: 100px;
@@ -1580,6 +1665,7 @@ margin-bottom:-7px;
     vertical-align: bottom !important;
   }
   .card-information > .price--on-sale .price-item--regular {
+    display: none !important;
     text-decoration: line-through;
     font-size: 1.3rem !important;
     top: -2px;
