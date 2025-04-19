@@ -1002,6 +1002,18 @@ margin-top: -10px;
     letter-spacing: 2px !important;
     padding: 1.5rem 5rem !important;
   }
+  .more_btn:hover {
+    box-shadow:none !important
+  }
+  .more_btn::after {
+    box-shadow:none !important
+  }
+  .more_btn::after {
+    box-shadow:none !important
+  }
+  .button::after {
+    box-shadow:none !important
+  }
 
   .mw_sub_header {
     text-align: left;
