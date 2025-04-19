@@ -1420,7 +1420,7 @@ margin-bottom:-7px;
 .mw_view_all_btn {
   display:block;
   width: 100px;
-  margin: 0 auto 3rem auto;
+  margin: 0 auto -3.6rem auto;
 }
 
 .card__information {
@@ -1532,7 +1532,7 @@ margin-bottom:-7px;
   .mw_view_all_btn {
     display:block;
     width: 100px;
-    margin: -4.2rem auto 4rem auto;
+    margin: 0rem auto -3.8rem auto;
   }
   
   .header__heading-logo-wrapper {
