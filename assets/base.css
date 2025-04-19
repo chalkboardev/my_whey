@@ -792,8 +792,8 @@ margin-top: -10px;
 } */
 
 .collection .slider-buttons {
-  margin-bottom: -4rem;
-  margin-top: -1rem;
+  margin-bottom: 0rem;
+  margin-top: 0;
 }
 
 .footer_mail_icon {
@@ -2908,6 +2908,10 @@ summary::-webkit-details-marker {
   .grid--1-col-tablet-down .grid__item {
     width: 100%;
     max-width: 100%;
+  }
+  
+  .collection .slider.slider--tablet {
+    margin-bottom: 2.5rem;
   }
 
   .slider--tablet.grid--peek {
