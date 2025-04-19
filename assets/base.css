@@ -906,10 +906,8 @@ margin-top: -10px;
 
   .product_card_title  {
     /* transition: text-decoration var(--duration-short) ease; */
-    background: linear-gradient(currentColor 0 0) 
-    bottom left/
-    var(--underline-width, 0%) 0.05em
-    no-repeat;
+    background: linear-gradient(#999 0 0) bottom left/
+    var(--underline-width, 0%) 0.05em no-repeat;
     text-decoration: none;
     transition: background-size 0.5s;
   }
@@ -1863,7 +1861,7 @@ margin-bottom:-7px;
 
 @media screen and (max-width: 749px) {
   .product .price .badge {
-    margin-bottom: 1.7rem !important;
+    margin-bottom: 1.01rem !important;
   }
 }
 
