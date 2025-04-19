@@ -163,11 +163,12 @@ transform: scale(1.03);
   }
 
   .mega-menu__list > li:nth-child(2){
-      list-style: none;
-      display: block;
-      flex: 0 0 20%;
-      max-width: 20%;
-      padding-right: 15px;  
+        list-style: none;
+        display: block;
+        flex: 0 0 20%;
+        max-width: 20%;
+        margin-right: 20px;
+        border-right: 1px solid #e6e2e2;
   }
 
   .mega-menu__list > li:nth-child(3){
@@ -210,6 +211,21 @@ transform: scale(1.03);
     padding: 0;
     z-index: 1;
     display: block;
+}
+
+@media screen and (min-width: 990px) {
+.menu_swiper {
+    width:46% !important;
+    height: 100% !important;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    display: block;
+}
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
@@ -992,20 +1008,37 @@ transform: scale(1.03);
                   <script>
                     document.addEventListener("DOMContentLoaded", function(){
                       var menu_swiper = new Swiper(".menu_swiper", {
+                        loop: true,
                         slidesPerView: "auto",
                               autoplay: {
                                 stopOnLastSlide: false,
                                 enabled: true,
                                 delay: 4000,
                               },
-                              loop: false,
+                              
                       });
+                      $(".header").click(function (){
+                      //console.log('hi...');
+                      var menu_swiper = new Swiper(".menu_swiper", {
+                        slidesPerView: "auto",
+                              autoplay: {
+                                stopOnLastSlide: false,
+                                enabled: true,
+                                delay: 4000,
+                              },
+                              
+                      });
+                      menu_swiper[0].slideTo(0);
+                    });
                     }); 
                     document.addEventListener("shopify:section:load", function(){
+                      //console.log('loaded...');
                       var menu_swiper = new Swiper(".menu_swiper", {
+                        loop: true,
                         slidesPerView: "auto"
                       });
                     }); 
+                    
                   </script>
                   {%- endif -%}
           </ul>
