@@ -12,8 +12,8 @@
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "image": "",
         "show_collection_description": true,
+        "image": "shopify://shop_images/pexels-n-voitkevich-7615618.jpg",
         "show_collection_image": true,
         "color_scheme": "scheme-1"
       }
