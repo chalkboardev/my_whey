@@ -27,7 +27,7 @@
 
 .product-card-wrapper:hover {
   border-radius: 12px;
-  box-shadow: inset 0px 0px 10px 1px rgba(0, 0, 0, .23);
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, .23);
   transform: translateY(-6px);
   transition: all .3s ease !important;
 }
@@ -738,7 +738,7 @@ margin-top: -10px;
 }
 
 .card-wrapper {
-  padding: 2rem;
+  padding: 1rem;
   transition: all .3s ease !important;
 }
 
@@ -1537,6 +1537,12 @@ margin-bottom:-7px;
 .mw_product_grid {
   margin-bottom:6px !important;
 }
+
+.collection-hero__text-wrapper {
+  flex-basis: auto !important;
+}
+
+
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
 
