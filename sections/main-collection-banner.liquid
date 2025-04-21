@@ -8,13 +8,9 @@
     }
   }
 {%- endstyle -%}
-{%- if section.settings.image != blank -%}
-  {{ section.settings.image | image_url }}
-{%- endif -%}
+
 <div 
-  style="{% if section.settings.show_collection_image and collection.image %} 
-  background-size:cover !important;background: url('{{ collection.image | image_url }}') no-repeat 100% 84%/100%; 
-  {% endif %}" 
+  style="{%- if section.settings.image != blank -%} {{ section.settings.image | image_url }} {% else %} {% if section.settings.show_collection_image and collection.image %} background-size:cover !important;background: url('{{ collection.image | image_url }}') no-repeat 100% 84%/100%; {% endif %} {%- endif -%}" 
   class="collection-hero{% if section.settings.show_collection_image and collection.image %} mw_header_img collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
   <div class="collection-hero__inner page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
     <div class="collection-hero__text-wrapper">
