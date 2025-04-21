@@ -1508,12 +1508,22 @@ margin-bottom:-7px;
   height: 30px;
   font-size: 2rem;
   padding-top: 0px;
-  display: flex
-;
+  display: flex;
 }
+.mw_header_img_txt {
+  background: #ffffffb8;
+  border-radius: 9px;
+  padding: 2rem;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .mw_header_img_txt {
+    background: #ffffffb8;
+    border-radius: 9px;
+    padding: 2rem;
+  }
   .mw_old_price {
     position: absolute;
     display: flex;
