@@ -12,10 +12,10 @@
 <div 
   style="
     {% if section.settings.show_collection_image and collection.image %} 
-      background-size:cover !important;background: url('{{ collection.image | image_url }}') no-repeat 100% {{ section.settings.background_height_position }}%/100%; 
+      background-size:cover !important;background: url('{{ collection.image | image_url }}') no-repeat 100% {{ collection.metafields.custom.collection_header_background_height_percentage | metafield_tag }}%/100%; 
     {% else %} 
           {%- if section.settings.image != blank -%} 
-          background-size:cover !important;background: url('{{ section.settings.image | image_url }}') no-repeat 100% {{ section.settings.background_height_position }}%/100%; 
+          background-size:cover !important;background: url('{{ section.settings.image | image_url }}') no-repeat 100% {{ collection.metafields.custom.collection_header_background_height_percentage | metafield_tag }}%/100%; 
           {%- endif -%}
     {% endif %}" 
   class="{% if section.settings.image != blank %} collection-hero--with-image {% endif %} collection-hero {% if section.settings.show_collection_image and collection.image %} mw_header_img collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
@@ -24,7 +24,7 @@
       <h1 class="mw_header_img_txt collection-hero__title">
         <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
         {{- collection.title | escape -}}  
-        {{ collections.metafields.custom.collection_header_background_height_percentage | metafield_tag }}
+        {{ collection.metafields.custom.collection_header_background_height_percentage | metafield_tag }}
       </h1>
 
       {%- if section.settings.show_collection_description -%}
