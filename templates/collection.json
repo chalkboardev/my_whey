@@ -13,8 +13,7 @@
       "type": "main-collection-banner",
       "settings": {
         "show_collection_description": true,
-        "image": "shopify://shop_images/pexels-n-voitkevich-7615618.jpg",
-        "background_height_position": "80",
+        "image": "shopify://shop_images/mw_products_header.jpg",
         "show_collection_image": true,
         "color_scheme": "scheme-1"
       }
