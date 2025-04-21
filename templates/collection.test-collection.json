@@ -14,7 +14,7 @@
       "settings": {
         "show_collection_description": true,
         "image": "shopify://shop_images/mw_products_header.jpg",
-        "background_height_position": 40,
+        "background_height_position": 80,
         "show_collection_image": true,
         "color_scheme": "scheme-1"
       }
