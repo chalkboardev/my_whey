@@ -1008,7 +1008,6 @@ transform: scale(1.03);
                   <script>
                     document.addEventListener("DOMContentLoaded", function(){
                       var menu_swiper = new Swiper(".menu_swiper", {
-                        loop: true,
                         slidesPerView: "auto",
                               autoplay: {
                                 stopOnLastSlide: false,
@@ -1017,24 +1016,23 @@ transform: scale(1.03);
                               },
                               
                       });
-                      $(".header").click(function (){
-                      //console.log('hi...');
-                      var menu_swiper = new Swiper(".menu_swiper", {
-                        slidesPerView: "auto",
-                              autoplay: {
-                                stopOnLastSlide: false,
-                                enabled: true,
-                                delay: 4000,
-                              },
-                              
-                      });
-                      menu_swiper[0].slideTo(0);
-                    });
+                        // $(".header").click(function (){
+                        //     //console.log('hi...');
+                        //     var menu_swiper = new Swiper(".menu_swiper", {
+                        //       slidesPerView: "auto",
+                        //             autoplay: {
+                        //               stopOnLastSlide: false,
+                        //               enabled: true,
+                        //               delay: 4000,
+                        //             },
+                                    
+                        //     });
+                        //     menu_swiper[0].slideTo(0);
+                        // });
                     }); 
                     document.addEventListener("shopify:section:load", function(){
                       //console.log('loaded...');
                       var menu_swiper = new Swiper(".menu_swiper", {
-                        loop: true,
                         slidesPerView: "auto"
                       });
                     }); 
