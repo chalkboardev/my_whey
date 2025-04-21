@@ -14,6 +14,7 @@
       "settings": {
         "show_collection_description": true,
         "image": "shopify://shop_images/pexels-n-voitkevich-7615618.jpg",
+        "background_height_position": "80",
         "show_collection_image": true,
         "color_scheme": "scheme-1"
       }
