@@ -20,6 +20,23 @@
   --shadow-visible: var(--product-card-shadow-visible);
   --image-padding: var(--product-card-image-padding);
   --text-alignment: var(--product-card-text-alignment);
+  border-radius:6px;
+  transform: translateY(0px);
+  transition: all .3s ease !important;
+}
+
+.product-card-wrapper:hover {
+  border-radius: 12px;
+  box-shadow: inset 0px 0px 10px 1px rgba(0, 0, 0, .23);
+  transform: translateY(-6px);
+  transition: all .3s ease !important;
+}
+
+@media screen and (min-width: 750px) {
+  .card__information {
+      padding-bottom: 0 !important;
+      padding-top: 1.7rem;
+  }
 }
 
 .collection-card-wrapper .card,
@@ -721,7 +738,8 @@ margin-top: -10px;
 }
 
 .card-wrapper {
-  padding: 0.8rem;
+  padding: 2rem;
+  transition: all .3s ease !important;
 }
 
 .brand_div_heading {
@@ -1449,10 +1467,10 @@ margin-bottom:-7px;
 
 #ProductGridContainer .mw_price_div {
   color: #fff;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 30px;
-  border-bottom-left-radius: 30px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 9px;
+  border-bottom-left-radius: 9px;
   justify-content: center;
   height: auto;
   padding: 12px 12px 12px 12px;
@@ -1516,9 +1534,12 @@ margin-bottom:-7px;
   padding: 2rem;
 }
 
-
+.mw_product_grid {
+  margin-bottom:6px !important;
+}
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+
   .mw_header_img_txt {
     background: #ffffffb8;
     border-radius: 9px;
