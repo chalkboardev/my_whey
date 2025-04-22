@@ -2241,6 +2241,28 @@ margin-bottom:-7px;
   .mw_image_with_text_media {
     max-width: 400px !important;
   }
+
+  .my_multicolumn .featured_title {
+    margin: 0 auto !important;
+  }
+
+  .my_multicolumn .about_info_text {
+    min-height: 200px;
+    max-width: 80%;
+    padding-top: 0px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .my_multicolumn .about_large_title {
+    text-align: center !important;
+  }
+
+  .my_multicolumn .multicolumn-card__image {
+    width: 96% !important;
+    object-fit: cover;
+    object-position: 100% 0%;
+  }
 }
 
  .product__column-sticky {
