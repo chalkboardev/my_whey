@@ -16,6 +16,7 @@
         "sort": "alphabetical",
         "show_collection_list_image": true,
         "image": "shopify://shop_images/mw_products_header.jpg",
+        "background_height_position": 0,
         "image_ratio": "square",
         "columns_desktop": 4,
         "columns_mobile": "2"
