@@ -1039,6 +1039,7 @@ margin-top: -10px;
     margin: 0 auto 0 20px;
     background: #f6f3eb !important;
     border-radius: 10px !important;
+    justify-content: center !important;
   }
 
   .image-with-text__heading {
@@ -1551,6 +1552,9 @@ margin-bottom:-7px;
   align-items: flex-start;
   flex-direction: column;
 }
+
+
+
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .card-wrapper {
