@@ -1553,10 +1553,6 @@ margin-bottom:-7px;
   flex-direction: column;
 }
 
-.mw_image_with_text_media {
-  max-width: 350px;
-}
-
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .card-wrapper {
