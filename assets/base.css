@@ -2242,9 +2242,9 @@ margin-bottom:-7px;
 
 /* ---------- EXTRA EXTRA WIDE SCREEN 1600px START ---------- */
 @media screen and (min-width: 1600px) {
-.mw_image_with_text_media {
-  max-width: 550px;
-}
+  .mw_image_with_text_media {
+    max-width: 450px;
+  }
 }
 
  .product__column-sticky {
