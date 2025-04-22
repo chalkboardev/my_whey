@@ -2436,10 +2436,10 @@ margin-bottom:-7px;
 }
 
 @media screen and (min-width: 990px) {
-  .about_large_title {
+  .my_multicolumn .about_large_title {
     margin-top: 1rem !important;
     margin: inherit;
-    text-align: left;
+    text-align: center;
     padding-bottom: 36px;
   }
   .about_large_title h1 {
