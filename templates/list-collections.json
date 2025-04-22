@@ -14,6 +14,7 @@
       "settings": {
         "title": "Collections",
         "sort": "alphabetical",
+        "image": "shopify://shop_images/mw_products_header.jpg",
         "image_ratio": "square",
         "columns_desktop": 4,
         "columns_mobile": "2"
