@@ -1553,7 +1553,9 @@ margin-bottom:-7px;
   flex-direction: column;
 }
 
-
+.mw_image_with_text_media {
+  max-width: 350px;
+}
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
@@ -2237,6 +2239,13 @@ margin-bottom:-7px;
   }
 }
 /* ---------- EXTRA LARGE SCREEN 1440px END ---------- */
+
+/* ---------- EXTRA EXTRA WIDE SCREEN 1600px START ---------- */
+@media screen and (min-width: 1600px) {
+.mw_image_with_text_media {
+  max-width: 550px;
+}
+}
 
  .product__column-sticky {
   position: sticky;
