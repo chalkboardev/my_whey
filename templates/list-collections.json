@@ -17,7 +17,7 @@
         "image": "shopify://shop_images/Rvlf3gstQqOE7VeMou1n_file.jpg",
         "background_height_position": 50,
         "sort": "alphabetical",
-        "image_ratio": "square",
+        "image_ratio": "portrait",
         "columns_desktop": 4,
         "columns_mobile": "2"
       }
