@@ -18,8 +18,8 @@
             "video_link": "https://cdn.shopify.com/videos/c/o/v/a487343da3b24ea5a0666c2edc7e7d82.mp4",
             "video_image": "shopify://shop_images/oleg-laptev-7jQh3EiS8Bs-unsplash.jpg",
             "desktop_content_position": "header-middle-left",
-            "title": "Have it your way with My-Whey",
-            "text": "<p><strong>Do it your way with </strong>Customised, Curated, Clean <em>Supplements</em> <strong>Made for You</strong></p>",
+            "title": "My-Whey | Bulk Supplements",
+            "text": "<p><strong>Do it your way </strong>with Clean, Curated, Quality <em>Supplements.</em></p>",
             "color_text": "#ffffff",
             "button_video_label_1": "Shop Best Sellers",
             "button_link_video_1": "shopify://collections/all",
@@ -117,9 +117,9 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "OUR FORMULAS",
+        "title": "OUR RANGE",
         "heading_size": "h2",
-        "description": "<p><strong>Science-Backed with Proven Ingredients</strong></p>",
+        "description": "<p><strong>Lifestyle Supplements </strong>with Proven Ingredients</p>",
         "show_description": false,
         "description_style": "body",
         "collection": "all",
@@ -250,13 +250,13 @@
             "title": "<h1>Clean Supplements </h1><h1><strong>Made For You </strong></h1>",
             "block_icon_img1": "Icon-Clean",
             "info_block_heading_1": "<strong>Clean & Effective</strong>",
-            "text1": "Proven ingredients, free from artificial’s, crafted by experts for optimal effectiveness",
+            "text1": "Clean and Proven ingredients, free from artificial’s, crafted by experts for optimal effectiveness.",
             "block_icon_img2": "Icon-Quiz",
-            "info_block_heading_2": "<strong>Made For You</strong>",
-            "text2": "Performance is personal. Personalised & customizable products for your needs, body and goals",
+            "info_block_heading_2": "<strong>Affordable Quality</strong>",
+            "text2": "At My-Whey we pride oursleves in bringing you hand-picked, premium, and affordable products.",
             "block_icon_img3": "Icon-Support",
-            "info_block_heading_3": "<strong>Backed By Science</strong>",
-            "text3": "No proprietary blends, only ingredients you recognise",
+            "info_block_heading_3": "<strong>Bulk Supply</strong>",
+            "text3": "My-Whey is here to cater for the  supplements and vitamins you need to maintain a healthy lifestyle.",
             "block_icon_img4": "Icon-Check",
             "info_block_heading_4": "<strong>We Make It Easy</strong>",
             "text4": "Customisable solutions & guidance means you get just what you need & nothing more",
@@ -405,7 +405,7 @@
         "text_g9TVie": {
           "type": "text",
           "settings": {
-            "text": "<p>Choosing the right supplements can often feel overwhelming. With complex nutrition labels and unfamiliar ingredients, it’s easy to feel unsure about what your body truly needs.</p><p>That’s why My-Whey was founded — with a clear and simple mission: to make performance nutrition straightforward, accessible, and tailored to you. We believe that everyone deserves high-quality supplements and trusted information to help them feel their best and perform at their peak.</p><p>Whether you're just starting out or fine-tuning your routine, our team is here to support you — through every milestone, every challenge, and every victory along the way.</p>",
+            "text": "<p>Welcome to <strong>MY-WHEY</strong>, your trusted source for high-quality supplements and vitamins in bulk. We’re here to make health and wellness simple, affordable, and accessible for everyone—from fitness enthusiasts and health-conscious families to small businesses and wellness practitioners.</p><p></p><p>At My-Whey, we believe that better health starts with better choices. That’s why we offer a wide range of premium, lab-tested supplements and essential vitamins—without the unnecessary packaging or inflated prices. By focusing on bulk quantities, we help you save money and reduce waste while ensuring you never run out of what your body needs.</p><p>Our mission is simple: <strong>Deliver pure, effective, and affordable wellness products—at scale.</strong> Whether you’re restocking your own pantry or buying in volume for your practice, we’re here to support your goals with transparency, integrity, and care.</p><p>Thank you for choosing us to be a part of your health journey.</p>",
             "text_style": "body"
           }
         },
