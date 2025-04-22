@@ -2262,6 +2262,7 @@ margin-bottom:-7px;
     width: 96% !important;
     object-fit: cover;
     object-position: 100% 0%;
+    border-radius: 12px;
   }
 }
 
