@@ -997,7 +997,7 @@ transform: scale(1.03);
 
                         <a class="mega-menu__link" href="{{ product.url }}">
                           <div>
-                            {% for image in product.images %}
+                            {% for image in product.images limit:1 %}
                             <img src="{{ image.src | product_img_url: 'grande' }}" >
                             {% endfor %}
                           {% comment %} {{ block.settings.link_image | image_url: width: 500  | image_tag  }}  {% endcomment %}
