@@ -992,6 +992,7 @@ transform: scale(1.03);
                     {%- if link.title == block.settings.link_name -%}
                       <li class="mega_menu_img slide swiper-slide">
                         {{ block.settings.selected_product }}
+                        
                         <a class="mega-menu__link" href="{{ block.settings.link_url}}">
                           <div>
                           {{ block.settings.link_image | image_url: width: 500  | image_tag  }} 
