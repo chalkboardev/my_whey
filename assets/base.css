@@ -937,7 +937,7 @@ margin-top: -10px;
 
   .add_to_cart_btn {
     border: 1px solid #333 !important;
-    border-radius: 9px !important;
+    border-radius: 30px !important;
   }
 
   .product__description {
@@ -1562,8 +1562,32 @@ margin-bottom:-7px;
   z-index: 1;
 }
 
+.collection-list .mw_collection_info {
+    position: absolute;
+    bottom: 3%;
+    font-size: 1.6rem;
+    background: #ffffff9e;
+    padding: 1rem 1rem 1rem 1rem !important;
+    display: flex;
+    width: 92%;
+    margin: 0 auto;
+    text-align: left;
+} 
+
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+.collection-list .mw_collection_info {
+  position: absolute;
+    bottom: 5% !important;
+    font-size: 1.6rem;
+    background: #ffffff9e;
+    padding: 1rem 1rem 1rem 1rem !important;
+    display: flex;
+    width: 92%;
+    margin: 0 auto;
+    text-align: left;
+}
+
   .collection__description p {
     text-align: center;
     margin: 0 auto;
@@ -2232,6 +2256,17 @@ margin-bottom:-7px;
   .last_image_mutli .media--adapt {
     padding-bottom: 66rem !important;
   }
+  .collection-list .mw_collection_info {
+    position: absolute;
+    bottom: 2%;
+    font-size: 1.6rem;
+    background: #ffffff9e;
+    padding: 1rem 1rem 1rem 1rem !important;
+    display: flex;
+    width: 96%;
+    margin: 0 auto;
+    text-align: left;
+  } 
 }
 
 /* ---------- EXTRA LARGE SCREEN 1440px START ---------- */
@@ -2425,6 +2460,17 @@ margin-bottom:-7px;
 }
 
 @media screen and (min-width: 750px) and (max-width: 989px) { 
+  .collection-list .mw_collection_info {
+    position: absolute;
+    bottom: 1.6%;
+    font-size: 1.6rem;
+    background: #ffffff9e;
+    padding: 1rem 1rem 1rem 1rem !important;
+    display: flex;
+    width: 98%;
+    margin: 0 auto;
+    text-align: left;
+  } 
   .dietary_icons {
     min-width: 60px;
     max-width: 61px;
@@ -2962,7 +3008,18 @@ summary::-webkit-details-marker {
   .card-information > .price--on-sale .price-item--regular {
     padding: 0px 4px 0px 0px !important;
   }
-  
+  .collection-list .mw_collection_info {
+    position: absolute;
+    bottom: 2%;
+    font-size: 1.6rem;
+    background: #ffffff9e;
+    padding: 1rem 1rem 1rem 1rem !important;
+    display: flex;
+    width: 96%;
+    margin: 0 auto;
+    text-align: left;
+  } 
+
   .quick-add-modal__content {
     --modal-height-offset: 10rem;
     margin-top: var(--modal-height-offset);
