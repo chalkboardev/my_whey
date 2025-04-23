@@ -4,6 +4,8 @@
       "type": "main-search",
       "settings": {
         "columns_desktop": 4,
+        "image": "",
+        "background_height_position": 0,
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": false,
