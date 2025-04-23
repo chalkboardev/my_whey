@@ -53,7 +53,7 @@
             "link_image": "shopify://shop_images/Lions_Mane_bb5d5696-3ec7-420f-97f3-b382c6dc3e23.jpg",
             "link_title": "Lions Mane Extract",
             "link_url": "shopify://products/super-lions-mane-60-veggie-caps",
-            "selected_product": ""
+            "selected_product": "super-lions-mane-60-veggie-caps"
           }
         },
         "menu_image_7zgeGj": {
@@ -62,7 +62,8 @@
             "link_name": "SHOP",
             "link_image": "shopify://shop_images/Free_Tin_Can_Mockup_Paper2.jpg",
             "link_title": "Creatine Monohydrate",
-            "link_url": "shopify://products/creatine-monohydrate-500g"
+            "link_url": "shopify://products/creatine-monohydrate-500g",
+            "selected_product": ""
           }
         },
         "menu_image_eiVAFM": {
@@ -71,7 +72,8 @@
             "link_name": "SHOP",
             "link_image": "shopify://shop_images/Beta_Alanine.jpg",
             "link_title": "BCAA 2:1:1 Powder",
-            "link_url": "shopify://products/bcaa-2-1-1-powder"
+            "link_url": "shopify://products/bcaa-2-1-1-powder",
+            "selected_product": ""
           }
         }
       },
