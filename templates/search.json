@@ -1,10 +1,19 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "main-search",
       "settings": {
         "columns_desktop": 4,
-        "image": "",
+        "image": "shopify://shop_images/7a45d1e0-289c-11ef-bfff-6c2055cae096.jpg",
         "background_height_position": 0,
         "image_ratio": "adapt",
         "image_shape": "default",
