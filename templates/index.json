@@ -22,7 +22,7 @@
             "text": "<p><strong>Do it your way </strong>with Clean, Curated, Premium <em>Supplements.</em></p>",
             "color_text": "#ffffff",
             "button_video_label_1": "View Collections",
-            "button_link_video_1": "shopify://collections/all",
+            "button_link_video_1": "shopify://collections",
             "color_scheme_video_btn_1": "scheme-5",
             "button_video_label_2": "",
             "button_link_video_2": "shopify://pages/contact",
@@ -37,13 +37,13 @@
             "overlay_opacity": 0,
             "desktop_content_position": "header-middle-left",
             "title": "Bulk Supplements",
-            "text": "<p><strong>Elevate your wellness</strong> routine with our specially formulated supplements. S<em>tarting now</em>.. </p>",
+            "text": "<p><strong>Elevate your wellness</strong> routine with our specially formulated <em>vitamins & supplements. </em></p>",
             "color_text": "#ffffff",
-            "img_button_1_label": "SHOP PRODUCTS",
-            "img_button_1_link": "shopify://collections/all",
+            "img_button_1_label": "",
+            "img_button_1_link": "",
             "img_button_1_color_scheme": "",
-            "img_button_2_label": "",
-            "img_button_2_link": "#",
+            "img_button_2_label": "SHOP PRODUCTS",
+            "img_button_2_link": "shopify://collections/all",
             "img_button_2_color_scheme": "scheme-2"
           }
         }
