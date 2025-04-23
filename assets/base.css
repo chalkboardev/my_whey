@@ -1564,6 +1564,14 @@ margin-bottom:-7px;
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .collection__description p {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 3rem;
+    line-height: 1.2;
+    /* font-weight: 600; */
+    padding-bottom:14px;
+  }
   .card-wrapper {
     padding: 1rem 1rem 1rem 1rem;
     transition: all .3s ease !important;
