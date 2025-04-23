@@ -343,6 +343,7 @@
       height: 100%;
       position: relative;
       padding: 0;
+      z-index: 0;
   }
     
   .videoBackground .fullscreen-video-wrap {

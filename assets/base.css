@@ -481,6 +481,8 @@ table:not([class]) th {
   border: 2px solid #fff !important;
   background: #ffffff12;
   color: #fff;
+  text-shadow: 1px 1px 22px #181818;
+  backdrop-filter: blur(2px);
 }
 
 .header_buttons .color-scheme-5 {
