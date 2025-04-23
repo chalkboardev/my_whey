@@ -937,7 +937,7 @@ margin-top: -10px;
 
   .add_to_cart_btn {
     border: 1px solid #333 !important;
-    border-radius: 30px !important;
+    border-radius: 9px !important;
   }
 
   .product__description {
@@ -3442,7 +3442,7 @@ shopify-accelerated-checkout-cart {
   position: relative;
 }
 
-.button, .shopify-challenge__button, .customer button, button.shopify-payment-button__button--unbranded {
+.mw_collection_div .button, .shopify-challenge__button, .customer button {
     border-top-left-radius: 0px !important;
     border-top-right-radius: 0px !important;
     border-bottom-right-radius: 9px !important;
