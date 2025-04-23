@@ -989,15 +989,25 @@ transform: scale(1.03);
                   <div class="menu_swiper">
                     <div class="swiper-wrapper">
                     {%- for block in section.blocks -%}
+                      {% assign product = all_products[block.settings.selected_product] %}
                     {%- if link.title == block.settings.link_name -%}
                       <li class="mega_menu_img slide swiper-slide">
-                        {{ block.settings.selected_product }}
-                        
-                        <a class="mega-menu__link" href="{{ block.settings.link_url}}">
+
+                        {% comment %} {{ block.settings.selected_product }} {% endcomment %}
+
+                        <a class="mega-menu__link" href="{{ product.url }}">
                           <div>
-                          {{ block.settings.link_image | image_url: width: 500  | image_tag  }} 
+                            {% for image in product.images %}
+                            <img src="{{ image.src | product_img_url: 'grande' }}" >
+                            {% endfor %}
+                          {% comment %} {{ block.settings.link_image | image_url: width: 500  | image_tag  }}  {% endcomment %}
                           </div>
-                          <div class="title">{{ block.settings.link_title}}</div>
+                          <div class="title">
+                            {% comment %} {{ block.settings.link_title}} {% endcomment %}
+                            {{ product.title }} |
+                            {{ product.price | money_without_trailing_zeros }}                
+                          </div>
+
                         </a>
                       </li> 
                       {%- endif -%}
