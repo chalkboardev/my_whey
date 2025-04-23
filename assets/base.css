@@ -1578,8 +1578,9 @@ margin-bottom:-7px;
     text-align: left;
 } 
 
-.search_div {
+.search_sub_div {
   /* background: #999; */
+  padding-top: 5rem;
 }
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
