@@ -1590,6 +1590,17 @@ margin-bottom:-7px;
   margin: 0 auto;
 }
 
+.predictive-search--search-template {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 6px !important;
+  border-bottom-left-radius: 6px !important;
+  max-width: 73.1rem;
+  left: 0 !important;
+  right: 0 !important;
+  margin: 0 auto;
+}
+
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
 .collection-list .mw_collection_info {
@@ -3836,7 +3847,7 @@ details[open] > .share-button__fallback {
 .customer .field input:focus,
 .customer select:focus,
 .localization-form__select:focus.localization-form__select:after {
-  box-shadow: 0 0 0 calc(0.1rem + var(--inputs-border-width)) rgba(var(--color-foreground));
+  box-shadow: 0 0 0 calc(0.1rem + var(--inputs-border-width)) rgba(var(--color-foreground), 0.1) !important;
   outline: 0;
   border-radius: var(--inputs-radius);
 }
