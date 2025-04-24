@@ -1603,18 +1603,24 @@ margin-bottom:-7px;
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
-.collection-list .mw_collection_info {
-  position: absolute;
-    bottom: 5% !important;
-    font-size: 1.6rem;
-    background: #ffffff9e;
-    padding: 1rem 1rem 1rem 1rem !important;
-    display: flex;
-    width: 92%;
-    margin: 0 auto;
-    text-align: left;
-}
-
+  .predictive-search--search-template {
+      border-radius: 0 0 6px 6px !important;
+      max-width: 33rem;
+      left: 0 !important;
+      right: 0 !important;
+      margin: 0 auto;
+  }
+  .collection-list .mw_collection_info {
+    position: absolute;
+      bottom: 5% !important;
+      font-size: 1.6rem;
+      background: #ffffff9e;
+      padding: 1rem 1rem 1rem 1rem !important;
+      display: flex;
+      width: 92%;
+      margin: 0 auto;
+      text-align: left;
+  }
   .collection__description p {
     text-align: center;
     margin: 0 auto;
