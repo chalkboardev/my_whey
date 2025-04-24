@@ -3898,7 +3898,7 @@ details[open] > .share-button__fallback {
   padding: 1.5rem;
   margin: var(--inputs-border-width);
   transition: box-shadow var(--duration-short) ease;
-  height: 100%;
+  height: 5.4rem;
   border-radius: 6px;
 }
 
