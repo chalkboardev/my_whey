@@ -1580,7 +1580,14 @@ margin-bottom:-7px;
 
 .search_sub_div {
   /* background: #999; */
-  padding:5rem 0 7rem 0;
+  padding:5rem 2rem 3rem 2rem;
+}
+.mw_search_head {
+  background: #ffffffb8;
+  border-radius: 9px;
+  padding: 2rem;
+  max-width: 74.1rem;
+  margin: 0 auto;
 }
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
@@ -3891,6 +3898,8 @@ details[open] > .share-button__fallback {
   padding: 1.5rem;
   margin: var(--inputs-border-width);
   transition: box-shadow var(--duration-short) ease;
+  height: 100%;
+  border-radius: 6px;
 }
 
 .field__label,
