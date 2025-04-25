@@ -1995,26 +1995,24 @@ margin-bottom:-7px;
     height:calc(100vh - 46vh) !important;
   }
   .adjust_mobile_menu .menu-drawer__utility-links {
-    position: absolute !important;
-    z-index: 9999999999;
-    bottom: 8rem !important;
+    position: sticky !important;
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: auto;
+    bottom:28% !important;
+    height: 240px;
     padding: 1rem 3rem 2rem 3rem !important;
     background: #fff !important;
     border-top: 0.01px solid #cccccc;
     box-shadow: 0 1px 10px 0px #b7b7b7;
   }
   .menu-drawer__utility-links {
-    position: absolute !important;
-    z-index: 9999999999;
-    bottom: 8rem !important;
+    position: sticky !important;
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: auto;
+    bottom:28% !important;
+    height: 240px;
     padding: 1rem 3rem 2rem 3rem !important;
     background: #fff !important;
     border-top: 0.01px solid #cccccc;
