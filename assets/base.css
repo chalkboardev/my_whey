@@ -1992,15 +1992,15 @@ margin-bottom:-7px;
   }
   .menu-drawer__navigation-container {
     /* height: 100vh !important; */
-    height:calc(100vh - 56vh) !important;
+    height:calc(100vh - 40vh) !important;
   }
   .menu-drawer__utility-links {
     position: sticky !important;
     display: flex;
     flex-direction: row;
     width: 100%;
-    bottom: 56vh !important;
-    height: 300px;
+    bottom: 42vh !important;
+    height: 200px;
     padding: 1rem 3rem 2rem 3rem !important;
     background: #fff !important;
     border-top: 0.01px solid #cccccc;
@@ -2065,7 +2065,7 @@ margin-bottom:-7px;
 }
 .menu-drawer__navigation-container {
   /* height: 100vh !important; */
-  height:calc(100vh - 50vh) !important;
+  height:calc(100vh - 36vh) !important;
 }
 }
 
@@ -2198,8 +2198,8 @@ margin-bottom:-7px;
     display: flex;
     flex-direction: row;
     width: 100%;
-    bottom: 48vh;
-    height: 300px;
+    bottom: 37vh;
+    height: 200px;
     padding: 1rem 3rem 2rem 3rem !important;
     background: #fff !important;
     border-top: 0.01px solid #cccccc;
