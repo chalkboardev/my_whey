@@ -1299,8 +1299,20 @@ transform: scale(1.03);
 
     onScroll() {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
+      console.log("scrollTop: " + scrollTop + " | currentScrollTop: " + this.currentScrollTop + " | this.headerBounds.bottom: " + this.headerBounds.bottom);
       if (this.predictiveSearch && this.predictiveSearch.isOpen) return;
+
+      if ((scrollTop + 60) > this.headerBounds.bottom) {
+        this.header.classList.add('scrolled-past-header');
+        this.menu_drawer.classList.add('adjust_mobile_menu');
+        if (this.headerIsAlwaysSticky) {
+            if (this.announcement_bar_setting) {
+
+            } else {
+              this.menu_close_btn.classList.add('adjust_close_btn');
+            }
+        };
+      }
 
       if (scrollTop > this.currentScrollTop && scrollTop > this.headerBounds.bottom) {
         this.header.classList.add('scrolled-past-header');
