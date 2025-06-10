@@ -5319,7 +5319,7 @@ details-disclosure > details {
 }
 
 .utility-bar .gradient {
-  background-attachment: unset;
+  background-attachment: unset !important;
 }
 
 @media screen and (forced-colors: active) {
