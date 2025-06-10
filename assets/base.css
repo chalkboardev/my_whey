@@ -486,7 +486,10 @@ table:not([class]) th {
 }
 
 .header_buttons .color-scheme-5 {
-  border: 2px solid #ecff7a !important;
+  /* border: 2px solid rgb(var(--color-background)) !important;
+  background: var(--gradient-background); */
+  background: var(--gradient-background) padding-box, var(--gradient-background) border-box;
+  border: 2px solid transparent !important;
 }
 
 .header_buttons .videoBoxInfoBtn {
@@ -4576,8 +4579,12 @@ input[type='checkbox'] {
   letter-spacing: 0.1rem;
   font-weight: 600;
   font-size: 11px !important;
-  color: rgba(var(--color-foreground), 0.75);
+  color: rgba(var(--color-foreground), 1);
   /* min-height: 3.8rem; */
+}
+
+.announcement-bar .slider-button {
+  color: rgba(var(--color-foreground), 1);
 }
 
 .announcement-bar-slider--fade-in-next .announcement-bar__message,
