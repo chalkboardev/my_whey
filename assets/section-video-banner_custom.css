@@ -299,6 +299,7 @@
   vertical-align: middle;
   cursor: pointer;
   border: 1px solid transparent;
+  text-shadow: 1px 1px 8px #313131;
   border-radius: 30px;
   padding: 10px 30px;
   font-style: normal;

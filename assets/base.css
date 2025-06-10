@@ -496,12 +496,14 @@ table:not([class]) th {
   margin-right: 6px;
   letter-spacing: 2px !important;
 }
+
 .header_buttons .videoBoxInfoBtn:hover {
 border: 2px solid #ecff7a !important;
 background-color: #ffffff12;
 background: #ffffff12;
 color: #ecff7a !important;
 }
+
 .header_buttons .imageBoxInfoBtn {
   margin-right: 6px;
   letter-spacing: 2px !important;
