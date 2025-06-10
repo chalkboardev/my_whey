@@ -1663,7 +1663,7 @@ margin-bottom:-7px;
   transform: skew(0deg, -6deg);
 }
 
-.utility-bar .gradient {
+.utility-bar {
   background-attachment: unset !important;
 }
 
