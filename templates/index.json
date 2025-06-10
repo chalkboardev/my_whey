@@ -224,6 +224,7 @@
         "column_h6Xwtz": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/my-whey_about_1.png",
             "title": "",
             "block_icon_img1": "Icon-Clean",
             "info_block_heading_1": "",
@@ -264,6 +265,7 @@
         "column_NqzhFD": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/my-whey_about_1.png",
             "title": "",
             "block_icon_img1": "Icon-Clean",
             "info_block_heading_1": "",
@@ -418,6 +420,7 @@
         "button_TDVLLQ"
       ],
       "settings": {
+        "image": "shopify://shop_images/my-whey.gif",
         "height": "adapt",
         "desktop_image_width": "small",
         "layout": "image_first",
