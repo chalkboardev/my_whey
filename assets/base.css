@@ -1663,6 +1663,10 @@ margin-bottom:-7px;
   transform: skew(0deg, -6deg);
 }
 
+.utility-bar .gradient {
+  background-attachment: unset !important;
+}
+
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .predictive-search--search-template {
@@ -5316,10 +5320,6 @@ details-disclosure > details {
   background: rgb(var(--color-background));
   background: var(--gradient-background);
   background-attachment: fixed;
-}
-
-.utility-bar .gradient {
-  background-attachment: unset !important;
 }
 
 @media screen and (forced-colors: active) {
