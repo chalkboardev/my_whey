@@ -54,7 +54,7 @@
 
 .swiper-pagination-bullet-active {
   opacity: var(--swiper-pagination-bullet-opacity, 1);
-  background: #ecff7a !important;
+  background: #fe5900 !important;
 }
 
 @media only screen and (max-width: 749px) {
@@ -298,7 +298,7 @@
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
-  border: 1px solid transparent;
+  border: 2px solid #ffffff00;
   text-shadow: 1px 1px 8px #313131;
   border-radius: 30px;
   padding: 10px 30px;
@@ -309,6 +309,7 @@
   white-space: normal;
   font-size: 16px;
   margin-top: 10px;
+  transition: all ease 0.5s;
 }
 
 

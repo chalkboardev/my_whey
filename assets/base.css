@@ -490,29 +490,38 @@ table:not([class]) th {
   background: var(--gradient-background); */
   background: var(--gradient-background) padding-box, var(--gradient-background) border-box;
   border: 2px solid transparent !important;
+  transition: all ease 0.5s
 }
 
 .header_buttons .videoBoxInfoBtn {
   margin-right: 6px;
-  letter-spacing: 2px !important;
+  border: 2px solid #ffffff00 !important;
+  transition: all ease 0.5s
+  transition: all ease 0.5s
 }
 
 .header_buttons .videoBoxInfoBtn:hover {
-border: 2px solid #ecff7a !important;
-background-color: #ffffff12;
-background: #ffffff12;
-color: #ecff7a !important;
+  border: 2px solid #fff !important;
+  background-color: #ffffff00;
+  text-shadow: none;
+  background: #ffffff1c;
+  /* letter-spacing: 4px !important; */
+  color: #fff !important;
+  backdrop-filter: blur(10px);
+  transition: all ease 0.5s;
 }
 
 .header_buttons .imageBoxInfoBtn {
   margin-right: 6px;
   letter-spacing: 2px !important;
+  transition: all ease 0.5s
 }
 .header_buttons .imageBoxInfoBtn:hover {
-border: 2px solid #ecff7a !important;
-background-color: #ffffff12;
-background: #ffffff12;
-color: #ecff7a !important;
+  border: 2px solid #fff !important;
+  background: #fff;
+  text-shadow: none;
+  color: #333 !important;
+  transition: all ease 0.5s
 }
 /* .header_buttons .color-scheme-2:hover {
   border: 2px solid #ecff7a !important;
@@ -4579,6 +4588,7 @@ input[type='checkbox'] {
   padding: 1rem 0;
   margin: 0;
   letter-spacing: 0.1rem;
+  text-shadow: 1px 1px 8px #313131;
   font-weight: 600;
   font-size: 11px !important;
   color: rgba(var(--color-foreground), 1);

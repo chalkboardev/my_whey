@@ -79,12 +79,34 @@
    
    <div class="header_buttons">
   {% if block.settings.button_link_video_1 != blank and block.settings.button_video_label_1 != blank %} 
+   <span style="
+   width: 280px;
+   position: relative;
+   /* OVERFLOW: hidden; */
+   justify-content: center;
+   align-items: center;
+   height: 60px;
+   display: flex;
+   border-radius: 50px;
+   ">
+      <a style="width: 280px;
+      opacity:0.7;
+      position: absolute;
+      padding: 0;
+      margin: 0 auto;
+      height: 60px;
+      " href="{{ block.settings.button_link_video_1 }}" class="videoBoxInfoBtn color-{{ block.settings.color_scheme_video_btn_1 }}">
    
-  <a href="{{ block.settings.button_link_video_1 }}" class="videoBoxInfoBtn color-{{ block.settings.color_scheme_video_btn_1 }}">
-   
-  {{ block.settings.button_video_label_1 | escape }}
+
    
   </a>
+  <span style="position: relative;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;">  {{ block.settings.button_video_label_1 | escape }}</span>
+   </span>
+
    
   {% endif %}
 
