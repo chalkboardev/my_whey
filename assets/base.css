@@ -672,8 +672,7 @@ margin-top: -10px;
   text-align: center !important;
   position: relative !important;
   color: #ffffff !important;
-  background: #1e534d !important;
-  border: 2px solid #1e534d !important;
+  border: 2px solid #00000000 !important;
   text-decoration: none !important;
   box-shadow: none !important;
   transition: all 350ms;
@@ -3638,10 +3637,10 @@ shopify-accelerated-checkout-cart {
 }
 
 .mw_collection_div .button, .shopify-challenge__button, .customer button {
-    border-top-left-radius: 0px !important;
+    /* border-top-left-radius: 0px !important;
     border-top-right-radius: 0px !important;
     border-bottom-right-radius: 9px !important;
-    border-bottom-left-radius: 9px !important;
+    border-bottom-left-radius: 9px !important; */
     margin-top: 8px;
 }
 
