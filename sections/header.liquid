@@ -1300,7 +1300,7 @@ transform: scale(1.03);
 
     onScroll() {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      console.log("scrollTop: " + scrollTop + " | currentScrollTop: " + this.currentScrollTop + " | this.headerBounds.bottom: " + this.headerBounds.bottom);
+      //console.log("scrollTop: " + scrollTop + " | currentScrollTop: " + this.currentScrollTop + " | this.headerBounds.bottom: " + this.headerBounds.bottom);
       if (this.predictiveSearch && this.predictiveSearch.isOpen) return;
 
       if ((scrollTop + 60) > this.headerBounds.bottom) {
