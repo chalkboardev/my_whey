@@ -496,8 +496,7 @@ table:not([class]) th {
 .header_buttons .videoBoxInfoBtn {
   margin-right: 6px;
   border: 2px solid #ffffff00 !important;
-  transition: all ease 0.5s
-  transition: all ease 0.5s
+  transition: all ease 0.5s;
 }
 
 .header_buttons .videoBoxInfoBtn:hover {
