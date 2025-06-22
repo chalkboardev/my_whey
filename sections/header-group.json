@@ -50,6 +50,7 @@
           "type": "menu-image",
           "settings": {
             "link_name": "SHOP",
+            "link_image": "shopify://shop_images/Lions_Mane_bb5d5696-3ec7-420f-97f3-b382c6dc3e23.jpg",
             "link_title": "Lions Mane Extract",
             "link_url": "shopify://products/super-lions-mane-60-veggie-caps",
             "selected_product": "super-lions-mane-60-veggie-caps"
@@ -59,6 +60,7 @@
           "type": "menu-image",
           "settings": {
             "link_name": "SHOP",
+            "link_image": "shopify://shop_images/Free_Tin_Can_Mockup_Paper2.jpg",
             "link_title": "Creatine Monohydrate",
             "link_url": "shopify://products/creatine-monohydrate-500g",
             "selected_product": "creatine-monohydrate-500g"
@@ -68,6 +70,7 @@
           "type": "menu-image",
           "settings": {
             "link_name": "SHOP",
+            "link_image": "shopify://shop_images/Beta_Alanine.jpg",
             "link_title": "BCAA 2:1:1 Powder",
             "link_url": "shopify://products/bcaa-2-1-1-powder",
             "selected_product": "bcaa-2-1-1-powder"
@@ -78,9 +81,6 @@
         "menu_image_iYXLJq",
         "menu_image_7zgeGj",
         "menu_image_eiVAFM"
-      ],
-      "custom_css": [
-        ".header {min-height: 80px}"
       ],
       "settings": {
         "logo_position": "middle-center",
@@ -96,7 +96,7 @@
         "enable_customer_avatar": true,
         "mobile_logo_position": "center",
         "margin_bottom": 0,
-        "minimum_height": 120,
+        "minimum_height": 92,
         "minimum_height_mobile": 70
       }
     }
