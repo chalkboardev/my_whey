@@ -494,21 +494,9 @@ table:not([class]) th {
 }
 
 .header_buttons .videoBoxInfoBtn {
-  margin-right: 6px;
-  border: 2px solid #ffffff00 !important;
-  transition: all ease 0.5s;
+
 }
 
-.header_buttons .videoBoxInfoBtn:hover {
-  border: 2px solid #fff !important;
-  background-color: #ffffff00;
-  text-shadow: none;
-  background: #ffffff1c;
-  /* letter-spacing: 4px !important; */
-  color: #fff !important;
-  backdrop-filter: blur(10px);
-  transition: all ease 0.5s;
-}
 
 .header_buttons .imageBoxInfoBtn {
   margin-right: 6px;
