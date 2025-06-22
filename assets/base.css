@@ -1679,6 +1679,10 @@ margin-bottom:-7px;
   background-attachment: unset !important;
 }
 
+.my_multicolumn .title {
+  margin: 0 auto !important;
+}
+
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .predictive-search--search-template {
