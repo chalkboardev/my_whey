@@ -1026,6 +1026,7 @@ margin-top: -10px;
   }
   
   .more_btn {
+    border-radius: 50px !important;
     font-weight: 600 !important;
     font-size: 16px !important;
     letter-spacing: 2px !important;
