@@ -314,10 +314,12 @@
   margin-top: 10px;
   background: var(--gradient-background);
   transition: all ease 0.25s;
+  transform: translateY(0px);
+  letter-spacing: 2px;
 }
 
 
-..videoBackground .videoBoxInfoBtn:hover,.videoBackground .imageBoxInfoBtn:hover {
+.videoBackground .videoBoxInfoBtn:hover,.videoBackground .imageBoxInfoBtn:hover {
   border: 2px solid #fff !important;
   text-shadow: none;
   background: #ffffff1c;
@@ -325,6 +327,8 @@
   color: #fff !important;
   backdrop-filter: blur(10px);
   transition: all ease 0.25s;
+  transform: translateY(0px);
+  letter-spacing: 3px;
 }
 
 
