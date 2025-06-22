@@ -1017,22 +1017,43 @@ margin-top: -10px;
   }
   
   .more_btn {
+    width: 280px;
     border-radius: 50px !important;
     font-weight: 600 !important;
     font-size: 16px !important;
     letter-spacing: 2px !important;
+    border: 2px solid #ff522b85 !important;
+    background: var(--gradient-background);
     padding: 1.5rem 5rem !important;
+    /* transform: translateY(0px) !important; */
+    transition: all ease 0.25s;
   }
   .more_btn:hover {
-    box-shadow:none !important
+    width: 280px;
+    border-radius: 50px !important;
+    background: #ffffff00;
+    color:#ff512b;
+    border: 2px solid #ff512b !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    letter-spacing: 4px !important;
+    padding: 1.5rem 5rem !important;
+    /* transform: translateY(-2px) !important; */
+    transition: all ease 0.25s;
+  }
+  .image-with-text__content .image-with-text__text + .button {
+    transition: all ease 0.25s !important;
   }
   .more_btn::after {
-    box-shadow:none !important
+    transition: all ease 0.25s !important;
+    box-shadow:none !important;
   }
   .more_btn::after {
-    box-shadow:none !important
+    transition: all ease 0.25s !important;
+    box-shadow:none !important;
   }
   .button::after {
+    transition: all ease 0.25s !important;
     box-shadow:none !important
   }
 
@@ -1469,7 +1490,7 @@ margin-bottom:-7px;
   align-items: end;
   bottom: 0;
   flex-grow: 1;
-  height: 20px;
+  height: auto;
 }
 
 #ProductGridContainer .mw_price_div {
@@ -1683,8 +1704,12 @@ margin-bottom:-7px;
   margin-bottom: 2.5rem;
 }
 
+
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .grid__item {
+    padding-bottom:20px !important;
+    }
   .predictive-search--search-template {
       border-radius: 0 0 6px 6px !important;
       max-width: 33rem;
