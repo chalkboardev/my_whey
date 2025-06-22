@@ -75,12 +75,23 @@
             "link_url": "shopify://products/bcaa-2-1-1-powder",
             "selected_product": "bcaa-2-1-1-powder"
           }
+        },
+        "menu_image_txMGJi": {
+          "type": "menu-image",
+          "settings": {
+            "link_name": "SHOP",
+            "link_image": "shopify://shop_images/mock_pack.jpg",
+            "link_title": "Ashwagandha Powder",
+            "link_url": "shopify://products/ashwagandha-powder",
+            "selected_product": "ashwagandha-powder"
+          }
         }
       },
       "block_order": [
         "menu_image_iYXLJq",
         "menu_image_7zgeGj",
-        "menu_image_eiVAFM"
+        "menu_image_eiVAFM",
+        "menu_image_txMGJi"
       ],
       "settings": {
         "logo_position": "middle-center",
