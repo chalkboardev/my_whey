@@ -108,7 +108,7 @@
   }
 </style>
 
-<section class="scroll-trigger animate--slide-in marquee-text-wrapper" id="id-{{ section.id }}">
+<section class="color-{{ block.settings.color_scheme }} gradient scroll-trigger animate--slide-in marquee-text-wrapper" id="id-{{ section.id }}">
   <div
     class="marquee marquee--borders {{ section.settings.scroll_text_move }}"
     style="--duration: {{ section.settings.scroll_time }}s;"
@@ -164,6 +164,12 @@
       "id": "is_only_images",
       "label": "This marquee is only images",
       "default": false
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "default"
     },
     {
       "type": "color",
