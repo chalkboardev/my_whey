@@ -301,7 +301,7 @@
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
-  border: 2px solid #ffffff00 !important;
+  border: 1px solid #a1382182 !important;
   text-shadow: 1px 1px 8px #313131;
   border-radius: 30px;
   padding: 10px 30px;
@@ -313,22 +313,22 @@
   font-size: 16px;
   margin-top: 10px;
   background: var(--gradient-background);
-  transition: all ease 0.25s;
   transform: translateY(0px);
   letter-spacing: 2px;
+  transition: all ease 0.15s;
 }
 
 
 .videoBackground .videoBoxInfoBtn:hover,.videoBackground .imageBoxInfoBtn:hover {
-  border: 2px solid #fff !important;
+  border: 1px solid #ffffff00 !important;
   text-shadow: none;
   background: #ffffff1c;
   /* letter-spacing: 4px !important; */
   color: #fff !important;
   backdrop-filter: blur(10px);
-  transition: all ease 0.25s;
   transform: translateY(0px);
   letter-spacing: 3px;
+  transition: all ease 0.15s;
 }
 
 
