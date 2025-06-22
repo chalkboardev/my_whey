@@ -1679,6 +1679,9 @@ margin-bottom:-7px;
 .product_card_info {
   display: none !important;
 }
+.collection .slider.slider--tablet {
+  margin-bottom: 2.5rem;
+}
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
