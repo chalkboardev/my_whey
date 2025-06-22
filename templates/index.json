@@ -317,8 +317,8 @@
           "type": "block",
           "settings": {
             "text": "YOUR TRUSTED SUPPLIER",
-            "image": "shopify://shop_images/shield_686ded8a-1780-4695-bf41-d5cf63589652.png",
-            "image_width": 40,
+            "image": "shopify://shop_images/shield3_b65427c9-a506-4362-8350-f48daf265f2e.png",
+            "image_width": 80,
             "image_invert": false
           }
         },
