@@ -316,7 +316,7 @@
         "block_bHHxqC": {
           "type": "block",
           "settings": {
-            "text": "Marquee Text",
+            "text": "YOUR TRUSTED SUPPLIER",
             "image": "shopify://shop_images/shield_686ded8a-1780-4695-bf41-d5cf63589652.png",
             "image_width": 40,
             "image_invert": false
@@ -325,7 +325,7 @@
         "block_wCqat4": {
           "type": "block",
           "settings": {
-            "text": "",
+            "text": "BULK SUPPLEMENTS",
             "image": "shopify://shop_images/my_whey_logo_c.png",
             "image_width": 90,
             "image_invert": true
@@ -333,9 +333,9 @@
         },
         "block_GPiLxy": {
           "type": "block",
+          "disabled": true,
           "settings": {
             "text": "",
-            "image": "shopify://shop_images/eye2.png",
             "image_width": 70,
             "image_invert": false
           }
