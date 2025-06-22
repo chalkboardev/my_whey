@@ -9,7 +9,7 @@
  */
 {
   "current": {
-    "logo": "shopify://shop_images/my_whey_logo_2025b.png",
+    "logo": "shopify://shop_images/my_whey_logo_2025c_c3968b37-dd94-477a-8204-81206c3bae5e.png",
     "logo_width": 100,
     "type_header_font": "assistant_n4",
     "heading_scale": 100,
@@ -105,7 +105,7 @@
     "badge_position": "top left",
     "badge_corner_radius": 40,
     "sale_badge_color_scheme": "scheme-5",
-    "sales_badge_border_color": "#ecff7a",
+    "sales_badge_border_color": "#ff512b",
     "sold_out_badge_color_scheme": "scheme-3",
     "so_badge_border_color": "#CCCCCC",
     "brand_headline": "Formulated for you.",
