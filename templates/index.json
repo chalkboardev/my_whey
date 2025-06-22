@@ -139,7 +139,7 @@
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "padding_top": 56,
-        "padding_bottom": 8
+        "padding_bottom": 36
       }
     },
     "custom_marquee_nigaHz": {
@@ -207,7 +207,7 @@
         "color_scheme": "",
         "font_color": "#ffffff",
         "scroll_time": "40",
-        "margin_top": 40,
+        "margin_top": 0,
         "margin_bottom": 20,
         "mobile_margin_top": 10,
         "mobile_margin_bottom": 0,
