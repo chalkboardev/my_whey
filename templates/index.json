@@ -369,7 +369,6 @@
       "settings": {
         "is_only_images": true,
         "color_scheme": "scheme-5",
-        "bg_color": "#1e534d",
         "font_color": "#ffffff",
         "scroll_time": "20",
         "margin_top": 10,
