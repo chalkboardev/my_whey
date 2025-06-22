@@ -1717,9 +1717,6 @@ margin-bottom:-7px;
   .card-information {
     height: 20px;
   }
-  .grid__item {
-    padding-bottom:20px !important;
-    }
   .predictive-search--search-template {
       border-radius: 0 0 6px 6px !important;
       max-width: 33rem;
