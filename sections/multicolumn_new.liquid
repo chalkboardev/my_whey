@@ -175,7 +175,7 @@
 
                       {% if block.settings.block_icon_img1 == 'Icon-Clean' %}
                         <span class="wow icon_animate my_svg-wrapper about_icons">
-                          <span class="color-{{ block.settings.svg_color_scheme }} gradient icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
+                          <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
                         </span>
                       {% elsif block.settings.block_icon_img1 == 'Icon-Quiz' %}
                         <span class="wow icon_animate my_svg-wrapper about_icons">
@@ -645,12 +645,6 @@
               }
             ],
             "default": "Icon-Clean"
-          },
-          {
-            "type": "color_scheme",
-            "id": "svg_color_scheme",
-            "label": "Color scheme",
-            "default": "scheme-5"
           },
         {
           "type": "inline_richtext",
