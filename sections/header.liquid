@@ -211,6 +211,7 @@ transform: scale(1.03);
     padding: 0;
     z-index: 1;
     display: block;
+    margin-bottom: -20px;
 }
 
 @media screen and (min-width: 990px) {
@@ -255,10 +256,21 @@ transform: scale(1.03);
 } */
 
 .menu_swiper .swiper-pagination-bullets.swiper-pagination-horizontal {
-    bottom: var(--swiper-pagination-bottom, 16%);
+    bottom: var(--swiper-pagination-bottom, 0%);
     top: var(--swiper-pagination-top, auto);
     left: 0;
     width: 100%;
+}
+
+.menu_swiper .swiper-pagination-bullet {
+    background: #c2c2c2 !important;
+}
+.menu_swiper .swiper-pagination-bullet-active {
+  opacity: var(--swiper-pagination-bullet-opacity, 1);
+  background: #fe5900 !important;
+}
+.menu_swiper .swiper-wrapper {
+  margin-bottom: 20px;
 }
 </style>
 
@@ -1014,18 +1026,23 @@ transform: scale(1.03);
                       {%- endif -%}
                     {%- endfor -%}
                     </div>
-                    {% comment %} <div class="swiper-pagination"></div> {% endcomment %}
+                    <div class="swiper-pagination"></div>
                   </div>
                   {%- if section.blocks.size  >= 2 -%}
                   <script>
                     document.addEventListener("DOMContentLoaded", function(){
                       var menu_swiper = new Swiper(".menu_swiper", {
-                        slidesPerView: "auto",
+                              slidesPerView: "auto",
                               autoplay: {
                                 stopOnLastSlide: false,
                                 enabled: true,
                                 delay: 4000,
                               },
+                               // If we need pagination
+                              pagination: {
+                                el: '.swiper-pagination',
+                                clickable: true,
+                              }
                               
                       });
                         // $(".header").click(function (){
