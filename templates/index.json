@@ -438,7 +438,7 @@
         "full_width_mobile": true,
         "mobile_content_alignment": "left",
         "style_text_container": true,
-        "text_div_bg_color": "#f6f3eb",
+        "text_div_bg_color": "#ededed",
         "padding_top": 56,
         "padding_bottom": 56,
         "mobile_padding_top": 0,
