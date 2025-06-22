@@ -315,7 +315,7 @@
   background: var(--gradient-background);
   transform: translateY(0px);
   letter-spacing: 2px;
-  transition: all ease 0.15s;
+  transition: all ease 0.25s;
 }
 
 
@@ -328,7 +328,7 @@
   backdrop-filter: blur(10px);
   transform: translateY(0px);
   letter-spacing: 3px;
-  transition: all ease 0.15s;
+  transition: all ease 0.25s;
 }
 
 
@@ -495,6 +495,10 @@
     width: 100%;
   }
 
+  .videoBackground .swiper {
+    min-height: calc(100vh - 102px);
+  }
+
   .swiper-button-next, .swiper-button-prev {
     display: none !important;
   }
@@ -509,7 +513,8 @@
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-    min-height: calc(100vh - 165px);
+    min-height: calc(100vh - 102px);
+    /* min-height: 100vh; */
     height: auto;
   }
 
