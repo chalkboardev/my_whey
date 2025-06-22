@@ -204,7 +204,7 @@
       ],
       "settings": {
         "is_only_images": false,
-        "bg_color": "#1e534d",
+        "color_scheme": "",
         "font_color": "#ffffff",
         "scroll_time": "40",
         "margin_top": 40,
@@ -254,7 +254,7 @@
             "block_icon_img2": "Icon-Quiz",
             "info_block_heading_2": "<strong>Affordable Quality</strong>",
             "text2": "At My-Whey we pride oursleves in bringing you hand-picked, premium, and affordable products.",
-            "block_icon_img3": "Icon-Support",
+            "block_icon_img3": "Icon-Truck",
             "info_block_heading_3": "<strong>Bulk Supply</strong>",
             "text3": "My-Whey is here to cater for the  supplements and vitamins you need to maintain a healthy lifestyle.",
             "block_icon_img4": "Icon-Check",
