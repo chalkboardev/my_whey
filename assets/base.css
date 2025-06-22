@@ -1490,7 +1490,7 @@ margin-bottom:-7px;
   align-items: end;
   bottom: 0;
   flex-grow: 1;
-  height: auto;
+  height: 4vh;
 }
 
 #ProductGridContainer .mw_price_div {
@@ -1698,7 +1698,11 @@ margin-bottom:-7px;
 }
 
 .product_card_info {
-  display: none !important;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 .collection .slider.slider--tablet {
   margin-bottom: 2.5rem;
@@ -1707,6 +1711,9 @@ margin-bottom:-7px;
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .card-information {
+    height: 20px;
+  }
   .grid__item {
     padding-bottom:20px !important;
     }
@@ -1965,12 +1972,12 @@ margin-bottom:-7px;
     display: flex;
   }
   .product_card_info {
-    display:none !important;
-    /* text-overflow: ellipsis;
+    /* display:none !important; */
+    text-overflow: ellipsis;
     overflow: hidden;
     display: -webkit-box !important;
-    -webkit-line-clamp: 7;
-    -webkit-box-orient: vertical; */
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
   /* .card__content {
     display: grid;
