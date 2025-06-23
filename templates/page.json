@@ -45,7 +45,7 @@
         "button_KQ7ABq": {
           "type": "button",
           "settings": {
-            "button_label": "VIEW COLLECTIONS",
+            "button_label": "SHOP",
             "button_link": "shopify://collections",
             "button_style_secondary": false
           }
