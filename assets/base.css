@@ -500,16 +500,26 @@ table:not([class]) th {
 
 
 .header_buttons .imageBoxInfoBtn {
+  display: flex !important;
+  justify-content: center;
+  align-content: center;
+  height: auto;
+  min-height: 50px;
+  flex-wrap: wrap;
+  width:280px !important;
+  letter-spacing: 2px;
   margin-right: 6px;
   letter-spacing: 2px !important;
-  transition: all ease 0.5s
+  transition: all ease 0.25s
 }
 .header_buttons .imageBoxInfoBtn:hover {
+  width:280px;
   border: 2px solid #fff !important;
+  letter-spacing: 4px !important;
   background: #fff;
   text-shadow: none;
   color: #333 !important;
-  transition: all ease 0.5s
+  transition: all ease 0.25s
 }
 /* .header_buttons .color-scheme-2:hover {
   border: 2px solid #ecff7a !important;
