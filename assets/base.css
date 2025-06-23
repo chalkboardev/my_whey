@@ -1619,15 +1619,29 @@ margin-bottom:-7px;
 }
 
 .collection-list .mw_collection_info {
-    position: absolute;
-    bottom: 3%;
-    font-size: 1.6rem;
-    background: #ffffff9e;
-    padding: 1rem 1rem 1rem 1rem !important;
-    display: flex;
-    width: 92%;
-    margin: 0 auto;
-    text-align: left;
+  position: absolute;
+  top: 0;
+  background: #ffffff00;
+  padding: 1rem 4rem 1rem 4rem !important;
+  display: flex;
+  min-height: 100%;
+  width: 96%;
+  justify-content: center;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+} 
+
+.collection-list .mw_collection_info a{
+  font-size: 20px;
+  font-weight: 600;
+  transition: all ease 0.25s;
+} 
+
+.collection-list .mw_collection_info a:hover{
+  font-size: 24px;
+  font-weight: 600;
+  transition: all ease 0.25s;
 } 
 
 .search_sub_div {
@@ -1744,9 +1758,15 @@ margin-bottom:-7px;
     background-attachment: fixed !important;
 }
 
+.collection-list__item img {
+  opacity: 0.5;
+}
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .collection-list .mw_collection_info a {
+    font-size:18px;
+  }
   .footer-block__image-wrapper{
     max-width: 110px !important;
   }
@@ -1765,14 +1785,16 @@ margin-bottom:-7px;
   }
   .collection-list .mw_collection_info {
     position: absolute;
-      bottom: 5% !important;
-      font-size: 1.6rem;
-      background: #ffffff9e;
-      padding: 1rem 1rem 1rem 1rem !important;
-      display: flex;
-      width: 92%;
-      margin: 0 auto;
-      text-align: left;
+    top: 0;
+    background: #ffffff00;
+    padding: 1rem 1rem 1rem 1rem !important;
+    display: flex;
+    min-height: 100%;
+    width: 96%;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
   }
   .collection__description p {
     text-align: center;
@@ -2463,14 +2485,16 @@ margin-bottom:-7px;
   }
   .collection-list .mw_collection_info {
     position: absolute;
-    bottom: 2%;
-    font-size: 1.6rem;
-    background: #ffffff9e;
-    padding: 1rem 1rem 1rem 1rem !important;
+    top: 0;
+    background: #ffffff00;
+    padding: 1rem 4rem 1rem 4rem !important;
     display: flex;
+    min-height: 100%;
     width: 96%;
+    justify-content: center;
     margin: 0 auto;
-    text-align: left;
+    text-align: center;
+    align-items: center;
   } 
 }
 
@@ -2667,14 +2691,16 @@ margin-bottom:-7px;
 @media screen and (min-width: 750px) and (max-width: 989px) { 
   .collection-list .mw_collection_info {
     position: absolute;
-    bottom: 1.6%;
-    font-size: 1.6rem;
-    background: #ffffff9e;
-    padding: 1rem 1rem 1rem 1rem !important;
+    top: 0;
+    background: #ffffff00;
+    padding: 1rem 4rem 1rem 4rem !important;
     display: flex;
-    width: 98%;
+    min-height: 100%;
+    width: 96%;
+    justify-content: center;
     margin: 0 auto;
-    text-align: left;
+    text-align: center;
+    align-items: center;
   } 
   .dietary_icons {
     min-width: 60px;
@@ -3215,14 +3241,16 @@ summary::-webkit-details-marker {
   }
   .collection-list .mw_collection_info {
     position: absolute;
-    bottom: 2%;
-    font-size: 1.6rem;
-    background: #ffffff9e;
+    top: 0;
+    background: #ffffff00;
     padding: 1rem 1rem 1rem 1rem !important;
     display: flex;
+    min-height: 100%;
     width: 96%;
+    justify-content: center;
     margin: 0 auto;
-    text-align: left;
+    text-align: center;
+    align-items: center;
   } 
 
   .quick-add-modal__content {

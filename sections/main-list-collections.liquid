@@ -23,11 +23,11 @@
  
 
   
-  <div class="page-width" style="padding-bottom:80px;">
+  <div class="page-width" style="padding-top: 6rem;background: #eeeeee;padding-bottom:80px;">
     {% if section.settings.show_collection_list_image and section.settings.image %} 
-    <h1 class="title title--primary inline-richtext">
-   
-    </h1>
+      {% comment %} <h1 class="title title--primary inline-richtext">
+    
+      </h1> {% endcomment %}
     {% else %} 
   <h1 class="title title--primary inline-richtext{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
     {{ section.settings.title }}
