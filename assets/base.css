@@ -1762,6 +1762,10 @@ margin-bottom:-7px;
   opacity: 0.5;
 }
 
+.footer__content-bottom {
+  display: none !important;
+}
+
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .collection-list .mw_collection_info a {
