@@ -116,7 +116,7 @@
     <div class="marquee__group">
       {% for block in section.blocks %}
         {% if block.settings.text != blank %}
-          <p>{{ block.settings.text }}</p>
+          <p style="white-space: nowrap;">{{ block.settings.text }}</p>
         {% endif %}
         {% if block.settings.image != blank %}
         <img
@@ -136,7 +136,7 @@
     <div class="marquee__group">
       {% for block in section.blocks %}
         {% if block.settings.text != blank %}
-          <p>{{ block.settings.text }}</p>
+          <p style="white-space: nowrap;">{{ block.settings.text }}</p>
         {% endif %}
         {% if block.settings.image != blank %}
         <img
