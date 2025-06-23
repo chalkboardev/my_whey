@@ -1726,9 +1726,9 @@ margin-bottom:-7px;
 }
 
 .my_footer {
-    background-size: cover;
-    background-position: bottom;
-    background-attachment: fixed;
+    background-size: cover !important;
+    background-position: bottom !important;
+    background-attachment: fixed !important;
 }
 
 
