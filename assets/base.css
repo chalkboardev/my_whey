@@ -514,7 +514,7 @@ table:not([class]) th {
 }
 .header_buttons .imageBoxInfoBtn:hover {
   width:280px;
-  border: 2px solid #fff !important;
+  border: 1px solid #fff !important;
   letter-spacing: 4px !important;
   background: #fff;
   text-shadow: none;

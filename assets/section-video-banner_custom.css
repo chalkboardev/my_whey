@@ -286,14 +286,8 @@
 
 .videoBackground .videoBoxInfoBtn, .videoBackground .imageBoxInfoBtn {
   margin-right: 6px;
-  border: 2px solid #ffffff00 !important;
+  border: 2px solid #ff512b99 !important;
   transition: all ease 0.5s;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   display: inline-block;
   width: auto;
