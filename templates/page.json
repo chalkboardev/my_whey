@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -6,9 +15,71 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "image_with_text_DcXerk": {
+      "type": "image-with-text",
+      "blocks": {
+        "caption_w36iJN": {
+          "type": "caption",
+          "settings": {
+            "caption": "ABOUT",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "large"
+          }
+        },
+        "heading_QUeHdn": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>MY WHEY</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_iyefzJ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Welcome to <strong>MY WHEY</strong>, your trusted source for high-quality supplements and vitamins in bulk. We’re here to make health and wellness simple, affordable, and accessible for everyone—from fitness enthusiasts and health-conscious families to small businesses and wellness practitioners.</p><p></p><p>At My Whey, we believe that better health starts with better choices. That’s why we offer a wide range of premium, lab-tested supplements and essential vitamins—without the unnecessary packaging or inflated prices. By focusing on bulk quantities, we help you save money and reduce waste while ensuring you never run out of what your body needs.</p><p>Our mission is simple: <strong>Deliver pure, effective, and affordable wellness products—at scale.</strong> Whether you’re restocking your own pantry or buying in volume for your practice, we’re here to support your goals with transparency, integrity, and care.</p><p>Thank you for choosing us to be a part of your health journey.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_KQ7ABq": {
+          "type": "button",
+          "settings": {
+            "button_label": "VIEW COLLECTIONS",
+            "button_link": "shopify://collections",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "caption_w36iJN",
+        "heading_QUeHdn",
+        "text_iyefzJ",
+        "button_KQ7ABq"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/my-whey.gif",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "scheme-5",
+        "image_behavior": "none",
+        "full_width_mobile": true,
+        "mobile_content_alignment": "left",
+        "style_text_container": true,
+        "text_div_bg_color": "#ededed",
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 36
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "image_with_text_DcXerk"
   ]
 }
