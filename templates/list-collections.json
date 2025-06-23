@@ -12,7 +12,7 @@
     "main": {
       "type": "main-list-collections",
       "settings": {
-        "title": "Collections",
+        "title": "Categories",
         "show_collection_list_image": true,
         "image": "shopify://shop_images/Rvlf3gstQqOE7VeMou1n_file.jpg",
         "background_height_position": 50,
