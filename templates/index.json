@@ -441,8 +441,8 @@
         "button_TDVLLQ": {
           "type": "button",
           "settings": {
-            "button_label": "LEARN MORE",
-            "button_link": "#",
+            "button_label": "ABOUT US",
+            "button_link": "shopify://pages/about-us",
             "button_style_secondary": false
           }
         }
