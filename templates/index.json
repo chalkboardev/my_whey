@@ -209,7 +209,7 @@
         "scroll_time": "40",
         "margin_top": 0,
         "margin_bottom": 20,
-        "mobile_margin_top": 10,
+        "mobile_margin_top": 0,
         "mobile_margin_bottom": 0,
         "font_size": 16,
         "scroll_text_move": "marquee-left",
