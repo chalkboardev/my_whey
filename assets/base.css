@@ -967,8 +967,27 @@ margin-top: -10px;
   }
 
   .add_to_cart_btn {
+    min-height: 52px !important;
     border: 1px solid #333 !important;
+    letter-spacing: 2px !important;
     border-radius: 30px !important;
+    text-transform: uppercase;
+    font-weight: 500 !important;
+    transition: all ease 0.25s;
+  }
+
+  .add_to_cart_btn:hover {
+    min-height: 52px !important;
+    border: 1px solid #333 !important;
+    letter-spacing: 4px !important;
+    border-radius: 30px !important;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all ease 0.25s;
+  }
+
+  .product-form__submit {
+    transition: all ease 0.25s;
   }
 
   .product__description {
@@ -1008,12 +1027,14 @@ margin-top: -10px;
   }
 
   .tab_customize button:hover {
-    background-color: #20534d !important;
+    background:linear-gradient(180deg, rgba(254, 89, 0, 1) 0%, rgba(204, 71, 0, 1) 50%, rgba(156, 54, 0, 1) 100%) !important; 
+    border: 1px solid #a33921 !important;
     color: #fff;
     font-weight: 600;
   }
   .tab_customize button.active {
-    background-color: #20534d !important;
+    background:linear-gradient(180deg, rgba(254, 89, 0, 1) 0%, rgba(204, 71, 0, 1) 50%, rgba(156, 54, 0, 1) 100%) !important; 
+    border: 1px solid #a33921 !important;
     color: #fff;
     font-weight: 600;
   }
@@ -1103,12 +1124,16 @@ margin-top: -10px;
 
   .product-form__input--pill input[type='radio']:checked + label {
     background-color: rgb(var(--color-background)) !important;
-    -webkit-box-shadow: inset 0px 0px 0px 2px #555555;
-    -moz-box-shadow: inset 0px 0px 0px 2px #555555;
-    box-shadow: inset 0px 0px 0px 2px #555555;
+    -webkit-box-shadow: inset 0px 0px 0px 2px #ff512b;
+    -moz-box-shadow: inset 0px 0px 0px 2px #ff512b;
+    box-shadow: inset 0px 0px 0px 2px #ff512b;
     color: rgb(var(--color-foreground)) !important;
     font-weight: 600;
   }
+
+.product-form__input--pill input[type='radio'] + label {
+  border:none !important;
+}
 
 .badge_price {
   vertical-align: middle !important;
@@ -3636,6 +3661,31 @@ button.shopify-payment-button__button--unbranded {
 button.shopify-payment-button__button--unbranded {
   min-width: calc(12rem + var(--buttons-border-width) * 2);
   min-height: calc(4.5rem + var(--buttons-border-width) * 2);
+  transition: all ease 0.25s;
+}
+
+.shopify-payment-button__button {
+  background:linear-gradient(180deg, rgba(254, 89, 0, 1) 0%, rgba(204, 71, 0, 1) 50%, rgba(156, 54, 0, 1) 100%) !important; 
+  border: 2px solid #a33921 !important;
+  font-weight: 600 !important;
+  min-height: 52px !important;
+  letter-spacing: 2px !important;
+  min-width: calc(12rem + var(--buttons-border-width) * 2);
+  min-height: calc(4.5rem + var(--buttons-border-width) * 2);
+  text-transform: uppercase;
+  transition: all ease 0.25s;
+}
+
+.shopify-payment-button__button:hover {
+  background:linear-gradient(180deg, rgba(254, 89, 0, 1) 0%, rgba(204, 71, 0, 1) 50%, rgba(156, 54, 0, 1) 100%) !important; 
+  border: 2px solid #a33921 !important;
+  letter-spacing: 4px !important;
+  font-weight: 600 !important;
+  min-height: 52px !important;
+  min-width: calc(12rem + var(--buttons-border-width) * 2);
+  min-height: calc(4.5rem + var(--buttons-border-width) * 2);
+  text-transform: uppercase;
+  transition: all ease 0.25s;
 }
 
 .button,
