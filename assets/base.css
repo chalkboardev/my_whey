@@ -1558,7 +1558,7 @@ margin-bottom:-7px;
   text-align: center;
   width: 100%;
   color: #ffffff !important;
-  background: #1e534d !important;
+  background:linear-gradient(180deg, rgba(254, 89, 0, 1) 0%, rgba(204, 71, 0, 1) 50%, rgba(156, 54, 0, 1) 100%) !important; 
   transition: all 350ms;
   text-decoration: none !important;
   flex-grow: 1;
@@ -1842,6 +1842,11 @@ margin-bottom:-7px;
   #shopify-section-template--19468501287164__image_with_text_QnRYJR .home_about {
     max-width: none !important;
   }
+
+  #ProductGridContainer  .card-information {
+    height: 62px;
+  }
+
   .card-information {
     height: 20px;
   }
