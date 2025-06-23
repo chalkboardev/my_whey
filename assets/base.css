@@ -749,6 +749,15 @@ margin-top: -10px;
   margin-top: -6px !important;
 }
 
+.brand_div_description  {
+  max-width: 200px;
+}
+@media screen and (min-width: 1600px) {
+  .brand_div_description  {
+    max-width: 50%;
+  }
+}
+
 .footer__list-social > *:first-child a {
   padding-left:0 !important;
 }
