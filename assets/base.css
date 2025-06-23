@@ -1634,6 +1634,7 @@ margin-bottom:-7px;
 
 .collection-list .mw_collection_info a{
   font-size: 20px;
+  text-shadow: 0px 0px 16px #ffffffb8;
   font-weight: 600;
   transition: all ease 0.25s;
 } 
@@ -1642,6 +1643,7 @@ margin-bottom:-7px;
   font-size: 24px;
   font-weight: 600;
   transition: all ease 0.25s;
+  text-shadow: 0px 0px 16px #ffffffb8;
 } 
 
 .search_sub_div {
@@ -1764,6 +1766,37 @@ margin-bottom:-7px;
 
 .footer__content-bottom {
   display: none !important;
+}
+
+.product-tags {
+  display: inline-flex;
+  list-style-type: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10px 0 10px 0;
+}
+
+.product-tags li {
+  font-size: 12px;
+  text-transform: uppercase;
+  height: 24px;
+  display: flex;
+  position: relative;
+  padding: 6px 10px 6px 10px;
+  text-align: center;
+  justify-content: center;
+  background: var(--gradient-background);
+  /* background: #ff512b; */
+  border-radius: 50px;
+  margin: 2px 4px 2px 4px;
+  align-items: center;
+  flex-flow: wrap;
+  align-content: center;
+}
+.product-tags a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #fff;
 }
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
