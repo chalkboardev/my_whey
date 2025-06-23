@@ -50,6 +50,7 @@
       ],
       "settings": {
         "color_scheme": "scheme-1",
+        "footer_bg_image": "",
         "newsletter_enable": true,
         "newsletter_heading": "Subscribe to our newsletters",
         "enable_follow_on_shop": true,
