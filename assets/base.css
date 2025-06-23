@@ -753,6 +753,10 @@ margin-top: -10px;
   padding-left:0 !important;
 }
 
+.footer__list-social {
+  filter: invert(1);
+}
+
 .brand_div_heading {
   font-size: calc(var(--font-heading-scale) * 3rem) !important;
 }
