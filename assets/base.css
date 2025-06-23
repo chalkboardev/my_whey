@@ -754,7 +754,7 @@ margin-top: -10px;
 }
 @media screen and (min-width: 1600px) {
   .brand_div_description  {
-    max-width: 50% !important;
+    max-width: 50%;
   }
 }
 
