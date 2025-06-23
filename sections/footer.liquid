@@ -77,7 +77,7 @@
                 {% endif %}
               >
                 {%- if block.settings.heading != blank -%}
-                  <h2 class="footer-block__heading inline-richtext">{{- block.settings.heading -}}</h2>
+                  <h2 style="color:{{ section.settings.footer_font_color}};font-weight: 600;" class="footer-block__heading inline-richtext">{{- block.settings.heading -}}</h2>
                 {%- endif -%}
 
                 {%- case block.type -%}
@@ -92,7 +92,7 @@
                       <ul class="footer-block__details-content list-unstyled">
                         {%- for link in block.settings.menu.links -%}
                           <li>
-                            <a
+                            <a style="color:{{ section.settings.footer_font_color}};"
                               href="{{ link.url }}"
                               class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}"
                             >
@@ -124,10 +124,10 @@
                         </div>
                       {%- endif -%}
                       {%- if settings.brand_headline != blank -%}
-                        <h2 style="color:{{ settings.footer_font_color }};" class="footer-block__heading brand_div_heading rte">{{ settings.brand_headline }}</h2>
+                        <h2 style="color:{{ section.settings.footer_font_color}};" class="footer-block__heading brand_div_heading rte">{{ settings.brand_headline }}</h2>
                       {%- endif -%}
                       {%- if settings.brand_description != blank -%}
-                        <div class="brand_div_description rte">{{ settings.brand_description }}</div>
+                        <div style="color:{{ section.settings.footer_font_color}};" class="brand_div_description rte">{{ settings.brand_description }}</div>
                       {%- endif -%}
                       {%- if block.settings.show_social and has_social_icons -%}
                         {%- render 'social-icons', class: 'footer__list-social' -%}
@@ -170,11 +170,11 @@
             <div class="footer-block__newsletter">
               {%- if section.settings.newsletter_heading != blank -%}
                 
-                <h2 class="footer-block__heading inline-richtext">
-                  <span class="footer_mail_icon svg-wrapper">
+                <h2 style="color:{{ section.settings.footer_font_color}};" class="footer-block__heading inline-richtext">
+                  <span style="filter:invert(1);" class="footer_mail_icon svg-wrapper">
                     {{- 'icon-mail.svg' | inline_asset_content -}}
                   </span>
-                  <span class="footer_newsletter_txt">
+                  <span style="color:{{ section.settings.footer_font_color}};" class="footer_newsletter_txt">
                     {{ section.settings.newsletter_heading }}
                   </span>
                   </h2>
@@ -307,7 +307,7 @@
       </div>
     </div>
     <div class="footer__content-bottom-wrapper page-width{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
-      <div class="footer__copyright caption">
+      <div style="color:{{ section.settings.footer_font_color}};" class="footer__copyright caption">
         <small class="copyright__content"
           >&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}
         </small>
