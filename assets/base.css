@@ -586,6 +586,8 @@ margin-top: -10px;
 }
 
 .button_secondary {
+  min-width: 280px;
+  letter-spacing: 2px;
   display: inline-flex;
   flex-basis: max-content;
   font-size: 14px;
@@ -598,8 +600,8 @@ margin-top: -10px;
   text-align: center;
   position: relative;
   color: #ffffff;
-  background: #333;
-  border: 2px solid #333;
+  background:linear-gradient(180deg, rgba(254, 89, 0, 1) 0%, rgba(204, 71, 0, 1) 50%, rgba(156, 54, 0, 1) 100%) !important; 
+  border: 1px solid #a33921 !important;
   text-decoration: none;
     transition: all 350ms;
 }
@@ -618,8 +620,8 @@ margin-top: -10px;
   text-align: center;
   position: relative;
   color: #ffffff;
-  background: #1e534d;
-  border: 2px solid #333;
+  background:linear-gradient(180deg, rgba(254, 89, 0, 1) 0%, rgba(204, 71, 0, 1) 50%, rgba(156, 54, 0, 1) 100%) !important; 
+  border: 1px solid #a33921 !important;
   text-decoration: none; 
     transition: all 350ms;
 }
@@ -629,7 +631,9 @@ margin-top: -10px;
 }
 
 .button_secondary:hover {
-  color: #333;
+  min-width: 280px;
+  letter-spacing: 4px;
+  color: #fff;
   background: #fff;
   border: 2px solid #1e534d;
   text-decoration: none;
@@ -967,7 +971,7 @@ margin-top: -10px;
   }
 
   .add_to_cart_btn {
-    min-height: 52px !important;
+    min-height: 48px !important;
     border: 1px solid #333 !important;
     letter-spacing: 2px !important;
     border-radius: 30px !important;
@@ -977,7 +981,7 @@ margin-top: -10px;
   }
 
   .add_to_cart_btn:hover {
-    min-height: 52px !important;
+    min-height: 48px !important;
     border: 1px solid #333 !important;
     letter-spacing: 4px !important;
     border-radius: 30px !important;
@@ -987,7 +991,7 @@ margin-top: -10px;
   }
 
   .product-form__submit {
-    transition: all ease 0.25s;
+    transition: all ease 0.25s !important;
   }
 
   .product__description {
@@ -1826,6 +1830,9 @@ margin-bottom:-7px;
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .product__column-sticky {
+    position: unset !important;
+  }
   .collection-list .mw_collection_info a {
     font-size:18px;
   }
@@ -2620,7 +2627,7 @@ margin-bottom:-7px;
   }
 }
 
- .product__column-sticky {
+.product__column-sticky {
   position: sticky;
     top: 11rem;
 }
