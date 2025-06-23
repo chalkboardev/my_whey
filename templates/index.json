@@ -372,7 +372,7 @@
         "font_color": "#ffffff",
         "scroll_time": "20",
         "margin_top": 10,
-        "margin_bottom": 10,
+        "margin_bottom": 0,
         "mobile_margin_top": 0,
         "mobile_margin_bottom": 0,
         "font_size": 18,
@@ -382,6 +382,35 @@
         "padding_bottom": 0,
         "m_padding_top": 0,
         "m_padding_bottom": 0
+      }
+    },
+    "featured_collection_3CGfTT": {
+      "type": "featured-collection",
+      "name": "Featured collection 2",
+      "settings": {
+        "title": "OUR RANGE",
+        "heading_size": "h2",
+        "description": "<p><strong>Protein Power</strong></p>",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "protein",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "link",
+        "enable_desktop_slider": true,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 56,
+        "padding_bottom": 36
       }
     },
     "image_with_text_QnRYJR": {
@@ -454,6 +483,7 @@
     "custom_marquee_nigaHz",
     "multicolumn_new_9dH7mP",
     "custom_marquee_AazeML",
+    "featured_collection_3CGfTT",
     "image_with_text_QnRYJR"
   ]
 }
