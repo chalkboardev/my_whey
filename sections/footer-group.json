@@ -50,8 +50,8 @@
       ],
       "settings": {
         "color_scheme": "scheme-1",
-        "footer_bg_image": "shopify://shop_images/backD.jpg",
-        "footer_font_color": "#fff",
+        "footer_bg_image": "shopify://shop_images/pattern_a3eeca96-5468-48ce-908f-fbd54074f7c3.jpg",
+        "footer_font_color": "#ffffff",
         "newsletter_enable": true,
         "newsletter_heading": "Subscribe to our newsletters",
         "enable_follow_on_shop": true,
