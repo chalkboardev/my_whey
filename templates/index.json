@@ -291,6 +291,7 @@
         "column_zHRfKn",
         "column_NqzhFD"
       ],
+      "name": "Why My Whey | New Multicolumn",
       "settings": {
         "title": "Why My Whey",
         "heading_size": "h2",
@@ -453,6 +454,7 @@
         "text_g9TVie",
         "button_TDVLLQ"
       ],
+      "name": "About | Image with text",
       "settings": {
         "image": "shopify://shop_images/my-whey.gif",
         "height": "adapt",
