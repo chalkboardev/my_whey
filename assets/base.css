@@ -2496,6 +2496,17 @@ margin-bottom:-7px;
     text-align: center;
     align-items: center;
   } 
+  .collection-list .mw_collection_info a{
+    font-size: 40px;
+    font-weight: 600;
+    transition: all ease 0.25s;
+  } 
+  
+  .collection-list .mw_collection_info a:hover{
+    font-size: 44px;
+    font-weight: 600;
+    transition: all ease 0.25s;
+  } 
 }
 
 /* ---------- EXTRA LARGE SCREEN 1440px START ---------- */
