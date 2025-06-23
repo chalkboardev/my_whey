@@ -2497,13 +2497,13 @@ margin-bottom:-7px;
     align-items: center;
   } 
   .collection-list .mw_collection_info a{
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 500;
     transition: all ease 0.25s;
   } 
   
   .collection-list .mw_collection_info a:hover{
-    font-size: 44px;
+    font-size: 34px;
     font-weight: 500;
     transition: all ease 0.25s;
   } 
