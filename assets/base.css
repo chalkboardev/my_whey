@@ -1640,6 +1640,7 @@ margin-bottom:-7px;
 .collection-hero__inner {
   /* display: unset !important; */
   align-items: flex-start;
+  justify-content: center;
   flex-direction: column;
 }
 
@@ -3408,7 +3409,7 @@ summary::-webkit-details-marker {
   }
   
   .collection .slider.slider--tablet {
-    margin-bottom: 3.5rem;
+    margin-bottom: 2.5rem;
   }
 
   .slider--tablet.grid--peek {

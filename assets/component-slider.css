@@ -102,6 +102,13 @@ slider-component.slider-component-full-width {
     margin-left: calc(-1 * var(--grid-desktop-horizontal-spacing));
   }
 
+  /* ---------- ONLY MOBILE ONLY START ---------- */ 
+@media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .mw_collection_div .slider.slider--tablet .slider__slide {
+    margin-bottom: 12px !important;
+  }
+}
+
   .slider.slider--tablet .slider__slide {
     margin-bottom: 0;
     padding-top: max(var(--focus-outline-padding), var(--shadow-padding-top));
