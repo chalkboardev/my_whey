@@ -1610,7 +1610,10 @@ margin-bottom:-7px;
   display: flex;
 }
 .mw_header_img_txt {
-  background: #ffffffb8;
+  background:linear-gradient(180deg, rgba(254, 89, 0, 1) 0%, rgba(204, 71, 0, 1) 50%, rgba(156, 54, 0, 1) 100%) !important; 
+  border: 0px solid #a33921 !important;
+  color: #fff;
+  font-weight: 600;
   border-radius: 9px;
   padding: 2rem;
 }
