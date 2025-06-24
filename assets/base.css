@@ -1574,7 +1574,7 @@ margin-bottom:-7px;
   display: flex;
   justify-self: center;
   text-transform: uppercase;
-  color: #ecf991;
+  color: #fff;
   letter-spacing: 1px;
 }
 
@@ -1828,6 +1828,7 @@ margin-bottom:-7px;
   color: #fff;
 }
 
+
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .product__column-sticky {
@@ -1843,8 +1844,13 @@ margin-bottom:-7px;
     max-width: none !important;
   }
 
-  #ProductGridContainer  .card-information {
+  #ProductGridContainer .card-information {
     height: 62px;
+  }
+
+  #ProductGridContainer .card-wrapper {
+    padding: 1rem 1rem 0rem 1rem;
+    transition: all .3s ease !important;
   }
 
   .card-information {
