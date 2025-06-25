@@ -2,7 +2,7 @@
 
 {%- style -%}
   .section-{{ section.id }}-padding {
-    {%- if section.settings.image != blank -%} 
+    {%- if section.settings.contact_image != blank -%} 
     background-size:cover !important;background: url('{{ section.settings.contact_image | image_url }}') no-repeat 100% {{ section.settings.ctct_bg_height_position }}%/100%; 
     {%- endif -%}
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
