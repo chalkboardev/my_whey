@@ -13,9 +13,9 @@
       "type": "main-collection-banner",
       "settings": {
         "show_collection_description": true,
-        "image": "shopify://shop_images/mw_products_header.jpg",
+        "image": "shopify://shop_images/exercise-free-weights.jpg",
         "background_height_position": 0,
-        "show_collection_image": true,
+        "show_collection_image": false,
         "color_scheme": "scheme-1"
       }
     },
