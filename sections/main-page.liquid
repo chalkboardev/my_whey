@@ -2,6 +2,7 @@
 
 {%- style -%}
   .section-{{ section.id }}-padding {
+    background: url('{{ section.settings.contact_image | image_url }}');
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
@@ -52,6 +53,21 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
+    },
+    {
+      "type": "image_picker",
+      "id": "contact_image",
+      "label": "Contact Header Image"
+    },
+    {
+      "type": "range",
+      "id": "ctct_bg_height_position",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "Background Height Position",
+      "default": 80
     }
   ]
 }
