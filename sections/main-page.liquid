@@ -15,7 +15,7 @@
 {%- endstyle -%}
 
 <div style="{%- if section.settings.image != blank -%} 
-  background-size:cover !important;background: url('{{ section.settings.image | image_url }}') no-repeat 100% {{ section.settings.background_height_position }}%/100%; 
+  background-size:cover !important;background: url('{{ section.settings.background_image | image_url }}') no-repeat 100% {{ section.settings.bg_height_position }}%/100%; 
 {%- endif -%}" class="page-width page-width--narrow section-{{ section.id }}-padding">
   <h1 class="main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
     {{ page.title | escape }}
