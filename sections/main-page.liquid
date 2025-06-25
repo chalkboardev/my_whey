@@ -4,6 +4,9 @@
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    {%- if section.settings.image != blank -%} 
+  background-size:cover !important;background: url('{{ section.settings.background_image | image_url }}') no-repeat 100% {{ section.settings.bg_height_position }}%/100%; 
+{%- endif -%}
   }
 
   @media screen and (min-width: 750px) {
