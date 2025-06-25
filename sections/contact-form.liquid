@@ -2,7 +2,7 @@
 
 {%- style -%}
   .section-{{ section.id }}-padding {
-    background: url('{{ section.settings.contact_image | image_url }}')
+    background: url('{{ section.settings.contact_image | image_url }}');
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
