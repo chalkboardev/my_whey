@@ -123,7 +123,8 @@
           {{- form.body -}}
         </textarea>
         <label class="form__label field__label" for="ContactForm-body">
-          {{- 'templates.contact.form.comment' | t -}}
+          {% comment %} {{- 'templates.contact.form.comment' | t -}}  {% endcomment %}
+          Message
         </label>
       </div>
       <div class="center contact__button">
