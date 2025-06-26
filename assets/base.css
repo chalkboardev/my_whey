@@ -1857,8 +1857,9 @@ margin-bottom:-7px;
   color: #fff;
 }
 
-.contacts_button {
-  min-width: 280px;
+.contact_button {
+  min-width: 280px !important;
+  border-radius:50px !important;
 }
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 

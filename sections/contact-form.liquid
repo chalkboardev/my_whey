@@ -127,7 +127,7 @@
         </label>
       </div>
       <div class="center contact__button">
-        <button style="min-width: 280px;" type="submit" class="color-{{ section.settings.color_scheme }} gradient contacts_button button">
+        <button type="submit" class="color-{{ section.settings.button_color_scheme }} gradient contact_button button">
           {{ 'templates.contact.form.send' | t }}
         </button>
       </div>
@@ -183,6 +183,12 @@
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
       "default": "scheme-1"
+    },
+    {
+      "type": "color_scheme",
+      "id": "button_color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-5"
     },
     {
       "type": "header",
