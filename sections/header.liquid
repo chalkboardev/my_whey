@@ -952,6 +952,7 @@ transform: scale(1.03);
                     {%- else -%}  
                       <li>
                     {% endif %}
+
                    
                       <a
                         id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
@@ -966,6 +967,7 @@ transform: scale(1.03);
                       {%- if childlink.links != blank -%}
                         <ul class="list-unstyled" role="list">
                           {%- for grandchildlink in childlink.links -%}
+
                             {%- if childlink.title == "SHOP" -%}
                                   <li>
                                     <a style="font-size: 16px;text-transform: uppercase;letter-spacing: 2px;margin-bottom: 8px;"
@@ -979,6 +981,19 @@ transform: scale(1.03);
                                       {{ grandchildlink.title | escape }}
                                     </a>
                                   </li>
+                            {%   elsif childlink.title == "BY GOAL" -%}
+                                <li>
+                                  <a
+                                    id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
+                                    href="{{ grandchildlink.url }}"
+                                    class="goal_menu_items menu_link_a mega-menu__link link{% if grandchildlink.current %} mega-menu__link--active{% endif %}"
+                                    {% if grandchildlink.current %}
+                                      aria-current="page"
+                                    {% endif %}
+                                  >
+                                    {{ grandchildlink.title | escape }}
+                                  </a>
+                                </li>
                             {%- else -%}  
                                 <li>
                                   <a

@@ -390,22 +390,35 @@
 <script>	
   
 // --------- COMMENT THIS BELOW TO WORK ON MEGA MENU - AND DISABLE HOVER OPEN ----------
-let items = document.querySelector(".header__inline-menu").querySelectorAll("details");
-  //console.log(items)
-items.forEach(item => {
-    item.addEventListener("mouseover", (e) => {
-      let close = false;
-      //console.log(e.target.classList);
-      item.setAttribute("open", true);
-      item.querySelector("ul").addEventListener("mouseleave", () => {
-        close = true;
-        item.removeAttribute("open");
-      });
-        item.addEventListener("mouseleave", () => {
-          item.removeAttribute("open");
-        });
-    });
-});
+// let items = document.querySelector(".header__inline-menu").querySelectorAll("details");
+//   //console.log(items)
+// items.forEach(item => {
+//     item.addEventListener("mouseover", (e) => {
+//       let close = false;
+//       //console.log(e.target.classList);
+//       item.setAttribute("open", true);
+//       item.querySelector("ul").addEventListener("mouseleave", () => {
+//         close = true;
+//         item.removeAttribute("open");
+//       });
+//         item.addEventListener("mouseleave", () => {
+//           item.removeAttribute("open");
+//         });
+//     });
+// });
+
+
+// --- To split up the By Goal menu items ---
+// let items = document.querySelectorAll(".goal_menu_items")
+// console.log({
+//   megamenu: items
+// })
+
+// items.forEach(item => {
+//    const content = item.textContent
+//    console.log(content);
+//    $("#goal_menu_itemz").append('<span>' + content + '</span>')
+// });
 
 
 $(document).ready(function(){
