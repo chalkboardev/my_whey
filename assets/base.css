@@ -2601,6 +2601,9 @@ margin-bottom:-7px;
   .mega-menu[open] .mega-menu__content {
     padding: 2rem 2rem 3rem 3rem !important;
   }
+  .last_image_mutli .multicolumn-card-spacing {
+    margin-right: 0 !important;
+  }
   .cart_count {
     position: absolute;
     left: 27%;
@@ -2671,8 +2674,21 @@ margin-bottom:-7px;
 
 /* ---------- EXTRA LARGE SCREEN 1440px START ---------- */
 @media screen and (min-width: 1440px) {
+  .my_multicolumn .multicolumn-card__image {
+    width: 100% !important;
+    object-fit: cover;
+    object-position: 100% 100%;
+  }
+  .my_multicolumn .media > *:not(.zoom):not(.deferred-media__poster-button), .media model-viewer {
+    width: 100% !important;
+    right: 0;
+    left:0;
+  }
   .last_image_mutli .media--adapt {
-    padding-bottom: 65rem !important;
+    padding-bottom: 65.7rem !important;
+  }
+  .last_image_mutli .multicolumn-card-spacing {
+    margin-right: 0 !important;
   }
   .mega-menu[open] .mega-menu__content {
     padding: 2rem 4rem 3rem 5rem !important;
@@ -2690,6 +2706,12 @@ margin-bottom:-7px;
 
 /* ---------- EXTRA EXTRA WIDE SCREEN 1600px START ---------- */
 @media screen and (min-width: 1600px) {
+  .last_image_mutli .media--adapt {
+    padding-bottom: 65.8rem !important;
+  }
+  .last_image_mutli .multicolumn-card-spacing {
+    margin-right: 0 !important;
+  }
   .mw_image_with_text_media {
     max-width: 400px !important;
   }
@@ -2711,10 +2733,9 @@ margin-bottom:-7px;
   }
 
   .my_multicolumn .multicolumn-card__image {
-    width: 96% !important;
+    width: 100% !important;
     object-fit: cover;
-    object-position: 100% 0%;
-    border-radius: 12px;
+    object-position: 100% 100%;
   }
 }
 
