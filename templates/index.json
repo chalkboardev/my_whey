@@ -50,6 +50,7 @@
         },
         "video_7VPAtJ": {
           "type": "video",
+          "disabled": true,
           "settings": {
             "video_link": "https://cdn.shopify.com/videos/c/o/v/a487343da3b24ea5a0666c2edc7e7d82.mp4",
             "video_image": "shopify://shop_images/vid_cover_3f3750a9-244b-4336-b9c0-b9c58b6aff53.jpg",
