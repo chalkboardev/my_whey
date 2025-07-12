@@ -16,7 +16,7 @@
           "type": "image",
           "settings": {
             "color_bg": "#ffffff",
-            "image_bg": "shopify://shop_images/mw_bulk_wallpaper5.jpg",
+            "image_bg": "shopify://shop_images/mw_bulk_wallpaper5_21a59b4c-4fa9-4e2e-855a-298cf8d20647.jpg",
             "overlay_opacity": 0,
             "desktop_content_position": "header-middle-left",
             "title": "Bulk Supplements",
@@ -34,7 +34,6 @@
           "type": "image",
           "settings": {
             "color_bg": "#ffffff",
-            "image_bg": "shopify://shop_images/mw_bulk_wallpaper5_3c5e81b8-c411-46ed-9a34-86e4a32e9b6e.jpg",
             "overlay_opacity": 0,
             "desktop_content_position": "header-middle-left",
             "title": "Bulk Vitamins",
