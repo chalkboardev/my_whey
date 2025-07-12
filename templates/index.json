@@ -15,8 +15,8 @@
         "image_TmpTe7": {
           "type": "image",
           "settings": {
-            "color_bg": "#16165b",
-            "image_bg": "shopify://shop_images/mw_bulk_wallpaper3_a61f2b43-a285-415c-b368-dc8a8b1865d0.jpg",
+            "color_bg": "#ffffff",
+            "image_bg": "shopify://shop_images/mw_bulk_wallpaper5.jpg",
             "overlay_opacity": 0,
             "desktop_content_position": "header-middle-left",
             "title": "Bulk Supplements",
