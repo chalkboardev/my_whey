@@ -12,21 +12,22 @@
     "custom_slideshow_wMQLCP": {
       "type": "custom-slideshow",
       "blocks": {
-        "video_7VPAtJ": {
-          "type": "video",
+        "image_TmpTe7": {
+          "type": "image",
           "settings": {
-            "video_link": "https://cdn.shopify.com/videos/c/o/v/a487343da3b24ea5a0666c2edc7e7d82.mp4",
-            "video_image": "shopify://shop_images/vid_cover_3f3750a9-244b-4336-b9c0-b9c58b6aff53.jpg",
+            "color_bg": "#16165b",
+            "image_bg": "shopify://shop_images/mw_bulk_wallpaper3_a61f2b43-a285-415c-b368-dc8a8b1865d0.jpg",
+            "overlay_opacity": 0,
             "desktop_content_position": "header-middle-left",
             "title": "My Whey",
-            "text": "<p>Your <strong>Bulk Supplier</strong> of c<strong>lean, curated, premium</strong> supplements and vitamins.</p>",
+            "text": "<p>On demand <strong>Bulk Supplements &</strong> <strong>Vitamins</strong>.</p>",
             "color_text": "#ffffff",
-            "button_video_label_1": "Shop Categories",
-            "button_link_video_1": "shopify://collections",
-            "color_scheme_video_btn_1": "scheme-5",
-            "button_video_label_2": "",
-            "button_link_video_2": "",
-            "color_scheme_video_btn_2": "scheme-2"
+            "img_button_1_label": "Hello",
+            "img_button_1_link": "#",
+            "img_button_1_color_scheme": "scheme-5",
+            "img_button_2_label": "",
+            "img_button_2_link": "",
+            "img_button_2_color_scheme": "scheme-5"
           }
         },
         "image_kpaBih": {
@@ -46,11 +47,29 @@
             "img_button_2_link": "shopify://collections/all",
             "img_button_2_color_scheme": "scheme-5"
           }
+        },
+        "video_7VPAtJ": {
+          "type": "video",
+          "settings": {
+            "video_link": "https://cdn.shopify.com/videos/c/o/v/a487343da3b24ea5a0666c2edc7e7d82.mp4",
+            "video_image": "shopify://shop_images/vid_cover_3f3750a9-244b-4336-b9c0-b9c58b6aff53.jpg",
+            "desktop_content_position": "header-middle-left",
+            "title": "My Whey",
+            "text": "<p>Your <strong>Bulk Supplier</strong> of c<strong>lean, curated, premium</strong> supplements and vitamins.</p>",
+            "color_text": "#ffffff",
+            "button_video_label_1": "Shop Categories",
+            "button_link_video_1": "shopify://collections",
+            "color_scheme_video_btn_1": "scheme-5",
+            "button_video_label_2": "",
+            "button_link_video_2": "",
+            "color_scheme_video_btn_2": "scheme-2"
+          }
         }
       },
       "block_order": [
-        "video_7VPAtJ",
-        "image_kpaBih"
+        "image_TmpTe7",
+        "image_kpaBih",
+        "video_7VPAtJ"
       ],
       "settings": {}
     },
