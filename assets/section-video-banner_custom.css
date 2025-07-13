@@ -440,7 +440,6 @@
 .videoBackground .videoBoxInfoTitle, .videoBackground .imageBoxInfoTitle {
   font-size: 5rem;
   font-weight: 800 !important;
-  line-height: inherit;
 }
 
 
@@ -504,7 +503,6 @@
     font-size: 3.2rem !important;
     text-shadow: 0 0 3px #4b4b4b;
     font-weight: 800 !important;
-    line-height: 40px;
   }
 
   .videoBackground .videoBoxInfoDescription, .videoBackground .imageBoxInfoDescription {
