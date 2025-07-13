@@ -504,9 +504,9 @@
     font-size: 3rem !important;
     text-shadow: 0 0 3px #4b4b4b;
     font-weight: 800 !important;
-    height: 40px;
-    line-height: 0;
-    padding: 0 0 0 4px;
+    height: 26px;
+    line-height: 40px;
+    padding: 0 0 14px 4px;
   }
 
   .videoBackground .videoBoxInfoDescription, .videoBackground .imageBoxInfoDescription {
