@@ -266,11 +266,21 @@
   body {
   /* font-family: "Inter", sans-serif !important; */
   }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .videoBackground .videoBoxInfoTitle, .videoBackground .imageBoxInfoTitle {
-    font-size: 3rem !important;
+    font-size: 3rem;
     font-weight: 800 !important;
     line-height: 40px;
   }
+}
+
+@media screen and (max-width: 749px) {
+  .videoBackground .videoBoxInfoTitle, .videoBackground .imageBoxInfoTitle {
+    font-size: 3rem;
+    font-weight: 800 !important;
+    line-height: 40px;
+  }
+}
   </style>
     {{ 'base.css' | asset_url | stylesheet_tag }}
     <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
