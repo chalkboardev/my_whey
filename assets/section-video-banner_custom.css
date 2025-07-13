@@ -482,6 +482,21 @@
   line-height: 40px;
 }
 
+@media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .videoBackground .videoBoxInfoTitle, .videoBackground .imageBoxInfoTitle {
+    font-size: 3rem !important;
+    font-weight: 800 !important;
+    line-height: 40px;
+  }
+}
+
+ @media (max-width: 768px) {
+  .videoBackground .videoBoxInfoTitle, .videoBackground .imageBoxInfoTitle {
+    font-size: 3rem !important;
+    font-weight: 800 !important;
+    line-height: 40px;
+  }
+}
 /*
 // START Normal MOBILE devices (portrait phones)
 */
