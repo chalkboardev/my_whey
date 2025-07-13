@@ -1892,7 +1892,7 @@ margin-bottom:-7px;
   transition: all 0.25s !important;
 }
 
-..quick-add-modal__content-info {
+.quick-add-modal__content-info {
   margin-top: -8rem;
 }
 
