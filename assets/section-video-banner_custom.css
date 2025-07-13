@@ -482,6 +482,8 @@
   line-height: 40px;
 }
 
+
+
 /*
 // START Normal MOBILE devices (portrait phones)
 */
@@ -489,7 +491,7 @@
 
 
   .videoBackground .videoBoxInfoTitle, .videoBackground .imageBoxInfoTitle {
-    font-size: 3rem !important;
+    font-size: 3rem;
     font-weight: 800 !important;
     line-height: 40px;
   }
