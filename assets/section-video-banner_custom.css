@@ -287,45 +287,7 @@
   z-index: 1;
  }
 
-.videoBackground .videoBoxInfoBtn, .videoBackground .imageBoxInfoBtn {
-  margin-right: 6px;
-  border: 2px solid #ff512b99 !important;
-  transition: all ease 0.5s;
-  appearance: none;
-  display: inline-block;
-  width: auto;
-  text-decoration: none;
-  text-align: center;
-  vertical-align: middle;
-  cursor: pointer;
-  text-shadow: 1px 1px 8px #313131;
-  border-radius: 30px;
-  padding:0;
-  font-style: normal;
-  font-weight: bolder;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  white-space: normal;
-  font-size: 16px;
-  margin-top: 10px;
-  background: var(--gradient-background);
-  transform: translateY(0px);
-  letter-spacing: 2px;
-  transition: all ease 0.25s;
-}
 
-
-.videoBackground .videoBoxInfoBtn:hover,.videoBackground .imageBoxInfoBtn:hover {
-  border: 2px solid #ff512b !important;
-  text-shadow: 0 0 3px #2e2e2e;
-  background: #ffffff1c;
-  /* letter-spacing: 4px !important; */
-  color: #fff !important;
-  backdrop-filter: blur(10px);
-  transform: translateY(0px);
-  letter-spacing: 3px;
-  transition: all ease 0.25s;
-}
 
 
 .videoBackground .videoBoxInfoDescription, .videoBackground .imageBoxInfoDescription {
