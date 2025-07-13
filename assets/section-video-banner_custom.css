@@ -505,13 +505,13 @@
     text-shadow: 0 0 3px #4b4b4b;
     font-weight: 800 !important;
     height: 18px !important;
-    line-height: inherit !important;
+    line-height: 0;
     padding: 0 0 14px 4px;
   }
 
   .videoBackground .videoBoxInfoDescription, .videoBackground .imageBoxInfoDescription {
     max-width: 500px;
-    margin-top: -20px !important;
+    /* margin-top: -20px !important; */
     /* margin: 0 auto; */
   }
 
