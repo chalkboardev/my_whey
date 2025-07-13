@@ -503,13 +503,13 @@
     font-size: 3rem !important;
     text-shadow: 0 0 3px #4b4b4b;
     font-weight: 800 !important;
-    line-height: 0px;
+    line-height: 4px;
     padding: 0 0 0 4px;
   }
 
   .videoBackground .videoBoxInfoDescription, .videoBackground .imageBoxInfoDescription {
     max-width: 500px;
-    /* margin-top: -20px !important; */
+    margin-top: -20px !important;
     margin: 0 auto;
   }
 
