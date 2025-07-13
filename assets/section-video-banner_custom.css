@@ -433,11 +433,6 @@
 
 
 
-.videoBackground .videoBoxInfoTitle, .videoBackground .imageBoxInfoTitle {
-  font-size: 3rem;
-  font-weight: 800 !important;
-  line-height: 40px;
-}
 
 .videoBackground .imageBox {
   display: flex;
@@ -480,11 +475,26 @@
   width: 100%;
 }
 
+
+.videoBackground .videoBoxInfoTitle, .videoBackground .imageBoxInfoTitle {
+  font-size: 5rem;
+  font-weight: 800 !important;
+  line-height: 40px;
+}
+
 /*
 // START Normal MOBILE devices (portrait phones)
 */
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
 
+
+  .videoBackground .videoBoxInfoTitle, .videoBackground .imageBoxInfoTitle {
+    font-size: 3rem !important;
+    font-weight: 800 !important;
+    line-height: 40px;
+  }
+
+  
   .videoBackground .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
     bottom: var(--swiper-pagination-bottom, 15%);
     top: var(--swiper-pagination-top, auto);
