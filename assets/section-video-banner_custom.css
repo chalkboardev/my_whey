@@ -287,9 +287,6 @@
   z-index: 1;
  }
 
-
-
-
 .videoBackground .videoBoxInfoDescription, .videoBackground .imageBoxInfoDescription {
   max-width: 500px;
   margin-top: -20px !important;
@@ -307,13 +304,8 @@
   margin: 0 auto;
 }
    
-@media screen and (max-width: 767px) {
-
-  .videoBackground .videoBoxInfoDescription, .videoBackground .imageBoxInfoDescription {
-    max-width: 500px;
-    margin-top: -20px !important;
-    /* margin: 0 auto; */
-  }
+@media screen and (max-width: 768px) {
+  
    
   .main-content .videoBackground {
       margin-top: -35px;
