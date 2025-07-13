@@ -265,6 +265,7 @@
 }
    
 .videoBackground .videoBoxInfo, .videoBackground .imageBoxInfo {
+  margin-top: -4rem !important;
   align-items: center;
   position: relative;
   display: flex;
@@ -483,26 +484,6 @@
 }
 
 
-
-
-/*
-// START Everything below desktop
-*/
-@media (max-width: 768px) {
-
-}
-
-
-
-/*
-// START Normal MOBILE devices (portrait phones)
-*/
-@media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
-
-
-
-}
-
 @media screen and (min-width: 750px) {
   .banner__media {
     height: 100%;
@@ -596,7 +577,7 @@
     top: 0;
     width: 150%;
   }
-  
+
   .banner--mobile-bottom .banner__media {
     position: relative;
   }
