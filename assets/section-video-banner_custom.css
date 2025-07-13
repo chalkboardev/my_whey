@@ -504,8 +504,8 @@
     font-size: 3rem !important;
     text-shadow: 0 0 3px #4b4b4b;
     font-weight: 800 !important;
-    height: 26px;
-    line-height: 40px;
+    height: 32px !important;
+    line-height: inherit !important;
     padding: 0 0 14px 4px;
   }
 
