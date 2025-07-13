@@ -1896,6 +1896,10 @@ margin-bottom:-7px;
   margin-top: -8rem;
 }
 
+.videoBackground .imageBox {
+  background-position: center !important;
+}
+
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .product__column-sticky {
