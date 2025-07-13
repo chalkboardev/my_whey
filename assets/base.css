@@ -2335,6 +2335,13 @@ margin-bottom:-7px;
 }
 
 @media screen and (max-width: 749px) {
+  .videoBackground .videoBoxInfoTitle, .videoBackground .imageBoxInfoTitle {
+    font-size: 3rem !important;
+    text-shadow: 0 0 3px #4b4b4b;
+    font-weight: 800 !important;
+    line-height: 40px;
+    padding: 0 0 0 4px;
+}
   .collection-hero--with-image .collection-hero__inner {
     padding-bottom: calc(4px + 2rem);
     padding-top: calc(4px + 1rem);
