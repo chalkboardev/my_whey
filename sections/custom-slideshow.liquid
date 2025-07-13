@@ -127,7 +127,7 @@
    
   {% else %}
     
-  <div class="imageBox" style="background-position:{{ block.settings.mobile_x_position }} 50%;background-color: {{ block.settings.color_bg }}; {%- if block.settings.image_bg != blank -%}background-image: url('{{ block.settings.image_bg | img_url: 'master' }}');{%- endif -%}">
+  <div class="imageBox" style="background-position:{{ block.settings.mobile_x_position }}% 50%;background-color: {{ block.settings.color_bg }}; {%- if block.settings.image_bg != blank -%}background-image: url('{{ block.settings.image_bg | img_url: 'master' }}');{%- endif -%}">
    
    
   <div class="imageBoxInfo_padding imageBoxInfo {{ block.settings.desktop_content_position }} ">
