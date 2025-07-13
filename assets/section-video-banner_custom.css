@@ -482,27 +482,13 @@
   line-height: 40px;
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
-  .videoBackground .videoBoxInfoTitle, .videoBackground .imageBoxInfoTitle {
-    font-size: 3rem !important;
-    font-weight: 800 !important;
-    line-height: 40px;
-  }
-}
 
- @media (max-width: 768px) {
-  .videoBackground .videoBoxInfoTitle, .videoBackground .imageBoxInfoTitle {
-    font-size: 3rem !important;
-    font-weight: 800 !important;
-    line-height: 40px;
-  }
-}
+
+
 /*
-// START Normal MOBILE devices (portrait phones)
+// START Everything below desktop
 */
-@media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
-
-
+@media (max-width: 768px) {
   .videoBackground .videoBoxInfoTitle, .videoBackground .imageBoxInfoTitle {
     font-size: 3rem;
     font-weight: 800 !important;
@@ -588,6 +574,17 @@
     top: 0;
     width: 150%;
   }
+}
+
+
+
+/*
+// START Normal MOBILE devices (portrait phones)
+*/
+@media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+
+
+
 }
 
 @media screen and (min-width: 750px) {
