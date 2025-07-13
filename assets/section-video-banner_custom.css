@@ -308,6 +308,12 @@
 }
    
 @media screen and (max-width: 767px) {
+
+  .videoBackground .videoBoxInfoDescription, .videoBackground .imageBoxInfoDescription {
+    max-width: 500px;
+    margin-top: -20px !important;
+    /* margin: 0 auto; */
+  }
    
   .main-content .videoBackground {
       margin-top: -35px;
