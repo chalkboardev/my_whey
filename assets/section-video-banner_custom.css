@@ -265,7 +265,7 @@
 }
    
 .videoBackground .videoBoxInfo, .videoBackground .imageBoxInfo {
-  margin-top: -4rem !important;
+  margin-top: -6rem !important;
   align-items: center;
   position: relative;
   display: flex;
@@ -289,7 +289,7 @@
 
 .videoBackground .videoBoxInfoDescription, .videoBackground .imageBoxInfoDescription {
   max-width: 500px;
-  margin-top: -20px;
+  margin-top: -34px;
   /* margin: 0 auto; */
 }
 
