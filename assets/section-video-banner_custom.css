@@ -505,6 +505,7 @@
     text-shadow: 0 0 3px #4b4b4b;
     font-weight: 800 !important;
     height: 40px;
+    line-height: 0;
     padding: 0 0 0 4px;
   }
 
