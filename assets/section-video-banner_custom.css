@@ -509,8 +509,8 @@
 
   .videoBackground .videoBoxInfoDescription, .videoBackground .imageBoxInfoDescription {
     max-width: 500px;
-    margin-top: -6px !important;
-    /* margin: 0 auto; */
+    /* margin-top: 0px !important; */
+    margin: 0 auto;
   }
 
   .videoBackground .videoBoxInfoDescription p, .videoBackground .imageBoxInfoDescription p {
