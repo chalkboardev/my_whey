@@ -289,7 +289,8 @@
 
 .videoBackground .videoBoxInfoDescription, .videoBackground .imageBoxInfoDescription {
   max-width: 500px;
-  margin-top: -34px;
+  margin-top: -44px;
+  padding-left: 6px;
   /* margin: 0 auto; */
 }
 
@@ -440,6 +441,7 @@
 .videoBackground .videoBoxInfoTitle, .videoBackground .imageBoxInfoTitle {
   font-size: 5rem;
   font-weight: 800 !important;
+  padding-left: 6px;
 }
 
 
