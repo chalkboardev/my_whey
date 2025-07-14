@@ -479,7 +479,7 @@
       ],
       "name": "About | Image with text",
       "settings": {
-        "image": "shopify://shop_images/my-whey.gif",
+        "image": "shopify://shop_images/poster7b.jpg",
         "height": "adapt",
         "desktop_image_width": "small",
         "layout": "image_first",
