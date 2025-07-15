@@ -1,14 +1,6 @@
 {% comment %} <a id="click_{{ section.settings.trigger }}" href="#{{ section.settings.trigger }}" class="">Open Popup</a> {% endcomment %}
 <span id="click_{{ section.settings.trigger }}" href="#{{ section.settings.trigger }}" class="">Open Popup</span>
 
-{% if customer.metafields.subscriptions.status == 'active' %}
-  <p>You are currently subscribed!</p>
-{% elsif customer.metafields.subscriptions.status == 'cancelled' %}
-  <p>Your subscription has been cancelled.</p>
-{% else %}
-  <p>You do not have an active subscription.</p>
-{% endif %}
-
 {% if customer.tags contains 'newsletter' %}
   <p>This content is visible to customers with the tag 'newsletter'.</p>
 {% endif %}
@@ -17,7 +9,8 @@
   <p>Customer tag: {{ tag }}</p>
 {% endfor %}
 
-{% if customer.has_account %}
+{% comment %} {% if customer.has_account %} {% endcomment %}
+{% if customer.email != '' %}
   {{ customer.email }}
 {%- else -%}
 No customer email...
