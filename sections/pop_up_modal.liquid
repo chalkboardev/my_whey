@@ -1,7 +1,9 @@
 {% comment %} <a id="click_{{ section.settings.trigger }}" href="#{{ section.settings.trigger }}" class="">Open Popup</a> {% endcomment %}
 <span id="click_{{ section.settings.trigger }}" href="#{{ section.settings.trigger }}" class="">Open Popup</span>
 
-<div id="{{ section.settings.trigger }}" class="popup__overlay">
+
+
+<div id="{{ section.settings.trigger }}" class="{%- if section.settings.modal_edit_visibility == 'true' -%} popup__overlay_edit_show {%- endif -%} popup__overlay">
     {% comment %} <div class="modal_window"></div> {% endcomment %}
     <div class="popup__box">
       
@@ -145,6 +147,13 @@
     opacity: 1;
     z-index: 99;
     transition: all ease 0.5s;
+  }
+
+  .popup__overlay_edit_show {
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 999 !important;
+    transition: all ease 0.5s !important;
   }
 
   .popup__box {
