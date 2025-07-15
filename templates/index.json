@@ -534,10 +534,10 @@
       "settings": {
         "title": "OUR RANGE",
         "heading_size": "h2",
-        "description": "<p><strong>Herbal Supplements</strong></p>",
+        "description": "<p><strong>Amino Acids</strong></p>",
         "show_description": false,
         "description_style": "body",
-        "collection": "herbal",
+        "collection": "amino-acids",
         "products_to_show": 8,
         "columns_desktop": 4,
         "full_width": false,
