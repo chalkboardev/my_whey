@@ -3,7 +3,7 @@
 
 <div id="{{ section.settings.trigger }}" class=" popup__overlay">
     {% comment %} <div class="modal_window"></div> {% endcomment %}
-    <div style="{%- if section.settings.modal_image != blank -%} background-size:cover !important;background: url('{{ section.settings.modal_image | image_url }}') no-repeat 100% {{ section.settings.background_height_position }}%/100%;   {% endif %}" class="popup__box">
+    <div style="{%- if section.settings.modal_image != blank -%} background-size:cover !important;background: url('{{ section.settings.modal_image | image_url }}') no-repeat 100% {{ section.settings.background_img_position }}%/100%;   {% endif %}" class="popup__box">
       
         <h2>{{ section.settings.modal_title }}</h2>
         <span class="popup__close" id="popup__close">&times;</span>
@@ -89,6 +89,16 @@
       "type": "image_picker",
       "id": "modal_image",
       "label": "Modal Image"
+      },
+      {
+        "type": "range",
+        "id": "background_img_position",
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "unit": "%",
+        "label": "Background Image Position",
+        "default": 80
       },
       {
         "id": "trigger",
