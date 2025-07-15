@@ -1,12 +1,15 @@
 {% comment %} <a href="#{{ section.settings.trigger }}" class="">Open Popup</a> {% endcomment %}
+
 <div id="{{ section.settings.trigger }}" class="popup__overlay">
-  <div class="popup__box">
-    <h2>{{ section.settings.title }}</h2>
-    <a class="popup__close" href="#">&times;</a>
-    <div class="popup__content">
-      {{ section.settings.content }}
+    <div class="backdrop_blur">
+      <div class="popup__box">
+        <h2>{{ section.settings.title }}</h2>
+        <a class="popup__close" href="#">&times;</a>
+        <div class="popup__content">
+          {{ section.settings.content }}
+        </div>
+      </div>
     </div>
-  </div>
 </div>
 
 {% schema %}
