@@ -50,6 +50,7 @@
   border-radius: var(--swiper-pagination-bullet-border-radius,50%);
   background: var(--swiper-pagination-bullet-inactive-color,#fff) !important;
   opacity: var(--swiper-pagination-bullet-inactive-opacity, .8) !important;
+  border: 1px solid #fff;
 }
 
 .swiper-pagination-bullet-active {
