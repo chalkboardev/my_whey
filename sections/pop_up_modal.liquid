@@ -2,20 +2,21 @@
 <span id="click_{{ section.settings.trigger }}" href="#{{ section.settings.trigger }}" class="">Open Popup</span>
 
 
-{% comment %} {% if customer.has_account %} {% endcomment %}
+{% comment %} ---------- START CHECK IF CUSTOMER EXISTS ---------- {% endcomment %}
 {% if customer %}
-  
-    <p>Email: {{ customer.email }}</p>
+
+    {% comment %} <p>Email: {{ customer.email }}</p>
     {% if customer.tags contains 'newsletter' %}
       <p>This content is visible to customers with the tag 'newsletter'.</p>
     {% endif %}
     
     {% for tag in customer.tags %}
       <p>Customer tag: {{ tag }}</p>
-    {% endfor %}
+    {% endfor %} {% endcomment %}
 
 {%- else -%}
-    <p>No customer email...</p>
+   
+    {% comment %} <p>Not yet a customer...</p> {% endcomment %}
   
     <div id="{{ section.settings.trigger }}" class="popup__overlay">
     {% comment %} <div class="modal_window"></div> {% endcomment %}
@@ -105,7 +106,8 @@
     </div>
 </div>
 
-{%- endif -%}
+{%- endif -%} 
+{% comment %} ---------- END CHECK IF CUSTOMER EXISTS ---------- {% endcomment %}
 
 
 
