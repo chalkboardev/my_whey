@@ -1,17 +1,17 @@
 {% comment %} <a id="click_{{ section.settings.trigger }}" href="#{{ section.settings.trigger }}" class="">Open Popup</a> {% endcomment %}
 <span id="click_{{ section.settings.trigger }}" href="#{{ section.settings.trigger }}" class="">Open Popup</span>
 
-{% if customer.tags contains 'newsletter' %}
-  <p>This content is visible to customers with the tag 'newsletter'.</p>
-{% endif %}
-
-{% for tag in customer.tags %}
-  <p>Customer tag: {{ tag }}</p>
-{% endfor %}
 
 {% comment %} {% if customer.has_account %} {% endcomment %}
 {% if customer.email != '' %}
-  {{ customer.email }}
+  Email: {{ customer.email }}
+  {% if customer.tags contains 'newsletter' %}
+    <p>This content is visible to customers with the tag 'newsletter'.</p>
+  {% endif %}
+  
+  {% for tag in customer.tags %}
+    <p>Customer tag: {{ tag }}</p>
+  {% endfor %}
 {%- else -%}
 No customer email...
 {%- endif -%}
