@@ -563,7 +563,7 @@
       "settings": {
         "trigger": "subscribe_me",
         "modal_title": "Subscribe Now",
-        "modal_content": "<p>Test Modal Content...</p>"
+        "modal_content": "<p>Subscribe now & get <strong>20% LESS</strong> on your first order!</p>"
       }
     }
   },
