@@ -530,6 +530,7 @@
     },
     "featured_collection_inyndE": {
       "type": "featured-collection",
+      "disabled": true,
       "name": "Featured collection 4",
       "settings": {
         "title": "OUR RANGE",
