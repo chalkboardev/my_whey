@@ -4,7 +4,7 @@
 
 {% comment %} {% if customer.has_account %} {% endcomment %}
 {% if customer.email != '' %}
-  Email: {{ customer.email }}
+  <br>Email: {{ customer.email }}
   {% if customer.tags contains 'newsletter' %}
     <p>This content is visible to customers with the tag 'newsletter'.</p>
   {% endif %}
