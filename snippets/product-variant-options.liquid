@@ -22,6 +22,8 @@
 
 {%- for value in option.values -%}
 
+ {% comment %} {{ option.values }}  {% endcomment %}
+
   {%- liquid
     assign swatch_focal_point = null
     if value.swatch.image
@@ -85,8 +87,8 @@
 
 
 
-
-    {% unless option_disabled %}
+    {% comment %} -------- START SHOW OR HIDE SOLD OUT VARIANTS ------ {% endcomment %}
+    {% comment %} {% unless option_disabled %} {% endcomment %}
 
       {% if input_name contains 'Supplement Type' %}
                 
@@ -132,7 +134,8 @@
             
     {% endif %}
 
-  {% endunless %}
+  {% comment %} {% endunless %} {% endcomment %}
+  {% comment %} -------- END SHOW OR HIDE SOLD OUT VARIANTS ------ {% endcomment %}
 
     
   {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
