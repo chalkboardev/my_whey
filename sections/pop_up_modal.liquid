@@ -3,10 +3,10 @@
 <div id="{{ section.settings.trigger }}" class="popup__overlay">
     <div class="backdrop_blur">
       <div class="popup__box">
-        <h2>{{ section.settings.title }}</h2>
+        <h2>{{ section.settings.modal_title }}</h2>
         <a class="popup__close" href="#">&times;</a>
         <div class="popup__content">
-          {{ section.settings.content }}
+          {{ section.settings.modal_content }}
         </div>
       </div>
     </div>
@@ -19,16 +19,16 @@
       {
         "id": "trigger",
         "type": "text",
-        "label": "ID",
-        "info": "Unique ID for popup trigger"
+        "label": "Pop-Up Modal ID",
+        "info": "Unique ID for pop-up trigger"
       },
       {
-        "id": "title",
+        "id": "modal_title",
         "type": "text",
         "label": "Title"
       },
       {
-        "id": "content",
+        "id": "modal_content",
         "type": "richtext",
         "label": "Content"
       }
