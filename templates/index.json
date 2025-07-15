@@ -16,7 +16,7 @@
           "type": "image",
           "settings": {
             "color_bg": "#ffffff",
-            "image_bg": "shopify://shop_images/mw_bulk_wallpaper1_b77810fb-4969-4d55-a83f-b02800094fa2.jpg",
+            "image_bg": "shopify://shop_images/mw_bulk_wallpaper1.jpg",
             "overlay_opacity": 0,
             "mobile_x_position": 52,
             "desktop_content_position": "header-middle-left",
