@@ -17,7 +17,13 @@
   <p>Customer tag: {{ tag }}</p>
 {% endfor %}
 
-{{ customer.email }}
+{% if customer.has_account %}
+  {{ customer.email }}
+{%- else -%}
+No customer email...
+{%- endif -%}
+
+
 
 <div id="{{ section.settings.trigger }}" class="popup__overlay">
     {% comment %} <div class="modal_window"></div> {% endcomment %}
