@@ -556,6 +556,15 @@
         "padding_top": 56,
         "padding_bottom": 36
       }
+    },
+    "pop_up_modal_J6pTLM": {
+      "type": "pop_up_modal",
+      "name": "Pop-up Modal",
+      "settings": {
+        "trigger": "subscribe",
+        "modal_title": "Subscribe Now",
+        "modal_content": "<p>Test Modal Content...</p>"
+      }
     }
   },
   "order": [
@@ -569,6 +578,7 @@
     "featured_collection_3CGfTT",
     "image_with_text_QnRYJR",
     "featured_collection_PQDGEE",
-    "featured_collection_inyndE"
+    "featured_collection_inyndE",
+    "pop_up_modal_J6pTLM"
   ]
 }
