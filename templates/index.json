@@ -561,6 +561,7 @@
       "type": "pop_up_modal",
       "name": "Pop-up Modal",
       "settings": {
+        "modal_image": "",
         "trigger": "subscribe_me",
         "modal_title": "Subscribe Now",
         "modal_content": "<p>Test Modal Content...</p>"
