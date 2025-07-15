@@ -12,8 +12,10 @@
   {% for tag in customer.tags %}
     <p>Customer tag: {{ tag }}</p>
   {% endfor %}
+
 {%- else -%}
-No customer email...
+<p>No customer email...</p>
+  
 {%- endif -%}
 
 
