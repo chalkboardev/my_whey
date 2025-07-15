@@ -3,7 +3,7 @@
 
 {%- if section.settings.modal_edit_visibility == 'true' -%} popup__overlay_edit_show {%- else -%} popup__overlay_edit_hide {%- endif -%}
 
-<div id="{{ section.settings.trigger }}" class="{%- if section.settings.modal_edit_visibility == 'true' -%} popup__overlay_edit_show {%- else -%} popup__overlay_edit_hide  {%- endif -%} popup__overlay">
+<div id="{{ section.settings.trigger }}" class="{%- if section.settings.modal_edit_visibility == 'true' -%} popup__overlay_edit_show popup__overlay{%- else -%} popup__overlay_edit_hide popup__overlay{%- endif -%}">
     {% comment %} <div class="modal_window"></div> {% endcomment %}
     <div class="popup__box">
       
