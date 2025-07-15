@@ -1,9 +1,7 @@
 {% comment %} <a id="click_{{ section.settings.trigger }}" href="#{{ section.settings.trigger }}" class="">Open Popup</a> {% endcomment %}
 <span id="click_{{ section.settings.trigger }}" href="#{{ section.settings.trigger }}" class="">Open Popup</span>
 
-{%- if section.settings.modal_edit_visibility == 'true' -%} popup__overlay_edit_show {%- else -%} popup__overlay_edit_hide {%- endif -%}
-
-<div id="{{ section.settings.trigger }}" class=" popup__overlay">
+<div style="{%- if section.settings.modal_image != blank -%} background-size:cover !important;background: url('{{ section.settings.modal_image | image_url }}') no-repeat 100% {{ section.settings.background_height_position }}%/100%;   {% endif %}" id="{{ section.settings.trigger }}" class=" popup__overlay">
     {% comment %} <div class="modal_window"></div> {% endcomment %}
     <div class="popup__box">
       
