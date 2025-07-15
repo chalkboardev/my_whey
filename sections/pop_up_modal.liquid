@@ -9,6 +9,16 @@
   <p>You do not have an active subscription.</p>
 {% endif %}
 
+{% if customer.tags contains 'newsletter' %}
+  <p>This content is visible to customers with the tag 'newsletter'.</p>
+{% endif %}
+
+{% for tag in customer.tags %}
+  <p>Customer tag: {{ tag }}</p>
+{% endfor %}
+
+{{ customer.email }}
+
 <div id="{{ section.settings.trigger }}" class="popup__overlay">
     {% comment %} <div class="modal_window"></div> {% endcomment %}
     <div class="popup__box">
@@ -266,6 +276,12 @@
       width: 90%;
     }
   }
+
+@media screen and (min-width: 1600px) {
+  .popup__box {
+    width: 30%;
+  }
+}
 {% endstylesheet %}
 
 {% javascript %}
