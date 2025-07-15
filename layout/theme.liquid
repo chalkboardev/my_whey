@@ -435,6 +435,35 @@ $(document).ready(function(){
       var this_id = $(this).html();
      // alert(this_id);
     });
+
+    setTimeout(function(){
+      console.log('Opening modal..');
+      $("#click_subscribe_me").click();
+    }, 2000);
+    
+    $("#popup__close").click(function () {
+      // alert('close modal...');
+      $('.popup__overlay').css("visibility", "hidden");
+      $('.popup__overlay').css("opacity", "0");
+      $('.popup__overlay').css("z-index", "-1");
+      // $('.popup__overlay').removeAttr("target");
+      // $('body').click();
+      //window.location.hash = ''; 
+      // alert(this_id);
+    });
+
+    $("#click_subscribe_me").click(function (e) {
+      e.preventDefault();
+      console.log('hello...');
+      $('.popup__overlay').css("visibility", "visible");
+      $('.popup__overlay').css("opacity", "1");
+      $('.popup__overlay').css("z-index", "999");
+      // alert('close modal...');
+      // $('.popup__overlay').removeAttr("target");
+      // $('body').click();
+      //window.location.hash = ''; 
+      // alert(this_id);
+    });
     
 });
 
