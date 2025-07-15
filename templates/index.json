@@ -561,7 +561,8 @@
       "type": "pop_up_modal",
       "name": "Pop-up Modal",
       "settings": {
-        "modal_image": "shopify://shop_images/mw_bulk_wallpaper1.jpg",
+        "modal_image": "shopify://shop_images/mw_bulk_wallpaper11.jpg",
+        "background_img_position": 50,
         "trigger": "subscribe_me",
         "modal_title": "Subscribe Now",
         "modal_content": "<p><strong>SUBSCRIBE NOW</strong> and get <strong>20% LESS</strong> on your first order!</p>"
