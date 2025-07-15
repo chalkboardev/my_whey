@@ -86,12 +86,13 @@
      
 
 
-
+    {% assign my_input_name = option.name %}
     {% comment %} -------- START SHOW OR HIDE SOLD OUT VARIANTS ------ {% endcomment %}
     {% comment %} {% unless option_disabled %} {% endcomment %}
 
-      {% if input_name contains 'Supplement Type' %}
-                
+      {% if option.name contains 'Type' %}
+{% comment %} {{ my_input_name }}
+{{ value | escape }} {% endcomment %}
               <input
               type="radio"
               id="{{ input_id }}"
@@ -112,25 +113,38 @@
             </label>
 
       {%- else -%}
+     
+      {% comment %} {{ value.available}}
+      {{ my_input_name }}
+      {{ value | escape }} {% endcomment %}
+
       
-              <input
-              type="radio"
-              id="{{ input_id }}"
-              name="{{ input_name | escape }}"
-              value="{{ value | escape }}"
-              form="{{ product_form_id }}"
-              {% if value.selected %}
-                checked
-              {% endif %}
-              {% if option_disabled %}
-                class="disabled"
-              {% endif %}
-              {{ input_dataset }}
-            >
-            <label for="{{ input_id }}">
-              {{ value -}}
-              {{ label_unavailable }}
-            </label>
+      {% if option_disabled  %}
+        {% comment %} {{ value | escape }} SOLD OUT {% endcomment %}
+      {%- else -%}
+      <input
+      type="radio"
+      id="{{ input_id }}"
+      name="{{ input_name | escape }}"
+      value="{{ value | escape }}"
+      form="{{ product_form_id }}"
+      {% if value.selected %}
+        checked
+      {% endif %}
+      {% if option_disabled %}
+        class="disabled"
+      {% endif %}
+      {{ input_dataset }}
+    >
+    <label for="{{ input_id }}">
+      {{ value -}}
+      {{ label_unavailable }}
+    </label>
+      {% endif %}
+
+      
+
+    
             
     {% endif %}
 

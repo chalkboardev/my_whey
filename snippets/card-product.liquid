@@ -346,7 +346,30 @@
                   aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
                   data-product-url="{{ card_product.url }}"
                 >
-                  {{ 'products.product.choose_options' | t }}
+                  {% comment %} {{ 'products.product.choose_options' | t }} {% endcomment %}
+
+                  {% comment %} ---------- START CHECK HOW MANY STOCK IS AVAILABLE FOR EACH VARIANT ---------- {% endcomment %}
+                  
+                  {%- assign total_inventory = 0 -%}
+                  {%- assign total_with_stock = 0 -%}
+                  {%- for variant in card_product.variants -%}
+                      {%- assign each_inventory = variant.inventory_quantity -%}
+                      {%- assign total_inventory = total_inventory | plus: variant.inventory_quantity -%}
+                      {% comment %} <p>Each: {{ card_product.title | escape }} {{ each_inventory }}</p> {% endcomment %}
+                      {%- if each_inventory > 0 -%}
+                          {%- assign total_with_stock = total_with_stock | plus: 1 -%}
+                      {%- endif -%}
+                  {%- endfor -%}
+                  {% comment %} {{ total_with_stock }} {% endcomment %}
+
+                  {% comment %} ---------- END CHECK HOW MANY STOCK IS AVAILABLE FOR EACH VARIANT ---------- {% endcomment %}
+
+                  {%- if total_with_stock > 1 -%}
+                    {{ 'products.product.choose_options' | t }}
+                  {%- else -%}
+                    VIEW
+                  {%- endif -%}
+
                   {%- if horizontal_quick_add -%}
                     <span class="icon-wrap">
                       {{- 'icon-arrow.svg' | inline_asset_content -}}

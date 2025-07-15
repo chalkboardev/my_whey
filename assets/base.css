@@ -1938,8 +1938,16 @@ margin-bottom:-7px;
   background-position: center !important;
 }
 
+.product-media-container.constrain-height.media-fit-contain {
+  border: none !important;
+}
+
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .quick-add-modal__content-info {
+    margin-top: -5rem;
+  }
+
   .product__column-sticky {
     position: unset !important;
   }
@@ -2016,7 +2024,7 @@ margin-bottom:-7px;
     font-size: 12px !important;
     width: 50%;
     justify-content: end;
-    right: 1.4rem;
+    right: 0.5rem;
     margin-top: -1.8rem;
 }
   #ProductGridContainer .card-information > .price--on-sale .price-item--regular {
@@ -2093,6 +2101,7 @@ margin-bottom:-7px;
   }
   .quick-add-modal__content .my_product_thumb {
     min-height: unset;
+    border-radius: 6px;
   }
   .cart-drawer .cart-item {
     /* min-height: 172px; */
@@ -2130,7 +2139,7 @@ margin-bottom:-7px;
     margin-bottom: 0.3rem !important;
   }
   .card__information {
-    padding: 1.3rem 0 1.3rem 0 !important;
+    padding: 1.3rem 0 0 0 !important;
   }
   .card__media {
     border-radius:6px !important;

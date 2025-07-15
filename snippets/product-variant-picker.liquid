@@ -69,15 +69,13 @@
 
         {% comment %} {{ option.name }} {% endcomment %}
         
-        {% if option.name == 'Supplement Type' %}
-          {% comment %} test {% endcomment %}
-        {% endif %}
+        {% comment %} {% if option.name == 'Type' %}
+          ZZZZZZZ
+        {% endif %} {% endcomment %}
 
         <fieldset class="js product-form__input product-form__input--pill">
-          {% comment %} <span class="option_picker_hd">
-          {% comment %} <legend class="form__label">{{ option.name }}</legend>  {% endcomment %}
-          <legend class="">{{ option.name }}</legend> 
-          </span> {% endcomment %}
+          {% comment %} <legend class="">{{ option.name }}</legend>  {% endcomment %}
+
           {% render 'product-variant-options',
             product: product,
             option: option,
