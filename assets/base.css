@@ -4501,12 +4501,20 @@ input[type='checkbox'] {
   margin-bottom: 0.6rem;
 }
 
-.form__message {
+/* .form__message {
   align-items: center;
   display: flex;
   font-size: 1.4rem;
   line-height: 1;
   margin-top: 1rem;
+} */
+
+.form__message {
+  align-items: center;
+  display: flex;
+  font-size: 1.6rem;
+  line-height: 1;
+  margin-top: 1.2rem;
 }
 
 .form__message--large {
