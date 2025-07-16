@@ -571,7 +571,6 @@
     },
     "toast_modal_VwYXMa": {
       "type": "toast_modal",
-      "disabled": true,
       "name": "Toast Modal",
       "settings": {
         "toast_bg_color": "#ffffff",
