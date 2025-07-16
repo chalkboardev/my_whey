@@ -3,11 +3,11 @@
 <span style="" id="click_{{ section.settings.toast_trigger }}" href="#{{ section.settings.toast_trigger }}" class="">Open Toast</span>
 
 
-<div id="{{ section.settings.toast_trigger }}" class="popup__overlay">
+<div id="{{ section.settings.toast_trigger }}" class="toast__overlay">
 {% comment %} <div class="modal_window"></div> {% endcomment %}
-<div class="popup__box">
+<div class="toast__box">
   
-    <span class="popup__close" id="popup__close">&times;</span>
+    <span class="toast__close" id="toast__close">&times;</span>
   
     <div style="background:{{ section.settings.toast_bg_color }}" class="popup__image"> </div>
     <h2>{{ section.settings.toast_modal_title }}</h2>
@@ -68,7 +68,7 @@
     align-items: center;
     transition: all ease 0.5s;
   }
-  .popup__overlay {
+  .toast__overlay {
     position: fixed;
     backdrop-filter: blur(4px);
     top: 0;
@@ -85,14 +85,14 @@
     transition: all ease 0.5s;
   }
 
-  .popup__overlay:target {
+  .toast__overlay:target {
     visibility: visible;
     opacity: 1;
     z-index: 99;
     transition: all ease 0.5s;
   }
 
-  .popup__overlay_edit_show {
+  .toast_overlay_edit_show {
     visibility: visible !important;
     opacity: 1 !important;
     z-index: 999 !important;
@@ -111,7 +111,7 @@
     padding: 0rem 1rem 4rem 1rem;
   }
 
-  .popup__box {
+  .toast__box {
     overflow: hidden;
     border: 2px solid #ffffff;
     background: #fff;
@@ -122,7 +122,7 @@
     text-align: center;
   }
 
-  .popup__box h2 {
+  .toast__box h2 {
     color: #333;
     font-size: 2em;
     font-weight: bold;
@@ -132,7 +132,7 @@
     padding-bottom: 0;
   }
 
-  .popup__close {
+  .toast__close {
     position: absolute;
     z-index: 9;
     top: 15px;
@@ -146,7 +146,7 @@
     cursor: pointer;
   }
 
-  .popup__close:hover {
+  .toast__close:hover {
     color: #c1c1c1;
   }
 
@@ -156,7 +156,7 @@
   }
 
   @media screen and (max-width: 1280px) {
-    .popup__box {
+    .toast__box {
       width: 60%;
     }
   }
@@ -165,7 +165,7 @@
     .modal__content_div {
       padding: 0rem 2rem 4rem 2rem;
     }
-    .popup__overlay {
+    .toast__overlay {
       position: fixed;
       backdrop-filter: blur(4px);
       top: 0;
@@ -181,13 +181,13 @@
       opacity: 0;
       transition: all ease 0.5s;
     }
-    .popup__box {
+    .toast__box {
       width: 90%;
     }
   }
 
 @media screen and (min-width: 1600px) {
-  .popup__box {
+  .toast__box {
     width: 30%;
   }
 }
