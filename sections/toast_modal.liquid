@@ -1,0 +1,227 @@
+{% comment %} <a id="click_{{ section.settings.trigger }}" href="#{{ section.settings.trigger }}" class="">Open Popup</a> {% endcomment %}
+
+<span style="" id="click_{{ section.settings.toast_trigger }}" href="#{{ section.settings.toast_trigger }}" class="">Open Toast</span>
+
+
+{% comment %} ---------- START CHECK IF CUSTOMER EXISTS ---------- {% endcomment %}
+{% if customer %}
+
+    {% comment %} <p>Email: {{ customer.email }}</p>
+    {% if customer.tags contains 'newsletter' %}
+      <p>This content is visible to customers with the tag 'newsletter'.</p>
+    {% endif %}
+    
+    {% for tag in customer.tags %}
+      <p>Customer tag: {{ tag }}</p>
+    {% endfor %} {% endcomment %}
+
+{%- else -%}
+   
+    {% comment %} <p>Not yet a customer...</p> {% endcomment %}
+  
+    <div id="{{ section.settings.toast_trigger }}" class="popup__overlay">
+    {% comment %} <div class="modal_window"></div> {% endcomment %}
+    <div class="popup__box">
+      
+        <span class="popup__close" id="popup__close">&times;</span>
+      
+        <div style="{%- if section.settings.toast_modal_image != blank -%} background-size:cover !important;background: url('{{ section.settings.toast_modal_image | image_url }}') no-repeat 100% {{ section.settings.toast_background_img_position }}%/100%;   {% endif %}" class="popup__image"> </div>
+        <h2>{{ section.settings.toast_modal_title }}</h2>
+      
+        <div class="modal__content_div">
+
+            <div class="popup__content">
+              {{ section.settings.toast_modal_content }}
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+{%- endif -%} 
+{% comment %} ---------- END CHECK IF CUSTOMER EXISTS ---------- {% endcomment %}
+
+
+
+
+
+{% schema %}
+  {
+    "name": "Toast Modal",
+    "settings": [
+      {
+      "type": "image_picker",
+      "id": "toast_modal_image",
+      "label": "Modal Image"
+      },
+      {
+        "type": "range",
+        "id": "toast_background_img_position",
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "unit": "%",
+        "label": "Background Image Position",
+        "default": 80
+      },
+      {
+        "id": "toast_trigger",
+        "type": "text",
+        "label": "Toast Modal ID",
+        "info": "Unique ID for pop-up trigger"
+      },
+      {
+        "id": "toast_modal_title",
+        "type": "text",
+        "label": "Title"
+      },
+      {
+        "id": "toast_modal_content",
+        "type": "richtext",
+        "label": "Content"
+      }
+    ],
+    "presets": [{
+      "name": "Toast Modal",
+      "category": "Window"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+  .modal_window {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    transition: all ease 0.5s;
+  }
+  .popup__overlay {
+    position: fixed;
+    backdrop-filter: blur(4px);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(0, 0, 0, 0.5);
+    transition: opacity 500ms ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+    transition: all ease 0.5s;
+  }
+
+  .popup__overlay:target {
+    visibility: visible;
+    opacity: 1;
+    z-index: 99;
+    transition: all ease 0.5s;
+  }
+
+  .popup__overlay_edit_show {
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 999 !important;
+    transition: all ease 0.5s !important;
+  }
+
+  .popup__image {
+    width: 100%;
+    height:300px;
+    position: relative;
+    transition: all ease 0.5s;
+    text-align: center;
+  }
+
+  .modal__content_div {
+    padding: 0rem 1rem 4rem 1rem;
+  }
+
+  .popup__box {
+    overflow: hidden;
+    border: 2px solid #ffffff;
+    background: #fff;
+    border-radius: 8px;
+    width: 40%;
+    position: relative;
+    transition: all ease 0.5s;
+    text-align: center;
+  }
+
+  .popup__box h2 {
+    color: #333;
+    font-size: 2em;
+    font-weight: bold;
+    /* font-family: Verdana, sans-serif; */
+    margin-top: 2rem;
+    margin-bottom: 0rem;
+    padding-bottom: 0;
+  }
+
+  .popup__close {
+    position: absolute;
+    z-index: 9;
+    top: 15px;
+    right: 27px;
+    transition: all 200ms ease-out;
+    color: #ffffffba;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 1.25;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .popup__close:hover {
+    color: #c1c1c1;
+  }
+
+  .popup__content {
+    max-height: 30%;
+    overflow: auto;
+  }
+
+  @media screen and (max-width: 1280px) {
+    .popup__box {
+      width: 60%;
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    .modal__content_div {
+      padding: 0rem 2rem 4rem 2rem;
+    }
+    .popup__overlay {
+      position: fixed;
+      backdrop-filter: blur(4px);
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgb(0, 0, 0, 0.8);
+      transition: opacity 500ms ease-in-out;
+      visibility: hidden;
+      opacity: 0;
+      transition: all ease 0.5s;
+    }
+    .popup__box {
+      width: 90%;
+    }
+  }
+
+@media screen and (min-width: 1600px) {
+  .popup__box {
+    width: 30%;
+  }
+}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
