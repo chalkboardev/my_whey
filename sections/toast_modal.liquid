@@ -3,46 +3,25 @@
 <span style="" id="click_{{ section.settings.toast_trigger }}" href="#{{ section.settings.toast_trigger }}" class="">Open Toast</span>
 
 
-{% comment %} ---------- START CHECK IF CUSTOMER EXISTS ---------- {% endcomment %}
-{% if customer %}
-
-    {% comment %} <p>Email: {{ customer.email }}</p>
-    {% if customer.tags contains 'newsletter' %}
-      <p>This content is visible to customers with the tag 'newsletter'.</p>
-    {% endif %}
-    
-    {% for tag in customer.tags %}
-      <p>Customer tag: {{ tag }}</p>
-    {% endfor %} {% endcomment %}
-
-{%- else -%}
-   
-    {% comment %} <p>Not yet a customer...</p> {% endcomment %}
+<div id="{{ section.settings.toast_trigger }}" class="popup__overlay">
+{% comment %} <div class="modal_window"></div> {% endcomment %}
+<div class="popup__box">
   
-    <div id="{{ section.settings.toast_trigger }}" class="popup__overlay">
-    {% comment %} <div class="modal_window"></div> {% endcomment %}
-    <div class="popup__box">
-      
-        <span class="popup__close" id="popup__close">&times;</span>
-      
-        <div style="background:{{ section.settings.toast_bg_color }}" class="popup__image"> </div>
-        <h2>{{ section.settings.toast_modal_title }}</h2>
-      
-        <div class="modal__content_div">
+    <span class="popup__close" id="popup__close">&times;</span>
+  
+    <div style="background:{{ section.settings.toast_bg_color }}" class="popup__image"> </div>
+    <h2>{{ section.settings.toast_modal_title }}</h2>
+  
+    <div class="modal__content_div">
 
-            <div class="popup__content">
-              {{ section.settings.toast_modal_content }}
-            </div>
-
+        <div class="popup__content">
+          {{ section.settings.toast_modal_content }}
         </div>
 
     </div>
+
 </div>
-
-{%- endif -%} 
-{% comment %} ---------- END CHECK IF CUSTOMER EXISTS ---------- {% endcomment %}
-
-
+</div>
 
 
 
