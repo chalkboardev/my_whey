@@ -466,6 +466,14 @@ $(document).ready(function(){
     });
 
 
+    if ($(".mega-menu").is(":visible")) {
+      var headerHeight = $(".mega-menu").height() - 12;
+      console.log("The desktop menu is currently visible.");
+    } else {
+      var headerHeight = $(".mobile_mega_menu").height() - 12;
+      console.log("The mobile menu is showing.");
+    }
+
     var headerHeight = $(".mega-menu").height() - 12;
     console.log("Header height: "+ headerHeight);
     $('a[href^="#"]').on('click', function(event) {
