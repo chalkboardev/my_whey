@@ -471,7 +471,7 @@ $(document).ready(function(){
     var target = $(this.getAttribute('href'));
     if (target.length) {
       $('html, body').stop().animate({
-        scrollTop: target.offset().top
+        scrollTop: target.offset().top;
       }, 1500); // Adjust the scroll speed as desired
     }
   });
