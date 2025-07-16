@@ -31,7 +31,7 @@
     -%}
     {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
       {%- if form.posted_successfully? -%}
-        <h2 class="form-status form-status-list form__message" tabindex="-1" >
+        <h2 class="form-status form-status-list form__message" tabindex="-1" >  {% comment %} (left) autofocus {% endcomment %}
           {{- 'icon-success.svg' | inline_asset_content -}}
           {{ 'templates.contact.form.post_success' | t }}
         </h2>
