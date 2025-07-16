@@ -25,7 +25,7 @@
       
         <span class="popup__close" id="popup__close">&times;</span>
       
-        <div style="{%- if section.settings.toast_modal_image != blank -%} background-size:cover !important;background: url('{{ section.settings.toast_modal_image | image_url }}') no-repeat 100% {{ section.settings.toast_background_img_position }}%/100%;   {% endif %}" class="popup__image"> </div>
+        <div style="background:{{ section.settings.toast_bg_color }}" class="popup__image"> </div>
         <h2>{{ section.settings.toast_modal_title }}</h2>
       
         <div class="modal__content_div">
@@ -51,19 +51,10 @@
     "name": "Toast Modal",
     "settings": [
       {
-      "type": "image_picker",
-      "id": "toast_modal_image",
-      "label": "Modal Image"
-      },
-      {
-        "type": "range",
-        "id": "toast_background_img_position",
-        "min": 0,
-        "max": 100,
-        "step": 10,
-        "unit": "%",
-        "label": "Background Image Position",
-        "default": 80
+        "type": "color",
+        "id": "toast_bg_color",
+        "label": "Background Color",
+        "default": "#fff"
       },
       {
         "id": "toast_trigger",
