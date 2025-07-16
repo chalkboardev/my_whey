@@ -464,6 +464,17 @@ $(document).ready(function(){
       //window.location.hash = ''; 
       // alert(this_id);
     });
+
+
+    $('a[href^="#"]').on('click', function(event) {
+    event.preventDefault();
+    var target = $(this.getAttribute('href'));
+    if (target.length) {
+      $('html, body').stop().animate({
+        scrollTop: target.offset().top
+      }, 1000); // Adjust the scroll speed as desired
+    }
+  });
     
 });
 
