@@ -571,9 +571,10 @@
     },
     "toast_modal_VwYXMa": {
       "type": "toast_modal",
+      "disabled": true,
       "name": "Toast Modal",
       "settings": {
-        "toast_bg_color": "#fff",
+        "toast_bg_color": "#ffffff",
         "toast_trigger": "toast_notification",
         "toast_modal_title": "Notification:",
         "toast_modal_content": "<p>Testing...</p>"
