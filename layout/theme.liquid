@@ -474,7 +474,7 @@ $(document).ready(function(){
       //window.location.hash = ''; 
       // alert(this_id);
     });
-    
+
     $("#click_toast_notification").click(function (e) {
       e.preventDefault();
       $('.toast__overlay').css("visibility", "visible");
@@ -502,7 +502,7 @@ $(document).ready(function(){
       if (target.length) {
         $('html, body').stop().animate({
           scrollTop: target.offset().top - headerHeight
-        }, 1500); // Adjust the scroll speed as desired
+        }, 1000); // Adjust the scroll speed as desired
       }
     });
     
