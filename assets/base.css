@@ -1953,7 +1953,7 @@ margin-bottom:-7px;
 
 .footer__newsletter .form__message .icon, .customer .form__message .svg-wrapper {
   animation-name: fadeIn;
-  animation-duration: 2s;
+  animation-duration: 1.5s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   flex-shrink: 0;
@@ -1984,7 +1984,8 @@ margin-bottom:-7px;
     justify-content: flex-start;
     color: #fff !important;
     text-shadow: 0 0 3px #111;
-    font-size: 1.8rem !important;
+    font-size: 1.6rem !important;
+    line-height: 1.3 !important;
   }
   .subscribe_success_btn {
     display: flex;
