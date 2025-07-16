@@ -239,7 +239,24 @@
                       {{- 'icon-success.svg' | inline_asset_content -}}
                     </span>
                     {{- 'newsletter.success' | t }}
-                    <a href="#collection-template--19477516255484__featured_collection" class="imageBoxInfoBtn color-scheme-5"> SHOP </a>
+                    {% comment %} <a href="#collection-template--19477516255484__featured_collection" class="imageBoxInfoBtn color-scheme-5"> SHOP </a> {% endcomment %}
+                    <a href="#collection-template--19477516255484__featured_collection" class="imageBoxInfoBtn color-scheme-5" style="
+                          display: flex;
+                          position: absolute;
+                          width: 100%;
+                          background:linear-gradient(180deg, rgba(254, 89, 0, 1) 0%, rgba(204, 71, 0, 1) 50%, rgba(156, 54, 0, 1) 100%) !important; 
+                          border: 2px solid #a33921 !important;
+                          top: 110%;
+                          height: 50px;
+                          border-radius: 50px;
+                          justify-content: center;
+                          align-items: center;
+                          margin: 0 auto;
+                          text-decoration: none;
+                          font-weight: 600;
+                      "> 
+                      SHOP 
+                      </a>
                   </h3>
                 {%- endif -%}
               {%- endform -%}
