@@ -452,6 +452,18 @@ $(document).ready(function(){
       // alert(this_id);
     });
 
+    $("#click_subscribe_me").click(function (e) {
+      e.preventDefault();
+      $('.popup__overlay').css("visibility", "visible");
+      $('.popup__overlay').css("opacity", "1");
+      $('.popup__overlay').css("z-index", "999");
+      // alert('close modal...');
+      // $('.popup__overlay').removeAttr("target");
+      // $('body').click();
+      //window.location.hash = ''; 
+      // alert(this_id);
+    });
+
     $("#toast__close").click(function () {
       // alert('close modal...');
       $('.toast__overlay').css("visibility", "hidden");
@@ -462,12 +474,12 @@ $(document).ready(function(){
       //window.location.hash = ''; 
       // alert(this_id);
     });
-
-    $("#click_subscribe_me").click(function (e) {
+    
+    $("#click_toast_notification").click(function (e) {
       e.preventDefault();
-      $('.popup__overlay').css("visibility", "visible");
-      $('.popup__overlay').css("opacity", "1");
-      $('.popup__overlay').css("z-index", "999");
+      $('.toast__overlay').css("visibility", "visible");
+      $('.toast__overlay').css("opacity", "1");
+      $('.toast__overlay').css("z-index", "999");
       // alert('close modal...');
       // $('.popup__overlay').removeAttr("target");
       // $('body').click();
