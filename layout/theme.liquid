@@ -466,7 +466,8 @@ $(document).ready(function(){
     });
 
 
-    var headerHeight = $("div#header").height();
+    var headerHeight = $(".mega-menu").height();
+    console.log("Header height: "+ headerHeight);
     $('a[href^="#"]').on('click', function(event) {
       event.preventDefault();
       var target = $(this.getAttribute('href'));
