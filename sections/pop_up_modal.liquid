@@ -110,13 +110,14 @@
                     //       window.location.href = cleanUrl;
                     //     }
                     // }, 4000);
+
+
+                    setTimeout(function(){
                     var currentUrl = window.location.href;
                     if (currentUrl.indexOf("?customer_posted=true") > -1) {
                       //console.log('confirmed...exists');
                       $(".popup__overlay").css('display','none');
                     }
-
-                    setTimeout(function(){
                         history.replaceState("", document.title, window.location.pathname);
                     }, 1000);
                   </script>
