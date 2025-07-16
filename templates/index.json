@@ -568,6 +568,16 @@
         "modal_title": "Subscribe & Save!",
         "modal_content": "<p><strong>SUBSCRIBE NOW</strong> and get <strong>20% LESS</strong> on your first order!</p>"
       }
+    },
+    "toast_modal_VwYXMa": {
+      "type": "toast_modal",
+      "name": "Toast Modal",
+      "settings": {
+        "toast_bg_color": "#fff",
+        "toast_trigger": "toast_notification",
+        "toast_modal_title": "Notification:",
+        "toast_modal_content": "<p>Testing...</p>"
+      }
     }
   },
   "order": [
@@ -582,6 +592,7 @@
     "image_with_text_QnRYJR",
     "featured_collection_PQDGEE",
     "featured_collection_inyndE",
-    "pop_up_modal_J6pTLM"
+    "pop_up_modal_J6pTLM",
+    "toast_modal_VwYXMa"
   ]
 }
