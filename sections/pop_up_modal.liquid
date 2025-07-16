@@ -117,7 +117,7 @@
                     if (currentUrl.indexOf("?customer_posted=true") > -1) {
                       console.log('Opening toast..');
                       $("#click_toast_notification").click();
-                      $(".toast__content p").html({{- 'newsletter.success' | t }})
+                      $(".toast__content p").html("{{- 'newsletter.success' | t }}")
                       //console.log('confirmed...exists');
                       $(".popup__overlay").css('display','none');
                     }
