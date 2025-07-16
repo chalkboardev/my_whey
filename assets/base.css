@@ -1947,22 +1947,63 @@ margin-bottom:-7px;
       justify-content: flex-start;
       color: #fff !important;
       text-shadow: 0 0 3px #111;
-      font-size: 2rem !important;
+      font-size: 1.8rem !important;
   }
 }
 
 .footer__newsletter .form__message .icon, .customer .form__message .svg-wrapper {
+  animation-name: fadeIn;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
   flex-shrink: 0;
   margin-right: 1rem;
   height: 26px;
   width: 26px;
 }
-/* ---------- ONLY MOBILE ONLY START ---------- */ 
+
+.subscribe_success_btn {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  background:linear-gradient(180deg, rgba(254, 89, 0, 1) 0%, rgba(204, 71, 0, 1) 50%, rgba(156, 54, 0, 1) 100%) !important; 
+  border: 2px solid #a33921 !important;
+  top: 110%;
+  height: 50px;
+  border-radius: 50px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ---------- ONLY MOBILE ONLY START ---------- */  
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .newsletter-form__message {
+    justify-content: flex-start;
+    color: #fff !important;
+    text-shadow: 0 0 3px #111;
+    font-size: 1.8rem !important;
+  }
+  .subscribe_success_btn {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    background:linear-gradient(180deg, rgba(254, 89, 0, 1) 0%, rgba(204, 71, 0, 1) 50%, rgba(156, 54, 0, 1) 100%) !important; 
+    border: 2px solid #a33921 !important;
+    top: 110%;
+    height: 30px;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    text-decoration: none;
+    font-weight: 600;
+  }
   .quick-add-modal__content-info {
     margin-top: -5rem;
   }
-
   .product__column-sticky {
     position: unset !important;
   }
