@@ -473,7 +473,7 @@ $(document).ready(function(){
     var target = $(this.getAttribute('href'));
     if (target.length) {
       $('html, body').stop().animate({
-        scrollTop: target.offset().top - menu_height;
+        scrollTop: target.offset().top - 50;
       }, 1500); // Adjust the scroll speed as desired
     }
   });
