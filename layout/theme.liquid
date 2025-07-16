@@ -466,15 +466,16 @@ $(document).ready(function(){
     });
 
 
+    var headerHeight = $("div#header").height();
     $('a[href^="#"]').on('click', function(event) {
-    event.preventDefault();
-    var target = $(this.getAttribute('href'));
-    if (target.length) {
-      $('html, body').stop().animate({
-        scrollTop: target.offset().top
-      }, 1500); // Adjust the scroll speed as desired
-    }
-  });
+      event.preventDefault();
+      var target = $(this.getAttribute('href'));
+      if (target.length) {
+        $('html, body').stop().animate({
+          scrollTop: target.offset().top - 75
+        }, 1500); // Adjust the scroll speed as desired
+      }
+    });
     
 });
 
