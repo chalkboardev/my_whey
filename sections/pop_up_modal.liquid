@@ -97,6 +97,13 @@
                     </span>
                     {{- 'newsletter.success' | t }}
                   </h3>
+                  <script>
+                    setTimeout(function(){
+                      var the_server = window.location.hostname;
+                      alert(the_server);
+                      // window.location.href = "sage_katana_sync_2.php?ctr=" + count_the_results ;
+                    }, 1000);
+                  </script>
                 {%- endif -%}
               {% endform %}
             </div>
