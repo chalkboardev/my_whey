@@ -98,7 +98,7 @@
                     {{- 'newsletter.success' | t }}
                   </h3>
                   <script>
-                    $("#subscribe_me").css('display','none !important');
+                    $(".popup__overlay").css('display','none');
                     setTimeout(function(){
                         history.replaceState("", document.title, window.location.pathname);
                     }, 1000);
