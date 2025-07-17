@@ -2047,7 +2047,7 @@ margin-bottom:-7px;
 
 @media screen and (max-width: 989px) {
   .slider.slider--tablet.contains-card--standard .slider__slide:not(.collection-list__item--no-media) {
-      min-width: 250px;
+      min-width: 280px;
   }
 }
 
@@ -3696,7 +3696,7 @@ summary::-webkit-details-marker {
   }
   
   .collection .slider.slider--tablet {
-    margin-bottom: 2.5rem;
+    margin-bottom: 2.5rem !important;
     /* margin-bottom: 1.8rem !important; */
   }
 
