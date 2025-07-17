@@ -99,32 +99,35 @@
                     {{- 'newsletter.success' | t }}
                   </h3>
                   <script>
-                    //$(".popup__overlay").css('display','none');
-                    // setTimeout(function(){
-                    //     // Get the current URL
-                    //     var currentUrl = window.location.href;
-                    //     // Check if the URL contains a hash
-                    //     if (currentUrl.indexOf("?") > -1) {
-                    //       // Extract the URL without the hash
-                    //       var cleanUrl = currentUrl.substring(0, currentUrl.indexOf("?"));
-                    //       // Update the URL and refresh the page
-                    //       window.location.href = cleanUrl;
-                    //     }
-                    // }, 4000);
+                    $(document).ready(function(){
+                        //$(".popup__overlay").css('display','none');
+                        // setTimeout(function(){
+                        //     // Get the current URL
+                        //     var currentUrl = window.location.href;
+                        //     // Check if the URL contains a hash
+                        //     if (currentUrl.indexOf("?") > -1) {
+                        //       // Extract the URL without the hash
+                        //       var cleanUrl = currentUrl.substring(0, currentUrl.indexOf("?"));
+                        //       // Update the URL and refresh the page
+                        //       window.location.href = cleanUrl;
+                        //     }
+                        // }, 4000);
 
 
-                    setTimeout(function(){
-                    var currentUrl = window.location.href;
-                    if (currentUrl.indexOf("?customer_posted=true") > -1) {
-                      console.log('Opening toast..');
-                      $("#click_toast_notification").click();
-                      $(".toast__content p").html("{{- 'newsletter.success' | t }}");
-                      $(".toast__content p").prepend('<span class="svg-wrapper"><svg class="icon icon-success" viewBox="0 0 13 13"><path fill="#428445" stroke="#fff" stroke-width=".7" d="M6.5 12.35a5.85 5.85 0 1 0 0-11.7 5.85 5.85 0 0 0 0 11.7Z"></path><path stroke="#fff" d="m5.533 8.664 3.72-3.982M4.106 6.769l2.032 1.857"></path></svg></span>');
-                      //console.log('confirmed...exists');
-                      $(".popup__overlay").css('display','none');
-                    }
-                        history.replaceState("", document.title, window.location.pathname);
-                    }, 1500);
+                        setTimeout(function(){
+                        var currentUrl = window.location.href;
+                        if (currentUrl.indexOf("?customer_posted=true") > -1) {
+                          console.log('Opening toast..');
+                          $("#click_toast_notification").click();
+                          $(".toast__content p").html("{{- 'newsletter.success' | t }}");
+                          $(".toast__content p").prepend('<span class="svg-wrapper"><svg class="icon icon-success" viewBox="0 0 13 13"><path fill="#428445" stroke="#fff" stroke-width=".7" d="M6.5 12.35a5.85 5.85 0 1 0 0-11.7 5.85 5.85 0 0 0 0 11.7Z"></path><path stroke="#fff" d="m5.533 8.664 3.72-3.982M4.106 6.769l2.032 1.857"></path></svg></span>');
+                          //console.log('confirmed...exists');
+                          $(".popup__overlay").css('display','none');
+                        }
+                            history.replaceState("", document.title, window.location.pathname);
+                        }, 1500);
+
+                    }); // ------------END $(document).ready ----------
                   </script>
                 {%- endif -%}
               {% endform %}
