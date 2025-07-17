@@ -173,9 +173,6 @@
         {% render 'price_sale', product: card_product, price_class: '', show_compare_at_price: true %}
         <div class="info_card card__information">
           
-
-
-        
           <h3
             class="card_heading_overflow featured_card_title card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
             {% if card_product.featured_media or settings.card_style == 'card' %}
@@ -188,8 +185,9 @@
               class="product_card_title full-unstyled-link"
               aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
             >
-            {% if card_product.title.size > 30 %}
-              <div class="wrapper"><div class="heading_marquee"><p> {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ card_product.title | escape }}</p></div></div>
+            
+            {% if card_product.title.size > 28 %}
+              <div class="wrapper"><div class="heading_marquee"><p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ card_product.title | escape }}</p></div></div>
 
               {%- else -%}
              {{ card_product.title | escape }}
