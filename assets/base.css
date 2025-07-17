@@ -2053,6 +2053,9 @@ margin-bottom:-7px;
 
 /* ---------- ONLY MOBILE ONLY START ---------- */  
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .mw_collection_div {
+    padding-bottom: 10px !important;
+  }
   .newsletter-form__message {
     justify-content: flex-start;
     color: #fff !important;
@@ -3693,8 +3696,8 @@ summary::-webkit-details-marker {
   }
   
   .collection .slider.slider--tablet {
-    /* margin-bottom: 2.5rem; */
-    margin-bottom: 1.8rem;
+    margin-bottom: 2.5rem;
+    /* margin-bottom: 1.8rem !important; */
   }
 
   .slider--tablet.grid--peek {
