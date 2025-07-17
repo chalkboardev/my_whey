@@ -142,27 +142,15 @@
           <div
             class="collection{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}"
           >
+          
+          {% comment %} <span>
+            {%- if current_tags %} 
+            <h2 style="color: #111;font-weight: 600;margin: 0 auto;padding: 10px 10px 10px 0;">
+            By Goal: <span style="color:#ff512b;">{{ current_tags | join: ', ' }}</span>
+            </h2>  
+            {% endif -%} 
+          </span> {% endcomment %}
 
-          {%- assign full_url = request.host | append: request.path -%}
-          {%- assign plan_name = full_url | split:'"pageurl":"' | last | split:'"' | first |
-          replace:'my-whey-store.myshopify.com/collections/all-products','' |
-          replace:'+','' |
-          replace:'-',' ' |
-          replace:'Protein','' |
-          replace:'/','' |
-          replace:'\u0026','&' |
-          split: "?" | last
-          -%}
-          {% if plan_name contains 'Build Muscle' %}
-              <h2 style="color: #111;font-weight: 600;margin: 0 auto;padding: 10px 10px 10px 0;">By Goal: <span style="color:#ff512b;">{{ plan_name }}</span></h2> 
-          {%- elsif plan_name contains 'Weight Management' %}
-              <h2 style="color: #111;font-weight: 600;margin: 0 auto;padding: 10px 10px 10px 0;">By Goal: <span style="color:#ff512b;">{{ plan_name }}</h2> 
-          {%- elsif plan_name contains 'Recovery' %}
-              <h2 style="color: #111;font-weight: 600;margin: 0 auto;padding: 10px 10px 10px 0;">By Goal: <span style="color:#ff512b;">{{ plan_name }}</h2> 
-          {%- elsif plan_name contains 'Gut Health' %}
-            <h2 style="color: #111;font-weight: 600;margin: 0 auto;padding: 10px 10px 10px 0;">By Goal: <span style="color:#ff512b;">{{ plan_name }}</h2> 
-          {% endif %}
-       
             <div class="loading-overlay gradient"></div>
             <ul
               id="product-grid"

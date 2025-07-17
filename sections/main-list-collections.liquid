@@ -12,6 +12,13 @@
         <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
         {{ section.settings.title }}
       </h1>
+            {% comment %} <span>
+            {%- if current_tags %} 
+            <h2 style="color: #111;font-weight: 600;margin: 0 auto;padding: 10px 10px 10px 0;">
+            By Goal: <span style="color:#ff512b;">{{ current_tags | join: ', ' }}</span>
+            </h2>  
+            {% endif -%} 
+          </span> {% endcomment %}
     </div>
   </div>
   </div>
