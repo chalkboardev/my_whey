@@ -68,7 +68,7 @@
   },
   "newsletter": {
     "label": "Email",
-    "success": "Thanks for subscribing, please check your inbox and confirm your email to activate.",
+    "success": "Thanks for subscribing, please check your inbox and confirm your email to activate...",
     "button_label": "Subscribe"
   },
   "accessibility": {
