@@ -171,9 +171,13 @@
       </div>
       <div class="card__content">
         {% render 'price_sale', product: card_product, price_class: '', show_compare_at_price: true %}
-        <div class="card__information">
+        <div class="info_card card__information">
+          
+
+
+        
           <h3
-            class="featured_card_title card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
+            class="card_heading_overflow featured_card_title card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
             {% if card_product.featured_media or settings.card_style == 'card' %}
               id="title-{{ section_id }}-{{ card_product.id }}"
             {% endif %}
@@ -184,7 +188,13 @@
               class="product_card_title full-unstyled-link"
               aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
             >
-              {{ card_product.title | escape }}
+            {% if card_product.title.size > 30 %}
+              <div class="wrapper"><div class="heading_marquee"><p> {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ card_product.title | escape }}</p></div></div>
+
+              {%- else -%}
+             {{ card_product.title | escape }}
+
+              {%- endif -%}
             </a>
           </h3>
           <a 
@@ -193,7 +203,7 @@
           class="product_card_info full-unstyled-link"
           aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}">
 
-          <span> {{ card_product.metafields.custom.product_blurb  | escape }}</span>
+          <span class="product_card_info"> {{ card_product.metafields.custom.product_blurb  | escape }}</span>
         
         </a> 
           <div class="card-information">

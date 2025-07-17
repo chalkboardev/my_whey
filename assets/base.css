@@ -949,10 +949,14 @@ margin-top: -10px;
 .collection__title .title:not(:only-child) {
   margin-bottom: 1rem !important;
 }
-.featured_card_title {
+.featured_card_title { 
   letter-spacing: 0;
   font-size: 16px;
   padding: 0 0 6px 0;
+  max-width: 100% !important;
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
 }
 .product_card_info {
   text-decoration: none !important;
@@ -963,6 +967,11 @@ margin-top: -10px;
   color:#1e534d !important;
   max-height: 52px;
   overflow: hidden;
+  /* text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical; */
 }
 
 @media screen and (min-width: 990px) and (max-width: 1100px) {
@@ -1594,7 +1603,8 @@ margin-bottom:-7px;
   align-items: end;
   bottom: 0;
   flex-grow: 1;
-  height: 4vh;
+  /* height: 4vh; */
+  height: auto;
 }
 
 #ProductGridContainer .mw_price_div {
@@ -1999,6 +2009,41 @@ margin-bottom:-7px;
   font-weight: 600;
 }
 
+
+.wrapper {
+  max-width: 100%;
+  overflow: hidden;
+}
+.heading_marquee {
+  margin: -20px 0 -22px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: heading_marquee 60s linear infinite;
+}
+.heading_marquee p {
+  display: inline-block;
+  cursor: pointer;
+}
+@keyframes heading_marquee {
+  0% {
+      transform: translate3d(0, 0, 0);
+  }
+  100% {
+      transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.info_card {
+  width:100%;
+  overflow: hidden;
+}
+.card_heading_overflow {
+  max-width: 100% !important;
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block; 
+}
 
 /* ---------- ONLY MOBILE ONLY START ---------- */  
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
