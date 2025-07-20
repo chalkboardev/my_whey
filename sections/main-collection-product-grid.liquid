@@ -167,7 +167,7 @@
                 {%- if forloop.index > 2 -%}
                   {%- assign lazy_load = true -%}
                 {%- endif -%}
-                <li
+                <li  
                   class="mw_product_grid grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                   {% if settings.animations_reveal_on_scroll %}
                     data-cascade
@@ -214,6 +214,24 @@
       "id": "collection_div_bg_color",
       "label": "Background Color",
       "default": "#f3f3f3"
+    },
+    {
+      "type": "range",
+      "id": "title_char_limit_desk",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "label": "Desktop Product Title Character Limit - for title scrolling",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "title_char_limit_mobile",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "label": "Mobile Product Title Character Limit - for title scrolling",
+      "default": 20
     },
     {
       "type": "range",
