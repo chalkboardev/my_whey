@@ -12,6 +12,7 @@
   - lazy_load: {Boolean} Image should be lazy loaded. Default: true (optional)
   - skip_styles: {Boolean} Don't include component styles. Useful when rendering multiple product cards in a loop. Default: false (optional)
   - quick_add: {Boolean} Show the quick add button.
+  - desk_char: {String} The ID of the section that contains this card......
   - section_id: {String} The ID of the section that contains this card.
   - horizontal_class: {Boolean} Add a card--horizontal class if set to true. Default: false (optional)
   - horizontal_quick_add: {Boolean} Changes the quick add button styles when set to true. Default: false (optional)
@@ -185,8 +186,8 @@
               class="product_card_title full-unstyled-link"
               aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
             >
-            
-            {% if card_product.title.size > 30 %} 
+           hello {{ section.settings.desk_char }} end 
+            {% if card_product.title.size > 30 %}  
               <div class="wrapper"><div class="heading_marquee"><p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ card_product.title | escape }}</p></div></div>
 
               {%- else -%}

@@ -23,6 +23,8 @@
       "type": "main-collection-product-grid",
       "settings": {
         "collection_div_bg_color": "#ececec",
+        "title_char_limit_desktop": 35,
+        "title_char_limit_mobile": 25,
         "products_per_page": 16,
         "columns_desktop": 4,
         "color_scheme": "scheme-1",
