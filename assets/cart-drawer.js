@@ -17,6 +17,7 @@ class CartDrawer extends HTMLElement {
       event.preventDefault();
       document.getElementById('cart_backdrop').classList.add('cart_blurry');
       this.open(cartLink);
+      console.log('testing....');
     });
     cartLink.addEventListener('keydown', (event) => {
       if (event.code.toUpperCase() === 'SPACE') {

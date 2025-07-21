@@ -96,8 +96,10 @@ product-info {
 .shopify-payment-button__skeleton {
   /* display: none !important; */
   border-radius: 30px !important;
-  background-color: #333;
-  background: #333;
+  /* background-color: #333;
+  background: #333; */
+  background: linear-gradient(180deg, rgba(254, 89, 0, 1) 0%, rgba(204, 71, 0, 1) 50%, rgba(156, 54, 0, 1) 100%) !important;
+  border: 2px solid #a33921 !important;
 }
 /* Dynamic checkout */
 
