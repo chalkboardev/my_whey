@@ -185,7 +185,9 @@
               class="product_card_title full-unstyled-link"
               aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
             >
-            {{  settings.title_char_limit_desktop }}
+         
+          {% comment %} {{  settings.title_char_limit_desktop }} {% endcomment %}
+          <div class="small-hide">
             {% if card_product.title.size > 30 %}   
               <div class="wrapper"><div class="heading_marquee"><p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ card_product.title | escape }}</p></div></div>
 
@@ -193,6 +195,18 @@
              {{ card_product.title | escape }}
 
               {%- endif -%}
+          </div>
+
+          <div class="desk-hide">
+            {% if card_product.title.size > 30 %}   
+              <div class="wrapper"><div class="heading_marquee"><p> &nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }}</p></div></div>
+
+              {%- else -%}
+             {{ card_product.title | escape }}
+
+              {%- endif -%}
+          </div>
+
             </a>
           </h3>
           <a 
