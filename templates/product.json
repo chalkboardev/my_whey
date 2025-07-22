@@ -106,8 +106,8 @@
       "type": "flavour_modal",
       "name": "Pop-up Flavour Modal",
       "settings": {
-        "flavour_bg_color": "#fff",
-        "flavour_trigger": "flavour_modal",
+        "flavour_bg_color": "#ffffff",
+        "flavour_trigger": "flavour_modal_product",
         "title": "Add a flavour?",
         "heading_size": "h1",
         "description": "<p>Flavour | Powder | 200g</p>",
