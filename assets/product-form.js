@@ -195,6 +195,8 @@ if (!customElements.get('product-form')) {
             } else {
               this.cart.renderContents(response);
             }
+            var flavour_modal_button = document.getElementById('flavour_popup__close');
+            flavour_modal_button.click();
           })
           .catch((e) => {
             console.error(e);
