@@ -66,22 +66,24 @@
     >
       {%- for collection in collections -%}
         {% comment %} ----Remove All products From Collection List {% endcomment %}
-        {%- if collection.title == 'All Products' -%}
-          {% comment %} {{ collection.title }} {% endcomment %}
+          {%- if collection.title == 'All Products' -%}
+              {% comment %} {{ collection.title }} {% endcomment %}
+          {%- elsif collection.title == 'Flavours' -%}
+             {% comment %} {{ collection.title }} {% endcomment %}
           {%- else -%}
-            <li
-              class="collection-list__item grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-              {% if settings.animations_reveal_on_scroll %}
-                data-cascade
-                style="--animation-order: {{ forloop.index }};"
-              {% endif %}
-            >
-              {% render 'card-collection',
-                card_collection: collection,
-                media_aspect_ratio: section.settings.image_ratio,
-                columns: 3
-              %}
-            </li>
+              <li
+                class="collection-list__item grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                {% if settings.animations_reveal_on_scroll %}
+                  data-cascade
+                  style="--animation-order: {{ forloop.index }};"
+                {% endif %}
+              >
+                {% render 'card-collection',
+                  card_collection: collection,
+                  media_aspect_ratio: section.settings.image_ratio,
+                  columns: 3
+                %}
+              </li>
           {%- endif -%}
 
       {%- endfor -%}
