@@ -586,7 +586,7 @@
         "flavour_bg_color": "#ffffff",
         "flavour_trigger": "flavour_modal",
         "flavour_modal_title": "Choose a Flavour!",
-        "flavour_modal_content": "",
+        "flavour_modal_content": "<p>sfdsfsdfsdf...</p>",
         "title": "Add a flavour?",
         "heading_size": "h1",
         "description": "",
