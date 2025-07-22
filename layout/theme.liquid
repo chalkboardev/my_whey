@@ -520,6 +520,17 @@ $(document).ready(function(){
       //window.location.hash = ''; 
       // alert(this_id);
     });
+    $("#click_flavour_modal_cart").click(function (e) {
+      e.preventDefault();
+      $('.flavour_modal__overlay').css("visibility", "visible");
+      $('.flavour_modal__overlay').css("opacity", "1");
+      $('.flavour_modal__overlay').css("z-index", "9999999");
+      // alert('close modal...');
+      // $('.popup__overlay').removeAttr("target");
+      // $('body').click();
+      //window.location.hash = ''; 
+      // alert(this_id);
+    });
 
 
     if ($(".mega-menu").is(":visible")) {

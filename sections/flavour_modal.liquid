@@ -60,7 +60,7 @@
 
 {% comment %} <a id="click_{{ section.settings.flavour_trigger }}" href="#{{ section.settings.flavour_trigger }}" class="">Open Popup</a> {% endcomment %} 
 
-<span style="" id="click_{{ section.settings.flavour_trigger }}" href="#{{ section.settings.flavour_trigger }}" class="">Open Flavour Modal</span>
+<span style="display:none;" id="click_{{ section.settings.flavour_trigger }}" href="#{{ section.settings.flavour_trigger }}" class="">Open Flavour Modal</span>
 
 
 {% comment %} ---------- START CHECK IF CUSTOMER EXISTS ---------- {% endcomment %}
@@ -79,15 +79,14 @@
    
     {% comment %} <p>Not yet a customer...</p> {% endcomment %}
   
-<div id="{{ section.settings.trigger }}" class="flavour_modal__overlay">
+<div id="{{ section.settings.flavour_trigger }}" class="flavour_modal__overlay">
     {% comment %} <div class="modal_window"></div> {% endcomment %}
     <div class="flavour_popup__box">
       
         <span class="flavour_popup__close" id="flavour_popup__close">&times;</span>
 
 
-        <div class="isolate"
-      >
+        <div class="isolate">
         <div
           class="mw_collection_div collection{% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %} section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}"
           id="collection-{{ section.id }}"
@@ -582,7 +581,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgb(0, 0, 0, 0.5);
+    background: rgb(0, 0, 0, 0.65);
     transition: opacity 500ms ease-in-out;
     visibility: hidden;
     opacity: 0;
