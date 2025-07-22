@@ -2052,6 +2052,19 @@ margin-bottom:-7px;
   }
 }
 
+.cart_flavour_div {
+  background: #ee4e34;
+  width: 100%;
+  height: 36px;
+  display: flex;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
 /* ---------- ONLY MOBILE ONLY START ---------- */  
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .heading_marquee {
