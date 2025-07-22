@@ -583,7 +583,7 @@
       "type": "flavour_modal",
       "name": "Pop-up Flavour Modal",
       "settings": {
-        "flavour_bg_color": "#fff",
+        "flavour_bg_color": "#ffffff",
         "flavour_trigger": "flavour_modal",
         "flavour_modal_title": "Choose a Flavour!",
         "flavour_modal_content": "",
@@ -592,7 +592,7 @@
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "creatine",
+        "collection": "flavours",
         "products_to_show": 4,
         "columns_desktop": 4,
         "full_width": false,
