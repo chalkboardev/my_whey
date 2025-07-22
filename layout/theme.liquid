@@ -489,9 +489,9 @@ $(document).ready(function(){
 
     $("#flavour_popup__close").click(function () {
       // alert('close modal...');
-      $('.popup__overlay').css("visibility", "hidden");
-      $('.popup__overlay').css("opacity", "0");
-      $('.popup__overlay').css("z-index", "-1");
+      $('.flavour_modal__overlay').css("visibility", "hidden");
+      $('.flavour_modal__overlay').css("opacity", "0");
+      $('.flavour_modal__overlay').css("z-index", "-1");
       // $('.popup__overlay').removeAttr("target");
       // $('body').click();
       //window.location.hash = ''; 
@@ -500,9 +500,9 @@ $(document).ready(function(){
 
     $("#click_flavour_modal").click(function (e) {
       e.preventDefault();
-      $('.popup__overlay').css("visibility", "visible");
-      $('.popup__overlay').css("opacity", "1");
-      $('.popup__overlay').css("z-index", "999");
+      $('.flavour_modal__overlay').css("visibility", "visible");
+      $('.flavour_modal__overlay').css("opacity", "1");
+      $('.flavour_modal__overlay').css("z-index", "999");
       // alert('close modal...');
       // $('.popup__overlay').removeAttr("target");
       // $('body').click();
