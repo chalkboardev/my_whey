@@ -587,7 +587,7 @@
         "flavour_trigger": "flavour_modal",
         "title": "Add a flavour?",
         "heading_size": "h1",
-        "description": "",
+        "description": "<p>Powder | 200g</p>",
         "show_description": false,
         "description_style": "body",
         "collection": "flavours",
