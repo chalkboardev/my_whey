@@ -82,13 +82,11 @@
 <div id="{{ section.settings.trigger }}" class="flavour_modal__overlay">
     {% comment %} <div class="modal_window"></div> {% endcomment %}
     <div class="flavour_popup__box">
+      
         <span class="flavour_popup__close" id="flavour_popup__close">&times;</span>
 
 
-
-
-        <div style="background:#ededed;"
-        class="color-{{ section.settings.color_scheme }} isolate gradient"
+        <div class="color-{{ section.settings.color_scheme }} isolate gradient"
       >
         <div
           class="mw_collection_div collection{% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %} section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}"
@@ -592,6 +590,11 @@
   }
   .flavour_modal__overlay .collection__description p {
     font-size: 22px !important;
+    color: #fff !important;
+  }
+
+  .flavour_modal__overlay .featured_title {
+    color: #fff !important;
   }
   .flavour_modal__overlay:target {
     visibility: visible;
@@ -621,8 +624,8 @@
 
   .flavour_popup__box {
     overflow: hidden;
-    border: 2px solid #ffffff;
-    background: #fff;
+    border: 2px solid #ffffff00;
+    background: #ffffff00;
     border-radius: 8px;
     width: 96%;
     position: relative;
@@ -645,10 +648,11 @@
     z-index: 9;
     top: 15px;
     right: 27px;
-    transition: all 200ms ease-out;
+    transition: all .2s ease-out;
     color: #ffffffba;
-    font-size: 30px;
-    font-weight: 300;
+    font-size: 64px;
+    font-weight: 100;
+    filter: brightness(1000);
     line-height: 1.25;
     text-decoration: none;
     cursor: pointer;
