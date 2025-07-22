@@ -578,6 +578,39 @@
         "toast_modal_title": "Notification:",
         "toast_modal_content": "<p>Testing...</p>"
       }
+    },
+    "flavour_modal_QdakFr": {
+      "type": "flavour_modal",
+      "name": "Pop-up Flavour Modal",
+      "settings": {
+        "flavour_bg_color": "#fff",
+        "flavour_trigger": "flavour_modal",
+        "flavour_modal_title": "Choose a Flavour!",
+        "flavour_modal_content": "",
+        "title": "Choose a flavour...",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "creatine",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -593,6 +626,7 @@
     "image_with_text_QnRYJR",
     "featured_collection_PQDGEE",
     "featured_collection_inyndE",
-    "toast_modal_VwYXMa"
+    "toast_modal_VwYXMa",
+    "flavour_modal_QdakFr"
   ]
 }
