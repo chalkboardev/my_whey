@@ -17,8 +17,7 @@ class CartDrawer extends HTMLElement {
       event.preventDefault();
       document.getElementById('cart_backdrop').classList.add('cart_blurry');
       this.open(cartLink);
-      console.log('testing....');
-      
+      console.log('testing from cart-drawer.js....');
     });
     cartLink.addEventListener('keydown', (event) => {
       if (event.code.toUpperCase() === 'SPACE') {
@@ -36,7 +35,7 @@ class CartDrawer extends HTMLElement {
     setTimeout(() => {
       document.getElementById('cart_backdrop').classList.add('cart_blurry');
       this.classList.add('animate', 'active');
-      console.log('testing....');
+      console.log('testing from cart-drawer.js....');
     });
 
     this.addEventListener(

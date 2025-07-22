@@ -47,7 +47,64 @@ if (!customElements.get('product-form')) {
         const the_server = window.location.hostname;
         if (the_server == '127.0.0.1'){
           //alert('Localhost!');
-          var new_route = "http://127.0.0.1:9292/cart/add/";
+          var new_route = "http://127.0.0.1:9292/cart/add/"; 
+
+          console.log('test 123...');
+          const cartDrawer = document.querySelector('cart-drawer'); // Select the cart-drawer component
+          if (cartDrawer && cartDrawer.classList.contains('is-active')) {
+            console.log('The cart drawer is open.');
+          } else {
+            console.log('The cart drawer is closed.');
+          }
+
+
+    
+          fetch('/cart.js')
+          .then(response => response.json())
+          .then(cart => {
+            // Check if the cart is empty
+            if (!cart.items || cart.items.length === 0) {
+              console.log('Cart is empty!');
+              // Perform actions for an empty cart (e.g., hide elements, display empty cart message)
+            } else {
+              console.log('Cart has items.');
+
+              async function checkIfProductIsInCart(productIdToCheck) {
+                try {
+                  const response = await fetch('/cart.js');
+                  const cart = await response.json();
+          
+                  const productInCart = cart.items.some(item => item.product_id === productIdToCheck);
+                  if (productInCart) {
+                      console.log(`Product with ID ${productIdToCheck} is in the cart.`);
+                      return true;
+                  } else {
+                      console.log(`Product with ID ${productIdToCheck} is NOT in the cart.`);
+                      setTimeout(function(){
+                        var flavour_modal_button = document.getElementById('click_flavour_modal');
+                        flavour_modal_button.click();
+                      }, 1000);
+                  
+                      return true;
+                  }
+                } catch (error) {
+                  console.error('Error fetching cart data:', error);
+                  return false;
+                }
+              }
+              // Example usage:
+              // Replace 1234567890 with the actual product ID you want to check
+              checkIfProductIsInCart(9023764300028);
+              
+              // Perform actions for a cart with items (e.g., show cart contents)
+            }
+          })
+          .catch(error => {
+            console.error('Error fetching cart data:', error);
+          });
+
+
+
         } else {
           //alert('Live Server!');
           var new_route = `${routes.cart_add_url}`;
