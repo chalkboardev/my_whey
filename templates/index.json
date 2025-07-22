@@ -589,7 +589,7 @@
         "flavour_modal_content": "<p>sfdsfsdfsdf...</p>",
         "title": "Add a flavour?",
         "heading_size": "h1",
-        "description": "<p>testing...</p>",
+        "description": "<p>Testing this info block...Testing this info block...Testing this info block...</p>",
         "show_description": false,
         "description_style": "body",
         "collection": "flavours",
