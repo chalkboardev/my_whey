@@ -112,10 +112,10 @@ if (!customElements.get('product-form')) {
 
               async function checkIfProductIsInCart(productIdToCheck) {
                 try {
-                  const response = await fetch('/cart.js');
-                  const cart = await response.json();
+                  var response = await fetch('/cart.js');
+                  var cart = await response.json();
           
-                  const productInCart = cart.items.some(item => item.product_id === productIdToCheck);
+                  var productInCart = cart.items.some(item => item.product_id === productIdToCheck);
                   if (productInCart) {
                       console.log(`Product with ID ${productIdToCheck} is in the cart.`);
                       return true;
