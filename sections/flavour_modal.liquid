@@ -47,7 +47,7 @@
   endif
 
   assign columns_mobile_int = section.settings.columns_mobile_flavour_modal | plus: 0
-  assign show_mobile_slider = false
+  assign show_mobile_slider = true
   if section.settings.swipe_on_mobile and products_to_display > columns_mobile_int
     assign show_mobile_slider = true
   endif
