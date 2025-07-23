@@ -174,7 +174,7 @@
             </ul>
             
             {%- if section.settings.show_view_all and more_in_collection -%}
-            <div class="wow icon_animate mw_view_all_btn center collection__view-all">
+            <div class="icon_animate mw_view_all_btn center collection__view-all">
               <a
                 href="{{ section.settings.collection.url }}"
                 class="mw_view_all_link {% if section.settings.view_all_style == 'link' %}link underlined-link{% elsif section.settings.view_all_style == 'solid' %}button{% else %}button button--secondary{% endif %}"
@@ -186,7 +186,7 @@
           {%- endif -%}
       
             {%- if show_mobile_slider or show_desktop_slider -%}
-              <div class="wow icon_animate slider-buttons">
+              <div class="icon_animate slider-buttons">
                 <button
                   type="button"
                 {%- if section.settings.show_view_all and more_in_collection -%} style="width:150px"   {%- endif -%}
