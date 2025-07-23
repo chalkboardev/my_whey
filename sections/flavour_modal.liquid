@@ -186,7 +186,7 @@
           {%- endif -%}
       
             {%- if show_mobile_slider or show_desktop_slider -%}
-              <div class="icon_animate slider-buttons">
+              <div class="flavour_slider_btns icon_animate slider-buttons">
                 <button
                   type="button"
                 {%- if section.settings.show_view_all and more_in_collection -%} style="width:150px"   {%- endif -%}
@@ -196,7 +196,8 @@
                   aria-controls="Slider-{{ section.id }}"
                 >
                   <span class="svg-wrapper">
-                    {{- 'icon-left_arrow.svg' | inline_asset_content -}}
+                    {{- 'icon-caret.svg' | inline_asset_content -}}
+                    {% comment %} {{- 'icon-left_arrow.svg' | inline_asset_content -}} {% endcomment %}
                   </span>
                 </button>
                 <div class="slider-counter caption">
@@ -214,7 +215,8 @@
                   aria-controls="Slider-{{ section.id }}"
                 >
                   <span class="svg-wrapper">
-                    {{- 'icon-right_arrow.svg' | inline_asset_content -}}
+                    {{- 'icon-caret.svg' | inline_asset_content -}}
+                    {% comment %} {{- 'icon-left_arrow.svg' | inline_asset_content -}} {% endcomment %}
                   </span>
                 </button>
               </div>
@@ -247,7 +249,7 @@
 
 {% schema %}
   {
-    "name": "Pop-up Modal",
+    "name": "Flavour Pop-up Modal",
     "tag": "section",
     "class": "section",
     "disabled_on": {
@@ -563,6 +565,32 @@
 {% endschema %}
 
 {% stylesheet %}
+
+.flavour_slider_btns {
+    position: absolute;
+    z-index: 999999999999;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between !important;
+    width: 100%;
+    top: 0;
+}
+#flavour_modal .slider-button--prev {
+    background: #0000004f;
+    border-radius: 50%;
+}
+#flavour_modal .slider-button--prev .icon {
+  color: rgb(255 255 255) !important;
+}
+#flavour_modal .slider-button--next {
+    background: #0000004f;
+    border-radius: 50%;
+}
+#flavour_modal .slider-button--next .icon {
+  color: rgb(255 255 255) !important;
+}
   .modal_window {
     display: flex;
     flex-direction: column;
