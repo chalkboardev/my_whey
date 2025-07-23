@@ -498,8 +498,12 @@ $(document).ready(function(){
       // alert(this_id);
     });
 
-    $("#flavour_popup__close").click(function () {
+    $(".flavour_popup__close").click(function () {
       // alert('close modal...');
+      // $('#flavour_modal_product').removeClass('show_flavour_modal');
+      // $('#flavour_modal_product').addClass('hide_flavour_modal');
+      // document.querySelector('.flavour_modal__overlay').classList.remove('show_flavour_modal');
+      // document.querySelector('.flavour_modal__overlay').classList.add('hide_flavour_modal');
       $('.flavour_modal__overlay').css("visibility", "hidden");
       $('.flavour_modal__overlay').css("opacity", "0");
       $('.flavour_modal__overlay').css("z-index", "-1");
@@ -520,7 +524,9 @@ $(document).ready(function(){
       //window.location.hash = ''; 
       // alert(this_id);
     });
-    $("#click_flavour_modal_cart").click(function (e) {
+
+
+    $("#click_flavour_modal_product").click(function (e) {
       e.preventDefault();
       $('.flavour_modal__overlay').css("visibility", "visible");
       $('.flavour_modal__overlay').css("opacity", "1");

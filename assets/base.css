@@ -2065,6 +2065,17 @@ margin-bottom:-7px;
   cursor: pointer;
 }
 
+.hide_flavour_modal {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  z-index: -1 !important;
+}
+.show_flavour_modal {
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 9999999 !important;
+}
+
 /* ---------- ONLY MOBILE ONLY START ---------- */  
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .heading_marquee {

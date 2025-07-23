@@ -49,33 +49,54 @@ if (!customElements.get('product-form')) {
           //alert('Localhost!');
           var new_route = "http://127.0.0.1:9292/cart/add/"; 
 
-          // ------ START CHECK CART AND OPEN FLAVOUR MODAL ------
-          console.log('test 123...');
+          // ------------------ START CHECK CART AND OPEN FLAVOUR MODAL ------------------
+          console.log('test from product-form.js...');
           fetch('/cart.js')
           .then(response => response.json())
           .then(cart => {
             // Check if the cart is empty
             if (!cart.items || cart.items.length === 0) {
-              console.log('Cart is empty!');
+              console.log('Cart is empty...');
               // Perform actions for an empty cart (e.g., hide elements, display empty cart message)
             } else {
-              console.log('Cart has items.');
+              console.log('Cart has items...');
 
               async function checkIfProductIsInCart(productIdToCheck) {
                 try {
-                  const response = await fetch('/cart.js');
-                  const cart = await response.json();
+                  var response = await fetch('/cart.js');
+                  var cart = await response.json();
           
-                  const productInCart = cart.items.some(item => item.product_id === productIdToCheck);
+                  var productInCart = cart.items.some(item => item.product_id === productIdToCheck);
                   if (productInCart) {
-                      console.log(`Product with ID ${productIdToCheck} is in the cart.`);
+                      console.log(`Product with ID ${productIdToCheck} is in the cart...`);
                       return true;
                   } else {
-                      console.log(`Product with ID ${productIdToCheck} is NOT in the cart.`);
-                      setTimeout(function(){
-                        var flavour_modal_button = document.getElementById('click_flavour_modal');
-                        flavour_modal_button.click();
-                      }, 1000);
+                      console.log(`Product with ID ${productIdToCheck} is NOT in the cart...`);
+                    
+                        // var flavour_modal_button = document.getElementById('click_flavour_modal');
+                        // flavour_modal_button.click();
+                        setTimeout(function(){
+                          // var flavour_modal_button = document.getElementById('click_flavour_modal_cart');
+                          // flavour_modal_button.click();
+                            var main_flavour_modal = document.getElementById('flavour_modal');
+                            // Set CSS properties directly
+                            if (main_flavour_modal) {
+                              //console.log('Main flavour modal...');
+                              main_flavour_modal.style.visibility = 'visible';
+                              main_flavour_modal.style.zIndex = '99999';
+                              main_flavour_modal.style.opacity = '1';
+                            }
+                            var product_flavour_modal = document.getElementById('flavour_modal_product');
+                            // Set CSS properties directly
+                            if (product_flavour_modal) {
+                              //console.log('Product flavour modal...');
+                              product_flavour_modal.style.visibility = 'visible';
+                              product_flavour_modal.style.zIndex = '99999';
+                              product_flavour_modal.style.opacity = '1';
+                            }
+                        }, 1500);
+                        
+                    
                   
                       return true;
                   }
@@ -94,7 +115,7 @@ if (!customElements.get('product-form')) {
           .catch(error => {
             console.error('Error fetching cart data:', error);
           });
-          // ------ END CHECK CART AND OPEN FLAVOUR MODAL ------
+          // ------------------ END CHECK CART AND OPEN FLAVOUR MODAL ------------------
         } else {
           //alert('Live Server!');
           var new_route = `${routes.cart_add_url}`;
@@ -117,15 +138,30 @@ if (!customElements.get('product-form')) {
           
                   var productInCart = cart.items.some(item => item.product_id === productIdToCheck);
                   if (productInCart) {
-                      console.log(`Product with ID ${productIdToCheck} is in the cart.`);
+                      console.log(`Product with ID ${productIdToCheck} is in the cart...`);
                       return true;
                   } else {
-                      console.log(`Product with ID ${productIdToCheck} is NOT in the cart.`);
+                      console.log(`Product with ID ${productIdToCheck} is NOT in the cart...`);
                       setTimeout(function(){
-                        var flavour_modal_button = document.getElementById('click_flavour_modal');
-                        flavour_modal_button.click();
-                      }, 1000);
-                  
+                        // var flavour_modal_button = document.getElementById('click_flavour_modal_cart');
+                        // flavour_modal_button.click();
+                          var main_flavour_modal = document.getElementById('flavour_modal');
+                          // Set CSS properties directly
+                          if (main_flavour_modal) {
+                            //console.log('Main flavour modal...');
+                            main_flavour_modal.style.visibility = 'visible';
+                            main_flavour_modal.style.zIndex = '99999';
+                            main_flavour_modal.style.opacity = '1';
+                          }
+                          var product_flavour_modal = document.getElementById('flavour_modal_product');
+                          // Set CSS properties directly
+                          if (product_flavour_modal) {
+                            //console.log('Product flavour modal...');
+                            product_flavour_modal.style.visibility = 'visible';
+                            product_flavour_modal.style.zIndex = '99999';
+                            product_flavour_modal.style.opacity = '1';
+                          }
+                      }, 1500);
                       return true;
                   }
                 } catch (error) {
