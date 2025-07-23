@@ -52,7 +52,7 @@
     assign show_mobile_slider = true
   endif
 
-  assign show_desktop_slider = false
+  assign show_desktop_slider = true
   if section.settings.enable_desktop_slider and products_to_display > section.settings.columns_desktop
     assign show_desktop_slider = true
   endif
@@ -222,8 +222,8 @@
                 </div> {% endcomment %}
         
                 <div class="footer_flavour_modal">
-                  <p>Try one of our {{ products_to_display }} mouth-watering powdered flavours</p>
-                  <p>All flavours are nestled in 200g tubs</p>
+                  <p>{{ products_to_display }} mouth-watering powdered flavours</p>
+                  {% comment %} <p>All flavours are nestled in 200g tubs</p> {% endcomment %}
                 </div>
 
                {% comment %}   <div class="slider-counter caption">
@@ -601,12 +601,14 @@
 {% endschema %}
 
 {% stylesheet %}
+
 .footer_flavour_modal {
   color: #fff;
   line-height: 1.2;
 }
 .footer_flavour_modal p {
   margin:0 !important;
+  font-size:22px;
 }
 .flavour_slider_btns .svg-wrapper {
     display: inline-flex;
@@ -770,6 +772,28 @@
   }
 
   @media screen and (max-width: 720px) {
+    .flavour_slider_btns {
+      /* position: absolute; */
+      top: -10px;
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 999999999999;
+      display: flex;
+      justify-content: space-between !important;
+      width: 100%;
+    }
+    .footer_flavour_modal {
+      color: #fff;
+      line-height: 1.2;
+    }
+    .footer_flavour_modal p {
+      margin: 0 !important;
+      font-size: 16px;
+      padding: 0 12px 0 12px;
+    }
     .flavour_popup__close {
       position: absolute;
       z-index: 9;
