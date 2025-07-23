@@ -188,6 +188,7 @@
             {%- if show_mobile_slider or show_desktop_slider -%}
               <div class="flavour_slider_btns icon_animate slider-buttons">
                 <button
+                  id="previt"
                   type="button"
                 {%- if section.settings.show_view_all and more_in_collection -%} style="width:150px"   {%- endif -%}
                   class="slider-button slider-button--prev"
@@ -200,13 +201,44 @@
                     {% comment %} {{- 'icon-left_arrow.svg' | inline_asset_content -}} {% endcomment %}
                   </span>
                 </button>
-                <div class="slider-counter caption">
-                  {% comment %} <span class="slider-counter--current">1</span>
+
+
+                
+                {% comment %} <div class="my_wrapper slideshow__control-wrapper">
+                  {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
+                    <button
+                      data-id="{{ forloop.index -}}"
+                      class="slider-counter__link slider-counter__link--{{ section.settings.slider_visual }} link"
+                      aria-label="{{ 'sections.slideshow.load_slide' | t }} {{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
+                      aria-controls="Slider-{{ section.id }}"
+                    >
+                      {%- if block.settings.pagination_style == 'numbers' -%}
+                        {{ forloop.index -}}
+                      {%- else -%}
+                        <span class="dot"></span>
+                      {%- endif -%}
+                    </button>
+                  {%- endfor -%}
+                </div> {% endcomment %}
+        
+                <div class="footer_flavour_modal">
+                  <p>Try one of our {{ products_to_display }} mouth-watering powdered flavours</p>
+                  <p>All flavours are nestled in 200g tubs</p>
+                </div>
+
+               {% comment %}   <div class="slider-counter caption">
+                 <div class="pagination-dots">
+                    {%- for product in section.settings.collection.products limit: section.settings.products_to_show  -%}
+                      <span class="dot" data-slide-index="{{ forloop.index }}"></span>
+                    {%- endfor -%}
+                  </div> 
+                  <span class="slider-counter--current">1</span>
                   <span aria-hidden="true"> / </span>
                   <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
-                  <span class="slider-counter--total">{{ products_to_display }}</span> {% endcomment %}
-                </div>
+                  <span class="slider-counter--total">{{ products_to_display }}</span> 
+                </div>{% endcomment %}
                 <button
+                  id="nextit"
                   type="button"
                   {%- if section.settings.show_view_all and more_in_collection -%} style="width:150px"  {%- endif -%}
                   class="slider-button slider-button--next"
@@ -221,7 +253,7 @@
                 </button>
               </div>
             {%- endif -%}
-          
+
           </slider-component>
       
           
@@ -239,6 +271,10 @@
       
 
 </div>
+
+<script>
+  
+</script>
 
 {%- endif -%} 
 {% comment %} ---------- END CHECK IF CUSTOMER EXISTS ---------- {% endcomment %}
@@ -565,17 +601,31 @@
 {% endschema %}
 
 {% stylesheet %}
-
+.footer_flavour_modal {
+  color: #fff;
+  line-height: 1.2;
+}
+.footer_flavour_modal p {
+  margin:0 !important;
+}
+.flavour_slider_btns .svg-wrapper {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+}
 .flavour_slider_btns {
-    position: absolute;
-    z-index: 999999999999;
+    /* position: absolute; */
     left: 0;
-    bottom: 0;
     right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 999999999999;
     display: flex;
     justify-content: space-between !important;
     width: 100%;
-    top: 0;
+
 }
 #flavour_modal .slider-button--prev {
     background: #0000004f;
@@ -591,6 +641,23 @@
 #flavour_modal .slider-button--next .icon {
   color: rgb(255 255 255) !important;
 }
+
+#flavour_modal_product .slider-button--prev {
+    background: #0000004f;
+    border-radius: 50%;
+}
+#flavour_modal_product .slider-button--prev .icon {
+  color: rgb(255 255 255) !important;
+}
+#flavour_modal_product .slider-button--next {
+    background: #0000004f;
+    border-radius: 50%;
+}
+#flavour_modal_product .slider-button--next .icon {
+  color: rgb(255 255 255) !important;
+}
+
+
   .modal_window {
     display: flex;
     flex-direction: column;
@@ -728,7 +795,7 @@
       right: 0;
       display: flex;
       justify-content: center;
-      align-items: flex-start;
+      align-items: center;
       background: rgb(0, 0, 0, 0.8);
       transition: opacity 500ms ease-in-out;
       visibility: hidden;
