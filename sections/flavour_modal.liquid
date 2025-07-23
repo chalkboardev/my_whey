@@ -222,7 +222,25 @@
                 </div> {% endcomment %}
         
                 <div class="footer_flavour_modal">
-                  <p>{{ products_to_display }} mouth-watering powdered flavours</p>
+
+                  <div class="slider-counter caption">
+                    <div class="pagination-dots">
+                       {%- for product in section.settings.collection.products limit: section.settings.products_to_show  -%}
+                         <span class="dot" data-slide-index="{{ forloop.index }}"></span>
+                       {%- endfor -%}
+                     </div> 
+                     
+                     <p>
+                      {% comment %} {{ products_to_display }} mouth-watering powdered flavours {% endcomment %}
+                      {% comment %} <span class="slider-counter--current">1</span>
+                      <span aria-hidden="true"> / </span>
+                      <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+                      <span class="slider-counter--total">{{ products_to_display }}</span>  {% endcomment %}
+                      {{ products_to_display }} mouth-watering flavours
+                     </p>
+                   </div>
+
+                  {% comment %} <p>{{ products_to_display }} mouth-watering powdered flavours</p> {% endcomment %}
                   {% comment %} <p>All flavours are nestled in 200g tubs</p> {% endcomment %}
                 </div>
 
@@ -602,63 +620,53 @@
 
 {% stylesheet %}
 
-.footer_flavour_modal {
-  color: #fff;
-  line-height: 1.2;
-}
-.footer_flavour_modal p {
-  margin:0 !important;
-  font-size:22px;
-}
-.flavour_slider_btns .svg-wrapper {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 44px;
-    height: 44px;
-}
-.flavour_slider_btns {
-    /* position: absolute; */
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 999999999999;
-    display: flex;
-    justify-content: space-between !important;
-    width: 100%;
-
-}
-#flavour_modal .slider-button--prev {
-    background: #0000004f;
-    border-radius: 50%;
-}
-#flavour_modal .slider-button--prev .icon {
-  color: rgb(255 255 255) !important;
-}
-#flavour_modal .slider-button--next {
-    background: #0000004f;
-    border-radius: 50%;
-}
-#flavour_modal .slider-button--next .icon {
-  color: rgb(255 255 255) !important;
-}
-
-#flavour_modal_product .slider-button--prev {
-    background: #0000004f;
-    border-radius: 50%;
-}
-#flavour_modal_product .slider-button--prev .icon {
-  color: rgb(255 255 255) !important;
-}
-#flavour_modal_product .slider-button--next {
-    background: #0000004f;
-    border-radius: 50%;
-}
-#flavour_modal_product .slider-button--next .icon {
-  color: rgb(255 255 255) !important;
-}
-
+  .footer_flavour_modal {
+    color: #fff;
+    line-height: 1.2;
+  }
+  .footer_flavour_modal p {
+    margin:0 !important;
+    font-size:22px;
+  }
+  .flavour_slider_btns .svg-wrapper {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 44px;
+      height: 44px;
+  }
+  .flavour_slider_btns {
+      /* position: absolute; */
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 999999999999;
+      display: flex;
+      justify-content: space-between !important;
+      width: 100%;
+  }
+  .flavour_slider_btns .slider-button .icon {
+      height: 1.2rem;
+  }
+  .flavour_slider_btns .slider-button--prev {
+      background: #0000004f;
+      border-radius: 50%;
+  }
+  .flavour_slider_btns .slider-button--prev .icon {
+    color: rgb(255 255 255) !important;
+    position: relative;
+    left: -2px;
+  }
+  .flavour_slider_btns .slider-button--next {
+      background: #0000004f;
+      border-radius: 50%;
+  }
+  .flavour_slider_btns .slider-button--next .icon {
+    color: rgb(255 255 255) !important;
+    position: relative;
+    right: -2px;
+  }
 
   .modal_window {
     display: flex;
