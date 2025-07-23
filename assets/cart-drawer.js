@@ -35,17 +35,17 @@ class CartDrawer extends HTMLElement {
     setTimeout(() => {
       document.getElementById('cart_backdrop').classList.add('cart_blurry');
       this.classList.add('animate', 'active');
-      console.log('testing from cart-drawer.js cart link....');
+      //console.log('testing from cart-drawer.js cart link....');
       const flavour_link = document.querySelector('#click_flavour_modal_cart');
       const flavour_link_close = document.querySelector('#flavour_popup__close');
       flavour_link.addEventListener('click', (event) => {
         event.preventDefault(); 
-        console.log('testing from cart link open....');
+        //console.log('testing from cart link open....');
         document.querySelector('.flavour_modal__overlay').classList.add('show_flavour_modal');
       });
       flavour_link_close.addEventListener('click', (event) => {
         event.preventDefault(); 
-        console.log('testing from cart link close....');
+        //console.log('testing from cart link close....');
         document.querySelector('.flavour_modal__overlay').classList.remove('show_flavour_modal');
       });
       
