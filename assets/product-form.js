@@ -247,6 +247,11 @@ if (!customElements.get('product-form')) {
                           throw new Error('Something wrongs');
                         }
                         const cart = await response.json();
+                        var productInCart_chocolate = cart.items.some(item => item.product_id === 9028977492220);
+                        if (productInCart_chocolate) {
+                          console.log(`Chocolate Product with ID 9028977492220 is in the cart...`);
+                          return true;
+                        }
                         console.log('Cart:', cart);
                         if (!cart.items || cart.items.length === 0) {
                           console.log('Empty cart, refetching...');
