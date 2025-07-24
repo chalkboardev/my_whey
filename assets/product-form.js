@@ -93,6 +93,37 @@ if (!customElements.get('product-form')) {
                     // console.log(`Product with ID ${productIdToCheck} is NOT in the cart...`);
                     console.log(`NO FLAVOURS in the cart...`);
                     setTimeout(function(){
+                      fetch('/cart.js')
+                      .then(response => response.json())
+                      .then(cart => {
+                        // Check if the cart is empty
+                        if (!cart.items || cart.items.length === 0) {
+                          console.log('Cart is empty!');
+                          // Perform actions for an empty cart (e.g., hide elements, display empty cart message)
+                        } else {
+                          console.log('Cart has items.');
+                          if (productInCart_chocolate) {
+                            console.log(`Chocolate Product with ID 9028977492220 is in the cart...`);
+                            return false;
+                          } else if (productInCart_vanilla) {
+                              console.log(`Vanilla Product with ID 9028972413180 is in the cart...`);
+                              return false;
+                          } else if (productInCart_strawberry) {
+                              console.log(`Strawberry Product with ID 9028962025724 is in the cart...`);
+                              return false;
+                          }  else if (productInCart_orange) {
+                            console.log(`Strawberry Product with ID 9028955144444 is in the cart...`);
+                            return false;
+                          }  else if (productInCart_apple) {
+                            console.log(`Strawberry Product with ID 9023764300028 is in the cart...`);
+                            return false;
+                          }
+                          // Perform actions for a cart with items (e.g., show cart contents)
+                        }
+                      })
+                      .catch(error => {
+                        console.error('Error fetching cart data:', error);
+                      });
                       // var flavour_modal_button = document.getElementById('click_flavour_modal_cart');
                       // flavour_modal_button.click();
                         var main_flavour_modal = document.getElementById('flavour_modal');
@@ -179,6 +210,37 @@ if (!customElements.get('product-form')) {
                     // console.log(`Product with ID ${productIdToCheck} is NOT in the cart...`);
                     console.log(`NO FLAVOURS in the cart...`);
                     setTimeout(function(){
+                      fetch('/cart.js')
+                      .then(response => response.json())
+                      .then(cart => {
+                        // Check if the cart is empty
+                        if (!cart.items || cart.items.length === 0) {
+                          console.log('Cart is empty!');
+                          // Perform actions for an empty cart (e.g., hide elements, display empty cart message)
+                        } else {
+                          console.log('Cart has items.');
+                          if (productInCart_chocolate) {
+                            console.log(`Chocolate Product with ID 9028977492220 is in the cart...`);
+                            return false;
+                          } else if (productInCart_vanilla) {
+                              console.log(`Vanilla Product with ID 9028972413180 is in the cart...`);
+                              return false;
+                          } else if (productInCart_strawberry) {
+                              console.log(`Strawberry Product with ID 9028962025724 is in the cart...`);
+                              return false;
+                          }  else if (productInCart_orange) {
+                            console.log(`Strawberry Product with ID 9028955144444 is in the cart...`);
+                            return false;
+                          }  else if (productInCart_apple) {
+                            console.log(`Strawberry Product with ID 9023764300028 is in the cart...`);
+                            return false;
+                          }
+                          // Perform actions for a cart with items (e.g., show cart contents)
+                        }
+                      })
+                      .catch(error => {
+                        console.error('Error fetching cart data:', error);
+                      });
                       // var flavour_modal_button = document.getElementById('click_flavour_modal_cart');
                       // flavour_modal_button.click();
                         var main_flavour_modal = document.getElementById('flavour_modal');
