@@ -623,7 +623,22 @@
 {% endschema %}
 
 {% stylesheet %}
-
+@media screen and (min-width: 990px) {
+    .flavour_popup__box .slider--desktop:after {
+        content: "";
+        width: 0;
+        padding-left: 0;
+        margin-left: calc(-1 * var(--grid-desktop-horizontal-spacing));
+    }
+    .flavour_popup__box ul {
+      width:90%;
+      margin: 0 auto;
+    }
+    .flavour_popup__box ul > li:first-child {
+      /* CSS properties for the first list item */
+      margin-left:0 !important;
+    }
+}
   .footer_flavour_modal {
     color: #fff;
     line-height: 1.2;
@@ -804,9 +819,35 @@
       justify-content: space-between !important;
       width: 100%;
     }
+    .flavour_popup__box .slider-button--prev {
+      background: #9090904f;
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      top: 93%;
+    }
+    .flavour_popup__box .slider-button--prev .icon {
+      color: rgb(255 255 255) !important;
+      position: relative;
+      left: -2px;
+    }
+    .flavour_popup__box .slider-button--next {
+      background: #9090904f;
+      border-radius: 50%;
+      position: absolute;
+      right: 0;
+      top: 93%;
+    }
+    .flavour_popup__box .slider-button--next .icon {
+      color: rgb(255 255 255) !important;
+      position: relative;
+      right: -2px;
+    }
     .footer_flavour_modal {
       color: #fff;
       line-height: 1.2;
+      display:flex !important;
+      margin: 0 auto;
     }
     .footer_flavour_modal p {
       margin: 0 !important;
