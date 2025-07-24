@@ -82,7 +82,7 @@ if (!customElements.get('product-form')) {
                       try {
                         const response = await fetch('/cart.js', { cache: 'no-store' });
                         if (!response.ok) {
-                          throw new Error('Something wrongs');
+                          throw new Error('Something is wrong...');
                         }
                         const cart = await response.json();
                         //console.log('Cart:', cart);
@@ -181,7 +181,7 @@ if (!customElements.get('product-form')) {
                       try {
                         const response = await fetch('/cart.js', { cache: 'no-store' });
                         if (!response.ok) {
-                          throw new Error('Something wrongs');
+                          throw new Error('Something is wrong...');
                         }
                         const cart = await response.json();
                         //console.log('Cart:', cart);
