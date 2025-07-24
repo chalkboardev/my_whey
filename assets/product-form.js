@@ -90,7 +90,8 @@ if (!customElements.get('product-form')) {
                   console.log(`Strawberry Product with ID 9023764300028 is in the cart...`);
                   return true;
                 } else {
-                    console.log(`Product with ID ${productIdToCheck} is NOT in the cart...`);
+                    // console.log(`Product with ID ${productIdToCheck} is NOT in the cart...`);
+                    console.log(`NO FLAVOURS in the cart...`);
                     setTimeout(function(){
                       // var flavour_modal_button = document.getElementById('click_flavour_modal_cart');
                       // flavour_modal_button.click();
