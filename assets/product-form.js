@@ -68,12 +68,29 @@ if (!customElements.get('product-form')) {
                 var response = await fetch('/cart.js');
                 var cart = await response.json();
         
-                var productInCart = cart.items.some(item => item.product_id === productIdToCheck);
-                if (productInCart) {
-                    //console.log(`Product with ID ${productIdToCheck} is in the cart...`);
+                var productInCart_chocolate = cart.items.some(item => item.product_id === 9028977492220);
+                var productInCart_vanilla = cart.items.some(item => item.product_id === 9028972413180);
+                var productInCart_strawberry = cart.items.some(item => item.product_id === 9028962025724);
+                var productInCart_orange = cart.items.some(item => item.product_id === 9028955144444);
+                var productInCart_apple = cart.items.some(item => item.product_id === 9023764300028);
+
+                if (productInCart_chocolate) {
+                    console.log(`Chocolate Product with ID 9028977492220 is in the cart...`);
                     return true;
+                } else if (productInCart_vanilla) {
+                    console.log(`Vanilla Product with ID 9028972413180 is in the cart...`);
+                    return true;
+                } else if (productInCart_strawberry) {
+                    console.log(`Strawberry Product with ID 9028962025724 is in the cart...`);
+                    return true;
+                }  else if (productInCart_orange) {
+                  console.log(`Strawberry Product with ID 9028955144444 is in the cart...`);
+                  return true;
+                }  else if (productInCart_apple) {
+                  console.log(`Strawberry Product with ID 9023764300028 is in the cart...`);
+                  return true;
                 } else {
-                    //console.log(`Product with ID ${productIdToCheck} is NOT in the cart...`);
+                    console.log(`Product with ID ${productIdToCheck} is NOT in the cart...`);
                     setTimeout(function(){
                       // var flavour_modal_button = document.getElementById('click_flavour_modal_cart');
                       // flavour_modal_button.click();
@@ -103,7 +120,8 @@ if (!customElements.get('product-form')) {
             }
             // Example usage:
             // Replace 1234567890 with the actual product ID you want to check
-            checkIfProductIsInCart(9023764300028);
+            //checkIfProductIsInCart(9023764300028);
+            checkIfProductIsInCart(9028977492220);
             
             // Perform actions for a cart with items (e.g., show cart contents)
 
