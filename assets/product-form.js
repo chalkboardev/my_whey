@@ -94,6 +94,7 @@ if (!customElements.get('product-form')) {
                     console.log(`NO FLAVOURS in the cart...`);
                     
                     console.log('Checking cart again...');
+
                     fetchCartItems();
                     async function fetchCartItems() {
                       try {
@@ -102,7 +103,50 @@ if (!customElements.get('product-form')) {
                           throw new Error('Something wrongs');
                         }
                         const cart = await response.json();
-                        console.log('Cart:', cart);
+                        var productInCart_chocolate = cart.items.some(item => item.product_id === 9028977492220);
+                        var productInCart_vanilla = cart.items.some(item => item.product_id === 9028972413180);
+                        var productInCart_strawberry = cart.items.some(item => item.product_id === 9028962025724);
+                        var productInCart_orange = cart.items.some(item => item.product_id === 9028955144444);
+                        var productInCart_apple = cart.items.some(item => item.product_id === 9023764300028);
+                        //var productInCart_chocolate = cart.items.some(item => item.product_id === 9028977492220);
+                        if (productInCart_chocolate) {
+                          console.log(`Chocolate Product with ID 9028977492220 is in the cart...`);
+                          return true;
+                        } else if (productInCart_vanilla) {
+                            console.log(`Vanilla Product with ID 9028972413180 is in the cart...`);
+                            return true;
+                        } else if (productInCart_strawberry) {
+                            console.log(`Strawberry Product with ID 9028962025724 is in the cart...`);
+                            return true;
+                        }  else if (productInCart_orange) {
+                          console.log(`Strawberry Product with ID 9028955144444 is in the cart...`);
+                          return true;
+                        }  else if (productInCart_apple) {
+                          console.log(`Strawberry Product with ID 9023764300028 is in the cart...`);
+                          return true;
+                        } else {
+                          setTimeout(function(){
+                          // var flavour_modal_button = document.getElementById('click_flavour_modal_cart');
+                          // flavour_modal_button.click();
+                            var main_flavour_modal = document.getElementById('flavour_modal');
+                            // Set CSS properties directly
+                            if (main_flavour_modal) {
+                              //console.log('Main flavour modal...');
+                              main_flavour_modal.style.visibility = 'visible';
+                              main_flavour_modal.style.zIndex = '99999';
+                              main_flavour_modal.style.opacity = '1';
+                            }
+                            var product_flavour_modal = document.getElementById('flavour_modal_product');
+                            // Set CSS properties directly
+                            if (product_flavour_modal) {
+                              //console.log('Product flavour modal...');
+                              product_flavour_modal.style.visibility = 'visible';
+                              product_flavour_modal.style.zIndex = '99999';
+                              product_flavour_modal.style.opacity = '1';
+                            }
+                            }, 1500);
+                        }
+                        //console.log('Cart:', cart);
                         if (!cart.items || cart.items.length === 0) {
                           console.log('Empty cart, refetching...');
                           return await fetchCartItems();
@@ -114,61 +158,6 @@ if (!customElements.get('product-form')) {
                     }
 
 
-                    fetch('/cart.js')
-                    .then(response => response.json())
-                    .then(cart => {
-                      // Check if the cart is empty
-                      if (!cart.items || cart.items.length === 0) {
-                        console.log('Cart is empty!');
-                        // Perform actions for an empty cart (e.g., hide elements, display empty cart message)
-                      } else {
-                        console.log('Cart has items.');
-                        if (productInCart_chocolate) {
-                          console.log(`Chocolate Product with ID 9028977492220 is in the cart...`);
-                          return false;
-                        } else if (productInCart_vanilla) {
-                            console.log(`Vanilla Product with ID 9028972413180 is in the cart...`);
-                            return false;
-                        } else if (productInCart_strawberry) {
-                            console.log(`Strawberry Product with ID 9028962025724 is in the cart...`);
-                            return false;
-                        }  else if (productInCart_orange) {
-                          console.log(`Strawberry Product with ID 9028955144444 is in the cart...`);
-                          return false;
-                        }  else if (productInCart_apple) {
-                          console.log(`Strawberry Product with ID 9023764300028 is in the cart...`);
-                          return false;
-                        } else {
-                          console.log(`Detected no flavours in the cart...`);
-                          return true;
-                        }
-                        // Perform actions for a cart with items (e.g., show cart contents)
-                      }
-                    })
-                    .catch(error => {
-                      console.error('Error fetching cart data:', error);
-                    });
-                    setTimeout(function(){
-                      // var flavour_modal_button = document.getElementById('click_flavour_modal_cart');
-                      // flavour_modal_button.click();
-                        var main_flavour_modal = document.getElementById('flavour_modal');
-                        // Set CSS properties directly
-                        if (main_flavour_modal) {
-                          //console.log('Main flavour modal...');
-                          main_flavour_modal.style.visibility = 'visible';
-                          main_flavour_modal.style.zIndex = '99999';
-                          main_flavour_modal.style.opacity = '1';
-                        }
-                        var product_flavour_modal = document.getElementById('flavour_modal_product');
-                        // Set CSS properties directly
-                        if (product_flavour_modal) {
-                          //console.log('Product flavour modal...');
-                          product_flavour_modal.style.visibility = 'visible';
-                          product_flavour_modal.style.zIndex = '99999';
-                          product_flavour_modal.style.opacity = '1';
-                        }
-                    }, 1500);
-                    return true;
                 }
               } catch (error) {
                 console.error('Error fetching cart data:', error);
@@ -234,11 +223,9 @@ if (!customElements.get('product-form')) {
                 } else {
                     // console.log(`Product with ID ${productIdToCheck} is NOT in the cart...`);
                     console.log(`NO FLAVOURS in the cart...`);
+
                     console.log('Checking cart again...');
 
-
-
-                    
                     fetchCartItems();
                     async function fetchCartItems() {
                       try {
@@ -290,7 +277,7 @@ if (!customElements.get('product-form')) {
                             }
                             }, 1500);
                         }
-                        console.log('Cart:', cart);
+                        //console.log('Cart:', cart);
                         if (!cart.items || cart.items.length === 0) {
                           console.log('Empty cart, refetching...');
                           return await fetchCartItems();
