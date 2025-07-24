@@ -186,23 +186,9 @@
           {%- endif -%}
       
             {%- if show_mobile_slider or show_desktop_slider -%}
-              <div class="flavour_slider_btns icon_animate slider-buttons">
-                <button
-                  id="previt"
-                  type="button"
-                {%- if section.settings.show_view_all and more_in_collection -%} style="width:150px"   {%- endif -%}
-                  class="slider-button slider-button--prev"
-                  name="previous"
-                  aria-label="{{ 'general.slider.previous_slide' | t }}"
-                  aria-controls="Slider-{{ section.id }}"
-                >
-                  <span class="svg-wrapper">
-                    {{- 'icon-caret.svg' | inline_asset_content -}}
-                    {% comment %} {{- 'icon-left_arrow.svg' | inline_asset_content -}} {% endcomment %}
-                  </span>
-                </button>
 
-
+                
+                <div class="flavour_slider_btns icon_animate slider-buttons">
                 
                 {% comment %} <div class="my_wrapper slideshow__control-wrapper">
                   {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
@@ -256,7 +242,27 @@
                   <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
                   <span class="slider-counter--total">{{ products_to_display }}</span> 
                 </div>{% endcomment %}
-                <button
+
+              </div>                
+
+
+            {%- endif -%}
+              <button
+                  id="previt"
+                  type="button"
+                {%- if section.settings.show_view_all and more_in_collection -%} style="width:150px"   {%- endif -%}
+                  class="slider-button slider-button--prev"
+                  name="previous"
+                  aria-label="{{ 'general.slider.previous_slide' | t }}"
+                  aria-controls="Slider-{{ section.id }}"
+                >
+                  <span class="svg-wrapper">
+                    {{- 'icon-caret.svg' | inline_asset_content -}}
+                    {% comment %} {{- 'icon-left_arrow.svg' | inline_asset_content -}} {% endcomment %}
+                  </span>
+              </button> 
+
+              <button
                   id="nextit"
                   type="button"
                   {%- if section.settings.show_view_all and more_in_collection -%} style="width:150px"  {%- endif -%}
@@ -269,10 +275,7 @@
                     {{- 'icon-caret.svg' | inline_asset_content -}}
                     {% comment %} {{- 'icon-left_arrow.svg' | inline_asset_content -}} {% endcomment %}
                   </span>
-                </button>
-              </div>
-            {%- endif -%}
-
+              </button>
           </slider-component>
       
           
@@ -638,7 +641,7 @@
       height: 44px;
   }
   .flavour_slider_btns {
-      position: absolute;
+      /* position: absolute; */
       left: 0;
       right: 0;
       top: 0;
@@ -648,23 +651,29 @@
       justify-content: space-between !important;
       width: 100%;
   }
-  .flavour_slider_btns .slider-button .icon {
+  .flavour_popup__box .slider-button .icon {
       height: 1.2rem;
   }
-  .flavour_slider_btns .slider-button--prev {
+  .flavour_popup__box .slider-button--prev {
       background: #9090904f;
       border-radius: 50%;
+      position: absolute;
+      left: 0;
+      top: 44%;
   }
-  .flavour_slider_btns .slider-button--prev .icon {
+  .flavour_popup__box .slider-button--prev .icon {
     color: rgb(255 255 255) !important;
     position: relative;
     left: -2px;
   }
-  .flavour_slider_btns .slider-button--next {
-      background: #9090904f;
-      border-radius: 50%;
+  .flavour_popup__box .slider-button--next {
+    background: #9090904f;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    top: 44%;
   }
-  .flavour_slider_btns .slider-button--next .icon {
+  .flavour_popup__box .slider-button--next .icon {
     color: rgb(255 255 255) !important;
     position: relative;
     right: -2px;
