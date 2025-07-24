@@ -249,7 +249,7 @@ if (!customElements.get('product-form')) {
                         const cart = await response.json();
                         var productInCart_chocolate = cart.items.some(item => item.product_id === 9028977492220);
                         if (productInCart_chocolate) {
-                          console.log(`Chocolate Product with ID 9028977492220 is in the cart...`);
+                          console.log(`Chocolate ProductZZZZ with ID 9028977492220 is in the cart...`);
                           return true;
                         }
                         console.log('Cart:', cart);
