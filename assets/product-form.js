@@ -146,7 +146,7 @@ if (!customElements.get('product-form')) {
                             }
                             }, 1500);
                         }
-                        //console.log('Cart:', cart);
+                        console.log('Cart:', cart);
                         if (!cart.items || cart.items.length === 0) {
                           console.log('Empty cart, refetching...');
                           return await fetchCartItems();
@@ -277,7 +277,7 @@ if (!customElements.get('product-form')) {
                             }
                             }, 1500);
                         }
-                        //console.log('Cart:', cart);
+                        console.log('Cart:', cart);
                         if (!cart.items || cart.items.length === 0) {
                           console.log('Empty cart, refetching...');
                           return await fetchCartItems();
