@@ -50,7 +50,7 @@ if (!customElements.get('product-form')) {
           var new_route = "http://127.0.0.1:9292/cart/add/"; 
 
           // ------------------------ START CHECK CART AND OPEN FLAVOUR MODAL ------------------------
-          console.log('Fetch cart items and check contents...');
+          //console.log('Fetch cart items and check contents...');
           fetch('/cart.js')
           .then(response => response.json())
           .then(cart => {
@@ -146,7 +146,7 @@ if (!customElements.get('product-form')) {
           //alert('Live Server!');
           var new_route = `${routes.cart_add_url}`;
           // ------------------------ START CHECK CART AND OPEN FLAVOUR MODAL ------------------------
-          console.log('Fetch cart items and check contents...');
+          //console.log('Fetch cart items and check contents...');
           fetch('/cart.js')
           .then(response => response.json())
           .then(cart => {
