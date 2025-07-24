@@ -94,6 +94,26 @@ if (!customElements.get('product-form')) {
                     console.log(`NO FLAVOURS in the cart...`);
                     
                     console.log('Checking cart again...');
+                    fetchCartItems();
+                    async function fetchCartItems() {
+                      try {
+                        const response = await fetch('/cart.js', { cache: 'no-store' });
+                        if (!response.ok) {
+                          throw new Error('Something wrongs');
+                        }
+                        const cart = await response.json();
+                        console.log('Cart:', cart);
+                        if (!cart.items || cart.items.length === 0) {
+                          console.log('Empty cart, refetching...');
+                          return await fetchCartItems();
+                        }
+                        return cart;
+                      } catch (error) {
+                        console.error('Fetch error:', error);
+                      }
+                    }
+
+
                     fetch('/cart.js')
                     .then(response => response.json())
                     .then(cart => {
@@ -215,6 +235,31 @@ if (!customElements.get('product-form')) {
                     // console.log(`Product with ID ${productIdToCheck} is NOT in the cart...`);
                     console.log(`NO FLAVOURS in the cart...`);
                     console.log('Checking cart again...');
+
+
+
+                    
+                    fetchCartItems();
+                    async function fetchCartItems() {
+                      try {
+                        const response = await fetch('/cart.js', { cache: 'no-store' });
+                        if (!response.ok) {
+                          throw new Error('Something wrongs');
+                        }
+                        const cart = await response.json();
+                        console.log('Cart:', cart);
+                        if (!cart.items || cart.items.length === 0) {
+                          console.log('Empty cart, refetching...');
+                          return await fetchCartItems();
+                        }
+                        return cart;
+                      } catch (error) {
+                        console.error('Fetch error:', error);
+                      }
+                    }
+
+
+
                     
                     fetch('/cart.js')
                     .then(response => response.json())
