@@ -240,6 +240,7 @@ if (!customElements.get('product-form')) {
 
                     
                     fetchCartItems();
+                    console.log('New method...');
                     async function fetchCartItems() {
                       try {
                         const response = await fetch('/cart.js', { cache: 'no-store' });
