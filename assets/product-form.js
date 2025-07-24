@@ -116,6 +116,9 @@ if (!customElements.get('product-form')) {
                         }  else if (productInCart_apple) {
                           console.log(`Strawberry Product with ID 9023764300028 is in the cart...`);
                           return false;
+                        } else {
+                          console.log(`Detected no flavours in the cart...`);
+                          return true;
                         }
                         // Perform actions for a cart with items (e.g., show cart contents)
                       }
@@ -233,6 +236,9 @@ if (!customElements.get('product-form')) {
                         }  else if (productInCart_apple) {
                           console.log(`Strawberry Product with ID 9023764300028 is in the cart...`);
                           return false;
+                        } else {
+                          console.log(`Detected no flavours in the cart...`);
+                          return true;
                         }
                         // Perform actions for a cart with items (e.g., show cart contents)
                       }
