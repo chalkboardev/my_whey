@@ -92,6 +92,7 @@ if (!customElements.get('product-form')) {
                 } else {
                     // console.log(`Product with ID ${productIdToCheck} is NOT in the cart...`);
                     console.log(`NO FLAVOURS in the cart...`);
+                    console.log('Checking cart again...');
                     fetch('/cart.js')
                     .then(response => response.json())
                     .then(cart => {
@@ -212,6 +213,7 @@ if (!customElements.get('product-form')) {
                 } else {
                     // console.log(`Product with ID ${productIdToCheck} is NOT in the cart...`);
                     console.log(`NO FLAVOURS in the cart...`);
+                    console.log('Checking cart again...');
                     fetch('/cart.js')
                     .then(response => response.json())
                     .then(cart => {
