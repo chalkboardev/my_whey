@@ -68,14 +68,14 @@ if (!customElements.get('product-form')) {
                 var response = await fetch('/cart.js');
                 var cart = await response.json();
         
-                var productInCart_chocolate = cart.items.some(item => item.product_id === 9028977492220);
+                var productInCart_chocolate = cart.items.some(item => item.product_type == 'Flavour');
                 var productInCart_vanilla = cart.items.some(item => item.product_id === 9028972413180);
                 var productInCart_strawberry = cart.items.some(item => item.product_id === 9028962025724);
                 var productInCart_orange = cart.items.some(item => item.product_id === 9028955144444);
                 var productInCart_apple = cart.items.some(item => item.product_id === 9023764300028);
 
                 if (productInCart_chocolate) {
-                    console.log(`Chocolate Product with ID 9028977492220 is in the cart...`);
+                    console.log(`Flavour Product with ID 9028977492220 is in the cart...`);
                     return true;
                 } else if (productInCart_vanilla) {
                     console.log(`Vanilla Product with ID 9028972413180 is in the cart...`);
@@ -200,14 +200,14 @@ if (!customElements.get('product-form')) {
                 var response = await fetch('/cart.js');
                 var cart = await response.json();
         
-                var productInCart_chocolate = cart.items.some(item => item.product_id === 9028977492220);
+                var productInCart_chocolate = cart.items.some(item => item.product_type == 'Flavour');
                 var productInCart_vanilla = cart.items.some(item => item.product_id === 9028972413180);
                 var productInCart_strawberry = cart.items.some(item => item.product_id === 9028962025724);
                 var productInCart_orange = cart.items.some(item => item.product_id === 9028955144444);
                 var productInCart_apple = cart.items.some(item => item.product_id === 9023764300028);
 
                 if (productInCart_chocolate) {
-                    console.log(`Chocolate Product with ID 9028977492220 is in the cart...`);
+                    console.log(`Flavour Product with ID 9028977492220 is in the cart...`);
                     return true;
                 } else if (productInCart_vanilla) {
                     console.log(`Vanilla Product with ID 9028972413180 is in the cart...`);
