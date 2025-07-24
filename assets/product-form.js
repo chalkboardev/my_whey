@@ -169,7 +169,7 @@ if (!customElements.get('product-form')) {
                     console.log(`Strawberry Product with ID 9028962025724 is in the cart...`);
                     return true;
                 }  else if (productInCart_orange) {
-                  console.log(`Strawberry Product with ID 9028955144444 is in the cart...`);
+                  console.log(`Orange Product with ID 9028955144444 is in the cart...`);
                   return true;
                 }  else if (productInCart_apple) {
                   console.log(`Strawberry Product with ID 9023764300028 is in the cart...`);
