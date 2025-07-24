@@ -42,6 +42,7 @@ class CartDrawer extends HTMLElement {
         event.preventDefault(); 
         //console.log('testing from cart link open....');
         document.querySelector('.flavour_modal__overlay').classList.add('show_flavour_modal');
+        console.log("opening main flavour modal from cart-drawer.js...");
       });
       flavour_link_close.addEventListener('click', (event) => {
         event.preventDefault(); 
