@@ -56,10 +56,10 @@ if (!customElements.get('product-form')) {
           .then(cart => {
             // Check if the cart is empty
             if (!cart.items || cart.items.length === 0) {
-              console.log('Cart is empty!');
+              //console.log('Cart is empty!');
               // Perform actions for an empty cart (e.g., hide elements, display empty cart message)
             } else {
-              console.log('Cart has items.');
+              //console.log('Cart has items.');
             }
             
 
@@ -71,14 +71,12 @@ if (!customElements.get('product-form')) {
                 var productInCart_flavour = cart.items.some(item => item.product_type === 'flavour');
                 //var productInCart_vanilla = cart.items.some(item => item.product_id === 9028972413180);
                 if (productInCart_flavour) {
-                    console.log(`Flavour Product is in the cart...`);
+                    //console.log(`Flavour Product is in the cart...`);
                     return true;
                 } else {
                     // console.log(`Product with ID ${productIdToCheck} is NOT in the cart...`);
-                    console.log(`NO FLAVOURS in the cart...`);
-                    
-                    console.log('Checking cart again...');
-
+                    // console.log(`NO FLAVOURS in the cart...`);
+                    // console.log('Checking cart again...');
                     fetchCartItems();
                     async function fetchCartItems() {
                       try {
@@ -87,11 +85,11 @@ if (!customElements.get('product-form')) {
                           throw new Error('Something wrongs');
                         }
                         const cart = await response.json();
-                        console.log('Cart:', cart);
+                        //console.log('Cart:', cart);
                         var productInCart_flavour = cart.items.some(item => item.product_type === 'flavour');
                         //var productInCart_vanilla = cart.items.some(item => item.product_id === 9028972413180);
                         if (productInCart_flavour) {
-                          console.log(`Flavour Product is in the cart...`);
+                          //console.log(`Flavour Product is in the cart...`);
                           return true;
                         } else {
                           setTimeout(function(){
@@ -115,7 +113,7 @@ if (!customElements.get('product-form')) {
                             }
                             }, 1500);
                         }
-                        //console.log('Cart:', cart);
+                        ////console.log('Cart:', cart);
                         if (!cart.items || cart.items.length === 0) {
                           console.log('Empty cart, refetching...');
                           return await fetchCartItems();
@@ -156,10 +154,10 @@ if (!customElements.get('product-form')) {
           .then(cart => {
             // Check if the cart is empty
             if (!cart.items || cart.items.length === 0) {
-              console.log('Cart is empty!');
+              //console.log('Cart is empty!');
               // Perform actions for an empty cart (e.g., hide elements, display empty cart message)
             } else {
-              console.log('Cart has items.');
+              //console.log('Cart has items.');
             }
             
 
@@ -171,13 +169,12 @@ if (!customElements.get('product-form')) {
                 var productInCart_flavour = cart.items.some(item => item.product_type === 'flavour');
                 //var productInCart_vanilla = cart.items.some(item => item.product_id === 9028972413180);
                 if (productInCart_flavour) {
-                    console.log(`Flavour Product is in the cart...`);
+                    //console.log(`Flavour Product is in the cart...`);
                     return true;
                 } else {
                     // console.log(`Product with ID ${productIdToCheck} is NOT in the cart...`);
-                    console.log(`NO FLAVOURS in the cart...`);
-
-                    console.log('Checking cart again...');
+                    // console.log(`NO FLAVOURS in the cart...`);
+                    // console.log('Checking cart again...');
 
                     fetchCartItems();
                     async function fetchCartItems() {
@@ -187,11 +184,11 @@ if (!customElements.get('product-form')) {
                           throw new Error('Something wrongs');
                         }
                         const cart = await response.json();
-                        console.log('Cart:', cart);
+                        //console.log('Cart:', cart);
                         var productInCart_flavour = cart.items.some(item => item.product_type === 'flavour');
                         //var productInCart_vanilla = cart.items.some(item => item.product_id === 9028972413180);
                         if (productInCart_flavour) {
-                          console.log(`Flavour Product is in the cart...`);
+                          //console.log(`Flavour Product is in the cart...`);
                           return true;
                         } else {
                           setTimeout(function(){
@@ -215,7 +212,7 @@ if (!customElements.get('product-form')) {
                             }
                             }, 1500);
                         }
-                        //console.log('Cart:', cart);
+                        ////console.log('Cart:', cart);
                         if (!cart.items || cart.items.length === 0) {
                           console.log('Empty cart, refetching...');
                           return await fetchCartItems();
