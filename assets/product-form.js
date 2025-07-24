@@ -103,6 +103,7 @@ if (!customElements.get('product-form')) {
                           throw new Error('Something wrongs');
                         }
                         const cart = await response.json();
+                        console.log('Cart:', cart);
                         var productInCart_chocolate = cart.items.some(item => item.product_id === 9028977492220);
                         var productInCart_vanilla = cart.items.some(item => item.product_id === 9028972413180);
                         var productInCart_strawberry = cart.items.some(item => item.product_id === 9028962025724);
@@ -146,7 +147,7 @@ if (!customElements.get('product-form')) {
                             }
                             }, 1500);
                         }
-                        console.log('Cart:', cart);
+                        //console.log('Cart:', cart);
                         if (!cart.items || cart.items.length === 0) {
                           console.log('Empty cart, refetching...');
                           return await fetchCartItems();
@@ -234,6 +235,7 @@ if (!customElements.get('product-form')) {
                           throw new Error('Something wrongs');
                         }
                         const cart = await response.json();
+                        console.log('Cart:', cart);
                         var productInCart_chocolate = cart.items.some(item => item.product_id === 9028977492220);
                         var productInCart_vanilla = cart.items.some(item => item.product_id === 9028972413180);
                         var productInCart_strawberry = cart.items.some(item => item.product_id === 9028962025724);
@@ -277,7 +279,7 @@ if (!customElements.get('product-form')) {
                             }
                             }, 1500);
                         }
-                        console.log('Cart:', cart);
+                        //console.log('Cart:', cart);
                         if (!cart.items || cart.items.length === 0) {
                           console.log('Empty cart, refetching...');
                           return await fetchCartItems();
