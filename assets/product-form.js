@@ -93,6 +93,11 @@ if (!customElements.get('product-form')) {
                     // console.log(`Product with ID ${productIdToCheck} is NOT in the cart...`);
                     console.log(`NO FLAVOURS in the cart...`);
                     console.log('Checking cart again...');
+                    var productInCart_chocolate = cart.items.some(item => item.product_id === 9028977492220);
+                    var productInCart_vanilla = cart.items.some(item => item.product_id === 9028972413180);
+                    var productInCart_strawberry = cart.items.some(item => item.product_id === 9028962025724);
+                    var productInCart_orange = cart.items.some(item => item.product_id === 9028955144444);
+                    var productInCart_apple = cart.items.some(item => item.product_id === 9023764300028);
                     fetch('/cart.js')
                     .then(response => response.json())
                     .then(cart => {
@@ -214,6 +219,12 @@ if (!customElements.get('product-form')) {
                     // console.log(`Product with ID ${productIdToCheck} is NOT in the cart...`);
                     console.log(`NO FLAVOURS in the cart...`);
                     console.log('Checking cart again...');
+                    var productInCart_chocolate = cart.items.some(item => item.product_id === 9028977492220);
+                    var productInCart_vanilla = cart.items.some(item => item.product_id === 9028972413180);
+                    var productInCart_strawberry = cart.items.some(item => item.product_id === 9028962025724);
+                    var productInCart_orange = cart.items.some(item => item.product_id === 9028955144444);
+                    var productInCart_apple = cart.items.some(item => item.product_id === 9023764300028);
+
                     fetch('/cart.js')
                     .then(response => response.json())
                     .then(cart => {
