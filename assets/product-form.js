@@ -68,7 +68,7 @@ if (!customElements.get('product-form')) {
                 var response = await fetch('/cart.js');
                 var cart = await response.json();
         
-                var productInCart_flavour = cart.items.some(item => item.product_type == 'flavour');
+                var productInCart_flavour = cart.items.some(item => item.product_type === 'flavour');
                 //var productInCart_vanilla = cart.items.some(item => item.product_id === 9028972413180);
                 if (productInCart_flavour) {
                     console.log(`Flavour Product is in the cart...`);
@@ -88,7 +88,7 @@ if (!customElements.get('product-form')) {
                         }
                         const cart = await response.json();
                         console.log('Cart:', cart);
-                        var productInCart_flavour = cart.items.some(item => item.product_type == 'flavour');
+                        var productInCart_flavour = cart.items.some(item => item.product_type === 'flavour');
                         //var productInCart_vanilla = cart.items.some(item => item.product_id === 9028972413180);
                         if (productInCart_flavour) {
                           console.log(`Flavour Product is in the cart...`);
@@ -168,7 +168,7 @@ if (!customElements.get('product-form')) {
                 var response = await fetch('/cart.js');
                 var cart = await response.json();
         
-                var productInCart_flavour = cart.items.some(item => item.product_type == 'flavour');
+                var productInCart_flavour = cart.items.some(item => item.product_type === 'flavour');
                 //var productInCart_vanilla = cart.items.some(item => item.product_id === 9028972413180);
                 if (productInCart_flavour) {
                     console.log(`Flavour Product is in the cart...`);
@@ -188,7 +188,7 @@ if (!customElements.get('product-form')) {
                         }
                         const cart = await response.json();
                         console.log('Cart:', cart);
-                        var productInCart_flavour = cart.items.some(item => item.product_type == 'flavour');
+                        var productInCart_flavour = cart.items.some(item => item.product_type === 'flavour');
                         //var productInCart_vanilla = cart.items.some(item => item.product_id === 9028972413180);
                         if (productInCart_flavour) {
                           console.log(`Flavour Product is in the cart...`);
