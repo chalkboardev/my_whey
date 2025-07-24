@@ -145,51 +145,72 @@ if (!customElements.get('product-form')) {
               // Perform actions for an empty cart (e.g., hide elements, display empty cart message)
             } else {
               console.log('Cart has items.');
-
-              async function checkIfProductIsInCart(productIdToCheck) {
-                try {
-                  var response = await fetch('/cart.js');
-                  var cart = await response.json();
-          
-                  var productInCart = cart.items.some(item => item.product_id === productIdToCheck);
-                  if (productInCart) {
-                      //console.log(`Product with ID ${productIdToCheck} is in the cart...`);
-                      return true;
-                  } else {
-                      //console.log(`Product with ID ${productIdToCheck} is NOT in the cart...`);
-                      setTimeout(function(){
-                        // var flavour_modal_button = document.getElementById('click_flavour_modal_cart');
-                        // flavour_modal_button.click();
-                          var main_flavour_modal = document.getElementById('flavour_modal');
-                          // Set CSS properties directly
-                          if (main_flavour_modal) {
-                            //console.log('Main flavour modal...');
-                            main_flavour_modal.style.visibility = 'visible';
-                            main_flavour_modal.style.zIndex = '99999';
-                            main_flavour_modal.style.opacity = '1';
-                          }
-                          var product_flavour_modal = document.getElementById('flavour_modal_product');
-                          // Set CSS properties directly
-                          if (product_flavour_modal) {
-                            //console.log('Product flavour modal...');
-                            product_flavour_modal.style.visibility = 'visible';
-                            product_flavour_modal.style.zIndex = '99999';
-                            product_flavour_modal.style.opacity = '1';
-                          }
-                      }, 1500);
-                      return true;
-                  }
-                } catch (error) {
-                  console.error('Error fetching cart data:', error);
-                  return false;
-                }
-              }
-              // Example usage:
-              // Replace 1234567890 with the actual product ID you want to check
-              checkIfProductIsInCart(9023764300028);
-              
-              // Perform actions for a cart with items (e.g., show cart contents)
             }
+            
+
+            async function checkIfProductIsInCart(productIdToCheck) {
+              try {
+                var response = await fetch('/cart.js');
+                var cart = await response.json();
+        
+                var productInCart_chocolate = cart.items.some(item => item.product_id === 9028977492220);
+                var productInCart_vanilla = cart.items.some(item => item.product_id === 9028972413180);
+                var productInCart_strawberry = cart.items.some(item => item.product_id === 9028962025724);
+                var productInCart_orange = cart.items.some(item => item.product_id === 9028955144444);
+                var productInCart_apple = cart.items.some(item => item.product_id === 9023764300028);
+
+                if (productInCart_chocolate) {
+                    console.log(`Chocolate Product with ID 9028977492220 is in the cart...`);
+                    return true;
+                } else if (productInCart_vanilla) {
+                    console.log(`Vanilla Product with ID 9028972413180 is in the cart...`);
+                    return true;
+                } else if (productInCart_strawberry) {
+                    console.log(`Strawberry Product with ID 9028962025724 is in the cart...`);
+                    return true;
+                }  else if (productInCart_orange) {
+                  console.log(`Strawberry Product with ID 9028955144444 is in the cart...`);
+                  return true;
+                }  else if (productInCart_apple) {
+                  console.log(`Strawberry Product with ID 9023764300028 is in the cart...`);
+                  return true;
+                } else {
+                    console.log(`Product with ID ${productIdToCheck} is NOT in the cart...`);
+                    setTimeout(function(){
+                      // var flavour_modal_button = document.getElementById('click_flavour_modal_cart');
+                      // flavour_modal_button.click();
+                        var main_flavour_modal = document.getElementById('flavour_modal');
+                        // Set CSS properties directly
+                        if (main_flavour_modal) {
+                          //console.log('Main flavour modal...');
+                          main_flavour_modal.style.visibility = 'visible';
+                          main_flavour_modal.style.zIndex = '99999';
+                          main_flavour_modal.style.opacity = '1';
+                        }
+                        var product_flavour_modal = document.getElementById('flavour_modal_product');
+                        // Set CSS properties directly
+                        if (product_flavour_modal) {
+                          //console.log('Product flavour modal...');
+                          product_flavour_modal.style.visibility = 'visible';
+                          product_flavour_modal.style.zIndex = '99999';
+                          product_flavour_modal.style.opacity = '1';
+                        }
+                    }, 1500);
+                    return true;
+                }
+              } catch (error) {
+                console.error('Error fetching cart data:', error);
+                return false;
+              }
+            }
+            // Example usage:
+            // Replace 1234567890 with the actual product ID you want to check
+            //checkIfProductIsInCart(9023764300028);
+            checkIfProductIsInCart(9028977492220);
+            
+            // Perform actions for a cart with items (e.g., show cart contents)
+
+
           })
           .catch(error => {
             console.error('Error fetching cart data:', error);
