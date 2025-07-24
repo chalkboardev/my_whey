@@ -247,6 +247,11 @@ if (!customElements.get('product-form')) {
                           throw new Error('Something wrongs');
                         }
                         const cart = await response.json();
+                        var productInCart_chocolate = cart.items.some(item => item.product_id === 9028977492220);
+                        var productInCart_vanilla = cart.items.some(item => item.product_id === 9028972413180);
+                        var productInCart_strawberry = cart.items.some(item => item.product_id === 9028962025724);
+                        var productInCart_orange = cart.items.some(item => item.product_id === 9028955144444);
+                        var productInCart_apple = cart.items.some(item => item.product_id === 9023764300028);
                         //var productInCart_chocolate = cart.items.some(item => item.product_id === 9028977492220);
                         if (productInCart_chocolate) {
                           console.log(`Chocolate Product with ID 9028977492220 is in the cart...`);
@@ -264,26 +269,26 @@ if (!customElements.get('product-form')) {
                           console.log(`Strawberry Product with ID 9023764300028 is in the cart...`);
                           return true;
                         } else {
-                                              setTimeout(function(){
-                      // var flavour_modal_button = document.getElementById('click_flavour_modal_cart');
-                      // flavour_modal_button.click();
-                        var main_flavour_modal = document.getElementById('flavour_modal');
-                        // Set CSS properties directly
-                        if (main_flavour_modal) {
-                          //console.log('Main flavour modal...');
-                          main_flavour_modal.style.visibility = 'visible';
-                          main_flavour_modal.style.zIndex = '99999';
-                          main_flavour_modal.style.opacity = '1';
-                        }
-                        var product_flavour_modal = document.getElementById('flavour_modal_product');
-                        // Set CSS properties directly
-                        if (product_flavour_modal) {
-                          //console.log('Product flavour modal...');
-                          product_flavour_modal.style.visibility = 'visible';
-                          product_flavour_modal.style.zIndex = '99999';
-                          product_flavour_modal.style.opacity = '1';
-                        }
-                    }, 1500);
+                          setTimeout(function(){
+                          // var flavour_modal_button = document.getElementById('click_flavour_modal_cart');
+                          // flavour_modal_button.click();
+                            var main_flavour_modal = document.getElementById('flavour_modal');
+                            // Set CSS properties directly
+                            if (main_flavour_modal) {
+                              //console.log('Main flavour modal...');
+                              main_flavour_modal.style.visibility = 'visible';
+                              main_flavour_modal.style.zIndex = '99999';
+                              main_flavour_modal.style.opacity = '1';
+                            }
+                            var product_flavour_modal = document.getElementById('flavour_modal_product');
+                            // Set CSS properties directly
+                            if (product_flavour_modal) {
+                              //console.log('Product flavour modal...');
+                              product_flavour_modal.style.visibility = 'visible';
+                              product_flavour_modal.style.zIndex = '99999';
+                              product_flavour_modal.style.opacity = '1';
+                            }
+                            }, 1500);
                         }
                         console.log('Cart:', cart);
                         if (!cart.items || cart.items.length === 0) {
