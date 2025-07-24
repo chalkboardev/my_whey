@@ -68,27 +68,11 @@ if (!customElements.get('product-form')) {
                 var response = await fetch('/cart.js');
                 var cart = await response.json();
         
-                var productInCart_chocolate = cart.items.some(item => item.product_type == 'Flavour');
-                var productInCart_vanilla = cart.items.some(item => item.product_id === 9028972413180);
-                var productInCart_strawberry = cart.items.some(item => item.product_id === 9028962025724);
-                var productInCart_orange = cart.items.some(item => item.product_id === 9028955144444);
-                var productInCart_apple = cart.items.some(item => item.product_id === 9023764300028);
-
-                if (productInCart_chocolate) {
-                    console.log(`Flavour Product with ID 9028977492220 is in the cart...`);
+                var productInCart_flavour = cart.items.some(item => item.product_type == 'flavour');
+                //var productInCart_vanilla = cart.items.some(item => item.product_id === 9028972413180);
+                if (productInCart_flavour) {
+                    console.log(`Flavour Product is in the cart...`);
                     return true;
-                } else if (productInCart_vanilla) {
-                    console.log(`Vanilla Product with ID 9028972413180 is in the cart...`);
-                    return true;
-                } else if (productInCart_strawberry) {
-                    console.log(`Strawberry Product with ID 9028962025724 is in the cart...`);
-                    return true;
-                }  else if (productInCart_orange) {
-                  console.log(`Orange Product with ID 9028955144444 is in the cart...`);
-                  return true;
-                }  else if (productInCart_apple) {
-                  console.log(`Apple Product with ID 9023764300028 is in the cart...`);
-                  return true;
                 } else {
                     // console.log(`Product with ID ${productIdToCheck} is NOT in the cart...`);
                     console.log(`NO FLAVOURS in the cart...`);
@@ -104,26 +88,10 @@ if (!customElements.get('product-form')) {
                         }
                         const cart = await response.json();
                         console.log('Cart:', cart);
-                        var productInCart_chocolate = cart.items.some(item => item.product_type == 'Flavour');
-                        var productInCart_vanilla = cart.items.some(item => item.product_id === 9028972413180);
-                        var productInCart_strawberry = cart.items.some(item => item.product_id === 9028962025724);
-                        var productInCart_orange = cart.items.some(item => item.product_id === 9028955144444);
-                        var productInCart_apple = cart.items.some(item => item.product_id === 9023764300028);
-                        //var productInCart_chocolate = cart.items.some(item => item.product_id === 9028977492220);
-                        if (productInCart_chocolate) {
+                        var productInCart_flavour = cart.items.some(item => item.product_type == 'flavour');
+                        //var productInCart_vanilla = cart.items.some(item => item.product_id === 9028972413180);
+                        if (productInCart_flavour) {
                           console.log(`Flavour Product is in the cart...`);
-                          return true;
-                        } else if (productInCart_vanilla) {
-                            console.log(`Vanilla Product with ID 9028972413180 is in the cart...`);
-                            return true;
-                        } else if (productInCart_strawberry) {
-                            console.log(`Strawberry Product with ID 9028962025724 is in the cart...`);
-                            return true;
-                        }  else if (productInCart_orange) {
-                          console.log(`Orange Product with ID 9028955144444 is in the cart...`);
-                          return true;
-                        }  else if (productInCart_apple) {
-                          console.log(`Apple Product with ID 9023764300028 is in the cart...`);
                           return true;
                         } else {
                           setTimeout(function(){
@@ -200,27 +168,11 @@ if (!customElements.get('product-form')) {
                 var response = await fetch('/cart.js');
                 var cart = await response.json();
         
-                var productInCart_chocolate = cart.items.some(item => item.product_type == 'Flavour');
-                var productInCart_vanilla = cart.items.some(item => item.product_id === 9028972413180);
-                var productInCart_strawberry = cart.items.some(item => item.product_id === 9028962025724);
-                var productInCart_orange = cart.items.some(item => item.product_id === 9028955144444);
-                var productInCart_apple = cart.items.some(item => item.product_id === 9023764300028);
-
-                if (productInCart_chocolate) {
-                    console.log(`Flavour Product with ID 9028977492220 is in the cart...`);
+                var productInCart_flavour = cart.items.some(item => item.product_type == 'flavour');
+                //var productInCart_vanilla = cart.items.some(item => item.product_id === 9028972413180);
+                if (productInCart_flavour) {
+                    console.log(`Flavour Product is in the cart...`);
                     return true;
-                } else if (productInCart_vanilla) {
-                    console.log(`Vanilla Product with ID 9028972413180 is in the cart...`);
-                    return true;
-                } else if (productInCart_strawberry) {
-                    console.log(`Strawberry Product with ID 9028962025724 is in the cart...`);
-                    return true;
-                }  else if (productInCart_orange) {
-                  console.log(`Orange Product with ID 9028955144444 is in the cart...`);
-                  return true;
-                }  else if (productInCart_apple) {
-                  console.log(`Apple Product with ID 9023764300028 is in the cart...`);
-                  return true;
                 } else {
                     // console.log(`Product with ID ${productIdToCheck} is NOT in the cart...`);
                     console.log(`NO FLAVOURS in the cart...`);
@@ -236,26 +188,10 @@ if (!customElements.get('product-form')) {
                         }
                         const cart = await response.json();
                         console.log('Cart:', cart);
-                        var productInCart_chocolate = cart.items.some(item => item.product_type == 'Flavour');
-                        var productInCart_vanilla = cart.items.some(item => item.product_id === 9028972413180);
-                        var productInCart_strawberry = cart.items.some(item => item.product_id === 9028962025724);
-                        var productInCart_orange = cart.items.some(item => item.product_id === 9028955144444);
-                        var productInCart_apple = cart.items.some(item => item.product_id === 9023764300028);
-                        //var productInCart_chocolate = cart.items.some(item => item.product_id === 9028977492220);
-                        if (productInCart_chocolate) {
+                        var productInCart_flavour = cart.items.some(item => item.product_type == 'flavour');
+                        //var productInCart_vanilla = cart.items.some(item => item.product_id === 9028972413180);
+                        if (productInCart_flavour) {
                           console.log(`Flavour Product is in the cart...`);
-                          return true;
-                        } else if (productInCart_vanilla) {
-                            console.log(`Vanilla Product with ID 9028972413180 is in the cart...`);
-                            return true;
-                        } else if (productInCart_strawberry) {
-                            console.log(`Strawberry Product with ID 9028962025724 is in the cart...`);
-                            return true;
-                        }  else if (productInCart_orange) {
-                          console.log(`Orange Product with ID 9028955144444 is in the cart...`);
-                          return true;
-                        }  else if (productInCart_apple) {
-                          console.log(`Apple Product with ID 9023764300028 is in the cart...`);
                           return true;
                         } else {
                           setTimeout(function(){
