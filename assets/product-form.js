@@ -84,10 +84,10 @@ if (!customElements.get('product-form')) {
                     console.log(`Strawberry Product with ID 9028962025724 is in the cart...`);
                     return true;
                 }  else if (productInCart_orange) {
-                  console.log(`Strawberry Product with ID 9028955144444 is in the cart...`);
+                  console.log(`Orange Product with ID 9028955144444 is in the cart...`);
                   return true;
                 }  else if (productInCart_apple) {
-                  console.log(`Strawberry Product with ID 9023764300028 is in the cart...`);
+                  console.log(`Apple Product with ID 9023764300028 is in the cart...`);
                   return true;
                 } else {
                     // console.log(`Product with ID ${productIdToCheck} is NOT in the cart...`);
@@ -119,10 +119,10 @@ if (!customElements.get('product-form')) {
                             console.log(`Strawberry Product with ID 9028962025724 is in the cart...`);
                             return true;
                         }  else if (productInCart_orange) {
-                          console.log(`Strawberry Product with ID 9028955144444 is in the cart...`);
+                          console.log(`Orange Product with ID 9028955144444 is in the cart...`);
                           return true;
                         }  else if (productInCart_apple) {
-                          console.log(`Strawberry Product with ID 9023764300028 is in the cart...`);
+                          console.log(`Apple Product with ID 9023764300028 is in the cart...`);
                           return true;
                         } else {
                           setTimeout(function(){
@@ -215,10 +215,10 @@ if (!customElements.get('product-form')) {
                     console.log(`Strawberry Product with ID 9028962025724 is in the cart...`);
                     return true;
                 }  else if (productInCart_orange) {
-                  console.log(`Strawberry Product with ID 9028955144444 is in the cart...`);
+                  console.log(`Orange Product with ID 9028955144444 is in the cart...`);
                   return true;
                 }  else if (productInCart_apple) {
-                  console.log(`Strawberry Product with ID 9023764300028 is in the cart...`);
+                  console.log(`Apple Product with ID 9023764300028 is in the cart...`);
                   return true;
                 } else {
                     // console.log(`Product with ID ${productIdToCheck} is NOT in the cart...`);
@@ -250,10 +250,10 @@ if (!customElements.get('product-form')) {
                             console.log(`Strawberry Product with ID 9028962025724 is in the cart...`);
                             return true;
                         }  else if (productInCart_orange) {
-                          console.log(`Strawberry Product with ID 9028955144444 is in the cart...`);
+                          console.log(`Orange Product with ID 9028955144444 is in the cart...`);
                           return true;
                         }  else if (productInCart_apple) {
-                          console.log(`Strawberry Product with ID 9023764300028 is in the cart...`);
+                          console.log(`Apple Product with ID 9023764300028 is in the cart...`);
                           return true;
                         } else {
                           setTimeout(function(){
