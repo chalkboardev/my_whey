@@ -62,8 +62,8 @@ if (!customElements.get('product-form')) {
               //console.log('Cart has items.');
             }
             
-
-            async function checkIfProductIsInCart(productIdToCheck) {
+            // async function checkIfProductIsInCart(productIdToCheck) {
+            async function checkIfProductIsInCart() {
               try {
                 var response = await fetch('/cart.js');
                 var cart = await response.json();
@@ -77,6 +77,7 @@ if (!customElements.get('product-form')) {
                     // console.log(`Product with ID ${productIdToCheck} is NOT in the cart...`);
                     // console.log(`NO FLAVOURS in the cart...`);
                     // console.log('Checking cart again...');
+
                     fetchCartItems();
                     async function fetchCartItems() {
                       try {
@@ -133,12 +134,9 @@ if (!customElements.get('product-form')) {
             }
             // Example usage:
             // Replace 1234567890 with the actual product ID you want to check
-            //checkIfProductIsInCart(9023764300028);
-            checkIfProductIsInCart(9028977492220);
-            
+            //checkIfProductIsInCart(9028977492220);
+            checkIfProductIsInCart();
             // Perform actions for a cart with items (e.g., show cart contents)
-
-
           })
           .catch(error => {
             console.error('Error fetching cart data:', error);
@@ -160,8 +158,8 @@ if (!customElements.get('product-form')) {
               //console.log('Cart has items.');
             }
             
-
-            async function checkIfProductIsInCart(productIdToCheck) {
+            // async function checkIfProductIsInCart(productIdToCheck) {
+            async function checkIfProductIsInCart() {
               try {
                 var response = await fetch('/cart.js');
                 var cart = await response.json();
@@ -233,11 +231,8 @@ if (!customElements.get('product-form')) {
             // Example usage:
             // Replace 1234567890 with the actual product ID you want to check
             //checkIfProductIsInCart(9023764300028);
-            checkIfProductIsInCart(9028977492220);
-            
+            checkIfProductIsInCart();
             // Perform actions for a cart with items (e.g., show cart contents)
-
-
           })
           .catch(error => {
             console.error('Error fetching cart data:', error);
