@@ -249,19 +249,19 @@ if (!customElements.get('product-form')) {
                         const cart = await response.json();
                         //var productInCart_chocolate = cart.items.some(item => item.product_id === 9028977492220);
                         if (productInCart_chocolate) {
-                          console.log(`Chocolate Product with ID 9028977492220 is in the cart...`);
+                          console.log(`Chocolate ProductZZ with ID 9028977492220 is in the cart...`);
                           return true;
                         } else if (productInCart_vanilla) {
-                            console.log(`Vanilla Product with ID 9028972413180 is in the cart...`);
+                            console.log(`Vanilla Productzz with ID 9028972413180 is in the cart...`);
                             return true;
                         } else if (productInCart_strawberry) {
-                            console.log(`Strawberry Product with ID 9028962025724 is in the cart...`);
+                            console.log(`Strawberry Productzz with ID 9028962025724 is in the cart...`);
                             return true;
                         }  else if (productInCart_orange) {
-                          console.log(`Strawberry Product with ID 9028955144444 is in the cart...`);
+                          console.log(`Strawberry ProductZZ with ID 9028955144444 is in the cart...`);
                           return true;
                         }  else if (productInCart_apple) {
-                          console.log(`Strawberry Product with ID 9023764300028 is in the cart...`);
+                          console.log(`Strawberry ProductZZ with ID 9023764300028 is in the cart...`);
                           return true;
                         } else {
                           setTimeout(function(){
