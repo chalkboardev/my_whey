@@ -46,9 +46,9 @@
       "settings": {
         "flavour_bg_color": "#fff",
         "flavour_trigger": "flavour_modal",
-        "title": "Featured collection",
+        "title": "Add a flavour?",
         "heading_size": "h1",
-        "description": "",
+        "description": "<p>200g Tubs | Powder</p>",
         "show_description": false,
         "description_style": "body",
         "collection": "flavours",
