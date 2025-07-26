@@ -2079,6 +2079,7 @@ margin-bottom:-7px;
 .cart__checkout-button {
   font-weight:600 !important;
   font-size: 1.7rem !important;
+  text-transform: uppercase;
 }
 
 .checkout_button_txt_anim {
