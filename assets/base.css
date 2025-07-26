@@ -2076,6 +2076,11 @@ margin-bottom:-7px;
   z-index: 9999999 !important;
 }
 
+.cart__checkout-button {
+  font-weight:600 !important;
+  font-size: 1.7rem !important;
+}
+
 /* ---------- ONLY MOBILE ONLY START ---------- */  
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .heading_marquee {
