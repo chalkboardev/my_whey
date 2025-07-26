@@ -2081,6 +2081,13 @@ margin-bottom:-7px;
   font-size: 1.7rem !important;
 }
 
+.checkout_button_txt_anim {
+  /* animation-name: fadeIn;
+  animation-duration: 2s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite; */
+}
+
 /* ---------- ONLY MOBILE ONLY START ---------- */  
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .heading_marquee {
