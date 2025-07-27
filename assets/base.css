@@ -2551,7 +2551,7 @@ margin-bottom:-7px;
     align-items: flex-start;
     bottom: 0 !important;
     /* max-height: 34svh !important; */
-   height: 100% !important;
+   height: auto !important;
     padding: 1rem 3rem 2rem 3rem !important; 
     background: #fff !important;
     border-top: 0.01px solid #cccccc;
