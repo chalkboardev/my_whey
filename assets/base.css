@@ -2537,10 +2537,10 @@ margin-bottom:-7px;
   }
   .menu-drawer__navigation-container {
     /* height: 100vh !important; */
-    height:100svh !important;
+    height:100dvh !important;
   }
   .adjust_mobile_menu_div {
-    height:100svh !important;
+    height:100dvh !important;
   }
   .adjust_mobile_menu .menu-drawer__utility-links {
     position: absolute !important;
