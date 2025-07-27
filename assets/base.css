@@ -2093,7 +2093,7 @@ margin-bottom:-7px;
 }
 
 
-/* ---------- ONLY MOBILE ONLY START ---------- */  
+/* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .add_flav_icon {
     margin: 18px 6px 18px 0 !important;
