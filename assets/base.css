@@ -2550,7 +2550,7 @@ margin-bottom:-7px;
     justify-content: end;
     align-items: flex-start;
     bottom: 0 !important;
-    /* max-height: 255px !important; */
+    max-height: 239px !important;
     height:calc(100svh - 62svh) !important;
     padding: 1rem 3rem 2rem 3rem !important;
     background: #fff !important;
