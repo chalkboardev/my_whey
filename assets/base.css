@@ -2067,12 +2067,12 @@ margin-bottom:-7px;
   cursor: pointer; 
   -webkit-tap-highlight-color: transparent !important;
   letter-spacing: 1px;
-  transition: all .3s ease !important;
+  transition: all .25s ease !important;
 }
 
 .cart_flavour_div:hover {
   letter-spacing: 2px !important;
-  transition: all .3s ease !important;
+  transition: all .25s ease !important;
 }
 
 .hide_flavour_modal {
@@ -2095,11 +2095,11 @@ margin-bottom:-7px;
   border-radius: 50px !important;
   -webkit-tap-highlight-color: transparent !important;
   letter-spacing: 2px;
-  transition: all .3s ease !important;
+  transition: all .25s ease !important;
 }
 .cart__checkout-button:hover {
   letter-spacing: 4px !important;
-  transition: all .3s ease !important;
+  transition: all .25s ease !important;
 }
 
 .checkout_button_txt_anim {
