@@ -2538,6 +2538,7 @@ margin-bottom:-7px;
   .menu-drawer__navigation-container {
     /* height: 100vh !important; */
     height:100dvh !important;
+    padding-bottom: 70% !important;
   }
   .adjust_mobile_menu_div {
     height:100dvh !important;
