@@ -586,10 +586,10 @@ window.addEventListener('resize', () => {
   const currentInnerHeight = window.innerHeight;
 
   if (currentInnerHeight > lastInnerHeight) {
-    console.log('Chrome address bar likely disappeared (viewport height increased)');
+    alert('Chrome address bar likely disappeared (viewport height increased)');
     // Perform actions when address bar hides
   } else if (currentInnerHeight < lastInnerHeight) {
-    console.log('Chrome address bar likely reappeared (viewport height decreased)');
+    alert('Chrome address bar likely reappeared (viewport height decreased)');
     // Perform actions when address bar shows
   }
 
