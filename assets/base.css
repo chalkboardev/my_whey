@@ -2754,6 +2754,7 @@ margin-bottom:-7px;
     /* height: 100vh !important; */
     height: auto !important;
     top:-36px;
+    overflow: hidden !important;
   }
   .menu-drawer__inner-container {
     position: relative;
