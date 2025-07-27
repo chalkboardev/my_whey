@@ -2079,7 +2079,7 @@ margin-bottom:-7px;
 .flavour_modal__overlay .product_card_title:hover {
   text-decoration: none !important;
 }
-.flavour_modal__overlay.product_card_title {
+.flavour_modal__overlay .product_card_title {
   background: none !important;
   text-decoration: none !important;
 }
