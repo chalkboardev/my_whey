@@ -2537,10 +2537,10 @@ margin-bottom:-7px;
   }
   .menu-drawer__navigation-container {
     /* height: 100vh !important; */
-    height:calc(100svh - 39vh) !important;
+    height:100% !important;
   }
   .adjust_mobile_menu_div {
-    height:calc(100svh - 38vh) !important;
+    height:100% !important;
   }
   .adjust_mobile_menu .menu-drawer__utility-links {
     position: absolute !important;
@@ -2551,7 +2551,7 @@ margin-bottom:-7px;
     align-items: flex-start;
     bottom: 0 !important;
     /* max-height: 34svh !important; */
-   height: auto !important;
+    height: auto !important;
     padding: 1rem 3rem 2rem 3rem !important; 
     background: #fff !important;
     border-top: 0.01px solid #cccccc;
