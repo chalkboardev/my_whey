@@ -2537,9 +2537,9 @@ margin-bottom:-7px;
   }
   .menu-drawer__navigation-container {
     /* height: 100vh !important; */
-    height:calc(100vh - 43vh) !important;
+    height:calc(100vh - 39vh) !important;
   }
-  .adjust_mobile_menu_divZZ {
+  .adjust_mobile_menu_div {
     height:calc(100vh - 38vh) !important;
   }
   .adjust_mobile_menu .menu-drawer__utility-links {
