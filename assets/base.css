@@ -2089,7 +2089,7 @@ margin-bottom:-7px;
   animation-iteration-count: infinite; */
 }
 .add_flav_icon_left {
-  margin: 16px 0px 18px 6px !important;
+  margin: 16px 6px 18px 0 !important;
   transform: scaleX(-1);
 }
 .add_flav_icon_right {
@@ -2101,7 +2101,7 @@ margin-bottom:-7px;
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .add_flav_icon_left {
     transform: scaleX(-1);
-    margin: 18px 0px 18px 6px !important;
+    margin: 18px 6px 18px 0 !important;
   }
   .add_flav_icon_left {
     margin: 18px 0px 18px 6px !important;
