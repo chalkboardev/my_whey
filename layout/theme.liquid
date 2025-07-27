@@ -579,26 +579,30 @@ $(document).ready(function(){
       }
     });
 
-    // check if location bar is visible
-let locationBarVis = window.locationbar.visible ? "location bar visible" : "location bar invisible";
+    setTimeout(function(){
+          // check if location bar is visible
+      let locationBarVis = window.locationbar.visible ? "location bar visible" : "location bar invisible";
 
-// check if menu bar is visible
-let menuBarVis = window.menubar.visible ? "menu bar visible" : "menu bar invisible";
+      // check if menu bar is visible
+      let menuBarVis = window.menubar.visible ? "menu bar visible" : "menu bar invisible";
 
-// check if toolbar is visible
-let toolbarVis = window.toolbar.visible ? "toolbar visible" : "toolbar invisible";
+      // check if toolbar is visible
+      let toolbarVis = window.toolbar.visible ? "toolbar visible" : "toolbar invisible";
 
-alert(locationBarVis, menuBarVis, toolbarVis);
-    
-});
+      alert(locationBarVis, menuBarVis, toolbarVis);
+          
+      });
 
-var observer = new MutationObserver(function(mutations) {
-    console.log('Flavour modal open!');
-  });
-  var target = document.querySelector('.flavour_modal__overlay');
-  observer.observe(target, {
-    attributes: true
-  });
+      var observer = new MutationObserver(function(mutations) {
+          console.log('Flavour modal open!');
+        });
+        var target = document.querySelector('.flavour_modal__overlay');
+        observer.observe(target, {
+          attributes: true
+        });
+      }, 3200);
+
+
 </script>
 
     {%- if settings.predictive_search_enabled -%}
