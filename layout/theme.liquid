@@ -581,7 +581,7 @@ $(document).ready(function(){
     
 });
 
-var observer = new MutationObserver(function(mutations) {
+  var observer = new MutationObserver(function(mutations) {
     console.log('Flavour modal open!');
   });
   var target = document.querySelector('.flavour_modal__overlay');
@@ -602,7 +602,7 @@ var observer = new MutationObserver(function(mutations) {
 
         alert(locationBarVis, menuBarVis, toolbarVis);
 
-      }, 3200);
+  }, 3200);
 </script>
 
     {%- if settings.predictive_search_enabled -%}
