@@ -2053,7 +2053,9 @@ margin-bottom:-7px;
 }
 
 .cart_flavour_div {
-  background: #ee4e34;
+  background:linear-gradient(180deg, rgba(254, 89, 0, 1) 0%, rgba(204, 71, 0, 1) 50%, rgba(156, 54, 0, 1) 100%) !important; 
+  border: 2px solid #a33921 !important;
+  border-radius: 50px;;
   width: 100%;
   height: 36px;
   display: flex;
@@ -2080,6 +2082,9 @@ margin-bottom:-7px;
   font-weight:600 !important;
   font-size: 1.7rem !important;
   text-transform: uppercase;
+  background: linear-gradient(180deg, rgba(254, 89, 0, 1) 0%, rgba(204, 71, 0, 1) 50%, rgba(156, 54, 0, 1) 100%) !important;
+  border: 2px solid #a33921 !important;
+  border-radius: 50px !important;
 }
 
 .checkout_button_txt_anim {
