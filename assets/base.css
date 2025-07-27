@@ -2537,7 +2537,7 @@ margin-bottom:-7px;
   }
   .menu-drawer__navigation-container {
     /* height: 100vh !important; */
-    height:100% !important;
+    height:auto !important;
   }
   .adjust_mobile_menu_div {
     height:100% !important;
