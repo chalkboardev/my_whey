@@ -2099,6 +2099,9 @@ margin-bottom:-7px;
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  cart-drawer-items {
+    overflow: scroll !important;
+  }
   .add_flav_icon_left {
     transform: scaleX(-1);
     margin: 19px 6px 18px 0px !important;
