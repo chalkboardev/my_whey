@@ -2064,7 +2064,8 @@ margin-bottom:-7px;
   text-align: center;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+  cursor: pointer; 
+  -webkit-tap-highlight-color: transparent !important;
 }
 
 .hide_flavour_modal {
@@ -2085,6 +2086,7 @@ margin-bottom:-7px;
   background: linear-gradient(180deg, rgba(254, 89, 0, 1) 0%, rgba(204, 71, 0, 1) 50%, rgba(156, 54, 0, 1) 100%) !important;
   border: none!important;
   border-radius: 50px !important;
+  -webkit-tap-highlight-color: transparent !important;
 }
 
 .checkout_button_txt_anim {
