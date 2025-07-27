@@ -2103,8 +2103,8 @@ margin-bottom:-7px;
     transform: scaleX(-1);
     margin: 18px 6px 18px 0 !important;
   }
-  .add_flav_icon_left {
-    margin: 18px 0px 18px 6px !important;
+  .add_flav_icon_right {
+    margin: 18px 0px 18px 6px !important; 
   }
   .heading_marquee {
     margin: -18px 0 -22px 0;
