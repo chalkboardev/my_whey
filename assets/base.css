@@ -2543,10 +2543,11 @@ margin-bottom:-7px;
     height:calc(100svh - 38vh) !important;
   }
   .adjust_mobile_menu .menu-drawer__utility-links {
-    position: absolute !important;
+    position: relative !important;
     display: inline-flex;
     flex-direction: row;
     width: 100%;
+    top: -36svh;
     justify-content: end;
     align-items: flex-start;
     bottom: 0 !important;
