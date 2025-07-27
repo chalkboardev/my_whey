@@ -2539,6 +2539,20 @@ margin-bottom:-7px;
     /* height: 100vh !important; */
     height:calc(100vh - 43vh) !important;
   }
+  .adjust_mobile_menu_divZZ {
+    position: absolute !important;
+    display: inline-flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: end;
+    align-items: flex-start;
+    bottom: 0 !important;
+    height: 35%;
+    padding: 1rem 3rem 2rem 3rem !important;
+    background: #fff !important;
+    border-top: 0.01px solid #cccccc;
+    box-shadow: 0 1px 10px 0px #b7b7b7;
+  }
   .adjust_mobile_menu .menu-drawer__utility-links {
     position: absolute !important;
     display: inline-flex;
