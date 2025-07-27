@@ -578,8 +578,19 @@ $(document).ready(function(){
         }, 1000); // Adjust the scroll speed as desired
       }
     });
+    
+});
 
-    setTimeout(function(){
+var observer = new MutationObserver(function(mutations) {
+    console.log('Flavour modal open!');
+  });
+  var target = document.querySelector('.flavour_modal__overlay');
+  observer.observe(target, {
+    attributes: true
+  });
+
+
+  setTimeout(function(){
         // check if location bar is visible
         let locationBarVis = window.locationbar.visible ? "location bar visible" : "location bar invisible";
 
@@ -590,18 +601,8 @@ $(document).ready(function(){
         let toolbarVis = window.toolbar.visible ? "toolbar visible" : "toolbar invisible";
 
         alert(locationBarVis, menuBarVis, toolbarVis);
-            
-        });
+
       }, 3200);
-
-
-var observer = new MutationObserver(function(mutations) {
-    console.log('Flavour modal open!');
-  });
-  var target = document.querySelector('.flavour_modal__overlay');
-  observer.observe(target, {
-    attributes: true
-  });
 </script>
 
     {%- if settings.predictive_search_enabled -%}
