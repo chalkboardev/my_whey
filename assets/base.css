@@ -2543,13 +2543,13 @@ margin-bottom:-7px;
     height:calc(100svh - 38vh) !important;
   }
   .adjust_mobile_menu .menu-drawer__utility-links {
-    position: fixed !important;
+    position: absolute !important;
     display: inline-flex;
     flex-direction: row;
     width: 100%;
     justify-content: end;
     align-items: flex-start;
-    top: 80svh !important;
+    bottom: 0 !important;
     max-height: 34svh !important;
     height:calc(100svh - 66svh) !important;
     padding: 1rem 3rem 2rem 3rem !important; 
