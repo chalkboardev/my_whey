@@ -2066,12 +2066,12 @@ margin-bottom:-7px;
   align-items: center;
   cursor: pointer; 
   -webkit-tap-highlight-color: transparent !important;
-  letter-spacing: 0px;
+  letter-spacing: 1px;
   transition: all .3s ease !important;
 }
 
 .cart_flavour_div:hover {
-  letter-spacing: 2px !important;
+  letter-spacing: 3px !important;
   transition: all .3s ease !important;
 }
 
