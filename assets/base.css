@@ -2538,7 +2538,7 @@ margin-bottom:-7px;
   .menu-drawer__navigation-container {
     /* height: 100vh !important; */
     height:100dvh !important;
-    padding-bottom: 70% !important;
+    padding-bottom: 72% !important;
   }
   .adjust_mobile_menu_div {
     height:100dvh !important;
@@ -2552,7 +2552,7 @@ margin-bottom:-7px;
     align-items: flex-start;
     bottom: 0 !important;
     /* max-height: 34svh !important; */
-    height: 254px !important;
+    height: 248px !important;
     padding: 1rem 3rem 2rem 3rem !important; 
     background: #fff !important;
     border-top: 0.01px solid #cccccc;
