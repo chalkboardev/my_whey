@@ -1278,6 +1278,7 @@ transform: scale(1.03);
 
     connectedCallback() {
       this.header = document.querySelector('.section-header');
+      this.mobile_menu_div = document.querySelector('.menu-drawer__navigation-container');
       this.headerIsAlwaysSticky = this.getAttribute('data-sticky-type') === 'always' || this.getAttribute('data-sticky-type') === 'reduce-logo-size';
       this.announcement_bar_setting = $(this).hasClass('keep_announcement_on_scroll');
       this.headerBounds = {};
@@ -1338,6 +1339,7 @@ transform: scale(1.03);
       if ((scrollTop + 60) > this.headerBounds.bottom) {
         this.header.classList.add('scrolled-past-header');
         this.menu_drawer.classList.add('adjust_mobile_menu');
+        this.mobile_menu_div.classList.add('adjust_mobile_menu_divZZ');
         if (this.headerIsAlwaysSticky) {
             if (this.announcement_bar_setting) {
 
@@ -1350,6 +1352,7 @@ transform: scale(1.03);
       if (scrollTop > this.currentScrollTop && scrollTop > this.headerBounds.bottom) {
         this.header.classList.add('scrolled-past-header');
         this.menu_drawer.classList.add('adjust_mobile_menu');
+        this.mobile_menu_div.classList.add('adjust_mobile_menu_divZZ');
         if (this.headerIsAlwaysSticky) {
             if (this.announcement_bar_setting) {
 
@@ -1362,6 +1365,7 @@ transform: scale(1.03);
       } else if (scrollTop < this.currentScrollTop && scrollTop > this.headerBounds.bottom) {
         this.header.classList.add('scrolled-past-header');
         this.menu_drawer.classList.add('adjust_mobile_menu');
+        this.mobile_menu_div.classList.add('adjust_mobile_menu_divZZ');
         if (this.headerIsAlwaysSticky) {
             if (this.announcement_bar_setting) {
 
@@ -1383,6 +1387,7 @@ transform: scale(1.03);
       } else if (scrollTop <= this.headerBounds.top) {
         this.header.classList.remove('scrolled-past-header');
         this.menu_drawer.classList.remove('adjust_mobile_menu');
+        this.mobile_menu_div.classList.remove('adjust_mobile_menu_divZZ');
         if (this.headerIsAlwaysSticky) {
             if (this.announcement_bar_setting) {
 
