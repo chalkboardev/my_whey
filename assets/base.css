@@ -2088,9 +2088,18 @@ margin-bottom:-7px;
   animation-direction: alternate;
   animation-iteration-count: infinite; */
 }
+.add_flav_icon {
+  transform: scaleX(-1);
+  margin: 16px 6px 18px 0 !important;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */  
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .add_flav_icon {
+    transform: scaleX(-1);
+    margin: 18px 6px 18px 0 !important;
+  }
   .heading_marquee {
     margin: -18px 0 -22px 0;
     white-space: nowrap;
