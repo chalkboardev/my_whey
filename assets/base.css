@@ -2543,13 +2543,13 @@ margin-bottom:-7px;
     height:calc(100vh - 38vh) !important;
   }
   .adjust_mobile_menu .menu-drawer__utility-links {
-    position: absolute !important;
+    position: fixed !important;
     display: inline-flex;
     flex-direction: row;
     width: 100%;
     justify-content: end;
     align-items: flex-start;
-    bottom: 0 !important;
+    top: calc(100vh - 37vh) !important;
     max-height: 255px !important;
     height:calc(100vh - 58vh) !important;
     padding: 1rem 3rem 2rem 3rem !important;
@@ -2759,7 +2759,7 @@ margin-bottom:-7px;
     height: 100vh !important;
   }
   .menu-drawer__utility-links {
-    position: fixed !important;
+    position: absolute !important;
     display: inline-flex;
     flex-direction: row;
     width: 100%;
