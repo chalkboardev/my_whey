@@ -2765,7 +2765,7 @@ margin-bottom:-7px;
     width: 100%;
     justify-content: end;
     align-items: flex-start;
-    bottom: 0 !important;
+    bottom: 20px !important;
     height: 39%;
     padding: 1rem 3rem 2rem 3rem !important;
     background: #fff !important;
