@@ -208,7 +208,7 @@
                 </div> {% endcomment %}
         
                 <div class="footer_flavour_modal">
-Test...
+                  <p>This collection contains {{ collection.all_products_count }} products.</p>
                   <div class="slider-counter caption">
                     {% comment %} <div class="pagination-dots">
                        {%- for product in section.settings.collection.products limit: section.settings.products_to_show  -%}
@@ -642,7 +642,8 @@ Test...
   .footer_flavour_modal {
     color: #fff;
     line-height: 1.2;
-    display:none !important; 
+    margin:0 auto;
+    /* display:none !important;  */
   }
   .footer_flavour_modal p {
     margin:0 !important;
