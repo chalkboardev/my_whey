@@ -208,8 +208,8 @@
                 </div> {% endcomment %}
         
                 <div class="footer_flavour_modal">
-                  <p>This collection contains {{ section.settings.collection.all_products_count }} products.</p>
-                  <div class="slider-counter caption">
+                  <p class="desktop_flav_count">{{ section.settings.collection.all_products_count }} flavours.</p>
+                  <div class="mobile_flav_count slider-counter caption">
                     {% comment %} <div class="pagination-dots">
                        {%- for product in section.settings.collection.products limit: section.settings.products_to_show  -%}
                          <span class="dot" data-slide-index="{{ forloop.index }}"></span>
@@ -624,6 +624,12 @@
 
 {% stylesheet %}
 @media screen and (min-width: 990px) {
+    .desktop_flav_count {
+      display:block !important; 
+    }
+    .mobile_flav_count {
+      display:none !important; 
+    }
     .flavour_popup__box .slider--desktop:after {
         content: "";
         width: 0;
@@ -639,6 +645,16 @@
       margin-left:0 !important;
     }
 }
+
+@media screen and (max-width: 989px) {
+  .desktop_flav_count {
+      display:none !important; 
+    }
+    .mobile_flav_count {
+      display:block !important; 
+    }
+}
+
   .footer_flavour_modal {
     color: #fff;
     line-height: 1.2;
