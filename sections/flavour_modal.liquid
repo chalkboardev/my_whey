@@ -210,11 +210,11 @@
                 <div class="footer_flavour_modal">
 
                   <div class="slider-counter caption">
-                    <div class="pagination-dots">
+                    {% comment %} <div class="pagination-dots">
                        {%- for product in section.settings.collection.products limit: section.settings.products_to_show  -%}
                          <span class="dot" data-slide-index="{{ forloop.index }}"></span>
                        {%- endfor -%}
-                     </div> 
+                     </div>  {% endcomment %}
                      
                      <p>
                       {% comment %} {{ products_to_display }} mouth-watering powdered flavours {% endcomment %}
