@@ -1070,6 +1070,8 @@ margin-top: -10px;
     font-family: var(--font-heading-family);
     font-size: 1.5rem;
     background-color: inherit;
+    color: #333333;
+    font-weight: 600;
     float: left;
     outline: none;
     cursor: pointer;
