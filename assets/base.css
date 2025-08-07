@@ -1211,7 +1211,7 @@ margin-top: -10px;
   animation-iteration-count: infinite;
 }
 .product__info-container .price--on-sale .price-item--regular {
-  font-size: 1.5rem !important;
+  font-size: 1.4rem !important;
   margin-left: -2px;
   /* top: -2px; */
   position: relative;
