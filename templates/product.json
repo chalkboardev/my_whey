@@ -38,13 +38,6 @@
           "type": "quantity_selector",
           "settings": {}
         },
-        "buy_buttons": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
-          }
-        },
         "subscriptions_app_block_mcacgb": {
           "type": "shopify://apps/subscriptions/blocks/app-block/a3bfe9ec-96f8-4508-a003-df608a36d2ad",
           "settings": {
@@ -55,6 +48,13 @@
             "border_radius": 10,
             "subscription_policy_url": "",
             "product": "{{product}}"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
           }
         },
         "description": {
@@ -74,8 +74,8 @@
         "price",
         "variant_picker",
         "quantity_selector",
-        "buy_buttons",
         "subscriptions_app_block_mcacgb",
+        "buy_buttons",
         "description",
         "share"
       ],
