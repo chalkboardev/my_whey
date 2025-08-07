@@ -564,8 +564,8 @@
 {% else %}
   <p>This product is not a subscription product.</p>
   <script>
-    alert('No subscription for this product');
-    $("#shopify-block-ARldVWTRCbFBOL3ZNR__subscriptions_app_block_xMiP3e").remove();
+   // alert('No subscription for this product');
+    $(".shopify_subscriptions_app_container").parent().remove();
   </script>
 {% endif %}
 
