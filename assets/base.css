@@ -2086,10 +2086,12 @@ margin-bottom:-7px;
 
 .hide_flavour_modal {
   visibility: hidden !important;
+  display:none;
   opacity: 0 !important;
   z-index: -1 !important;
 }
 .show_flavour_modal {
+  display: flex;
   visibility: visible !important;
   opacity: 1 !important;
   z-index: 9999999 !important;

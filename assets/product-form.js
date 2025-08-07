@@ -104,6 +104,7 @@ if (!customElements.get('product-form')) {
                               main_flavour_modal.style.visibility = 'visible';
                               main_flavour_modal.style.zIndex = '99999';
                               main_flavour_modal.style.opacity = '1';
+                              main_flavour_modal.style.display = 'flex';
                             }
                             var product_flavour_modal = document.getElementById('flavour_modal_product');
                             // Set CSS properties directly
@@ -113,6 +114,7 @@ if (!customElements.get('product-form')) {
                               product_flavour_modal.style.visibility = 'visible';
                               product_flavour_modal.style.zIndex = '99999';
                               product_flavour_modal.style.opacity = '1';
+                              product_flavour_modal.style.display = 'flex';
                             }
                             }, 1500);
                         }
