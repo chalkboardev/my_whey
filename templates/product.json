@@ -38,6 +38,18 @@
           "type": "quantity_selector",
           "settings": {}
         },
+        "subscriptions_app_block_xfPKqC": {
+          "type": "shopify://apps/subscriptions/blocks/app-block/a3bfe9ec-96f8-4508-a003-df608a36d2ad",
+          "settings": {
+            "color_text_body": "#6D7175",
+            "dividers_color": "#8F8D8D",
+            "bacgkround_color": "#FFFFFF",
+            "border_thickness": 1,
+            "border_radius": 0,
+            "subscription_policy_url": "",
+            "product": "grass-fed-whey-protein-concentrate-powder"
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -62,6 +74,7 @@
         "price",
         "variant_picker",
         "quantity_selector",
+        "subscriptions_app_block_xfPKqC",
         "buy_buttons",
         "description",
         "share"
