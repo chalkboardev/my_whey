@@ -561,9 +561,9 @@
 
 
 {% if product.selling_plan_groups.size > 0 %}
-  This product is available for subscription.
+  {% comment %} This product is available for subscription. {% endcomment %}
 {% else %}
-  This product is a one-time purchase.
+  {% comment %} This product is a one-time purchase. {% endcomment %}
   <script>
     // alert('No subscription for this product');
      $(".shopify_subscriptions_app_container").parent().remove();
