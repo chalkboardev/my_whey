@@ -3160,7 +3160,7 @@ text-transform: capitalize !important;
     display: flex !important;
   }
   .product__info-container .price--on-sale .price-item--regular {
-    top: -2px;
+    top: 0px;
   }
   .page_width_custom {
     padding: 0 5rem;
