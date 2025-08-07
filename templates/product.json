@@ -47,7 +47,7 @@
             "border_thickness": 1,
             "border_radius": 10,
             "subscription_policy_url": "",
-            "product": "{{ product }}"
+            "product": ""
           }
         },
         "buy_buttons": {
