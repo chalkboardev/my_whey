@@ -760,7 +760,7 @@
     {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when '@app' -%}
-            {% render block %}
+            {% comment %} {% render block %} {% endcomment %}
         {%- when 'description' -%}
           {%- if product.description != blank -%}
             <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
