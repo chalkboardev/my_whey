@@ -3075,6 +3075,8 @@ text-transform: capitalize !important;
     padding: 14px 16px;
     transition: 0.3s;
     min-width: auto;
+    color: #555;
+    font-weight: 600;
   }
   .about_large_title {
     margin: 0 auto;
