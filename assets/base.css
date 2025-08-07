@@ -2127,7 +2127,22 @@ margin-bottom:-7px;
 .mw_price_div .price-item {
   font-size: 2rem !important;
 }
-
+.shopify_subscriptions_app_policy:before {
+content: "*";
+text-transform: capitalize !important;
+}
+.shopify_subscriptions_app_policy {
+  margin-top: 0rem !important;
+  margin-left: 10px;
+  color: #6a6a6a;
+  font-size: 12px;
+}
+/* .shopify_subscriptions_app_policy::first-letter {
+  text-transform: lowercase; 
+} */
+.shopify_subscriptions_app_block_label:before {
+ color:#333;
+}
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
 
