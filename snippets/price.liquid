@@ -111,9 +111,9 @@
             <s class="my_normal_price price-item price-item--regular">
               {% comment %} <span class="was_span">WAS</span> {% endcomment %}
               {% if settings.currency_code_enabled %}
-                {{ compare_at_price | money }}
+                {{ compare_at_price  }}
               {% else %}
-                {{ compare_at_price | money }}
+                {{ compare_at_price }}
               {% endif %}
             </s>
           </span>
