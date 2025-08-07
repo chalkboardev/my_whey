@@ -558,7 +558,17 @@
                   section_id: section.id,
                   show_pickup_availability: true
                 -%}
- 
+
+ {% if product.selected_or_first_available_variant.requires_selling_plan %}
+  <p>This product is available for subscription!</p>
+{% else %}
+  <p>This product is not a subscription product.</p>
+  <script>
+    //alert('No subscription for this product');
+    $("#shopify-block-ARldVWTRCbFBOL3ZNR__subscriptions_app_block_xMiP3e").remove();
+  </script>
+{% endif %}
+
               {%- when 'description' -%} 
                 {%- if product.description != blank -%}
                   <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
