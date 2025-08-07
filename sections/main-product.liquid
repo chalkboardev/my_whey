@@ -558,6 +558,14 @@
                   section_id: section.id,
                   show_pickup_availability: true
                 -%}
+ 
+              {%- when 'description' -%}
+                {%- if product.description != blank -%}
+                  <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
+                    <h3>Product Description</h3> {{ product.description }} 
+                  </div>
+                {%- endif -%}
+                
               {%- when 'rating' -%}
                 {%- if product.metafields.reviews.rating.value != blank -%}
                   <div class="rating-wrapper">
@@ -761,12 +769,13 @@
         {%- case block.type -%}
           {%- when '@app' -%}
             {% comment %} {% render block %} {% endcomment %}
-        {%- when 'description' -%}
+
+            {% comment %} {%- when 'description' -%}
           {%- if product.description != blank -%}
             <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
              <h3>Product Description</h3> {{ product.description }} 
             </div>
-          {%- endif -%}
+          {%- endif -%} {% endcomment %}
       {%- endcase -%}
     {%- endfor -%}
   <div style="display: flex;">
