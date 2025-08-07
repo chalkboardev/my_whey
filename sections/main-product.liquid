@@ -559,14 +559,15 @@
                   show_pickup_availability: true
                 -%}
 
- {% if product.selected_or_first_available_variant.requires_selling_plan %}
-  <p>This product is available for subscription!</p>
+
+{% if product.selling_plan_groups.size > 0 %}
+  This product is available for subscription.
 {% else %}
-  <p>This product is not a subscription product.</p>
+  This product is a one-time purchase.
   <script>
-   // alert('No subscription for this product');
-    $(".shopify_subscriptions_app_container").parent().remove();
-  </script>
+    // alert('No subscription for this product');
+     $(".shopify_subscriptions_app_container").parent().remove();
+   </script>
 {% endif %}
 
               {%- when 'description' -%} 
