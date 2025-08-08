@@ -297,9 +297,15 @@ if (productSections) {
     newSpan.classList.add("gradient");
     newSpan.textContent = 'Most Popular';
 
-    
-    secondElement.append(newSpan);
-    // Perform actions on the section, e.g., change its style, add content, etc.
+    secondElement.prepend(newSpan);
+
+    // let img = document.createElement("img");
+    // img.src = "https://cdn.shopify.com/s/files/1/0713/8685/7724/files/loader.gif?v=1743590298"; // Replace with your image path
+    // img.alt = "Description of the image"; // Provide descriptive alt text
+    // img.width = 16; // Optional: set image width
+    // img.height = 16; // Optional: set image height
+    //secondElement.prepend(img);
+
   });
 } else {
   console.log("Not found a product variant:" + variantId );
