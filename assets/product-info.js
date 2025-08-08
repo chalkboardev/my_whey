@@ -269,7 +269,69 @@ if (!customElements.get('product-info')) {
       }
 
       updateVariantInputs(variantId) {
+        const elementsToRemove = document.querySelectorAll('.most_popular');
+        elementsToRemove.forEach(element => {
+          element.remove();
+      });
         //alert(variantId);
+        //const elements = document.querySelectorAll(`[class="${variantId}"]`);
+// Select all section elements where the 'data-category' attribute equals 'products'
+const productSections = document.querySelectorAll(`section[data-variant-id="${variantId}"]`);
+// const elementsWithClass = productSections.querySelectorAll('.shopify_subscriptions_app_block_label'); // Replace 'myClassName' with the actual class
+// const secondElement = elementsWithClass[1];
+
+// Select all section elements where the 'data-category' attribute equals 'products'
+//const productSections = document.querySelectorAll('section[data-category="products"]');
+
+// You can then iterate through the selected elements or access the first one if only one is expected
+if (productSections) {
+  productSections.forEach(section => {
+    console.log("Found a product section:" + variantId );
+    const elementsWithClass = section.querySelectorAll('.shopify_subscriptions_app_block_label'); // Replace 'myClassName' with the actual class
+    const secondElement = elementsWithClass[1];
+
+    const newSpan = document.createElement('span');
+    newSpan.id = "most_popular";
+    newSpan.classList.add("most_popular");
+    newSpan.classList.add("color-scheme-5"); 
+    newSpan.classList.add("gradient");
+    newSpan.textContent = 'Most Popular';
+
+    
+    secondElement.append(newSpan);
+    // Perform actions on the section, e.g., change its style, add content, etc.
+  });
+} else {
+  console.log("Not found a product variant:" + variantId );
+}
+
+
+        // const secondElement = document.querySelector('.shopify_subscriptions_app_block--hidden .shopify_subscriptions_app_block_label:nth-of-type(2)');
+
+        
+        // const newSpan = document.createElement('span');
+        // newSpan.id = "most_popular";
+        // newSpan.classList.add("most_popular");
+        // newSpan.classList.add("color-scheme-5"); 
+        // newSpan.classList.add("gradient");
+        // newSpan.textContent = 'Most Popular';
+        // secondElement.append(newSpan);
+
+        // let element = document.getElementById('most_popular');
+        // const secondElement = document.querySelectorAll('.shopify_subscriptions_app_block_label')[1];
+        // const newSpan = document.createElement('span');
+        // newSpan.id = "most_popular";
+        // newSpan.classList.add("most_popular"); 
+        // newSpan.textContent = 'Most Popular';
+
+        // if (element) {
+        //   // The element with 'myElementId' exists
+        //   console.log("Element exists!");
+        // } else {
+        //   // The element does not exist
+        //   console.log("Element does not exist.");
+        //   secondElement.append(newSpan);
+        // }
 
 
         //alert("Variant ID: " + variantId);

@@ -559,9 +559,26 @@
                   show_pickup_availability: true
                 -%}
 
-
+{% comment %}---------- CHECK IF THE PRODUCT IS A SUBSCRIPTION PRODUCT {% endcomment %}
 {% if product.selling_plan_groups.size > 0 %}
   {% comment %} This product is available for subscription. {% endcomment %}
+  <script>
+    // alert('No subscription for this product');
+    //$(".shopify_subscriptions_app_block_label").eq(1).css('background','red');
+
+    if ($("#most_popular").length > 0) {
+  // The element with id="myElement" exists within the container with id="myContainer"
+  console.log("Element found within container.");
+} else {
+  // The element with id="myElement" does NOT exist within the container with id="myContainer"
+  console.log("Element not found within container.");
+  $(".shopify_subscriptions_app_block .shopify_subscriptions_app_block_label").eq(1).append('<span id="most_popular" class="most_popular color-scheme-5 gradient">Most Popular</span>');
+}
+
+
+
+   
+   </script>
 {% else %}
   {% comment %} This product is a one-time purchase. {% endcomment %}
   <script>

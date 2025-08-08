@@ -2154,7 +2154,27 @@ text-transform: capitalize !important;
   padding-left: 0 !important;
 }
 
+.most_popular {
+  color: #fff;
+  font-size: 14px;
+  padding: 2px 9px 2px 9px;
+  border-radius: 50px;
+  font-size: 1.4rem !important;
+  position: relative;
+  text-shadow: 0px 0px 2px #333;
+  background: #929292;
+}
 
+.shopify_subscriptions_app_block {
+  /* display: flex;
+  flex-direction: row-reverse;
+  margin-top: -42%;
+  position: absolute;
+  right:0; */
+}
+.mw_variants_select {
+  /* width: 60%; */
+}
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .related-products .card__information {
