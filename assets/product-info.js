@@ -165,7 +165,7 @@ if (!customElements.get('product-info')) {
       }
 
       renderProductInfo({ requestUrl, targetId, callback }) {
-        //$(".price").html('zzz...');
+        //$(".price").html('zzz...'); 
         this.abortController?.abort();
         this.abortController = new AbortController();
 
@@ -178,6 +178,7 @@ if (!customElements.get('product-info')) {
           })
           .then(() => {
             // set focus to last clicked option value
+            //console.log('Focused new variant...');
             document.querySelector(`#${targetId}`)?.focus();
           })
           .catch((error) => {
@@ -269,80 +270,46 @@ if (!customElements.get('product-info')) {
       }
 
       updateVariantInputs(variantId) {
+        //alert(variantId);
+        // Remove the most_popular div
         const elementsToRemove = document.querySelectorAll('.most_popular');
         elementsToRemove.forEach(element => {
           element.remove();
-      });
-        //alert(variantId);
-        //const elements = document.querySelectorAll(`[class="${variantId}"]`);
-// Select all section elements where the 'data-category' attribute equals 'products'
-const productSections = document.querySelectorAll(`section[data-variant-id="${variantId}"]`);
-// const elementsWithClass = productSections.querySelectorAll('.shopify_subscriptions_app_block_label'); // Replace 'myClassName' with the actual class
-// const secondElement = elementsWithClass[1];
+        });
 
-// Select all section elements where the 'data-category' attribute equals 'products'
-//const productSections = document.querySelectorAll('section[data-category="products"]');
+        // Select all section elements where the 'data-category' attribute equals 'products'
+        const productSections = document.querySelectorAll(`section[data-variant-id="${variantId}"]`);
 
-// You can then iterate through the selected elements or access the first one if only one is expected
-if (productSections) {
-  productSections.forEach(section => {
-    console.log("Found a product section:" + variantId );
-    const elementsWithClass = section.querySelectorAll('.shopify_subscriptions_app_block_label'); // Replace 'myClassName' with the actual class
-    const secondElement = elementsWithClass[1];
+        // You can then iterate through the selected elements or access the first one if only one is expected
+        if (productSections) {
+          productSections.forEach(section => {
+            //console.log("Found a product section:" + variantId );
+            console.log("Variant " + variantId + " is displaying...")
+            const elementsWithClass = section.querySelectorAll('.shopify_subscriptions_app_block_label'); // Replace 'myClassName' with the actual class
+            const secondElement = elementsWithClass[1];
 
-    const newSpan = document.createElement('span');
-    newSpan.id = "most_popular";
-    newSpan.classList.add("most_popular");
-    newSpan.classList.add("color-scheme-5"); 
-    newSpan.classList.add("gradient");
-    newSpan.textContent = 'Most Popular';
+            const newSpan = document.createElement('span');
+            newSpan.id = "most_popular";
+            newSpan.classList.add("most_popular");
+            newSpan.classList.add("color-scheme-5"); 
+            newSpan.classList.add("gradient");
+            newSpan.textContent = 'Most Popular';
 
-    secondElement.prepend(newSpan);
+            secondElement.prepend(newSpan);
 
-    let img = document.createElement("img");
-    img.src = "https://cdn.shopify.com/s/files/1/0713/8685/7724/files/star_2.png?v=1754731649"; // Replace with your image path
-    img.alt = "Popular Icon"; // Provide descriptive alt text
-    img.classList.add('popular_icon');
-    img.width = 12; // Optional: set image width
-    img.height = 12; // Optional: set image height
-    img.style.right = '2px';
-    newSpan.prepend(img);
+            let img = document.createElement("img");
+            img.src = "https://cdn.shopify.com/s/files/1/0713/8685/7724/files/star_2.png?v=1754737912"; // Replace with your image path
+            img.alt = "Popular Icon"; // Provide descriptive alt text
+            img.classList.add('popular_icon');
+            img.width = 12; // Optional: set image width
+            img.height = 12; // Optional: set image height
+            img.style.right = '2px';
+            newSpan.prepend(img);
 
-    
-
-  });
-} else {
-  console.log("Not found a product variant:" + variantId );
-}
-
-
-        // const secondElement = document.querySelector('.shopify_subscriptions_app_block--hidden .shopify_subscriptions_app_block_label:nth-of-type(2)');
-
-        
-        // const newSpan = document.createElement('span');
-        // newSpan.id = "most_popular";
-        // newSpan.classList.add("most_popular");
-        // newSpan.classList.add("color-scheme-5"); 
-        // newSpan.classList.add("gradient");
-        // newSpan.textContent = 'Most Popular';
-        // secondElement.append(newSpan);
-
-        // let element = document.getElementById('most_popular');
-        // const secondElement = document.querySelectorAll('.shopify_subscriptions_app_block_label')[1];
-        // const newSpan = document.createElement('span');
-        // newSpan.id = "most_popular";
-        // newSpan.classList.add("most_popular"); 
-        // newSpan.textContent = 'Most Popular';
-
-        // if (element) {
-        //   // The element with 'myElementId' exists
-        //   console.log("Element exists!");
-        // } else {
-        //   // The element does not exist
-        //   console.log("Element does not exist.");
-        //   secondElement.append(newSpan);
-        // }
-
+          });
+        } else {
+          console.log("Not found a product variant:" + variantId );
+        }
 
         //alert("Variant ID: " + variantId);
         this.querySelectorAll(

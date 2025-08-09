@@ -564,20 +564,60 @@
   {% comment %} This product is available for subscription. {% endcomment %}
   <script>
     // alert('No subscription for this product');
-    //$(".shopify_subscriptions_app_block_label").eq(1).css('background','red');
 
-    if ($("#most_popular").length > 0) {
-  // The element with id="myElement" exists within the container with id="myContainer"
-  console.log("Element found within container.");
-} else {
-  // The element with id="myElement" does NOT exist within the container with id="myContainer"
-  console.log("Element not found within container.");
-  $(".shopify_subscriptions_app_block .shopify_subscriptions_app_block_label").eq(1).prepend('<span id="most_popular" class="most_popular color-scheme-5 gradient"> <img class="popular_icon" width="12" src="https://cdn.shopify.com/s/files/1/0713/8685/7724/files/star_2.png?v=1754731649" /> Most Popular</span>');
-}
+        var queryString = window.location.search; // "?name=John%20Doe&age=30"
+        var paramsArray = queryString.substring(1).split('&'); // ["name=John%20Doe", "age=30"]
 
+        var urlParams = {};
+        $.each(paramsArray, function(index, param) {
+            var keyValue = param.split('=');
+            if (keyValue.length === 2) {
+                urlParams[decodeURIComponent(keyValue[0])] = decodeURIComponent(keyValue[1]);
+            }
+        });
 
+        // var name = urlParams.name; // "John Doe"
+        var variantId = urlParams.variant; // "John Doe"
 
-   
+        const elementsToRemove = document.querySelectorAll('.most_popular');
+        elementsToRemove.forEach(element => {
+          element.remove();
+        });
+
+        // Select all section elements where the 'data-category' attribute equals 'products'
+        const productSections = document.querySelectorAll(`section[data-variant-id="${variantId}"]`);
+
+        // You can then iterate through the selected elements or access the first one if only one is expected
+        if (productSections) {
+          productSections.forEach(section => {
+            console.log("Variant " + variantId + " is displaying now...")
+            // console.log("Found a product section:" + variantId );
+            const elementsWithClass = section.querySelectorAll('.shopify_subscriptions_app_block_label'); // Replace 'myClassName' with the actual class
+            const secondElement = elementsWithClass[1];
+
+            const newSpan = document.createElement('span');
+            newSpan.id = "most_popular";
+            newSpan.classList.add("most_popular");
+            newSpan.classList.add("color-scheme-5"); 
+            newSpan.classList.add("gradient");
+            newSpan.textContent = 'Most Popular';
+
+            secondElement.prepend(newSpan);
+
+            let img = document.createElement("img");
+            img.src = "https://cdn.shopify.com/s/files/1/0713/8685/7724/files/star_2.png?v=1754737912"; // Replace with your image path
+            img.alt = "Popular Icon"; // Provide descriptive alt text
+            img.classList.add('popular_icon');
+            img.width = 12; // Optional: set image width
+            img.height = 12; // Optional: set image height
+            img.style.right = '2px';
+            newSpan.prepend(img);
+
+          });
+        } else {
+          console.log("Not found a product variant:" + variantId );
+        }
+
    </script>
 {% else %}
   {% comment %} This product is a one-time purchase. {% endcomment %}
