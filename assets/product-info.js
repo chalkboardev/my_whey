@@ -313,8 +313,8 @@ if (!customElements.get('product-info')) {
             img.src = "https://cdn.shopify.com/s/files/1/0713/8685/7724/files/star_2.png?v=1754737912"; // Replace with your image path
             img.alt = "Popular Icon"; // Provide descriptive alt text
             img.classList.add('popular_icon');
-            img.width = 12; // Optional: set image width
-            img.height = 12; // Optional: set image height
+            img.width = 11; // Optional: set image width
+            img.height = 11; // Optional: set image height
             img.style.right = '2px';
             newSpan.prepend(img);
 

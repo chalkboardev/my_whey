@@ -565,6 +565,18 @@
   <script>
     // alert('No subscription for this product');
 
+        const elementsToRemove = document.querySelectorAll('.most_popular');
+        elementsToRemove.forEach(element => {
+          element.remove();
+        });
+
+        if ($("#most_popular").length > 0) {
+          console.log("Element found within container.");
+        } else {
+          console.log("Element not found within container.");
+          $(".shopify_subscriptions_app_block .shopify_subscriptions_app_block_label").eq(1).prepend('<span id="most_popular" class="most_popular color-scheme-5 gradient"> <img class="popular_icon" width="12" src="https://cdn.shopify.com/s/files/1/0713/8685/7724/files/star_2.png?v=1754731649" /> Most Popular</span>');
+        }
+
         var queryString = window.location.search; // "?name=John%20Doe&age=30"
         var paramsArray = queryString.substring(1).split('&'); // ["name=John%20Doe", "age=30"]
 
@@ -578,11 +590,6 @@
 
         // var name = urlParams.name; // "John Doe"
         var variantId = urlParams.variant; // "John Doe"
-
-        const elementsToRemove = document.querySelectorAll('.most_popular');
-        elementsToRemove.forEach(element => {
-          element.remove();
-        });
 
         // Select all section elements where the 'data-category' attribute equals 'products'
         const productSections = document.querySelectorAll(`section[data-variant-id="${variantId}"]`);
@@ -620,8 +627,8 @@
             img.src = "https://cdn.shopify.com/s/files/1/0713/8685/7724/files/star_2.png?v=1754737912"; // Replace with your image path
             img.alt = "Popular Icon"; // Provide descriptive alt text
             img.classList.add('popular_icon');
-            img.width = 12; // Optional: set image width
-            img.height = 12; // Optional: set image height
+            img.width = 11; // Optional: set image width
+            img.height = 11; // Optional: set image height
             img.style.right = '2px';
             newSpan.prepend(img);
 
