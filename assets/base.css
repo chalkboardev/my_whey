@@ -2231,7 +2231,7 @@ text-transform: capitalize !important;
 
 .popular_icon {
   position: relative;
-  top: 1px;
+  top:0.09rem;
   right: 3px;
   height: 10px;
   visibility: visible;
