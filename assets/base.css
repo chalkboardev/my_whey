@@ -2192,7 +2192,7 @@ text-transform: capitalize !important;
 
 .popular_icon {
   position: relative;
-  top: 2px;
+  top: 1px;
   height: auto;
   visibility: visible;
   animation-direction: alternate;
