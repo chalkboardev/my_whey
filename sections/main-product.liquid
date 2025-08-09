@@ -572,11 +572,12 @@
 } else {
   // The element with id="myElement" does NOT exist within the container with id="myContainer"
   console.log("Element not found within container.");
-  $(".shopify_subscriptions_app_block .shopify_subscriptions_app_block_label").eq(1).prepend('<span id="most_popular" class="most_popular color-scheme-5 gradient">  Most Popular</span>');
+  $(".shopify_subscriptions_app_block .shopify_subscriptions_app_block_label").eq(1).prepend('<span id="most_popular" class="most_popular color-scheme-5 gradient"> <img class="popular_icon" width="12" src="https://cdn.shopify.com/s/files/1/0713/8685/7724/files/star_2.png?v=1754731649" /> Most Popular</span>');
 }
 
 
 
+   
    </script>
 {% else %}
   {% comment %} This product is a one-time purchase. {% endcomment %}
