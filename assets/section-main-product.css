@@ -231,7 +231,7 @@ product-info {
 /* Product info */
 
 .product__info-container > * + * {
-  margin: 1.5rem 0;
+  margin: 0rem 0 1.5rem 0;
 }
 
 .product__info-container iframe {
@@ -260,7 +260,7 @@ a.product__text {
 
 .product__title {
   word-break: break-word;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem; 
 }
 
 .product__title > * {
@@ -285,6 +285,7 @@ a.product__text {
 
 .product .price .badge {
   margin-bottom: 0.5rem;
+  margin-left: -6px;
 }
 
 .product .price__container {

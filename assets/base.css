@@ -1372,12 +1372,25 @@ margin-top: -10px;
 }
 
 .product_icons {
-  margin-bottom: 12px !important;
+  /* margin-bottom: 12px !important;
   margin-top: -11px !important;
   gap:6px;
   display: flex;
   flex-direction: row;
+  overflow: scroll; */
+  margin-bottom: 12px !important;
+  margin-top: -11px !important;
+  gap: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  flex-direction: column;
   overflow: scroll;
+  align-content: end;
+  align-items: end;
+  position: absolute;
+  right: 9px;
+  top:20px;
 }
 .dietary_icons {
   min-width: 76px;
@@ -1555,6 +1568,7 @@ margin-bottom:-7px;
 }
 .product .price .price-item {
   font-size: 2.4rem;
+  font-weight: 600;
 }
 
 .product .price__container {
@@ -2257,6 +2271,10 @@ text-transform: capitalize !important;
 .shopify_subscriptions_app_block_label input {
   position: relative;
   top: 2px;
+}
+
+.product__title h1 {
+  font-weight:600;
 }
 
 
