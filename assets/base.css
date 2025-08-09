@@ -2282,6 +2282,18 @@ text-transform: capitalize !important;
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .dietary_icons .icon-wrap {
+    width:40px;
+  }
+  .dietary_icons p {
+    margin: 0;
+    color: #999;
+    text-transform: uppercase;
+    font-size: 1rem;
+    line-height: 1rem;
+    text-align: center;
+    padding: 1px 0 0 0;
+}
   .shopify_subscriptions_app_block_label input {
     position: relative;
     top: 4px;
