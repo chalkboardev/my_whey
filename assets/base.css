@@ -1569,6 +1569,7 @@ margin-bottom:-7px;
 .product .price .badge {
   margin-bottom: 0rem;
   text-shadow: 0px 0px 2px #333;
+  cursor: default;
 }
 
 .cart__items dl {
