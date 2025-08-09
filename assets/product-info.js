@@ -318,6 +318,11 @@ if (!customElements.get('product-info')) {
             img.style.right = '2px';
             newSpan.prepend(img);
 
+            var elements = document.getElementsByClassName("shopify_subscriptions_app_policy");
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].textContent = "New text content"; // Or elements[i].innerHTML = "<strong>New HTML</strong>";
+            }
+
           });
         } else {
           console.log("Not found a product variant:" + variantId );

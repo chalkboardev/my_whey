@@ -565,78 +565,87 @@
   <script>
     // alert('No subscription for this product');
 
-        const elementsToRemove = document.querySelectorAll('.most_popular');
-        elementsToRemove.forEach(element => {
-          element.remove();
-        });
-
-        if ($("#most_popular").length > 0) {
-          console.log("Element found within container.");
-        } else {
-          console.log("Element not found within container.");
-          $(".shopify_subscriptions_app_block .shopify_subscriptions_app_block_label").eq(1).prepend('<span id="most_popular" class="most_popular color-scheme-5 gradient"> <img class="popular_icon" width="12" src="https://cdn.shopify.com/s/files/1/0713/8685/7724/files/star_2.png?v=1754731649" /> Most Popular</span>');
-        }
-
         var queryString = window.location.search; // "?name=John%20Doe&age=30"
-        var paramsArray = queryString.substring(1).split('&'); // ["name=John%20Doe", "age=30"]
+        if(queryString){
+              console.log("YES query string...");
+              var paramsArray = queryString.substring(1).split('&'); // ["name=John%20Doe", "age=30"]
 
-        var urlParams = {};
-        $.each(paramsArray, function(index, param) {
-            var keyValue = param.split('=');
-            if (keyValue.length === 2) {
-                urlParams[decodeURIComponent(keyValue[0])] = decodeURIComponent(keyValue[1]);
-            }
-        });
+              var urlParams = {};
+              $.each(paramsArray, function(index, param) {
+                  var keyValue = param.split('=');
+                  if (keyValue.length === 2) {
+                      urlParams[decodeURIComponent(keyValue[0])] = decodeURIComponent(keyValue[1]);
+                  }
+              });
 
-        // var name = urlParams.name; // "John Doe"
-        var variantId = urlParams.variant; // "John Doe"
+              // var name = urlParams.name; // "John Doe"
+              var variantId = urlParams.variant; // "John Doe"
 
-        // Select all section elements where the 'data-category' attribute equals 'products'
-        const productSections = document.querySelectorAll(`section[data-variant-id="${variantId}"]`);
+              // Select all section elements where the 'data-category' attribute equals 'products'
+              const productSections = document.querySelectorAll(`section[data-variant-id="${variantId}"]`);
 
-        // You can then iterate through the selected elements or access the first one if only one is expected
-        if (productSections) {
-          productSections.forEach(section => {
-            console.log("Variant " + variantId + " is displaying now...")
-            // console.log("Found a product section:" + variantId );
-            const elementsWithClass = section.querySelectorAll('.shopify_subscriptions_app_block_label'); // Replace 'myClassName' with the actual class
-            const secondElement = elementsWithClass[1];
+              // You can then iterate through the selected elements or access the first one if only one is expected
+              if (productSections) {
+                const elementsToRemove = document.querySelectorAll('.most_popular');
+                elementsToRemove.forEach(element => {
+                  element.remove();
+                });
+                productSections.forEach(section => {
+                  console.log("Variant " + variantId + " is displaying now...");
+                  // console.log("Found a product section:" + variantId );
+                  const elementsWithClass = section.querySelectorAll('.shopify_subscriptions_app_block_label'); // Replace 'myClassName' with the actual class
+                  const secondElement = elementsWithClass[1];
 
-            const newSpan = document.createElement('span');
-            newSpan.id = "most_popular";
-            newSpan.classList.add("most_popular");
-            newSpan.classList.add("color-scheme-5"); 
-            newSpan.classList.add("gradient");
-            newSpan.textContent = 'Most Popular';
+                  const newSpan = document.createElement('span');
+                  newSpan.id = "most_popular";
+                  newSpan.classList.add("most_popular");
+                  newSpan.classList.add("color-scheme-5"); 
+                  newSpan.classList.add("gradient");
+                  newSpan.textContent = 'Most Popular';
 
-            secondElement.prepend(newSpan);
+                  secondElement.prepend(newSpan);
 
-            const childElement = document.getElementById('most_popular'); // Replace 'yourChildId' with the actual ID of your element
-            const parentElement = childElement.parentNode;
-            const grandparentElement = parentElement.parentNode;
+                  const childElement = document.getElementById('most_popular'); // Replace 'yourChildId' with the actual ID of your element
+                  const parentElement = childElement.parentNode;
+                  const grandparentElement = parentElement.parentNode;
 
-            if (grandparentElement) {
-              //const grandparentId = grandparentElement.id;
-              grandparentElement.id = 'mw_subscription_block';
-              //console.log('Grandparent ID:', grandparentElement.id);
-            } else {
-              //console.log('No grandparent found.');
-            }
+                  if (grandparentElement) {
+                    //const grandparentId = grandparentElement.id;
+                    grandparentElement.id = 'mw_subscription_block';
+                    //console.log('Grandparent ID:', grandparentElement.id);
+                  } else {
+                    //console.log('No grandparent found.');
+                  }
 
-            let img = document.createElement("img");
-            img.src = "https://cdn.shopify.com/s/files/1/0713/8685/7724/files/star_2.png?v=1754737912"; // Replace with your image path
-            img.alt = "Popular Icon"; // Provide descriptive alt text
-            img.classList.add('popular_icon');
-            img.width = 11; // Optional: set image width
-            img.height = 11; // Optional: set image height
-            img.style.right = '2px';
-            newSpan.prepend(img);
+                  let img = document.createElement("img");
+                  img.src = "https://cdn.shopify.com/s/files/1/0713/8685/7724/files/star_2.png?v=1754737912"; // Replace with your image path
+                  img.alt = "Popular Icon"; // Provide descriptive alt text
+                  img.classList.add('popular_icon');
+                  img.width = 11; // Optional: set image width
+                  img.height = 11; // Optional: set image height
+                  img.style.right = '2px';
+                  newSpan.prepend(img);
 
-          });
+                  var elements = document.getElementsByClassName("shopify_subscriptions_app_policy");
+                  for (var i = 0; i < elements.length; i++) {
+                      elements[i].textContent = "New text content"; // Or elements[i].innerHTML = "<strong>New HTML</strong>";
+                  }
+
+                });
+              } else {
+                console.log("Not found a product variant:" + variantId );
+              }
+
         } else {
-          console.log("Not found a product variant:" + variantId );
+          console.log("no query string...");
+          if ($("#most_popular").length > 0) {
+            console.log("most_popular element found...");
+          } else {
+            console.log("most_popular element not found within container.");
+            $(".shopify_subscriptions_app_block .shopify_subscriptions_app_block_label").eq(1).prepend('<span id="most_popular" class="most_popular color-scheme-5 gradient"> <img class="popular_icon" width="11" src="https://cdn.shopify.com/s/files/1/0713/8685/7724/files/star_2.png?v=1754731649" /> Most Popular</span>');
+          }
         }
-
+        
    </script>
 {% else %}
   {% comment %} This product is a one-time purchase. {% endcomment %}

@@ -2184,7 +2184,7 @@ text-transform: capitalize !important;
   border: none !important;
   font-weight: 600;
   line-height: 1;
-  margin-top: 4px;
+  margin-top: 0px;
   padding: 0.3rem 1.3rem 0.5rem 1.3rem;
   border-radius: 50px;
   position: relative;
@@ -2192,7 +2192,16 @@ text-transform: capitalize !important;
   background: #929292;
   cursor: default;
 }
-
+.diagonal-line {
+  position: absolute;
+  top: 50%; /* Center the line vertically */
+  left: 50%; /* Center the line horizontally */
+  width: 150%; /* Make the line longer than the diagonal of the container */
+  height: 2px; /* Thickness of the line */
+  background-color: red;
+  transform: translate(-50%, -50%) rotate(45deg); /* Center and rotate */
+  transform-origin: center; /* Ensure rotation is from the center */
+}
 .shopify_subscriptions_app_block {
   /* display: flex;
   flex-direction: row-reverse;
