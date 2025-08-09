@@ -604,6 +604,18 @@
 
             secondElement.prepend(newSpan);
 
+            const childElement = document.getElementById('most_popular'); // Replace 'yourChildId' with the actual ID of your element
+            const parentElement = childElement.parentNode;
+            const grandparentElement = parentElement.parentNode;
+
+            if (grandparentElement) {
+              //const grandparentId = grandparentElement.id;
+              grandparentElement.id = 'mw_subscription_block';
+              //console.log('Grandparent ID:', grandparentElement.id);
+            } else {
+              //console.log('No grandparent found.');
+            }
+
             let img = document.createElement("img");
             img.src = "https://cdn.shopify.com/s/files/1/0713/8685/7724/files/star_2.png?v=1754737912"; // Replace with your image path
             img.alt = "Popular Icon"; // Provide descriptive alt text
