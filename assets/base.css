@@ -2206,9 +2206,9 @@ text-transform: capitalize !important;
 
 .popular_icon {
   position: relative;
-  top: 0px;
+  top: 1px;
   right: 3px;
-  height: 11px;
+  height: 10px;
   visibility: visible;
   animation-direction: alternate;
   animation-name: fadeIn;
