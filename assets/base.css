@@ -2162,7 +2162,7 @@ text-transform: capitalize !important;
   font-weight: 600;
   line-height: 1;
   margin-top: -4%;
-  padding: 0.5rem 1.3rem 0.6rem 1.3rem;
+  padding: 0.3rem 1.3rem 0.5rem 1.3rem;
   border-radius: 50px;
   position: relative;
   /* position: absolute;
@@ -2181,6 +2181,15 @@ text-transform: capitalize !important;
 .mw_variants_select {
   /* width: 60%; */
 }
+
+.popular_icon {
+  position: relative;
+  top: 3px;
+  height: auto;
+  /* filter: brightness(9.5); */
+}
+
+
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .related-products .card__information {
