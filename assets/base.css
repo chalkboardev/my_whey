@@ -1378,19 +1378,20 @@ margin-top: -10px;
   display: flex;
   flex-direction: row;
   overflow: scroll; */
-  margin-bottom: 12px !important;
-  margin-top: -11px !important;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
   gap: 6px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: end;
+  justify-content: center;
   flex-direction: column;
   overflow: scroll;
-  align-content: end;
-  align-items: end;
+  align-content: center;
+  align-items: center;
+  height: 107%;
   position: absolute;
   right: 9px;
-  top:20px;
+  top: 0;
 }
 .dietary_icons {
   min-width: 76px;
