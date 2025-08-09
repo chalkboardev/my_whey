@@ -2256,7 +2256,7 @@ text-transform: capitalize !important;
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .shopify_subscriptions_app_block_label input {
     position: relative;
-    top: 3px;
+    top: 4px;
   }
   .related-products .card__information {
   min-height: 164px;
