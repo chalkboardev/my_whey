@@ -2243,6 +2243,14 @@ text-transform: capitalize !important;
   /* filter: brightness(9.5); */
 }
 
+.shopify_subscriptions_app_container {
+  font-size: 14px;
+}
+.shopify_subscriptions_app_block_label input {
+  position: relative;
+  top: 2px;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
