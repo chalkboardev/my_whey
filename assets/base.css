@@ -2525,6 +2525,7 @@ text-transform: capitalize !important;
     display: block;
     height: 238px;
     z-index: 2;
+    scrollbar-width: none;
   }
   .my_product_thumb {
     min-height: unset !important;
