@@ -580,6 +580,19 @@ $(document).ready(function(){
         }, 1000); // Adjust the scroll speed as desired
       }
     });
+
+
+    
+    $(".shopify_subscriptions_app_block_label").click(function (e) {
+      //e.preventDefault();
+      e.stopPropagation();
+      var this_class = $(this).attr('class');
+      var inputField = $(this).find('input')[0].click();
+      //inputField.hide();
+      //inputField.trigger('click');
+      //alert(this_class);
+      // alert(this_id);
+    });
     
 });
 

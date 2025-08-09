@@ -564,7 +564,10 @@
   {% comment %} This product is available for subscription. {% endcomment %}
   <script>
     // alert('No subscription for this product');
-
+    var elements = document.getElementsByClassName("shopify_subscriptions_app_policy");
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].textContent = "Subscription auto-renews | Skip or cancel anytime."; // Or elements[i].innerHTML = "<strong>New HTML</strong>";
+            }
         var queryString = window.location.search; // "?name=John%20Doe&age=30"
         if(queryString){
               console.log("YES query string...");
@@ -628,7 +631,7 @@
 
                   var elements = document.getElementsByClassName("shopify_subscriptions_app_policy");
                   for (var i = 0; i < elements.length; i++) {
-                      elements[i].textContent = "New text content"; // Or elements[i].innerHTML = "<strong>New HTML</strong>";
+                      elements[i].textContent = "Subscription auto-renews | Skip or cancel anytime."; // Or elements[i].innerHTML = "<strong>New HTML</strong>";
                   }
 
                 });
