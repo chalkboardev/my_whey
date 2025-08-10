@@ -1226,6 +1226,7 @@ margin-top: -10px;
   flex-direction: column !important;
   flex-wrap: wrap !important;
   display: flex !important;
+  align-items: center !important;
 }
 
 .card-information > .price--on-sale .price-item--regular {
@@ -1574,6 +1575,7 @@ margin-bottom:-7px;
 
 .product .price__container {
   /* vertical-align: middle; */
+  margin-bottom: 0;
 }
 
 .product__info-container .price--on-sale .price-item--regular {
@@ -1582,7 +1584,7 @@ margin-bottom:-7px;
 }
 
 .product .price .badge {
-  margin-bottom: 0rem;
+  /* margin-bottom: 0rem; */
   text-shadow: 0px 0px 2px #333;
   cursor: default;
 }
@@ -2284,34 +2286,40 @@ text-transform: capitalize !important;
 .price__badge--subscription {
   background: #333;
   animation: none !important;
+  /* line-height: calc(1 + 0.5 / var(--font-body-scale)) !important; */
+  letter-spacing: 0.13rem !important;
+  padding: 4px 8px 4px 8px;
 }
 .price__badge--subscription::before {
   content: "";
   background-image: url('https://cdn.shopify.com/s/files/1/0713/8685/7724/files/star_2.png?v=1754731649');
   background-size: contain;
   background-repeat: no-repeat;
-  display: inline-block;
-  width: 11px;
-  height: 11px;
-  margin-right: 0;
+  display: inline-flex;
+  width: 10px;
+  height: 12px;
+  margin-right: -2px;
   vertical-align: middle;
-  margin-left: -4px;
+  margin-left: 0px;
 }
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .price--large {
+    display: flex !important;
+    align-items: center !important;
+  }
   .price__badge--subscription:before {
     content: "";
     background-image: url('https://cdn.shopify.com/s/files/1/0713/8685/7724/files/star_2.png?v=1754731649');
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
-    display: inline-block;
-    position: relative;
-    width: 11px;
-    height: 11px;
-    margin-right: 0;
-    vertical-align: top;
-    margin-left: -4px;
+    display: inline-flex;
+    width: 10px;
+    height: 12px;
+    margin-right: -2px;
+    vertical-align: middle;
+    margin-left: 0px;
 }
 
   .dietary_icons .icon-wrap {
@@ -2527,7 +2535,7 @@ text-transform: capitalize !important;
     padding-bottom: 240px;
   } */
   .product .price .badge {
-    margin-bottom: 0rem;
+    /* margin-bottom: 0rem; */
   }
   .quick-add-modal__content .my_product_thumb {
     min-height: unset;
@@ -2632,7 +2640,7 @@ text-transform: capitalize !important;
     left: 0rem;
   }
   .product__info-container .badge_price {
-    vertical-align: bottom !important;
+    vertical-align:middle !important;
   }
   .card-information > .price--on-sale .price-item--regular {
     display: none !important;
@@ -2812,7 +2820,7 @@ text-transform: capitalize !important;
 
 @media screen and (min-width: 750px) {
   .product .price .badge {
-    margin-bottom: 0rem !important;
+    /* margin-bottom: 0rem !important; */
   }
   .thumbnail-slider .thumbnail-list.slider--tablet-up {
     padding: 0 !important;
@@ -2838,7 +2846,7 @@ text-transform: capitalize !important;
     padding-top: calc(4px + 1rem);
   }
   .product .price .badge {
-    margin-bottom: 1.01rem !important;
+    /* margin-bottom:0 !important; */
   }
 }
 
@@ -6203,7 +6211,7 @@ details-disclosure > details {
   font-size: 1.2rem;
   letter-spacing: 0.1rem;
   line-height: 1;
-  padding: 0.5rem 1.3rem 0.6rem 1.3rem;
+  /* padding: 0.5rem 1.3rem 0.6rem 1.3rem; */
   text-align: center;
   background-color: rgb(var(--color-badge-background));
   border-color: rgba(var(--color-badge-border), var(--alpha-badge-border));

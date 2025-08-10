@@ -284,12 +284,12 @@ a.product__text {
 }
 
 .product .price .badge {
-  margin-bottom: 0.5rem;
+  /* margin-bottom: 0.5rem; */
   margin-left: -6px;
 }
 
 .product .price__container {
-  margin-bottom: 0.5rem;
+  /* margin-bottom: 0.5rem; */
 }
 
 .product .price dl {

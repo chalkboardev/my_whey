@@ -107,7 +107,7 @@
         </span>
         {%- unless product.price_varies == false and product.compare_at_price_varies %}
           <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
-          <span>
+          <span style="display: flex;">
             <span class="my_normal_price price-item price-item--regular">
               {% comment %} <span class="was_span">WAS</span> {% endcomment %}
               {% if settings.currency_code_enabled %}
