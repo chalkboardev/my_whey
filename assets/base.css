@@ -2284,7 +2284,20 @@ text-transform: capitalize !important;
 .product__description h3 {
   font-weight: 600;
 }
-
+.price__badge-sale {
+  background: #929292 !important;
+  animation-name: flipInY;
+  animation-iteration-count: 1;
+  font-size: 12px !important;
+  margin-left: -9px !important;
+  position: relative;
+  background: #929292;
+  color: #fff !important;
+  padding: 0px 8px 0px 8px;
+  border-radius: 30px;
+  line-height: calc(1 + 0.8 / var(--font-body-scale)) !important;
+  letter-spacing: 0.13rem !important;
+}
 .price__badge--subscription {
   /* background: #929292 !important;
   font-size: 1.3rem !important;
@@ -2294,7 +2307,8 @@ text-transform: capitalize !important;
   text-shadow: 0px 0px 2px #333 !important;
   padding: 0px 8px; */
   background: #929292 !important;
-  animation: none !important;
+  animation-name: flipInY;
+  animation-iteration-count: 1;
   font-size: 12px !important;
   margin-left: -9px !important;
   position: relative;
@@ -2336,6 +2350,9 @@ text-transform: capitalize !important;
   .price--large {
     display: flex !important;
     align-items: center !important;
+  }
+  .price__badge-sale {
+    margin-left: -4px !important;
   }
   .price__badge--subscription {
     margin-left: -4px !important;
