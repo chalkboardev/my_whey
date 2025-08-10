@@ -104,7 +104,7 @@
     "drawer_shadow_blur": 5,
     "badge_position": "top left",
     "badge_corner_radius": 40,
-    "sale_badge_color_scheme": "scheme-5",
+    "sale_badge_color_scheme": "scheme-3",
     "sales_badge_border_color": "#8b8b8b",
     "sold_out_badge_color_scheme": "scheme-5",
     "so_badge_border_color": "#CCCCCC",
@@ -185,9 +185,9 @@
       },
       "scheme-3": {
         "settings": {
-          "background": "#242833",
+          "background": "#ababab",
           "background_gradient": "",
-          "text": "#313131",
+          "text": "#ffffff",
           "button": "#ffffff",
           "button_label": "#000000",
           "secondary_button_label": "#ffffff",
