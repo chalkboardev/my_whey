@@ -42,13 +42,13 @@ class CartDrawer extends HTMLElement {
       flavour_link_btn_txt.classList.add('checkout_button_txt_anim');
       flavour_link.addEventListener('click', (event) => {
         event.preventDefault(); 
-        //console.log('testing from cart link open....');
+        console.log('testing from cart link open....');
         document.querySelector('.flavour_modal__overlay').classList.add('show_flavour_modal');
         console.log("opening main flavour modal from cart-drawer.js...");
       });
       flavour_link_close.addEventListener('click', (event) => {
         event.preventDefault(); 
-        //console.log('testing from cart link close....');
+        console.log('testing from cart link close....');
         document.querySelector('.flavour_modal__overlay').classList.remove('show_flavour_modal');
       });
       
