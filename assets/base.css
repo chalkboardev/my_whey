@@ -2118,7 +2118,7 @@ margin-bottom:-7px;
   display: flex;
   visibility: visible !important;
   opacity: 1 !important;
-  z-index: 9999999;
+  z-index: 9999999 !important;
 }
 
 .cart__checkout-button {
