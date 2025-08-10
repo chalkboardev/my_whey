@@ -135,6 +135,7 @@
       </small>
     </div>
     {%- if show_badges -%}
+      {% comment %} <span class="color-scheme-5 gradient badge_price badge price__badge-sale color-{{ settings.sale_badge_color_scheme }}"> {% endcomment %}
       <span class="badge_price badge price__badge-sale color-{{ settings.sale_badge_color_scheme }}">
         {{ 'products.product.on_sale' | t }}
       </span>

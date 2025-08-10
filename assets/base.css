@@ -2255,8 +2255,8 @@ text-transform: capitalize !important;
 .popular_icon {
   position: relative;
   top:0.09rem;
-  right: 3px;
-  height: 10px;
+  right: 4px;
+  height: 11px;
   visibility: visible;
   animation-direction: alternate;
   animation-name: fadeIn;
@@ -2279,6 +2279,23 @@ text-transform: capitalize !important;
 }
 .product__description h3 {
   font-weight: 600;
+}
+
+.price__badge--subscription {
+  background: #333;
+  animation: none !important;
+}
+.price__badge--subscription::before {
+  content: "";
+  background-image: url('https://cdn.shopify.com/s/files/1/0713/8685/7724/files/star_2.png?v=1754731649');
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin-right: 0;
+  vertical-align: middle;
+  margin-left: -4px;
 }
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
