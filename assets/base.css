@@ -2286,10 +2286,11 @@ text-transform: capitalize !important;
 
 .price__badge--subscription {
   background: #333;
+  font-size: 1.4rem !important;
   animation: none !important;
-  /* line-height: calc(1 + 0.5 / var(--font-body-scale)) !important; */
+  line-height: calc(1 + 0.5 / var(--font-body-scale)) !important;
   letter-spacing: 0.13rem !important;
-  padding: 4px 8px 4px 8px;
+  padding: 0px 8px 0px 8px;
 }
 .price__badge--subscription::before {
   content: "";
