@@ -2115,7 +2115,7 @@ margin-bottom:-7px;
   z-index: -1 !important;
 }
 .show_flavour_modal {
-  display: flex;
+  display: flex !important;
   visibility: visible !important;
   opacity: 1 !important;
   z-index: 9999999 !important;
