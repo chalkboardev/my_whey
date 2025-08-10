@@ -2293,6 +2293,7 @@ text-transform: capitalize !important;
   letter-spacing: .13rem !important;
   text-shadow: 0px 0px 2px #333 !important;
   padding: 0px 8px; */
+  animation: none !important;
   display: inline-block !important;
   font-size: 1.4rem !important;
   margin-left: -2px !important;
