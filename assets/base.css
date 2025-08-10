@@ -2307,6 +2307,19 @@ text-transform: capitalize !important;
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .quick-add-modal__content .product_icons {
+    top: 10px;
+    margin-top: unset !important;
+    margin-bottom: unset !important;
+    position: absolute;
+    margin-right: 18px;
+    overflow: scroll;
+    gap: 0px;
+    display: block;
+    height: 93%;
+    z-index: 2;
+    scrollbar-width: none;
+  }
   .price--large {
     display: flex !important;
     align-items: center !important;
