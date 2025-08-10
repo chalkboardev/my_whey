@@ -1054,7 +1054,7 @@ margin-top: -10px;
     z-index: 2;
     overflow: auto;
     display: flex;
-    margin: 36px auto 0 auto;
+    margin: 6px auto 0 auto;
     -webkit-tap-highlight-color: transparent !important;
   }
 
@@ -2300,6 +2300,20 @@ text-transform: capitalize !important;
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .price__badge--subscription:before {
+    content: "";
+    background-image: url('https://cdn.shopify.com/s/files/1/0713/8685/7724/files/star_2.png?v=1754731649');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: inline-block;
+    position: relative;
+    width: 11px;
+    height: 11px;
+    margin-right: 0;
+    vertical-align: top;
+    margin-left: -4px;
+}
+
   .dietary_icons .icon-wrap {
     width:40px;
   }
