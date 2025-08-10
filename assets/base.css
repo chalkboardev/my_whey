@@ -2295,7 +2295,6 @@ text-transform: capitalize !important;
   padding: 0px 8px; */
   background: #929292 !important;
   animation: none !important;
-  display: inline-block !important;
   font-size: 1.4rem !important;
   margin-left: -9px !important;
   position: relative;
@@ -2337,6 +2336,9 @@ text-transform: capitalize !important;
   .price--large {
     display: flex !important;
     align-items: center !important;
+  }
+  .price__badge--subscription {
+    margin-left: -4px !important;
   }
   .price__badge--subscription:before {
     content: "";
