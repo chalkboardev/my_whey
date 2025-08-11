@@ -2403,7 +2403,7 @@ text-transform: capitalize !important;
     margin-right: -2px;
     margin-left: 0px;
     flex-wrap: wrap;
-    align-content: start;
+    vertical-align: middle;
     padding-top: 2px !important;
   }
   .dietary_icons .icon-wrap {
