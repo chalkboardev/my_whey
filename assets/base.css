@@ -2291,7 +2291,6 @@ text-transform: capitalize !important;
   height: 20px;
   min-height: 20px;
   max-height: 20px;
-  align-content: center;
   animation-name: flipInY;
   animation-iteration-count: 1;
   font-size: 12px !important;
@@ -2379,6 +2378,7 @@ text-transform: capitalize !important;
   }
   .price__badge-sale {
     margin-left: -4px !important;
+    top: 0;
   }
   .price__badge--subscription {
     margin-left: -4px !important;
