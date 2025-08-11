@@ -2347,6 +2347,10 @@ text-transform: capitalize !important;
   margin-left: 0px;
 }
 
+.product__title {
+  margin-bottom: 0 !important;
+}
+
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .quick-add-modal__content .product_icons {
