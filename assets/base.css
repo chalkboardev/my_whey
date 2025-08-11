@@ -2403,7 +2403,7 @@ text-transform: capitalize !important;
     align-items: center !important;
   }
   .price__badge-sale {
-    margin-left: -4px !important;
+    margin-left: -2px !important;
     top: 0;
     align-content: flex-start;
     padding-top: 2px !important;
