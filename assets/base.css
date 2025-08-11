@@ -2339,6 +2339,7 @@ text-transform: capitalize !important;
   text-transform: uppercase;
   height: 20px;
   top: -1px;
+  left: -2px;
   display: flex;
   position: relative;
   padding: 0px 10px 0px 10px;
