@@ -2302,6 +2302,7 @@ text-transform: capitalize !important;
   border-radius: 30px;
   /* line-height: calc(1 + 0.5 / var(--font-body-scale)) !important; */
   letter-spacing: 0.13rem !important;
+  top:-1px;
 }
 
 .mw_price_div {
