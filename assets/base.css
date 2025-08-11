@@ -2307,7 +2307,7 @@ text-transform: capitalize !important;
   align-items: center;
   flex-flow: wrap;
   align-content: center;
-  vertical-align: top !important;
+  vertical-align: middle !important;
 }
 
 .price__badge-sale:before {
