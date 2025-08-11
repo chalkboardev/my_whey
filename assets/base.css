@@ -2309,6 +2309,23 @@ text-transform: capitalize !important;
   align-content: center;
   vertical-align: top !important;
 }
+
+.price__badge-sale:before {
+  content: "";
+  background-image: url('https://cdn.shopify.com/s/files/1/0713/8685/7724/files/price_tag.png?v=1754945445');
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-flex;
+  width: 9px;
+  height: 12px;
+  margin-right: -1px;
+  margin-left: 0px;
+  flex-wrap: wrap;
+  align-content: center;
+  padding-top: 4px !important;
+  transform: scaleX(-1);
+}
+
 .price__badge--subscription {
   /* background: #929292 !important;
   font-size: 1.3rem !important;
