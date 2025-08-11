@@ -2303,6 +2303,7 @@ text-transform: capitalize !important;
   align-items: center;
   flex-flow: wrap;
   align-content: center;
+  vertical-align: top !important;
 }
 
 .mw_price_div {
@@ -2332,6 +2333,7 @@ text-transform: capitalize !important;
   align-items: center;
   flex-flow: wrap;
   align-content: center;
+  vertical-align: top !important;
 }
 .price__badge--subscription::before {
   content: "";
@@ -2345,7 +2347,9 @@ text-transform: capitalize !important;
   vertical-align: middle;
   margin-left: 0px;
 }
-
+.product__info-container .badge_price {
+  /* vertical-align:middle !important; */
+}
 .product__title {
   margin-bottom: 0 !important;
 }
@@ -2713,9 +2717,7 @@ text-transform: capitalize !important;
     margin-top: 0px !important;
     left: 0rem;
   }
-  .product__info-container .badge_price {
-    vertical-align:middle !important;
-  }
+
   .card-information > .price--on-sale .price-item--regular {
     display: none !important;
     text-decoration: line-through;
