@@ -2384,7 +2384,7 @@ text-transform: capitalize !important;
   .price__badge-sale {
     margin-left: -4px !important;
     top: 0;
-    align-content: baseline !important;
+    align-content: center;
   }
   .price__badge--subscription {
     margin-left: -4px !important;
