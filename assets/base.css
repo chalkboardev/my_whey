@@ -2346,6 +2346,9 @@ text-transform: capitalize !important;
   margin-right: -2px;
   vertical-align: middle;
   margin-left: 0px;
+  flex-wrap: wrap;
+  align-content: start;
+  padding-top: 2px !important;
 }
 .product__info-container .badge_price {
   /* vertical-align:middle !important; */
@@ -2401,6 +2404,9 @@ text-transform: capitalize !important;
     margin-right: -2px;
     vertical-align: middle;
     margin-left: 0px;
+    flex-wrap: wrap;
+    align-content: start;
+    padding-top: 2px !important;
   }
   .dietary_icons .icon-wrap {
     width:40px;
