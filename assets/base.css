@@ -2335,7 +2335,7 @@ text-transform: capitalize !important;
   align-content: center;
   vertical-align: top !important;
 }
-.price__badge--subscription::before {
+.price__badge--subscription:before {
   content: "";
   background-image: url('https://cdn.shopify.com/s/files/1/0713/8685/7724/files/star_2.png?v=1754731649');
   background-size: contain;
@@ -2344,7 +2344,6 @@ text-transform: capitalize !important;
   width: 10px;
   height: 12px;
   margin-right: -2px;
-  vertical-align: middle;
   margin-left: 0px;
   flex-wrap: wrap;
   align-content: start;
@@ -2402,7 +2401,6 @@ text-transform: capitalize !important;
     width: 10px;
     height: 11px;
     margin-right: -2px;
-    vertical-align: middle;
     margin-left: 0px;
     flex-wrap: wrap;
     align-content: start;
