@@ -2302,7 +2302,6 @@ text-transform: capitalize !important;
   border-radius: 30px;
   /* line-height: calc(1 + 0.5 / var(--font-body-scale)) !important; */
   letter-spacing: 0.13rem !important;
-  top:-1px;
 }
 
 .mw_price_div {
@@ -2331,7 +2330,6 @@ text-transform: capitalize !important;
   border-radius: 30px;
   /* line-height: calc(1 + 0.5 / var(--font-body-scale)) !important; */
   letter-spacing: 0.13rem !important;
-  top:-1px;
 }
 .price__badge--subscription::before {
   content: "";
@@ -2389,10 +2387,10 @@ text-transform: capitalize !important;
     background-size: contain;
     background-repeat: no-repeat;
     display: inline-flex;
-    width: 11px;
-    height: 12px;
+    width: 10px;
+    height: 11px;
     margin-right: -2px;
-    vertical-align: inherit;
+    vertical-align: middle;
     margin-left: 0px;
 }
 
