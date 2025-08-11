@@ -2392,7 +2392,7 @@ text-transform: capitalize !important;
     width: 11px;
     height: 12px;
     margin-right: -2px;
-    vertical-align: middle;
+    vertical-align: inherit;
     margin-left: 0px;
 }
 
