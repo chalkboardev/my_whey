@@ -2409,7 +2409,7 @@ text-transform: capitalize !important;
     padding-top: 2px !important;
   }
   .price__badge--subscription {
-    margin-left: -4px !important;
+    margin-left: -2px !important;
   }
   .price__badge--subscription:before {
     content: "";
