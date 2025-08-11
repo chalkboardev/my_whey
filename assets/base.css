@@ -2364,8 +2364,8 @@ text-transform: capitalize !important;
   margin-right: -2px;
   margin-left: 0px;
   flex-wrap: wrap;
-  align-content: start;
-  padding-top: 2px !important;
+  align-content: center;
+  padding-top: 5px !important;
 }
 .product__info-container .badge_price {
   /* vertical-align:middle !important; */
