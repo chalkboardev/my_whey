@@ -2290,6 +2290,10 @@ text-transform: capitalize !important;
   /* line-height: calc(1 + 0.5 / var(--font-body-scale)) !important; */
 }
 
+.product .price .badge {
+  margin-left: -4px !important;
+}
+
 .price__badge-sale {
   font-size: 12px !important;
   text-transform: uppercase;
