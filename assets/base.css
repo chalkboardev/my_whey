@@ -2339,7 +2339,6 @@ text-transform: capitalize !important;
   text-transform: uppercase;
   height: 20px;
   top: -1px;
-  left: -2px;
   display: flex;
   position: relative;
   padding: 0px 10px 0px 10px;
@@ -2403,13 +2402,11 @@ text-transform: capitalize !important;
     align-items: center !important;
   }
   .price__badge-sale {
-    margin-left: -2px !important;
     top: 0;
     align-content: flex-start;
     padding-top: 2px !important;
   }
   .price__badge--subscription {
-    margin-left: -2px !important;
   }
   .price__badge--subscription:before {
     content: "";
