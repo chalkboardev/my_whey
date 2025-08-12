@@ -1572,6 +1572,9 @@ margin-bottom:-7px;
 .product__tax {
   margin-top: -1.2rem !important;
   margin-bottom: 1rem !important;
+  margin-left: 10px !important;
+  color: #6a6a6a !important;
+  font-size: 12px;
 }
 .product .price .price-item {
   font-size: 2.4rem;
@@ -2166,7 +2169,7 @@ text-transform: capitalize !important;
   margin-top: 0rem !important;
   margin-bottom: -0.8rem !important;
   margin-left: 10px;
-  color: #6a6a6a;
+  color: #6a6a6a !important;
   font-size: 12px;
 }
 /* .shopify_subscriptions_app_policy::first-letter {
