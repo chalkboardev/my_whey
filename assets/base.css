@@ -2294,7 +2294,7 @@ text-transform: capitalize !important;
 }
 
 .product .price .badge {
-  margin-left: -4px !important;
+  margin-left: -8px !important;
 }
 
 .price__badge-sale {
@@ -2387,6 +2387,9 @@ text-transform: capitalize !important;
 }
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .product .price .badge {
+    margin-left: -4px !important;
+  }
   .product__description h3 {
     font-weight: 600;
     font-size: calc(var(--font-heading-scale) * 2rem) !important;
