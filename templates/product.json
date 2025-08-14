@@ -27,8 +27,21 @@
           "type": "price",
           "settings": {}
         },
+        "subscriptions_app_block_7FX8Gd": {
+          "type": "shopify://apps/subscriptions/blocks/app-block/a3bfe9ec-96f8-4508-a003-df608a36d2ad",
+          "settings": {
+            "color_text_body": "#6D7175",
+            "dividers_color": "#8F8D8D",
+            "bacgkround_color": "#FFFFFF",
+            "border_thickness": 1,
+            "border_radius": 0,
+            "subscription_policy_url": "",
+            "product": "{{product}}"
+          }
+        },
         "subscriptions_app_block_iFiNWw": {
           "type": "shopify://apps/subscriptions/blocks/app-block/a3bfe9ec-96f8-4508-a003-df608a36d2ad",
+          "disabled": true,
           "settings": {
             "color_text_body": "#333333",
             "dividers_color": "#8f8d8d",
@@ -72,6 +85,7 @@
         "vendor",
         "title",
         "price",
+        "subscriptions_app_block_7FX8Gd",
         "subscriptions_app_block_iFiNWw",
         "variant_picker",
         "quantity_selector",
