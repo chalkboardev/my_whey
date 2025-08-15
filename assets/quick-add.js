@@ -78,65 +78,122 @@ if (!customElements.get('quick-add-modal')) {
                           const dataTypeProduct = closestProductInfo.getAttribute('data-product-id');
                           console.log('data-product-id of the form:' + dataTypeProduct);
 
-                          
+                          // ---------------------------------------- ******* START CHECK IF ITEM ON SALE ******* ---------------------------------------------
                           var closestPriceRegular = closestProductInfo.querySelector('.price__container .price__regular');
                           console.log(closestPriceRegular.checkVisibility());
                           if (closestPriceRegular && !closestPriceRegular.checkVisibility()) {
-                              console.log('This item IS on sale'); 
+                            // -------------------- ******* START ITEM IS ON SALE ******* -------------------------
+                              console.log('THIS ITEM IS ON SALE'); 
                               var closestPrice = closestProductInfo.querySelector('.price__container .price-item--sale .heighten_me');
+                              
                               if (closestPrice) {
-                                console.log('Found the closest Price:', closestPrice);
-                                // You can now work with the found form element
-                                // For example, get its data-type attribute:
+                                console.log('Found the closest SALE Price:', closestPrice);
+                                var closestRegularPriceBadgePrice = closestProductInfo.querySelector('.my_normal_price');
+                                closestRegularPriceBadgePrice.innerHTML = variant_compare_at_price;
+                                
+                                // ----- UPDATE THE BADGES -----
+                                var closestRegularPriceSalesBadge = closestProductInfo.querySelector('.price__badge-sale');
+                                if(targetElement.getAttribute('data-radio-type') == 'one_time_purchase'){
+                                    closestRegularPriceSalesBadge.innerHTML = " SALE";
+                                    closestRegularPriceSalesBadge.classList.remove('price__badge--subscription');
+                                } else {
+                                    closestRegularPriceSalesBadge.classList.add('price__badge--subscription');
+                                    closestRegularPriceSalesBadge.innerHTML = " SUBSCRIPTION";
+                                }
+                                // ----- UPDATE THE PRICES -----
                                 var dataTypeProductPrice = closestPrice.innerHTML;
                                 console.log("PRICE: " + dataTypeProductPrice);
                                 console.log('Price of the form change from:' + dataTypeProductPrice + ' to: ' + variant_price);
                                 closestPrice.innerHTML = variant_price;
+
+                                // ----- UPDATE THE ADD TO CART FORM /cart/add FORM -----
+                                var closestFormToAppend = closestProductInfo.querySelector('.installment');
+                                if (closestFormToAppend) {
+                                  console.log('Found the closest closestFormToAppend:', closestFormToAppend);
+                                  const inputToRemove = closestFormToAppend.querySelector('input[name="selling_plan"]');
+                                  if (inputToRemove) {
+                                    inputToRemove.parentNode.removeChild(inputToRemove);
+                                  }
+                                  var newInput = document.createElement('input');
+                                  newInput.setAttribute('type', 'hidden');
+                                  newInput.setAttribute('name', 'selling_plan');
+                                  //newInput.setAttribute('placeholder', 'Enter value');
+                                  newInput.classList.add('selected-selling-plan-id');
+                                  newInput.value = selling_plan_id;
+                                  closestFormToAppend.appendChild(newInput);
+                                } else {
+                                  console.log('Couldnt find closestFormToAppend');
+                                }
+
+
+                                var closestAddCartFormToAppend = closestProductInfo.querySelector('form[data-type="add-to-cart-form"]');
+                                if (closestAddCartFormToAppend) {
+                                  console.log('Found the closest closestAddCartFormToAppend:', closestAddCartFormToAppend);
+                                  const inputToRemove = closestFormToAppend.querySelector('input[name="selling_plan"]');
+                                  if (inputToRemove) {
+                                    inputToRemove.parentNode.removeChild(inputToRemove);
+                                  }
+                                  var newInput = document.createElement('input');
+                                  newInput.setAttribute('type', 'hidden');
+                                  newInput.setAttribute('name', 'selling_plan');
+                                  //newInput.setAttribute('placeholder', 'Enter value');
+                                  newInput.classList.add('selected-selling-plan-id');
+                                  newInput.value = selling_plan_id;
+                                  closestAddCartFormToAppend.appendChild(newInput);
+                                } else {
+                                  console.log('Couldnt find closestAddCartFormToAppend...');
+                                }
+
+
+
                               } else {
                                 console.log('No price element found.');
                               }
                           } else if (closestPriceRegular && closestPriceRegular.checkVisibility()) {
-                              console.log('This item is NOT on sale'); 
+                             // -------------------- ******* START ITEM IS NOT ON SALE ******* -------------------------
+                             console.log('THIS ITEM IS *NOT* ON SALE'); 
                               var closestPrice = closestProductInfo.querySelector('.price__container .price-item--regular .heighten_me');
                               if (closestPrice) {
-                                console.log('Found the closest Price:', closestPrice);
-                                // You can now work with the found form element
-                                // For example, get its data-type attribute:
+                                console.log('Found the closest REGULAR Price:', closestPrice);
+
+                                // ----- UPDATE THE BADGES -----
+                                var closestRegularPriceSalesBadge = closestProductInfo.querySelector('.price__badge-sale');
+                                if(targetElement.getAttribute('data-radio-type') == 'one_time_purchase'){
+                                    closestRegularPriceSalesBadge.style.display = 'none';
+                                    closestRegularPriceSalesBadge.innerHTML = " SALE";
+                                    closestRegularPriceSalesBadge.classList.remove('price__badge--subscription');
+                                } else {
+                                  closestRegularPriceSalesBadge.style.display = 'inline-block';
+                                    closestRegularPriceSalesBadge.classList.add('price__badge--subscription');
+                                    closestRegularPriceSalesBadge.innerHTML = " SUBSCRIPTION";
+                                }
+                                // ----- UPDATE THE PRICES -----
                                 var dataTypeProductPrice = closestPrice.innerHTML;
                                 console.log("PRICE: " + dataTypeProductPrice);
                                 console.log('Price of the form change from:' + dataTypeProductPrice + ' to: ' + variant_price);
                                 closestPrice.innerHTML = variant_price;
+
+
+
                               } else {
                                 console.log('No price element found.');
                               }
                           } else {
                               console.log('The element does not exist.');
                           }
-
-                          
-
-                        var closestFormChange = closestProductInfo.querySelector('product-form .form');
-
+                          // ---------------------------------------- ******* END CHECK IF ITEM ON SALE ******* ---------------------------------------------
 
                         } else {
                           console.log('No closest form with data-product-id found.');
                         }
-
-                    
-                        
 
                         
                     }
                     //alert('You clicked: ' + this.textContent);
                 });
             });
-          //$("#QuickAddInfo-{{ card_product.id }}.product__tax").css('background','#333');
         $(".shopify-block.shopify-app-block.shopify_subscriptions_app_block--hidden").removeClass('shopify_subscriptions_app_block--hidden');
-        // $("section[data-variant-id='" + variantId + "']").removeClass("shopify_subscriptions_app_block--hidden");
-        //alert($("section[data-variant-id='" + variantId + "']").attr("data-variant-id"));
-        $(".shopify_subscriptions_in_widget_price").removeClass('shopify_subscriptions_app_block--hidden');
-        
-        //$("#shopify-block-AWHhMdGtTQ1dHbXY0c__subscriptions_app_block_iFiNWw").removeClass(); 
+        //$(".shopify_subscriptions_in_widget_price").removeClass('shopify_subscriptions_app_block--hidden');
         }, 2000);
 
         // const productSections = document.querySelectorAll(`product-info[data-url="${variantId}"]`);

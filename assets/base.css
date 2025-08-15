@@ -2341,7 +2341,10 @@ text-transform: capitalize !important;
   letter-spacing: .13rem !important;
   text-shadow: 0px 0px 2px #333 !important;
   padding: 0px 8px; */
-  animation: none !important;
+  animation-direction: alternate !important;
+  animation-name: fadeIn !important;
+  animation-duration: 1s !important;
+  animation-iteration-count: 1 !important;
   font-size: 12px !important;
   text-transform: uppercase;
   height: 20px;
@@ -2417,6 +2420,10 @@ text-transform: capitalize !important;
     padding-top: 2px !important;
   }
   .price__badge--subscription {
+    animation-direction: alternate !important;
+    animation-name: fadeIn !important;
+    animation-duration: 1s !important;
+    animation-iteration-count: 1 !important;
   }
   .price__badge--subscription:before {
     content: "";

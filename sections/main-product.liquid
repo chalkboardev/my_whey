@@ -494,7 +494,7 @@
   {% comment %} This product is available for subscription. {% endcomment %}
   <script>
     // alert('No subscription for this product');
-    const firstDivInSection = document.querySelector('section div');
+    var firstDivInSection = document.querySelector('section div');
     firstDivInSection.style.border = 'none';
     var elements = document.getElementsByClassName("shopify_subscriptions_app_policy");
     for (var i = 0; i < elements.length; i++) {
