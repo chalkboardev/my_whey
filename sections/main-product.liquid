@@ -306,7 +306,7 @@
                       if cart_qty > 0
                         assign current_qty_for_volume_pricing = cart_qty | plus: product.selected_or_first_available_variant.quantity_rule.increment
                       endif
-                    -%}
+                    -%} 
                     {%- if product.quantity_price_breaks_configured? -%}
                       <price-per-item
                         id="Price-Per-Item-{{ section.id }}"
@@ -490,97 +490,97 @@
                 -%}
 
 {% comment %}---------- CHECK IF THE PRODUCT IS A SUBSCRIPTION PRODUCT {% endcomment %}
-{% if product.selling_plan_groups.size > 0 %}
+{% if product.selling_plan_groups.size > 0 or card_product.selling_plan_groups.size > 0 %}
   {% comment %} This product is available for subscription. {% endcomment %}
   <script>
     // alert('No subscription for this product');
     const firstDivInSection = document.querySelector('section div');
     firstDivInSection.style.border = 'none';
-        var elements = document.getElementsByClassName("shopify_subscriptions_app_policy");
-        for (var i = 0; i < elements.length; i++) {
-            elements[i].textContent = "Subscription auto-renews | Skip or cancel anytime."; // Or elements[i].innerHTML = "<strong>New HTML</strong>";
-        }
+    var elements = document.getElementsByClassName("shopify_subscriptions_app_policy");
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].textContent = "Subscription auto-renews | Skip or cancel anytime."; // Or elements[i].innerHTML = "<strong>New HTML</strong>";
+    }
 
-        var queryString = window.location.search; // "?name=John%20Doe&age=30"
-        if(queryString){
-              console.log("YES query string...");
-              var paramsArray = queryString.substring(1).split('&'); // ["name=John%20Doe", "age=30"]
+    var queryString = window.location.search; // "?name=John%20Doe&age=30"
+    if(queryString){
+          console.log("YES query string...");
+          var paramsArray = queryString.substring(1).split('&'); // ["name=John%20Doe", "age=30"]
 
-              var urlParams = {};
-              $.each(paramsArray, function(index, param) {
-                  var keyValue = param.split('=');
-                  if (keyValue.length === 2) {
-                      urlParams[decodeURIComponent(keyValue[0])] = decodeURIComponent(keyValue[1]);
-                  }
-              });
+          var urlParams = {};
+          $.each(paramsArray, function(index, param) {
+              var keyValue = param.split('=');
+              if (keyValue.length === 2) {
+                  urlParams[decodeURIComponent(keyValue[0])] = decodeURIComponent(keyValue[1]);
+              }
+          });
 
-              // var name = urlParams.name; // "John Doe"
-              var variantId = urlParams.variant; // "John Doe"
+          // var name = urlParams.name; // "John Doe"
+          var variantId = urlParams.variant; // "John Doe"
 
-              // Select all section elements where the 'data-category' attribute equals 'products'
-              const productSections = document.querySelectorAll(`section[data-variant-id="${variantId}"]`);
+          // Select all section elements where the 'data-category' attribute equals 'products'
+          const productSections = document.querySelectorAll(`section[data-variant-id="${variantId}"]`);
 
-              // You can then iterate through the selected elements or access the first one if only one is expected
-              if (productSections) {
-                const elementsToRemove = document.querySelectorAll('.most_popular');
-                elementsToRemove.forEach(element => {
-                  element.remove();
-                });
-                productSections.forEach(section => {
-                  console.log("Variant " + variantId + " is displaying now...");
-                  // console.log("Found a product section:" + variantId );
-                  const elementsWithClass = section.querySelectorAll('.shopify_subscriptions_app_block_label'); // Replace 'myClassName' with the actual class
-                  const secondElement = elementsWithClass[1];
+          // You can then iterate through the selected elements or access the first one if only one is expected
+          if (productSections) {
+            const elementsToRemove = document.querySelectorAll('.most_popular');
+            elementsToRemove.forEach(element => {
+              element.remove();
+            });
+            productSections.forEach(section => {
+              console.log("Variant " + variantId + " is displaying now...");
+              // console.log("Found a product section:" + variantId );
+              const elementsWithClass = section.querySelectorAll('.shopify_subscriptions_app_block_label'); // Replace 'myClassName' with the actual class
+              const secondElement = elementsWithClass[1];
 
-                  const newSpan = document.createElement('span');
-                  newSpan.id = "most_popular";
-                  newSpan.classList.add("most_popular");
-                  newSpan.classList.add("color-scheme-5"); 
-                  newSpan.classList.add("gradient");
-                  newSpan.textContent = 'Most Popular';
+              const newSpan = document.createElement('span');
+              newSpan.id = "most_popular";
+              newSpan.classList.add("most_popular");
+              newSpan.classList.add("color-scheme-5"); 
+              newSpan.classList.add("gradient");
+              newSpan.textContent = 'Most Popular';
 
-                  secondElement.prepend(newSpan);
+              secondElement.prepend(newSpan);
 
-                  const childElement = document.getElementById('most_popular'); // Replace 'yourChildId' with the actual ID of your element
-                  const parentElement = childElement.parentNode;
-                  const grandparentElement = parentElement.parentNode;
+              const childElement = document.getElementById('most_popular'); // Replace 'yourChildId' with the actual ID of your element
+              const parentElement = childElement.parentNode;
+              const grandparentElement = parentElement.parentNode;
 
-                  if (grandparentElement) {
-                    //const grandparentId = grandparentElement.id;
-                    grandparentElement.id = 'mw_subscription_block';
-                    //console.log('Grandparent ID:', grandparentElement.id);
-                  } else {
-                    //console.log('No grandparent found.');
-                  }
-
-                  let img = document.createElement("img");
-                  img.src = "https://cdn.shopify.com/s/files/1/0713/8685/7724/files/thumb_1.png?v=1754842951"; // Replace with your image path
-                  img.alt = "Popular Icon"; // Provide descriptive alt text
-                  img.classList.add('popular_icon');
-                  img.width = 11; // Optional: set image width
-                  img.height = 11; // Optional: set image height
-                  img.style.right = '2px';
-                  newSpan.prepend(img);
-
-                  var elements = document.getElementsByClassName("shopify_subscriptions_app_policy");
-                  for (var i = 0; i < elements.length; i++) {
-                      elements[i].textContent = "Subscription auto-renews | Skip or cancel anytime."; // Or elements[i].innerHTML = "<strong>New HTML</strong>";
-                  }
-
-                });
+              if (grandparentElement) {
+                //const grandparentId = grandparentElement.id;
+                grandparentElement.id = 'mw_subscription_block';
+                //console.log('Grandparent ID:', grandparentElement.id);
               } else {
-                console.log("Not found a product variant:" + variantId );
+                //console.log('No grandparent found.');
               }
 
-        } else {
-          console.log("no query string...");
-          if ($("#most_popular").length > 0) {
-            console.log("most_popular element found...");
+              let img = document.createElement("img");
+              img.src = "https://cdn.shopify.com/s/files/1/0713/8685/7724/files/thumb_1.png?v=1754842951"; // Replace with your image path
+              img.alt = "Popular Icon"; // Provide descriptive alt text
+              img.classList.add('popular_icon');
+              img.width = 11; // Optional: set image width
+              img.height = 11; // Optional: set image height
+              img.style.right = '2px';
+              newSpan.prepend(img);
+
+              var elements = document.getElementsByClassName("shopify_subscriptions_app_policy");
+              for (var i = 0; i < elements.length; i++) {
+                  elements[i].textContent = "Subscription auto-renews | Skip or cancel anytime."; // Or elements[i].innerHTML = "<strong>New HTML</strong>";
+              }
+
+            });
           } else {
-            console.log("most_popular element not found within container.");
-            $(".shopify_subscriptions_app_block .shopify_subscriptions_app_block_label").eq(1).prepend('<span id="most_popular" class="most_popular color-scheme-5 gradient"> <img class="popular_icon" width="11" src="https://cdn.shopify.com/s/files/1/0713/8685/7724/files/thumb_1.png?v=1754842951" /> Most Popular</span>');
+            console.log("Not found a product variant:" + variantId );
           }
-        }
+
+    } else {
+      console.log("no query string...");
+      if ($("#most_popular").length > 0) {
+        console.log("most_popular element found...");
+      } else {
+        console.log("most_popular element not found within container.");
+        $(".shopify_subscriptions_app_block .shopify_subscriptions_app_block_label").eq(1).prepend('<span id="most_popular" class="most_popular color-scheme-5 gradient"> <img class="popular_icon" width="11" src="https://cdn.shopify.com/s/files/1/0713/8685/7724/files/thumb_1.png?v=1754842951" /> Most Popular</span>');
+      }
+    }
         
    </script>
 {% else %}
@@ -793,6 +793,7 @@
             {{ 'products.product.view_full_details' | t }}
             {{- 'icon-arrow.svg' | inline_asset_content -}}
           </a>
+                {% comment %} <div class="subscriptions_app_embed_block"></div> {% endcomment %}
         </section>
       </div>
     </div>

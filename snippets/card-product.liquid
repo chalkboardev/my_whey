@@ -419,6 +419,29 @@
                     {{- 'icon-close.svg' | inline_asset_content -}}
                   </button>
                   <div id="QuickAddInfo-{{ card_product.id }}" class="quick-add-modal__content-info"></div>
+
+
+                
+      
+
+
+                   <div class="subscriptions_app_embed_block">
+                    {% if card_product.selling_plan_groups.size > 0 %}
+                      This product is available for subscription.
+                      <script>
+                        // alert('No subscription for this product');
+
+                      </script>
+                      {% else %}
+                        This product is a one-time purchase.
+                        <script>
+                          // alert('No subscription for this product');
+                          //$(".shopify_subscriptions_app_container").parent().remove();
+                        </script>
+                      {% endif %}
+                   </div>
+
+
                 </div>
                 </div>
               </quick-add-modal>

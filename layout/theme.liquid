@@ -446,6 +446,7 @@ $(document).ready(function(){
       $('.popup__overlay').css("visibility", "hidden");
       $('.popup__overlay').css("opacity", "0");
       $('.popup__overlay').css("z-index", "-1");
+      $('.popup__overlay').css("display", "none");
       // $('.popup__overlay').removeAttr("target");
       // $('body').click();
       //window.location.hash = ''; 
@@ -582,19 +583,23 @@ $(document).ready(function(){
     });
 
 
+    if ($('.quick-add-modal').is(':hidden')) {
+        $(".shopify_subscriptions_app_block_label").click(function (e) {
+        //e.preventDefault();
+        e.stopPropagation();
+        var this_class = $(this).attr('class');
+        var inputField = $(this).find('input')[0].click();
+        //inputField.hide();
+        //inputField.trigger('click');
+        //alert(this_class);
+        // alert(this_id);
+      });
+    } else {
+      //
+    }
     
-    $(".shopify_subscriptions_app_block_label").click(function (e) {
-      //e.preventDefault();
-      e.stopPropagation();
-      var this_class = $(this).attr('class');
-      var inputField = $(this).find('input')[0].click();
-      //inputField.hide();
-      //inputField.trigger('click');
-      //alert(this_class);
-      // alert(this_id);
-    });
     
-});
+}); // end docready
 
   var observer = new MutationObserver(function(mutations) {
     console.log('Flavour modal open!');

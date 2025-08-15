@@ -277,8 +277,29 @@ if (!customElements.get('product-info')) {
           element.remove();
         });
 
+        const elementsToRemoveSections = document.querySelectorAll(`section .shopify_subscriptions_app_block`);
+        elementsToRemoveSections.forEach(element => {
+          element.classList.add('shopify_subscriptions_app_block--hidden');
+        });
+        
+
         // Select all section elements where the 'data-category' attribute equals 'products'
         const productSections = document.querySelectorAll(`section[data-variant-id="${variantId}"]`);
+
+        var productSection = document.querySelector(`section[data-variant-id="${variantId}"]`);
+        if(productSection){
+          productSection.classList.remove('shopify_subscriptions_app_block--hidden');
+        }
+
+        
+        // const previousSibling = productSection.previousElementSibling;
+        // previousSibling.classList.add('shopify_subscriptions_app_block--hidden');
+        // // Get the parent element
+        // const parentElement = productSection.parentNode;
+        // // Get the parent of the parent element
+        // const grandparentElement = parentElement.parentNode;
+        // grandparentElement.classList.remove('shopify_subscriptions_app_block--hidden');
+        
 
         // You can then iterate through the selected elements or access the first one if only one is expected
         if (productSections) {
