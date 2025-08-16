@@ -106,7 +106,7 @@ if (!customElements.get('quick-add-modal')) {
                                 console.log('Price of the form change from:' + dataTypeProductPrice + ' to: ' + variant_price);
                                 closestPrice.innerHTML = variant_price;
 
-                                // ----- UPDATE THE ADD TO CART FORM /cart/add FORM -----
+                                // ----- UPDATE THE FIRST ADD TO CART FORM /cart/add FORM -----
                                 var closestFormToAppend = closestProductInfo.querySelector('.installment');
                                 if (closestFormToAppend) {
                                   console.log('Found the closest closestFormToAppend:', closestFormToAppend);
@@ -125,7 +125,7 @@ if (!customElements.get('quick-add-modal')) {
                                   console.log('Couldnt find closestFormToAppend');
                                 }
 
-
+                                // ----- UPDATE THE SECOND 'ADD TO CART' BUTTON FORM /cart/add FORM -----
                                 var closestAddCartFormToAppend = closestProductInfo.querySelector('form[data-type="add-to-cart-form"]');
                                 if (closestAddCartFormToAppend) {
                                   console.log('Found the closest closestAddCartFormToAppend:', closestAddCartFormToAppend);
@@ -143,8 +143,6 @@ if (!customElements.get('quick-add-modal')) {
                                 } else {
                                   console.log('Couldnt find closestAddCartFormToAppend...');
                                 }
-
-
 
                               } else {
                                 console.log('No price element found.');
@@ -173,7 +171,43 @@ if (!customElements.get('quick-add-modal')) {
                                 console.log('Price of the form change from:' + dataTypeProductPrice + ' to: ' + variant_price);
                                 closestPrice.innerHTML = variant_price;
 
+                                // ----- UPDATE THE FIRST ADD TO CART FORM /cart/add FORM -----
+                                var closestFormToAppend = closestProductInfo.querySelector('.installment');
+                                if (closestFormToAppend) {
+                                  console.log('Found the FIRST ADD TO CART FORM - closestFormToAppend:', closestFormToAppend);
+                                  const inputToRemove = closestFormToAppend.querySelector('input[name="selling_plan"]');
+                                  if (inputToRemove) {
+                                    inputToRemove.parentNode.removeChild(inputToRemove);
+                                  }
+                                  var newInput = document.createElement('input');
+                                  newInput.setAttribute('type', 'hidden');
+                                  newInput.setAttribute('name', 'selling_plan');
+                                  //newInput.setAttribute('placeholder', 'Enter value');
+                                  newInput.classList.add('selected-selling-plan-id');
+                                  newInput.value = selling_plan_id;
+                                  closestFormToAppend.appendChild(newInput);
+                                } else {
+                                  console.log('Couldnt find closestFormToAppend');
+                                }
 
+                                // ----- UPDATE THE SECOND 'ADD TO CART' BUTTON FORM /cart/add FORM -----
+                                var closestAddCartFormToAppend = closestProductInfo.querySelector('form[data-type="add-to-cart-form"]');
+                                if (closestAddCartFormToAppend) {
+                                  console.log('Found the SECOND ADD TO CART FORM closestAddCartFormToAppend:', closestAddCartFormToAppend);
+                                  const inputToRemove = closestFormToAppend.querySelector('input[name="selling_plan"]');
+                                  if (inputToRemove) {
+                                    inputToRemove.parentNode.removeChild(inputToRemove);
+                                  }
+                                  var newInput = document.createElement('input');
+                                  newInput.setAttribute('type', 'hidden');
+                                  newInput.setAttribute('name', 'selling_plan');
+                                  //newInput.setAttribute('placeholder', 'Enter value');
+                                  newInput.classList.add('selected-selling-plan-id');
+                                  newInput.value = selling_plan_id;
+                                  closestAddCartFormToAppend.appendChild(newInput);
+                                } else {
+                                  console.log('Couldnt find closestAddCartFormToAppend...');
+                                }
 
                               } else {
                                 console.log('No price element found.');

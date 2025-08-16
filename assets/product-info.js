@@ -305,7 +305,26 @@ if (!customElements.get('product-info')) {
         if (productSections) {
           productSections.forEach(section => {
             //console.log("Found a product section:" + variantId );
-            console.log("Variant " + variantId + " is displaying...")
+            console.log("Variant " + variantId + " is displaying...");
+
+            var closestForm = productSection.closest('.shopify_subscriptions_app_container .shopify_subscriptions_app_block:not(.shopify_subscriptions_app_block--hidden)');
+            if (closestForm) {
+              console.log('Found the closest active shopify_subscriptions_app_block section:', closestForm);
+              var inputContainer = closestForm.querySelectorAll('.shopify_subscriptions_app_block_label label input')[0];
+              if (inputContainer) {
+                console.log('ZZZ Found the closest', inputContainer); 
+                //var firstInput = inputContainer.querySelectorAll('label input')[0];
+                inputContainer.click();
+                inputContainer.checked = true;
+              } else {
+                console.log('DODNT Found the closest');  
+              }
+           
+            } else {
+              console.log('COULDNT find the closest active shopify_subscriptions_app_block section:');
+            }
+
+
             const elementsWithClass = section.querySelectorAll('.shopify_subscriptions_app_block_label'); // Replace 'myClassName' with the actual class
             const secondElement = elementsWithClass[1];
 
