@@ -1104,7 +1104,7 @@ margin-top: -10px;
 
   .tabcontent-cus h3 {
     margin-bottom: -10px !important;
-    font-size: 2rem;
+    font-size: 1.7rem;
     color: #333;
   }
 
@@ -1271,7 +1271,10 @@ margin-top: -10px;
   position: absolute;
   left: 0;
   top: -1rem;
-  border-radius: 6px !important;
+  border-top-left-radius: 6px !important;
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
 }
 
 .mw_corner_sale .badge {
@@ -2722,7 +2725,10 @@ text-transform: capitalize !important;
     border-top: 60px solid;
     border-bottom: 60px solid transparent;
     border-right: 60px solid transparent;
-    border-radius: 6px !important;
+    border-top-left-radius: 6px !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
   }
   .sale_text_span {
     top: -46px;
