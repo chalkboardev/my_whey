@@ -314,7 +314,7 @@ if (!customElements.get('product-info')) {
               if (inputContainer) {
                 console.log('ZZZ Found the closest', inputContainer); 
                 //var firstInput = inputContainer.querySelectorAll('label input')[0];
-                inputContainer.click();
+                //inputContainer.click();
                 inputContainer.checked = true;
               } else {
                 console.log('DODNT Found the closest');  

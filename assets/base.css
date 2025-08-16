@@ -1574,7 +1574,7 @@ margin-bottom:-7px;
   margin-bottom: 1rem !important;
   margin-left: 10px !important;
   color: #6a6a6a !important;
-  font-size: 12px;
+  font-size: 11px;
 }
 .product .price .price-item {
   font-size: 2.4rem;
@@ -2170,7 +2170,7 @@ text-transform: capitalize !important;
   margin-bottom: -0.8rem !important;
   margin-left: 10px;
   color: #6a6a6a !important;
-  font-size: 12px;
+  font-size: 11px;
 }
 /* .shopify_subscriptions_app_policy::first-letter {
   text-transform: lowercase; 
@@ -2389,15 +2389,6 @@ text-transform: capitalize !important;
   margin-bottom: -0.8rem;
 }
 
-.quick-add-modal__content-info {
-  --modal-padding: 2.5rem 2rem 2.5rem 2rem !important;
-  padding-right: 4.4rem;
-  display: flex;
-  overflow-y: auto;
-  padding: var(--modal-padding);
-  height: 100%;
-}
-
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .product .price .badge {
@@ -2512,6 +2503,7 @@ text-transform: capitalize !important;
   }
   .quick-add-modal__content-info {
     margin-top: -5rem;
+    padding: 2.5rem 1.5rem !important;
   }
   .product__column-sticky {
     position: unset !important;
