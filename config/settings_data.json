@@ -161,7 +161,7 @@
       },
       "14978928648839252053": {
         "type": "shopify://apps/panda-bundle/blocks/app-embed/bd043a67-3fa0-49af-8092-717265d15649",
-        "disabled": false,
+        "disabled": true,
         "settings": {}
       }
     },
