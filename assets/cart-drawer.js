@@ -41,7 +41,7 @@ class CartDrawer extends HTMLElement {
       const flavour_link_btn_txt = document.querySelector('#crt_btn_txt');
       flavour_link_btn_txt.classList.add('checkout_button_txt_anim');
       flavour_link.addEventListener('click', (event) => {
-        event.preventDefault(); 
+        event.preventDefault();
         console.log('testing from cart link open....');
         document.querySelector('.flavour_modal__overlay').classList.add('show_flavour_modal');
         console.log("opening main flavour modal from cart-drawer.js...");

@@ -585,17 +585,26 @@ $(document).ready(function(){
 
     if ($('.quick-add-modal').is(':hidden')) {
         $(".shopify_subscriptions_app_block_label").click(function (e) {
-        //e.preventDefault();
-        e.stopPropagation();
-        var this_class = $(this).attr('class');
-        var inputField = $(this).find('input')[0].click();
-        //inputField.hide();
-        //inputField.trigger('click');
-        //alert(this_class);
-        // alert(this_id);
-      });
+          //e.preventDefault();
+          e.stopPropagation();
+          var this_class = $(this).attr('class');
+          var inputField = $(this).find('input')[0].click();
+          //inputField.hide();
+          //inputField.trigger('click');
+          //alert(this_class);
+          // alert(this_id);
+       });
     } else {
-      //
+      // $(".shopify_subscriptions_app_block_label").click(function (e) {
+      //     //e.preventDefault();
+      //     e.stopPropagation();
+      //     var this_class = $(this).attr('class');
+      //     var inputField = $(this).find('input')[0].click();
+      //     //inputField.hide();
+      //     //inputField.trigger('click');
+      //     //alert(this_class);
+      //     // alert(this_id);
+      //  });
     }
     
     
