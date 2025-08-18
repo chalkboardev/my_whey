@@ -158,6 +158,11 @@
           "border_radius": 0,
           "subscription_policy_url": ""
         }
+      },
+      "14978928648839252053": {
+        "type": "shopify://apps/panda-bundle/blocks/app-embed/bd043a67-3fa0-49af-8092-717265d15649",
+        "disabled": true,
+        "settings": {}
       }
     },
     "color_schemes": {
