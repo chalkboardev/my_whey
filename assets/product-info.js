@@ -166,6 +166,13 @@ if (!customElements.get('product-info')) {
 
       renderProductInfo({ requestUrl, targetId, callback }) {
         //$(".price").html('zzz...'); 
+        var loading_div = document.querySelector('.loading_subscription');
+        loading_div.style.display = 'flex';
+        var elementsToHide = document.querySelectorAll('.shopify-block');
+        elementsToHide.forEach(element => {
+          element.classList.add('hide_element');
+          //element.innerHTML = 'none';
+        });
         this.abortController?.abort();
         this.abortController = new AbortController();
 
@@ -258,6 +265,14 @@ if (!customElements.get('product-info')) {
             html.getElementById(`ProductSubmitButton-${this.sectionId}`)?.hasAttribute('disabled') ?? true,
             window.variantStrings.soldOut
           );
+
+          var loading_div = document.querySelector('.loading_subscription');
+          loading_div.style.display = 'none';
+          var elementsToHide = document.querySelectorAll('.shopify-block');
+          elementsToHide.forEach(element => {
+            element.classList.remove('hide_element');
+            //element.innerHTML = 'none';
+          });
 
           publish(PUB_SUB_EVENTS.variantChange, {
             data: {

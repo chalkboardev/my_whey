@@ -25,6 +25,8 @@ if (!customElements.get('quick-add-modal')) {
         opener.classList.add('loading');
         opener.querySelector('.loading__spinner').classList.remove('hidden');
         console.log('rendering product quick modal from quick-add.js'); 
+
+        
         // var this_modal_id = $(this).attr('id');
         // // alert(this_modal_id);
         // let variantId = this_modal_id.replace("QuickAdd-", "");
@@ -33,9 +35,18 @@ if (!customElements.get('quick-add-modal')) {
         // //  productSections.removeClass('shopify_subscriptions_app_block--hidden');
         // // $(productSections).removeClass('shopify_subscriptions_app_block--hidden');
         // $("section[data-variant-id='" + variantId + "']").removeClass("shopify_subscriptions_app_block--hidden");
-       
+
         setTimeout(function(){
-          
+          setTimeout(function(){
+            var loading_div = document.querySelector('.loading_subscription');
+            loading_div.style.display = 'none';
+            var elementsToHide = document.querySelectorAll('.shopify-block');
+            elementsToHide.forEach(element => {
+              element.classList.remove('hide_element');
+              //element.innerHTML = 'none';
+            });
+          }, 1000);
+
             var containers = document.querySelectorAll('.shopify_subscriptions_app_block_label');
 
             containers.forEach(container => {
@@ -259,6 +270,14 @@ if (!customElements.get('quick-add-modal')) {
             opener.removeAttribute('aria-disabled');
             opener.classList.remove('loading');
             opener.querySelector('.loading__spinner').classList.add('hidden');
+
+            var elementsToHide = document.querySelectorAll('.shopify-block');
+            elementsToHide.forEach(element => {
+              // element.style.display = 'none';
+              element.classList.add('hide_element');
+              //element.innerHTML = 'none';
+            });
+
           });
       }
 
