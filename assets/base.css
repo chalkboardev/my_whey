@@ -2291,7 +2291,7 @@ text-transform: capitalize !important;
   position: relative;
   top:0.09rem;
   right: 4px;
-  height: 11px;
+  height: 9px;
   visibility: visible;
   animation-direction: alternate;
   animation-name: fadeIn;
@@ -2341,7 +2341,7 @@ text-transform: capitalize !important;
   vertical-align: middle !important;
 }
 [id^="MainProduct-quickadd-template--"] .price__badge-sale {
-  top: 0px;
+  top: -1px;
   align-content: flex-start;
   padding-top: 2px !important;
   font-size: 12px !important;
@@ -2438,6 +2438,9 @@ quick-add-modal .product__title > a:hover {
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  [id^="MainProduct-quickadd-template--"] .price__badge-sale {
+    top: 0px;
+  }
   .loading_subscription {
     height:134px;
     display: flex;
