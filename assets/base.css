@@ -1187,9 +1187,9 @@ margin-top: -10px;
 
 .product-form__input--pill input[type='radio'] + label {
   border:none !important;
-  -webkit-box-shadow: inset 0px 0px 0px 1px #26262625;
-  -moz-box-shadow: inset 0px 0px 0px 1px #26262625;
-  box-shadow: inset 0px 0px 0px 1px #26262625;
+  -webkit-box-shadow: inset 0px 0px 0px 2px #26262625;
+  -moz-box-shadow: inset 0px 0px 0px 2px #26262625;
+  box-shadow: inset 0px 0px 0px 2px #26262625;
   transition: all ease 0.25s !important;
 }
 
