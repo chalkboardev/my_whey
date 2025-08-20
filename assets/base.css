@@ -1176,6 +1176,7 @@ margin-top: -10px;
   }
 
   .product-form__input--pill input[type='radio']:checked + label {
+    /* letter-spacing: 1px !important; */
     background-color: rgb(var(--color-background)) !important;
     -webkit-box-shadow: inset 0px 0px 0px 2px #ff512b;
     -moz-box-shadow: inset 0px 0px 0px 2px #ff512b;
@@ -1186,10 +1187,12 @@ margin-top: -10px;
   }
 
 .product-form__input--pill input[type='radio'] + label {
+  /* font-weight: 600 !important; */
+  /* letter-spacing: 1.3px !important; */
   border:none !important;
-  -webkit-box-shadow: inset 0px 0px 0px 2px #26262625;
-  -moz-box-shadow: inset 0px 0px 0px 2px #26262625;
-  box-shadow: inset 0px 0px 0px 2px #26262625;
+  -webkit-box-shadow: inset 0px 0px 0px 1px #26262625;
+  -moz-box-shadow: inset 0px 0px 0px 1px #26262625;
+  box-shadow: inset 0px 0px 0px 1px #26262625;
   transition: all ease 0.25s !important;
 }
 
