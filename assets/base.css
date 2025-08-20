@@ -2321,7 +2321,7 @@ text-transform: capitalize !important;
 }
 
 .price__badge-sale {
-  top: -2px;
+  top: -3px;
   align-content: flex-start;
   padding-top: 2px !important;
   font-size: 12px !important;
@@ -2335,13 +2335,13 @@ text-transform: capitalize !important;
   background: #929292 !important;
   /* background: #ff512b; */
   border-radius: 50px;
-  margin: 2px 4px 2px 0px;
+  margin: 2px 4px 0px 0px;
   align-items: center;
   flex-flow: wrap;
   vertical-align: middle !important;
 }
 [id^="MainProduct-quickadd-template--"] .price__badge-sale {
-  top: -1px;
+  top: 0px;
   align-content: flex-start;
   padding-top: 2px !important;
   font-size: 12px !important;
@@ -2473,7 +2473,7 @@ quick-add-modal .product__title > a:hover {
     align-items: center !important;
   }
   .price__badge-sale {
-    top: 0;
+    top: -1px;
     align-content: flex-start;
     padding-top: 2px !important;
   }
