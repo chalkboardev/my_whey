@@ -166,29 +166,27 @@ if (!customElements.get('product-info')) {
 
       renderProductInfo({ requestUrl, targetId, callback }) {
         //$(".price").html('zzz...'); 
-//alert('hello');
-const myElement = document.getElementById('loading_subscription_div'); // Or document.querySelector('.some-class');
-if(myElement){
-  if (myElement.classList.contains('not_subscription')) {
-    // The element has 'my-class-name'
-    console.log('Product is not subscription, dont show loader!');
-} else {
-    // The element does not have 'my-class-name'
-    console.log('Product IS SUBSCRIPTION, yes show loader!');
-    // ------- USE THIS WITH QUICK-ADD.JS SCRIPT TO DISPLAY LOADING DIV WHILST CHANGING VARIANTS ---------
-    var loading_div = document.querySelector('.loading_subscription');
-    loading_div.style.display = 'flex';
-    var elementsToHide = document.querySelectorAll('.shopify-block');
-    elementsToHide.forEach(element => {
-      element.classList.add('hide_element');
-      //element.innerHTML = 'none';
-    });
-}
-} else {
-
-}
-
-
+        //alert('hello');
+        // ------- USE THIS WITH QUICK-ADD.JS SCRIPT TO DISPLAY LOADING DIV WHILST CHANGING VARIANTS ---------
+        const myElement = document.getElementById('loading_subscription_div'); // Or document.querySelector('.some-class');
+        if(myElement){
+              if (myElement.classList.contains('not_subscription')) {
+                // The element has 'my-class-name'
+                console.log('Product is not subscription, dont show loader!');
+              } else {
+                  // The element does not have 'my-class-name'
+                  console.log('Product IS SUBSCRIPTION, yes show loader!');
+                  var loading_div = document.querySelector('.loading_subscription');
+                  loading_div.style.display = 'flex';
+                  var elementsToHide = document.querySelectorAll('.shopify-block');
+                  elementsToHide.forEach(element => {
+                    element.classList.add('hide_element');
+                    //element.innerHTML = 'none';
+                  });
+              }
+        } else {
+          //  
+        }
 
         this.abortController?.abort();
         this.abortController = new AbortController();

@@ -503,8 +503,17 @@
 {% if product.selling_plan_groups.size > 0 or card_product.selling_plan_groups.size > 0 %}
   {% comment %} This product is available for subscription. {% endcomment %}
   <script>
+    var is_quickv_open = document.querySelector('[id^="QuickAdd-"]');
+    if ($("[id^='QuickAdd-']").length > 0) {
+      // At least one element with "your-class-name" is visible
+      console.log("An element with 'your-class-name' is visible.");
       var loading_div = document.querySelector('.loading_subscription');
       loading_div.style.display = 'flex';
+    } else {
+      // No elements with "your-class-name" are visible
+      console.log("No elements with 'your-class-name' are visible.");
+    }
+
     // alert('No subscription for this product');
     var firstDivInSection = document.querySelector('section div');
     firstDivInSection.style.border = 'none';

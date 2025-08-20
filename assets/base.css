@@ -1700,7 +1700,7 @@ margin-bottom:-7px;
 }
 
 .heighten_me {
-  height: 30px;
+  /* height: 30px; */
   /* font-size: 1.8rem !important; */
   /* font-weight: 600; */
   padding-top: 0px;
@@ -1709,7 +1709,7 @@ margin-bottom:-7px;
 }
 
 [id^="MainProduct-quickadd-template--"] .heighten_me {
-  height: 30px;
+  /* height: 30px; */
   font-size:2rem !important;
   padding-top: 0px;
   display: flex;
@@ -2318,10 +2318,12 @@ text-transform: capitalize !important;
 }
 
 .price__badge-sale {
+  top: -2px;
+  align-content: flex-start;
+  padding-top: 2px !important;
   font-size: 12px !important;
   text-transform: uppercase;
   height: 20px;
-  top: -1px;
   display: flex;
   position: relative;
   padding: 0px 10px 0px 8px;
@@ -2333,7 +2335,6 @@ text-transform: capitalize !important;
   margin: 2px 4px 2px 0px;
   align-items: center;
   flex-flow: wrap;
-  align-content: center;
   vertical-align: middle !important;
 }
 
@@ -2354,34 +2355,8 @@ text-transform: capitalize !important;
 }
 
 .price__badge--subscription {
-  /* background: #929292 !important;
-  font-size: 1.3rem !important;
   animation: none !important;
-  line-height: calc(1 + .6 / var(--font-body-scale)) !important;
-  letter-spacing: .13rem !important;
-  text-shadow: 0px 0px 2px #333 !important;
-  padding: 0px 8px; */
-  animation-direction: alternate !important;
-  animation-name: fadeIn !important;
-  animation-duration: 1s !important;
-  animation-iteration-count: 1 !important;
-  font-size: 12px !important;
-  text-transform: uppercase;
-  height: 20px;
-  top: -1px;
-  display: flex;
-  position: relative;
-  padding: 0px 10px 0px 8px;
-  text-align: center;
-  justify-content: center;
-  background: #929292 !important;
-  /* background: #ff512b; */
-  border-radius: 50px;
-  margin: 2px 4px 2px 0px;
-  align-items: center;
-  flex-flow: wrap;
-  align-content: center;
-  vertical-align: middle !important;
+  animation-name: none !important;
 }
 .price__badge--subscription:before {
   content: "";
