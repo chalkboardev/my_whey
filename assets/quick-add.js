@@ -37,6 +37,7 @@ if (!customElements.get('quick-add-modal')) {
         // $("section[data-variant-id='" + variantId + "']").removeClass("shopify_subscriptions_app_block--hidden");
 
         setTimeout(function(){
+          // ------- USE THIS WITH PRODUCT-INFO.JS SCRIPT THIS TO DISPLAY LOADING DIV WHILST CHANGING VARIANTS 1 of 2 ---------
           setTimeout(function(){
             var loading_div = document.querySelector('.loading_subscription');
             loading_div.style.display = 'none';
@@ -271,6 +272,7 @@ if (!customElements.get('quick-add-modal')) {
             opener.classList.remove('loading');
             opener.querySelector('.loading__spinner').classList.add('hidden');
 
+            // ------- USE THIS WITH PRODUCT-INFO.JS SCRIPT THIS TO DISPLAY LOADING DIV WHILST CHANGING VARIANTS 2 of 2 ---------
             var elementsToHide = document.querySelectorAll('.shopify-block');
             elementsToHide.forEach(element => {
               // element.style.display = 'none';

@@ -2438,6 +2438,12 @@ quick-add-modal .product__title > a:hover {
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .loading_subscription {
+    height:136px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .quick-add-modal__toggle {
     top: -2rem !important;
     right: -2rem !important;

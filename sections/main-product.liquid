@@ -478,7 +478,7 @@
 
               {%- when 'variant_picker' -%}
 
-                <div class="loading_subscription">
+                <div id="loading_subscription_div" style="display:none;" class="loading_subscription">
                   
                     {% comment %} <img width="16" src="https://cdn.shopify.com/s/files/1/0713/8685/7724/files/loader.gif?v=1743590298" /> {% endcomment %}
 
@@ -503,6 +503,8 @@
 {% if product.selling_plan_groups.size > 0 or card_product.selling_plan_groups.size > 0 %}
   {% comment %} This product is available for subscription. {% endcomment %}
   <script>
+      var loading_div = document.querySelector('.loading_subscription');
+      loading_div.style.display = 'flex';
     // alert('No subscription for this product');
     var firstDivInSection = document.querySelector('section div');
     firstDivInSection.style.border = 'none';
@@ -596,6 +598,8 @@
 {% else %}
   {% comment %} This product is a one-time purchase. {% endcomment %}
   <script>
+      var loading_div = document.querySelector('.loading_subscription');
+      loading_div.classList.add("not_subscription");
     // alert('No subscription for this product');
      $(".shopify_subscriptions_app_container").parent().remove();
    </script>
