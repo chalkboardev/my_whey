@@ -2340,6 +2340,28 @@ text-transform: capitalize !important;
   flex-flow: wrap;
   vertical-align: middle !important;
 }
+[id^="MainProduct-quickadd-template--"] .price__badge-sale {
+  top: -1px;
+  align-content: flex-start;
+  padding-top: 2px !important;
+  font-size: 12px !important;
+  text-transform: uppercase;
+  height: 20px;
+  display: flex;
+  position: relative;
+  padding: 0px 10px 0px 8px;
+  text-align: center;
+  justify-content: center;
+  background: #929292 !important;
+  /* background: #ff512b; */
+  border-radius: 50px;
+  margin: 2px 4px 2px 0px;
+  align-items: center;
+  flex-flow: wrap;
+  vertical-align: middle !important;
+}
+
+
 
 .price__badge-sale:before {
   content: "";
