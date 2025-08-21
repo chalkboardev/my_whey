@@ -2440,7 +2440,10 @@ quick-add-modal .product__title > a:hover {
   display: none !important;
 }
 
-
+.blog .article-card .card__heading {
+  margin-bottom: .6rem;
+  color: #333;
+}
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   [id^="MainProduct-quickadd-template--"] .price__badge-sale {
