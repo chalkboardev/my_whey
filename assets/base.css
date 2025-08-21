@@ -2417,6 +2417,11 @@ quick-add-modal .product__title > a:hover {
   stroke: rgb(78 78 78) !important;
 }
 
+.mw_loader {
+  position: relative !important;
+  top: -4px;
+}
+
 .loading_subscription {
   height:130px;
   display: flex;
