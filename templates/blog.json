@@ -22,17 +22,6 @@
         "padding_bottom": 36
       }
     },
-    "page_gJ76LX": {
-      "type": "page",
-      "name": "t:sections.page.presets.name",
-      "settings": {
-        "page": "blog",
-        "heading_size": "h1",
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "featured_blog_8NfNCg": {
       "type": "featured-blog",
       "name": "t:sections.featured-blog.presets.name",
@@ -54,7 +43,6 @@
   },
   "order": [
     "main",
-    "page_gJ76LX",
     "featured_blog_8NfNCg"
   ]
 }
