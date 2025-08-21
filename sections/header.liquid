@@ -254,7 +254,15 @@ transform: scale(1.03);
     transform: translate3d(0, 0, 0);
     z-index: 10;
 } */
-
+.swiper-pagination-bullet {
+    width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 8px));
+    height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 8px));
+    display: inline-block;
+    border-radius: var(--swiper-pagination-bullet-border-radius, 50%);
+    background: var(--swiper-pagination-bullet-inactive-color, #ffffff76) !important;
+    opacity: var(--swiper-pagination-bullet-inactive-opacity, .8) !important;
+    border: 2px solid #fff;
+}
 .menu_swiper .swiper-pagination-bullets.swiper-pagination-horizontal {
     bottom: var(--swiper-pagination-bottom, 0%);
     top: var(--swiper-pagination-top, auto);
