@@ -371,7 +371,7 @@ transform: scale(1.03);
  
     <div id="menu-drawer" style="padding: 0 !important" class="gradient menu-drawer motion-reduce color-{{ section.settings.menu_color_scheme }} {% if section.settings.keep_announcement_scroll %} announcement_present {% else %}announcement_removed{% endif %}"> 
 
-      {% comment %} -------------- MOBILE MENU -------------- {% endcomment %}
+      {% comment %} -------------- MOBILE MENU -------------- {% endcomment %} 
       <span class="header__heading-link mobile_menu_logo link link--text focus-inset">
         {%- if settings.logo != blank -%} 
           <div class="">
@@ -398,7 +398,7 @@ transform: scale(1.03);
         <div class="menu-drawer__navigation-container">
           <nav class="menu-drawer__navigation">
             <ul class="menu-drawer__menu has-submenu list-menu" role="list">
-              {%- for link in section.settings.menu.links limit: 2 -%}
+              {%- for link in section.settings.menu.links limit: 6 -%}
                 <li>
                         {%- assign imagesPresent = false -%}
                          {%- for block in section.blocks -%}
