@@ -65,7 +65,7 @@
       {%- endunless -%}
   {% comment %} ------------------- END SECTION HEADER ------------------- {% endcomment %}
 
-  <div class="page-width-desktop isolate{% if posts_displayed < 3 %} page-width-tablet{% endif %} section-{{ section.id }}-padding">
+  <div class="mw_blog_back page-width-desktop isolate{% if posts_displayed < 3 %} page-width-tablet{% endif %} section-{{ section.id }}-padding" style="background-color: {{ block.settings.color_bg }};">
 
     <slider-component class="slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       <ul
@@ -231,6 +231,14 @@
       "unit": "%",
       "label": "Background Height Position",
       "default": 80
+    },
+    {
+      "type": "color",
+      "id": "color_bg",
+      "label": {
+      "en": "Background color (optional)"
+      },
+      "default": "#ececec"
     },
     {
       "type": "inline_richtext",
