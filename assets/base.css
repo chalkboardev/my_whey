@@ -2452,6 +2452,10 @@ quick-add-modal .product__title > a:hover {
   [id^="MainProduct-quickadd-template--"] .price__badge-sale {
     top: 0px;
   }
+  [id^="MainProduct-quickadd-template--"] .slider--mobile:after {
+    padding-left: 0 !important;
+  }
+
   .loading_subscription {
     height:134px;
     display: flex;
