@@ -371,6 +371,7 @@ transform: scale(1.03);
  
     <div id="menu-drawer" style="padding: 0 !important" class="gradient menu-drawer motion-reduce color-{{ section.settings.menu_color_scheme }} {% if section.settings.keep_announcement_scroll %} announcement_present {% else %}announcement_removed{% endif %}"> 
 
+      {% comment %} -------------- MOBILE MENU -------------- {% endcomment %}
       <span class="header__heading-link mobile_menu_logo link link--text focus-inset">
         {%- if settings.logo != blank -%} 
           <div class="">
