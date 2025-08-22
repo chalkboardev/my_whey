@@ -2459,8 +2459,8 @@ quick-add-modal .product__title > a:hover {
     align-items: center;
   }
   .quick-add-modal__toggle {
-    top: -2rem !important;
-    right: -2rem !important;
+    /* top: -2rem !important;
+    right: -2rem !important; */
 }
   .product .price .badge {
     margin-left: -4px !important;
