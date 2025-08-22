@@ -2447,6 +2447,17 @@ quick-add-modal .product__title > a:hover {
 .blog .article-card__info {
   color: #888;
 }
+
+.blog_list_header {
+  min-height: 200px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  display: inline-flex;
+}
+
+
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   [id^="MainProduct-quickadd-template--"] .price__badge-sale {

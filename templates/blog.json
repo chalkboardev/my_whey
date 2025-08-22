@@ -27,6 +27,8 @@
       "name": "t:sections.featured-blog.presets.name",
       "settings": {
         "heading": "Community",
+        "image": "shopify://shop_images/mw_products_header.jpg",
+        "background_height_position": 0,
         "heading_size": "h1",
         "blog": "community",
         "post_limit": 4,
