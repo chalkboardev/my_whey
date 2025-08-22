@@ -2471,6 +2471,14 @@ quick-add-modal .product__title > a:hover {
 .mw_blog_back {
 
 }
+.blog_list_header .title-wrapper-with-link {
+  margin-bottom: 0rem !important;
+}
+.blog__posts .card-wrapper {
+  width: 100%;
+      height: -webkit-fill-available !important;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */ 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
