@@ -123,8 +123,7 @@ if (!customElements.get('product-info')) {
                         requestUrl: this.buildRequestUrlWithParams(productUrl, selectedOptionValues, shouldFetchFullPage),
                         targetId: target.id,
                         callback: shouldSwapProduct ?
-                            this.handleSwapProduct(productUrl, shouldFetchFullPage) :
-                            this.handleUpdateProductInfo(productUrl),
+                            this.handleSwapProduct(productUrl, shouldFetchFullPage) : this.handleUpdateProductInfo(productUrl),
                     });
                     // // $(".price").html('<div class="price__container animate_it"><div class="price__regular">...</div></div>');
                     // $(".product_icons").next().html('<div class="price__container"><div class="price__regular"><span class="fetching_price">Price loading </span><img class="gif_price_pad" width="16" src="https://cdn.shopify.com/s/files/1/0713/8685/7724/files/loader.gif?v=1743590298" /></div></div>');
@@ -178,7 +177,7 @@ if (!customElements.get('product-info')) {
                             console.log('Product IS SUBSCRIPTION, yes show loader!');
                             var loading_div = document.querySelector('.loading_subscription');
                             loading_div.style.display = 'flex';
-                            var elementsToHide = document.querySelectorAll('.shopify-block');
+                            var elementsToHide = document.querySelectorAll('.shopify_subscriptions_app_block');
                             elementsToHide.forEach(element => {
                                 element.classList.add('hide_element');
                                 //element.innerHTML = 'none';
