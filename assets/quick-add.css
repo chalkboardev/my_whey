@@ -191,7 +191,7 @@
         flex-direction: column;
         position: sticky;
         top: 0;
-        margin-top: -2.5rem;
+        /* margin-top: -2.5rem; */
         padding-top: 2.5rem;
     }
 }
