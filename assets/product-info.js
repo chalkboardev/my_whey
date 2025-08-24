@@ -91,6 +91,8 @@ if (!customElements.get('product-info')) {
 
       this.resetProductFormState();
 
+// console.log($(event.target).val());
+
 // ---- START get specific pill option clicked -----
 // alert(selectedOptionValues);
       var pill_name = $(event.target)
@@ -106,14 +108,13 @@ if (!customElements.get('product-info')) {
       if (pill_name == 'Powder') {
         is_powder = true;
         is_capsule = false;
-
 // alert('Powder Clicked...');
 // alert($(event.target)[0].nodeName);
 // //$(event.target).nextAll("label").next().first().remove();
 // $('input[name*="Size-2"]')[0].click();
       } else if (pill_name == 'Capsule') {
+        console.log('Capsule Clicked...');
 
-// alert('Capsule clicked...');
 // $('input[name*="Size-2"]')[0].click();
         is_powder = false;
         is_capsule = true;
@@ -448,6 +449,7 @@ if (!customElements.get('product-info')) {
       if (this.dataset.updateUrl === 'false') return;
       
 
+
       window.history.replaceState({}, '', `${url}${
         variantId
           ? `?variant=${variantId}`
@@ -458,11 +460,12 @@ if (!customElements.get('product-info')) {
     setUnavailable() {
       this.productForm ?. toggleSubmitButton(true, window.variantStrings.unavailable);
 
-      if (is_powder === true) { // alert('powder clicked...');
+      if (is_powder === true) {
         $('input[name*="Size-2"]')[0].click();
-      } else if (is_capsule === true) { // alert('capsule clicked...');
+      } else if (is_capsule === true) {
         $('input[name*="Size-2"]')[0].click();
-      } else { // alert('not capsule nor powder clicked...');
+      } else {
+        $('input[name*="Size-2"]')[0].click();
       }
 
       const selectors = [
@@ -504,6 +507,7 @@ if (!customElements.get('product-info')) {
         if (this.hasAttribute('data-zoom-on-hover')) 
           enableZoomOnHover(2);
         
+
 
         const mediaGallerySourceItems = Array.from(mediaGallerySource.querySelectorAll('li[data-media-id]'));
         const sourceSet = new Set(mediaGallerySourceItems.map((item) => item.dataset.mediaId));
@@ -571,6 +575,7 @@ if (!customElements.get('product-info')) {
         modalContent.innerHTML = newModalContent.innerHTML;
       
 
+
     }
 
     setQuantityBoundries() {
@@ -596,6 +601,7 @@ if (!customElements.get('product-info')) {
       if (max !== null) 
         min = Math.min(min, max);
       
+
 
       if (data.cartQuantity >= data.min) 
         min = Math.min(min, data.step);
@@ -639,6 +645,7 @@ if (!customElements.get('product-info')) {
       if (!this.quantityInput) return;
       
 
+
       this.setQuantityBoundries();
 
       const quantityFormUpdated = html.getElementById(`Quantity-Form-${sectionId}`);
@@ -649,6 +656,7 @@ if (!customElements.get('product-info')) {
         if (! current || ! updated) 
           continue;
         
+
 
         if (selector === '.quantity__input') {
           const attributes = ['data-cart-quantity', 'data-min', 'data-max', 'step'];
