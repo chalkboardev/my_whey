@@ -2724,7 +2724,6 @@ quick-add-modal .product__title>a:hover {
     .quick-add-modal__content-info {
         margin-top: -5rem;
         padding: 2.5rem 1.5rem !important;
-        height: 100dvh !important;
     }
     .product__column-sticky {
         position: unset !important;
