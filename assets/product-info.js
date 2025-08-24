@@ -1,418 +1,418 @@
 if (!customElements.get('product-info')) {
-  var is_powder = false;
-  var is_capsule = false;
-  customElements.define(
-    'product-info',
-    class ProductInfo extends HTMLElement {
-      quantityInput = undefined;
-      quantityForm = undefined;
-      onVariantChangeUnsubscriber = undefined;
-      cartUpdateUnsubscriber = undefined;
-      abortController = undefined;
-      pendingRequestUrl = null;
-      preProcessHtmlCallbacks = [];
-      postProcessHtmlCallbacks = [];
+    var is_powder = false;
+    var is_capsule = false;
+    customElements.define(
+            'product-info',
+            class ProductInfo extends HTMLElement {
+                quantityInput = undefined;
+                quantityForm = undefined;
+                onVariantChangeUnsubscriber = undefined;
+                cartUpdateUnsubscriber = undefined;
+                abortController = undefined;
+                pendingRequestUrl = null;
+                preProcessHtmlCallbacks = [];
+                postProcessHtmlCallbacks = [];
 
-      constructor() {
-        super();
+                constructor() {
+                    super();
 
-        this.quantityInput = this.querySelector('.quantity__input');
-      }
+                    this.quantityInput = this.querySelector('.quantity__input');
+                }
 
-      connectedCallback() {
-        this.initializeProductSwapUtility();
+                connectedCallback() {
+                    this.initializeProductSwapUtility();
 
-        this.onVariantChangeUnsubscriber = subscribe(
-          PUB_SUB_EVENTS.optionValueSelectionChange,
-          this.handleOptionValueChange.bind(this)
-        );
+                    this.onVariantChangeUnsubscriber = subscribe(
+                        PUB_SUB_EVENTS.optionValueSelectionChange,
+                        this.handleOptionValueChange.bind(this)
+                    );
 
-        this.initQuantityHandlers();
-        this.dispatchEvent(new CustomEvent('product-info:loaded', { bubbles: true }));
-      }
+                    this.initQuantityHandlers();
+                    this.dispatchEvent(new CustomEvent('product-info:loaded', { bubbles: true }));
+                }
 
-      addPreProcessCallback(callback) {
-        this.preProcessHtmlCallbacks.push(callback);
-      }
+                addPreProcessCallback(callback) {
+                    this.preProcessHtmlCallbacks.push(callback);
+                }
 
-      initQuantityHandlers() {
-        if (!this.quantityInput) return;
+                initQuantityHandlers() {
+                    if (!this.quantityInput) return;
 
-        this.quantityForm = this.querySelector('.product-form__quantity');
-        if (!this.quantityForm) return;
+                    this.quantityForm = this.querySelector('.product-form__quantity');
+                    if (!this.quantityForm) return;
 
-        this.setQuantityBoundries();
-        if (!this.dataset.originalSection) {
-          this.cartUpdateUnsubscriber = subscribe(PUB_SUB_EVENTS.cartUpdate, this.fetchQuantityRules.bind(this));
-        }
-      }
+                    this.setQuantityBoundries();
+                    if (!this.dataset.originalSection) {
+                        this.cartUpdateUnsubscriber = subscribe(PUB_SUB_EVENTS.cartUpdate, this.fetchQuantityRules.bind(this));
+                    }
+                }
 
-      disconnectedCallback() {
-        this.onVariantChangeUnsubscriber();
-        this.cartUpdateUnsubscriber?.();
-      }
+                disconnectedCallback() {
+                    this.onVariantChangeUnsubscriber();
+                    this.cartUpdateUnsubscriber ? .();
+                }
 
-      initializeProductSwapUtility() {
-        this.preProcessHtmlCallbacks.push((html) =>
-          html.querySelectorAll('.scroll-trigger').forEach((element) => element.classList.add('scroll-trigger--cancel'))
-        );
-        this.postProcessHtmlCallbacks.push((newNode) => {
-          window?.Shopify?.PaymentButton?.init();
-          window?.ProductModel?.loadShopifyXR();
-        });
-      }
+                initializeProductSwapUtility() {
+                    this.preProcessHtmlCallbacks.push((html) =>
+                        html.querySelectorAll('.scroll-trigger').forEach((element) => element.classList.add('scroll-trigger--cancel'))
+                    );
+                    this.postProcessHtmlCallbacks.push((newNode) => {
+                        window ? .Shopify ? .PaymentButton ? .init();
+                        window ? .ProductModel ? .loadShopifyXR();
+                    });
+                }
 
-      // handleOptionValueChange({ data: { event, target, selectedOptionValues } }) {
-      //   if (!this.contains(event.target)) return;
+                // handleOptionValueChange({ data: { event, target, selectedOptionValues } }) {
+                //   if (!this.contains(event.target)) return;
 
-      //   this.resetProductFormState();
+                //   this.resetProductFormState();
 
-      //   const productUrl = target.dataset.productUrl || this.pendingRequestUrl || this.dataset.url;
-      //   this.pendingRequestUrl = productUrl;
-      //   const shouldSwapProduct = this.dataset.url !== productUrl;
-      //   const shouldFetchFullPage = this.dataset.updateUrl === 'true' && shouldSwapProduct;
+                //   const productUrl = target.dataset.productUrl || this.pendingRequestUrl || this.dataset.url;
+                //   this.pendingRequestUrl = productUrl;
+                //   const shouldSwapProduct = this.dataset.url !== productUrl;
+                //   const shouldFetchFullPage = this.dataset.updateUrl === 'true' && shouldSwapProduct;
 
-      //   this.renderProductInfo({
-      //     requestUrl: this.buildRequestUrlWithParams(productUrl, selectedOptionValues, shouldFetchFullPage),
-      //     targetId: target.id,
-      //     callback: shouldSwapProduct
-      //       ? this.handleSwapProduct(productUrl, shouldFetchFullPage)
-      //       : this.handleUpdateProductInfo(productUrl),
-      //   });
-      // }
+                //   this.renderProductInfo({
+                //     requestUrl: this.buildRequestUrlWithParams(productUrl, selectedOptionValues, shouldFetchFullPage),
+                //     targetId: target.id,
+                //     callback: shouldSwapProduct
+                //       ? this.handleSwapProduct(productUrl, shouldFetchFullPage)
+                //       : this.handleUpdateProductInfo(productUrl),
+                //   });
+                // }
 
-      handleOptionValueChange({ data: { event, target, selectedOptionValues } }) {
-        if (!this.contains(event.target)) return;
+                handleOptionValueChange({ data: { event, target, selectedOptionValues } }) {
+                    if (!this.contains(event.target)) return;
 
-        this.resetProductFormState();
+                    this.resetProductFormState();
 
-              // ---- START get specific pill option clicked -----
-             //alert(selectedOptionValues);
-             var pill_name = $(event.target).next().contents().filter(function(){
-               return this.nodeType === 3;
-             }).text().trim();
-             //alert("Pill name: " + pill_name);
-             if(pill_name == 'Powder') {
-                  is_powder = true;
-                  is_capsule = false;
-                  //alert('Powder Clicked...');
-                  //alert($(event.target)[0].nodeName);
-                  ////$(event.target).nextAll("label").next().first().remove();
-                  //$('input[name*="Size-2"]')[0].click();
-             } else if(pill_name == 'Capsule') {
-                  //alert('Capsule clicked...'); 
-                  // $('input[name*="Size-2"]')[0].click();
-                  is_powder = false;
-                  is_capsule = true;
-             } else {
-              // this.dataset.url = this.dataset.url;
-              // var productUrl = this.dataset.url ;
-             }
-             this.dataset.url = this.dataset.url;
-             var productUrl = this.dataset.url ;
-             // ---- END get specific pill option clicked ----- 
+                    // ---- START get specific pill option clicked -----
+                    //alert(selectedOptionValues);
+                    var pill_name = $(event.target).next().contents().filter(function() {
+                        return this.nodeType === 3;
+                    }).text().trim();
+                    //alert("Pill name: " + pill_name);
+                    if (pill_name == 'Powder') {
+                        is_powder = true;
+                        is_capsule = false;
+                        //alert('Powder Clicked...');
+                        //alert($(event.target)[0].nodeName);
+                        ////$(event.target).nextAll("label").next().first().remove();
+                        //$('input[name*="Size-2"]')[0].click();
+                    } else if (pill_name == 'Capsule') {
+                        //alert('Capsule clicked...'); 
+                        // $('input[name*="Size-2"]')[0].click();
+                        is_powder = false;
+                        is_capsule = true;
+                    } else {
+                        // this.dataset.url = this.dataset.url;
+                        // var productUrl = this.dataset.url ;
+                    }
+                    this.dataset.url = this.dataset.url;
+                    var productUrl = this.dataset.url;
+                    // ---- END get specific pill option clicked ----- 
 
-        productUrl = target.dataset.productUrl || this.pendingRequestUrl || this.dataset.url;
-        this.pendingRequestUrl = productUrl;
-        const shouldSwapProduct = this.dataset.url !== productUrl;
-        const shouldFetchFullPage = this.dataset.updateUrl === 'true' && shouldSwapProduct;
-
-
-
-        this.renderProductInfo({
-          requestUrl: this.buildRequestUrlWithParams(productUrl, selectedOptionValues, shouldFetchFullPage),
-          targetId: target.id,
-          callback: shouldSwapProduct
-            ? this.handleSwapProduct(productUrl, shouldFetchFullPage)
-            : this.handleUpdateProductInfo(productUrl),
-        });
-        // // $(".price").html('<div class="price__container animate_it"><div class="price__regular">...</div></div>');
-        // $(".product_icons").next().html('<div class="price__container"><div class="price__regular"><span class="fetching_price">Price loading </span><img class="gif_price_pad" width="16" src="https://cdn.shopify.com/s/files/1/0713/8685/7724/files/loader.gif?v=1743590298" /></div></div>');
-      }
-
-      resetProductFormState() {
-        const productForm = this.productForm;
-        productForm?.toggleSubmitButton(true);
-        productForm?.handleErrorMessage();
-      }
-
-      handleSwapProduct(productUrl, updateFullPage) {
-        return (html) => {
-          this.productModal?.remove();
-
-          const selector = updateFullPage ? "product-info[id^='MainProduct']" : 'product-info';
-          const variant = this.getSelectedVariant(html.querySelector(selector));
-          this.updateURL(productUrl, variant?.id);
-
-          if (updateFullPage) {
-            document.querySelector('head title').innerHTML = html.querySelector('head title').innerHTML;
-
-            HTMLUpdateUtility.viewTransition(
-              document.querySelector('main'),
-              html.querySelector('main'),
-              this.preProcessHtmlCallbacks,
-              this.postProcessHtmlCallbacks
-            );
-          } else {
-            HTMLUpdateUtility.viewTransition(
-              this,
-              html.querySelector('product-info'),
-              this.preProcessHtmlCallbacks,
-              this.postProcessHtmlCallbacks
-            );
-          }
-        };
-      }
-
-      renderProductInfo({ requestUrl, targetId, callback }) {
-        //$(".price").html('zzz...'); 
-        //alert('hello');
-        // ------- USE THIS WITH QUICK-ADD.JS SCRIPT TO DISPLAY LOADING DIV WHILST CHANGING VARIANTS ---------
-        const myElement = document.getElementById('loading_subscription_div'); // Or document.querySelector('.some-class');
-        if(myElement){
-              if (myElement.classList.contains('not_subscription')) {
-                // The element has 'my-class-name'
-                console.log('Product is not subscription, dont show loader!');
-              } else {
-                  // The element does not have 'my-class-name'
-                  console.log('Product IS SUBSCRIPTION, yes show loader!');
-                  var loading_div = document.querySelector('.loading_subscription');
-                  loading_div.style.display = 'flex';
-                  var elementsToHide = document.querySelectorAll('.shopify-block');
-                  elementsToHide.forEach(element => {
-                    element.classList.add('hide_element');
-                    //element.innerHTML = 'none';
-                  });
-              }
-        } else {
-          //  
-        }
-
-        this.abortController?.abort();
-        this.abortController = new AbortController();
-
-        fetch(requestUrl, { signal: this.abortController.signal })
-          .then((response) => response.text())
-          .then((responseText) => {
-            this.pendingRequestUrl = null;
-            const html = new DOMParser().parseFromString(responseText, 'text/html');
-            callback(html);
-          })
-          .then(() => {
-            // set focus to last clicked option value
-            //console.log('Focused new variant...');
-            document.querySelector(`#${targetId}`)?.focus();
-          })
-          .catch((error) => {
-            if (error.name === 'AbortError') {
-              console.log('Fetch aborted by user');
-            } else {
-              console.error(error);
-            }
-          });
-      }
-
-      getSelectedVariant(productInfoNode) {
-        const selectedVariant = productInfoNode.querySelector('variant-selects [data-selected-variant]')?.innerHTML;
-        return !!selectedVariant ? JSON.parse(selectedVariant) : null;
-      }
-
-      buildRequestUrlWithParams(url, optionValues, shouldFetchFullPage = false) {
-        const params = [];
-
-        !shouldFetchFullPage && params.push(`section_id=${this.sectionId}`);
-
-        if (optionValues.length) {
-          params.push(`option_values=${optionValues.join(',')}`);
-        }
-
-        return `${url}?${params.join('&')}`;
-      }
-
-      updateOptionValues(html) {
-        // $(".price").html('<div class="price__container animate_it"><div class="price__regular">...</div></div>');
-        // $(".product_icons").next().html('<div class="gif_price_pad price__container"><div class="price__regular"><span class="fetching_price">Price loading </span><img width="16" src="https://cdn.shopify.com/s/files/1/0713/8685/7724/files/loader.gif?v=1743590298" /></div></div>');
-        const variantSelects = html.querySelector('variant-selects');
-        if (variantSelects) {
-          HTMLUpdateUtility.viewTransition(this.variantSelectors, variantSelects, this.preProcessHtmlCallbacks);
-        }
-      }
-
-      handleUpdateProductInfo(productUrl) {
-        //$(".price").css('background','#333');
-        
-        return (html) => {
-          const variant = this.getSelectedVariant(html);
-          // alert("Variant NAME: " + variant?.name);
-          // console.log("Variant NAME: " + variant);
-          this.pickupAvailability?.update(variant);
-          this.updateOptionValues(html);
-          this.updateURL(productUrl, variant?.id);
-          this.updateVariantInputs(variant?.id);
-
-          if (!variant) {
-            this.setUnavailable();
-            return;
-          }
-
-          this.updateMedia(html, variant?.featured_media?.id);
-
-          const updateSourceFromDestination = (id, shouldHide = (source) => false) => {
-            const source = html.getElementById(`${id}-${this.sectionId}`);
-            const destination = this.querySelector(`#${id}-${this.dataset.section}`);
-            if (source && destination) {
-              destination.innerHTML = source.innerHTML;
-              destination.classList.toggle('hidden', shouldHide(source));
-            }
-          };
-
-          updateSourceFromDestination('price');
-          updateSourceFromDestination('Sku', ({ classList }) => classList.contains('hidden'));
-          updateSourceFromDestination('Inventory', ({ innerText }) => innerText === '');
-          updateSourceFromDestination('Volume');
-          updateSourceFromDestination('Price-Per-Item', ({ classList }) => classList.contains('hidden'));
-
-          this.updateQuantityRules(this.sectionId, html);
-          this.querySelector(`#Quantity-Rules-${this.dataset.section}`)?.classList.remove('hidden');
-          this.querySelector(`#Volume-Note-${this.dataset.section}`)?.classList.remove('hidden');
-
-          this.productForm?.toggleSubmitButton(
-            html.getElementById(`ProductSubmitButton-${this.sectionId}`)?.hasAttribute('disabled') ?? true,
-            window.variantStrings.soldOut
-          );
-
-           // ------- USE THIS WITH QUICK-ADD.JS SCRIPT TO DISPLAY LOADING DIV WHILST CHANGING VARIANTS ---------
-          var loading_div = document.querySelector('.loading_subscription');
-          loading_div.style.display = 'none';
-          var elementsToHide = document.querySelectorAll('.shopify-block');
-          elementsToHide.forEach(element => {
-            element.classList.remove('hide_element');
-            //element.innerHTML = 'none';
-          });
-
-          publish(PUB_SUB_EVENTS.variantChange, {
-            data: {
-              sectionId: this.sectionId,
-              html,
-              variant,
-            },
-          });
-        };
-      }
-
-      updateVariantInputs(variantId) {
-        //alert(variantId);
-        // Remove the most_popular div
-        const elementsToRemove = document.querySelectorAll('.most_popular');
-        elementsToRemove.forEach(element => {
-          element.remove();
-        });
-
-        const elementsToRemoveSections = document.querySelectorAll(`section .shopify_subscriptions_app_block`);
-        elementsToRemoveSections.forEach(element => {
-          element.classList.add('shopify_subscriptions_app_block--hidden');
-        });
-        
-
-        // Select all section elements where the 'data-category' attribute equals 'products'
-        const productSections = document.querySelectorAll(`section[data-variant-id="${variantId}"]`);
-
-        var productSection = document.querySelector(`section[data-variant-id="${variantId}"]`);
-        if(productSection){
-          productSection.classList.remove('shopify_subscriptions_app_block--hidden');
-        }
-
-        
-        // const previousSibling = productSection.previousElementSibling;
-        // previousSibling.classList.add('shopify_subscriptions_app_block--hidden');
-        // // Get the parent element
-        // const parentElement = productSection.parentNode;
-        // // Get the parent of the parent element
-        // const grandparentElement = parentElement.parentNode;
-        // grandparentElement.classList.remove('shopify_subscriptions_app_block--hidden');
-        
-
-        // You can then iterate through the selected elements or access the first one if only one is expected
-        if (productSections) {
-          productSections.forEach(section => {
-            //console.log("Found a product section:" + variantId );
-            console.log("Variant " + variantId + " is displaying...");
-
-            var closestForm = productSection.closest('.shopify_subscriptions_app_container .shopify_subscriptions_app_block:not(.shopify_subscriptions_app_block--hidden)');
-            if (closestForm) {
-              console.log('Found the closest active shopify_subscriptions_app_block section:', closestForm);
-              var inputContainer = closestForm.querySelectorAll('.shopify_subscriptions_app_block_label label input')[0];
-              if (inputContainer) {
-                console.log('ZZZ Found the closest', inputContainer); 
-                //var firstInput = inputContainer.querySelectorAll('label input')[0];
-                //inputContainer.click();
-                inputContainer.checked = true;
-              } else {
-                console.log('DODNT Found the closest');  
-              }
-           
-            } else {
-              console.log('COULDNT find the closest active shopify_subscriptions_app_block section:');
-            }
+                    productUrl = target.dataset.productUrl || this.pendingRequestUrl || this.dataset.url;
+                    this.pendingRequestUrl = productUrl;
+                    const shouldSwapProduct = this.dataset.url !== productUrl;
+                    const shouldFetchFullPage = this.dataset.updateUrl === 'true' && shouldSwapProduct;
 
 
-            const elementsWithClass = section.querySelectorAll('.shopify_subscriptions_app_block_label'); // Replace 'myClassName' with the actual class
-            const secondElement = elementsWithClass[1];
 
-            const newSpan = document.createElement('span');
-            newSpan.id = "most_popular";
-            newSpan.classList.add("most_popular");
-            newSpan.classList.add("color-scheme-5"); 
-            newSpan.classList.add("gradient");
-            newSpan.textContent = 'Most Popular';
+                    this.renderProductInfo({
+                        requestUrl: this.buildRequestUrlWithParams(productUrl, selectedOptionValues, shouldFetchFullPage),
+                        targetId: target.id,
+                        callback: shouldSwapProduct ?
+                            this.handleSwapProduct(productUrl, shouldFetchFullPage) :
+                            this.handleUpdateProductInfo(productUrl),
+                    });
+                    // // $(".price").html('<div class="price__container animate_it"><div class="price__regular">...</div></div>');
+                    // $(".product_icons").next().html('<div class="price__container"><div class="price__regular"><span class="fetching_price">Price loading </span><img class="gif_price_pad" width="16" src="https://cdn.shopify.com/s/files/1/0713/8685/7724/files/loader.gif?v=1743590298" /></div></div>');
+                }
 
-            secondElement.prepend(newSpan);
+                resetProductFormState() {
+                    const productForm = this.productForm;
+                    productForm ? .toggleSubmitButton(true);
+                    productForm ? .handleErrorMessage();
+                }
 
-            const childElement = document.getElementById('most_popular'); // Replace 'yourChildId' with the actual ID of your element
-            const parentElement = childElement.parentNode;
-            const grandparentElement = parentElement.parentNode;
+                handleSwapProduct(productUrl, updateFullPage) {
+                    return (html) => {
+                        this.productModal ? .remove();
 
-            if (grandparentElement) {
-              //const grandparentId = grandparentElement.id;
-              grandparentElement.id = 'mw_subscription_block';
-              //console.log('Grandparent ID:', grandparentElement.id);
-            } else {
-              //console.log('No grandparent found.');
-            }
+                        const selector = updateFullPage ? "product-info[id^='MainProduct']" : 'product-info';
+                        const variant = this.getSelectedVariant(html.querySelector(selector));
+                        this.updateURL(productUrl, variant ? .id);
 
-            let img = document.createElement("img");
-            img.src = "https://cdn.shopify.com/s/files/1/0713/8685/7724/files/thumb_1.png?v=1754842951"; // Replace with your image path
-            img.alt = "Popular Icon"; // Provide descriptive alt text
-            img.classList.add('popular_icon');
-            img.width = 9; // Optional: set image width
-            img.height = 9; // Optional: set image height
-            img.style.right = '2px';
-            newSpan.prepend(img);
+                        if (updateFullPage) {
+                            document.querySelector('head title').innerHTML = html.querySelector('head title').innerHTML;
 
-            var elements = document.getElementsByClassName("shopify_subscriptions_app_policy");
-            for (var i = 0; i < elements.length; i++) {
-                elements[i].textContent = "Subscription auto-renews | Skip or cancel anytime."; // Or elements[i].innerHTML = "<strong>New HTML</strong>";
-            }
+                            HTMLUpdateUtility.viewTransition(
+                                document.querySelector('main'),
+                                html.querySelector('main'),
+                                this.preProcessHtmlCallbacks,
+                                this.postProcessHtmlCallbacks
+                            );
+                        } else {
+                            HTMLUpdateUtility.viewTransition(
+                                this,
+                                html.querySelector('product-info'),
+                                this.preProcessHtmlCallbacks,
+                                this.postProcessHtmlCallbacks
+                            );
+                        }
+                    };
+                }
 
-          });
-        } else {
-          console.log("Not found a product variant:" + variantId );
-        }
+                renderProductInfo({ requestUrl, targetId, callback }) {
+                    //$(".price").html('zzz...'); 
+                    //alert('hello');
+                    // ------- USE THIS WITH QUICK-ADD.JS SCRIPT TO DISPLAY LOADING DIV WHILST CHANGING VARIANTS ---------
+                    const myElement = document.getElementById('loading_subscription_div'); // Or document.querySelector('.some-class');
+                    if (myElement) {
+                        if (myElement.classList.contains('not_subscription')) {
+                            // The element has 'my-class-name'
+                            console.log('Product is not subscription, dont show loader!');
+                        } else {
+                            // The element does not have 'my-class-name'
+                            console.log('Product IS SUBSCRIPTION, yes show loader!');
+                            var loading_div = document.querySelector('.loading_subscription');
+                            loading_div.style.display = 'flex';
+                            var elementsToHide = document.querySelectorAll('.shopify_subscriptions_app_block');
+                            elementsToHide.forEach(element => {
+                                element.classList.add('hide_element');
+                                //element.innerHTML = 'none';
+                            });
+                        }
+                    } else {
+                        //  
+                    }
 
-        //alert("Variant ID: " + variantId);
-        this.querySelectorAll(
-          `#product-form-${this.dataset.section}, #product-form-installment-${this.dataset.section}`
-        ).forEach((productForm) => {
-          const input = productForm.querySelector('input[name="id"]');
-          input.value = variantId ?? '';
-          input.dispatchEvent(new Event('change', { bubbles: true }));
-        });
-      }
+                    this.abortController ? .abort();
+                    this.abortController = new AbortController();
 
-      updateURL(url, variantId) {
-        //console.log(`${window.shopUrl}${url}${variantId ? `?variant=${variantId}` : ''}`);
-        this.querySelector('share-button')?.updateUrl(
-          `${window.shopUrl}${url}${variantId ? `?variant=${variantId}` : ''}`
+                    fetch(requestUrl, { signal: this.abortController.signal })
+                        .then((response) => response.text())
+                        .then((responseText) => {
+                            this.pendingRequestUrl = null;
+                            const html = new DOMParser().parseFromString(responseText, 'text/html');
+                            callback(html);
+                        })
+                        .then(() => {
+                            // set focus to last clicked option value
+                            //console.log('Focused new variant...');
+                            document.querySelector(`#${targetId}`) ? .focus();
+                        })
+                        .catch((error) => {
+                            if (error.name === 'AbortError') {
+                                console.log('Fetch aborted by user');
+                            } else {
+                                console.error(error);
+                            }
+                        });
+                }
+
+                getSelectedVariant(productInfoNode) {
+                    const selectedVariant = productInfoNode.querySelector('variant-selects [data-selected-variant]') ? .innerHTML;
+                    return !!selectedVariant ? JSON.parse(selectedVariant) : null;
+                }
+
+                buildRequestUrlWithParams(url, optionValues, shouldFetchFullPage = false) {
+                    const params = [];
+
+                    !shouldFetchFullPage && params.push(`section_id=${this.sectionId}`);
+
+                    if (optionValues.length) {
+                        params.push(`option_values=${optionValues.join(',')}`);
+                    }
+
+                    return `${url}?${params.join('&')}`;
+                }
+
+                updateOptionValues(html) {
+                    // $(".price").html('<div class="price__container animate_it"><div class="price__regular">...</div></div>');
+                    // $(".product_icons").next().html('<div class="gif_price_pad price__container"><div class="price__regular"><span class="fetching_price">Price loading </span><img width="16" src="https://cdn.shopify.com/s/files/1/0713/8685/7724/files/loader.gif?v=1743590298" /></div></div>');
+                    const variantSelects = html.querySelector('variant-selects');
+                    if (variantSelects) {
+                        HTMLUpdateUtility.viewTransition(this.variantSelectors, variantSelects, this.preProcessHtmlCallbacks);
+                    }
+                }
+
+                handleUpdateProductInfo(productUrl) {
+                    //$(".price").css('background','#333');
+
+                    return (html) => {
+                        const variant = this.getSelectedVariant(html);
+                        // alert("Variant NAME: " + variant?.name);
+                        // console.log("Variant NAME: " + variant);
+                        this.pickupAvailability ? .update(variant);
+                        this.updateOptionValues(html);
+                        this.updateURL(productUrl, variant ? .id);
+                        this.updateVariantInputs(variant ? .id);
+
+                        if (!variant) {
+                            this.setUnavailable();
+                            return;
+                        }
+
+                        this.updateMedia(html, variant ? .featured_media ? .id);
+
+                        const updateSourceFromDestination = (id, shouldHide = (source) => false) => {
+                            const source = html.getElementById(`${id}-${this.sectionId}`);
+                            const destination = this.querySelector(`#${id}-${this.dataset.section}`);
+                            if (source && destination) {
+                                destination.innerHTML = source.innerHTML;
+                                destination.classList.toggle('hidden', shouldHide(source));
+                            }
+                        };
+
+                        updateSourceFromDestination('price');
+                        updateSourceFromDestination('Sku', ({ classList }) => classList.contains('hidden'));
+                        updateSourceFromDestination('Inventory', ({ innerText }) => innerText === '');
+                        updateSourceFromDestination('Volume');
+                        updateSourceFromDestination('Price-Per-Item', ({ classList }) => classList.contains('hidden'));
+
+                        this.updateQuantityRules(this.sectionId, html);
+                        this.querySelector(`#Quantity-Rules-${this.dataset.section}`) ? .classList.remove('hidden');
+                        this.querySelector(`#Volume-Note-${this.dataset.section}`) ? .classList.remove('hidden');
+
+                        this.productForm ? .toggleSubmitButton(
+                            html.getElementById(`ProductSubmitButton-${this.sectionId}`) ? .hasAttribute('disabled') ? ? true,
+                            window.variantStrings.soldOut
+                        );
+
+                        // ------- USE THIS WITH QUICK-ADD.JS SCRIPT TO DISPLAY LOADING DIV WHILST CHANGING VARIANTS ---------
+                        var loading_div = document.querySelector('.loading_subscription');
+                        loading_div.style.display = 'none';
+                        var elementsToHide = document.querySelectorAll('.shopify-block');
+                        elementsToHide.forEach(element => {
+                            element.classList.remove('hide_element');
+                            //element.innerHTML = 'none';
+                        });
+
+                        publish(PUB_SUB_EVENTS.variantChange, {
+                            data: {
+                                sectionId: this.sectionId,
+                                html,
+                                variant,
+                            },
+                        });
+                    };
+                }
+
+                updateVariantInputs(variantId) {
+                    //alert(variantId);
+                    // Remove the most_popular div
+                    const elementsToRemove = document.querySelectorAll('.most_popular');
+                    elementsToRemove.forEach(element => {
+                        element.remove();
+                    });
+
+                    const elementsToRemoveSections = document.querySelectorAll(`section .shopify_subscriptions_app_block`);
+                    elementsToRemoveSections.forEach(element => {
+                        element.classList.add('shopify_subscriptions_app_block--hidden');
+                    });
+
+
+                    // Select all section elements where the 'data-category' attribute equals 'products'
+                    const productSections = document.querySelectorAll(`section[data-variant-id="${variantId}"]`);
+
+                    var productSection = document.querySelector(`section[data-variant-id="${variantId}"]`);
+                    if (productSection) {
+                        productSection.classList.remove('shopify_subscriptions_app_block--hidden');
+                    }
+
+
+                    // const previousSibling = productSection.previousElementSibling;
+                    // previousSibling.classList.add('shopify_subscriptions_app_block--hidden');
+                    // // Get the parent element
+                    // const parentElement = productSection.parentNode;
+                    // // Get the parent of the parent element
+                    // const grandparentElement = parentElement.parentNode;
+                    // grandparentElement.classList.remove('shopify_subscriptions_app_block--hidden');
+
+
+                    // You can then iterate through the selected elements or access the first one if only one is expected
+                    if (productSections) {
+                        productSections.forEach(section => {
+                            //console.log("Found a product section:" + variantId );
+                            console.log("Variant " + variantId + " is displaying...");
+
+                            var closestForm = productSection.closest('.shopify_subscriptions_app_container .shopify_subscriptions_app_block:not(.shopify_subscriptions_app_block--hidden)');
+                            if (closestForm) {
+                                console.log('Found the closest active shopify_subscriptions_app_block section:', closestForm);
+                                var inputContainer = closestForm.querySelectorAll('.shopify_subscriptions_app_block_label label input')[0];
+                                if (inputContainer) {
+                                    console.log('ZZZ Found the closest', inputContainer);
+                                    //var firstInput = inputContainer.querySelectorAll('label input')[0];
+                                    //inputContainer.click();
+                                    inputContainer.checked = true;
+                                } else {
+                                    console.log('DODNT Found the closest');
+                                }
+
+                            } else {
+                                console.log('COULDNT find the closest active shopify_subscriptions_app_block section:');
+                            }
+
+
+                            const elementsWithClass = section.querySelectorAll('.shopify_subscriptions_app_block_label'); // Replace 'myClassName' with the actual class
+                            const secondElement = elementsWithClass[1];
+
+                            const newSpan = document.createElement('span');
+                            newSpan.id = "most_popular";
+                            newSpan.classList.add("most_popular");
+                            newSpan.classList.add("color-scheme-5");
+                            newSpan.classList.add("gradient");
+                            newSpan.textContent = 'Most Popular';
+
+                            secondElement.prepend(newSpan);
+
+                            const childElement = document.getElementById('most_popular'); // Replace 'yourChildId' with the actual ID of your element
+                            const parentElement = childElement.parentNode;
+                            const grandparentElement = parentElement.parentNode;
+
+                            if (grandparentElement) {
+                                //const grandparentId = grandparentElement.id;
+                                grandparentElement.id = 'mw_subscription_block';
+                                //console.log('Grandparent ID:', grandparentElement.id);
+                            } else {
+                                //console.log('No grandparent found.');
+                            }
+
+                            let img = document.createElement("img");
+                            img.src = "https://cdn.shopify.com/s/files/1/0713/8685/7724/files/thumb_1.png?v=1754842951"; // Replace with your image path
+                            img.alt = "Popular Icon"; // Provide descriptive alt text
+                            img.classList.add('popular_icon');
+                            img.width = 9; // Optional: set image width
+                            img.height = 9; // Optional: set image height
+                            img.style.right = '2px';
+                            newSpan.prepend(img);
+
+                            var elements = document.getElementsByClassName("shopify_subscriptions_app_policy");
+                            for (var i = 0; i < elements.length; i++) {
+                                elements[i].textContent = "Subscription auto-renews | Skip or cancel anytime."; // Or elements[i].innerHTML = "<strong>New HTML</strong>";
+                            }
+
+                        });
+                    } else {
+                        console.log("Not found a product variant:" + variantId);
+                    }
+
+                    //alert("Variant ID: " + variantId);
+                    this.querySelectorAll(
+                        `#product-form-${this.dataset.section}, #product-form-installment-${this.dataset.section}`
+                    ).forEach((productForm) => {
+                        const input = productForm.querySelector('input[name="id"]');
+                        input.value = variantId ? ? '';
+                        input.dispatchEvent(new Event('change', { bubbles: true }));
+                    });
+                }
+
+                updateURL(url, variantId) {
+                        //console.log(`${window.shopUrl}${url}${variantId ? `?variant=${variantId}` : ''}`);
+                        this.querySelector('share-button') ? .updateUrl(
+                                `${window.shopUrl}${url}${variantId ? `?variant=${variantId}` : ''}`
         );
 
         if (this.dataset.updateUrl === 'false') return;
