@@ -178,7 +178,7 @@ if (!customElements.get('product-info')) {
                             console.log('Product IS SUBSCRIPTION, yes show loader!');
                             var loading_div = document.querySelector('.loading_subscription');
                             loading_div.style.display = 'flex';
-                            var elementsToHide = document.querySelectorAll('.shopify_subscriptions_app_block');
+                            var elementsToHide = document.querySelectorAll('.shopify-block');
                             elementsToHide.forEach(element => {
                                 element.classList.add('hide_element');
                                 //element.innerHTML = 'none';
