@@ -1483,6 +1483,7 @@ body .menu-drawer__close-button {
 
 .dietary_icons .icon-wrap {
     margin-bottom: -7px;
+    width: 44px;
 }
 
 .d-flex {
@@ -2025,8 +2026,9 @@ body .menu-drawer__close-button {
     display: inline-flex;
     list-style-type: none;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     padding: 6px 0 6px 0;
+    margin: 0 !important;
     overflow: scroll;
     max-width: 100%;
 }
@@ -2630,16 +2632,16 @@ quick-add-modal .product__title>a:hover {
 
 .tag_container {
     display: flex;
-    width: 100%;
+    width: auto;
     overflow-x: scroll;
 }
 
 .horizontal-scrolling-items {
     display: flex;
     font-size: 40px;
-    /* width: 2600px; */
-    width: max-content;
-    animation-name: infiniteScroll;
+    width: 800px;
+    /* width: max-content; */
+    /* animation-name: infiniteScroll; */
     animation-duration: 30s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
@@ -2647,6 +2649,28 @@ quick-add-modal .product__title>a:hover {
 
 .horizontal-scrolling-items__item {
     white-space: nowrap;
+}
+
+@media screen and (min-device-width: 750px) and (max-width: 944px) {}
+
+@media screen and (min-device-width: 480px) and (max-width: 1200px) {
+    .dietary_icons .icon-wrap {
+        margin-bottom: -7px;
+        width: 34px;
+    }
+    .dietary_icons p {
+        margin: 0;
+        color: #999;
+        text-transform: uppercase;
+        font-size: 1.1rem;
+        line-height: 1.1rem;
+        text-align: center;
+        padding: 0px 0 0 0;
+    }
+    .dietary_icons {
+        min-width: 64px;
+        max-width: 64px;
+    }
 }
 
 
