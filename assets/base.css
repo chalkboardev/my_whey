@@ -345,6 +345,10 @@ h1,
     .h1 {
         font-size: calc(var(--font-heading-scale) * 4rem);
     }
+    [id^="MainProduct-quickadd-template--"] h1,
+    .h1 {
+        font-size: calc(var(--font-heading-scale) * 3.5rem) !important;
+    }
 }
 
 h2,
@@ -2651,15 +2655,20 @@ quick-add-modal .product__title>a:hover {
     white-space: nowrap;
 }
 
-@media screen and (min-device-width: 750px) and (max-width: 944px) {
+@media screen and (min-device-width: 750px) and (max-width: 1080px) {
     .product_icons {
+        background: #ffffff59;
+        right: 0;
+        padding: 0 6px 0 6px;
+    }
+    /* .product_icons {
         margin-bottom: 0 !important;
         margin-top: 0 !important;
         overflow: scroll;
         gap: 6px;
         display: flex;
         flex-wrap: nowrap;
-        justify-content: flex-start;
+        justify-content: center;
         flex-direction: row;
         overflow: scroll;
         align-items: end;
@@ -2673,13 +2682,17 @@ quick-add-modal .product__title>a:hover {
     }
     .dietary_icons {
         display: inline-flex;
-        min-width: 92px !important;
-        max-width: 91px !important;
+        min-width: 71px !important;
+        max-width: 72px !important;
     }
     .dietary_icons .icon-wrap {
         margin-bottom: -8px;
         width: 34px !important;
     }
+    .dietary_icons p {
+        color: #888 !important;
+        height: 20px;
+    } */
 }
 
 @media screen and (min-device-width: 480px) and (max-width: 1200px) {
