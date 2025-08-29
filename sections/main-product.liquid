@@ -111,11 +111,25 @@
                     </h2>
                   </a>
 
+                  {% comment %} <div class="tag_container">
+                    <div class="horizontal-scrolling-items">
+                      <ul class="product-tags">
+                        {% for tag in product.tags %}
+                          <li class="horizontal-scrolling-items__item color-scheme-5 gradient"><a href="/collections/all/{{ tag | handleize }}">{{ tag }}</a></li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                  </div> {% endcomment %}
+
+              
+                   <div class="tag_container">
                   <ul class="product-tags">
                     {% for tag in product.tags %}
                     <li class="color-scheme-5 gradient"><a href="/collections/all/{{ tag | handleize }}">{{ tag }}</a></li>
                     {% endfor %}
-                  </ul> 
+                  </ul>  
+                  </div>
+             
 
                 </div>
  

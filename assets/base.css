@@ -1443,7 +1443,7 @@ body .menu-drawer__close-button {
     overflow: scroll;
     align-content: center;
     align-items: center;
-    height: 107%;
+    height: 100%;
     position: absolute;
     right: 9px;
     top: 0;
@@ -2026,11 +2026,14 @@ body .menu-drawer__close-button {
     list-style-type: none;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 10px 0 10px 0;
+    padding: 6px 0 6px 0;
+    overflow: scroll;
+    max-width: 100%;
 }
 
 .product-tags li {
     font-size: 12px;
+    white-space: nowrap;
     text-transform: uppercase;
     height: 22px;
     display: flex;
@@ -2045,6 +2048,7 @@ body .menu-drawer__close-button {
     align-items: center;
     flex-flow: wrap;
     align-content: center;
+    word-break: normal !important;
 }
 
 .product-tags a {
@@ -2600,10 +2604,82 @@ quick-add-modal .product__title>a:hover {
     height: -webkit-fill-available !important;
 }
 
+[id^="Slider-Gallery-quickadd-template--"] .product__media-item {
+    margin-bottom: 0;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+@keyframes scrollText {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes infiniteScroll {
+    from {
+        transform: translateX(0)
+    }
+    to {
+        transform: translateX(-50%)
+    }
+}
+
+.tag_container {
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
+}
+
+.horizontal-scrolling-items {
+    display: flex;
+    font-size: 40px;
+    /* width: 2600px; */
+    width: max-content;
+    animation-name: infiniteScroll;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.horizontal-scrolling-items__item {
+    white-space: nowrap;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    .slider.slider--mobile .slider__slide {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    .product-tags {
+        margin: 0;
+        display: inline-flex;
+        list-style-type: none;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        padding: 6px 0 6px 0;
+        word-break: unset;
+        overflow: scroll;
+        width: 100%;
+        /* animation: scrollText 10s infinite linear; */
+        /* display: -webkit-inline-box;
+        list-style-type: none;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 6px 0 6px 0;
+        overflow: scroll;
+        max-width: 100%; */
+    }
+    .quick-add-modal .h1 {
+        font-size: 2.5rem !important;
+        color: #444444 !important;
+    }
     .blog_list_header {
         min-height: 180px;
         width: 100%;
@@ -2625,6 +2701,8 @@ quick-add-modal .product__title>a:hover {
         align-items: center;
     }
     .quick-add-modal__toggle {
+        top: 0.5rem !important;
+        right: 0.5rem !important;
         /* top: -2rem !important;
     right: -2rem !important; */
     }
@@ -2636,7 +2714,8 @@ quick-add-modal .product__title>a:hover {
         font-size: calc(var(--font-heading-scale) * 2rem) !important;
     }
     .quick-add-modal__content .product_icons {
-        top: 17px;
+        /* top: 17px; */
+        top: 0;
         margin-top: unset !important;
         margin-bottom: unset !important;
         position: absolute;
@@ -2644,7 +2723,9 @@ quick-add-modal .product__title>a:hover {
         overflow: scroll;
         gap: 0px;
         display: block;
-        height: 92%;
+        /* display: flex; */
+        /* height: 92%; */
+        height: 100%;
         z-index: 2;
         scrollbar-width: none;
     }
@@ -2678,10 +2759,11 @@ quick-add-modal .product__title>a:hover {
         padding-top: 2px !important;
     }
     .dietary_icons .icon-wrap {
-        width: 40px;
+        width: 34px;
+        margin-bottom: -10px;
     }
     .dietary_icons p {
-        margin: 0;
+        margin: 0 0 -6px 0;
         color: #999;
         text-transform: uppercase;
         font-size: 1rem;
@@ -4343,7 +4425,7 @@ summary::-webkit-details-marker {
         align-items: center;
     }
     .quick-add-modal__content {
-        --modal-height-offset: 10rem;
+        --modal-height-offset: 2.2rem !important;
         margin-top: var(--modal-height-offset);
         width: 90%;
         max-height: calc(100% - var(--modal-height-offset)* 2);
