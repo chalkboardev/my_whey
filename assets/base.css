@@ -2651,12 +2651,41 @@ quick-add-modal .product__title>a:hover {
     white-space: nowrap;
 }
 
-@media screen and (min-device-width: 750px) and (max-width: 944px) {}
+@media screen and (min-device-width: 750px) and (max-width: 944px) {
+    .product_icons {
+        margin-bottom: 0 !important;
+        margin-top: 0 !important;
+        overflow: scroll;
+        gap: 6px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        flex-direction: row;
+        overflow: scroll;
+        align-items: end;
+        height: auto;
+        left: 0;
+        position: absolute;
+        right: 9px;
+        bottom: 6px;
+        width: max-content;
+        max-width: 100%;
+    }
+    .dietary_icons {
+        display: inline-flex;
+        min-width: 92px !important;
+        max-width: 91px !important;
+    }
+    .dietary_icons .icon-wrap {
+        margin-bottom: -8px;
+        width: 34px !important;
+    }
+}
 
 @media screen and (min-device-width: 480px) and (max-width: 1200px) {
     .dietary_icons .icon-wrap {
         margin-bottom: -7px;
-        width: 34px;
+        width: 34px !important;
     }
     .dietary_icons p {
         margin: 0;
