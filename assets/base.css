@@ -2437,6 +2437,7 @@ body .menu-drawer__close-button {
 
 .product__title h1 {
     font-weight: 600;
+    font-size: 3.5rem;
 }
 
 .mw_price_div {
@@ -2713,6 +2714,13 @@ quick-add-modal .product__title>a:hover {
         min-width: 64px;
         max-width: 64px;
     }
+}
+
+#product_info_tabs {
+    animation-direction: alternate !important;
+    animation-name: fadeIn !important;
+    animation-duration: 1s !important;
+    animation-iteration-count: 1 !important;
 }
 
 

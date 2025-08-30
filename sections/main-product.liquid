@@ -850,9 +850,9 @@
           {%- endif -%} {% endcomment %}
       {%- endcase -%}
     {%- endfor -%}
-  <div style="display: flex;">
-    <div class="tab_customize">
-      <button class="tablinks-cus active" onclick="openTab(event, 'tab-1')" id="tab-cus-active" >Benefits</button>
+  <div id="product_info_tabs" class="wow scroll-trigger animate--slide-in" style="display: flex;">
+    <div class="wow scroll-trigger animate--slide-in tab_customize">
+      <button class="scroll-trigger animate--slide-in tablinks-cus active" onclick="openTab(event, 'tab-1')" id="tab-cus-active" >Benefits</button>
       <button class="tablinks-cus" onclick="openTab(event, 'tab-2')">How To Use</button>
       <button class="tablinks-cus" onclick="openTab(event, 'tab-3')">Content</button>
       <button class="tablinks-cus" onclick="openTab(event, 'tab-4')">Warnings</button>
@@ -870,6 +870,7 @@ function openTab(evt, cityName) {
     for (i = 0; i < tablinks.length; i++) {
       tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
+    document.getElementById(cityName).classList.add('animate--slide-in');
     document.getElementById(cityName).style.display = "block";
     evt.currentTarget.className += " active";
 }
