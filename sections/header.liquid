@@ -461,12 +461,6 @@ transform: scale(1.03);
                                 >
                                   {%- for grandchildlink in childlink.links -%}
 
-                                  
-                                    {%- if grandchildlink.handle == "shop" -%}
-                                    
-                                    {%- else -%}
-                                    {% endif %}
-
                                     <li>
                                       <a
                                         id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
@@ -479,7 +473,7 @@ transform: scale(1.03);
                                         {{ grandchildlink.title | escape }}
                                       </a>
                                     </li>
-
+                                    
                                   {%- endfor -%}
                                 </ul>
                     {%   elsif childlink.handle == "learn" %}
@@ -998,18 +992,23 @@ transform: scale(1.03);
                           {%- for grandchildlink in childlink.links -%}
 
                             {%- if childlink.title == "SHOP" -%}
-                                  <li>
-                                    <a style="font-size: 16px;text-transform: uppercase;letter-spacing: 2px;margin-bottom: 8px;"
-                                      id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
-                                      href="{{ grandchildlink.url }}"
-                                      class="menu_link_a mega-menu__link link{% if grandchildlink.current %} mega-menu__link--active{% endif %}"
-                                      {% if grandchildlink.current %}
-                                        aria-current="page"
-                                      {% endif %}
-                                    >
-                                      {{ grandchildlink.title | escape }}
-                                    </a>
-                                  </li>
+                              {%- if grandchildlink.handle == "hot-specials" -%}
+                               
+                              {%- else -%}
+                              <li>
+                                <a style="font-size: 16px;text-transform: uppercase;letter-spacing: 2px;margin-bottom: 8px;"
+                                  id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
+                                  href="{{ grandchildlink.url }}"
+                                  class="menu_link_a mega-menu__link link{% if grandchildlink.current %} mega-menu__link--active{% endif %}"
+                                  {% if grandchildlink.current %}
+                                    aria-current="page"
+                                  {% endif %}
+                                >
+                                  {{ grandchildlink.title | escape }}
+                                </a>
+                              </li>
+                              {% endif %}
+
                             {%   elsif childlink.title == "BY GOAL" -%}
                                 <li>
                                   <a

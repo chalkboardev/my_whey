@@ -2727,6 +2727,11 @@ quick-add-modal .product__title>a:hover {
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    .shop_submenu {
+        font-size: 22px !important;
+        color: #525252 !important;
+        font-weight: 600;
+    }
     .slider.slider--mobile .slider__slide {
         padding-top: 0 !important;
         padding-bottom: 0 !important;
@@ -3585,13 +3590,11 @@ quick-add-modal .product__title>a:hover {
     }
     .menu-drawer__menu .list-menu a {
         font-size: 20px !important;
-        padding-left: 4rem;
         font-weight: unset !important;
         letter-spacing: unset !important;
     }
     .shop_submenu {
-        font-size: 22px !important;
-        color: #525252 !important;
+        font-size: 18px !important;
         font-weight: 600;
     }
     .drawer__menu-item:hover {
@@ -4028,7 +4031,7 @@ h6:empty {
     text-underline-offset: 0.3rem;
     color: rgb(var(--color-link));
     background-color: transparent;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-family: inherit;
 }
 
@@ -4037,7 +4040,7 @@ h6:empty {
 }
 
 .header .header__menu-item {
-    font-family: sans-serif !important;
+    /* font-family: sans-serif !important; */
 }
 
 .link--text {
