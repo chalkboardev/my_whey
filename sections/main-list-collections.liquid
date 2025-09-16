@@ -2,44 +2,43 @@
 {{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
 {{ 'component-collection-hero.css' | asset_url | stylesheet_tag }}
 
- {% if section.settings.show_collection_list_image and section.settings.image %} 
-<div 
-  style="background-size:cover !important;background: url('{{ section.settings.image| image_url }}') no-repeat 100% {{ section.settings.background_height_position }}%/100%;" class="{% if section.settings.image != blank %} collection-hero--with-image {% endif %} collection-hero {% if section.settings.show_collection_list_image and csection.settings.image %} mw_header_img collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
-  <div style="height: 100%;">
-  <div class="collection-hero__inner page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-    <div class="collection-hero__text-wrapper">
-      <h1 class="mw_header_img_txt collection-hero__title">
-        <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
-        {{ section.settings.title }}
-      </h1>
-            {% comment %} <span>
-            {%- if current_tags %} 
-            <h2 style="color: #111;font-weight: 600;margin: 0 auto;padding: 10px 10px 10px 0;">
-            By Goal: <span style="color:#ff512b;">{{ current_tags | join: ', ' }}</span>
-            </h2>  
-            {% endif -%} 
-          </span> {% endcomment %}
+{% if section.settings.show_collection_list_image and section.settings.image %}
+  <div style="background-size:cover !important;background: url('{{ section.settings.image| image_url }}') no-repeat 100% {{ section.settings.background_height_position }}%/100%;" class="{% if section.settings.image != blank %} collection-hero--with-image {% endif %} collection-hero {% if section.settings.show_collection_list_image and section.settings.image %} mw_header_img collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
+    <div style="height: 100%;">
+      <div class="collection-hero__inner page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+        <div class="collection-hero__text-wrapper">
+          <h1 class="mw_header_img_txt collection-hero__title">
+            <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}:
+            </span>
+            {{ section.settings.title }}
+          </h1>
+        {% comment %} <span>
+                                                                                                                {%- if current_tags %} 
+                                                                                                                <h2 style="color: #111;font-weight: 600;margin: 0 auto;padding: 10px 10px 10px 0;">
+                                                                                                                By Goal: <span style="color:#ff512b;">{{ current_tags | join: ', ' }}</span>
+                                                                                                                </h2>  
+                                                                                                                {% endif -%} 
+                                                                                          </span> {% endcomment %}
+        </div>
+      </div>
     </div>
-  </div>
-  </div>
 
-</div>
-  {% else %} 
+  </div>
+{% else %}
 
+{%- endif -%}
+
+
+<div class="page-width" style="padding-top: 6rem;background: #eeeeee;padding-bottom:80px;">
+  {% if section.settings.show_collection_list_image and section.settings.image %}
+  {% comment %} <h1 class="title title--primary inline-richtext">
+                        
+                          </h1> {% endcomment %}
+  {% else %}
+    <h1 class="title title--primary inline-richtext{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+      {{ section.settings.title }}
+    </h1>
   {%- endif -%}
- 
-
-  
-  <div class="page-width" style="padding-top: 6rem;background: #eeeeee;padding-bottom:80px;">
-    {% if section.settings.show_collection_list_image and section.settings.image %} 
-      {% comment %} <h1 class="title title--primary inline-richtext">
-    
-      </h1> {% endcomment %}
-    {% else %} 
-  <h1 class="title title--primary inline-richtext{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-    {{ section.settings.title }}
-  </h1>
-    {%- endif -%}
 
   {%- liquid
     case section.settings.sort
@@ -53,159 +52,150 @@
       assign collections = collections | reverse
     endif
 
-    assign moduloResult = 28 | modulo: section.settings.columns_desktop
+    assign modulo_result = 28 | modulo: section.settings.columns_desktop
     assign paginate_by = 30
-    if moduloResult == 0
+    if modulo_result == 0
       assign paginate_by = 28
     endif
   -%}
   {%- paginate collections by paginate_by -%}
-    <ul
-      class="collection-list grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
-      role="list"
-    >
+    <ul class="collection-list grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down" role="list">
       {%- for collection in collections -%}
         {% comment %} ----Remove All products From Collection List {% endcomment %}
-          {%- if collection.title == 'All Products' -%}
-              {% comment %} {{ collection.title }} {% endcomment %}
-          {%- elsif collection.title == 'Flavours' -%}
-             {% comment %} {{ collection.title }} {% endcomment %}
-          {%- else -%}
-              <li
-                class="collection-list__item grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                {% if settings.animations_reveal_on_scroll %}
-                  data-cascade
-                  style="--animation-order: {{ forloop.index }};"
-                {% endif %}
-              >
-                {% render 'card-collection',
-                  card_collection: collection,
-                  media_aspect_ratio: section.settings.image_ratio,
-                  columns: 3
-                %}
-              </li>
-          {%- endif -%}
+        {%- if collection.title == 'All Products' -%}
+        {% comment %} {{ collection.title }} {% endcomment %}
+        {%- elsif collection.title == 'Hot Specials' -%}
+        {% comment %} {{ collection.title }} {% endcomment %}
+        {%- elsif collection.title == 'Home page' -%}
+        {% comment %} {{ collection.title }} {% endcomment %}
+        {%- elsif collection.title == 'Flavours' -%}
+        {% comment %} {{ collection.title }} {% endcomment %}
+        {%- else -%}
+          <li
+            class="collection-list__item grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            {% if settings.animations_reveal_on_scroll %}
+            data-cascade
+            style="--animation-order: {{ forloop.index }};"
+            {% endif %}>
+            {% render 'card-collection'
+              , card_collection: collection
+              , media_aspect_ratio: section.settings.image_ratio
+              , columns: 3
+            %}
+          </li>
+        {%- endif -%}
 
       {%- endfor -%}
     </ul>
-    {% render 'pagination', paginate: paginate %}
+    {% render 'pagination'
+      , paginate: paginate %}
   {%- endpaginate -%}
 </div>
 {% schema %}
-{
-  "name": "t:sections.main-list-collections.name",
-  "class": "section",
-  "settings": [
-    {
-      "type": "inline_richtext",
-      "id": "title",
-      "label": "t:sections.main-list-collections.settings.title.label",
-      "default": "t:sections.main-list-collections.settings.title.default"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_collection_list_image",
-      "default": true,
-      "label": "Show Collection List Image Header",
-      "info": "t:sections.main-collection-banner.settings.show_collection_image.info"
-    },
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Main Header Image"
-    },
-    {
-      "type": "range",
-      "id": "background_height_position",
-      "min": 0,
-      "max": 100,
-      "step": 10,
-      "unit": "%",
-      "label": "Background Height Position",
-      "default": 0
-    },
-    {
-      "type": "select",
-      "id": "sort",
-      "options": [
-        {
-          "value": "alphabetical",
-          "label": "t:sections.main-list-collections.settings.sort.options__1.label"
-        },
-        {
-          "value": "alphabetical_reversed",
-          "label": "t:sections.main-list-collections.settings.sort.options__2.label"
-        },
-        {
-          "value": "date_reversed",
-          "label": "t:sections.main-list-collections.settings.sort.options__3.label"
-        },
-        {
-          "value": "date",
-          "label": "t:sections.main-list-collections.settings.sort.options__4.label"
-        },
-        {
-          "value": "products_high",
-          "label": "t:sections.main-list-collections.settings.sort.options__5.label"
-        },
-        {
-          "value": "products_low",
-          "label": "t:sections.main-list-collections.settings.sort.options__6.label"
-        }
-      ],
-      "default": "alphabetical",
-      "label": "t:sections.main-list-collections.settings.sort.label"
-    },
-    {
-      "type": "select",
-      "id": "image_ratio",
-      "options": [
-        {
-          "value": "adapt",
-          "label": "t:sections.main-list-collections.settings.image_ratio.options__1.label"
-        },
-        {
-          "value": "portrait",
-          "label": "t:sections.main-list-collections.settings.image_ratio.options__2.label"
-        },
-        {
-          "value": "square",
-          "label": "t:sections.main-list-collections.settings.image_ratio.options__3.label"
-        }
-      ],
-      "default": "adapt",
-      "label": "t:sections.main-list-collections.settings.image_ratio.label",
-      "info": "t:sections.main-list-collections.settings.image_ratio.info"
-    },
-    {
-      "type": "range",
-      "id": "columns_desktop",
-      "min": 1,
-      "max": 6,
-      "step": 1,
-      "default": 3,
-      "label": "t:sections.main-list-collections.settings.columns_desktop.label"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.main-list-collections.settings.header_mobile.content"
-    },
-    {
-      "type": "select",
-      "id": "columns_mobile",
-      "options": [
-        {
-          "value": "1",
-          "label": "t:sections.main-list-collections.settings.columns_mobile.options__1.label"
-        },
-        {
-          "value": "2",
-          "label": "t:sections.main-list-collections.settings.columns_mobile.options__2.label"
-        }
-      ],
-      "default": "2",
-      "label": "t:sections.main-list-collections.settings.columns_mobile.label"
-    }
-  ]
-}
+  {
+    "name": "t:sections.main-list-collections.name",
+    "class": "section",
+    "settings": [
+      {
+        "type": "inline_richtext",
+        "id": "title",
+        "label": "t:sections.main-list-collections.settings.title.label",
+        "default": "t:sections.main-list-collections.settings.title.default"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_collection_list_image",
+        "default": true,
+        "label": "Show Collection List Image Header",
+        "info": "t:sections.main-collection-banner.settings.show_collection_image.info"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Main Header Image"
+      },
+      {
+        "type": "range",
+        "id": "background_height_position",
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "unit": "%",
+        "label": "Background Height Position",
+        "default": 0
+      }, {
+        "type": "select",
+        "id": "sort",
+        "options": [
+          {
+            "value": "alphabetical",
+            "label": "t:sections.main-list-collections.settings.sort.options__1.label"
+          },
+          {
+            "value": "alphabetical_reversed",
+            "label": "t:sections.main-list-collections.settings.sort.options__2.label"
+          },
+          {
+            "value": "date_reversed",
+            "label": "t:sections.main-list-collections.settings.sort.options__3.label"
+          },
+          {
+            "value": "date",
+            "label": "t:sections.main-list-collections.settings.sort.options__4.label"
+          }, {
+            "value": "products_high",
+            "label": "t:sections.main-list-collections.settings.sort.options__5.label"
+          }, {
+            "value": "products_low",
+            "label": "t:sections.main-list-collections.settings.sort.options__6.label"
+          }
+        ],
+        "default": "alphabetical",
+        "label": "t:sections.main-list-collections.settings.sort.label"
+      }, {
+        "type": "select",
+        "id": "image_ratio",
+        "options": [
+          {
+            "value": "adapt",
+            "label": "t:sections.main-list-collections.settings.image_ratio.options__1.label"
+          }, {
+            "value": "portrait",
+            "label": "t:sections.main-list-collections.settings.image_ratio.options__2.label"
+          }, {
+            "value": "square",
+            "label": "t:sections.main-list-collections.settings.image_ratio.options__3.label"
+          }
+        ],
+        "default": "adapt",
+        "label": "t:sections.main-list-collections.settings.image_ratio.label",
+        "info": "t:sections.main-list-collections.settings.image_ratio.info"
+      }, {
+        "type": "range",
+        "id": "columns_desktop",
+        "min": 1,
+        "max": 6,
+        "step": 1,
+        "default": 3,
+        "label": "t:sections.main-list-collections.settings.columns_desktop.label"
+      }, {
+        "type": "header",
+        "content": "t:sections.main-list-collections.settings.header_mobile.content"
+      }, {
+        "type": "select",
+        "id": "columns_mobile",
+        "options": [
+          {
+            "value": "1",
+            "label": "t:sections.main-list-collections.settings.columns_mobile.options__1.label"
+          }, {
+            "value": "2",
+            "label": "t:sections.main-list-collections.settings.columns_mobile.options__2.label"
+          }
+        ],
+        "default": "2",
+        "label": "t:sections.main-list-collections.settings.columns_mobile.label"
+      }
+    ]
+  }
 {% endschema %}
