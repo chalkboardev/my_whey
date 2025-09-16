@@ -357,7 +357,9 @@ transform: scale(1.03);
   {% render 'header-drawer' %}
 {% endcomment %}
 <div id="menu_backdrop"></div>
-<header-drawer data-breakpoint="{% if section.settings.menu_type_desktop == 'drawer' %}desktop{% else %}tablet{% endif %}">
+
+  {% comment %} -------------- START MOBILE MENU -------------- {% endcomment %} 
+<header-drawer  style="" data-breakpoint="{% if section.settings.menu_type_desktop == 'drawer' %}desktop{% else %}tablet{% endif %}">
   <details id="Details-menu-drawer-container" class="menu-drawer-container">
     <summary
       class="header__icon header__icon--menu header__icon--summary link focus-inset"
@@ -369,9 +371,10 @@ transform: scale(1.03);
       </span>
     </summary>
  
+
     <div id="menu-drawer" style="padding: 0 !important" class="gradient menu-drawer motion-reduce color-{{ section.settings.menu_color_scheme }} {% if section.settings.keep_announcement_scroll %} announcement_present {% else %}announcement_removed{% endif %}"> 
 
-      {% comment %} -------------- MOBILE MENU -------------- {% endcomment %} 
+  
       <span class="header__heading-link mobile_menu_logo link link--text focus-inset">
         {%- if settings.logo != blank -%} 
           <div class="">
@@ -457,6 +460,13 @@ transform: scale(1.03);
                                   tabindex="-1"
                                 >
                                   {%- for grandchildlink in childlink.links -%}
+
+                                  
+                                    {%- if grandchildlink.handle == "shop" -%}
+                                    
+                                    {%- else -%}
+                                    {% endif %}
+
                                     <li>
                                       <a
                                         id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
@@ -469,6 +479,7 @@ transform: scale(1.03);
                                         {{ grandchildlink.title | escape }}
                                       </a>
                                     </li>
+
                                   {%- endfor -%}
                                 </ul>
                     {%   elsif childlink.handle == "learn" %}
@@ -664,6 +675,8 @@ transform: scale(1.03);
         </div>
         
       </div>
+      
+
 
       {% comment %} -------- UTILITY LINKS WITH A FIXED POSITION (ABSOLUTE) START -------- {% endcomment %}
       <div class="menu-drawer__utility-links">
@@ -873,9 +886,10 @@ transform: scale(1.03);
       {% comment %} -------- UTILITY LINKS WITH A FIXED POSITION (ABSOLUTE) END -------- {% endcomment %}
 
     </div>
+
   </details>
 </header-drawer>
-
+{% comment %} -------------- END MOBILE MENU -------------- {% endcomment %} 
 
      {%-  endif -%}
 {%- liquid 
@@ -1048,7 +1062,7 @@ transform: scale(1.03);
                           <div class="title">
                             {% comment %} {{ block.settings.link_title}} {% endcomment %}
                             {{ product.title }} |
-                            {{ product.price | money_without_trailing_zeros }}
+                            From {{ product.price | money_without_trailing_zeros }}
                           </div>
 
                         </a>

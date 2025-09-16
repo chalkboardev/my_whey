@@ -3584,12 +3584,14 @@ quick-add-modal .product__title>a:hover {
         -webkit-tap-highlight-color: transparent !important;
     }
     .menu-drawer__menu .list-menu a {
-        font-size: 16px !important;
+        font-size: 20px !important;
+        padding-left: 4rem;
         font-weight: unset !important;
         letter-spacing: unset !important;
     }
     .shop_submenu {
-        font-size: 18px !important;
+        font-size: 22px !important;
+        color: #525252 !important;
         font-weight: 600;
     }
     .drawer__menu-item:hover {
