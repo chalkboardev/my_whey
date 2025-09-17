@@ -2735,8 +2735,14 @@ quick-add-modal .product__title>a:hover {
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    .menu-drawer__menu .list-menu a {
+        font-size: 2rem !important;
+        padding: 1.1rem 4rem;
+        font-weight: unset !important;
+        letter-spacing: unset !important;
+    }
     .menu-drawer__menu-item {
-        font-size: 2.4rem !important;
+        font-size: 2.8rem !important;
         font-weight: 600;
         letter-spacing: 2px;
         background: unset !important;
@@ -2744,7 +2750,7 @@ quick-add-modal .product__title>a:hover {
     }
     .shop_submenu {
         font-size: 22px !important;
-        color: #525252 !important;
+        /* color: #525252 !important; */
         font-weight: 600;
     }
     .slider.slider--mobile .slider__slide {
@@ -3391,6 +3397,12 @@ quick-add-modal .product__title>a:hover {
         /* height: 100vh !important; */
         height: calc(100vh - 32vh) !important;
     }
+    .menu-drawer__menu .list-menu a {
+        font-size: 1.7rem !important;
+        padding: 1.1rem 4rem;
+        font-weight: unset !important;
+        letter-spacing: unset !important;
+    }
 }
 
 .cart_blurry {
@@ -3517,6 +3529,7 @@ quick-add-modal .product__title>a:hover {
     .menu-drawer__inner-container {
         position: relative;
         height: 100dvh !important;
+        background: #fff;
     }
     .menu-drawer__utility-links {
         position: absolute !important;
@@ -3595,12 +3608,6 @@ quick-add-modal .product__title>a:hover {
     }
     .shopify-section-header-sticky .mega-menu__content {
         max-height: 100vh !important;
-    }
-    .menu-drawer__menu .list-menu a {
-        font-size: 2rem !important;
-        padding: 1.1rem 4rem;
-        font-weight: unset !important;
-        letter-spacing: unset !important;
     }
     .shop_submenu {
         font-size: 2rem !important;
@@ -3925,7 +3932,7 @@ quick-add-modal .product__title>a:hover {
         width: 50px;
         height: 50px;
         padding: 16px;
-        left: calc(60rem - 9rem) !important;
+        left: calc(60rem - 8rem) !important;
         z-index: 6;
         transition: opacity 1s !important;
     }
