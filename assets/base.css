@@ -3494,8 +3494,8 @@ quick-add-modal .product__title>a:hover {
         top: -36px !important;
     }
     .menu-drawer {
-        /* height: 100vh !important; */
-        height: auto !important;
+        height: 100dvh !important;
+        /* height: auto !important; */
         top: -36px;
         overflow: hidden !important;
     }
@@ -3582,19 +3582,20 @@ quick-add-modal .product__title>a:hover {
         max-height: 100vh !important;
     }
     .menu-drawer__menu-item {
-        font-size: 22px !important;
+        font-size: 2.4rem !important;
         font-weight: 600;
         letter-spacing: 2px;
         background: unset !important;
         -webkit-tap-highlight-color: transparent !important;
     }
     .menu-drawer__menu .list-menu a {
-        font-size: 20px !important;
+        font-size: 2rem !important;
+        padding: 1.1rem 4rem;
         font-weight: unset !important;
         letter-spacing: unset !important;
     }
     .shop_submenu {
-        font-size: 18px !important;
+        font-size: 2rem !important;
         font-weight: 600;
     }
     .drawer__menu-item:hover {
