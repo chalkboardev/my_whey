@@ -880,16 +880,27 @@ function openTab(evt, cityName) {
     <!-- Tab content -->
     <div style="display:block" id="tab-1" class="tabcontent-cus">
       {{ product.metafields.custom.product_benefits | metafield_tag  }}
+
+      {% if product.metafields.custom.product_certification %}
+        {% comment %} <a href="{{ product.metafields.custom.product_certification }}" download>
+          Download PDF
+        </a> {% endcomment %}
+        Yes we have pdf
+      {% endif %}
+
+      <embed src="{{ product.metafields.custom.product_certification | metafield_tag  }}" type="application/pdf" width="100%" height="600px">
+
     </div>
     <div id="tab-2" class="tabcontent-cus ">
       {% comment %} {{ pages.shipping.content }} {% endcomment %}
       {{ product.metafields.custom.product_instructions | metafield_tag }}
+      
     </div>
     <div id="tab-3" class="tabcontent-cus ">
       {% comment %} {{ pages.policy.content }} {% endcomment %}
       {% assign image_url = product.metafields.custom.product_supplemental_image.value %}
       {% if image_url != blank %}
-        <img class="product_supp_info_img" src="{{ image_url | image_url: width: 460 }}" alt="Additional Image">
+        <img width="" height="" class="product_supp_info_img" src="{{ image_url | image_url: width: 460 }}" alt="Additional Image">
       {% endif %}
       {{ product.metafields.custom.product_supplemental_info | metafield_tag }}
     </div>
