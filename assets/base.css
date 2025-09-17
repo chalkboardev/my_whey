@@ -2723,10 +2723,25 @@ quick-add-modal .product__title>a:hover {
     animation-iteration-count: 1 !important;
 }
 
+.menu-drawer__menu-item {
+    font-size: 2.4rem !important;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: unset !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    .menu-drawer__menu-item {
+        font-size: 2.4rem !important;
+        font-weight: 600;
+        letter-spacing: 2px;
+        background: unset !important;
+        -webkit-tap-highlight-color: transparent !important;
+    }
     .shop_submenu {
         font-size: 22px !important;
         color: #525252 !important;
@@ -3374,7 +3389,7 @@ quick-add-modal .product__title>a:hover {
     }
     .menu-drawer__navigation-container {
         /* height: 100vh !important; */
-        height: calc(100vh - 50vh) !important;
+        height: calc(100vh - 32vh) !important;
     }
 }
 
@@ -3494,14 +3509,14 @@ quick-add-modal .product__title>a:hover {
         top: -36px !important;
     }
     .menu-drawer {
-        height: 100dvh !important;
-        /* height: auto !important; */
+        /* height: 100dvh !important; */
+        height: auto !important;
         top: -36px;
         overflow: hidden !important;
     }
     .menu-drawer__inner-container {
         position: relative;
-        height: 100% !important;
+        height: 100dvh !important;
     }
     .menu-drawer__utility-links {
         position: absolute !important;
@@ -3511,7 +3526,7 @@ quick-add-modal .product__title>a:hover {
         justify-content: end;
         align-items: flex-start;
         bottom: -10px !important;
-        height: 39%;
+        height: 32%;
         padding: 1rem 3rem 2rem 3rem !important;
         background: #fff !important;
         border-top: 0.01px solid #cccccc;
@@ -3580,13 +3595,6 @@ quick-add-modal .product__title>a:hover {
     }
     .shopify-section-header-sticky .mega-menu__content {
         max-height: 100vh !important;
-    }
-    .menu-drawer__menu-item {
-        font-size: 2.4rem !important;
-        font-weight: 600;
-        letter-spacing: 2px;
-        background: unset !important;
-        -webkit-tap-highlight-color: transparent !important;
     }
     .menu-drawer__menu .list-menu a {
         font-size: 2rem !important;
@@ -3909,6 +3917,7 @@ quick-add-modal .product__title>a:hover {
     }
     .menu-drawer {
         width: 60rem !important;
+        height: auto !important;
     }
     details[open]>.header__icon--menu .icon-close {
         right: auto !important;
