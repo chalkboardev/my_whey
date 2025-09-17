@@ -2258,16 +2258,17 @@ body .menu-drawer__close-button {
     font-weight: 600 !important;
     font-size: 1.7rem !important;
     text-transform: uppercase;
+    min-height: 4.5rem !important;
     background: linear-gradient(180deg, rgba(254, 89, 0, 1) 0%, rgba(204, 71, 0, 1) 50%, rgba(156, 54, 0, 1) 100%) !important;
     border: none!important;
     border-radius: 50px !important;
     -webkit-tap-highlight-color: transparent !important;
-    letter-spacing: 2px;
+    letter-spacing: 3px !important;
     transition: all .25s ease !important;
 }
 
 .cart__checkout-button:hover {
-    letter-spacing: 4px !important;
+    letter-spacing: 5px !important;
     transition: all .25s ease !important;
 }
 
