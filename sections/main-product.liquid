@@ -881,8 +881,8 @@ function openTab(evt, cityName) {
     <div style="display:block" id="tab-1" class="tabcontent-cus">
       {{ product.metafields.custom.product_benefits | metafield_tag  }}
 
-      {% if product.metafields.custom.product_certification %}
-        <a href="{{ product.metafields.custom.product_certification }}" download>
+      {% if product.metafields.custom.product_certification.value %}
+        <a href="{{ product.metafields.custom.product_certification.value.url }}" download>
           Download PDF
         </a>
       {% endif %}
