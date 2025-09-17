@@ -887,7 +887,7 @@ function openTab(evt, cityName) {
         </a>
       {% endif %}
 
-      <embed src="{{ product.metafields.custom.product_certification | metafield_tag  }}" type="application/pdf" width="100%" height="600px">
+      {% comment %} <embed src="{{ product.metafields.custom.product_certification | metafield_tag  }}" type="application/pdf" width="100%" height="600px"> {% endcomment %}
 
     </div>
     <div id="tab-2" class="tabcontent-cus ">
