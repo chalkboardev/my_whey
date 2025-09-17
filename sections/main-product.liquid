@@ -883,11 +883,11 @@ function openTab(evt, cityName) {
 
       {% if product.metafields.custom.product_certification.value %}
         <a href="{{ product.metafields.custom.product_certification.value.url }}" download>
-          Download PDF
+          Download Product Certification
         </a>
       {% endif %}
 
-      {% comment %} <embed src="{{ product.metafields.custom.product_certification | metafield_tag  }}" type="application/pdf" width="100%" height="600px"> {% endcomment %}
+      <embed src="{{ product.metafields.custom.product_certification.value.url }}" type="application/pdf" width="100%" height="600px">
 
     </div>
     <div id="tab-2" class="tabcontent-cus ">
