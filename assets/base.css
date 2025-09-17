@@ -1085,7 +1085,7 @@ body .menu-drawer__close-button {
     z-index: 2;
     overflow: auto;
     display: flex;
-    margin: 6px auto 0 auto;
+    margin: 6px auto 2rem auto;
     -webkit-tap-highlight-color: transparent !important;
 }
 
