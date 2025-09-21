@@ -184,12 +184,14 @@
                                 {{ item.final_price | money }}
                               </strong>
                             </div>
-                          {%- else -%}
-                            {% comment %} <div class="product-option">
-                              {{ item.original_price | money }}
-                            </div> {% endcomment %}
                             
-                            {% if item.product.compare_at_price_max > 0 %}
+                          {%- else -%}
+
+                            <div class="product-option">
+                              {{ item.original_price | money }}
+                            </div> 
+                            
+                            {% comment %} {% if item.product.compare_at_price_max > 0 %}
                               <span class="discount_price_spacer"></span>
                             {% endif %}
 
@@ -199,14 +201,14 @@
                             {% endif %}
                             <dl>
                               <div class="product-option">
-                              
+                                <dd>
                                   {{ item.original_price | money }}
-                                
+                                </dd>
                                 <span style="padding: 0 4px 0 0;">
                                   |
                                 </span>
                               </div>
-                            </dl>
+                            </dl> {% endcomment %}
                           
                           {%- endif -%}
 
