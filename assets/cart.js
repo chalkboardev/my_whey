@@ -152,7 +152,12 @@ class CartItems extends HTMLElement {
       quantity,
       sections: this.getSectionsToRender().map((section) => section.section),
       sections_url: window.location.pathname,
+      // properties: {
+      //       discount_element: document.getElementById('buy_x').innerHTML,
+      // },
     });
+
+    console.log(body);
 
     //alert(`${routes.cart_change_url}`);
     const the_server = window.location.hostname;
@@ -227,22 +232,28 @@ class CartItems extends HTMLElement {
       })
       .finally(() => {
         this.disableLoading(line);
-
+        // -------- START ENABLE THE FLAVOUR MODAL BUTTON AFTER QUANTITY CHANGED -----------
         const flavour_link = document.querySelector('#click_flavour_modal_cart');
         const flavour_link_close = document.querySelector('#flavour_popup__close');
         const flavour_link_btn_txt = document.querySelector('#crt_btn_txt');
-        flavour_link_btn_txt.classList.add('checkout_button_txt_anim');
-        flavour_link.addEventListener('click', (event) => {
-          event.preventDefault();
-          console.log('testing from cart link open....');
-          document.querySelector('.flavour_modal__overlay').classList.add('show_flavour_modal');
-          console.log("opening main flavour modal from cart-drawer.js...");
-        });
+        const flavour_modal__overlay = document.querySelector('.flavour_modal__overlay');
+        if(flavour_link && flavour_link_btn_txt && flavour_modal__overlay){
+          flavour_link_btn_txt.classList.add('checkout_button_txt_anim');
+          flavour_link.addEventListener('click', (event) => {
+            event.preventDefault();
+            console.log('testing from cart link open....');
+            flavour_modal__overlay.classList.add('show_flavour_modal');
+            console.log("opening main flavour modal from cart-drawer.js...");
+          });
+        }
+        if(flavour_link_close && flavour_modal__overlay){
         flavour_link_close.addEventListener('click', (event) => {
           event.preventDefault(); 
           console.log('testing from cart link close....');
-          document.querySelector('.flavour_modal__overlay').classList.remove('show_flavour_modal');
+          flavour_modal__overlay.classList.remove('show_flavour_modal');
         });
+      }
+        // -------- END ENABLE THE FLAVOUR MODAL BUTTON AFTER QUANTITY CHANGED -----------
 
       });
   }

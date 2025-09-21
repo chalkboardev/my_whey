@@ -2732,6 +2732,48 @@ quick-add-modal .product__title>a:hover {
     -webkit-tap-highlight-color: transparent !important;
 }
 
+.save_it {
+    padding: 0 0 0 4px;
+}
+
+.cart-item__discounted-prices .cart-item__old-price {
+    font-size: 1.3rem !important;
+    position: absolute;
+    margin: -15px 0 0 0;
+    color: #999;
+}
+
+.cart-item__discounted-prices {
+    display: inline-flex;
+    width: fit-content;
+}
+
+.cart-item__name {
+    /* margin: 0 0 10px 0 !important; */
+}
+
+.cart-item__name h4 .break {}
+
+.cart-item__old-price.price.price--end {
+    font-size: 1.5rem !important;
+    position: absolute;
+    margin: 16px 0 0 0;
+    color: #888;
+}
+
+.discount_price_spacer {
+    height: 4px;
+    display: block;
+}
+
+#main-cart-items .cart-item__final-price.product-option {
+    margin-right: 4px;
+}
+
+#main-cart-items .cart-item__final-price.product-option::after {
+    content: " | ";
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 

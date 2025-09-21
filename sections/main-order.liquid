@@ -37,11 +37,26 @@
         </caption>
         <thead role="rowgroup">
           <tr role="row">
-            <th id="ColumnProduct" scope="col" role="columnheader">{{ 'customer.order.product' | t }}</th>
-            <th id="ColumnSku" scope="col" role="columnheader">{{ 'customer.order.sku' | t }}</th>
-            <th id="ColumnPrice" scope="col" role="columnheader">{{ 'customer.order.price' | t }}</th>
-            <th id="ColumnQuantity" scope="col" role="columnheader">{{ 'customer.order.quantity' | t }}</th>
-            <th id="ColumnTotal" scope="col" role="columnheader">{{ 'customer.order.total' | t }}</th>
+            <th
+              id="ColumnProduct"
+              scope="col"
+              role="columnheader">{{ 'customer.order.product' | t }}</th>
+            <th
+              id="ColumnSku"
+              scope="col"
+              role="columnheader">{{ 'customer.order.sku' | t }}</th>
+            <th
+              id="ColumnPrice"
+              scope="col"
+              role="columnheader">{{ 'customer.order.price' | t }}</th>
+            <th
+              id="ColumnQuantity"
+              scope="col"
+              role="columnheader">{{ 'customer.order.quantity' | t }}</th>
+            <th
+              id="ColumnTotal"
+              scope="col"
+              role="columnheader">{{ 'customer.order.total' | t }}</th>
           </tr>
         </thead>
         <tbody role="rowgroup">
@@ -52,8 +67,7 @@
                 headers="ColumnProduct"
                 role="rowheader"
                 scope="row"
-                data-label="{{ 'customer.order.product' | t }}"
-              >
+                data-label="{{ 'customer.order.product' | t }}">
                 <div>
                   {%- if line_item.url != blank -%}
                     <a href="{{ line_item.url }}">{{ line_item.title | escape }}</a>
@@ -129,15 +143,13 @@
               <td
                 headers="Row{{ line_item.key }} ColumnSku"
                 role="cell"
-                data-label="{{ 'customer.order.sku' | t }}"
-              >
+                data-label="{{ 'customer.order.sku' | t }}">
                 {{ line_item.sku }}
               </td>
               <td
                 headers="Row{{ line_item.key }} ColumnPrice"
                 role="cell"
-                data-label="{{ 'customer.order.price' | t }}"
-              >
+                data-label="{{ 'customer.order.price' | t }}">
                 {%- if line_item.original_price != line_item.final_price or line_item.unit_price_measurement -%}
                   <dl>
                     {%- if line_item.original_price != line_item.final_price -%}
@@ -191,15 +203,13 @@
               <td
                 headers="Row{{ line_item.key }} ColumnQuantity"
                 role="cell"
-                data-label="{{ 'customer.order.quantity' | t }}"
-              >
+                data-label="{{ 'customer.order.quantity' | t }}">
                 {{ line_item.quantity }}
               </td>
               <td
                 headers="Row{{ line_item.key }} ColumnTotal"
                 role="cell"
-                data-label="{{ 'customer.order.total' | t }}"
-              >
+                data-label="{{ 'customer.order.total' | t }}">
                 {%- if line_item.original_line_price != line_item.final_line_price -%}
                   <dl>
                     <dt>
@@ -224,17 +234,28 @@
         </tbody>
         <tfoot role="rowgroup">
           <tr role="row">
-            <td id="RowSubtotal" role="rowheader" scope="row" colspan="4">
+            <td
+              id="RowSubtotal"
+              role="rowheader"
+              scope="row"
+              colspan="4">
               {{ 'customer.order.subtotal' | t }}
             </td>
-            <td headers="RowSubtotal" role="cell" data-label="{{ 'customer.order.subtotal' | t }}">
+            <td
+              headers="RowSubtotal"
+              role="cell"
+              data-label="{{ 'customer.order.subtotal' | t }}">
               {{ order.line_items_subtotal_price | money }}
             </td>
           </tr>
           {%- if order.cart_level_discount_applications != blank -%}
             <tr role="row">
               {%- for discount_application in order.cart_level_discount_applications -%}
-                <td id="RowDiscount" role="rowheader" scope="row" colspan="4">
+                <td
+                  id="RowDiscount"
+                  role="rowheader"
+                  scope="row"
+                  colspan="4">
                   {{ 'customer.order.discount' | t }}
                   <span class="cart-discount">
                     <span class="svg-wrapper">
@@ -243,7 +264,10 @@
                     {{- discount_application.title | escape -}}
                   </span>
                 </td>
-                <td headers="RowDiscount" role="cell" data-label="{{ 'customer.order.discount' | t }}">
+                <td
+                  headers="RowDiscount"
+                  role="cell"
+                  data-label="{{ 'customer.order.discount' | t }}">
                   <div>
                     <span>-{{ discount_application.total_allocated_amount | money }}</span>
                     <span class="cart-discount">
@@ -259,59 +283,82 @@
           {%- endif -%}
           {%- for shipping_method in order.shipping_methods -%}
             <tr role="row">
-              <td id="RowShipping" role="rowheader" scope="row" colspan="4">
+              <td
+                id="RowShipping"
+                role="rowheader"
+                scope="row"
+                colspan="4">
                 {{ 'customer.order.shipping' | t }} ({{ shipping_method.title | escape }})
               </td>
               <td
                 headers="RowShipping"
                 role="cell"
-                data-label="{{ 'customer.order.shipping' | t }} ({{ shipping_method.title | escape }})"
-              >
+                data-label="{{ 'customer.order.shipping' | t }} ({{ shipping_method.title | escape }})">
                 {{ shipping_method.price | money }}
               </td>
             </tr>
           {%- endfor -%}
           {%- for tax_line in order.tax_lines -%}
             <tr role="row">
-              <td id="RowTax" role="rowheader" scope="row" colspan="4">
+              <td
+                id="RowTax"
+                role="rowheader"
+                scope="row"
+                colspan="4">
                 {{ 'customer.order.tax' | t }} ({{ tax_line.title | escape }}
                 {{ tax_line.rate | times: 100 }}%)
               </td>
               <td
                 headers="RowTax"
                 role="cell"
-                data-label="{{ 'customer.order.tax' | t }} ({{ tax_line.title | escape }} {{ tax_line.rate | times: 100 }}%)"
-              >
+                data-label="{{ 'customer.order.tax' | t }} ({{ tax_line.title | escape }} {{ tax_line.rate | times: 100 }}%)">
                 {{ tax_line.price | money }}
               </td>
             </tr>
           {%- endfor -%}
           {%- if order.total_duties -%}
             <tr role="row">
-              <td id="RowDuties" role="rowheader" scope="row" colspan="4">{{ 'customer.order.total_duties' | t }}</td>
-              <td headers="RowDuties" role="cell" data-label="{{ 'customer.order.total_duties' | t }}">
+              <td
+                id="RowDuties"
+                role="rowheader"
+                scope="row"
+                colspan="4">{{ 'customer.order.total_duties' | t }}</td>
+              <td
+                headers="RowDuties"
+                role="cell"
+                data-label="{{ 'customer.order.total_duties' | t }}">
                 {{ order.total_duties | money }}
               </td>
             </tr>
           {%- endif -%}
           {%- if order.total_refunded_amount > 0 -%}
             <tr role="row">
-              <td id="RowTotalRefund" role="rowheader" scope="row" colspan="3">
+              <td
+                id="RowTotalRefund"
+                role="rowheader"
+                scope="row"
+                colspan="3">
                 {{ 'customer.order.total_refunded' | t }}
               </td>
               <td
                 headers="RowTotalRefund"
                 role="cell"
                 colspan="2"
-                data-label="{{ 'customer.order.total_refunded' | t }}"
-              >
-                -{{ order.total_refunded_amount | money_with_currency }}
-              </td>
+                data-label="{{ 'customer.order.total_refunded' | t }}">
+                -{{ order.total_refunded_amount | money_with_currency }}</td>
             </tr>
           {%- endif -%}
           <tr role="row">
-            <td id="RowTotal" role="rowheader" scope="row" colspan="3">{{ 'customer.order.total' | t }}</td>
-            <td headers="RowTotal" role="cell" colspan="2" data-label="{{ 'customer.order.total' | t }}">
+            <td
+              id="RowTotal"
+              role="rowheader"
+              scope="row"
+              colspan="3">{{ 'customer.order.total' | t }}</td>
+            <td
+              headers="RowTotal"
+              role="cell"
+              colspan="2"
+              data-label="{{ 'customer.order.total' | t }}">
               {{ order.total_net_amount | money_with_currency }}
             </td>
           </tr>
@@ -340,33 +387,31 @@
 </div>
 
 {% schema %}
-{
-  "name": "t:sections.main-order.name",
-  "settings": [
-    {
-      "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 36
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
-    }
-  ]
-}
+  {
+    "name": "t:sections.main-order.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:sections.all.padding.section_padding_heading"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      }
+    ]
+  }
 {% endschema %}

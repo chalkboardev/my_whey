@@ -44,7 +44,7 @@
                 {{ 'general.continue_shopping' | t }}
               </a>
 
-              <p>Fuel your health with supplements 
+              <p>Fuel your health with supplements                                                      
                 designed to help you feel your best.</p>
 
               {%- if shop.customer_accounts_enabled and customer == null -%}
@@ -164,12 +164,16 @@
                           <a href="{{ item.url }}" class="cart-item__name h4 break">
                             {{- item.product.title | escape -}}
                           </a>
+                          {%- if item.original_price != item.final_price -%}
+                            <span class="discount_price_spacer"></span>
+                          {%- endif -%}
 
                           {%- if item.original_price != item.final_price -%}
                             <div class="cart-item__discounted-prices">
                               <span class="visually-hidden">
                                 {{ 'products.product.price.regular_price' | t }}
                               </span>
+
                               <s class="cart-item__old-price product-option">
                                 {{- item.original_price | money -}}
                               </s>
@@ -235,7 +239,21 @@
                             {%- for discount in item.line_level_discount_allocations -%}
                               <li class="discounts__discount">
                                 {{- 'icon-discount.svg' | inline_asset_content -}}
-                                {{ discount.discount_application.title }}
+                                  <span id="buy_x" class="buy_x">
+                                  {% comment %} {{ discount.discount_application.title }} |  {% endcomment %}
+                                  {%- if item.quantity < 5 -%}
+                                    BUY {{ item.quantity }} |
+                                  {%- else -%}
+                                    BUY 5+ |
+                                  {%- endif -%}
+                                </span>
+                                <span class="save_it">
+                                  SAVE {{ discount.discount_application.value }}%
+                                </span>
+                              {% comment %} TOTAL SAVED: {{ discount.discount_application.total_allocated_amount | money }} <br> {% endcomment %}
+                              {% comment %} TARGET SELECTION: {{ discount.discount_application.target_selection }} <br> {% endcomment %}
+                              {% comment %} TARGET TYPE: {{ discount.discount_application.target_type }} <br> {% endcomment %}
+                              {% comment %} VALUE TYPE: {{ discount.discount_application.value_type }} <br> {% endcomment %}
                               </li>
                             {%- endfor -%}
                           </ul>

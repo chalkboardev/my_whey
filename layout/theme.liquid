@@ -679,9 +679,12 @@ body {
           console.log('Flavour modal open!');
         });
         var target = document.querySelector('.flavour_modal__overlay');
-        observer.observe(target, {
+        if (target) {
+          observer.observe(target, {
           attributes: true
         });
+        }
+
     </script>
 
     {%- if settings.predictive_search_enabled -%}

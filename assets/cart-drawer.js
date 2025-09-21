@@ -32,6 +32,10 @@ class CartDrawer extends HTMLElement {
     const cartDrawerNote = this.querySelector('[id^="Details-"] summary');
     if (cartDrawerNote && !cartDrawerNote.hasAttribute('role')) this.setSummaryAccessibility(cartDrawerNote);
     // here the animation doesn't seem to always get triggered. A timeout seem to help
+    // const fullPath = window.location.pathname;
+    // const pathSegments = fullPath.split('/');
+    // const pageName = pathSegments[pathSegments.length - 1];
+    // console.log(pageName);
     setTimeout(() => {
       document.getElementById('cart_backdrop').classList.add('cart_blurry');
       this.classList.add('animate', 'active');
@@ -40,17 +44,21 @@ class CartDrawer extends HTMLElement {
       const flavour_link_close = document.querySelector('#flavour_popup__close');
       const flavour_link_btn_txt = document.querySelector('#crt_btn_txt');
       flavour_link_btn_txt.classList.add('checkout_button_txt_anim');
-      flavour_link.addEventListener('click', (event) => {
-        event.preventDefault();
-        console.log('testing from cart link open....');
-        document.querySelector('.flavour_modal__overlay').classList.add('show_flavour_modal');
-        console.log("opening main flavour modal from cart-drawer.js...");
-      });
-      flavour_link_close.addEventListener('click', (event) => {
-        event.preventDefault(); 
-        console.log('testing from cart link close....');
-        document.querySelector('.flavour_modal__overlay').classList.remove('show_flavour_modal');
-      });
+      if(flavour_link){
+        flavour_link.addEventListener('click', (event) => {
+          event.preventDefault();
+          console.log('testing from cart link open....');
+          document.querySelector('.flavour_modal__overlay').classList.add('show_flavour_modal');
+          console.log("opening main flavour modal from cart-drawer.js...");
+        });
+      }
+      if(flavour_link_close){
+        flavour_link_close.addEventListener('click', (event) => {
+          event.preventDefault(); 
+          console.log('testing from cart link close....');
+          document.querySelector('.flavour_modal__overlay').classList.remove('show_flavour_modal');
+        });
+      }
       
     });
 
