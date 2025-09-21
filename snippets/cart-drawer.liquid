@@ -185,9 +185,29 @@
                               </strong>
                             </div>
                           {%- else -%}
-                            <div class="product-option">
+                            {% comment %} <div class="product-option">
                               {{ item.original_price | money }}
-                            </div>
+                            </div> {% endcomment %}
+                            
+                            {% if item.product.compare_at_price_max > 0 %}
+                              <span class="discount_price_spacer"></span>
+                            {% endif %}
+
+
+                            {% if item.product.compare_at_price_max > 0 %}
+                              <s class="mw_compare_price_drawer cart-item__old-price product-option">{{ item.product.compare_at_price_max | money }}</s>
+                            {% endif %}
+                            <dl>
+                              <div class="product-option">
+                              
+                                  {{ item.original_price | money }}
+                                
+                                <span style="padding: 0 4px 0 0;">
+                                  |
+                                </span>
+                              </div>
+                            </dl>
+                          
                           {%- endif -%}
 
                           {%- if item.product.has_only_default_variant == false or item.properties.size != 0 or item.selling_plan_allocation != null

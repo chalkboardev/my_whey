@@ -2750,9 +2750,38 @@ quick-add-modal .product__title>a:hover {
 
 .cart-item__name {
     /* margin: 0 0 10px 0 !important; */
+    font-weight: 600;
+    transition: all ease 0.25s;
+    text-decoration-thickness: 0rem !important;
+}
+
+.cart-item__name:hover {
+    /* text-decoration: none !important; */
+    text-decoration-thickness: 0.1rem !important;
+    /* letter-spacing: 1px; */
+    transition: all ease 0.25s;
 }
 
 .cart-item__name h4 .break {}
+
+.mw_compare_price {
+    font-size: 1.3rem !important;
+    margin: 1px 0 -10px 0 !important;
+    position: relative;
+    color: #888;
+    display: flex;
+}
+
+.mw_compare_price_drawer {
+    font-size: 1.3rem !important;
+    position: absolute;
+    margin: -9px 0 0 0 !important;
+    color: #999;
+}
+
+.cart-item__price-wrapper .price--end {
+    font-weight: 600;
+}
 
 .cart-item__old-price.price.price--end {
     font-size: 1.5rem !important;
