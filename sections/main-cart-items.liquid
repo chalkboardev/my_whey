@@ -127,7 +127,11 @@
                       <a href="{{ item.url }}" class="cart-item__name h4 break">{{ item.product.title | escape }}</a>
 
                       {%- if item.original_price != item.final_price -%}
-                        <span class="discount_price_spacer"></span>
+                        <span class="discount_price_spacer">
+                          <s class="cart-item__old-price product-option">
+                            {{- item.original_price | money -}}
+                          </s>
+                        </span>
                       {%- endif -%}
 
                       {%- if item.original_price != item.final_price -%}
@@ -135,9 +139,7 @@
                           <span class="visually-hidden">
                             {{ 'products.product.price.regular_price' | t }}
                           </span>
-                          <s class="cart-item__old-price product-option">
-                            {{- item.original_price | money -}}
-                          </s>
+                         
                           <span class="visually-hidden">
                             {{ 'products.product.price.sale_price' | t }}
                           </span>
@@ -159,9 +161,14 @@
                             <dd>
                               {{ item.original_price | money }}
                             </dd>
-                            <span style="padding: 0 4px 0 0;">
-                              |
-                            </span>
+                            {%- if item.product.has_only_default_variant == false -%}
+                              <span style="padding: 0 4px 0 0;">
+                                |
+                              </span>
+                              {%- else -%}
+                              | {{ item.variant.weight }}g
+                            {% endif %}
+                           
                           </div>
                         </dl>
 
