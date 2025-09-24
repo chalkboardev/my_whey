@@ -164,21 +164,20 @@
                           <a href="{{ item.url }}" class="cart-item__name h4 break">
                             {{- item.product.title | escape -}}
                           </a>
-                          {%- if item.original_price != item.final_price -%} 
-                            <span class="discount_price_spacer">  <s class="cart-item__old-price product-option">
-                              {{- item.original_price | money -}}
-                            </s></span>
+                          {%- if item.original_price != item.final_price -%}
+                            <span class="discount_price_spacer">
+                              <s class="cart-item__old-price product-option">
+                                {{- item.original_price | money -}}
+                              </s>
+                            </span>
                           {%- endif -%}
-
+    
                           {%- if item.original_price != item.final_price -%}
                             <div class="cart-item__discounted-prices">
                               <span class="visually-hidden">
                                 {{ 'products.product.price.regular_price' | t }}
                               </span>
-
-                              {% comment %} <s class="cart-item__old-price product-option">
-                                {{- item.original_price | money -}}
-                              </s> {% endcomment %}
+                             
                               <span class="visually-hidden">
                                 {{ 'products.product.price.sale_price' | t }}
                               </span>
@@ -186,37 +185,31 @@
                                 {{ item.final_price | money }}
                               </strong>
                             </div>
-                            
                           {%- else -%}
-
-                            <div class="product-option">
+    
+                            {% comment %} <div class="product-option">
                               {{ item.original_price | money }}
-                              {%- if item.product.has_only_default_variant == false -%}
-                                {%- else -%}
-                                | {{ item.variant.weight }}g
-                              {% endif %}
-                            </div> 
-                            
-                            
-                            {% comment %} {% if item.product.compare_at_price_max > 0 %}
-                              <span class="discount_price_spacer"></span>
-                            {% endif %}
-
-
+                            </div> {% endcomment %}
+    
                             {% if item.product.compare_at_price_max > 0 %}
-                              <s class="mw_compare_price_drawer cart-item__old-price product-option">{{ item.product.compare_at_price_max | money }}</s>
+                              <s class="mw_compare_price cart-item__old-price">{{ item.product.compare_at_price_max | money }}</s>
                             {% endif %}
-                            <dl>
+                        
                               <div class="product-option">
-                                <dd>
+                               
                                   {{ item.original_price | money }}
-                                </dd>
-                                <span style="padding: 0 4px 0 0;">
-                                  |
-                                </span>
+                                
+                                {% comment %} {%- if item.product.has_only_default_variant == false -%}
+                                  <span style="padding: 0 4px 0 0;">
+                                    |
+                                  </span>
+                                  {%- else -%}
+                                  | {{ item.variant.weight }}g
+                                {% endif %} {% endcomment %}
+                               
                               </div>
-                            </dl> {% endcomment %}
-                          
+                        
+    
                           {%- endif -%}
 
                           {%- if item.product.has_only_default_variant == false or item.properties.size != 0 or item.selling_plan_allocation != null
