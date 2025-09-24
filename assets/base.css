@@ -1599,6 +1599,7 @@ body .menu-drawer__close-button {
     min-height: 107px;
     max-height: 107px;
     object-fit: cover;
+    border-radius: 3px;
 }
 
 .cart-drawer dl {
