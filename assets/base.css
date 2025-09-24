@@ -2840,7 +2840,7 @@ quick-add-modal .product__title>a:hover {
 }
 
 .cart-drawer .tax-note {
-    margin: 1.2rem 0 0.6rem auto;
+    margin: 1.2rem 0 0.6rem auto !important;
 }
 
 
@@ -3381,7 +3381,7 @@ quick-add-modal .product__title>a:hover {
     }
     .cart_count {
         position: absolute;
-        left: 17% !important;
+        left: 26% !important;
         top: 29% !important;
     }
     .cart-count-bubble {
@@ -3764,8 +3764,8 @@ quick-add-modal .product__title>a:hover {
     }
     .cart_count {
         position: absolute;
-        left: 27%;
-        top: 26%;
+        left: 28%;
+        top: 25%;
     }
     .last_image_mutli .media--adapt {
         padding-bottom: 67rem !important;
@@ -3961,7 +3961,7 @@ quick-add-modal .product__title>a:hover {
     }
     .cart_count {
         position: absolute;
-        left: 23%;
+        left: 30%;
         top: 26%;
     }
     .cart_count .cart-count-bubble {
@@ -4003,7 +4003,7 @@ quick-add-modal .product__title>a:hover {
         margin-bottom: 30px;
     }
     .cart_count .cart-count-bubble {
-        left: -24px;
+        /* left: -24px; */
     }
     .quick-add-modal__content {
         --modal-height-offset: 10rem;
@@ -5907,8 +5907,17 @@ input[type='checkbox'] {
     cursor: initial;
 }
 
+.drawer__heading {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
 
 /* component-cart-count-bubble */
+
+.cart-count-bubble {
+    font-weight: 600;
+}
 
 .cart-count-bubble:empty {
     display: none;
