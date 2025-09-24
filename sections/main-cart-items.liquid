@@ -234,6 +234,15 @@
                           {% comment %} TARGET TYPE: {{ discount.discount_application.target_type }} <br> {% endcomment %}
                           {% comment %} VALUE TYPE: {{ discount.discount_application.value_type }} <br> {% endcomment %}
                           </li>
+                          {% else %}
+                          {% if item.product.compare_at_price_max > 0 %}
+                            <ul class="discounts list-unstyled" role="list" aria-label="Discount">
+                              <li class="discounts__discount">
+                                  {{- 'icon-discount.svg' | inline_asset_content -}}
+                                  <span id="buy_x" class="buy_x"> SALE </span>
+                              </li>
+                            </ul>
+                          {% endif %} 
                         {%- endfor -%}
                       </ul>
                     </td>

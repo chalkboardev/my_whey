@@ -164,14 +164,17 @@
                           <a href="{{ item.url }}" class="cart-item__name h4 break">
                             {{- item.product.title | escape -}}
                           </a>
+
+                         
+                          {% comment %} ------------ START SHOW DISCOUNT NORMAL PRICE IF ON **DISCOUNT** ------------ {% endcomment %}
                           {%- if item.original_price != item.final_price -%}
                             <span class="discount_price_spacer">
                               <s class="cart-item__old-price product-option">
-                                {{- item.original_price | money -}}
+                                {{- item.original_price | money -}}     
                               </s>
                             </span>
                           {%- endif -%}
-    
+                       
                           {%- if item.original_price != item.final_price -%}
                             <div class="cart-item__discounted-prices">
                               <span class="visually-hidden">
@@ -191,9 +194,15 @@
                               {{ item.original_price | money }}
                             </div> {% endcomment %}
     
+                            {% comment %} ------------ END SHOW DISCOUNT NORMAL PRICE IF ON **DISCOUNT** ------------ {% endcomment %}
+
+                          {% comment %} ------------ START SHOW NORMAL COMPARE AT PRICE IF ON NORMAL **SALE** ------------ {% endcomment %}
                             {% if item.product.compare_at_price_max > 0 %}
-                              <s class="mw_compare_price cart-item__old-price">{{ item.product.compare_at_price_max | money }}</s>
+                            <span class="mw_compare_price cart-item__old-price">
+                              <s> {{ item.product.compare_at_price_max | money }}</s>
+                            </span>
                             {% endif %}
+                          {% comment %} ------------ END SHOW NORMAL COMPARE AT PRICE IF ON NORMAL **SALE** ------------ {% endcomment %}
                         
                               <div class="product-option">
                                
@@ -208,9 +217,9 @@
                                 {% endif %} {% endcomment %}
                                
                               </div>
-                        
     
                           {%- endif -%}
+                          
 
                           {%- if item.product.has_only_default_variant == false or item.properties.size != 0 or item.selling_plan_allocation != null
                           -%}
@@ -254,6 +263,15 @@
                             <p class="product-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>
                           {%- endif -%}
 
+                          {% comment %} {% if item.product.compare_at_price_max > 0 %}
+                            <span class="cart-item__old-price">
+                              <span class="sale_pill">On Sale </span> 
+                            </span>
+                            {% endif %} {% endcomment %}
+                          
+
+                        
+
                           <ul
                             class="discounts list-unstyled"
                             role="list"
@@ -277,6 +295,16 @@
                               {% comment %} TARGET TYPE: {{ discount.discount_application.target_type }} <br> {% endcomment %}
                               {% comment %} VALUE TYPE: {{ discount.discount_application.value_type }} <br> {% endcomment %}
                               </li>
+
+                              {% else %}
+                              {% if item.product.compare_at_price_max > 0 %}
+                                <ul class="discounts list-unstyled" role="list" aria-label="Discount">
+                                  <li class="discounts__discount">
+                                      {{- 'icon-discount.svg' | inline_asset_content -}}
+                                      <span id="buy_x" class="buy_x"> SALE </span>
+                                  </li>
+                                </ul>
+                              {% endif %} 
                             {%- endfor -%}
                           </ul>
                         </td>
