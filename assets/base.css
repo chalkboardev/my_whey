@@ -2831,8 +2831,13 @@ quick-add-modal .product__title>a:hover {
     width: 1.2rem;
     height: 1.2rem;
     margin-right: 0.7rem;
-    opacity: 0.7;
+    /* opacity: 0.7; */
+    filter: opacity(0.7);
     color: #ff6700;
+    animation-direction: alternate !important;
+    animation-name: flipInY !important;
+    animation-duration: 3s !important;
+    animation-iteration-count: infinite !important;
 }
 
 .cart-drawer .cart__checkout-button {
@@ -2841,6 +2846,11 @@ quick-add-modal .product__title>a:hover {
 
 .cart-drawer .tax-note {
     margin: 1.2rem 0 0.6rem auto !important;
+}
+
+.cart-drawer .cart-items th {
+    font-weight: 600;
+    opacity: 0.4;
 }
 
 
@@ -6344,6 +6354,7 @@ input[type='checkbox'] {
 .header__heading-logo {
     height: auto;
     max-width: 100%;
+    filter: opacity(0.9);
 }
 
 .header__heading-logo-wrapper {
