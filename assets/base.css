@@ -3293,6 +3293,7 @@ quick-add-modal .product__title>a:hover {
     }
     .cart-drawer .cart-items .cart-item__quantity {
         grid-column: 1 / 5 !important;
+        margin: -9px 0 -4px 0;
     }
     .cart-drawer .cart-item:not(:last-child) {
         border-bottom: 1px solid #dedede;
