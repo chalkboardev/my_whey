@@ -907,7 +907,7 @@ function openTab(evt, cityName) {
     {% if product.metafields.custom.product_certification.value %}
       <div id="tab-5" class="tabcontent-cus">
         <embed src="{{ product.metafields.custom.product_certification.value.url }}" type="application/pdf" width="100%" height="600px">
-        <object data="{{ product.metafields.custom.product_certification.value.url }}" type="application/pdf" width="700px" height="1200px">
+        <object data="{{ product.metafields.custom.product_certification.value.url }}" type="application/pdf" width="100%" height="600px">
 </object>
         <a href="{{ product.metafields.custom.product_certification.value.url }}" download>
           Download Product Certification
