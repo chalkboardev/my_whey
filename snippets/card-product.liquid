@@ -187,19 +187,19 @@
             >
          
           {% comment %} {{  settings.title_char_limit_desktop }} {% endcomment %}
-          <div class="small-hide">
-            {% if card_product.title.size > 34 %}   
-              <div class="marq_wrapper desk_wrap"><div class="heading_marquee"><p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ card_product.title | escape }}</p></div></div>
+          <div class="small-hide"> 
+            {% if card_product.title.size > 24 %}   
+              <div class="marq_wrapper desk_wrap"><div class="heading_marquee"><p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ card_product.title | escape }}</p></div></div>
 
               {%- else -%}
-             {{ card_product.title | escape }}
+             {{ card_product.title | escape }} 
 
               {%- endif -%}
           </div>
 
           <div class="desk-hide">
             {% if card_product.title.size > 32 %}   
-              <div class="wrapper"><div class="heading_marquee"><p> &nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }}</p></div></div>
+              <div class="wrapper"><div class="heading_marquee"><p> &nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }}</p></div></div>
 
               {%- else -%}
              {{ card_product.title | escape }}
@@ -409,14 +409,17 @@
                   class="quick-add-modal__content global-settings-popup"
                   tabindex="-1"
                 >
+
+                
                   <button
                   style="position: sticky;display: flex;justify-self: flex-end;"
                     id="ModalClose-{{ card_product.id }}"
                     type="button"
-                    class="quick-add-modal__toggle"
+                    class="quick-add-modal__toggle_2"
                     aria-label="{{ 'accessibility.close' | t }}"
                   >
-                    {{- 'icon-close.svg' | inline_asset_content -}}
+                    {% comment %} {{- 'icon-close.svg' | inline_asset_content -}} {% endcomment %}
+                    <span class="quickview_popup__close" id="quickview_popup__close">&times;</span>
                   </button>
                   <div id="QuickAddInfo-{{ card_product.id }}" class="quick-add-modal__content-info"></div>
 
