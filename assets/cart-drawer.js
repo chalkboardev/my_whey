@@ -80,6 +80,7 @@ class CartDrawer extends HTMLElement {
 
   close() {
     this.classList.remove('active');
+    document.querySelector('.mw_corner_sale_cart_drawer').classList.remove('active');
     removeTrapFocus(this.activeElement);
     document.body.classList.remove('overflow-hidden');
     document.getElementById('cart_backdrop').classList.remove('cart_blurry');
