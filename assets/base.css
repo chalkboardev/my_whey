@@ -1580,7 +1580,7 @@ body .menu-drawer__close-button {
 }
 
 .cart-drawer .product-option {
-    display: inline-flex !important;
+    display: inline-flex;
     white-space: nowrap;
 }
 
@@ -2863,7 +2863,7 @@ quick-add-modal .product__title>a:hover {
     background: #ffffff9c;
 }
 
-.mw_corner_sale_cart {
+.mw_corner_sale_cart_drawer {
     background: none !important;
     background-color: unset !important;
     width: 0;
@@ -2880,7 +2880,24 @@ quick-add-modal .product__title>a:hover {
     border-bottom-left-radius: 0px !important;
 }
 
-.sale_text_span_cart {
+.mw_corner_sale_cart_main {
+    background: none !important;
+    background-color: unset !important;
+    width: 0;
+    height: 0;
+    border-top: 46px solid;
+    border-bottom: 46px solid transparent;
+    border-right: 46px solid transparent;
+    position: absolute;
+    left: 0;
+    top: 4rem;
+    border-top-left-radius: 6px !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
+
+.sale_text_span_cart_drawer {
     text-transform: uppercase;
     color: #fff;
     font-weight: 600;
@@ -2894,10 +2911,36 @@ quick-add-modal .product__title>a:hover {
     transform: rotate(315deg);
     display: block;
     visibility: visible;
-    animation-direction: alternate;
+    /* animation-direction: alternate;
     animation-name: fadeIn;
     animation-duration: 1.5s;
-    animation-iteration-count: infinite;
+    animation-iteration-count: infinite; */
+}
+
+.sale_text_span_cart_main {
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 600;
+    /* text-shadow: 1px 1px 2px #000; */
+    position: absolute;
+    top: -39px;
+    font-size: 1rem;
+    width: 50px;
+    right: -42px;
+    text-align: center;
+    transform: rotate(315deg);
+    display: block;
+    visibility: visible;
+    /* animation-direction: alternate;
+    animation-name: fadeIn;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite; */
+}
+
+.mw_selling_plan_cart_drawer {
+    font-size: 12px !important;
+    margin: 0.2rem 0 -0.6rem 0 !important;
+    display: block !important;
 }
 
 

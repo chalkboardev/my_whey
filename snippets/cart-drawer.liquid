@@ -153,9 +153,9 @@
                           {% endif %}
 
                           {% if item.product.compare_at_price_max > 0 %}
-                            <div style="border-top-color: rgba(139, 139, 139, 0.8) !important" class="mw_corner_sale_cart card__badge color-scheme-3 top left">
+                            <div style="border-top-color: rgba(139, 139, 139, 0.8) !important" class="mw_corner_sale_cart_drawer card__badge color-scheme-3 top left">
                                 <span id="" class=" badge--bottom-left color-scheme-3">
-                                    <span class="sale_text_span_cart">Sale</span>  
+                                    <span class="sale_text_span_cart_drawer">Sale</span>  
                                 </span>
                             </div>
                           {% endif %} 
@@ -269,7 +269,7 @@
                               {%- endfor -%}
                             </dl>
 
-                            <p style="font-size:12px;" class="product-option">{{ item.selling_plan_allocation.selling_plan.name | replace: ',', ' | ' }}</p>
+                            <p class="mw_selling_plan_cart_drawer product-option">{{ item.selling_plan_allocation.selling_plan.name | replace: ',', ' | ' }}</p>
                           {%- endif -%}
 
                

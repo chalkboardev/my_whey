@@ -117,6 +117,15 @@
                             height="{{ 150 | divided_by: item.image.aspect_ratio | ceil }}">
                         </div>
                       {% endif %}
+
+                      {% if item.product.compare_at_price_max > 0 %}
+                        <div style="border-top-color: rgba(139, 139, 139, 0.8) !important" class="mw_corner_sale_cart_main card__badge color-scheme-3 top left">
+                            <span id="" class=" badge--bottom-left color-scheme-3">
+                                <span class="sale_text_span_cart_main">Sale</span>  
+                            </span>
+                        </div>
+                      {% endif %} 
+
                     </td>
 
                     <td class="cart-item__details">
@@ -208,7 +217,7 @@
                           {%- endfor -%}
                         </dl>
 
-                        <p class="product-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>
+                        <p class="mw_selling_plan_cart product-option">{{ item.selling_plan_allocation.selling_plan.name | replace: ',', ' | ' }}</p>
                       {%- endif -%}
 
                       <ul
