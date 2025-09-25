@@ -2836,7 +2836,7 @@ quick-add-modal .product__title>a:hover {
     filter: opacity(0.7);
     color: #ff6700;
     animation-direction: alternate !important;
-    animation-name: flipInY !important;
+    animation-name: flipOutY !important;
     animation-duration: 3s !important;
     animation-iteration-count: infinite !important;
 }

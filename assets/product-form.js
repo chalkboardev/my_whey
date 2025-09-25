@@ -59,7 +59,8 @@ if (!customElements.get('product-form')) {
               //console.log('Cart is empty!');
               // Perform actions for an empty cart (e.g., hide elements, display empty cart message)
             } else {
-              //console.log('Cart has items.');
+              console.log('Cart has items.');
+              console.log('Cart:', cart);
             }
             
             // async function checkIfProductIsInCart(productIdToCheck) {
@@ -77,7 +78,7 @@ if (!customElements.get('product-form')) {
                     // console.log(`Product with ID ${productIdToCheck} is NOT in the cart...`);
                     // console.log(`NO FLAVOURS in the cart...`);
                     // console.log('Checking cart again...');
-
+                    
                     fetchCartItems();
                     async function fetchCartItems() {
                       try {
@@ -87,37 +88,65 @@ if (!customElements.get('product-form')) {
                         }
                         const cart = await response.json();
                         //console.log('Cart:', cart);
-                        var productInCart_flavour = cart.items.some(item => item.product_type === 'flavour');
-                        //var productInCart_vanilla = cart.items.some(item => item.product_id === 9028972413180);
-                        if (productInCart_flavour) {
-                          //console.log(`Flavour Product is in the cart...`);
-                          return true;
+
+                        // -------- START Check if any item in the cart has "Powder" as a variant option ------
+                        const productInCart_powder = cart.items.some(item => {
+                          // Check if the variant_options array exist
+                          if (item.variant_options) {
+                            // Use .some() on the options array to check for a specific option value
+                            return item.variant_options.some(option => option === 'Powder');
+                          } else {
+                            // No variant or options array found for this item
+                            console.log('NO we DONT have variant options..');
+                          }
+                        });
+
+                        if (productInCart_powder) {
+                          console.log('The cart contains at least one item with "Powder" as a variant option...');
+                          // Perform actions based on this condition
+
+                              // -------- START CHECK IF CART ALREADY HAS FLAVOUR ------
+                              var productInCart_flavour = cart.items.some(item => item.product_type === 'flavour');
+                              //var productInCart_vanilla = cart.items.some(item => item.product_id === 9028972413180);
+                              if (productInCart_flavour) {
+                                //console.log(`Flavour Product is in the cart...`);
+                                return true;
+                              } else {
+                                setTimeout(function(){
+                                // var flavour_modal_button = document.getElementById('click_flavour_modal_cart');
+                                // flavour_modal_button.click();
+                                  var main_flavour_modal = document.getElementById('flavour_modal');
+                                  // Set CSS properties directly
+                                  if (main_flavour_modal) {
+                                    //console.log('Main flavour modal...');
+                                    console.log("opening main flavour modal from product-form.js...");
+                                    main_flavour_modal.style.visibility = 'visible';
+                                    main_flavour_modal.style.zIndex = '99999';
+                                    main_flavour_modal.style.opacity = '1';
+                                    main_flavour_modal.style.display = 'flex';
+                                  }
+                                  var product_flavour_modal = document.getElementById('flavour_modal_product');
+                                  // Set CSS properties directly
+                                  if (product_flavour_modal) {
+                                    //console.log('Product flavour modal...');
+                                    console.log("opening product flavour modal from product-form.js...");
+                                    product_flavour_modal.style.visibility = 'visible';
+                                    product_flavour_modal.style.zIndex = '99999';
+                                    product_flavour_modal.style.opacity = '1';
+                                    product_flavour_modal.style.display = 'flex';
+                                  }
+                                  }, 1500);
+                              }
+                              // -------- END  CHECK IF CART ALREADY HAS FLAVOUR ------
+                              
                         } else {
-                          setTimeout(function(){
-                          // var flavour_modal_button = document.getElementById('click_flavour_modal_cart');
-                          // flavour_modal_button.click();
-                            var main_flavour_modal = document.getElementById('flavour_modal');
-                            // Set CSS properties directly
-                            if (main_flavour_modal) {
-                              //console.log('Main flavour modal...');
-                              console.log("opening main flavour modal from product-form.js...");
-                              main_flavour_modal.style.visibility = 'visible';
-                              main_flavour_modal.style.zIndex = '99999';
-                              main_flavour_modal.style.opacity = '1';
-                              main_flavour_modal.style.display = 'flex';
-                            }
-                            var product_flavour_modal = document.getElementById('flavour_modal_product');
-                            // Set CSS properties directly
-                            if (product_flavour_modal) {
-                              //console.log('Product flavour modal...');
-                              console.log("opening product flavour modal from product-form.js...");
-                              product_flavour_modal.style.visibility = 'visible';
-                              product_flavour_modal.style.zIndex = '99999';
-                              product_flavour_modal.style.opacity = '1';
-                              product_flavour_modal.style.display = 'flex';
-                            }
-                            }, 1500);
+                          console.log('No item in the cart has a "Powder" variant option...');
                         }
+                        // -------- END Check if any item in the cart has "Powder" as a variant option ------
+
+
+
+
                         ////console.log('Cart:', cart);
                         if (!cart.items || cart.items.length === 0) {
                           console.log('Empty cart, refetching...');

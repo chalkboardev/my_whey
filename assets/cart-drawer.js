@@ -39,7 +39,7 @@ class CartDrawer extends HTMLElement {
     setTimeout(() => {
       document.getElementById('cart_backdrop').classList.add('cart_blurry');
       this.classList.add('animate', 'active');
-      console.log('testing from cart-drawer.js cart link....');
+      console.log('testing open cart event from cart-drawer.js cart link....');
       const flavour_link = document.querySelector('#click_flavour_modal_cart');
       const flavour_link_close = document.querySelector('#flavour_popup__close');
       const flavour_link_btn_txt = document.querySelector('#crt_btn_txt');
