@@ -151,6 +151,15 @@
                               width="150"
                               height="{{ 150 | divided_by: item.image.aspect_ratio | ceil }}">
                           {% endif %}
+
+                          {% if item.product.compare_at_price_max > 0 %}
+                            <div style="border-top-color: rgba(139, 139, 139, 0.8) !important" class="mw_corner_sale_cart card__badge color-scheme-3 top left">
+                                <span id="" class=" badge--bottom-left color-scheme-3">
+                                    <span class="sale_text_span_cart">Sale</span>  
+                                </span>
+                            </div>
+                          {% endif %} 
+
                         </td>
 
                         <td
@@ -263,6 +272,8 @@
                             <p style="font-size:12px;" class="product-option">{{ item.selling_plan_allocation.selling_plan.name | replace: ',', ' | ' }}</p>
                           {%- endif -%}
 
+               
+
                           {% comment %} {% if item.product.compare_at_price_max > 0 %}
                             <span class="cart-item__old-price">
                               <span class="sale_pill">On Sale </span> 
@@ -270,7 +281,9 @@
                             {% endif %} {% endcomment %}
                           
 
-                        
+                            {% comment %} {%- if item.product.has_only_default_variant == false or item.properties.size != 0 or item.selling_plan_allocation != null -%}
+                              <p style="font-size:12px;" class="product-option">{{ item.selling_plan_allocation.selling_plan.name | replace: ',', ' | ' }}</p>
+                          {%- endif -%} {% endcomment %}
 
                           <ul
                             class="discounts list-unstyled"
@@ -297,14 +310,14 @@
                               </li>
 
                               {% else %}
-                              {% if item.product.compare_at_price_max > 0 %}
+                              {% comment %} {% if item.product.compare_at_price_max > 0 %}
                                 <ul class="discounts list-unstyled" role="list" aria-label="Discount">
                                   <li class="discounts__discount">
                                       {{- 'icon-discount.svg' | inline_asset_content -}}
                                       <span id="buy_x" class="buy_x"> SALE </span>
                                   </li>
                                 </ul>
-                              {% endif %} 
+                              {% endif %}  {% endcomment %}
                             {%- endfor -%}
                           </ul>
                         </td>

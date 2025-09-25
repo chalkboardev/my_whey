@@ -2854,6 +2854,52 @@ quick-add-modal .product__title>a:hover {
     opacity: 0.4;
 }
 
+.sales_img_element {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    top: 60%;
+    background: #ffffff9c;
+}
+
+.mw_corner_sale_cart {
+    background: none !important;
+    background-color: unset !important;
+    width: 0;
+    height: 0;
+    border-top: 46px solid;
+    border-bottom: 46px solid transparent;
+    border-right: 46px solid transparent;
+    position: absolute;
+    left: 0;
+    top: 1.7rem;
+    border-top-left-radius: 6px !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
+
+.sale_text_span_cart {
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 600;
+    /* text-shadow: 1px 1px 2px #000; */
+    position: absolute;
+    top: -39px;
+    font-size: 1rem;
+    width: 50px;
+    right: -42px;
+    text-align: center;
+    transform: rotate(315deg);
+    display: block;
+    visibility: visible;
+    animation-direction: alternate;
+    animation-name: fadeIn;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
