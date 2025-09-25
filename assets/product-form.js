@@ -144,11 +144,7 @@ if (!customElements.get('product-form')) {
                         }
                         // -------- END Check if any item in the cart has "Powder" as a variant option ------
 
-            // Example usage:
-            // Replace 1234567890 with the actual product ID you want to check
-            //checkIfProductIsInCart(9028977492220);
-            checkIfProductIsInCart();
-            // Perform actions for a cart with items (e.g., show cart contents)
+
 
 
                         ////console.log('Cart:', cart);
@@ -169,7 +165,11 @@ if (!customElements.get('product-form')) {
                 return false;
               }
             }
-
+            // Example usage:
+            // Replace 1234567890 with the actual product ID you want to check
+            //checkIfProductIsInCart(9028977492220);
+            checkIfProductIsInCart();
+            // Perform actions for a cart with items (e.g., show cart contents)
           })
           .catch(error => {
             console.error('Error fetching cart data:', error);
