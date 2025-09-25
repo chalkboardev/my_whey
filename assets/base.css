@@ -2864,6 +2864,7 @@ quick-add-modal .product__title>a:hover {
 }
 
 .mw_corner_sale_cart_drawer {
+    display: none;
     background: none !important;
     background-color: unset !important;
     width: 0;
@@ -2878,6 +2879,13 @@ quick-add-modal .product__title>a:hover {
     border-top-right-radius: 0px !important;
     border-bottom-right-radius: 0px !important;
     border-bottom-left-radius: 0px !important;
+}
+
+.mw_corner_sale_cart_drawer.active {
+    display: flex;
+    animation-name: fadeIn;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
 }
 
 .mw_corner_sale_cart_main {
