@@ -2727,6 +2727,7 @@ quick-add-modal .product__title>a:hover {
 }
 
 #product_info_tabs {
+    visibility: visible !important;
     animation-direction: alternate !important;
     animation-name: fadeIn !important;
     animation-duration: 1s !important;
