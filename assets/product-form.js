@@ -144,9 +144,6 @@ if (!customElements.get('product-form')) {
                         }
                         // -------- END Check if any item in the cart has "Powder" as a variant option ------
 
-
-
-
                         ////console.log('Cart:', cart);
                         if (!cart.items || cart.items.length === 0) {
                           console.log('Empty cart, refetching...');
@@ -272,9 +269,6 @@ if (!customElements.get('product-form')) {
                           console.log('No item in the cart has a "Powder" variant option...');
                         }
                         // -------- END Check if any item in the cart has "Powder" as a variant option ------
-
-
-
 
                         ////console.log('Cart:', cart);
                         if (!cart.items || cart.items.length === 0) {
