@@ -60,7 +60,7 @@ if (!customElements.get('product-form')) {
               // Perform actions for an empty cart (e.g., hide elements, display empty cart message)
             } else {
               console.log('Cart has items.');
-              console.log('Cart:', cart);
+              //console.log('Cart:', cart);
             }
             
             // async function checkIfProductIsInCart(productIdToCheck) {
