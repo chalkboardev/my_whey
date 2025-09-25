@@ -57,7 +57,7 @@ if (!customElements.get('quick-add-modal')) {
                   //e.stopPropagation();
                     var targetElement = this.querySelector('input'); // Select by class, ID, tag, etc.
                     if (targetElement) {
-                      //console.log("Found the target input: ", targetElement);
+                      console.log("Found the target input: ", targetElement);
                       //targetElement.parentNode.parentNode.parentNode.parentNode.previousSibling.remove();
                       targetElement.checked = true;
 
@@ -93,6 +93,17 @@ if (!customElements.get('quick-add-modal')) {
 
                           // ---------------------------------------- ******* START CHECK IF ITEM ON SALE ******* ---------------------------------------------
                           var closestPriceRegular = closestProductInfo.querySelector('.price__container .price__regular');
+
+                          var closestConsent = closestProductInfo.querySelector('#shopify-buyer-consent');
+                          
+                          if(targetElement.getAttribute('data-radio-type') == 'one_time_purchase'){
+                            if(closestConsent){
+                                closestConsent.style.display = "none";
+                            }
+                            //alert('One time!');
+                          } else {
+                            closestConsent.style.display = "inline-block";
+                          }
                           //console.log(closestPriceRegular.checkVisibility());
                           if (closestPriceRegular && !closestPriceRegular.checkVisibility()) {
                             // -------------------- ******* START ITEM IS ON SALE ******* -------------------------

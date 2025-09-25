@@ -347,7 +347,7 @@ h1,
     }
     [id^="MainProduct-quickadd-template--"] h1,
     .h1 {
-        font-size: calc(var(--font-heading-scale) * 3.5rem) !important;
+        font-size: calc(var(--font-heading-scale) * 3rem) !important;
     }
 }
 
@@ -2447,7 +2447,7 @@ body .menu-drawer__close-button {
 
 .product__title h1 {
     font-weight: 600;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
 }
 
 .mw_price_div {
@@ -2982,7 +2982,7 @@ quick-add-modal .product__title>a:hover {
     transition: all .2s ease-out;
     color: #fff;
     font-size: 36px;
-    background: #9090904f;
+    background: #90909099;
     border-radius: 50%;
     width: 36px;
     height: 36px;
