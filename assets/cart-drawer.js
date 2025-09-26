@@ -41,7 +41,7 @@ class CartDrawer extends HTMLElement {
       this.classList.add('animate', 'active');
       const sales_corner = document.querySelector('#mw_corner_sale_cart_drawer');
       if(sales_corner){
-        sales_corner.classList.add('active');
+        this.querySelector('.mw_corner_sale_cart_drawer').classList.add('active');
       }
       console.log('testing open cart event from cart-drawer.js cart link....');
       const flavour_link = document.querySelector('#click_flavour_modal_cart');
