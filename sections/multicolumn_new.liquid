@@ -33,16 +33,14 @@
   <div
     class="page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
     {% if settings.animations_reveal_on_scroll %}
-      data-cascade
-    {% endif %}
-  >
+    data-cascade
+    {% endif %}>
 
     <slider-component class="slider-mobile-gutter">
       <ul
         class="my_multicolumn multicolumn-list contains-content-container grid grid--1-col-tablet-down grid--2-col-desktop{% if show_mobile_slider %} slider slider--tablet grid--peek{% endif %}"
         id="Slider-{{ section.id }}"
-        role="list"
-      >
+        role="list">
         {%- liquid
           assign highest_ratio = 0
           for block in section.blocks
@@ -53,10 +51,7 @@
         -%}
         {%- for block in section.blocks -%}
           {%- assign empty_column = '' -%}
-          {%- if block.settings.image == blank
-            and block.settings.title == blank
-            and block.settings.text == blank
-            and block.settings.link_label == blank
+          {%- if block.settings.image == blank and block.settings.title == blank and block.settings.text == blank and block.settings.link_label == blank
           -%}
             {%- assign empty_column = ' multicolumn-list__item--empty' -%}
           {%- endif -%}
@@ -64,289 +59,869 @@
 
           {%- if forloop.index == 1 -%}
             <li
-            id="Slide-{{ section.id }}-{{ forloop.index }}"
-            class="first_image_mutli multicolumn-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if section.settings.column_alignment == 'center' %} center{% endif %}{{ empty_column }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-            {{ block.shopify_attributes }}
-            {% if settings.animations_reveal_on_scroll %}
+              id="Slide-{{ section.id }}-{{ forloop.index }}"
+              class="first_image_mutli multicolumn-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if section.settings.column_alignment == 'center' %} center{% endif %}{{ empty_column }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              {{ block.shopify_attributes }}
+              {% if settings.animations_reveal_on_scroll %}
               data-cascade
               style="--animation-order: {{ forloop.index }};"
-            {% endif %}
-          >
-          {%- elsif forloop.index == 3 -%}
-            <li
-            id="Slide-{{ section.id }}-{{ forloop.index }}"
-            class="last_image_mutli multicolumn-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if section.settings.column_alignment == 'center' %} center{% endif %}{{ empty_column }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-            {{ block.shopify_attributes }}
-            {% if settings.animations_reveal_on_scroll %}
-              data-cascade
-              style="--animation-order: {{ forloop.index }};"
-            {% endif %}
-          >
-          {%- else -%}
-          <li
-            id="Slide-{{ section.id }}-{{ forloop.index }}"
-            class="info_multi multicolumn-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if section.settings.column_alignment == 'center' %} center{% endif %}{{ empty_column }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-            {{ block.shopify_attributes }}
-            {% if settings.animations_reveal_on_scroll %}
-              data-cascade
-              style="--animation-order: {{ forloop.index }};"
-            {% endif %}
-          >
-          {%- endif -%}
+              {% endif %}>
+              <div class="multicolumn-card content-container">
+                {%- if block.settings.image != blank -%}
+                  {% if section.settings.image_ratio == 'adapt' or section.settings.image_ratio == 'circle' %}
+                    {% assign spaced_image = true %}
+                  {% endif %}
 
-            <div class="multicolumn-card content-container">
-              {%- if block.settings.image != blank -%}
-                {% if section.settings.image_ratio == 'adapt' or section.settings.image_ratio == 'circle' %}
-                  {% assign spaced_image = true %}
-                {% endif %}
-                
-                {%- if forloop.index == 1 -%}
-                  <div class="multicolumn-card__image-wrapper multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} {% endif %}">
-                {%- else -%}
-                  <div class="multicolumn-card__image-wrapper multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} multicolumn-card-spacing{% endif %}">
-                {%- endif -%}  
-
-                  <div
-                    class="media media--transparent media--{{ section.settings.image_ratio }}"
-                    {% if section.settings.image_ratio == 'adapt' %}
-                      style="padding-bottom: {{ 1 | divided_by: highest_ratio | times: 100 }}%;"
-                    {% endif %}
-                  >
-                    {%- liquid
-                      assign number_of_columns = section.settings.columns_desktop
-                      assign number_of_columns_mobile = section.settings.columns_mobile
-                      assign grid_space_desktop = number_of_columns | minus: 1 | times: settings.spacing_grid_horizontal | plus: 100 | append: 'px'
-                      assign grid_space_tablet = number_of_columns_mobile | minus: 1 | times: settings.spacing_grid_horizontal | plus: 100 | append: 'px'
-                      assign grid_space_mobile = number_of_columns_mobile | minus: 1 | times: settings.spacing_grid_horizontal | divided_by: 2 | plus: 30 | append: 'px'
-                      if section.settings.image_width == 'half'
-                        assign image_width = 0.5
-                      elsif section.settings.image_width == 'third'
-                        assign image_width = 0.33
-                      else
-                        assign image_width = 1
-                      endif
-                    -%}
-                    {% capture sizes %}
-                      (min-width: {{ settings.page_width }}px) calc(({{ settings.page_width }}px - {{ grid_space_desktop }}) * {{ image_width }} /  {{ number_of_columns }}),
-                      (min-width: 990px) calc((100vw - {{ grid_space_desktop }}) * {{ image_width }} / {{ number_of_columns }}),
-                      (min-width: 750px) calc((100vw - {{ grid_space_tablet }}) * {{ image_width }} / {{ number_of_columns_mobile }}),
-                      calc((100vw - {{ grid_space_mobile }}) * {{ image_width }} / {{ number_of_columns_mobile }})
-                    {% endcapture %}
-                    {{
-                      block.settings.image
-                      | image_url: width: 3200
-                      | image_tag:
-                        widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200',
-                        sizes: sizes,
-                        class: 'multicolumn-card__image'
-                    }}
-                  </div>
-                </div>
-              {%- endif -%}
-
-              <div class="info_multi_column multicolumn-card__info">
-
-              {%- if forloop.index != 3 and forloop.index != 1 -%}
-              {%- unless section.settings.title == blank -%}
-                <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin multicolumn__title">
-                  <h2 class="featured_title title inline-richtext {{ section.settings.heading_size }}">
-                    {{ section.settings.title }}
-                  </h2>
-                  {%- if section.settings.button_label != blank and show_mobile_slider -%}
-                    <a href="{{ section.settings.button_link }}" class="link underlined-link large-up-hide">
-                      {{- section.settings.button_label | escape -}}
-                    </a>
+                  {%- if forloop.index == 1 -%}
+                    <div class="multicolumn-card__image-wrapper multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} {% endif %}">
+                      <div
+                        class="media media--transparent media--{{ section.settings.image_ratio }}"
+                        {% if section.settings.image_ratio == 'adapt' %}
+                        style="padding-bottom: {{ 1 | divided_by: highest_ratio | times: 100 }}%;"
+                        {% endif %}>
+                        {%- liquid
+                          assign number_of_columns = section.settings.columns_desktop
+                          assign number_of_columns_mobile = section.settings.columns_mobile
+                          assign grid_space_desktop = number_of_columns | minus: 1 | times: settings.spacing_grid_horizontal | plus: 100 | append: 'px'
+                          assign grid_space_tablet = number_of_columns_mobile | minus: 1 | times: settings.spacing_grid_horizontal | plus: 100 | append: 'px'
+                          assign grid_space_mobile = number_of_columns_mobile | minus: 1 | times: settings.spacing_grid_horizontal | divided_by: 2 | plus: 30 | append: 'px'
+                          if section.settings.image_width == 'half'
+                            assign image_width = 0.5
+                          elsif section.settings.image_width == 'third'
+                            assign image_width = 0.33
+                          else
+                            assign image_width = 1
+                          endif
+                        -%}
+                        {% capture sizes %}
+                    (min-width: {{ settings.page_width }}px) calc(({{ settings.page_width }}px - {{ grid_space_desktop }}) * {{ image_width }} /  {{ number_of_columns }}),
+                    (min-width: 990px) calc((100vw - {{ grid_space_desktop }}) * {{ image_width }} / {{ number_of_columns }}),
+                    (min-width: 750px) calc((100vw - {{ grid_space_tablet }}) * {{ image_width }} / {{ number_of_columns_mobile }}),
+                    calc((100vw - {{ grid_space_mobile }}) * {{ image_width }} / {{ number_of_columns_mobile }})
+                  {% endcapture %}
+                        {{
+                          block.settings.image | image_url: width: 3200 | image_tag: widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200', sizes: sizes, class: 'multicolumn-card__image'
+                        }}
+                      </div>
+                    </div>
+                  {%- else -%}
+                    <div class="multicolumn-card__image-wrapper multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} multicolumn-card-spacing{% endif %}">
+                      <div
+                        class="media media--transparent media--{{ section.settings.image_ratio }}"
+                        {% if section.settings.image_ratio == 'adapt' %}
+                        style="padding-bottom: {{ 1 | divided_by: highest_ratio | times: 100 }}%;"
+                        {% endif %}>
+                        {%- liquid
+                          assign number_of_columns = section.settings.columns_desktop
+                          assign number_of_columns_mobile = section.settings.columns_mobile
+                          assign grid_space_desktop = number_of_columns | minus: 1 | times: settings.spacing_grid_horizontal | plus: 100 | append: 'px'
+                          assign grid_space_tablet = number_of_columns_mobile | minus: 1 | times: settings.spacing_grid_horizontal | plus: 100 | append: 'px'
+                          assign grid_space_mobile = number_of_columns_mobile | minus: 1 | times: settings.spacing_grid_horizontal | divided_by: 2 | plus: 30 | append: 'px'
+                          if section.settings.image_width == 'half'
+                            assign image_width = 0.5
+                          elsif section.settings.image_width == 'third'
+                            assign image_width = 0.33
+                          else
+                            assign image_width = 1
+                          endif
+                        -%}
+                        {% capture sizes %}
+                    (min-width: {{ settings.page_width }}px) calc(({{ settings.page_width }}px - {{ grid_space_desktop }}) * {{ image_width }} /  {{ number_of_columns }}),
+                    (min-width: 990px) calc((100vw - {{ grid_space_desktop }}) * {{ image_width }} / {{ number_of_columns }}),
+                    (min-width: 750px) calc((100vw - {{ grid_space_tablet }}) * {{ image_width }} / {{ number_of_columns_mobile }}),
+                    calc((100vw - {{ grid_space_mobile }}) * {{ image_width }} / {{ number_of_columns_mobile }})
+                  {% endcapture %}
+                        {{
+                          block.settings.image | image_url: width: 3200 | image_tag: widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200', sizes: sizes, class: 'multicolumn-card__image'
+                        }}
+                      </div>
+                    </div>
                   {%- endif -%}
-                </div>
-              {%- endunless -%}
-            {%- endif -%}  
 
-                {%- if block.settings.title != blank -%}
-                  <div class="about_large_title rte">{{ block.settings.title }}</div>
+
                 {%- endif -%}
- 
-                {%- if block.settings.info_block_heading_1 != blank -%}
-                  <div class="icon_grid">
-                   
-                    <div class="about_info_text rte"> 
-                      {% comment %} <span class="my_svg-wrapper about_icons">
-                          <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
-                      </span> {% endcomment %}
 
-                      {% if block.settings.block_icon_img1 == 'Icon-Clean' %}
-                        <span class="wow icon_animate my_svg-wrapper about_icons">
-                          <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
-                        </span>
-                      {% elsif block.settings.block_icon_img1 == 'Icon-Quiz' %}
-                        <span class="wow icon_animate my_svg-wrapper about_icons">
-                          <span class="icon-wrap">&nbsp;{{ 'Icon-Quiz.svg' | inline_asset_content }}</span>
-                        </span>
-                      {% elsif block.settings.block_icon_img1 == 'Icon-Support' %}
-                        <span class="wow icon_animate my_svg-wrapper about_icons">
-                          <span class="icon-wrap">&nbsp;{{ 'Icon-Support.svg' | inline_asset_content }}</span>
-                        </span>
-                      {% elsif block.settings.block_icon_img1 == 'Icon-Check' %}
-                        <span class="wow icon_animate my_svg-wrapper about_icons">
-                          <span class="icon-wrap">&nbsp;{{ 'Icon-Check.svg' | inline_asset_content }}</span>
-                        </span>
+                <div class="info_multi_column multicolumn-card__info">
+
+                  {%- if forloop.index != 3 and forloop.index != 1 -%}
+                    {%- unless section.settings.title == blank -%}
+                      <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin multicolumn__title">
+                        <h2 class="featured_title title inline-richtext {{ section.settings.heading_size }}">
+                          {{ section.settings.title }}
+                        </h2>
+                        {%- if section.settings.button_label != blank and show_mobile_slider -%}
+                          <a href="{{ section.settings.button_link }}" class="link underlined-link large-up-hide">
+                            {{- section.settings.button_label | escape -}}
+                          </a>
+                        {%- endif -%}
+                      </div>
+                    {%- endunless -%}
+                  {%- endif -%}
+
+                  {%- if block.settings.title != blank -%}
+                    <div class="about_large_title rte">{{ block.settings.title }}</div>
+                  {%- endif -%}
+
+                  {%- if block.settings.info_block_heading_1 != blank -%}
+                    <div class="icon_grid">
+
+                      <div class="about_info_text rte">
+                        {% comment %} <span class="my_svg-wrapper about_icons">
+                                                                            <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
+                                                                    </span> {% endcomment %}
+
+                        {% if block.settings.block_icon_img1 == 'Icon-Clean' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img1 == 'Icon-Quiz' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Quiz.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img1 == 'Icon-Support' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Support.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img1 == 'Icon-Check' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Check.svg' | inline_asset_content }}</span>
+                          </span>
                         {% elsif block.settings.block_icon_img1 == 'Icon-Truck' %}
                           <span class="wow icon_animate my_svg-wrapper about_icons">
                             <span class="icon-wrap">&nbsp;{{ 'Icon-Truck.svg' | inline_asset_content }}</span>
                           </span>
+                        {% else %}
+
+                        {% endif %}
+
+                        <h3 class="wow icon_animate about_info_head">
+                          {%- if block.settings.info_block_heading_1 != blank -%}
+                            {{ block.settings.info_block_heading_1 }}
+                          {%- endif -%}
+                        </h3>
+                        {%- if block.settings.text1 != blank -%}
+                          <p class="wow icon_animate">
+                            {{ block.settings.text1 }}
+                          </p>
+                        {%- endif -%}
+                      </div>
+
+                      <div class="about_info_text rte">
+
+                        {% if block.settings.block_icon_img2 == 'Icon-Clean' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img2 == 'Icon-Quiz' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Quiz.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img2 == 'Icon-Support' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Support.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img2 == 'Icon-Check' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Check.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img2 == 'Icon-Truck' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Truck.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% else %}
+
+                        {% endif %}
+
+                        <h3 class="wow icon_animate about_info_head">
+                          {%- if block.settings.info_block_heading_2 != blank -%}
+                            {{ block.settings.info_block_heading_2 }}
+                          {%- endif -%}
+                        </h3>
+                        {%- if block.settings.text2 != blank -%}
+                          <p class="wow icon_animate">
+                            {{ block.settings.text2 }}
+                          </p>
+                        {%- endif -%}
+                      </div>
+
+                      <div class="about_info_text rte">
+
+                        {% if block.settings.block_icon_img3 == 'Icon-Clean' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img3 == 'Icon-Quiz' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Quiz.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img3 == 'Icon-Support' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Support.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img3 == 'Icon-Check' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Check.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img3 == 'Icon-Truck' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Truck.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% else %}
+
+                        {% endif %}
+
+                        <h3 class="wow icon_animate about_info_head">
+                          {%- if block.settings.info_block_heading_3 != blank -%}
+                            {{ block.settings.info_block_heading_3 }}
+                          {%- endif -%}
+                        </h3>
+                        {%- if block.settings.text3 != blank -%}
+                          <p class="wow icon_animate">
+                            {{ block.settings.text3 }}
+                          </p>
+                        {%- endif -%}
+                      </div>
+
+                      <div class="about_info_text rte">
+
+                        {% if block.settings.block_icon_img4 == 'Icon-Clean' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img4 == 'Icon-Quiz' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Quiz.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img4 == 'Icon-Support' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Support.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img4 == 'Icon-Check' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Check.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img4 == 'Icon-Truck' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Truck.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% else %}
+
+                        {% endif %}
+
+                        <h3 class="wow icon_animate about_info_head">
+                          {%- if block.settings.info_block_heading_4 != blank -%}
+                            {{ block.settings.info_block_heading_4 }}
+                          {%- endif -%}
+                        </h3>
+                        {%- if block.settings.text4 != blank -%}
+                          <p class="wow icon_animate">
+                            {{ block.settings.text4 }}
+                          </p>
+                        {%- endif -%}
+                      </div>
+
+
+                    </div>
+
+                  {%- endif -%}
+
+
+                  {%- if block.settings.link_label != blank -%}
+                    <a
+                      class="about_info_link link animate-arrow"
+                      {% if block.settings.link == blank %}
+                      role="link"
+                      aria-disabled="true"
                       {% else %}
-                       
-                      {% endif %}
-
-                      <h3 class="wow icon_animate about_info_head"> 
-                      {%- if block.settings.info_block_heading_1 != blank -%} 
-                          {{ block.settings.info_block_heading_1 }}
-                        {%- endif -%}
-                      </h3>
-                      {%- if block.settings.text1 != blank -%} 
-                        <p class="wow icon_animate">
-                          {{ block.settings.text1 }}
-                        </p>
-                      {%- endif -%}
-                    </div>
-
-                    <div class="about_info_text rte"> 
-
-                    {% if block.settings.block_icon_img2 == 'Icon-Clean' %}
-                      <span class="wow icon_animate my_svg-wrapper about_icons">
-                        <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
-                      </span>
-                    {% elsif block.settings.block_icon_img2 == 'Icon-Quiz' %}
-                      <span class="wow icon_animate my_svg-wrapper about_icons">
-                        <span class="icon-wrap">&nbsp;{{ 'Icon-Quiz.svg' | inline_asset_content }}</span>
-                      </span>
-                    {% elsif block.settings.block_icon_img2 == 'Icon-Support' %}
-                      <span class="wow icon_animate my_svg-wrapper about_icons">
-                        <span class="icon-wrap">&nbsp;{{ 'Icon-Support.svg' | inline_asset_content }}</span>
-                      </span>
-                    {% elsif block.settings.block_icon_img2 == 'Icon-Check' %}
-                      <span class="wow icon_animate my_svg-wrapper about_icons">
-                        <span class="icon-wrap">&nbsp;{{ 'Icon-Check.svg' | inline_asset_content }}</span>
-                      </span>
-                    {% elsif block.settings.block_icon_img2 == 'Icon-Truck' %}
-                      <span class="wow icon_animate my_svg-wrapper about_icons">
-                        <span class="icon-wrap">&nbsp;{{ 'Icon-Truck.svg' | inline_asset_content }}</span>
-                      </span>
-                    {% else %}
-                     
-                    {% endif %}
-
-                      <h3 class="wow icon_animate about_info_head"> 
-                      {%- if block.settings.info_block_heading_2 != blank -%} 
-                          {{ block.settings.info_block_heading_2 }}
-                        {%- endif -%}
-                      </h3>
-                      {%- if block.settings.text2 != blank -%} 
-                        <p class="wow icon_animate">
-                          {{ block.settings.text2 }}
-                        </p>
-                      {%- endif -%}
-                    </div>
-
-                    <div class="about_info_text rte"> 
-                     
-                    {% if block.settings.block_icon_img3 == 'Icon-Clean' %}
-                      <span class="wow icon_animate my_svg-wrapper about_icons">
-                        <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
-                      </span>
-                    {% elsif block.settings.block_icon_img3 == 'Icon-Quiz' %}
-                      <span class="wow icon_animate my_svg-wrapper about_icons">
-                        <span class="icon-wrap">&nbsp;{{ 'Icon-Quiz.svg' | inline_asset_content }}</span>
-                      </span>
-                    {% elsif block.settings.block_icon_img3 == 'Icon-Support' %}
-                      <span class="wow icon_animate my_svg-wrapper about_icons">
-                        <span class="icon-wrap">&nbsp;{{ 'Icon-Support.svg' | inline_asset_content }}</span>
-                      </span>
-                    {% elsif block.settings.block_icon_img3 == 'Icon-Check' %}
-                      <span class="wow icon_animate my_svg-wrapper about_icons">
-                        <span class="icon-wrap">&nbsp;{{ 'Icon-Check.svg' | inline_asset_content }}</span>
-                      </span>
-                    {% elsif block.settings.block_icon_img3 == 'Icon-Truck' %}
-                      <span class="wow icon_animate my_svg-wrapper about_icons">
-                        <span class="icon-wrap">&nbsp;{{ 'Icon-Truck.svg' | inline_asset_content }}</span>
-                      </span>
-                    {% else %}
-                     
-                    {% endif %}
-
-                      <h3 class="wow icon_animate about_info_head"> 
-                      {%- if block.settings.info_block_heading_3 != blank -%} 
-                          {{ block.settings.info_block_heading_3 }}
-                        {%- endif -%}
-                      </h3>
-                      {%- if block.settings.text3 != blank -%} 
-                        <p class="wow icon_animate">
-                          {{ block.settings.text3 }}
-                        </p>
-                      {%- endif -%}
-                    </div>
-
-                    <div class="about_info_text rte"> 
-
-                    {% if block.settings.block_icon_img4 == 'Icon-Clean' %}
-                      <span class="wow icon_animate my_svg-wrapper about_icons">
-                        <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
-                      </span>
-                    {% elsif block.settings.block_icon_img4 == 'Icon-Quiz' %}
-                      <span class="wow icon_animate my_svg-wrapper about_icons">
-                        <span class="icon-wrap">&nbsp;{{ 'Icon-Quiz.svg' | inline_asset_content }}</span>
-                      </span>
-                    {% elsif block.settings.block_icon_img4 == 'Icon-Support' %}
-                      <span class="wow icon_animate my_svg-wrapper about_icons">
-                        <span class="icon-wrap">&nbsp;{{ 'Icon-Support.svg' | inline_asset_content }}</span>
-                      </span>
-                    {% elsif block.settings.block_icon_img4 == 'Icon-Check' %}
-                      <span class="wow icon_animate my_svg-wrapper about_icons">
-                        <span class="icon-wrap">&nbsp;{{ 'Icon-Check.svg' | inline_asset_content }}</span>
-                      </span>
-                    {% elsif block.settings.block_icon_img4 == 'Icon-Truck' %}
-                      <span class="wow icon_animate my_svg-wrapper about_icons">
-                        <span class="icon-wrap">&nbsp;{{ 'Icon-Truck.svg' | inline_asset_content }}</span>
-                      </span>
-                    {% else %}
-                     
-                    {% endif %}
-
-                      <h3 class="wow icon_animate about_info_head"> 
-                      {%- if block.settings.info_block_heading_4 != blank -%} 
-                          {{ block.settings.info_block_heading_4 }}
-                        {%- endif -%}
-                      </h3>
-                      {%- if block.settings.text4 != blank -%} 
-                        <p class="wow icon_animate">
-                          {{ block.settings.text4 }}
-                        </p>
-                      {%- endif -%}
-                    </div>
-
-
-                  </div>
-
-                {%- endif -%}
-
-              
-                {%- if block.settings.link_label != blank -%}
-                  <a
-                    class="about_info_link link animate-arrow"
-                    {% if block.settings.link == blank %}
-                      role="link" aria-disabled="true"
-                    {% else %}
                       href="{{ block.settings.link }}"
-                    {% endif %}
-                  >
-                    {{- block.settings.link_label | escape -}}
-                    <span class="svg-wrapper"
-                      ><span class="icon-wrap">&nbsp;{{ 'icon-arrow.svg' | inline_asset_content }}</span></span
-                    >
-                  </a>
-                {%- endif -%}
+                      {% endif %}>
+                      {{- block.settings.link_label | escape -}}
+                      <span class="svg-wrapper">
+                        <span class="icon-wrap">&nbsp;{{ 'icon-arrow.svg' | inline_asset_content }}</span>
+                      </span>
+                    </a>
+                  {%- endif -%}
+                </div>
               </div>
-            </div>
-          </li>
+            </li>
+          {%- elsif forloop.index == 3 -%}
+            <li
+              id="Slide-{{ section.id }}-{{ forloop.index }}"
+              class="last_image_mutli multicolumn-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if section.settings.column_alignment == 'center' %} center{% endif %}{{ empty_column }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              {{ block.shopify_attributes }}
+              {% if settings.animations_reveal_on_scroll %}
+              data-cascade
+              style="--animation-order: {{ forloop.index }};"
+              {% endif %}>
+              <div class="multicolumn-card content-container">
+                {%- if block.settings.image != blank -%}
+                  {% if section.settings.image_ratio == 'adapt' or section.settings.image_ratio == 'circle' %}
+                    {% assign spaced_image = true %}
+                  {% endif %}
+
+                  {%- if forloop.index == 1 -%}
+                    <div class="multicolumn-card__image-wrapper multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} {% endif %}">
+                      <div
+                        class="media media--transparent media--{{ section.settings.image_ratio }}"
+                        {% if section.settings.image_ratio == 'adapt' %}
+                        style="padding-bottom: {{ 1 | divided_by: highest_ratio | times: 100 }}%;"
+                        {% endif %}>
+                        {%- liquid
+                          assign number_of_columns = section.settings.columns_desktop
+                          assign number_of_columns_mobile = section.settings.columns_mobile
+                          assign grid_space_desktop = number_of_columns | minus: 1 | times: settings.spacing_grid_horizontal | plus: 100 | append: 'px'
+                          assign grid_space_tablet = number_of_columns_mobile | minus: 1 | times: settings.spacing_grid_horizontal | plus: 100 | append: 'px'
+                          assign grid_space_mobile = number_of_columns_mobile | minus: 1 | times: settings.spacing_grid_horizontal | divided_by: 2 | plus: 30 | append: 'px'
+                          if section.settings.image_width == 'half'
+                            assign image_width = 0.5
+                          elsif section.settings.image_width == 'third'
+                            assign image_width = 0.33
+                          else
+                            assign image_width = 1
+                          endif
+                        -%}
+                        {% capture sizes %}
+                    (min-width: {{ settings.page_width }}px) calc(({{ settings.page_width }}px - {{ grid_space_desktop }}) * {{ image_width }} /  {{ number_of_columns }}),
+                    (min-width: 990px) calc((100vw - {{ grid_space_desktop }}) * {{ image_width }} / {{ number_of_columns }}),
+                    (min-width: 750px) calc((100vw - {{ grid_space_tablet }}) * {{ image_width }} / {{ number_of_columns_mobile }}),
+                    calc((100vw - {{ grid_space_mobile }}) * {{ image_width }} / {{ number_of_columns_mobile }})
+                  {% endcapture %}
+                        {{
+                          block.settings.image | image_url: width: 3200 | image_tag: widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200', sizes: sizes, class: 'multicolumn-card__image'
+                        }}
+                      </div>
+                    </div>
+                  {%- else -%}
+                    <div class="multicolumn-card__image-wrapper multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} multicolumn-card-spacing{% endif %}">
+                      <div
+                        class="media media--transparent media--{{ section.settings.image_ratio }}"
+                        {% if section.settings.image_ratio == 'adapt' %}
+                        style="padding-bottom: {{ 1 | divided_by: highest_ratio | times: 100 }}%;"
+                        {% endif %}>
+                        {%- liquid
+                          assign number_of_columns = section.settings.columns_desktop
+                          assign number_of_columns_mobile = section.settings.columns_mobile
+                          assign grid_space_desktop = number_of_columns | minus: 1 | times: settings.spacing_grid_horizontal | plus: 100 | append: 'px'
+                          assign grid_space_tablet = number_of_columns_mobile | minus: 1 | times: settings.spacing_grid_horizontal | plus: 100 | append: 'px'
+                          assign grid_space_mobile = number_of_columns_mobile | minus: 1 | times: settings.spacing_grid_horizontal | divided_by: 2 | plus: 30 | append: 'px'
+                          if section.settings.image_width == 'half'
+                            assign image_width = 0.5
+                          elsif section.settings.image_width == 'third'
+                            assign image_width = 0.33
+                          else
+                            assign image_width = 1
+                          endif
+                        -%}
+                        {% capture sizes %}
+                    (min-width: {{ settings.page_width }}px) calc(({{ settings.page_width }}px - {{ grid_space_desktop }}) * {{ image_width }} /  {{ number_of_columns }}),
+                    (min-width: 990px) calc((100vw - {{ grid_space_desktop }}) * {{ image_width }} / {{ number_of_columns }}),
+                    (min-width: 750px) calc((100vw - {{ grid_space_tablet }}) * {{ image_width }} / {{ number_of_columns_mobile }}),
+                    calc((100vw - {{ grid_space_mobile }}) * {{ image_width }} / {{ number_of_columns_mobile }})
+                  {% endcapture %}
+                        {{
+                          block.settings.image | image_url: width: 3200 | image_tag: widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200', sizes: sizes, class: 'multicolumn-card__image'
+                        }}
+                      </div>
+                    </div>
+                  {%- endif -%}
+
+
+                {%- endif -%}
+
+                <div class="info_multi_column multicolumn-card__info">
+
+                  {%- if forloop.index != 3 and forloop.index != 1 -%}
+                    {%- unless section.settings.title == blank -%}
+                      <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin multicolumn__title">
+                        <h2 class="featured_title title inline-richtext {{ section.settings.heading_size }}">
+                          {{ section.settings.title }}
+                        </h2>
+                        {%- if section.settings.button_label != blank and show_mobile_slider -%}
+                          <a href="{{ section.settings.button_link }}" class="link underlined-link large-up-hide">
+                            {{- section.settings.button_label | escape -}}
+                          </a>
+                        {%- endif -%}
+                      </div>
+                    {%- endunless -%}
+                  {%- endif -%}
+
+                  {%- if block.settings.title != blank -%}
+                    <div class="about_large_title rte">{{ block.settings.title }}</div>
+                  {%- endif -%}
+
+                  {%- if block.settings.info_block_heading_1 != blank -%}
+                    <div class="icon_grid">
+
+                      <div class="about_info_text rte">
+                        {% comment %} <span class="my_svg-wrapper about_icons">
+                                                                            <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
+                                                                    </span> {% endcomment %}
+
+                        {% if block.settings.block_icon_img1 == 'Icon-Clean' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img1 == 'Icon-Quiz' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Quiz.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img1 == 'Icon-Support' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Support.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img1 == 'Icon-Check' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Check.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img1 == 'Icon-Truck' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Truck.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% else %}
+
+                        {% endif %}
+
+                        <h3 class="wow icon_animate about_info_head">
+                          {%- if block.settings.info_block_heading_1 != blank -%}
+                            {{ block.settings.info_block_heading_1 }}
+                          {%- endif -%}
+                        </h3>
+                        {%- if block.settings.text1 != blank -%}
+                          <p class="wow icon_animate">
+                            {{ block.settings.text1 }}
+                          </p>
+                        {%- endif -%}
+                      </div>
+
+                      <div class="about_info_text rte">
+
+                        {% if block.settings.block_icon_img2 == 'Icon-Clean' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img2 == 'Icon-Quiz' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Quiz.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img2 == 'Icon-Support' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Support.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img2 == 'Icon-Check' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Check.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img2 == 'Icon-Truck' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Truck.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% else %}
+
+                        {% endif %}
+
+                        <h3 class="wow icon_animate about_info_head">
+                          {%- if block.settings.info_block_heading_2 != blank -%}
+                            {{ block.settings.info_block_heading_2 }}
+                          {%- endif -%}
+                        </h3>
+                        {%- if block.settings.text2 != blank -%}
+                          <p class="wow icon_animate">
+                            {{ block.settings.text2 }}
+                          </p>
+                        {%- endif -%}
+                      </div>
+
+                      <div class="about_info_text rte">
+
+                        {% if block.settings.block_icon_img3 == 'Icon-Clean' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img3 == 'Icon-Quiz' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Quiz.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img3 == 'Icon-Support' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Support.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img3 == 'Icon-Check' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Check.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img3 == 'Icon-Truck' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Truck.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% else %}
+
+                        {% endif %}
+
+                        <h3 class="wow icon_animate about_info_head">
+                          {%- if block.settings.info_block_heading_3 != blank -%}
+                            {{ block.settings.info_block_heading_3 }}
+                          {%- endif -%}
+                        </h3>
+                        {%- if block.settings.text3 != blank -%}
+                          <p class="wow icon_animate">
+                            {{ block.settings.text3 }}
+                          </p>
+                        {%- endif -%}
+                      </div>
+
+                      <div class="about_info_text rte">
+
+                        {% if block.settings.block_icon_img4 == 'Icon-Clean' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img4 == 'Icon-Quiz' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Quiz.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img4 == 'Icon-Support' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Support.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img4 == 'Icon-Check' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Check.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img4 == 'Icon-Truck' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Truck.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% else %}
+
+                        {% endif %}
+
+                        <h3 class="wow icon_animate about_info_head">
+                          {%- if block.settings.info_block_heading_4 != blank -%}
+                            {{ block.settings.info_block_heading_4 }}
+                          {%- endif -%}
+                        </h3>
+                        {%- if block.settings.text4 != blank -%}
+                          <p class="wow icon_animate">
+                            {{ block.settings.text4 }}
+                          </p>
+                        {%- endif -%}
+                      </div>
+
+
+                    </div>
+
+                  {%- endif -%}
+
+
+                  {%- if block.settings.link_label != blank -%}
+                    <a
+                      class="about_info_link link animate-arrow"
+                      {% if block.settings.link == blank %}
+                      role="link"
+                      aria-disabled="true"
+                      {% else %}
+                      href="{{ block.settings.link }}"
+                      {% endif %}>
+                      {{- block.settings.link_label | escape -}}
+                      <span class="svg-wrapper">
+                        <span class="icon-wrap">&nbsp;{{ 'icon-arrow.svg' | inline_asset_content }}</span>
+                      </span>
+                    </a>
+                  {%- endif -%}
+                </div>
+              </div>
+            </li>
+          {%- else -%}
+            <li
+              id="Slide-{{ section.id }}-{{ forloop.index }}"
+              class="info_multi multicolumn-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if section.settings.column_alignment == 'center' %} center{% endif %}{{ empty_column }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              {{ block.shopify_attributes }}
+              {% if settings.animations_reveal_on_scroll %}
+              data-cascade
+              style="--animation-order: {{ forloop.index }};"
+              {% endif %}>
+              <div class="multicolumn-card content-container">
+                {%- if block.settings.image != blank -%}
+                  {% if section.settings.image_ratio == 'adapt' or section.settings.image_ratio == 'circle' %}
+                    {% assign spaced_image = true %}
+                  {% endif %}
+
+                  {%- if forloop.index == 1 -%}
+                    <div class="multicolumn-card__image-wrapper multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} {% endif %}">
+                      <div
+                        class="media media--transparent media--{{ section.settings.image_ratio }}"
+                        {% if section.settings.image_ratio == 'adapt' %}
+                        style="padding-bottom: {{ 1 | divided_by: highest_ratio | times: 100 }}%;"
+                        {% endif %}>
+                        {%- liquid
+                          assign number_of_columns = section.settings.columns_desktop
+                          assign number_of_columns_mobile = section.settings.columns_mobile
+                          assign grid_space_desktop = number_of_columns | minus: 1 | times: settings.spacing_grid_horizontal | plus: 100 | append: 'px'
+                          assign grid_space_tablet = number_of_columns_mobile | minus: 1 | times: settings.spacing_grid_horizontal | plus: 100 | append: 'px'
+                          assign grid_space_mobile = number_of_columns_mobile | minus: 1 | times: settings.spacing_grid_horizontal | divided_by: 2 | plus: 30 | append: 'px'
+                          if section.settings.image_width == 'half'
+                            assign image_width = 0.5
+                          elsif section.settings.image_width == 'third'
+                            assign image_width = 0.33
+                          else
+                            assign image_width = 1
+                          endif
+                        -%}
+                        {% capture sizes %}
+                    (min-width: {{ settings.page_width }}px) calc(({{ settings.page_width }}px - {{ grid_space_desktop }}) * {{ image_width }} /  {{ number_of_columns }}),
+                    (min-width: 990px) calc((100vw - {{ grid_space_desktop }}) * {{ image_width }} / {{ number_of_columns }}),
+                    (min-width: 750px) calc((100vw - {{ grid_space_tablet }}) * {{ image_width }} / {{ number_of_columns_mobile }}),
+                    calc((100vw - {{ grid_space_mobile }}) * {{ image_width }} / {{ number_of_columns_mobile }})
+                  {% endcapture %}
+                        {{
+                          block.settings.image | image_url: width: 3200 | image_tag: widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200', sizes: sizes, class: 'multicolumn-card__image'
+                        }}
+                      </div>
+                    </div>
+                  {%- else -%}
+                    <div class="multicolumn-card__image-wrapper multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} multicolumn-card-spacing{% endif %}">
+                      <div
+                        class="media media--transparent media--{{ section.settings.image_ratio }}"
+                        {% if section.settings.image_ratio == 'adapt' %}
+                        style="padding-bottom: {{ 1 | divided_by: highest_ratio | times: 100 }}%;"
+                        {% endif %}>
+                        {%- liquid
+                          assign number_of_columns = section.settings.columns_desktop
+                          assign number_of_columns_mobile = section.settings.columns_mobile
+                          assign grid_space_desktop = number_of_columns | minus: 1 | times: settings.spacing_grid_horizontal | plus: 100 | append: 'px'
+                          assign grid_space_tablet = number_of_columns_mobile | minus: 1 | times: settings.spacing_grid_horizontal | plus: 100 | append: 'px'
+                          assign grid_space_mobile = number_of_columns_mobile | minus: 1 | times: settings.spacing_grid_horizontal | divided_by: 2 | plus: 30 | append: 'px'
+                          if section.settings.image_width == 'half'
+                            assign image_width = 0.5
+                          elsif section.settings.image_width == 'third'
+                            assign image_width = 0.33
+                          else
+                            assign image_width = 1
+                          endif
+                        -%}
+                        {% capture sizes %}
+                    (min-width: {{ settings.page_width }}px) calc(({{ settings.page_width }}px - {{ grid_space_desktop }}) * {{ image_width }} /  {{ number_of_columns }}),
+                    (min-width: 990px) calc((100vw - {{ grid_space_desktop }}) * {{ image_width }} / {{ number_of_columns }}),
+                    (min-width: 750px) calc((100vw - {{ grid_space_tablet }}) * {{ image_width }} / {{ number_of_columns_mobile }}),
+                    calc((100vw - {{ grid_space_mobile }}) * {{ image_width }} / {{ number_of_columns_mobile }})
+                  {% endcapture %}
+                        {{
+                          block.settings.image | image_url: width: 3200 | image_tag: widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200', sizes: sizes, class: 'multicolumn-card__image'
+                        }}
+                      </div>
+                    </div>
+                  {%- endif -%}
+
+
+                {%- endif -%}
+
+                <div class="info_multi_column multicolumn-card__info">
+
+                  {%- if forloop.index != 3 and forloop.index != 1 -%}
+                    {%- unless section.settings.title == blank -%}
+                      <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin multicolumn__title">
+                        <h2 class="featured_title title inline-richtext {{ section.settings.heading_size }}">
+                          {{ section.settings.title }}
+                        </h2>
+                        {%- if section.settings.button_label != blank and show_mobile_slider -%}
+                          <a href="{{ section.settings.button_link }}" class="link underlined-link large-up-hide">
+                            {{- section.settings.button_label | escape -}}
+                          </a>
+                        {%- endif -%}
+                      </div>
+                    {%- endunless -%}
+                  {%- endif -%}
+
+                  {%- if block.settings.title != blank -%}
+                    <div class="about_large_title rte">{{ block.settings.title }}</div>
+                  {%- endif -%}
+
+                  {%- if block.settings.info_block_heading_1 != blank -%}
+                    <div class="icon_grid">
+
+                      <div class="about_info_text rte">
+                        {% comment %} <span class="my_svg-wrapper about_icons">
+                                                                            <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
+                                                                    </span> {% endcomment %}
+
+                        {% if block.settings.block_icon_img1 == 'Icon-Clean' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img1 == 'Icon-Quiz' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Quiz.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img1 == 'Icon-Support' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Support.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img1 == 'Icon-Check' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Check.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img1 == 'Icon-Truck' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Truck.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% else %}
+
+                        {% endif %}
+
+                        <h3 class="wow icon_animate about_info_head">
+                          {%- if block.settings.info_block_heading_1 != blank -%}
+                            {{ block.settings.info_block_heading_1 }}
+                          {%- endif -%}
+                        </h3>
+                        {%- if block.settings.text1 != blank -%}
+                          <p class="wow icon_animate">
+                            {{ block.settings.text1 }}
+                          </p>
+                        {%- endif -%}
+                      </div>
+
+                      <div class="about_info_text rte">
+
+                        {% if block.settings.block_icon_img2 == 'Icon-Clean' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img2 == 'Icon-Quiz' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Quiz.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img2 == 'Icon-Support' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Support.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img2 == 'Icon-Check' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Check.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img2 == 'Icon-Truck' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Truck.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% else %}
+
+                        {% endif %}
+
+                        <h3 class="wow icon_animate about_info_head">
+                          {%- if block.settings.info_block_heading_2 != blank -%}
+                            {{ block.settings.info_block_heading_2 }}
+                          {%- endif -%}
+                        </h3>
+                        {%- if block.settings.text2 != blank -%}
+                          <p class="wow icon_animate">
+                            {{ block.settings.text2 }}
+                          </p>
+                        {%- endif -%}
+                      </div>
+
+                      <div class="about_info_text rte">
+
+                        {% if block.settings.block_icon_img3 == 'Icon-Clean' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img3 == 'Icon-Quiz' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Quiz.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img3 == 'Icon-Support' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Support.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img3 == 'Icon-Check' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Check.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img3 == 'Icon-Truck' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Truck.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% else %}
+
+                        {% endif %}
+
+                        <h3 class="wow icon_animate about_info_head">
+                          {%- if block.settings.info_block_heading_3 != blank -%}
+                            {{ block.settings.info_block_heading_3 }}
+                          {%- endif -%}
+                        </h3>
+                        {%- if block.settings.text3 != blank -%}
+                          <p class="wow icon_animate">
+                            {{ block.settings.text3 }}
+                          </p>
+                        {%- endif -%}
+                      </div>
+
+                      <div class="about_info_text rte">
+
+                        {% if block.settings.block_icon_img4 == 'Icon-Clean' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Clean.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img4 == 'Icon-Quiz' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Quiz.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img4 == 'Icon-Support' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Support.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img4 == 'Icon-Check' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Check.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% elsif block.settings.block_icon_img4 == 'Icon-Truck' %}
+                          <span class="wow icon_animate my_svg-wrapper about_icons">
+                            <span class="icon-wrap">&nbsp;{{ 'Icon-Truck.svg' | inline_asset_content }}</span>
+                          </span>
+                        {% else %}
+
+                        {% endif %}
+
+                        <h3 class="wow icon_animate about_info_head">
+                          {%- if block.settings.info_block_heading_4 != blank -%}
+                            {{ block.settings.info_block_heading_4 }}
+                          {%- endif -%}
+                        </h3>
+                        {%- if block.settings.text4 != blank -%}
+                          <p class="wow icon_animate">
+                            {{ block.settings.text4 }}
+                          </p>
+                        {%- endif -%}
+                      </div>
+
+
+                    </div>
+
+                  {%- endif -%}
+
+
+                  {%- if block.settings.link_label != blank -%}
+                    <a
+                      class="about_info_link link animate-arrow"
+                      {% if block.settings.link == blank %}
+                      role="link"
+                      aria-disabled="true"
+                      {% else %}
+                      href="{{ block.settings.link }}"
+                      {% endif %}>
+                      {{- block.settings.link_label | escape -}}
+                      <span class="svg-wrapper">
+                        <span class="icon-wrap">&nbsp;{{ 'icon-arrow.svg' | inline_asset_content }}</span>
+                      </span>
+                    </a>
+                  {%- endif -%}
+                </div>
+              </div>
+            </li>
+          {%- endif -%}
+
+
+          {% comment %} </li> {% endcomment %}
         {%- endfor -%}
       </ul>
 
@@ -356,22 +931,22 @@
             type="button"
             class="slider-button slider-button--prev"
             name="previous"
-            aria-label="{{ 'general.slider.previous_slide' | t }}"
-          >
+            aria-label="{{ 'general.slider.previous_slide' | t }}">
             <span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span>
           </button>
-           <div class="slider-counter caption">
+          <div class="slider-counter caption">
             <span class="slider-counter--current">1</span>
-            <span aria-hidden="true"> / </span>
+            <span aria-hidden="true">
+              /
+            </span>
             <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
             <span class="slider-counter--total">{{ section.blocks.size }}</span>
-          </div> 
+          </div>
           <button
             type="button"
             class="slider-button slider-button--next"
             name="next"
-            aria-label="{{ 'general.slider.next_slide' | t }}"
-          >
+            aria-label="{{ 'general.slider.next_slide' | t }}">
             <span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span>
           </button>
         </div>
@@ -382,11 +957,11 @@
         <a
           class="button button--primary"
           {% if section.settings.button_link == blank %}
-            role="link" aria-disabled="true"
+          role="link"
+          aria-disabled="true"
           {% else %}
-            href="{{ section.settings.button_link }}"
-          {% endif %}
-        >
+          href="{{ section.settings.button_link }}"
+          {% endif %}>
           {{ section.settings.button_label | escape }}
         </a>
       {%- endif -%}
@@ -395,246 +970,222 @@
 </div>
 
 {% schema %}
-{
-  "name": "New Multicolumn",
-  "class": "section",
-  "tag": "section",
-  "disabled_on": {
-    "groups": ["header", "footer"]
-  },
-  "settings": [
-    {
-      "type": "inline_richtext",
-      "id": "title",
-      "default": "New Multicolumn",
-      "label": "t:sections.multicolumn.settings.title.label"
+  {
+    "name": "New Multicolumn",
+    "class": "section",
+    "tag": "section",
+    "disabled_on": {
+      "groups": ["header", "footer"]
     },
-    {
-      "type": "select",
-      "id": "heading_size",
-      "options": [
-        {
-          "value": "h2",
-          "label": "t:sections.all.heading_size.options__1.label"
-        },
-        {
-          "value": "h1",
-          "label": "t:sections.all.heading_size.options__2.label"
-        },
-        {
-          "value": "h0",
-          "label": "t:sections.all.heading_size.options__3.label"
-        },
-        {
-          "value": "hxl",
-          "label": "t:sections.all.heading_size.options__4.label"
-        },
-        {
-          "value": "hxxl",
-          "label": "t:sections.all.heading_size.options__5.label"
-        }
-      ],
-      "default": "h1",
-      "label": "t:sections.all.heading_size.label"
-    },
-    {
-      "type": "select",
-      "id": "image_width",
-      "options": [
-        {
-          "value": "third",
-          "label": "t:sections.multicolumn.settings.image_width.options__1.label"
-        },
-        {
-          "value": "half",
-          "label": "t:sections.multicolumn.settings.image_width.options__2.label"
-        },
-        {
-          "value": "full",
-          "label": "t:sections.multicolumn.settings.image_width.options__3.label"
-        }
-      ],
-      "default": "full",
-      "label": "t:sections.multicolumn.settings.image_width.label"
-    },
-    {
-      "type": "select",
-      "id": "image_ratio",
-      "options": [
-        {
-          "value": "adapt",
-          "label": "t:sections.multicolumn.settings.image_ratio.options__1.label"
-        },
-        {
-          "value": "portrait",
-          "label": "t:sections.multicolumn.settings.image_ratio.options__2.label"
-        },
-        {
-          "value": "square",
-          "label": "t:sections.multicolumn.settings.image_ratio.options__3.label"
-        },
-        {
-          "value": "circle",
-          "label": "t:sections.multicolumn.settings.image_ratio.options__4.label"
-        }
-      ],
-      "default": "adapt",
-      "label": "t:sections.multicolumn.settings.image_ratio.label"
-    },
-    {
-      "type": "range",
-      "id": "columns_desktop",
-      "min": 1,
-      "max": 6,
-      "step": 1,
-      "default": 3,
-      "label": "t:sections.multicolumn.settings.columns_desktop.label"
-    },
-    {
-      "type": "select",
-      "id": "column_alignment",
-      "options": [
-        {
-          "value": "left",
-          "label": "t:sections.multicolumn.settings.column_alignment.options__1.label"
-        },
-        {
-          "value": "center",
-          "label": "t:sections.multicolumn.settings.column_alignment.options__2.label"
-        }
-      ],
-      "default": "left",
-      "label": "t:sections.multicolumn.settings.column_alignment.label"
-    },
-    {
-      "type": "select",
-      "id": "background_style",
-      "options": [
-        {
-          "value": "none",
-          "label": "t:sections.multicolumn.settings.background_style.options__1.label"
-        },
-        {
-          "value": "primary",
-          "label": "t:sections.multicolumn.settings.background_style.options__2.label"
-        }
-      ],
-      "default": "primary",
-      "label": "t:sections.multicolumn.settings.background_style.label"
-    },
-    {
-      "type": "text",
-      "id": "button_label",
-      "default": "t:sections.multicolumn.settings.button_label.default",
-      "label": "t:sections.multicolumn.settings.button_label.label"
-    },
-    {
-      "type": "url",
-      "id": "button_link",
-      "label": "t:sections.multicolumn.settings.button_link.label"
-    },
-    {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "t:sections.all.colors.label",
-      "default": "scheme-1"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.multicolumn.settings.header_mobile.content"
-    },
-    {
-      "type": "select",
-      "id": "columns_mobile",
-      "options": [
-        {
-          "value": "1",
-          "label": "t:sections.multicolumn.settings.columns_mobile.options__1.label"
-        },
-        {
-          "value": "2",
-          "label": "t:sections.multicolumn.settings.columns_mobile.options__2.label"
-        }
-      ],
-      "default": "1",
-      "label": "t:sections.multicolumn.settings.columns_mobile.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "swipe_on_mobile",
-      "default": false,
-      "label": "t:sections.multicolumn.settings.swipe_on_mobile.label"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 36
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
-    },
-    {
-      "type": "header",
-      "content": "Mobile Section Padding"
-    },
-    {
-      "type": "range",
-      "id": "mobile_padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 0
-    },
-    {
-      "type": "range",
-      "id": "mobile_padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
-    }
-  ],
-  "blocks": [
-    {
-      "type": "column",
-      "name": "t:sections.multicolumn.blocks.column.name",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "t:sections.multicolumn.blocks.column.settings.image.label"
-        },
-        {
-          "type": "richtext",
-          "id": "title",
-          "default": "t:sections.multicolumn.blocks.column.settings.title.default",
-          "label": "t:sections.multicolumn.blocks.column.settings.title.label"
-        },
-        {
-          "type": "header",
-          "content": "Info Block 1"
-        },
-        {
+    "settings": [
+      {
+        "type": "inline_richtext",
+        "id": "title",
+        "default": "New Multicolumn",
+        "label": "t:sections.multicolumn.settings.title.label"
+      },
+      {
+        "type": "select",
+        "id": "heading_size",
+        "options": [
+          {
+            "value": "h2",
+            "label": "t:sections.all.heading_size.options__1.label"
+          },
+          {
+            "value": "h1",
+            "label": "t:sections.all.heading_size.options__2.label"
+          },
+          {
+            "value": "h0",
+            "label": "t:sections.all.heading_size.options__3.label"
+          },
+          {
+            "value": "hxl",
+            "label": "t:sections.all.heading_size.options__4.label"
+          }, {
+            "value": "hxxl",
+            "label": "t:sections.all.heading_size.options__5.label"
+          }
+        ],
+        "default": "h1",
+        "label": "t:sections.all.heading_size.label"
+      },
+      {
+        "type": "select",
+        "id": "image_width",
+        "options": [
+          {
+            "value": "third",
+            "label": "t:sections.multicolumn.settings.image_width.options__1.label"
+          }, {
+            "value": "half",
+            "label": "t:sections.multicolumn.settings.image_width.options__2.label"
+          }, {
+            "value": "full",
+            "label": "t:sections.multicolumn.settings.image_width.options__3.label"
+          }
+        ],
+        "default": "full",
+        "label": "t:sections.multicolumn.settings.image_width.label"
+      },
+      {
+        "type": "select",
+        "id": "image_ratio",
+        "options": [
+          {
+            "value": "adapt",
+            "label": "t:sections.multicolumn.settings.image_ratio.options__1.label"
+          }, {
+            "value": "portrait",
+            "label": "t:sections.multicolumn.settings.image_ratio.options__2.label"
+          }, {
+            "value": "square",
+            "label": "t:sections.multicolumn.settings.image_ratio.options__3.label"
+          }, {
+            "value": "circle",
+            "label": "t:sections.multicolumn.settings.image_ratio.options__4.label"
+          }
+        ],
+        "default": "adapt",
+        "label": "t:sections.multicolumn.settings.image_ratio.label"
+      }, {
+        "type": "range",
+        "id": "columns_desktop",
+        "min": 1,
+        "max": 6,
+        "step": 1,
+        "default": 3,
+        "label": "t:sections.multicolumn.settings.columns_desktop.label"
+      }, {
+        "type": "select",
+        "id": "column_alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "t:sections.multicolumn.settings.column_alignment.options__1.label"
+          }, {
+            "value": "center",
+            "label": "t:sections.multicolumn.settings.column_alignment.options__2.label"
+          }
+        ],
+        "default": "left",
+        "label": "t:sections.multicolumn.settings.column_alignment.label"
+      }, {
+        "type": "select",
+        "id": "background_style",
+        "options": [
+          {
+            "value": "none",
+            "label": "t:sections.multicolumn.settings.background_style.options__1.label"
+          }, {
+            "value": "primary",
+            "label": "t:sections.multicolumn.settings.background_style.options__2.label"
+          }
+        ],
+        "default": "primary",
+        "label": "t:sections.multicolumn.settings.background_style.label"
+      }, {
+        "type": "text",
+        "id": "button_label",
+        "default": "t:sections.multicolumn.settings.button_label.default",
+        "label": "t:sections.multicolumn.settings.button_label.label"
+      }, {
+        "type": "url",
+        "id": "button_link",
+        "label": "t:sections.multicolumn.settings.button_link.label"
+      }, {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "t:sections.all.colors.label",
+        "default": "scheme-1"
+      }, {
+        "type": "header",
+        "content": "t:sections.multicolumn.settings.header_mobile.content"
+      }, {
+        "type": "select",
+        "id": "columns_mobile",
+        "options": [
+          {
+            "value": "1",
+            "label": "t:sections.multicolumn.settings.columns_mobile.options__1.label"
+          }, {
+            "value": "2",
+            "label": "t:sections.multicolumn.settings.columns_mobile.options__2.label"
+          }
+        ],
+        "default": "1",
+        "label": "t:sections.multicolumn.settings.columns_mobile.label"
+      }, {
+        "type": "checkbox",
+        "id": "swipe_on_mobile",
+        "default": false,
+        "label": "t:sections.multicolumn.settings.swipe_on_mobile.label"
+      }, {
+        "type": "header",
+        "content": "t:sections.all.padding.section_padding_heading"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      }, {
+        "type": "header",
+        "content": "Mobile Section Padding"
+      }, {
+        "type": "range",
+        "id": "mobile_padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 0
+      }, {
+        "type": "range",
+        "id": "mobile_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      }
+    ],
+    "blocks": [
+      {
+        "type": "column",
+        "name": "t:sections.multicolumn.blocks.column.name",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "t:sections.multicolumn.blocks.column.settings.image.label"
+          },
+          {
+            "type": "richtext",
+            "id": "title",
+            "default": "t:sections.multicolumn.blocks.column.settings.title.default",
+            "label": "t:sections.multicolumn.blocks.column.settings.title.label"
+          },
+          {
+            "type": "header",
+            "content": "Info Block 1"
+          },
+          {
             "type": "select",
             "id": "block_icon_img1",
             "label": "Select SVG",
@@ -654,31 +1205,26 @@
               {
                 "value": "Icon-Check",
                 "label": "Icon-Check"
-              },
-              {
+              }, {
                 "value": "Icon-Truck",
                 "label": "Icon-Truck"
               }
             ],
             "default": "Icon-Clean"
-          },
-        {
-          "type": "inline_richtext",
-          "id": "info_block_heading_1",
-          "default": "<strong>Info Block 1 Heading</strong>",
-          "label": "Info Block 1 Heading"
-        },
-        {
-          "type": "text",
-          "id": "text1",
-          "default": "Info Block 1 Text",
-          "label": "Info Block 1 Text"
-        },
-        {
-          "type": "header",
-          "content": "Info Block 2"
-        },
-        {
+          }, {
+            "type": "inline_richtext",
+            "id": "info_block_heading_1",
+            "default": "<strong>Info Block 1 Heading</strong>",
+            "label": "Info Block 1 Heading"
+          }, {
+            "type": "text",
+            "id": "text1",
+            "default": "Info Block 1 Text",
+            "label": "Info Block 1 Text"
+          }, {
+            "type": "header",
+            "content": "Info Block 2"
+          }, {
             "type": "select",
             "id": "block_icon_img2",
             "label": "Select SVG",
@@ -698,31 +1244,26 @@
               {
                 "value": "Icon-Check",
                 "label": "Icon-Check"
-              },
-              {
+              }, {
                 "value": "Icon-Truck",
                 "label": "Icon-Truck"
               }
             ],
             "default": "Icon-Quiz"
-          },
-        {
-          "type": "inline_richtext",
-          "id": "info_block_heading_2",
-          "default": "<strong>Info Block 2 Heading</strong>",
-          "label": "Info Block 2 Heading"
-        },
-        {
-          "type": "text",
-          "id": "text2",
-          "default": "Info Block 2 Text",
-          "label": "Info Block 2 Text"
-        },
-        {
-          "type": "header",
-          "content": "Info Block 3"
-        },
-        {
+          }, {
+            "type": "inline_richtext",
+            "id": "info_block_heading_2",
+            "default": "<strong>Info Block 2 Heading</strong>",
+            "label": "Info Block 2 Heading"
+          }, {
+            "type": "text",
+            "id": "text2",
+            "default": "Info Block 2 Text",
+            "label": "Info Block 2 Text"
+          }, {
+            "type": "header",
+            "content": "Info Block 3"
+          }, {
             "type": "select",
             "id": "block_icon_img3",
             "label": "Select SVG",
@@ -742,31 +1283,26 @@
               {
                 "value": "Icon-Check",
                 "label": "Icon-Check"
-              },
-              {
+              }, {
                 "value": "Icon-Truck",
                 "label": "Icon-Truck"
               }
             ],
             "default": "Icon-Support"
-          },
-        {
-          "type": "inline_richtext",
-          "id": "info_block_heading_3",
-          "default": "<strong>Info Block 3 Heading</strong>",
-          "label": "Info Block 3 Heading"
-        },
-        {
-          "type": "text",
-          "id": "text3",
-          "default": "Info Block 3 Text",
-          "label": "Info Block 3 Text"
-        },
-        {
-          "type": "header",
-          "content": "Info Block 4"
-        },
-        {
+          }, {
+            "type": "inline_richtext",
+            "id": "info_block_heading_3",
+            "default": "<strong>Info Block 3 Heading</strong>",
+            "label": "Info Block 3 Heading"
+          }, {
+            "type": "text",
+            "id": "text3",
+            "default": "Info Block 3 Text",
+            "label": "Info Block 3 Text"
+          }, {
+            "type": "header",
+            "content": "Info Block 4"
+          }, {
             "type": "select",
             "id": "block_icon_img4",
             "label": "Select SVG",
@@ -786,54 +1322,47 @@
               {
                 "value": "Icon-Check",
                 "label": "Icon-Check"
-              },
-              {
+              }, {
                 "value": "Icon-Truck",
                 "label": "Icon-Truck"
               }
             ],
             "default": "Icon-Check"
-          },
-        {
-          "type": "inline_richtext",
-          "id": "info_block_heading_4",
-          "default": "<strong>Info Block 4 Heading</strong>",
-          "label": "Info Block 4 Heading"
-        },
-        {
-          "type": "text",
-          "id": "text4",
-          "default": "Info Block 4 Text",
-          "label": "Info Block 4 Text"
-        },
-        {
-          "type": "text",
-          "id": "link_label",
-          "label": "t:sections.multicolumn.blocks.column.settings.link_label.label"
-        },
-        {
-          "type": "url",
-          "id": "link",
-          "label": "t:sections.multicolumn.blocks.column.settings.link.label"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "New 2 Column Icon Info",
-      "blocks": [
-        {
-          "type": "column"
-        },
-        {
-          "type": "column"
-        },
-        {
-          "type": "column"
-        }
-      ]
-    }
-  ]
-}
+          }, {
+            "type": "inline_richtext",
+            "id": "info_block_heading_4",
+            "default": "<strong>Info Block 4 Heading</strong>",
+            "label": "Info Block 4 Heading"
+          }, {
+            "type": "text",
+            "id": "text4",
+            "default": "Info Block 4 Text",
+            "label": "Info Block 4 Text"
+          }, {
+            "type": "text",
+            "id": "link_label",
+            "label": "t:sections.multicolumn.blocks.column.settings.link_label.label"
+          }, {
+            "type": "url",
+            "id": "link",
+            "label": "t:sections.multicolumn.blocks.column.settings.link.label"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "New 2 Column Icon Info",
+        "blocks": [
+          {
+            "type": "column"
+          }, {
+            "type": "column"
+          }, {
+            "type": "column"
+          }
+        ]
+      }
+    ]
+  }
 {% endschema %}
