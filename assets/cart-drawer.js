@@ -41,7 +41,7 @@ class CartDrawer extends HTMLElement {
       this.classList.add('animate', 'active');
       const sales_corner = document.querySelector('#mw_corner_sale_cart_drawer');
       if(sales_corner){
-        this.querySelector('.mw_corner_sale_cart_drawer').classList.add('active');
+        sales_corner.classList.add('active');
       }
       console.log('testing open cart event from cart-drawer.js cart link....');
       const flavour_link = document.querySelector('#click_flavour_modal_cart');
@@ -83,7 +83,11 @@ class CartDrawer extends HTMLElement {
 
   close() {
     this.classList.remove('active');
-    this.querySelector('.mw_corner_sale_cart_drawer').classList.remove('active');
+    const sales_corner = document.querySelector('#mw_corner_sale_cart_drawer');
+      if(sales_corner){
+        sales_corner.classList.remove('active');
+      }
+   
     document.getElementById('cart_backdrop').classList.remove('cart_blurry');
     removeTrapFocus(this.activeElement);
     document.body.classList.remove('overflow-hidden');
