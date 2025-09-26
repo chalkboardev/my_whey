@@ -2886,8 +2886,8 @@ quick-add-modal .product__title>a:hover {
     border-bottom-left-radius: 0px !important;
 }
 
-.mw_corner_sale_cart_drawer.active {
-    display: flex;
+.mw_corner_sale_cart_drawer.active_sale {
+    display: flex !important;
     animation-name: fadeIn;
     animation-duration: 1.5s;
     animation-iteration-count: 1;

@@ -39,10 +39,29 @@ class CartDrawer extends HTMLElement {
     setTimeout(() => {
       document.getElementById('cart_backdrop').classList.add('cart_blurry');
       this.classList.add('animate', 'active');
-      const sales_corner = document.querySelector('#mw_corner_sale_cart_drawer');
-      if(sales_corner){
-        this.querySelector('.mw_corner_sale_cart_drawer').classList.add('active');
+      // ----------------------- START Implement check for sales corners usage: -----------------------
+      function addClassToExistingElements(targetClass, classToAdd) {
+          // Get all elements with the targetClass
+          const elements = document.getElementsByClassName(targetClass);
+
+          // Check if any elements with the targetClass exist
+          if (elements.length > 0) {
+            // Iterate over the collection and add the new class to each element
+            for (let i = 0; i < elements.length; i++) {
+              elements[i].classList.add(classToAdd);
+              elements[i].style.visibility = 'visible';
+              elements[i].style.zIndex = '99999';
+              elements[i].style.opacity = '1';
+              elements[i].style.display = 'flex !important';
+            }
+            console.log(`Class '${classToAdd}' added to all elements with class '${targetClass}'.`);
+          } else {
+            console.log(`No elements found with class '${targetClass}'.`);
+          }
       }
+      addClassToExistingElements('mw_corner_sale_cart_drawer', 'active_sale');
+      // ----------------------- END Implement check for sales corners usage: -----------------------
+
       console.log('testing open cart event from cart-drawer.js cart link....');
       const flavour_link = document.querySelector('#click_flavour_modal_cart');
       const flavour_link_close = document.querySelector('#flavour_popup__close');
@@ -83,11 +102,24 @@ class CartDrawer extends HTMLElement {
 
   close() {
     this.classList.remove('active');
-    const sales_corner = document.querySelector('#mw_corner_sale_cart_drawer');
-      if(sales_corner){
-        sales_corner.classList.remove('active');
-      }
-   
+    // ----------------------- START Implement check for sales corners usage: -----------------------
+    function addClassToExistingElements(targetClass, classToAdd) {
+        // Get all elements with the targetClass
+        const elements = document.getElementsByClassName(targetClass);
+
+        // Check if any elements with the targetClass exist
+        if (elements.length > 0) {
+          // Iterate over the collection and add the new class to each element
+          for (let i = 0; i < elements.length; i++) {
+            elements[i].classList.remove(classToAdd);
+          }
+          console.log(`Class '${classToAdd}' added to all elements with class '${targetClass}'.`);
+        } else {
+          console.log(`No elements found with class '${targetClass}'.`);
+        }
+    }
+    addClassToExistingElements('mw_corner_sale_cart_drawer', 'active_sale');
+    // ----------------------- END Implement check for sales corners usage: -----------------------
     document.getElementById('cart_backdrop').classList.remove('cart_blurry');
     removeTrapFocus(this.activeElement);
     document.body.classList.remove('overflow-hidden');

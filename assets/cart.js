@@ -232,6 +232,26 @@ class CartItems extends HTMLElement {
       })
       .finally(() => {
         this.disableLoading(line);
+        // ----------------------- START Implement check for sales corners usage: -----------------------
+        function addClassToExistingElements(targetClass, classToAdd) {
+          // Get all elements with the targetClass
+          const elements = document.getElementsByClassName(targetClass);
+
+          // Check if any elements with the targetClass exist
+          if (elements.length > 0) {
+            // Iterate over the collection and add the new class to each element
+            for (let i = 0; i < elements.length; i++) {
+              elements[i].classList.add(classToAdd);
+            }
+            console.log(`Class '${classToAdd}' added to all elements with class '${targetClass}'.`);
+          } else {
+            console.log(`No elements found with class '${targetClass}'.`);
+          }
+      }
+      addClassToExistingElements('mw_corner_sale_cart_drawer', 'active_sale');
+      // ----------------------- END Implement check for sales corners usage: -----------------------
+
+
         // -------- START ENABLE THE FLAVOUR MODAL BUTTON AFTER QUANTITY CHANGED -----------
         const flavour_link = document.querySelector('#click_flavour_modal_cart');
         const flavour_link_close = document.querySelector('#flavour_popup__close');
