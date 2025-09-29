@@ -2671,6 +2671,7 @@ quick-add-modal .product__title>a:hover {
         background: #ffffff59;
         right: 0;
         padding: 0 6px 0 6px;
+        z-index: 9999999;
     }
     /* .product_icons {
         margin-bottom: 0 !important;
