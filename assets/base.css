@@ -1456,6 +1456,7 @@ body .menu-drawer__close-button {
     position: absolute;
     right: 9px;
     top: 0;
+    z-index: 9999999;
 }
 
 @media screen and (max-width: 1120px) {
