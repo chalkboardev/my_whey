@@ -1460,7 +1460,7 @@ body .menu-drawer__close-button {
     transition: all ease 1s;
 }
 
-.hide_product_icons {
+.hide_MW_product_icons {
     display: none !important;
     transition: all ease 1s;
 }

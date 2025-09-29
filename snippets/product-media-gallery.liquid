@@ -314,8 +314,7 @@
               Thumbnail-{{ section.id }}-0
             {%- endcapture -%}
             <button
-              id="show_product_icons"
-              class="thumbnail global-media-settings global-media-settings--no-shadow"
+              class="show_product_icons thumbnail global-media-settings global-media-settings--no-shadow"
               aria-label="{%- if featured_media.media_type == 'image' -%}{{ 'products.product.media.load_image' | t: index: media_index }}{%- elsif featured_media.media_type == 'model' -%}{{ 'products.product.media.load_model' | t: index: media_index }}{%- elsif featured_media.media_type == 'video' or featured_media.media_type == 'external_video' -%}{{ 'products.product.media.load_video' | t: index: media_index }}{%- endif -%}"
               aria-current="true"
               aria-controls="GalleryViewer-{{ section.id }}"
@@ -375,8 +374,7 @@
                 Thumbnail-{{ section.id }}-{{ forloop.index }}
               {%- endcapture -%}
               <button
-                id="show_product_icons"
-                class="thumbnail global-media-settings global-media-settings--no-shadow"
+                class="show_product_icons thumbnail global-media-settings global-media-settings--no-shadow"
                 aria-label="{%- if media.media_type == 'image' -%}{{ 'products.product.media.load_image' | t: index: media_index }}{%- elsif media.media_type == 'model' -%}{{ 'products.product.media.load_model' | t: index: media_index }}{%- elsif media.media_type == 'video' or media.media_type == 'external_video' -%}{{ 'products.product.media.load_video' | t: index: media_index }}{%- endif -%}"
                 {% if media == product.selected_or_first_available_variant.featured_media
                   or product.selected_or_first_available_variant.featured_media == null
@@ -426,8 +424,7 @@
               Thumbnail-{{ section.id }}-{{ forloop.index }}
             {%- endcapture -%}
             <button
-              id="hide_product_icons"
-              class="thumbnail global-media-settings global-media-settings--no-shadow"
+              class="hide_product_icons thumbnail global-media-settings global-media-settings--no-shadow"
               aria-label="{%- if media.media_type == 'image' -%}{{ 'products.product.media.load_image' | t: index: media_index }}{%- elsif media.media_type == 'model' -%}{{ 'products.product.media.load_model' | t: index: media_index }}{%- elsif media.media_type == 'video' or media.media_type == 'external_video' -%}{{ 'products.product.media.load_video' | t: index: media_index }}{%- endif -%}"
               {% if media == product.selected_or_first_available_variant.featured_media
                 or product.selected_or_first_available_variant.featured_media == null
@@ -476,26 +473,30 @@
 <script>
 document.addEventListener("DOMContentLoaded", function() {
 
-  const myButton_show_icons = document.getElementById('show_product_icons');
-  const myButton_hide_icons = document.getElementById('hide_product_icons');
+    const show_icons = document.querySelectorAll('.show_product_icons');
+    show_icons.forEach(button => {
+      button.addEventListener('click', function() {
+        const elementToHide = document.getElementById('product_icons');
+        if (elementToHide) {
+          // elementToHide.style.display = 'none';
+          elementToHide.classList.remove('hide_MW_product_icons');
+        }
+      });
+    });
 
-  myButton_show_icons.addEventListener('click', () => {
-    const elementToHide = document.getElementById('product_icons');
-    if (elementToHide) {
-      // elementToHide.style.display = 'flex'; 
-      elementToHide.classList.remove('hide_product_icons');
-    }
-  });
+    const hide_icons = document.querySelectorAll('.hide_product_icons');
+    hide_icons.forEach(button => {
+      button.addEventListener('click', function() {
+        const elementToHide = document.getElementById('product_icons');
+        if (elementToHide) {
+          // elementToHide.style.display = 'none';
+          elementToHide.classList.add('hide_MW_product_icons');
+        }
+      });
+    });
 
-  myButton_hide_icons.addEventListener('click', () => {
-    const elementToHide = document.getElementById('product_icons');
-    if (elementToHide) {
-      // elementToHide.style.display = 'none';
-      elementToHide.classList.add('hide_product_icons');
-    }
-  });
 
-});
+}); // ---- END DOMContentLoaded ------
 
 
 </script>
