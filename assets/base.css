@@ -1457,6 +1457,12 @@ body .menu-drawer__close-button {
     right: 9px;
     top: 0;
     z-index: 9999999;
+    transition: all ease 1s;
+}
+
+.hide_product_icons {
+    display: none !important;
+    transition: all ease 1s;
 }
 
 @media screen and (max-width: 1120px) {

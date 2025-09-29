@@ -475,25 +475,23 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  // Your code to execute when the DOM is ready
-  console.log("The DOM is fully loaded and ready for manipulation!");
 
   const myButton_show_icons = document.getElementById('show_product_icons');
   const myButton_hide_icons = document.getElementById('hide_product_icons');
 
   myButton_show_icons.addEventListener('click', () => {
     const elementToHide = document.getElementById('product_icons');
-    // Set the display style property to 'none'
     if (elementToHide) {
-      elementToHide.style.display = 'flex'; 
+      // elementToHide.style.display = 'flex'; 
+      elementToHide.classList.remove('hide_product_icons');
     }
   });
 
   myButton_hide_icons.addEventListener('click', () => {
     const elementToHide = document.getElementById('product_icons');
-    // Set the display style property to 'none'
     if (elementToHide) {
-      elementToHide.style.display = 'none';
+      // elementToHide.style.display = 'none';
+      elementToHide.classList.add('hide_product_icons');
     }
   });
 
