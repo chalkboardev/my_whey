@@ -165,16 +165,18 @@
           and section.settings.hide_variants
           and variant_images contains media.src
         %}
+        {% comment %} Yes we have media <br>
+        Product Media Size: {{media_count}}<br>
+        Variant Image Size: {{ variant_images.size  }} {% endcomment %}
           {% continue %}
+          {%- else -%}
+          {% comment %} No we DONT have media  <br>
+          Product Media Size: {{media_count}}<br>
+          Variant Image Size: {{ variant_images.size  }} {% endcomment %}
         {% endif %}
 
         {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
-          
-          {%- if forloop.first -%}
-            
-          {%- else -%}
-          
-          {% endif %}
+        
 
           <li
             id="Slide-{{ section.id }}-{{ media.id }}"
@@ -478,7 +480,7 @@
     const elementToHide = document.getElementById('product_icons');
     // Set the display style property to 'none'
     if (elementToHide) {
-      elementToHide.style.display = 'flex';
+      elementToHide.style.display = 'flex'; 
     }
   });
 
