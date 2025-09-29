@@ -314,6 +314,7 @@
               Thumbnail-{{ section.id }}-0
             {%- endcapture -%}
             <button
+              id="show_product_icons"
               class="thumbnail global-media-settings global-media-settings--no-shadow"
               aria-label="{%- if featured_media.media_type == 'image' -%}{{ 'products.product.media.load_image' | t: index: media_index }}{%- elsif featured_media.media_type == 'model' -%}{{ 'products.product.media.load_model' | t: index: media_index }}{%- elsif featured_media.media_type == 'video' or featured_media.media_type == 'external_video' -%}{{ 'products.product.media.load_video' | t: index: media_index }}{%- endif -%}"
               aria-current="true"
@@ -473,6 +474,10 @@
 </media-gallery>
 
 <script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Your code to execute when the DOM is ready
+  console.log("The DOM is fully loaded and ready for manipulation!");
+
   const myButton_show_icons = document.getElementById('show_product_icons');
   const myButton_hide_icons = document.getElementById('hide_product_icons');
 
@@ -491,4 +496,8 @@
       elementToHide.style.display = 'none';
     }
   });
+
+});
+
+
 </script>
