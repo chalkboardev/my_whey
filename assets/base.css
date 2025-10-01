@@ -3003,6 +3003,30 @@ quick-add-modal .product__title>a:hover {
     align-items: center;
 }
 
+@media screen and (max-width: 480px) {
+    .product_icons {
+        background: #ffffff59;
+        right: 1rem !important;
+        padding: 0 6px 0 6px;
+        z-index: 9999999;
+    }
+}
+
+@media screen and (max-width: 749px) {
+    .product_icons {
+        background: #ffffff59;
+        right: 4rem;
+        padding: 0 6px 0 6px;
+        z-index: 9999999;
+    }
+    .slider-mobile-gutter .slider.slider--mobile {
+        scroll-padding-left: 0 !important;
+    }
+    .product__media-list .product__media-item {
+        width: 100% !important;
+    }
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
