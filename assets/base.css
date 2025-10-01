@@ -3383,7 +3383,7 @@ quick-add-modal .product__title>a:hover {
         display: block;
         height: 93%;
         z-index: 2;
-        right: 1rem;
+        right: 1rem !important;
         scrollbar-width: none;
     }
     .my_product_thumb {
