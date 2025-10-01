@@ -1454,7 +1454,7 @@ body .menu-drawer__close-button {
     align-items: center;
     height: 100%;
     position: absolute;
-    right: 6rem;
+    right: 4rem;
     top: 0;
     z-index: 9999999;
     transition: all ease 1s;
@@ -3627,13 +3627,22 @@ quick-add-modal .product__title>a:hover {
     border-color: rgb(var(--color-foreground));
 }
 
+@media screen and (min-width: 900px) {
+    .product--small .thumbnail-list.slider--tablet-up .thumbnail-list__item.slider__slide {
+        width: calc(25% - 0.8rem);
+    }
+    .thumbnail-list.slider--tablet-up .thumbnail-list__item.slider__slide {
+        width: calc(16% - 0.8rem) !important;
+    }
+}
+
 @media screen and (min-width: 750px) {
     .product .price .badge {
         /* margin-bottom: 0rem !important; */
     }
     .thumbnail-slider .thumbnail-list.slider--tablet-up {
         padding: 0 !important;
-        margin-right: 93px !important;
+        /* margin-right: 93px !important; */
     }
     .cart-item__image {
         min-height: 107px;
