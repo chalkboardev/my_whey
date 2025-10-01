@@ -2515,7 +2515,7 @@ body .menu-drawer__close-button {
     display: inline-flex;
     width: 9px;
     height: 12px;
-    margin-right: -1px;
+    margin-right: 0px;
     margin-left: 0px;
     flex-wrap: wrap;
     align-content: center;
