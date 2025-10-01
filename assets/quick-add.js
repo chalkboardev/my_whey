@@ -118,7 +118,26 @@ if (!customElements.get('quick-add-modal')) {
                                 // ----- UPDATE THE BADGES -----
                                 var closestRegularPriceSalesBadge = closestProductInfo.querySelector('.price__badge-sale');
                                 if(targetElement.getAttribute('data-radio-type') == 'one_time_purchase'){
-                                    closestRegularPriceSalesBadge.innerHTML = " SALE";
+
+                                  function removeBeforeFirstSpace(str) {
+                                    const firstSpaceIndex = str.indexOf(' ');
+                                    if (firstSpaceIndex === -1) {
+                                      // No space found, return the original string
+                                      return str;
+                                    } else {
+                                      // Return the substring after the first space
+                                      return str.slice(firstSpaceIndex + 1);
+                                    }
+                                  }
+                                  const new_variant_compare_at_price = removeBeforeFirstSpace(variant_compare_at_price);
+                                  const new_variant_price = removeBeforeFirstSpace(variant_price);
+                                  var the_calc_discount = ((+new_variant_compare_at_price - +new_variant_price) / +new_variant_compare_at_price) *100;
+                                  //the_calc_discount = the_calc_discount.toFixed(2);
+                                  the_calc_discount = Math.floor(the_calc_discount);
+                                  console.log("NEW variant_compare_at_price: " + (new_variant_compare_at_price) );
+                                  console.log("Calc: " + the_calc_discount );
+
+                                    closestRegularPriceSalesBadge.innerHTML = " " + the_calc_discount + "% LESS";
                                     closestRegularPriceSalesBadge.classList.remove('price__badge--subscription');
                                 } else {
                                     closestRegularPriceSalesBadge.classList.add('price__badge--subscription');
