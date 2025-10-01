@@ -2454,7 +2454,7 @@ body .menu-drawer__close-button {
 
 .product__title h1 {
     font-weight: 600;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
 }
 
 .mw_price_div {
@@ -3031,6 +3031,10 @@ quick-add-modal .product__title>a:hover {
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    .product__title h1 {
+        font-weight: 600;
+        font-size: 2.5rem;
+    }
     .menu-drawer__menu .list-menu a {
         font-size: 1.7rem !important;
         padding: 1.1rem 4rem;
@@ -3953,6 +3957,10 @@ quick-add-modal .product__title>a:hover {
 /* --------- ONLY MEDIUM SIZE SCREENS START --------- */
 
 @media screen and (min-width: 990px) {
+    .product__title h1 {
+        font-weight: 600;
+        font-size: 4rem;
+    }
     .mega-menu[open] .mega-menu__content {
         padding: 2rem 2rem 3rem 3rem !important;
     }
@@ -3981,6 +3989,10 @@ quick-add-modal .product__title>a:hover {
 /* --------- ONLY DESKTOP ONLY START --------- */
 
 @media screen and (min-width: 749px) {
+    .product__title h1 {
+        font-weight: 600;
+        font-size: 3rem;
+    }
     .tab_customize button {
         width: 25vw !important;
     }
@@ -4005,6 +4017,10 @@ quick-add-modal .product__title>a:hover {
 /* ---------- LARGE SCREEN 1200px START ---------- */
 
 @media screen and (min-width: 1120px) {
+    .product__title h1 {
+        font-weight: 600;
+        font-size: 4rem;
+    }
     .last_image_mutli .media--adapt {
         padding-bottom: 66rem !important;
     }
@@ -4037,6 +4053,10 @@ quick-add-modal .product__title>a:hover {
 /* ---------- EXTRA LARGE SCREEN 1440px START ---------- */
 
 @media screen and (min-width: 1440px) {
+    .product__title h1 {
+        font-weight: 600;
+        font-size: 4rem;
+    }
     .my_multicolumn .multicolumn-card__image {
         width: 100% !important;
         object-fit: cover;
