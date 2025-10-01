@@ -3377,7 +3377,7 @@ quick-add-modal .product__title>a:hover {
         margin-top: unset !important;
         margin-bottom: unset !important;
         position: absolute;
-        margin-right: 0;
+        margin-right: 18px;
         overflow: scroll;
         gap: 0px;
         display: block;
