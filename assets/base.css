@@ -3383,6 +3383,7 @@ quick-add-modal .product__title>a:hover {
         display: block;
         height: 93%;
         z-index: 2;
+        right: 1rem;
         scrollbar-width: none;
     }
     .my_product_thumb {
@@ -3680,7 +3681,8 @@ quick-add-modal .product__title>a:hover {
         max-width: 71px;
     }
     .thumbnail-list__item.slider__slide {
-        width: calc(24% - 0.6rem) !important;
+        /* width: calc(24% - 0.6rem) !important; */
+        width: calc(20% - 0.6rem) !important;
     }
     .menu-drawer__navigation-container {
         /* height: 100vh !important; */
