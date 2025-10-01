@@ -132,8 +132,8 @@ if (!customElements.get('quick-add-modal')) {
                                   const new_variant_compare_at_price = removeBeforeFirstSpace(variant_compare_at_price);
                                   const new_variant_price = removeBeforeFirstSpace(variant_price);
                                   var the_calc_discount = ((+new_variant_compare_at_price - +new_variant_price) / +new_variant_compare_at_price) *100;
-                                  //the_calc_discount = the_calc_discount.toFixed(2);
-                                  the_calc_discount = Math.floor(the_calc_discount);
+                                  the_calc_discount = the_calc_discount.toFixed(2);
+                                  // the_calc_discount = Math.floor(the_calc_discount);
                                   console.log("NEW variant_compare_at_price: " + (new_variant_compare_at_price) );
                                   console.log("Calc: " + the_calc_discount );
 
