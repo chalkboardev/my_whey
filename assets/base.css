@@ -4185,6 +4185,12 @@ quick-add-modal .product__title>a:hover {
         font-size: 1.8rem;
         padding: 0 0 4px 0;
     }
+    .cart__contents .small-hide {
+        /* font-size: 1.8rem;
+        padding: 0 0 4px 0; */
+        font-size: 1rem;
+        line-height: calc(1 + 0.2 / var(--font-body-scale));
+    }
     /* .desk_wrap {
     margin: -27px 0 -26px 0;
   } */

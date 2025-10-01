@@ -152,7 +152,8 @@
                               height="{{ 150 | divided_by: item.image.aspect_ratio | ceil }}">
                           {% endif %}
 
-                          {% if item.product.compare_at_price_max > 0 %}
+                          {% comment %} {% if item.product.compare_at_price_max > 0 %} {% endcomment %}
+                          {% if item.variant.compare_at_price > 0 %}
                             <div style="border-top-color: rgba(139, 139, 139, 0.8) !important" class="mw_corner_sale_cart_drawer card__badge color-scheme-3 top left">
                                 <span id="" class=" badge--bottom-left color-scheme-3">
                                     <span class="sale_text_span_cart_drawer">Sale</span>  
@@ -204,12 +205,13 @@
                             </div> {% endcomment %}
     
                             {% comment %} ------------ END SHOW DISCOUNT NORMAL PRICE IF ON **DISCOUNT** ------------ {% endcomment %}
-
+                          
                           {% comment %} ------------ START SHOW NORMAL COMPARE AT PRICE IF ON NORMAL **SALE** ------------ {% endcomment %}
-                            {% if item.product.compare_at_price_max > 0 %}
-                            <span class="mw_compare_price cart-item__old-price">
-                              <s> {{ item.product.compare_at_price_max | money }}</s>
-                            </span>
+                            {% comment %} {% if item.product.compare_at_price_max > 0 %} {% endcomment %}
+                            {% if item.variant.compare_at_price > 0 %}
+                                <span class="mw_compare_price cart-item__old-price">
+                                  <s> {{ item.product.compare_at_price_max | money }}</s>
+                                </span>
                             {% endif %}
                           {% comment %} ------------ END SHOW NORMAL COMPARE AT PRICE IF ON NORMAL **SALE** ------------ {% endcomment %}
                         

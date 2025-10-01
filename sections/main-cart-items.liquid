@@ -118,7 +118,8 @@
                         </div>
                       {% endif %}
 
-                      {% if item.product.compare_at_price_max > 0 %}
+                      {% comment %} {% if item.product.compare_at_price_max > 0 %}  {% endcomment %}
+                        {% if item.variant.compare_at_price > 0 %}
                         <div style="border-top-color: rgba(139, 139, 139, 0.8) !important" class="mw_corner_sale_cart_main card__badge color-scheme-3 top left">
                             <span id="" class=" badge--bottom-left color-scheme-3">
                                 <span class="sale_text_span_cart_main">Sale</span>  
@@ -161,8 +162,14 @@
                         {% comment %} <div class="product-option">
                           {{ item.original_price | money }}
                         </div> {% endcomment %}
+                        {% comment %} Item Original: {{ item.original_price | money }}<br>
+                        Item Compare at: {{ item.product.compare_at_price_max }} <br>
+                        ZZ: {{ item.variant.compare_at_price }} {% endcomment %}
+                        {% comment %} {% if item.original_price < item.product.compare_at_price_max %}
 
-                        {% if item.product.compare_at_price_max > 0 %}
+                        {% endif %} {% endcomment %}
+
+                        {% if item.variant.compare_at_price > 0 %}
                           <s class="mw_compare_price cart-item__old-price product-option">{{ item.product.compare_at_price_max | money }}</s>
                         {% endif %}
                         <dl>
