@@ -3021,9 +3021,17 @@ quick-add-modal .product__title>a:hover {
     }
     .slider-mobile-gutter .slider.slider--mobile {
         scroll-padding-left: 0 !important;
+        /* overflow: hidden; */
     }
     .product__media-list .product__media-item {
         width: 100% !important;
+    }
+    .quick-add-modal__content .slider-mobile-gutter .slider .slider--mobile {
+        scroll-padding-left: unset !important;
+        /* overflow: hidden; */
+    }
+    .quick-add-modal__content .product__media-list .product__media-item {
+        width: unset !important;
     }
 }
 
@@ -3119,7 +3127,7 @@ quick-add-modal .product__title>a:hover {
         margin-top: unset !important;
         margin-bottom: unset !important;
         position: absolute;
-        margin-right: 18px;
+        margin-right: 1rem;
         overflow: scroll;
         gap: 0px;
         display: block;
