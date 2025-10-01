@@ -3391,17 +3391,18 @@ quick-add-modal .product__title>a:hover {
     }
     .product_icons {
         /* top: 10px;
-    margin-top: unset !important;
-    margin-bottom: unset !important;
-    position: absolute;
-    margin-right: 18px;
-    overflow: auto;
-    gap: 0px; */
-        top: 10px;
         margin-top: unset !important;
         margin-bottom: unset !important;
         position: absolute;
         margin-right: 18px;
+        overflow: auto;
+        gap: 0px; */
+        background: none;
+        top: 10px;
+        margin-top: unset !important;
+        margin-bottom: unset !important;
+        position: absolute;
+        margin-right: unset;
         overflow: scroll;
         gap: 0px;
         display: block;
