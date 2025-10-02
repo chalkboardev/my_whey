@@ -353,7 +353,7 @@
           "settings": {
             "text": "YOUR TRUSTED SUPPLIER",
             "image": "shopify://shop_images/shield3_b65427c9-a506-4362-8350-f48daf265f2e.png",
-            "image_width": 80,
+            "image_width": 60,
             "image_invert": false
           }
         },
@@ -362,7 +362,7 @@
           "settings": {
             "text": "BULK SUPPLEMENTS",
             "image": "shopify://shop_images/my_whey_logo_c.png",
-            "image_width": 90,
+            "image_width": 70,
             "image_invert": true
           }
         },
@@ -410,7 +410,7 @@
         "margin_bottom": 0,
         "mobile_margin_top": 0,
         "mobile_margin_bottom": 0,
-        "font_size": 18,
+        "font_size": 14,
         "scroll_text_move": "marquee-left",
         "pause_text": "paused",
         "padding_top": 0,
