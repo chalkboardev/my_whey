@@ -91,14 +91,40 @@
                     {%- if block.settings.menu != blank -%}
                       <ul class="footer-block__details-content list-unstyled">
                         {%- for link in block.settings.menu.links -%}
-                          <li>
-                            <a style="color:{{ section.settings.footer_font_color}};"
-                              href="{{ link.url }}"
-                              class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}"
-                            >
-                              {{ link.title | escape }}
-                            </a>
-                          </li>
+                          {% comment %} {% assign link.title = link.title | downcase %} {% endcomment %}
+                        {% capture mylink %}{{ link.title | downcase }}{% endcapture %}
+                          {% if mylink contains "my account" %}
+                            {% comment %} {{ mylink | escape }} {% endcomment %}
+                            {% if customer %}
+                              <li>
+                                <a style="color:{{ section.settings.footer_font_color}};"
+                                  href="{{ routes.account_logout_url }}"
+                                  class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}"
+                                >
+                                  My Account
+                                </a>
+                              </li>
+                            {% else %}
+                              <li>
+                                <a style="color:{{ section.settings.footer_font_color}};"
+                                  href="{{ routes.account_login_url }}"
+                                  class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}"
+                                >
+                                  Login
+                                </a>
+                              </li>
+                            {% endif %}
+                        {%- else -%}
+                            <li>
+                              <a style="color:{{ section.settings.footer_font_color}};"
+                                href="{{ link.url }}"
+                                class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}"
+                              >
+                                {{ link.title | escape }}
+                              </a>
+                            </li>
+                        {%- endif -%}
+ 
                         {%- endfor -%}
                       </ul>
                     {%- endif -%}
