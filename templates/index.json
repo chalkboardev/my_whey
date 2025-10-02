@@ -410,7 +410,7 @@
         "margin_bottom": 0,
         "mobile_margin_top": 0,
         "mobile_margin_bottom": 0,
-        "font_size": 18,
+        "font_size": 14,
         "scroll_text_move": "marquee-left",
         "pause_text": "paused",
         "padding_top": 0,
