@@ -3079,10 +3079,46 @@ quick-add-modal .product__title>a:hover {
     }
 }
 
+.footer-block .list-social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start !important;
+}
+
+.footer-block .list-social__item .svg-wrapper {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+}
+
+.footer-block .list-social__item .icon {
+    height: 4.2rem;
+    width: 4.2rem;
+    filter: brightness(0.4);
+    transition: all ease 1s;
+}
+
+.footer-block .list-social__item .icon:hover {
+    height: 4.2rem;
+    width: 4.2rem;
+    animation-name: heartBeat;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    transform: scale(1.05);
+    transition: all ease 1s;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    .footer-block .list-social {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center !important;
+    }
     .product__title h1 {
         font-weight: 600;
         font-size: 2.5rem;
