@@ -2481,6 +2481,7 @@ body .menu-drawer__close-button {
 .product__title h1 {
     font-weight: 600;
     font-size: 3.5rem;
+    color: #444;
 }
 
 .mw_price_div {
