@@ -33,6 +33,10 @@
     transition: all .3s ease !important;
 }
 
+.product-card-wrapper:hover .heading_marquee {
+    /* animation-play-state: paused; */
+}
+
 @media screen and (min-width: 750px) {
     .card__information {
         padding-bottom: 0 !important;
