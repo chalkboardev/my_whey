@@ -67,7 +67,14 @@
             {% endif %}
           >
             {%- for block in section.blocks -%}
-              
+
+             {% comment %} {%- assign transaction = transactions | last -%}  {% endcomment %}
+            {% comment %} {% capture last_block %}{{ block | last }}{% endcapture %} {% endcomment %}
+              {% assign count_blocks = section.blocks | size %}
+              {% assign count = count | plus: 1 %}
+
+
+
               <div
                 class="footer-block grid__item{% if block.type == 'link_list' %} footer-block--menu{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                 {{ block.shopify_attributes }}
@@ -155,9 +162,9 @@
                       {%- if settings.brand_description != blank -%}
                         <div style="color:{{ section.settings.footer_font_color}};" class="brand_div_description rte">{{ settings.brand_description }}</div>
                       {%- endif -%}
-                      {%- if block.settings.show_social and has_social_icons -%}
+                      {% comment %} {%- if block.settings.show_social and has_social_icons -%}
                         {%- render 'social-icons', class: 'footer__list-social' -%}
-                      {%- endif -%}
+                      {%- endif -%} {% endcomment %}
                     </div>
                   {%- when 'image' -%}
                     <div class="footer-block__details-content footer-block-image {{ block.settings.alignment }}">
@@ -181,6 +188,14 @@
                       {%- endif -%}
                     </div>
                 {%- endcase -%}
+                {% if count == count_blocks %} 
+                  {% comment %} Has Social Icons? {{ has_social_icons }} <br>
+                  Footer Social Icons Enabled? {{ section.settings.show_social }} <br>
+                  Last loop {% endcomment %}
+                  {%- if has_social_icons == true -%}
+                    {%- render 'social-icons', class: 'footer__list-social' -%}
+                  {%- endif -%}
+                {% endif %}
               </div>
             {%- endfor -%}
           </div>
@@ -280,9 +295,9 @@
             </div>
           {%- endif -%}
 
-          {%- if section.settings.show_social and has_social_icons -%}
+          {% comment %} {%- if section.settings.show_social and has_social_icons -%}
             {%- render 'social-icons', class: 'footer__list-social' -%}
-          {%- endif -%}
+          {%- endif -%} {% endcomment %}
         </div>
       </div>
     {%- endunless -%}
