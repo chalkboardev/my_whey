@@ -162,9 +162,9 @@
                       {%- if settings.brand_description != blank -%}
                         <div style="color:{{ section.settings.footer_font_color}};" class="brand_div_description rte">{{ settings.brand_description }}</div>
                       {%- endif -%}
-                      {% comment %} {%- if block.settings.show_social and has_social_icons -%}
+                       {%- if block.settings.show_social and has_social_icons -%}
                         {%- render 'social-icons', class: 'footer__list-social' -%}
-                      {%- endif -%} {% endcomment %}
+                      {%- endif -%} 
                     </div>
                   {%- when 'image' -%}
                     <div class="footer-block__details-content footer-block-image {{ block.settings.alignment }}">
