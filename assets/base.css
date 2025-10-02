@@ -3114,6 +3114,16 @@ quick-add-modal .product__title>a:hover {
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    .footer-block .fa-solid {
+        font-size: 1.6rem;
+    }
+    .footer-block__heading {
+        padding-bottom: 4px;
+        border-bottom: 1px solid #ffffff91;
+    }
+    .footer-block__newsletter .footer-block__heading {
+        border-bottom: none !important;
+    }
     .footer-block .list-social {
         display: flex;
         flex-wrap: wrap;

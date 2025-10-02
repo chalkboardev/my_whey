@@ -84,7 +84,21 @@
                 {% endif %}
               >
                 {%- if block.settings.heading != blank -%}
-                  <h2 style="color:{{ section.settings.footer_font_color}};font-weight: 600;" class="footer-block__heading inline-richtext">{{- block.settings.heading -}}</h2>
+               
+                  <h2 style="color:{{ section.settings.footer_font_color}};font-weight: 600;" class="footer-block__heading inline-richtext">
+                      
+                    {%- if block.settings.heading == 'ABOUT' -%}
+                      <i class="fa-solid fa-circle-info"></i>
+                    {% endif %}
+                    {%- if block.settings.heading == 'SHOP' -%}
+                      <i class="fa-solid fa-cart-shopping"></i>
+                    {% endif %}
+                    {%- if block.settings.heading == 'MORE' -%}
+                      <i class="fa-solid fa-comment-dots"></i>
+                    {% endif %}
+
+                    <span>{{- block.settings.heading -}}</span>
+                  </h2>
                 {%- endif -%}
 
                 {%- case block.type -%}
