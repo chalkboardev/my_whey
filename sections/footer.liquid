@@ -188,11 +188,11 @@
                       {%- endif -%}
                     </div>
                 {%- endcase -%}
-                {% if count == count_blocks %} 
+                {% if count == count_blocks %}
                   {% comment %} Has Social Icons? {{ has_social_icons }} <br>
                   Footer Social Icons Enabled? {{ section.settings.show_social }} <br>
                   Last loop {% endcomment %}
-                  {%- if has_social_icons == true -%}
+                  {%- if section.settings.show_social and has_social_icons -%}
                     {%- render 'social-icons', class: 'footer__list-social' -%}
                   {%- endif -%}
                 {% endif %}
