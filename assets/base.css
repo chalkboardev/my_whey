@@ -3516,6 +3516,7 @@ quick-add-modal .product__title>a:hover {
     .my_product_thumb {
         min-height: unset !important;
         height: unset !important;
+        border-radius: 6px;
     }
     .gif_price_pad {
         margin: 5px 0 0 0;
@@ -3784,6 +3785,7 @@ quick-add-modal .product__title>a:hover {
     .my_product_thumb {
         min-height: 400px !important;
         height: 400px !important;
+        border-radius: 6px;
     }
     .thumbnail-slider .thumbnail-list.slider--tablet-up {
         padding: 0 !important;
@@ -5212,6 +5214,7 @@ deferred-media {
 @media only screen and (min-width:1080px) {
     .my_product_thumb {
         max-height: 200px;
+        border-radius: 6px;
     }
     /* .product--small .thumbnail-list.slider--tablet-up li.thumbnail-list__item.slider__slide {
       transform: rotate(-90deg);
