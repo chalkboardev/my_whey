@@ -3753,7 +3753,12 @@ quick-add-modal .product__title>a:hover {
 
 .thumbnail[aria-current] {
     box-shadow: none !important;
+    border-radius: 6px;
     border-color: rgb(var(--color-foreground));
+}
+
+.thumbnail {
+    border-radius: 6px !important;
 }
 
 @media screen and (min-width: 900px) {
