@@ -3751,6 +3751,48 @@ quick-add-modal .product__title>a:hover {
 
 /* ---------- ONLY MOBILE ONLY END ---------- */
 
+
+/* .product-media-modal__content>* {
+    display: block;
+    height: auto;
+    width: 400%;
+    margin: auto;
+} */
+
+
+/* START try makde thumnails vertical */
+
+
+/* @media screen and (min-width: 750px) {
+    .product--thumbnail_slider .thumbnail-slider {
+        display: flex!important;
+        flex-direction: column !important;
+        align-items: normal !important;
+        width: min-content;
+        position: absolute;
+        top: 0;
+    }
+    .thumbnail-slider .thumbnail-list.slider--tablet-up {
+        display: flex;
+        padding: 0.5rem;
+        flex: 1;
+        flex-direction: column !important;
+        scroll-padding-left: 0.5rem;
+    }
+    .thumbnail-list.slider--tablet-up .thumbnail-list__item.slider__slide {
+        width: 100% !important;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .thumbnail-list.slider--tablet-up .thumbnail-list__item.slider__slide {
+        width: 100% !important;
+    }
+} */
+
+
+/* END try makde thumnails vertical */
+
 .thumbnail[aria-current] {
     box-shadow: none !important;
     border-radius: 6px;
@@ -4191,10 +4233,27 @@ quick-add-modal .product__title>a:hover {
         padding-left: 3.9rem;
         padding-right: 3.9rem;
     }
+    /* .product--medium:not(.product--no-media) .product__media-wrapper,
+    .product--small:not(.product--no-media) .product__info-wrapper {
+        max-width: 46% !important;
+        width: calc(46% - var(--grid-desktop-horizontal-spacing) / 2);
+    } */
 }
 
 
 /* ---------- EXTRA LARGE SCREEN 1440px END ---------- */
+
+@media screen and (min-width: 1200px) and (max-width: 1500px) {
+    .product--medium:not(.product--no-media) .product__media-wrapper,
+    .product--small:not(.product--no-media) .product__info-wrapper {
+        max-width: 47% !important;
+        width: calc(47% - var(--grid-desktop-horizontal-spacing) / 2);
+    }
+    .product.grid {
+        gap: 0;
+        justify-content: center;
+    }
+}
 
 
 /* ---------- EXTRA EXTRA WIDE SCREEN 1600px START ---------- */
