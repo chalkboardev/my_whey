@@ -840,7 +840,7 @@
     {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when '@app' -%}
-            {% comment %} {% render block %} {% endcomment %}
+            {% render block %}
 
             {% comment %} {%- when 'description' -%}
           {%- if product.description != blank -%}
