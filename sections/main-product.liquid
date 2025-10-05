@@ -506,7 +506,8 @@
                 
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
                 
-              {%- when 'buy_buttons' -%}
+              {%- when 'buy_buttons' -%} 
+                
                 {%- render 'buy-buttons',
                   block: block,
                   product: product,
@@ -522,12 +523,12 @@
     var is_quickv_open = document.querySelector('[id^="QuickAdd-"]');
     if ($("[id^='QuickAdd-']").length > 0) {
       // At least one element with "your-class-name" is visible
-      console.log("An element with id that contains 'QuickAdd' is visible.");
+      console.log("An element with ID that contains 'QuickAdd' is visible.");
       var loading_div = document.querySelector('.loading_subscription');
       loading_div.style.display = 'flex';
     } else {
       // No elements with "your-class-name" are visible
-      console.log("No elements with 'your-class-name' are visible.");
+      console.log("No elements with ID: 'QuickAdd' are visible.");
     }
 
     // alert('No subscription for this product');
@@ -557,6 +558,61 @@
           // Select all section elements where the 'data-category' attribute equals 'products'
           const productSections = document.querySelectorAll(`section[data-variant-id="${variantId}"]`);
 
+          setTimeout(function(){
+              var panda_elementsStartingWith = document.querySelectorAll('[id^="offers-list-container-"]');
+              if (panda_elementsStartingWith.length > 0) {
+                // At least one element with "your-class-name" is visible
+              console.log("An element with id that contains 'offers-list-container-' is visible.");
+              $(panda_elementsStartingWith).children().each(function() {
+                $(this).children().children().children().each(function() {
+                  $(this).children().on('click', function() {
+                        var the_block_single_same = $(this).find('.pb-56aa').html().toLowerCase();
+                        console.log('The block title:' + the_block_single_same);
+                        if(the_block_single_same == "single"){
+                            //console.log('Yes single...');
+                            var the_discounted_price = $(this).find('.money').eq(0).html();
+                            var the_old_price = $(this).find('.money').eq(0).html();
+                            console.log('Discounted Price:' + the_discounted_price);
+                            console.log('Normal Price:' + the_old_price);
+                        } else {
+                            console.log('NOT single...');
+                            console.log(this);
+                            // $(this).remove();
+                            var the_discounted_price = $(this).find('.money').eq(0).html();
+                            console.log('Discounted Price CHECK:' + the_discounted_price);
+                            the_discounted_price = the_discounted_price.substring(the_discounted_price.indexOf(";") + 1);
+                            var the_old_price = $(this).find('.money').eq(1).html();
+                            console.log('Old Price CHECK:' + the_old_price);
+                            the_old_price = the_old_price.substring(the_old_price.indexOf(";") + 1);
+
+                            the_old_price = the_old_price.replace(/,/g, ""); // Remove all commas
+                            the_old_price = parseFloat(the_old_price);
+
+                            the_discounted_price = the_discounted_price.replace(/,/g, ""); // Remove all commas
+                            the_discounted_price = parseFloat(the_discounted_price);
+
+                            console.log('Discounted Price:' + the_discounted_price);
+                            console.log('Normal Price:' + the_old_price);
+                            // a_price.css('background', '#000');
+                        }
+                      
+                  });
+                });
+              });
+              } else {
+                // No elements with "your-class-name" are visible
+                console.log("No elements with id 'offers-list-container' are visible.");
+              }
+          }, 5000);
+
+
+          // const panda_elementsStartingWith = document.querySelectorAll('[id^="offers-list-container-"]');
+          // if (panda_elementsStartingWith) {
+          //   console.log("Found a panda section ID: ", panda_elementsStartingWith);
+          // } else {
+          //   console.log("Did not find a panda section:");
+          // }
+
           // You can then iterate through the selected elements or access the first one if only one is expected
           if (productSections) {
             const elementsToRemove = document.querySelectorAll('.most_popular');
@@ -567,7 +623,22 @@
               console.log("Variant " + variantId + " is displaying now...");
               // console.log("Found a product section:" + variantId );
               const elementsWithClass = section.querySelectorAll('.shopify_subscriptions_app_block_label'); // Replace 'myClassName' with the actual class
-              const secondElement = elementsWithClass[1];
+              
+              const secondElement = elementsWithClass[1]; 
+              const firstElement = elementsWithClass[0];
+
+              function activateAlert() {
+                console.log("Button clicked!");
+                //console.log(this.className);
+                var price_is = this.querySelector('.shopify_subscriptions_in_widget_price').innerHTML;
+                console.log(price_is);
+                // this.querySelector('input').remove();
+                
+              }
+
+              secondElement.addEventListener("click", activateAlert, false); 
+              firstElement.addEventListener("click", activateAlert, false);
+
 
               const newSpan = document.createElement('span');
               newSpan.id = "most_popular";
@@ -629,6 +700,7 @@
      $(".shopify_subscriptions_app_container").parent().remove();
    </script>
 {% endif %}
+
 
               {%- when 'description' -%} 
                 {%- if product.description != blank -%}

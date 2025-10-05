@@ -50,7 +50,6 @@
           name="id"
           value="{{ product.selected_or_first_available_variant.id }}"
 
-
           {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout or product.selected_or_first_available_variant == null %}
           disabled
           {% endif %}
@@ -62,6 +61,7 @@
             , form: form
             , section: section -%}
         {%- endif -%}
+
 
         <div class="product-form__buttons">
           {%- liquid
@@ -78,7 +78,6 @@
             type="submit"
             name="add"
             class="mw_add_cart_btn add_to_cart_btn product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
-
 
             {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout or product.selected_or_first_available_variant == null %}
             disabled
