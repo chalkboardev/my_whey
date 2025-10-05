@@ -628,7 +628,7 @@
               const firstElement = elementsWithClass[0];
 
               function activateAlert() {
-                console.log("Button clicked!");
+                //console.log("Button clicked!");
                 //console.log(this.className);
                 var price_is = this.querySelector('.shopify_subscriptions_in_widget_price').innerHTML;
                 console.log(price_is);
@@ -689,7 +689,20 @@
         $(".shopify_subscriptions_app_block .shopify_subscriptions_app_block_label").eq(1).prepend('<span id="most_popular" class="most_popular color-scheme-5 gradient"> <img class="popular_icon" width="9" src="https://cdn.shopify.com/s/files/1/0713/8685/7724/files/thumb_1.png?v=1754842951" /> Most Popular</span>');
       }
     }
-        
+
+
+$(".shopify_subscriptions_app_block_label").click(function (e) {
+  //e.preventDefault();
+  e.stopPropagation();
+  var this_class = $(this).attr('class');
+  var inputField = $(this).find('input')[0].click();
+  //inputField.hide();
+  //inputField.trigger('click');
+  //alert(this_class);
+  // alert(this_id);
+}); 
+
+
    </script>
 {% else %}
   {% comment %} This product is a one-time purchase. {% endcomment %}
