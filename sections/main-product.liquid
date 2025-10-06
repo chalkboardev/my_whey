@@ -627,17 +627,139 @@
               const secondElement = elementsWithClass[1]; 
               const firstElement = elementsWithClass[0];
 
-              function activateAlert() {
+              function find_price() {
                 //console.log("Button clicked!");
-                //console.log(this.className);
+                the_block_is = this.querySelector('label').textContent;
+                console.log(the_block_is.includes('purchase'));
+                if(the_block_is.includes('purchase') == true){
+                    console.log('clicked one time...');
+                } else {
+                    console.log('clicked subscribe...');
+                }
                 var price_is = this.querySelector('.shopify_subscriptions_in_widget_price').innerHTML;
-                console.log(price_is);
+                price_is = price_is.substring(price_is.indexOf("R ") + 1);
+                // price_is = +price_is;
+                console.log("PRICE IS!!!! " + price_is);
+                var regular_price = this.querySelector('.shopify_subscriptions_app_block_label input').getAttribute('data-variant-price');
+                regular_price = +regular_price.substring(regular_price.indexOf("R ") + 1);
+                var compare_at_price = this.querySelector('.shopify_subscriptions_app_block_label input').getAttribute('data-variant-compare-at-price');
+                compare_at_price = +compare_at_price.substring(compare_at_price.indexOf("R ") + 1);
+                console.log("Regular Price: " + regular_price);
+                console.log("Compare at Price: " + compare_at_price);
+                var percentage_discount  = 100 - ((regular_price/compare_at_price)*100);
+                //console.log("Discount: " + percentage_discount);
+                // const selling_plan_id = targetElement.getAttribute('data-selling-plan-id');
+                //       const selling_plan_adjustment = targetElement.getAttribute('data-selling-plan-adjustment');
+                //       const variant_compare_at_price = targetElement.getAttribute('data-variant-compare-at-price');
                 // this.querySelector('input').remove();
+                
+
+
+
+
+              var panda_elementsStartingWith = document.querySelectorAll('[id^="offers-list-container-"]');
+
+              var count_panda_blocks = $(panda_elementsStartingWith)
+                  .children(':first') // Get the first child of the initial element
+                  .children(':first') // Get the first child of that first child
+                  .siblings().children() // Get all siblings of the element obtained in the previous step
+                  .length; // Get the count of these siblings
+              console.log("Number of pands blocks: ", count_panda_blocks);
+
+              if (panda_elementsStartingWith.length > 0) {
+                // At least one element with "your-class-name" is visible
+              console.log("An element with id that contains 'offers-list-container-' is visible.");
+  
+              $(panda_elementsStartingWith).children().each(function() {
+                var maxIterations = +count_panda_blocks + 1; // Define the specific amount of times to loop
+                var count = 0;  
+                $(this).children().children().children().children().each(function() {
+                        if (count >= maxIterations) {
+                            return false; // Exit the .each loop
+                        }
+                        var the_block_single_same = $(this).find('.pb-56aa').html().toLowerCase();
+                        console.log(count + ' The block title:' + the_block_single_same);
+
+                        if(count == 0){
+                            //console.log('Yes single...');
+                            var the_discounted_price = $(this).find('.money').eq(0).html();
+                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R " + price_is);
+                            //the_discounted_price = the_discounted_price.substring(the_discounted_price.indexOf(";") + 1);
+                            var the_old_price = $(this).find('.money').eq(1).html();
+                            var update_the_old_price = $(this).find('.money').eq(1).html("R " + compare_at_price);
+                            if(the_old_price == undefined){
+                              //alert('undefined!');
+                              the_old_price = the_discounted_price;
+                            } else {
+
+                            }
+                            // console.log('Discounted Price:' + the_discounted_price);
+                            // console.log('Normal Price:' + the_old_price);
+                        } else if(count == 1){
+                            //console.log('Yes single...');
+                            var the_discounted_price = $(this).find('.money').eq(0).html();
+                            const discounted_price_2 = (price_is*2).toFixed(2);
+                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R " + discounted_price_2);
+                            //the_discounted_price = the_discounted_price.substring(the_discounted_price.indexOf(";") + 1);
+                            var the_old_price = $(this).find('.money').eq(1).html();
+                            const the_old_price_2 = (compare_at_price*2).toFixed(2);
+                            var update_the_old_price = $(this).find('.money').eq(1).html("R " + the_old_price_2);
+                        } else if(count == 2){
+                            //console.log('Yes single...');
+                            var the_discounted_price = $(this).find('.money').eq(0).html();
+                            const discounted_price_3 = (price_is*3).toFixed(2);
+                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R " + discounted_price_3);
+                            //the_discounted_price = the_discounted_price.substring(the_discounted_price.indexOf(";") + 1);
+                            var the_old_price = $(this).find('.money').eq(1).html();
+                            const the_old_price_3 = (compare_at_price*3).toFixed(2);
+                            var update_the_old_price = $(this).find('.money').eq(1).html("R " + the_old_price_3);
+                        } else if(count == 3){
+                            console.log('FOURTH PRCE!!!!!!!...' + price_is*4);
+                            var the_discounted_price = $(this).find('.money').eq(0).html();
+                            const discounted_price_4 = (price_is*4).toFixed(2);
+                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R " + discounted_price_4);
+                            //the_discounted_price = the_discounted_price.substring(the_discounted_price.indexOf(";") + 1);
+                            var the_old_price = $(this).find('.money').eq(1).html();
+                            const the_old_price_4 = (compare_at_price*4).toFixed(2);
+                            var update_the_old_price = $(this).find('.money').eq(1).html("R " + the_old_price_4);
+                        } else {
+                            // console.log('NOT single...');
+                            // console.log(this);
+                            // // $(this).remove();
+                            // var the_discounted_price = $(this).find('.money').eq(0).html();
+                            // var update_the_discounted_price = $(this).find('.money').eq(0).html(price_is);
+                            // //console.log('Discounted Price CHECK:' + the_discounted_price);
+                            // the_discounted_price = the_discounted_price.substring(the_discounted_price.indexOf(";") + 1);
+                            // var the_old_price = $(this).find('.money').eq(1).html();
+                            // console.log('Old Price CHECK:' + the_old_price);
+                            // the_old_price = the_old_price.substring(the_old_price.indexOf(";") + 1);
+
+                            // the_old_price = the_old_price.replace(/,/g, ""); // Remove all commas
+                            // the_old_price = parseFloat(the_old_price);
+
+                            // the_discounted_price = the_discounted_price.replace(/,/g, ""); // Remove all commas
+                            // the_discounted_price = parseFloat(the_discounted_price);
+
+                            // // console.log('Discounted Price:' + the_discounted_price);
+                            // // console.log('Normal Price:' + the_old_price);
+                            // // a_price.css('background', '#000');
+                        }
+                        count++; // Increment the counter
+                });
+
+              });
+              } else {
+                // No elements with "your-class-name" are visible
+                console.log("No elements with id 'offers-list-container' are visible.");
+              }
+
+
+
                 
               }
 
-              secondElement.addEventListener("click", activateAlert, false); 
-              firstElement.addEventListener("click", activateAlert, false);
+              secondElement.addEventListener("click", find_price, false); 
+              firstElement.addEventListener("click", find_price, false);
 
 
               const newSpan = document.createElement('span');
@@ -711,6 +833,53 @@ $(".shopify_subscriptions_app_block_label").click(function (e) {
       loading_div.classList.add("not_subscription");
     // alert('No subscription for this product');
      $(".shopify_subscriptions_app_container").parent().remove();
+
+     setTimeout(function(){
+              var panda_elementsStartingWith = document.querySelectorAll('[id^="offers-list-container-"]');
+              if (panda_elementsStartingWith.length > 0) {
+                // At least one element with "your-class-name" is visible
+              console.log("An element with id that contains 'offers-list-container-' is visible.");
+              $(panda_elementsStartingWith).children().each(function() {
+                $(this).children().children().children().each(function() {
+                  $(this).children().on('click', function() {
+                        var the_block_single_same = $(this).find('.pb-56aa').html().toLowerCase();
+                        console.log('The block title:' + the_block_single_same);
+                        if(the_block_single_same == "single"){
+                            //console.log('Yes single...');
+                            var the_discounted_price = $(this).find('.money').eq(0).html();
+                            var the_old_price = $(this).find('.money').eq(0).html();
+                            console.log('Discounted Price:' + the_discounted_price);
+                            console.log('Normal Price:' + the_old_price);
+                        } else {
+                            console.log('NOT single...');
+                            console.log(this);
+                            // $(this).remove();
+                            var the_discounted_price = $(this).find('.money').eq(0).html();
+                            console.log('Discounted Price CHECK:' + the_discounted_price);
+                            the_discounted_price = the_discounted_price.substring(the_discounted_price.indexOf(";") + 1);
+                            var the_old_price = $(this).find('.money').eq(1).html();
+                            console.log('Old Price CHECK:' + the_old_price);
+                            the_old_price = the_old_price.substring(the_old_price.indexOf(";") + 1);
+
+                            the_old_price = the_old_price.replace(/,/g, ""); // Remove all commas
+                            the_old_price = parseFloat(the_old_price);
+
+                            the_discounted_price = the_discounted_price.replace(/,/g, ""); // Remove all commas
+                            the_discounted_price = parseFloat(the_discounted_price);
+
+                            console.log('Discounted Price:' + the_discounted_price);
+                            console.log('Normal Price:' + the_old_price);
+                            // a_price.css('background', '#000');
+                        }
+                      
+                  });
+                });
+              });
+              } else {
+                // No elements with "your-class-name" are visible
+                console.log("No elements with id 'offers-list-container' are visible.");
+              }
+          }, 5000);
    </script>
 {% endif %}
 
