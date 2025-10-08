@@ -541,7 +541,7 @@ table:not([class]) th {
     text-align: center;
     vertical-align: middle;
     cursor: pointer;
-    text-shadow: 1px 1px 8px #313131;
+    text-shadow: 0px 0px 3px #313131;
     border-radius: 30px;
     padding: 0;
     font-style: normal;
@@ -4203,6 +4203,10 @@ quick-add-modal .product__title>a:hover {
         font-weight: 600;
         transition: all ease 0.25s;
     }
+}
+
+#Quantity-Form-template--19937707229436__main {
+    display: block !important;
 }
 
 

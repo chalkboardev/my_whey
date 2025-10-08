@@ -367,13 +367,36 @@ if (!customElements.get('product-info')) {
             console.log('Found the closest active shopify_subscriptions_app_block section:', closestForm);
             var inputContainer = closestForm.querySelectorAll('.shopify_subscriptions_app_block_label label input')[0];
             if (inputContainer) {
-              console.log('ZZZ Found the closest', inputContainer);
-
-// var firstInput = inputContainer.querySelectorAll('label input')[0];
-// inputContainer.click();
+              console.log('Found the closest inputcontainer', inputContainer);
               inputContainer.checked = true;
+              
+              var single_price_is = inputContainer.getAttribute('data-variant-price');
+              single_price_is = single_price_is.substring(single_price_is.indexOf("R ") + 1).trim();
+              single_price_is = single_price_is.replace(/,/g, ""); // Remove all commas
+              single_price_is = parseFloat(single_price_is);
+              console.log('SINGLE PRICE IS:' + single_price_is);
+
+              var panda_elementsStartingWith = document.querySelectorAll('[id^="offers-list-container-"]');
+              if (panda_elementsStartingWith.length > 0) {
+                // At least one element with "your-class-name" is visible
+              console.log("YES An element with id that contains 'offers-list-container-' is visible.");
+              console.log(panda_elementsStartingWith);
+
+              const firstContainer = panda_elementsStartingWith[0];
+              // 3. Select the first input within that container
+              const firstInputInContainer = firstContainer.querySelector('input');
+              firstInputInContainer.click();
+              const updateCurrentValue = $('.quantity__input').val(1);
+
+              // const click_first_input = panda_elementsStartingWith.querySelector('input');
+              // var click_first_input = panda_elementsStartingWith.querySelector('input');
+              // click_first_input.click();
+              } else {
+                console.log("NO element with id that contains 'offers-list-container-' is visible.");
+              }
+
             } else {
-              console.log('DODNT Found the closest');
+              console.log('DIDNT FIND the closest...');
             }
 
           } else {
