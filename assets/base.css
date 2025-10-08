@@ -4194,13 +4194,13 @@ quick-add-modal .product__title>a:hover {
         align-items: center;
     }
     .collection-list .mw_collection_info a {
-        font-size: 30px;
-        font-weight: 500;
+        font-size: 2.5rem;
+        font-weight: 600;
         transition: all ease 0.25s;
     }
     .collection-list .mw_collection_info a:hover {
-        font-size: 34px;
-        font-weight: 500;
+        font-size: 2.5rem;
+        font-weight: 600;
         transition: all ease 0.25s;
     }
 }

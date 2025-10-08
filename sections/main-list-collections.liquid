@@ -13,12 +13,12 @@
             {{ section.settings.title }}
           </h1>
         {% comment %} <span>
-                                                                                                                {%- if current_tags %} 
-                                                                                                                <h2 style="color: #111;font-weight: 600;margin: 0 auto;padding: 10px 10px 10px 0;">
-                                                                                                                By Goal: <span style="color:#ff6700;">{{ current_tags | join: ', ' }}</span>
-                                                                                                                </h2>  
-                                                                                                                {% endif -%} 
-                                                                                          </span> {% endcomment %}
+            {%- if current_tags %} 
+            <h2 style="color: #111;font-weight: 600;margin: 0 auto;padding: 10px 10px 10px 0;">
+            By Goal: <span style="color:#ff6700;">{{ current_tags | join: ', ' }}</span>
+            </h2>  
+            {% endif -%} 
+                </span> {% endcomment %}
         </div>
       </div>
     </div>
@@ -31,9 +31,7 @@
 
 <div class="page-width" style="padding-top: 6rem;background: #eeeeee;padding-bottom:80px;">
   {% if section.settings.show_collection_list_image and section.settings.image %}
-  {% comment %} <h1 class="title title--primary inline-richtext">
-                        
-                          </h1> {% endcomment %}
+  {% comment %} <h1 class="title title--primary inline-richtext"></h1> {% endcomment %}
   {% else %}
     <h1 class="title title--primary inline-richtext{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
       {{ section.settings.title }}
@@ -68,7 +66,7 @@
         {% comment %} {{ collection.title }} {% endcomment %}
         {%- elsif collection.title == 'Home page' -%}
         {% comment %} {{ collection.title }} {% endcomment %}
-        {%- elsif collection.title == 'Flavours' -%}
+        {% comment %} {%- elsif collection.title == 'Flavours' -%} {% endcomment %}
         {% comment %} {{ collection.title }} {% endcomment %}
         {%- else -%}
           <li
