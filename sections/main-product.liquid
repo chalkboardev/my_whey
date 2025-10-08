@@ -602,10 +602,11 @@
                                   
                             });
                             var the_calculated_quantity = the_old_price/single_price_is;
+                            the_calculated_quantity = Math.floor(the_calculated_quantity);
                             console.log('CALCULATED QUANT: ' + the_calculated_quantity);
                            
                             const currentValue = $('.quantity__input').val();
-                            console.log("QUANT INPUT VALUE" + currentValue); // Outputs: This is the new value
+                            //console.log("QUANT INPUT VALUE: " + currentValue); 
                             const updateCurrentValue = $('.quantity__input').val(1);
                             
 
@@ -649,6 +650,7 @@
                             the_discounted_price = parseFloat(the_discounted_price);
 
                             var the_calculated_quantity = the_old_price/single_price_is;
+                            the_calculated_quantity = Math.floor(the_calculated_quantity);
 
                             console.log('Discounted Price:' + the_discounted_price);
                             console.log('Normal Price:' + the_old_price);
@@ -656,7 +658,7 @@
                             console.log('CALCULATED QUANT: ' + the_calculated_quantity);
 
                             const currentValue = $('.quantity__input').val();
-                            console.log("QUANT INPUT VALUE" + currentValue); // Outputs: This is the new value
+                            //console.log("QUANT INPUT VALUE: " + currentValue); 
                             const updateCurrentValue = $('.quantity__input').val(the_calculated_quantity);
                             
                         }
@@ -981,10 +983,42 @@ $(".shopify_subscriptions_app_block_label").click(function (e) {
                         console.log('The block title:' + the_block_single_same);
                         if(the_block_single_same == "single"){
                             //console.log('Yes single...');
-                            var the_discounted_price = $(this).find('.money').eq(0).html();
+                            var the_discounted_price = $(this).find('.money').eq(0).html(); 
+                            the_discounted_price = the_discounted_price.substring(the_discounted_price.indexOf(";") + 1);
+                            the_discounted_price = the_discounted_price.replace(/,/g, ""); // Remove all commas
+                            the_discounted_price = parseFloat(the_discounted_price);
                             var the_old_price = $(this).find('.money').eq(0).html();
+                            the_old_price = the_old_price.substring(the_old_price.indexOf(";") + 1);
+                            the_old_price = the_old_price.replace(/,/g, ""); // Remove all commas
+                            the_old_price = parseFloat(the_old_price);
                             console.log('Discounted Price:' + the_discounted_price);
                             console.log('Normal Price:' + the_old_price);
+
+                            var single_price_is = 0;
+                            const single_price_element = document.querySelectorAll('.price--show-badge .heighten_me');
+                            single_price_element.forEach(price_element => {
+                                 // target_visible_price = price_element.getAttribute('style');
+                                 //  console.log(target_visible_price);
+                                      //  console.log("Element is visible");
+                                      //  console.log("DISPLAY SET TO: " + target_visible_price);
+                                      single_price_is = price_element.textContent;
+                                      single_price_is = single_price_is.substring(single_price_is.indexOf("R ") + 1).trim();
+                                      single_price_is = single_price_is.replace(/,/g, ""); // Remove all commas
+                                      single_price_is = parseFloat(single_price_is);
+                                      // single_price_is = single_price_is.replace(/,/g, ""); // Remove all commas
+                                      // single_price_is = parseFloat(single_price_is);
+                                      console.log("SINGLE Price IS:" + single_price_is);
+                                 
+                                  
+                            });
+                            var the_calculated_quantity = the_old_price/single_price_is;
+                            the_calculated_quantity = Math.floor(the_calculated_quantity);
+                            console.log('CALCULATED QUANT: ' + the_calculated_quantity);
+
+                            const currentValue = $('.quantity__input').val();
+                            //console.log("QUANT INPUT VALUE: " + currentValue); 
+                            const updateCurrentValue = $('.quantity__input').val(1);
+                            
                         } else {
                             console.log('NOT single...');
                             console.log(this);
@@ -992,19 +1026,41 @@ $(".shopify_subscriptions_app_block_label").click(function (e) {
                             var the_discounted_price = $(this).find('.money').eq(0).html();
                             console.log('Discounted Price CHECK:' + the_discounted_price);
                             the_discounted_price = the_discounted_price.substring(the_discounted_price.indexOf(";") + 1);
+                            the_discounted_price = the_discounted_price.replace(/,/g, ""); // Remove all commas
+                            the_discounted_price = parseFloat(the_discounted_price);
                             var the_old_price = $(this).find('.money').eq(1).html();
                             console.log('Old Price CHECK:' + the_old_price);
                             the_old_price = the_old_price.substring(the_old_price.indexOf(";") + 1);
-
                             the_old_price = the_old_price.replace(/,/g, ""); // Remove all commas
                             the_old_price = parseFloat(the_old_price);
-
-                            the_discounted_price = the_discounted_price.replace(/,/g, ""); // Remove all commas
-                            the_discounted_price = parseFloat(the_discounted_price);
-
                             console.log('Discounted Price:' + the_discounted_price);
                             console.log('Normal Price:' + the_old_price);
-                            // a_price.css('background', '#000');
+
+                            var single_price_is = 0;
+                            const single_price_element = document.querySelectorAll('.price--show-badge .heighten_me');
+                            single_price_element.forEach(price_element => {
+                                 // target_visible_price = price_element.getAttribute('style');
+                                 //  console.log(target_visible_price);
+                                      //  console.log("Element is visible");
+                                      //  console.log("DISPLAY SET TO: " + target_visible_price);
+                                      single_price_is = price_element.textContent;
+                                      single_price_is = single_price_is.substring(single_price_is.indexOf("R ") + 1).trim();
+                                      single_price_is = single_price_is.replace(/,/g, ""); // Remove all commas
+                                      single_price_is = parseFloat(single_price_is);
+                                      // single_price_is = single_price_is.replace(/,/g, ""); // Remove all commas
+                                      // single_price_is = parseFloat(single_price_is);
+                                      console.log("SINGLE Price IS:" + single_price_is);
+                                 
+                                  
+                            });
+                            var the_calculated_quantity = the_old_price/single_price_is;
+                            the_calculated_quantity = Math.floor(the_calculated_quantity);
+                            console.log('CALCULATED QUANT: ' + the_calculated_quantity);
+                            
+                            const currentValue = $('.quantity__input').val();
+                            //console.log("QUANT INPUT VALUE: " + currentValue); 
+                            const updateCurrentValue = $('.quantity__input').val(the_calculated_quantity);
+
                         }
                       
                   });
