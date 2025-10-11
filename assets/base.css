@@ -3118,6 +3118,16 @@ quick-add-modal .product__title>a:hover {
     transition: all ease 1s;
 }
 
+.info_card .price__regular {
+    font-weight: 600;
+    color: #333333 !important;
+}
+
+.info_card .price__sale .price-item--sale {
+    color: #333333 !important;
+    font-weight: 600;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
@@ -3352,7 +3362,7 @@ quick-add-modal .product__title>a:hover {
         transition: all .3s ease !important;
     }
     .card-information {
-        height: 20px;
+        height: 36px;
     }
     .predictive-search--search-template {
         border-radius: 0 0 6px 6px !important;
@@ -4206,7 +4216,7 @@ quick-add-modal .product__title>a:hover {
 }
 
 #Quantity-Form-template--19937707229436__main {
-    /* display: block !important; */
+    display: block !important;
 }
 
 

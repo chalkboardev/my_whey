@@ -655,11 +655,31 @@
                             console.log('Discounted Price:' + the_discounted_price);
                             console.log('Normal Price:' + the_old_price);
                             console.log('THE SINGLE Price IS:' + single_price_is);
-                            console.log('CALCULATED QUANT: ' + the_calculated_quantity);
+                            console.log('CALCULATED QUANTZZ: ' + the_calculated_quantity);
 
                             const currentValue = $('.quantity__input').val();
                             //console.log("QUANT INPUT VALUE: " + currentValue); 
                             const updateCurrentValue = $('.quantity__input').val(the_calculated_quantity);
+
+                            if(the_calculated_quantity == "4"){
+                             
+                              //new_panda_quant.css('background','#333');
+                              setTimeout(function(){
+                                    var panda_plus = $("span:contains('4')").next();
+                                    var panda_minus = $("span:contains('4')").prev();
+                                    $(panda_plus).classList.add('clickPlus');
+                                     //$(panda_plus).click();
+                                     //$(panda_minus).click();
+                                   // $(panda_plus).click();
+                                    $('.clickPlus').on('click', function() {    // This is where we stopped...
+                                      console.log("Plus Button clicked!");
+                                    });
+                                    //  $(panda_minus).on('click', function() {
+                                    //   console.log("Minus Button clicked!");
+                                    // });
+                              }, 1000);
+                            }
+                           
                             
                         }
                       
@@ -1037,24 +1057,43 @@ $(".shopify_subscriptions_app_block_label").click(function (e) {
                             console.log('Normal Price:' + the_old_price);
 
                             var single_price_is = 0;
-                            const single_price_element = document.querySelectorAll('.price--show-badge .heighten_me');
+                            //var single_price_element = document.querySelectorAll('.price--show-badge .heighten_me');
+                            var single_price_element = document.querySelectorAll('.price--show-badge .my_normal_price');
+                            var firstElement = single_price_element[0]; 
+                            console.log("FIRST ELEMENT: " + firstElement.textContent.trim());
+                            if (firstElement.textContent.trim() == "") {
+                              console.log("Empty...");
+                              single_price_element = document.querySelectorAll('.price--show-badge .heighten_me');
+                            } else {
+                              console.log("Yes have price...");
+                              //single_price_element = document.querySelectorAll('.price--show-badge .heighten_me');
+                            }
+                            // if (single_price_element.length > 0) {
+                            //   console.log("Something...");
+                              
+                            // } else {
+                            //   console.log("Nothing...");
+                            //   //single_price_element = document.querySelectorAll('.price--show-badge .heighten_me');
+                            // }
                             single_price_element.forEach(price_element => {
                                  // target_visible_price = price_element.getAttribute('style');
                                  //  console.log(target_visible_price);
                                       //  console.log("Element is visible");
                                       //  console.log("DISPLAY SET TO: " + target_visible_price);
-                                      single_price_is = price_element.textContent;
+                                      single_price_is = price_element.textContent.trim();
+                                      console.log("SINGLE Price CHECK IS:" + single_price_is);
                                       single_price_is = single_price_is.substring(single_price_is.indexOf("R ") + 1).trim();
                                       single_price_is = single_price_is.replace(/,/g, ""); // Remove all commas
                                       single_price_is = parseFloat(single_price_is);
                                       // single_price_is = single_price_is.replace(/,/g, ""); // Remove all commas
                                       // single_price_is = parseFloat(single_price_is);
+                                      console.log("OLD Price IS:" + the_old_price); 
                                       console.log("SINGLE Price IS:" + single_price_is);
                                  
                                   
                             });
                             var the_calculated_quantity = the_old_price/single_price_is;
-                            the_calculated_quantity = Math.floor(the_calculated_quantity);
+                           // the_calculated_quantity = Math.floor(the_calculated_quantity);
                             console.log('CALCULATED QUANT: ' + the_calculated_quantity);
                             
                             const currentValue = $('.quantity__input').val();
