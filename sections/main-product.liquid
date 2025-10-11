@@ -562,7 +562,7 @@
               var panda_elementsStartingWith = document.querySelectorAll('[id^="offers-list-container-"]');
               if (panda_elementsStartingWith.length > 0) {
                 // At least one element with "your-class-name" is visible
-              console.log("An element with id that contains 'offers-list-container-' is visible.");
+              console.log("Special....An element with id that contains 'offers-list-container-' is visible.");
               $(panda_elementsStartingWith).children().each(function() {
                 $(this).children().children().children().each(function() {
                   $(this).children().on('click', function() {
@@ -603,7 +603,7 @@
                             });
                             var the_calculated_quantity = the_old_price/single_price_is;
                             the_calculated_quantity = Math.floor(the_calculated_quantity);
-                            console.log('CALCULATED QUANT: ' + the_calculated_quantity);
+                            console.log('SINGLE CALCULATED QUANT: ' + the_calculated_quantity);
                            
                             const currentValue = $('.quantity__input').val();
                             //console.log("QUANT INPUT VALUE: " + currentValue); 
@@ -655,7 +655,7 @@
                             console.log('Discounted Price:' + the_discounted_price);
                             console.log('Normal Price:' + the_old_price);
                             console.log('THE SINGLE Price IS:' + single_price_is);
-                            console.log('CALCULATED QUANTZZ: ' + the_calculated_quantity);
+                            console.log('Not single CALCULATED QUANT: ' + the_calculated_quantity);
 
                             const currentValue = $('.quantity__input').val();
                             //console.log("QUANT INPUT VALUE: " + currentValue); 
@@ -995,7 +995,7 @@ $(".shopify_subscriptions_app_block_label").click(function (e) {
               var panda_elementsStartingWith = document.querySelectorAll('[id^="offers-list-container-"]');
               if (panda_elementsStartingWith.length > 0) {
                 // At least one element with "your-class-name" is visible
-              console.log("An element with id that contains 'offers-list-container-' is visible.");
+              console.log("One-time purchase...An element with id that contains 'offers-list-container-' is visible.");
               $(panda_elementsStartingWith).children().each(function() {
                 $(this).children().children().children().each(function() {
                   $(this).children().on('click', function() {
@@ -1033,7 +1033,7 @@ $(".shopify_subscriptions_app_block_label").click(function (e) {
                             });
                             var the_calculated_quantity = the_old_price/single_price_is;
                             the_calculated_quantity = Math.floor(the_calculated_quantity);
-                            console.log('CALCULATED QUANT: ' + the_calculated_quantity);
+                            console.log('zzz purchase CALCULATED QUANT: ' + the_calculated_quantity);
 
                             const currentValue = $('.quantity__input').val();
                             //console.log("QUANT INPUT VALUE: " + currentValue); 
@@ -1068,13 +1068,7 @@ $(".shopify_subscriptions_app_block_label").click(function (e) {
                               console.log("Yes have price...");
                               //single_price_element = document.querySelectorAll('.price--show-badge .heighten_me');
                             }
-                            // if (single_price_element.length > 0) {
-                            //   console.log("Something...");
-                              
-                            // } else {
-                            //   console.log("Nothing...");
-                            //   //single_price_element = document.querySelectorAll('.price--show-badge .heighten_me');
-                            // }
+                         
                             single_price_element.forEach(price_element => {
                                  // target_visible_price = price_element.getAttribute('style');
                                  //  console.log(target_visible_price);
@@ -1094,7 +1088,7 @@ $(".shopify_subscriptions_app_block_label").click(function (e) {
                             });
                             var the_calculated_quantity = the_old_price/single_price_is;
                            // the_calculated_quantity = Math.floor(the_calculated_quantity);
-                            console.log('CALCULATED QUANT: ' + the_calculated_quantity);
+                            console.log('VOLUME CALCULATED QUANT: ' + the_calculated_quantity);
                             
                             const currentValue = $('.quantity__input').val();
                             //console.log("QUANT INPUT VALUE: " + currentValue); 

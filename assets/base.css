@@ -1018,6 +1018,16 @@ body .menu-drawer__close-button {
 }
 
 @media screen and (min-width: 990px) and (max-width: 1100px) {
+    .header__icon:not(.header__icon--summary),
+    .header__icon span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 44px;
+    }
+    .header__search {
+        max-width: 44px;
+    }
     .product_card_title {
         white-space: nowrap;
         overflow: hidden;
@@ -6978,6 +6988,7 @@ menu-drawer+.header__search {
     .header:not(.header--top-center) *>.header__search,
     .header--top-center>.header__search {
         display: inline-flex;
+        align-items: center;
     }
     .header:not(.header--top-center)>.header__search,
     .header--top-center *>.header__search {
