@@ -5576,7 +5576,7 @@ shopify-accelerated-checkout-cart {
     overflow: hidden;
 }
 
-.button,
+.product-form__buttons .button,
 .shopify-challenge__button,
 .customer button {
     font-size: 1.5rem !important;
