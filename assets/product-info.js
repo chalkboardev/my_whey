@@ -528,7 +528,7 @@ if (!customElements.get('product-info')) {
 
       const refreshSourceData = () => {
         if (this.hasAttribute('data-zoom-on-hover')) 
-          enableZoomOnHover(2);
+          enableZoomOnHover(3);
         
 
 
