@@ -236,10 +236,10 @@
                             {{- 'icon-discount.svg' | inline_asset_content -}}
                               <span id="buy_x" class="buy_x">
                               {% comment %} {{ discount.discount_application.title }} |  {% endcomment %}
-                              {%- if item.quantity < 5 -%}
+                              {%- if item.quantity < 4 -%}
                                 BUY {{ item.quantity }} |
                               {%- else -%}
-                                BUY 5+ |
+                                BUY 4+ |
                               {%- endif -%}
                             </span>
                             <span class="save_it">

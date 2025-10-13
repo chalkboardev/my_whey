@@ -665,18 +665,12 @@
                              
                               //new_panda_quant.css('background','#333');
                               setTimeout(function(){
-                                    var panda_plus = $("span:contains('4')").next();
-                                    var panda_minus = $("span:contains('4')").prev();
-                                    $(panda_plus).classList.add('clickPlus');
-                                     //$(panda_plus).click();
-                                     //$(panda_minus).click();
-                                   // $(panda_plus).click();
-                                    $('.clickPlus').on('click', function() {    // This is where we stopped...
-                                      console.log("Plus Button clicked!");
-                                    });
-                                    //  $(panda_minus).on('click', function() {
-                                    //   console.log("Minus Button clicked!");
-                                    // });
+                                    var panda_plus = $("button:contains('+')");
+                                    $(panda_plus).addClass("clickPlus");
+                                    //panda_plus.hide();
+                                    var panda_minus = $("button:contains('−')");
+                                    panda_minus.hide();
+                             
                               }, 1000);
                             }
                            
