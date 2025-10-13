@@ -3138,6 +3138,23 @@ quick-add-modal .product__title>a:hover {
     font-weight: 600;
 }
 
+.pickup-availability-button {
+    text-decoration: none !important;
+    color: #fff !important;
+    font-size: 1.3rem !important;
+    background: #a1a1a1 !important;
+    border: 2px solid #a1a1a1 !important;
+    border-radius: 50px;
+    text-shadow: 0px 0px 2px #3a3a3a !important;
+    padding: 0.1rem 1rem 0.1rem 1rem !important;
+    position: relative;
+    left: -10px;
+}
+
+.pickup-availability-info p {
+    font-size: 1.3rem !important;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
