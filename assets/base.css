@@ -1807,15 +1807,20 @@ body .menu-drawer__close-button {
     font-weight: 600 !important;
 }
 
+.mw_product_grid .info_card .price__regular {
+    color: #fff !important;
+}
+
 #ProductGridContainer .from_price_txt {
     position: relative;
     margin-top: -5px;
     margin-bottom: -7px;
     font-size: 12px;
     display: flex;
-    justify-self: center;
+    /* justify-self: center; */
+    justify-self: left;
     text-transform: uppercase;
-    color: #fff;
+    color: #cacaca;
     letter-spacing: 1px;
 }
 
@@ -3135,6 +3140,11 @@ quick-add-modal .product__title>a:hover {
 
 .info_card .price__sale .price-item--sale {
     color: #333333 !important;
+    font-weight: 600;
+}
+
+#ProductGridContainer .info_card .price__sale .price-item--sale {
+    color: #fff !important;
     font-weight: 600;
 }
 
