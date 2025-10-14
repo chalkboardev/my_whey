@@ -6595,7 +6595,7 @@ input[type='checkbox'] {
     padding: 1rem 0;
     margin: 0;
     letter-spacing: 0.1rem;
-    text-shadow: 1px 1px 2px #313131;
+    text-shadow: 1px 1px 2px #5c5757;
     font-weight: 600;
     font-size: 11px !important;
     color: rgba(var(--color-foreground), 1);
