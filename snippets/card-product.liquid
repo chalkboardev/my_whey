@@ -188,8 +188,8 @@
          
           {% comment %} {{  settings.title_char_limit_desktop }} {% endcomment %}
           <div class="small-hide"> 
-            {% if card_product.title.size > 24 %}   
-              <div class="marq_wrapper desk_wrap"><div class="heading_marquee"><p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ card_product.title | escape }}</p></div></div>
+            {% if card_product.title.size > 26 %}   
+              <div class="marq_wrapper desk_wrap"><div class="heading_marquee"><p>{{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ card_product.title | escape }}</p></div></div>
 
               {%- else -%}
              {{ card_product.title | escape }} 
@@ -199,7 +199,7 @@
 
           <div class="desk-hide">
             {% if card_product.title.size > 32 %}   
-              <div class="wrapper"><div class="heading_marquee"><p> &nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }}</p></div></div>
+              <div class="wrapper"><div class="heading_marquee"><p> &nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }}</p></div></div>
 
               {%- else -%}
              {{ card_product.title | escape }}
