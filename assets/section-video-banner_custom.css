@@ -254,7 +254,7 @@
 
 .videoBackground .videoBoxInfo,
 .videoBackground .imageBoxInfo {
-    margin-top: -6rem !important;
+    margin-top: -10rem !important;
     align-items: center;
     position: relative;
     display: flex;
@@ -478,7 +478,7 @@
     }
     .videoBackground .videoBoxInfo,
     .videoBackground .imageBoxInfo {
-        margin: -6rem auto 0 auto;
+        margin: -6rem auto 0 auto !important;
         padding: 0 40px 6rem 20px;
         align-items: center;
         position: relative;
