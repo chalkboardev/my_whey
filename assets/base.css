@@ -3165,10 +3165,37 @@ quick-add-modal .product__title>a:hover {
     font-size: 1.3rem !important;
 }
 
+.mw_product_info::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300%;
+    background-image: url(https://cdn.shopify.com/s/files/1/0713/8685/7724/files/dots_pattern.png?v=1760521385) !important;
+    /* background-size: cover; */
+    background-attachment: fixed;
+    opacity: 0.3;
+    filter: blur(8px);
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    .section-template--19937707229436__main-padding::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 300%;
+        background-image: none !important;
+        /* background-size: cover; */
+        background-attachment: fixed;
+        opacity: 0.3;
+        filter: blur(8px);
+    }
     .footer-block .fa-solid {
         font-size: 1.6rem;
     }
