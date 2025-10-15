@@ -3179,10 +3179,45 @@ quick-add-modal .product__title>a:hover {
     filter: blur(8px);
 }
 
+.coming_soon_pill {
+    position: relative;
+    font-size: 9px;
+    background: #ff6700;
+    display: inline-flex;
+    width: auto;
+    letter-spacing: 4px;
+    font-weight: 600;
+    top: -8px;
+    color: #fff;
+    padding: 1px 6px 1px 6px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    .coming_soon_pill {
+        position: relative;
+        font-size: 9px;
+        background: #ff6700;
+        display: inline-flex;
+        width: auto;
+        letter-spacing: 3px;
+        font-weight: 600;
+        text-align: left;
+        top: 18px;
+        left: -96px;
+        color: #fff;
+        padding: 1px 6px 1px 6px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 6px;
+        border-bottom-left-radius: 6px;
+    }
     .section-template--19937707229436__main-padding::before {
         content: "";
         position: absolute;
