@@ -3219,6 +3219,12 @@ quick-add-modal .product__title>a:hover {
     display: none !important;
 }
 
+#click_shopify-subscription-policy-button {
+    cursor: pointer;
+    text-decoration-line: underline;
+    text-underline-offset: 2px;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
