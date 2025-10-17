@@ -542,6 +542,9 @@
       "order_summary": {
         "vat_label_html": "{{ amount }} VAT Included"
       }
+    },
+    "subscriptions": {
+      "buyer_consent_product": "This item is a recurring purchase. By continuing, I agree to the {{ cancellationPolicyLink }} and authorise you to charge my payment method at the prices, frequency and dates listed on this page until my order is fulfilled or I cancel, if permitted."
     }
   }
 }
