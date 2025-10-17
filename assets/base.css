@@ -1036,7 +1036,7 @@ body .menu-drawer__close-button {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        max-width: 200px;
+        max-width: 220px;
     }
 }
 
@@ -3213,6 +3213,10 @@ quick-add-modal .product__title>a:hover {
     border-top-right-radius: 0px;
     border-bottom-right-radius: 6px;
     border-bottom-left-radius: 6px;
+}
+
+.shopify-payment-button__button {
+    display: none !important;
 }
 
 
