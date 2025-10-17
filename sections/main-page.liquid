@@ -2,8 +2,9 @@
 
 {%- style -%}
   .section-{{ section.id }}-padding {
-    {%- if section.settings.contact_image != blank -%} 
-    background-size:cover !important;background: url('{{ section.settings.contact_image | image_url }}') no-repeat 100% {{ section.settings.ctct_bg_height_position }}%/100%; 
+    {%- if section.settings.contact_image != blank -%}
+      background-size: cover !important;
+      background: url('{{ section.settings.contact_image | image_url }}') no-repeat 100%{{ section.settings.ctct_bg_height_position }}%/100%;
     {%- endif -%}
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
@@ -17,60 +18,84 @@
   }
 {%- endstyle -%}
 {% comment %} <div class="page-width page-width--narrow section-{{ section.id }}-padding"> {% endcomment %}
+
+<div style="{%- if section.settings.image != blank -%} background-size:cover !important;background: url('{{ section.settings.image | image_url }}') no-repeat 100% {{ section.settings.background_height_position }}%/100%;   {% endif %}" class="search_sub_div template-search__header page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"></div>
+
+
+<div style="
+     background-size:cover !important;background: url('//my-whey-store.myshopify.com/cdn/shop/files/mw_products_header.jpg?v=1745262783') no-repeat 100% 0%/100%;" class=" collection-hero--with-image  collection-hero  color-scheme-1 gradient">
+  <div class="collection-hero__inner page-width  scroll-trigger animate--fade-in">
+    <div class="collection-hero__text-wrapper">
+      <h1 class="mw_header_img_txt collection-hero__title">
+        <span class="visually-hidden">Collection:
+        </span>
+        {{ page.title | escape }}</h1>
+      <div class="collection-hero__description rte"></div>
+    </div>
+  </div>
+</div>
+
+
 <div class="page-width section-{{ section.id }}-padding">
-  <h1 class="mw_search_head main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-    {{ page.title | escape }}
-  </h1>
+  {% comment %} <h1 class="mw_search_head main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+            {{ page.title | escape }}
+      </h1> {% endcomment %}
   <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
     {{ page.content }}
   </div>
 </div>
 
 {% schema %}
-{
-  "name": "t:sections.main-page.name",
-  "tag": "section",
-  "class": "section",
-  "settings": [
-    {
-      "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 36
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
-    },
-    {
-      "type": "image_picker",
-      "id": "contact_image",
-      "label": "Contact Header Image"
-    },
-    {
-      "type": "range",
-      "id": "ctct_bg_height_position",
-      "min": 0,
-      "max": 100,
-      "step": 10,
-      "unit": "%",
-      "label": "Background Height Position",
-      "default": 80
-    }
-  ]
-}
+  {
+    "name": "t:sections.main-page.name",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Background"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Main Header Image"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.all.padding.section_padding_heading"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      }, {
+        "type": "image_picker",
+        "id": "contact_image",
+        "label": "Contact Header Image"
+      }, {
+        "type": "range",
+        "id": "ctct_bg_height_position",
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "unit": "%",
+        "label": "Background Height Position",
+        "default": 80
+      }
+    ]
+  }
 {% endschema %}
