@@ -3226,6 +3226,10 @@ quick-add-modal .product__title>a:hover {
     text-underline-offset: 2px;
 }
 
+.product-form__buttons {
+    max-width: 100% !important;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
