@@ -16,7 +16,7 @@
 <div style="{%- if section.settings.header_image != blank -%} background-size:cover !important; background: url('{{ section.settings.header_image | image_url }}') no-repeat 100% {{ section.settings.background_height_position }}%/100%;   {% endif %}" class=" collection-hero--with-image  collection-hero  color-scheme-1 gradient">
   <div class="collection-hero__inner page-width  scroll-trigger animate--fade-in">
     <div class="collection-hero__text-wrapper">
-      <h1 style="background-color: #fff;" class="mw_header_img_txt collection-hero__title">
+      <h1 class="mw_header_img_txt collection-hero__title">
         <span class="visually-hidden">Collection:
         </span>
         {{ page.title | escape }}</h1>
@@ -25,14 +25,15 @@
   </div>
 </div>
 
-<div class="page-width section-{{ section.id }}-padding">
-  {% comment %} <h1 class="mw_search_head main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-                                                        {{ page.title | escape }}
-                            </h1> {% endcomment %}
-  <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-    {{ page.content }}
+{%- if page.content != blank -%}
+  <div class="page-width section-{{ section.id }}-padding">
+    {% comment %} <h1 class="mw_search_head main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">{{ page.title | escape }}</h1> {% endcomment %}
+    <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      {{ page.content }}
+    </div>
   </div>
-</div>
+{% else %}
+{% endif %}
 
 {% schema %}
   {
