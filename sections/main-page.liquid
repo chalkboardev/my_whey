@@ -17,7 +17,7 @@
     }
   }{%- endstyle -%}
 {% comment %} <div class="page-width page-width--narrow section-{{ section.id }}-padding"> {% endcomment %}
-{{ section.settings.header_image }}
+URL:{{ section.settings.header_image }}
 <div style="{%- if section.settings.header_image != blank -%} background-size:cover !important;background: url('{{ section.settings.header_image | image_url }}') no-repeat 100% {{ section.settings.background_height_position }}%/100%;   {% endif %}" class="search_sub_div template-search__header page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
   Test Header</div>
 
