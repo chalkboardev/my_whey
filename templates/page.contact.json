@@ -12,10 +12,11 @@
     "main": {
       "type": "main-page",
       "settings": {
+        "header_image": "shopify://shop_images/creatina_para_bariatricos.jpg",
+        "background_height_position": 70,
         "padding_top": 72,
         "padding_bottom": 40,
-        "contact_image": "shopify://shop_images/creatina_para_bariatricos.jpg",
-        "ctct_bg_height_position": 70
+        "ctct_bg_height_position": 0
       }
     },
     "form": {
