@@ -151,9 +151,9 @@
       "name": "Toast Modal",
       "settings": {
         "toast_bg_color": "#fff",
-        "toast_trigger": "",
-        "toast_modal_title": "",
-        "toast_modal_content": ""
+        "toast_trigger": "cancellation_policy",
+        "toast_modal_title": "Cancellation Policy",
+        "toast_modal_content": "<p>Text...</p>"
       }
     }
   },
