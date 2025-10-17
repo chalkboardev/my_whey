@@ -438,7 +438,8 @@ if (!customElements.get('product-info')) {
 
           var elements = document.getElementsByClassName("shopify_subscriptions_app_policy");
           for (var i = 0; i < elements.length; i++) {
-            elements[i].textContent = "Subscription auto-renews | Skip or cancel anytime."; // Or elements[i].innerHTML = "<strong>New HTML</strong>";
+            elements[i].textContent = "Subscription auto-renews | <span id='click_shopify-subscription-policy-button'>Cancellation Policy</span>"; 
+            //Or elements[i].innerHTML = "<strong>New HTML</strong>";
           }
 
         });
