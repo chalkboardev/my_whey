@@ -2152,18 +2152,19 @@ body .menu-drawer__close-button {
 
 .contact_button {
     min-width: 280px !important;
-    border: 1px solid #a33921 !important;
+    border: 2px solid #ff2f0075 !important;
     font-weight: 600 !important;
-    letter-spacing: 4px !important;
+    letter-spacing: 5px !important;
     text-transform: uppercase;
     border-radius: 50px !important;
     text-decoration: none !important;
     transition: all 0.25s !important;
+    min-height: 50px !important;
 }
 
 .contact_button:hover {
     min-width: 280px;
-    letter-spacing: 6px !important;
+    letter-spacing: 8px !important;
     color: #fff;
     font-weight: 600 !important;
     border-radius: 50px !important;
