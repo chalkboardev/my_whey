@@ -15,12 +15,13 @@
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
-  }{%- endstyle -%}
+  }
+{%- endstyle -%}
 {% comment %} <div class="page-width page-width--narrow section-{{ section.id }}-padding"> {% endcomment %}
-URL:{{ section.settings.image | image_url  }}
+{% comment %} URL:{{ section.settings.header_image | image_url  }}  {% endcomment %}
 
 
-<div style="{%- if section.settings.image != blank -%} background-size:cover !important;background: url('{{ section.settings.image | image_url }}') no-repeat 100% {{ section.settings.background_height_position }}%/100%;   {% endif %}" class=" collection-hero--with-image  collection-hero  color-scheme-1 gradient">
+<div style="{%- if section.settings.header_image != blank -%} background-size:cover !important; background: url('{{ section.settings.header_image | image_url }}') no-repeat 100% {{ section.settings.background_height_position }}%/100%;   {% endif %}" class=" collection-hero--with-image  collection-hero  color-scheme-1 gradient">
   <div class="collection-hero__inner page-width  scroll-trigger animate--fade-in">
     <div class="collection-hero__text-wrapper">
       <h1 class="mw_header_img_txt collection-hero__title">
@@ -32,11 +33,10 @@ URL:{{ section.settings.image | image_url  }}
   </div>
 </div>
 
-
 <div class="page-width section-{{ section.id }}-padding">
   {% comment %} <h1 class="mw_search_head main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-                                    {{ page.title | escape }}
-                  </h1> {% endcomment %}
+                                            {{ page.title | escape }}
+                      </h1> {% endcomment %}
   <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
     {{ page.content }}
   </div>
@@ -54,14 +54,23 @@ URL:{{ section.settings.image | image_url  }}
       },
       {
         "type": "image_picker",
-        "id": "image",
+        "id": "header_image",
         "label": "Main Header Image"
+      },
+      {
+        "type": "range",
+        "id": "background_height_position",
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "unit": "%",
+        "label": "Background Height Position",
+        "default": 80
       },
       {
         "type": "header",
         "content": "t:sections.all.padding.section_padding_heading"
-      },
-      {
+      }, {
         "type": "range",
         "id": "padding_top",
         "min": 0,
