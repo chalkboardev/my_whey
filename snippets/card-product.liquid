@@ -188,7 +188,7 @@
          
           {% comment %} {{  settings.title_char_limit_desktop }} {% endcomment %}
           <div class="small-hide"> 
-            {% if card_product.title.size > 26 %}   
+            {% if card_product.title.size > 30 %}   
               <div class="marq_wrapper desk_wrap"><div class="heading_marquee"><p>{{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ card_product.title | escape }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ card_product.title | escape }}</p></div></div>
 
               {%- else -%}
