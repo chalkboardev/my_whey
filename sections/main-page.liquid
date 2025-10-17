@@ -1,14 +1,6 @@
 {{ 'section-main-page.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
-  .section-{{ section.id }}-padding {
-    {%- if section.settings.contact_image != blank -%}
-      background-size: cover !important;
-      background: url('{{ section.settings.contact_image | image_url }}') no-repeat 100%{{ section.settings.ctct_bg_height_position }}%/100%;
-    {%- endif -%}
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
 
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
@@ -35,8 +27,8 @@
 
 <div class="page-width section-{{ section.id }}-padding">
   {% comment %} <h1 class="mw_search_head main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-                                                {{ page.title | escape }}
-                        </h1> {% endcomment %}
+                                                        {{ page.title | escape }}
+                            </h1> {% endcomment %}
   <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
     {{ page.content }}
   </div>
@@ -88,19 +80,6 @@
         "unit": "px",
         "label": "t:sections.all.padding.padding_bottom",
         "default": 36
-      }, {
-        "type": "image_picker",
-        "id": "contact_image",
-        "label": "Contact Header Image"
-      }, {
-        "type": "range",
-        "id": "ctct_bg_height_position",
-        "min": 0,
-        "max": 100,
-        "step": 10,
-        "unit": "%",
-        "label": "Background Height Position",
-        "default": 80
       }
     ]
   }
