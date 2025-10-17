@@ -12,6 +12,7 @@
     "main": {
       "type": "main-page",
       "settings": {
+        "header_image": "",
         "padding_top": 28,
         "padding_bottom": 28,
         "ctct_bg_height_position": 80
