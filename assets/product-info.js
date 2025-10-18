@@ -438,8 +438,19 @@ if (!customElements.get('product-info')) {
 
           var elements = document.getElementsByClassName("shopify_subscriptions_app_policy");
           for (var i = 0; i < elements.length; i++) {
-            elements[i].innerHTML = "Subscription auto-renews | <span id='click_shopify-subscription-policy-button'>Cancellation Policy</span>"; 
-            //Or elements[i].textContent = "<strong>New HTML</strong>";
+                //Or elements[i].textContent = "<strong>New HTML</strong>";
+                elements[i].innerHTML = "Subscription auto-renews | <span id='click_shopify-subscription-policy-button'>Cancellation Policy</span>";
+                elements[i].addEventListener('click', function() {
+                    console.log('Cancellation Policy clicked (main-profuct.liquid)');
+                    const cancel_policy_div = document.getElementById('cancellation_policy');
+                    const bodyElement = document.body;
+                    cancel_policy_div.style.background = 'rgb(0 0 0 / 50%)';
+                    cancel_policy_div.style.opacity = '1';
+                    cancel_policy_div.style.zIndex = '999';
+                    cancel_policy_div.style.visibility = 'visible';
+                    cancel_policy_div.style.alignItems = 'center';
+                    bodyElement.classList.add('preventBodyScroll');
+                });
           }
 
         });

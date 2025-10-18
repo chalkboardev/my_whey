@@ -3230,10 +3230,25 @@ quick-add-modal .product__title>a:hover {
     max-width: 100% !important;
 }
 
+.preventBodyScroll {
+    overflow: hidden !important;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    /* #cancellation_policy .toast__box {
+        overflow: hidden;
+        border: 1px solid #ffffff;
+        background: #fff;
+        border-radius: 8px;
+        width: 90%;
+        height: auto;
+        position: relative;
+        transition: all ease 0.5s;
+        text-align: center;
+    } */
     .coming_soon_pill {
         position: relative;
         font-size: 9px;
