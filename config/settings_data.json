@@ -146,9 +146,14 @@
     },
     "content_for_index": [],
     "blocks": {
+      "14978928648839252053": {
+        "type": "shopify://apps/panda-bundle/blocks/app-embed/bd043a67-3fa0-49af-8092-717265d15649",
+        "disabled": false,
+        "settings": {}
+      },
       "1768834845299682660": {
         "type": "shopify://apps/subscriptions/blocks/app-embed-block/a3bfe9ec-96f8-4508-a003-df608a36d2ad",
-        "disabled": true,
+        "disabled": false,
         "settings": {
           "color_text_title": "#6d7175",
           "color_text_body": "#6d7175",
@@ -158,11 +163,6 @@
           "border_radius": 0,
           "subscription_policy_url": ""
         }
-      },
-      "14978928648839252053": {
-        "type": "shopify://apps/panda-bundle/blocks/app-embed/bd043a67-3fa0-49af-8092-717265d15649",
-        "disabled": false,
-        "settings": {}
       }
     },
     "color_schemes": {
