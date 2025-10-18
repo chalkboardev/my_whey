@@ -122,7 +122,9 @@ if (!customElements.get('product-info')) {
 
 // this.dataset.url = this.dataset.url;
 // var productUrl = this.dataset.url ;
-      }this.dataset.url = this.dataset.url;
+      }
+      
+      this.dataset.url = this.dataset.url;
       var productUrl = this.dataset.url;
 
 // ---- END get specific pill option clicked -----
@@ -143,7 +145,9 @@ if (!customElements.get('product-info')) {
 
 // // $(".price").html('<div class="price__container animate_it"><div class="price__regular">...</div></div>');
 // $(".product_icons").next().html('<div class="price__container"><div class="price__regular"><span class="fetching_price">Price loading </span><img class="gif_price_pad" width="16" src="https://cdn.shopify.com/s/files/1/0713/8685/7724/files/loader.gif?v=1743590298" /></div></div>');
-    }resetProductFormState() {
+    }
+    
+    resetProductFormState() {
       const productForm = this.productForm;
       productForm ?. toggleSubmitButton(true);
       productForm ?. handleErrorMessage();
@@ -439,8 +443,18 @@ if (!customElements.get('product-info')) {
           var elements = document.getElementsByClassName("shopify_subscriptions_app_policy");
           for (var i = 0; i < elements.length; i++) {
             elements[i].innerHTML = "Subscription auto-renews | <span id='click_shopify-subscription-policy-button'>Cancellation Policy</span>"; 
-            //Or elements[i].textContent = "<strong>New HTML</strong>";
+            elements[i].addEventListener('click', function() {
+                console.log('Cancellation Policy clicked (main-profuct.liquid)');
+                const cancel_policy_div = document.getElementById('cancellation_policy');
+                cancel_policy_div.style.background = 'rgb(0 0 0 / 50%)';
+                cancel_policy_div.style.opacity = '1';
+                cancel_policy_div.style.zIndex = '999';
+                cancel_policy_div.style.visibility = 'visible';
+                cancel_policy_div.style.alignItems = 'center';
+            });
           }
+
+          
 
         });
       } else {

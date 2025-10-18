@@ -538,6 +538,15 @@
     for (var i = 0; i < elements.length; i++) {
         elements[i].innerHTML = "Subscription auto-renews | <span id='click_shopify-subscription-policy-button'>Cancellation Policy</span>"; 
         // Or elements[i].innerHTML = "<strong>New HTML</strong>";
+        elements[i].addEventListener('click', function() {
+            console.log('Cancellation Policy clicked (main-profuct.liquid)');
+            const cancel_policy_div = document.getElementById('cancellation_policy');
+            cancel_policy_div.style.background = 'rgb(0 0 0 / 50%)';
+            cancel_policy_div.style.opacity = '1';
+            cancel_policy_div.style.zIndex = '999';
+            cancel_policy_div.style.visibility = 'visible';
+            cancel_policy_div.style.alignItems = 'center';
+        });
     }
 
     var queryString = window.location.search; // "?name=John%20Doe&age=30"
@@ -946,8 +955,16 @@
 
               var elements = document.getElementsByClassName("shopify_subscriptions_app_policy");
               for (var i = 0; i < elements.length; i++) {
-                  //elements[i].textContent = "Subscription auto-renews | Minimum Term: 2 cycles, cancel"; // Or elements[i].innerHTML = "<strong>New HTML</strong>";
-                  elements[i].innerHTML = "Subscription auto-renews | <span id='click_shopify-subscription-policy-button'>Cancellation Policy</span>"; // Or elements[i].innerHTML = "<strong>New HTML</strong>"; 
+                  elements[i].innerHTML = "Subscription auto-renews | <span id='click_shopify-subscription-policy-button'>ZCancellation Policy</span>"; // Or elements[i].innerHTML = "<strong>New HTML</strong>"; 
+                  elements[i].addEventListener('click', function() {
+                      console.log('Cancellation Policy clicked (main-profuct.liquid)');
+                      const cancel_policy_div = document.getElementById('cancellation_policy');
+                      cancel_policy_div.style.background = 'rgb(0 0 0 / 50%)';
+                      cancel_policy_div.style.opacity = '1';
+                      cancel_policy_div.style.zIndex = '999';
+                      cancel_policy_div.style.visibility = 'visible';
+                      cancel_policy_div.style.alignItems = 'center';
+                  });
               }
 
             });
@@ -965,6 +982,7 @@
       }
     }
 
+
 // $("#shopify-subscription-policy-button").click(function () {
 //   //alert('hi...');
 //   setTimeout(function(){
@@ -981,22 +999,6 @@
 //   //alert(this_class);
 //   // alert(this_id);
 // }); 
-
-$("#click_shopify-subscription-policy-button").click(function () {
-  console.log('open cancellation policy...');
-  // $("").show();
-  $('.toast__overlay').css("background", "rgb(0 0 0 / 50%)")
-  $('.toast__overlay').css("opacity", "1");
-  $('.toast__overlay').css("z-index", "999");
-  $('.toast__overlay').css("visibility", "visible");
-  $('.toast__overlay').css("align-items", "center");
-  // setTimeout(function(){
-  // $(".product-media-modal .media-modal").css({
-  // "background-color": "green",
-  // "font-weight": "bold"
-  // });
-  // }, 1000);
-}); 
 
 
 // $(".shopify_subscriptions_app_block_label:visible:first").click(function (e) {
