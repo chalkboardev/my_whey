@@ -444,7 +444,7 @@ if (!customElements.get('product-info')) {
           for (var i = 0; i < elements.length; i++) {
             elements[i].innerHTML = "Subscription auto-renews | <span id='click_shopify-subscription-policy-button'>Cancellation Policy</span>"; 
             elements[i].addEventListener('click', function() {
-                console.log('Cancellation Policy clicked (main-profuct.liquid)');
+                console.log('Cancellation Policy clicked (product-info.js)...');
                 const cancel_policy_div = document.getElementById('cancellation_policy');
                 cancel_policy_div.style.background = 'rgb(0 0 0 / 50%)';
                 cancel_policy_div.style.opacity = '1';
