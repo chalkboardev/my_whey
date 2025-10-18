@@ -576,7 +576,7 @@
         "toast_bg_color": "#ffffff",
         "toast_trigger": "toast_notification",
         "toast_modal_title": "Notification:",
-        "toast_modal_content": "<p>Testing...</p>"
+        "toast_modal_content": "<p></p>"
       }
     },
     "flavour_modal_QdakFr": {
