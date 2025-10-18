@@ -536,6 +536,15 @@ body {
           // alert(this_id);
       });
 
+      
+
+      $("#toast_notification .toast__close").click(function () {
+        setTimeout(function(){
+          $("#toast_notification .heading").html('Notification:');
+          $("#toast_notification .toast__content").html("<p></p>");
+        }, 500);
+      });
+
       $("#toast__close").click(function () {
           // alert('close modal...');
           $('.toast__overlay').css("visibility", "hidden");

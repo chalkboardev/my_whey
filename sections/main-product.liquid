@@ -519,6 +519,20 @@
 {% comment %}---------- CHECK IF THE PRODUCT IS A SUBSCRIPTION PRODUCT {% endcomment %}
 {% if product.selling_plan_groups.size > 0 or card_product.selling_plan_groups.size > 0 %}
   {% comment %} This product is available for subscription. {% endcomment %}
+  {% comment %} {{ shop.refund_policy.body }} {% endcomment %}
+  {% comment %}
+  The shop.policies object is a list of all store policies.
+  You can loop through all of them or access the specific one you need.
+{% endcomment %}
+
+{% for policy in shop.policies %}
+  {% comment %} {{ policy.title }} {% endcomment %}
+  {% if policy.title == "Cancellation policy" %}
+    <span style="display:none" id="cancel_policy_body" class="policy-content">
+      {{ policy.body }}
+    </span>
+  {% endif %}
+{% endfor %}
   <script>
     var is_quickv_open = document.querySelector('[id^="QuickAdd-"]');
     if ($("[id^='QuickAdd-']").length > 0) {
@@ -539,15 +553,32 @@
                 //Or elements[i].textContent = "<strong>New HTML</strong>";
                 elements[i].innerHTML = "Subscription auto-renews | <span id='click_shopify-subscription-policy-button'>Cancellation Policy</span>";
                 elements[i].addEventListener('click', function() {
-                    console.log('Cancellation Policy clicked (main-profuct.liquid)');
-                    const cancel_policy_div = document.getElementById('cancellation_policy');
-                    const bodyElement = document.body;
-                    cancel_policy_div.style.background = 'rgb(0 0 0 / 50%)';
-                    cancel_policy_div.style.opacity = '1';
-                    cancel_policy_div.style.zIndex = '999';
-                    cancel_policy_div.style.visibility = 'visible';
-                    cancel_policy_div.style.alignItems = 'center';
-                    bodyElement.classList.add('preventBodyScroll');
+                    console.log('Cancellation Policy clicked (main-product.liquid kkk...)');
+                    if ($("[id^='QuickAdd-']").length > 0) {
+                      // At least one element with "your-class-name" is visible
+                      const cancel_policy_div = document.getElementById('toast_notification');
+                      const cancellation_policy_text = $("#cancel_policy_body").html();
+                      $("#toast_notification .heading").html('Cancellation Policy');
+                      $("#toast_notification .toast__content").html(cancellation_policy_text);
+                      const bodyElement = document.body;
+                      // cancel_policy_div.style.background = 'rgb(0 0 0 / 50%)';
+                      // cancel_policy_div.style.opacity = '1';
+                      // cancel_policy_div.style.zIndex = '999';
+                      // cancel_policy_div.style.visibility = 'visible';
+                      // cancel_policy_div.style.alignItems = 'center';
+                      bodyElement.classList.add('preventBodyScroll');
+                    } else {
+                      // No elements with "your-class-name" are visible
+                      const cancel_policy_div = document.getElementById('cancellation_policy');
+                      const bodyElement = document.body;
+                      cancel_policy_div.style.background = 'rgb(0 0 0 / 50%)';
+                      cancel_policy_div.style.opacity = '1';
+                      cancel_policy_div.style.zIndex = '999';
+                      cancel_policy_div.style.visibility = 'visible';
+                      cancel_policy_div.style.alignItems = 'center';
+                      bodyElement.classList.add('preventBodyScroll');
+                    }
+
                 });
           }
 
@@ -834,7 +865,7 @@
                 //Or elements[i].textContent = "<strong>New HTML</strong>";
                 elements[i].innerHTML = "Subscription auto-renews | <span id='click_shopify-subscription-policy-button'>Cancellation Policy</span>";
                 elements[i].addEventListener('click', function() {
-                    console.log('Cancellation Policy clicked (main-profuct.liquid)');
+                    console.log('Cancellation Policy clicked (main-product.liquid mmm...)');
                     const cancel_policy_div = document.getElementById('cancellation_policy');
                     const bodyElement = document.body;
                     cancel_policy_div.style.background = 'rgb(0 0 0 / 50%)';
