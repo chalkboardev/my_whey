@@ -56,6 +56,7 @@ if (!customElements.get('quick-add-modal')) {
                   //e.preventDefault();
                   //e.stopPropagation();
                   const clickedElement = event.target;
+                  //alert(clickedElement.tagName);
                   if (clickedElement.tagName === 'INPUT') {
                       console.log("Element clicked was an INPUT: ", clickedElement);
                       // You can now access properties of clickedElement, e.g., clickedElement.id, clickedElement.value
@@ -63,17 +64,17 @@ if (!customElements.get('quick-add-modal')) {
                  
                   //const inputElements = container.querySelectorAll('input');
                   
-                    var targetElement = this.querySelector('input'); // Select by class, ID, tag, etc.
+                    var targetElement = clickedElement.querySelector('input'); // Select by class, ID, tag, etc.
                     if (targetElement) {
                       console.log("Found the target input: ", targetElement);
                       //targetElement.parentNode.parentNode.parentNode.parentNode.previousSibling.remove();
-                     // targetElement.checked = true;
+                      targetElement.checked = true;
 
                       //const content = targetElement.textContent; // Or targetElement.innerHTML
-                      const variant_price = clickedElement.getAttribute('data-variant-price');
-                      const selling_plan_id = clickedElement.getAttribute('data-selling-plan-id');
-                      const selling_plan_adjustment = clickedElement.getAttribute('data-selling-plan-adjustment');
-                      const variant_compare_at_price = clickedElement.getAttribute('data-variant-compare-at-price');
+                      const variant_price = targetElement.getAttribute('data-variant-price');
+                      const selling_plan_id = targetElement.getAttribute('data-selling-plan-id');
+                      const selling_plan_adjustment = targetElement.getAttribute('data-selling-plan-adjustment');
+                      const variant_compare_at_price = targetElement.getAttribute('data-variant-compare-at-price');
                       // console.log('Content of element variant_price: ' + variant_price);
                       // console.log('Content of element selling_plan_id: ' + selling_plan_id);
                       // console.log('Content of element selling_plan_adjustment: ' + selling_plan_adjustment);
