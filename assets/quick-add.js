@@ -58,7 +58,8 @@ if (!customElements.get('quick-add-modal')) {
                   const clickedElement = event.target;
                   //alert(clickedElement.tagName);
                   if (clickedElement.tagName === 'INPUT') {
-                      console.log("Element clicked was an INPUT: ", clickedElement);
+                    console.log("Element clicked was an INPUT");
+                      //console.log("Element clicked was an INPUT: ", clickedElement);
                       // You can now access properties of clickedElement, e.g., clickedElement.id, clickedElement.value
                   }
                  
