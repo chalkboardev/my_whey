@@ -575,7 +575,7 @@
                       cancel_policy_div.style.opacity = '1';
                       cancel_policy_div.style.zIndex = '999';
                       cancel_policy_div.style.visibility = 'visible';
-                      cancel_policy_div.style.alignItems = 'center';
+                      //cancel_policy_div.style.alignItems = 'center';
                       bodyElement.classList.add('preventBodyScroll');
                     }
 
@@ -872,7 +872,7 @@
                     cancel_policy_div.style.opacity = '1';
                     cancel_policy_div.style.zIndex = '999';
                     cancel_policy_div.style.visibility = 'visible';
-                    cancel_policy_div.style.alignItems = 'center';
+                    //cancel_policy_div.style.alignItems = 'center';
                     bodyElement.classList.add('preventBodyScroll');
                 });
               }
@@ -915,7 +915,8 @@ $(".click_shopify-subscription-policy-button").click(function () {
   $('.toast__overlay').css("opacity", "1");
   $('.toast__overlay').css("z-index", "999");
   $('.toast__overlay').css("visibility", "visible");
-  $('.toast__overlay').css("align-items", "center");
+  $('.toast__overlay').addClass("quickv_cancellation_toast");
+  // $('.toast__overlay').css("align-items", "center");
   // setTimeout(function(){
   // $(".product-media-modal .media-modal").css({
   // "background-color": "green",

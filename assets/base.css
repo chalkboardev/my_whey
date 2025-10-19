@@ -3240,6 +3240,11 @@ quick-add-modal .product__title>a:hover {
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    .quickv_cancellation_toast {
+        align-items: flex-start !important;
+        padding-top: 20px;
+        overflow: scroll;
+    }
     #cancellation_policy .toast__box {
         width: 90%;
     }
@@ -3992,7 +3997,23 @@ quick-add-modal .product__title>a:hover {
     }
 }
 
+@media screen and (max-width: 749px) {
+    .collection-hero--with-image .collection-hero__inner {
+        padding-bottom: calc(4px + 2rem);
+        padding-top: calc(4px + 1rem);
+    }
+    .product .price .badge {
+        /* margin-bottom:0 !important; */
+    }
+}
+
 @media screen and (min-width: 750px) and (max-width: 1079px) {
+    .quickv_cancellation_toast {
+        align-items: center;
+    }
+    .quickv_cancellation_toast .toast__box {
+        width: 70%;
+    }
     .my_product_thumb {
         min-height: 400px !important;
         height: 400px !important;
@@ -4005,14 +4026,17 @@ quick-add-modal .product__title>a:hover {
     }
 }
 
-@media screen and (max-width: 749px) {
-    .collection-hero--with-image .collection-hero__inner {
-        padding-bottom: calc(4px + 2rem);
-        padding-top: calc(4px + 1rem);
+@media only screen and (min-width:1080px) {
+    .my_product_thumb {
+        max-height: 200px;
+        border-radius: 6px;
     }
-    .product .price .badge {
-        /* margin-bottom:0 !important; */
+    .quickv_cancellation_toast {
+        align-items: center;
     }
+    /*  .quickv_cancellation_toast .toast__box {
+        width: 50%;
+    } */
 }
 
 @media screen and (min-width: 480px) and (max-width: 989px) {
@@ -5471,35 +5495,6 @@ summary::-webkit-details-marker {
 
 deferred-media {
     display: block;
-}
-
-@media only screen and (min-width:1080px) {
-    .my_product_thumb {
-        max-height: 200px;
-        border-radius: 6px;
-    }
-    /* .product--small .thumbnail-list.slider--tablet-up li.thumbnail-list__item.slider__slide {
-      transform: rotate(-90deg);
-      width: calc(20% - .8rem);
-    }
-    .grid__item.product__media-wrapper slider-component.thumbnail-slider {
-      position: absolute;
-      top: 0;
-      transform: rotate(90deg);
-      width: 602px;
-      left: auto;
-      transform-origin: left top;
-      height: 100px;
-      overflow: hidden;
-    }
-    .grid__item.product__media-wrapper {
-      position: relative;
-      padding-left: 100px;
-    }
-    .thumbnail-list.slider--tablet-up li.thumbnail-list__item.slider__slide {
-      transform: rotate(-90deg);
-      width: calc(16.8% - .8rem);
-    } */
 }
 
 

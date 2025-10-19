@@ -542,7 +542,7 @@ body {
         setTimeout(function(){
           $("#toast_notification .heading").html('Notification:');
           $("#toast_notification .toast__content").html("<p></p>");
-        }, 500);
+        }, 1200);
       });
 
       $("#toast__close").click(function () {
@@ -551,6 +551,10 @@ body {
           $('.toast__overlay').css("opacity", "0");
           $('.toast__overlay').css("z-index", "-1");
           $('body').removeClass('preventBodyScroll');
+          setTimeout(function(){
+            $('#toast_notification').removeClass('quickv_cancellation_toast');
+          }, 1000);
+          
           // $('.popup__overlay').removeAttr("target");
           // $('body').click();
           //window.location.hash = ''; 
@@ -699,7 +703,7 @@ body {
       //                 cancel_policy_div.style.opacity = '1';
       //                 cancel_policy_div.style.zIndex = '999';
       //                 cancel_policy_div.style.visibility = 'visible';
-      //                 cancel_policy_div.style.alignItems = 'center';
+      //                 //cancel_policy_div.style.alignItems = 'center';
       //                 bodyElement.classList.add('preventBodyScroll');
       //               }
           

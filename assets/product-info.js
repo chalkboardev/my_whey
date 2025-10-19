@@ -448,7 +448,7 @@ if (!customElements.get('product-info')) {
                     cancel_policy_div.style.opacity = '1';
                     cancel_policy_div.style.zIndex = '999';
                     cancel_policy_div.style.visibility = 'visible';
-                    cancel_policy_div.style.alignItems = 'center';
+                    //cancel_policy_div.style.alignItems = 'center';
                     bodyElement.classList.add('preventBodyScroll');
                 });
           }
