@@ -3220,10 +3220,12 @@ quick-add-modal .product__title>a:hover {
     display: none !important;
 }
 
-#click_shopify-subscription-policy-button {
+.click_shopify-subscription-policy-button {
     cursor: pointer;
     text-decoration-line: underline;
     text-underline-offset: 2px;
+    position: relative;
+    z-index: 9999999999999;
 }
 
 .product-form__buttons {
@@ -3238,17 +3240,9 @@ quick-add-modal .product__title>a:hover {
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
-    /* #cancellation_policy .toast__box {
-        overflow: hidden;
-        border: 1px solid #ffffff;
-        background: #fff;
-        border-radius: 8px;
+    #cancellation_policy .toast__box {
         width: 90%;
-        height: auto;
-        position: relative;
-        transition: all ease 0.5s;
-        text-align: center;
-    } */
+    }
     .coming_soon_pill {
         position: relative;
         font-size: 9px;

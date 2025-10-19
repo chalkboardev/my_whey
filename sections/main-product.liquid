@@ -551,7 +551,7 @@
     var elements = document.getElementsByClassName("shopify_subscriptions_app_policy");
           for (var i = 0; i < elements.length; i++) {
                 //Or elements[i].textContent = "<strong>New HTML</strong>";
-                elements[i].innerHTML = "Subscription auto-renews | <span id='click_shopify-subscription-policy-button'>Cancellation Policy</span>";
+                elements[i].innerHTML = "Subscription auto-renews | <span class='click_shopify-subscription-policy-button'>Cancellation Policy</span>";
                 elements[i].addEventListener('click', function() {
                     console.log('Cancellation Policy clicked (main-product.liquid kkk...)');
                     if ($("[id^='QuickAdd-']").length > 0) {
@@ -863,7 +863,7 @@
               var elements = document.getElementsByClassName("shopify_subscriptions_app_policy");
               for (var i = 0; i < elements.length; i++) {
                 //Or elements[i].textContent = "<strong>New HTML</strong>";
-                elements[i].innerHTML = "Subscription auto-renews | <span id='click_shopify-subscription-policy-button'>Cancellation Policy</span>";
+                elements[i].innerHTML = "Subscription auto-renews | <span class='click_shopify-subscription-policy-button'>Cancellation Policy</span>";
                 elements[i].addEventListener('click', function() {
                     console.log('Cancellation Policy clicked (main-product.liquid mmm...)');
                     const cancel_policy_div = document.getElementById('cancellation_policy');
@@ -909,7 +909,7 @@
 //   // alert(this_id);
 // }); 
 
-$("#click_shopify-subscription-policy-button").click(function () {
+$(".click_shopify-subscription-policy-button").click(function () {
   // $("").show();
   $('.toast__overlay').css("background", "rgb(0 0 0 / 50%)")
   $('.toast__overlay').css("opacity", "1");
