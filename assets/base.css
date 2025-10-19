@@ -633,6 +633,7 @@ body .menu-drawer__close-button {
 
 .drawer__close {
     right: 0px !important;
+    top: 8px !important;
 }
 
 .button_secondary {
@@ -764,7 +765,7 @@ body .menu-drawer__close-button {
     background-color: unset;
     color: rgb(0 0 0);
     height: auto;
-    width: auto;
+    width: max-content;
     border-radius: 100%;
     display: flex;
     justify-content: center;
@@ -4612,7 +4613,7 @@ quick-add-modal .product__title>a:hover {
         background-color: unset;
         color: rgb(0 0 0);
         height: auto;
-        width: auto;
+        width: max-content;
         border-radius: 100%;
         display: flex;
         justify-content: center;
