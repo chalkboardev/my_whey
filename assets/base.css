@@ -2415,14 +2415,17 @@ body .menu-drawer__close-button {
 
 .shopify_subscriptions_app_block_label {
     cursor: pointer !important;
+    -webkit-tap-highlight-color: transparent !important;
 }
 
 .shopify_subscriptions_purchase_option_wrapper label {
     cursor: pointer !important;
+    -webkit-tap-highlight-color: transparent !important;
 }
 
 .shopify_subscriptions_app_block_label_children label {
     cursor: pointer !important;
+    -webkit-tap-highlight-color: transparent !important;
 }
 
 .most_popular {
@@ -3291,6 +3294,10 @@ quick-add-modal .product__title>a:hover {
     background-image: url("https://cdn.shopify.com/s/files/1/0713/8685/7724/files/pattern_3_2000x.jpg?v=1750693478");
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.menu-drawer summary.menu-drawer__menu-item:hover {
+    transform: translateY(-4px);
 }
 
 
