@@ -2438,7 +2438,7 @@ body .menu-drawer__close-button {
   background: #929292; */
     color: #fff;
     display: inline-flex;
-    font-size: 1.2rem !important;
+    font-size: 1rem !important;
     width: auto;
     float: right;
     text-transform: uppercase;
@@ -2504,7 +2504,7 @@ body .menu-drawer__close-button {
 
 .popular_icon {
     position: relative;
-    top: 0.19rem;
+    top: 0;
     right: 4px;
     height: 9px;
     visibility: visible;
@@ -3234,6 +3234,43 @@ quick-add-modal .product__title>a:hover {
 
 .preventBodyScroll {
     overflow: hidden !important;
+}
+
+.pb-a7ce {
+    text-transform: uppercase;
+    font-family: var(--font-body-family) !important;
+}
+
+.pb-a7ce text {
+    text-transform: uppercase;
+    font-family: var(--font-body-family) !important;
+    alignment-baseline: central;
+    text-shadow: 0px 0px 2px #333;
+}
+
+.pb-a7ce text::before {
+    content: url('https://cdn.shopify.com/s/files/1/0713/8685/7724/files/star_2.png?v=1754731649');
+    display: inline-block;
+    /* Ensures proper alignment with text */
+    vertical-align: middle;
+    /* Adjusts vertical alignment */
+    margin-right: 10px;
+}
+
+.pb-a7ce svg {
+    background: linear-gradient(180deg, rgb(255 134 52), rgb(229 81 1) 50%, rgb(197 69 2) 100%) padding-box, linear-gradient(180deg, rgb(255 134 52), rgb(229 81 1) 50%, rgb(197 69 2) 100%) border-box;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 50px;
+}
+
+.pb-a7ce path:first-of-type {
+    fill: #ffffff00 !important;
+}
+
+.pb-a7ce path:nth-child(2) {
+    display: none;
 }
 
 
