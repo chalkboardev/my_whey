@@ -3185,7 +3185,8 @@ quick-add-modal .product__title>a:hover {
     font-size: 1.3rem !important;
 }
 
-.mw_product_info::before {
+
+/* .mw_product_info::before {
     content: "";
     position: absolute;
     top: 0;
@@ -3193,11 +3194,10 @@ quick-add-modal .product__title>a:hover {
     width: 100%;
     height: 300%;
     background-image: url(https://cdn.shopify.com/s/files/1/0713/8685/7724/files/dots_pattern.png?v=1760521385) !important;
-    /* background-size: cover; */
     background-attachment: fixed;
     opacity: 0.3;
     filter: blur(8px);
-}
+} */
 
 .coming_soon_pill {
     position: relative;
