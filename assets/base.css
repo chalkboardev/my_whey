@@ -3845,7 +3845,8 @@ quick-add-modal .product__title>a:hover {
     .tab_customize {
         border: none;
         background: none;
-        padding-bottom: 12px;
+        padding-bottom: 0;
+        margin-bottom: 9px;
         position: relative;
         z-index: 2;
         overflow: scroll !important;
