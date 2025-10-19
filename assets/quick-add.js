@@ -67,7 +67,8 @@ if (!customElements.get('quick-add-modal')) {
                   
                     var targetElement = clickedElement.querySelector('input'); // Select by class, ID, tag, etc.
                     if (targetElement) {
-                      console.log("Found the target input: ", targetElement);
+                      console.log("Found the target input: ");
+                      //console.log("Found the target input: ", targetElement);
                       //targetElement.parentNode.parentNode.parentNode.parentNode.previousSibling.remove();
                       targetElement.checked = true;
 
