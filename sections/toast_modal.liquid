@@ -125,6 +125,9 @@
   }
 
   .toast__box .heading {
+    height: 40px;
+    display: flex;
+    align-items: center;
     color: #ffffff;
     text-shadow: 0 0 3px #111;
     text-align: left;
@@ -139,13 +142,17 @@
   .toast__close {
     position: absolute;
     z-index: 9;
-    top: 0;
+    top: 6px;
     right: 8px;
     transition: all 200ms ease-out;
-    color: #ffffffba;
-    font-size: 22px;
+    color: #ffffff;
+    font-size: 24px;
+    height: 26px;
+    border-radius: 50%;
+    width: 26px;
+    background: #3333337d;
     font-weight: 300;
-    line-height: 1.25;
+    line-height: 25px;
     text-decoration: none;
     cursor: pointer;
   }

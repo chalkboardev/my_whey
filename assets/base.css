@@ -1149,21 +1149,23 @@ body .menu-drawer__close-button {
     outline: none;
     cursor: pointer;
     padding: 10px 16px 10px 16px !important;
-    transition: 0.3s;
+    transition: 0.1s;
 }
 
 .tab_customize button:hover {
-    background: linear-gradient(180deg, rgba(254, 89, 0, 1) 0%, rgba(204, 71, 0, 1) 50%, rgba(156, 54, 0, 1) 100%) !important;
-    border: 1px solid #a33921 !important;
+    background: linear-gradient(180deg, rgb(255 134 52), rgb(229 81 1) 50%, rgb(197 69 2) 100%) padding-box, linear-gradient(180deg, rgb(255 134 52), rgb(229 81 1) 50%, rgb(197 69 2) 100%) !important;
+    border: 1px solid #dd4f3175;
     color: #fff;
     font-weight: 600;
+    transition: 0.1s;
 }
 
 .tab_customize button.active {
-    background: linear-gradient(180deg, rgba(254, 89, 0, 1) 0%, rgba(204, 71, 0, 1) 50%, rgba(156, 54, 0, 1) 100%) !important;
-    border: 1px solid #a33921 !important;
+    background: linear-gradient(180deg, rgb(255 134 52), rgb(229 81 1) 50%, rgb(197 69 2) 100%) padding-box, linear-gradient(180deg, rgb(255 134 52), rgb(229 81 1) 50%, rgb(197 69 2) 100%) !important;
+    border: 1px solid #dd4f3175;
     color: #fff;
     font-weight: 600;
+    transition: 0.1s;
 }
 
 .tabcontent-cus {
@@ -2446,9 +2448,12 @@ body .menu-drawer__close-button {
     font-weight: 600;
     line-height: 1;
     margin-top: -3px;
-    right: -6px;
+    right: -14px;
     padding: 6px 1.3rem 6px 1.3rem;
-    border-radius: 50px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 50px;
     position: relative;
     text-shadow: 0px 0px 2px #333;
     background: #929292;
@@ -3069,24 +3074,33 @@ quick-add-modal .product__title>a:hover {
 }
 
 .quickview_popup__close {
+    font-family: var(--font-body-family) !important;
     position: absolute;
     z-index: 9;
-    top: -7%;
+    top: -8%;
     right: 0;
     transition: all .2s ease-out;
     color: #fff;
-    font-size: 36px;
+    font-size: 32px;
     background: #90909099;
     border-radius: 50%;
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     font-weight: 300;
-    line-height: 1.25;
+    line-height: 81px;
     display: inline-flex;
     text-decoration: none;
     cursor: pointer;
     justify-content: center;
     align-items: center;
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+}
+
+.quickview_popup__close:hover {
+    color: #ff6700;
+    background: #f0f0f0;
 }
 
 @media screen and (max-width: 480px) {
