@@ -533,7 +533,69 @@
     </span>
   {% endif %}
 {% endfor %}
+
+
   <script>
+    
+setTimeout(function(){
+  
+  const panda_elementsStartingWith1 = document.querySelectorAll('[id^="offers-list-container-"]');
+          if (panda_elementsStartingWith1.length > 0) {
+                console.log("Found a panda section XE ID: ");
+                $(panda_elementsStartingWith1).children().children().children().each(function() {
+                  $(this).click(function() {
+                    // This function will execute when an element with class 'my-item' is clicked
+                    console.log(this);
+                        $('button').each(function() {
+                              // Check if the button's text contains a "+" sign
+                              if ($(this).text().includes('+')) {
+                                  var the_plus_button = $(this);
+                                  console.log('Button with plus sign found:', the_plus_button.text()); 
+                                  console.log(this);
+                                  //$(this).addClass('changeme');
+                                  $(this).prev().addClass('changeme');
+                                  // $(this).attr('onclick', 'myFunction()');
+                                  $(this).attr('onclick', 'myFunction(event)');
+                                  //$(this).prev().click();
+                                  // You can also attach a click event listener specifically to these buttons
+                                  // $(this).on('click', function() {
+                                  //     alert('You clicked a button with a plus sign: ' + $(this).text());
+                                  // });
+                              }
+                        });
+
+                        // var buttons = document.getElementsByClassName('pb-f2d1');
+                        // if (buttons.length > 0) {
+                        //   console.log('yes buttons...');
+                        //   for (let i = 0; i < buttons.length; i++) {
+                        //       //buttons[i].classList.add('hello');
+                        //       buttons[i].addEventListener('click', function() {
+                        //           console.log('Is this it?');
+                        //       });
+                              
+                        //   }
+                  
+                        // } else {
+                        //   console.log('no buttons...');
+                        // }
+                        
+                  });
+                });
+          } else {
+            console.log("Did not find a panda section:");
+          }
+       
+}, 5000);
+
+function myFunction(event){
+  event.stopPropagation();
+  var trooper = $('.changeme').text();
+ alert(trooper);
+}
+
+
+
+          
     var is_quickv_open = document.querySelector('[id^="QuickAdd-"]');
     if ($("[id^='QuickAdd-']").length > 0) {
       // At least one element with "your-class-name" is visible
@@ -603,7 +665,6 @@
 
 
 
-
           // const panda_elementsStartingWith = document.querySelectorAll('[id^="offers-list-container-"]');
           // if (panda_elementsStartingWith) {
           //   console.log("Found a panda section ID: ", panda_elementsStartingWith);
@@ -624,6 +685,227 @@
               
               const secondElement = elementsWithClass[1]; 
               const firstElement = elementsWithClass[0];
+
+              var containers = document.querySelectorAll('.shopify_subscriptions_app_block_label');
+
+              containers.forEach(container => {
+
+                  container.addEventListener('click', function(event) {
+                    //e.preventDefault();
+                    //e.stopPropagation();
+                    const clickedElement = event.target;
+                    //alert(clickedElement.tagName);
+                    console.log("TARGET: ", clickedElement);
+                    if (clickedElement.tagName === 'INPUT') {
+                          console.log("Element clicked was an INPUT");
+
+                          var targetElement = clickedElement; // Select by class, ID, tag, etc.
+                        
+                        if (targetElement) {
+                          console.log("Found the target input: ");
+                          //console.log("Found the target input: ", targetElement);
+                          //targetElement.parentNode.parentNode.parentNode.parentNode.previousSibling.remove();
+                          //targetElement.checked = true;
+
+                          //const content = targetElement.textContent; // Or targetElement.innerHTML
+                          var variant_price = targetElement.getAttribute('data-variant-price');
+                          var variant_compare_at_price = targetElement.getAttribute('data-variant-compare-at-price');
+                          var the_selling_plan = targetElement.getAttribute('data-radio-type');
+                          var selling_plan_id = targetElement.getAttribute('data-selling-plan-id');
+                          var selling_plan_adjustment = targetElement.getAttribute('data-selling-plan-adjustment');
+
+                          variant_price = variant_price.substring(variant_price.indexOf("R ") + 1);
+                          variant_price = +variant_price;
+
+                          variant_compare_at_price = variant_compare_at_price.substring(variant_compare_at_price.indexOf("R ") + 1);
+                          variant_compare_at_price = +variant_compare_at_price;
+
+                          console.log('SELLING PLAN: ' + the_selling_plan);
+                          console.log('Content of element selling_plan_id: ' + selling_plan_id);
+                          console.log('Content of element selling_plan_adjustment: ' + selling_plan_adjustment);
+                          console.log('Content of element variant_price: ' + variant_price);
+                          console.log('Content of element variant_compare_at_price: ' + variant_compare_at_price);
+
+                          var panda_elementsStartingWith = document.querySelectorAll('[id^="offers-list-container-"]');
+
+                          var count_panda_blocks = $(panda_elementsStartingWith)
+                              .children(':first') // Get the first child of the initial element
+                              .children(':first') // Get the first child of that first child
+                              .siblings().children() // Get all siblings of the element obtained in the previous step
+                              .length; // Get the count of these siblings
+                          console.log("Number of pands blocks: ", count_panda_blocks);
+
+                          if (panda_elementsStartingWith.length > 0) {
+                            // At least one element with "your-class-name" is visible
+                          console.log("An element with id that contains 'offers-list-container-' is visible.");
+              
+                          $(panda_elementsStartingWith).children().each(function() {
+                            var maxIterations = +count_panda_blocks + 1; // Define the specific amount of times to loop
+                            var count = 0;  
+                            $(this).children().children().children().children().each(function() {
+                                    if (count >= maxIterations) {
+                                        return false; // Exit the .each loop
+                                    }
+                                    var the_block_single_same = $(this).find('.pb-56aa').html().toLowerCase();
+                                    console.log(count + ' The block title:' + the_block_single_same);
+
+                                    if(count == 0){
+                                        //console.log('Yes First...');
+                                        var the_discounted_price = $(this).find('.money').eq(0).html();
+                                        if(the_selling_plan.includes('one_time_purchase') == true){
+                                            console.log('clicked one time...');
+                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R " + variant_price.toFixed(2));
+                                            //the_discounted_price = the_discounted_price.substring(the_discounted_price.indexOf(";") + 1);
+                                            var the_old_price = $(this).find('.money').eq(1).html();
+                                            var update_the_old_price = $(this).find('.money').eq(1).html("R " + variant_compare_at_price.toFixed(2));
+                                            if(the_old_price == undefined){
+                                              //alert('undefined!');
+                                              the_old_price = the_discounted_price;
+                                            } else {
+
+                                            }
+                                        } else {
+                                            console.log('clicked subscribe...');
+                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R " + variant_price.toFixed(2));
+                                            //the_discounted_price = the_discounted_price.substring(the_discounted_price.indexOf(";") + 1);
+                                            var the_old_price = $(this).find('.money').eq(1).html();
+                                            var update_the_old_price = $(this).find('.money').eq(1).html("R " + variant_compare_at_price.toFixed(2));
+                                            if(the_old_price == undefined){
+                                              //alert('undefined!');
+                                              the_old_price = the_discounted_price;
+                                            } else {
+
+                                            }
+                                        }
+
+                                    } else if(count == 1){
+
+                                        if(the_selling_plan.includes('one_time_purchase') == true){
+                                            console.log('clicked one time...');
+                                            var the_discounted_price = $(this).find('.money').eq(0).html();
+                                            const discounted_price_2 = (variant_price*2).toFixed(2);
+                                            var amountToSubtract = discounted_price_2 * (0.05);
+                                            var newTotal1 = (discounted_price_2 - amountToSubtract).toFixed(2);
+                                            console.log(newTotal1); // Output: 90
+                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R " + newTotal1);
+                                            //the_discounted_price = the_discounted_price.substring(the_discounted_price.indexOf(";") + 1);
+                                            var the_old_price = $(this).find('.money').eq(1).html();
+                                            const the_old_price_2 = (variant_price*2).toFixed(2);
+                                            var update_the_old_price = $(this).find('.money').eq(1).html("R " + the_old_price_2);
+                                        } else {
+                                            console.log('clicked subscribe...');
+                                            //console.log('Yes Second...');
+                                            var the_discounted_price = $(this).find('.money').eq(0).html();
+                                            const discounted_price_2 = (variant_price*2).toFixed(2);
+                                            var amountToSubtract = discounted_price_2 * (0.05);
+                                            var newTotal1 = (discounted_price_2 - amountToSubtract).toFixed(2);
+                                            console.log(newTotal1); // Output: 90
+                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R " + newTotal1);
+                                            //the_discounted_price = the_discounted_price.substring(the_discounted_price.indexOf(";") + 1);
+                                            var the_old_price = $(this).find('.money').eq(1).html();
+                                            const the_old_price_2 = (variant_price*2).toFixed(2);
+                                            var update_the_old_price = $(this).find('.money').eq(1).html("R " + the_old_price_2);
+                                        }
+
+                                    } else if(count == 2){
+                                        //console.log('Yes Third...');
+                                        if(the_selling_plan.includes('one_time_purchase') == true){
+                                            console.log('clicked one time...');
+                                            var the_discounted_price = $(this).find('.money').eq(0).html();
+                                            const discounted_price_3 = (variant_price*3).toFixed(2);
+                                            var amountToSubtract1 = discounted_price_3 * (0.1);
+                                            var newTotal2 = (discounted_price_3 - amountToSubtract1).toFixed(2);
+                                            console.log(newTotal2); // Output: 90
+                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R " + newTotal2);
+                                            //the_discounted_price = the_discounted_price.substring(the_discounted_price.indexOf(";") + 1);
+                                            var the_old_price = $(this).find('.money').eq(1).html();
+                                            const the_old_price_3 = (variant_price*3).toFixed(2);
+                                            var update_the_old_price = $(this).find('.money').eq(1).html("R " + the_old_price_3);
+                                        } else {
+                                            console.log('clicked subscribe...');
+                                            //console.log('Yes Second...');
+                                            var the_discounted_price = $(this).find('.money').eq(0).html();
+                                            const discounted_price_3 = (variant_price*3).toFixed(2);
+                                            var amountToSubtract1 = discounted_price_3 * (0.1);
+                                            var newTotal2 = (discounted_price_3 - amountToSubtract1).toFixed(2);
+                                            console.log(newTotal2); // Output: 90
+                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R " + newTotal2);
+                                            //the_discounted_price = the_discounted_price.substring(the_discounted_price.indexOf(";") + 1);
+                                            var the_old_price = $(this).find('.money').eq(1).html();
+                                            const the_old_price_3 = (variant_price*3).toFixed(2);
+                                            var update_the_old_price = $(this).find('.money').eq(1).html("R " + the_old_price_3);
+                                        }
+                                    } else if(count == 3){
+                                        //console.log('FOURTH PRCE!!!!!!!...' + price_is*4);
+                                        if(the_selling_plan.includes('one_time_purchase') == true){
+                                            console.log('clicked one time...');
+                                            var the_discounted_price = $(this).find('.money').eq(0).html();
+                                            const discounted_price_4 = (variant_price*4).toFixed(2);
+                                            var amountToSubtract3 = discounted_price_4 * (0.15);
+                                            var newTotal3 = (discounted_price_4 - amountToSubtract3).toFixed(2);
+                                            console.log(newTotal3); // Output: 90
+                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R " + newTotal3);
+                                            //the_discounted_price = the_discounted_price.substring(the_discounted_price.indexOf(";") + 1);
+                                            var the_old_price = $(this).find('.money').eq(1).html();
+                                            const the_old_price_4 = (variant_price*4).toFixed(2);
+                                            var update_the_old_price = $(this).find('.money').eq(1).html("R " + the_old_price_4);
+                                        } else {
+                                            console.log('clicked subscribe...');
+                                            //console.log('Yes Second...');
+                                            var the_discounted_price = $(this).find('.money').eq(0).html();
+                                            const discounted_price_4 = (variant_price*4).toFixed(2);
+                                            var amountToSubtract3 = discounted_price_4 * (0.15);
+                                            var newTotal3 = (discounted_price_4 - amountToSubtract3).toFixed(2);
+                                            console.log(newTotal3); // Output: 90
+                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R&nbsp;" + newTotal3);
+                                            //the_discounted_price = the_discounted_price.substring(the_discounted_price.indexOf(";") + 1);
+                                            var the_old_price = $(this).find('.money').eq(1).html();
+                                            const the_old_price_4 = (variant_price*4).toFixed(2);
+                                            var update_the_old_price = $(this).find('.money').eq(1).html("R&nbsp;" + the_old_price_4);
+                                        }
+                                    } else {
+                                        // console.log('NOT single...');
+                                        // console.log(this);
+                                        // // $(this).remove();
+                                        // var the_discounted_price = $(this).find('.money').eq(0).html();
+                                        // var update_the_discounted_price = $(this).find('.money').eq(0).html(price_is);
+                                        // //console.log('Discounted Price CHECK:' + the_discounted_price);
+                                        // the_discounted_price = the_discounted_price.substring(the_discounted_price.indexOf(";") + 1);
+                                        // var the_old_price = $(this).find('.money').eq(1).html();
+                                        // console.log('Old Price CHECK:' + the_old_price);
+                                        // the_old_price = the_old_price.substring(the_old_price.indexOf(";") + 1);
+
+                                        // the_old_price = the_old_price.replace(/,/g, ""); // Remove all commas
+                                        // the_old_price = parseFloat(the_old_price);
+
+                                        // the_discounted_price = the_discounted_price.replace(/,/g, ""); // Remove all commas
+                                        // the_discounted_price = parseFloat(the_discounted_price);
+
+                                        // // console.log('Discounted Price:' + the_discounted_price);
+                                        // // console.log('Normal Price:' + the_old_price);
+                                        // // a_price.css('background', '#000');
+                                    }
+                                    count++; // Increment the counter
+                            });
+
+                          });
+                          } else {
+                            // No elements with "your-class-name" are visible
+                            console.log("No elements with id 'offers-list-container' are visible.");
+                          }
+                            
+
+                        }
+                        //console.log("Element clicked was an INPUT: ", clickedElement);
+                        // You can now access properties of clickedElement, e.g., clickedElement.id, clickedElement.value
+                    }
+                  
+                    //const inputElements = container.querySelectorAll('input');
+                    
+
+                      //alert('You clicked: ' + this.textContent);
+                  });
+              });
 
               // function find_price() {
               //   //console.log("Button clicked!");
@@ -876,6 +1158,7 @@
                     bodyElement.classList.add('preventBodyScroll');
                 });
               }
+
 
             });
           } else {

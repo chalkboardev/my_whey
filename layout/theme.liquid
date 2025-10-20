@@ -706,6 +706,26 @@ body {
       //                 //cancel_policy_div.style.alignItems = 'center';
       //                 bodyElement.classList.add('preventBodyScroll');
       //               }
+
+      // $(document).on('click', '.pb-f2d1', function() {
+      //   alert('Dynamic button clicked!');
+      // });
+      
+
+      $(document).on('click', '.plus-button', function() {
+          // Your click event handler logic here
+          alert('Dynamic button clicked!');
+      });
+      $(document).on('click', '.hello', function() {
+          // Your click event handler logic here
+          alert('Dynamic button clicked!');
+      });
+
+      $(document).delegate('.plus-button', 'click', function(){
+            //your code
+            console.log('PPPP buttons...');
+          });
+
           
       }); // end docready
 

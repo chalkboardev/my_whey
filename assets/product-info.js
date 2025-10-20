@@ -170,6 +170,7 @@ if (!customElements.get('product-info')) {
     }
 
     renderProductInfo({requestUrl, targetId, callback}) {
+      
 
 // $(".price").html('zzz...');
 // alert('hello');
@@ -369,6 +370,7 @@ if (!customElements.get('product-info')) {
             if (inputContainer) {
               console.log('Found the closest inputcontainer', inputContainer);
               inputContainer.checked = true;
+              inputContainer.click();
               
               var single_price_is = inputContainer.getAttribute('data-variant-price');
               single_price_is = single_price_is.substring(single_price_is.indexOf("R ") + 1).trim();
@@ -380,7 +382,7 @@ if (!customElements.get('product-info')) {
               if (panda_elementsStartingWith.length > 0) {
                 // At least one element with "your-class-name" is visible
               console.log("YES An element with id that contains 'offers-list-container-' is visible.");
-              console.log(panda_elementsStartingWith);
+              //console.log(panda_elementsStartingWith);
 
               const firstContainer = panda_elementsStartingWith[0];
               // 3. Select the first input within that container
