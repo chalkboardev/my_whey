@@ -710,24 +710,19 @@ body {
       // $(document).on('click', '.pb-f2d1', function() {
       //   alert('Dynamic button clicked!');
       // });
-      
 
-      $(document).on('click', '.plus-button', function() {
-          // Your click event handler logic here
-          alert('Dynamic button clicked!');
-      });
-      $(document).on('click', '.hello', function() {
+      $(document).on('click', '.btn-plus', function() {
           // Your click event handler logic here
           alert('Dynamic button clicked!');
       });
 
-      $(document).delegate('.plus-button', 'click', function(){
-            //your code
-            console.log('PPPP buttons...');
-          });
+      $(document).delegate('.btn-plus', 'click', function(){
+        //your code
+        console.log('PPPP buttons...');
+      });
 
           
-      }); // end docready
+        }); // end docready
 
       var observer = new MutationObserver(function(mutations) {
         console.log('Flavour modal open!');

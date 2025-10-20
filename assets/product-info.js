@@ -122,7 +122,9 @@ if (!customElements.get('product-info')) {
 
 // this.dataset.url = this.dataset.url;
 // var productUrl = this.dataset.url ;
-      }this.dataset.url = this.dataset.url;
+      }
+      
+      this.dataset.url = this.dataset.url;
       var productUrl = this.dataset.url;
 
 // ---- END get specific pill option clicked -----
@@ -143,7 +145,9 @@ if (!customElements.get('product-info')) {
 
 // // $(".price").html('<div class="price__container animate_it"><div class="price__regular">...</div></div>');
 // $(".product_icons").next().html('<div class="price__container"><div class="price__regular"><span class="fetching_price">Price loading </span><img class="gif_price_pad" width="16" src="https://cdn.shopify.com/s/files/1/0713/8685/7724/files/loader.gif?v=1743590298" /></div></div>');
-    }resetProductFormState() {
+    }
+    
+    resetProductFormState() {
       const productForm = this.productForm;
       productForm ?. toggleSubmitButton(true);
       productForm ?. handleErrorMessage();
@@ -190,8 +194,11 @@ if (!customElements.get('product-info')) {
 // element.innerHTML = 'none';
           });
         }
-      } else { //
-      }this.abortController ?. abort();
+      } else { 
+        //
+      }
+      
+      this.abortController ?. abort();
       this.abortController = new AbortController();
 
       fetch(requestUrl, {signal: this.abortController.signal})
