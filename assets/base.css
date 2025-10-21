@@ -2380,8 +2380,15 @@ body .menu-drawer__close-button {
     margin: 16px 0px 18px 6px !important;
 }
 
-.mw_price_div .price-item {
+.product__info-wrapper .price-item.price-item--sale.price-item--last {
     font-size: 2.4rem !important;
+    top: -1px;
+    position: relative;
+}
+
+.mw_price_div .price-item {
+    font-size: 1.8rem !important;
+    /* font-size: 2.4rem !important; */
     color: #444;
 }
 
@@ -3334,8 +3341,8 @@ quick-add-modal .product__title>a:hover {
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
     .mw_price_div .price-item {
-        font-size: 2.2rem !important;
-        color: #444;
+        /* font-size: 2.2rem !important;
+        color: #444; */
     }
     .quickv_cancellation_toast {
         align-items: flex-start !important;
