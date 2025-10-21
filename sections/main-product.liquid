@@ -536,17 +536,39 @@
 
 
   <script>
-    
+// ---------- START DETECT WHEN THE PANDA QUANTITY SELECTOR ON THE 4TH BLOCK IS ADDED TO THE DOM --------
+const observer1 = new MutationObserver((mutationsList, observer) => {
+        for (const mutation of mutationsList) {
+            if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+                mutation.addedNodes.forEach(node => {
+                    // Check if the added node is an element and has the target class
+                    if (node.nodeType === Node.ELEMENT_NODE && node.classList.contains('pb-c973')) {
+                        const firstSpan = node.querySelector('span');
+                        // Check if a span element was found
+                        if (firstSpan) {
+                          // Click the minus button 6 times to bring back to '4'
+                          for(var i = 0; i < 6; i++) {
+                            $(firstSpan).prev().click();
+                          }
+                        } else {
+                          console.log('No span element found in the document.');
+                        }
+                        //node.textContent = 'New content added!';
+                        // Or modify innerHTML, attributes, etc.
+                        // node.innerHTML = '<span>New HTML content</span>';
+
+                        // If you only need to act on the first instance and then stop observing, uncomment:
+                        // observer.disconnect();
+                    }
+                });
+            }
+        }
+    });
+    const config1 = { childList: true, subtree: true };
+    observer1.observe(document.body, config1);
+// ---------- END DETECT WHEN THE PANDA QUANTITY SELECTOR ON THE 4TH BLOCK IS ADDED TO THE DOM --------
+
 setTimeout(function(){
-  //const elementsWithClass = document.querySelectorAll('.shopify_subscriptions_app_block_label'); // Replace 'myClassName' with the actual class
-
-  // const secondElement = elementsWithClass[1]; 
-  // const firstElement = elementsWithClass[0];
-  // var tret = $(firstElement).find('input').eq(0);
-  // var tret2 = $(tret).attr('data-variant-price');
-  // console.log(firstElement);
-  // console.log(tret2);
-
   const panda_elementsStartingWith1 = document.querySelectorAll('[id^="offers-list-container-"]');
           if (panda_elementsStartingWith1.length > 0) {
                 console.log("Found a panda section XE ID: ");
@@ -558,8 +580,8 @@ setTimeout(function(){
                             $('.shopify_subscriptions_app_block_label:visible').each(function() {
                                 var container = $(this);
                                 var checkedRadio = container.find('input[type="radio"]:checked');
-
                                 if (checkedRadio.length > 0) {
+                                    //console.log("A radio button IS checked.");
                                     //var containerTitle = container.find('h3').text();
                                     var radioValue = checkedRadio.attr('data-variant-price');
                                     var firstSpaceIndex = radioValue.indexOf(" ");
@@ -569,12 +591,9 @@ setTimeout(function(){
                                     } else {
                                         console.log("No space found in the string.");
                                     }
-                                    //var radioValue = checkedRadio.val();
-                                    // console.log("In '" + containerTitle + "', the checked radio button (name: " + radioName + ") has value: " + radioValue);
                                     console.log("The subscription option price is: " + +single_item_price);
                                 } else {
-                                  // var containerTitle = container.find('h3').text();
-                                  //  console.log("No radio button is checked.");
+                                    //console.log("NO radio button is checked.");
                                 }
                             });
                             // ----- FIND WHICH PANDA BLOCK IS CLICKED -----
@@ -669,11 +688,8 @@ setTimeout(function(){
           } else {
             console.log("Did not find a panda section:");
           }
-       
 }, 5000);
 
-
-          
     var is_quickv_open = document.querySelector('[id^="QuickAdd-"]');
     if ($("[id^='QuickAdd-']").length > 0) {
       // At least one element with "your-class-name" is visible
@@ -1245,7 +1261,7 @@ setTimeout(function(){
           }
 
     } else {
-      console.log("no query string...");
+      console.log("No query string in url...default product view...");
       if ($("#most_popular").length > 0) {
         console.log("most_popular element found...");
       } else {
