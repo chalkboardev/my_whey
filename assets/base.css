@@ -2420,8 +2420,6 @@ body .menu-drawer__close-button {
 }
 
 .shopify_subscriptions_purchase_option_wrapper label {
-    position: relative !important;
-    z-index: 9999999999 !important;
     cursor: pointer !important;
     -webkit-tap-highlight-color: transparent !important;
 }
