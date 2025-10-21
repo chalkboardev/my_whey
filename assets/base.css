@@ -3333,6 +3333,10 @@ quick-add-modal .product__title>a:hover {
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    .mw_price_div .price-item {
+        font-size: 2.2rem !important;
+        color: #444;
+    }
     .quickv_cancellation_toast {
         align-items: flex-start !important;
         padding-top: 20px;
