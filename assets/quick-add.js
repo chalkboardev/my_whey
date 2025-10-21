@@ -65,7 +65,7 @@ if (!customElements.get('quick-add-modal')) {
                  
                   //const inputElements = container.querySelectorAll('input');
                   
-                    var targetElement = clickedElement.querySelector('input'); // Select by class, ID, tag, etc.
+                    var targetElement = clickedElement; // Select by class, ID, tag, etc.
                     if (targetElement) {
                       console.log("Found the target input: ");
                       //console.log("Found the target input: ", targetElement);
