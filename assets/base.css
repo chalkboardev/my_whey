@@ -3301,6 +3301,11 @@ quick-add-modal .product__title>a:hover {
     transform: translateY(-4px);
 }
 
+[id^="#Quantity-Form-template-"] .heighten_me {
+    /* display: block !important; */
+    display: none !important;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
@@ -4448,10 +4453,6 @@ quick-add-modal .product__title>a:hover {
         font-weight: 600;
         transition: all ease 0.25s;
     }
-}
-
-#Quantity-Form-template--19937707229436__main {
-    display: block !important;
 }
 
 

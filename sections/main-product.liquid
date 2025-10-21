@@ -538,41 +538,117 @@
   <script>
     
 setTimeout(function(){
-  const elementsWithClass = document.querySelectorAll('.shopify_subscriptions_app_block_label'); // Replace 'myClassName' with the actual class
-  
-  const secondElement = elementsWithClass[1]; 
-  const firstElement = elementsWithClass[0];
-  var tret = $(firstElement).find('input').eq(0);
-  var tret2 = $(tret).attr('data-variant-price');
-  console.log(firstElement);
-  console.log(tret2);
+  //const elementsWithClass = document.querySelectorAll('.shopify_subscriptions_app_block_label'); // Replace 'myClassName' with the actual class
+
+  // const secondElement = elementsWithClass[1]; 
+  // const firstElement = elementsWithClass[0];
+  // var tret = $(firstElement).find('input').eq(0);
+  // var tret2 = $(tret).attr('data-variant-price');
+  // console.log(firstElement);
+  // console.log(tret2);
 
   const panda_elementsStartingWith1 = document.querySelectorAll('[id^="offers-list-container-"]');
           if (panda_elementsStartingWith1.length > 0) {
                 console.log("Found a panda section XE ID: ");
                 $(panda_elementsStartingWith1).children().children().children().each(function() {
                       $(this).click(function() {
+                            var single_item_price = "";
                             console.log(this);
-                            var the_block_single_same_is = $(this).find('.pb-56aa').html().toLowerCase();
-                            console.log('The block title IS:' + the_block_single_same_is);
+                            // ----- FIND WHICH SUBSCRIPTION OPTION/BLOCK IS SELECTED -----
+                            $('.shopify_subscriptions_app_block_label:visible').each(function() {
+                                var container = $(this);
+                                var checkedRadio = container.find('input[type="radio"]:checked');
+
+                                if (checkedRadio.length > 0) {
+                                    //var containerTitle = container.find('h3').text();
+                                    var radioValue = checkedRadio.attr('data-variant-price');
+                                    var firstSpaceIndex = radioValue.indexOf(" ");
+                                    if (firstSpaceIndex !== -1) { // Check if a space exists in the string
+                                        single_item_price = radioValue.substring(firstSpaceIndex + 1);
+                                        console.log(single_item_price); // Output: "is a test string."
+                                    } else {
+                                        console.log("No space found in the string.");
+                                    }
+                                    //var radioValue = checkedRadio.val();
+                                    // console.log("In '" + containerTitle + "', the checked radio button (name: " + radioName + ") has value: " + radioValue);
+                                    console.log("The subscription option price is: " + +single_item_price);
+                                } else {
+                                  // var containerTitle = container.find('h3').text();
+                                  //  console.log("No radio button is checked.");
+                                }
+                            });
+                            // ----- FIND WHICH PANDA BLOCK IS CLICKED -----
+                            var the_block_single_name_is = $(this).find('.pb-56aa').html().toLowerCase();
+                            console.log('The block title IS:' + the_block_single_name_is);
+                            if(the_block_single_name_is == "single"){
+                                var use_quantity = 1;
+                            } else if(the_block_single_name_is == "buy 2"){
+                                var use_quantity = 2;
+                            } else if(the_block_single_name_is == "buy 3"){
+                                var use_quantity = 3;
+                            } else if(the_block_single_name_is == "buy 4+"){
+                                var use_quantity = 4;
+                            }
+                            // ----- FIND PRICES FROM SUBSCRIPTION BLOCKS -----
+                            var the_discounted_price_element = $(this).find('.money').eq(0);
                             var the_discounted_price_is = $(this).find('.money').eq(0).html();
+                            the_discounted_price_is = the_discounted_price_is.substring(the_discounted_price_is.indexOf(";") + 1);
+                            var the_strikethrough_price_element = $(this).find('.money').eq(1);
                             var the_old_price_is = $(this).find('.money').eq(1).html();
-                            var the_single_price_is = "";
-                            console.log(the_discounted_pricez);
+                            var the_single_price_is = use_quantity*single_item_price;
+                            the_single_price_is = +the_single_price_is;
+                            console.log("Discounted Price: " + the_discounted_price_is);
+                            console.log("Calc use_quantity x single_item_price: " + the_single_price_is);
+                            // ----- FIND THE VOLUME PERCENTAGE DISCOUNTED IN PANDA BLOCKS -----
+                            var the_percentage_off = $(this).find('.pb-1856').eq(0).html();
+                            var symbolToFind = "%"
+                            var symbolIndex = the_percentage_off.indexOf(symbolToFind);
+                            if (symbolIndex !== -1 && symbolIndex >= 2) {
+                                var startIndex = symbolIndex - 2;
+                                var twoCharsBefore = the_percentage_off.substring(startIndex, symbolIndex);
+                                twoCharsBefore = +twoCharsBefore;
+                                console.log("The two characters before the symbol are:", twoCharsBefore);
+                            } else if (symbolIndex !== -1 && symbolIndex < 2) {
+                              console.log("The symbol is found, but there are not enough characters before it.");
+                            } else {
+                              console.log("The symbol was not found in the string.");
+                            }
+                            // ----- HANDLE PANDA BLOCK QUANTITY CHANGE -----
                             $('button').each(function() {
                                   // Check if the button's text contains a "+" sign
                                   if ($(this).text().includes('+')) {
                                       var the_plus_button = $(this);
-                                      console.log('Button with plus sign found:', the_plus_button.text()); 
+                                      //console.log('Button with plus sign found:', the_plus_button.text()); 
                                       //console.log(this);
-                                      $(this).prev().addClass('changeme');
                                       // $(this).prev().attr('onclick', 'myFunction(event)');
-
-                                      const mySpan = document.querySelector('.changeme');
+                                      $(this).addClass('plus_button');
+                                      $(this).prev().addClass('block_4_quantity');
+                                      const mySpan = document.querySelector('.block_4_quantity');
                                       const observer = new MutationObserver(function(mutationsList, observer) {
                                           for (const mutation of mutationsList) {
                                               if (mutation.type === 'characterData' || mutation.type === 'childList') {
+                                                  var quant_already_in_cart = $('.product-form__quantity .quantity-cart').html();
+                                                  quant_already_in_cart = +quant_already_in_cart
+                                                  console.log("Already in cart: " + quant_already_in_cart);
                                                   console.log('Span content changed:', mySpan.textContent);
+                                                  var newQuant = mySpan.textContent;
+                                                  newQuant = +newQuant;
+                                                  if((newQuant + quant_already_in_cart) >= 10){
+                                                    console.log('enough');
+                                                    $('.product-form__error-message').html('<span>A maximum of 10 items is allowed per product.</span>');
+                                                    $('.product-form__error-message-wrapper').removeAttr("hidden");
+                                                    $(".plus_button").prop('disabled', true);
+                                                    return false;
+                                                  } else {
+                                                    $(".plus_button").prop('disabled', false);
+                                                    $('.product-form__error-message').html('');
+                                                    $('.product-form__error-message-wrapper').attr("hidden", "");
+                                                  }
+                                                  var update_block_total = newQuant*single_item_price;
+                                                  var update_block_total_discounted = update_block_total - ((twoCharsBefore / 100) * update_block_total);
+                                                  console.log("New Total: " + update_block_total);
+                                                  the_discounted_price_element.html("R " + update_block_total_discounted.toFixed(2));
+                                                  the_strikethrough_price_element.html("R " + update_block_total.toFixed(2));
                                                   // Perform actions based on the content change
                                               }
                                           }
@@ -583,17 +659,9 @@ setTimeout(function(){
                                           characterData: true 
                                       };
                                       observer.observe(mySpan, config);
-
                                       function changeSpanContent() {
                                           mySpan.textContent = "New content at " + new Date().toLocaleTimeString();
                                       }
-                                      // $(this).attr('onclick', 'myFunction()');
-                                      //$(this).attr('onclick', 'myFunction(event)');
-                                      //$(this).prev().click();
-                                      // You can also attach a click event listener specifically to these buttons
-                                      // $(this).on('click', function() {
-                                      //     alert('You clicked a button with a plus sign: ' + $(this).text());
-                                      // });
                                   }
                             });
                       });
@@ -702,6 +770,8 @@ setTimeout(function(){
                   container.addEventListener('click', function(event) {
                     //e.preventDefault();
                     //e.stopPropagation();
+                    $('.block_4_quantity').text('4');
+                    $('.pb-6b5d:first').click(); 
                     const clickedElement = event.target;
                     //alert(clickedElement.tagName);
                     console.log("TARGET: ", clickedElement);
@@ -763,10 +833,10 @@ setTimeout(function(){
                                         var the_discounted_price = $(this).find('.money').eq(0).html();
                                         if(the_selling_plan.includes('one_time_purchase') == true){
                                             console.log('clicked one time...');
-                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R " + variant_price.toFixed(2));
+                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R&nbsp;" + variant_price.toFixed(2));
                                             //the_discounted_price = the_discounted_price.substring(the_discounted_price.indexOf(";") + 1);
                                             var the_old_price = $(this).find('.money').eq(1).html();
-                                            var update_the_old_price = $(this).find('.money').eq(1).html("R " + variant_compare_at_price.toFixed(2));
+                                            var update_the_old_price = $(this).find('.money').eq(1).html("R&nbsp;" + variant_compare_at_price.toFixed(2));
                                             if(the_old_price == undefined){
                                               //alert('undefined!');
                                               the_old_price = the_discounted_price;
@@ -775,10 +845,10 @@ setTimeout(function(){
                                             }
                                         } else {
                                             console.log('clicked subscribe...');
-                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R " + variant_price.toFixed(2));
+                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R&nbsp;" + variant_price.toFixed(2));
                                             //the_discounted_price = the_discounted_price.substring(the_discounted_price.indexOf(";") + 1);
                                             var the_old_price = $(this).find('.money').eq(1).html();
-                                            var update_the_old_price = $(this).find('.money').eq(1).html("R " + variant_compare_at_price.toFixed(2));
+                                            var update_the_old_price = $(this).find('.money').eq(1).html("R&nbsp;" + variant_compare_at_price.toFixed(2));
                                             if(the_old_price == undefined){
                                               //alert('undefined!');
                                               the_old_price = the_discounted_price;
@@ -796,11 +866,11 @@ setTimeout(function(){
                                             var amountToSubtract = discounted_price_2 * (0.05);
                                             var newTotal1 = (discounted_price_2 - amountToSubtract).toFixed(2);
                                             console.log(newTotal1); // Output: 90
-                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R " + newTotal1);
+                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R&nbsp;" + newTotal1);
                                             //the_discounted_price = the_discounted_price.substring(the_discounted_price.indexOf(";") + 1);
                                             var the_old_price = $(this).find('.money').eq(1).html();
                                             const the_old_price_2 = (variant_price*2).toFixed(2);
-                                            var update_the_old_price = $(this).find('.money').eq(1).html("R " + the_old_price_2);
+                                            var update_the_old_price = $(this).find('.money').eq(1).html("R&nbsp;" + the_old_price_2);
                                         } else {
                                             console.log('clicked subscribe...');
                                             //console.log('Yes Second...');
@@ -809,11 +879,11 @@ setTimeout(function(){
                                             var amountToSubtract = discounted_price_2 * (0.05);
                                             var newTotal1 = (discounted_price_2 - amountToSubtract).toFixed(2);
                                             console.log(newTotal1); // Output: 90
-                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R " + newTotal1);
+                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R&nbsp;" + newTotal1);
                                             //the_discounted_price = the_discounted_price.substring(the_discounted_price.indexOf(";") + 1);
                                             var the_old_price = $(this).find('.money').eq(1).html();
                                             const the_old_price_2 = (variant_price*2).toFixed(2);
-                                            var update_the_old_price = $(this).find('.money').eq(1).html("R " + the_old_price_2);
+                                            var update_the_old_price = $(this).find('.money').eq(1).html("R&nbsp;" + the_old_price_2);
                                         }
 
                                     } else if(count == 2){
@@ -825,11 +895,11 @@ setTimeout(function(){
                                             var amountToSubtract1 = discounted_price_3 * (0.1);
                                             var newTotal2 = (discounted_price_3 - amountToSubtract1).toFixed(2);
                                             console.log(newTotal2); // Output: 90
-                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R " + newTotal2);
+                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R&nbsp;" + newTotal2);
                                             //the_discounted_price = the_discounted_price.substring(the_discounted_price.indexOf(";") + 1);
                                             var the_old_price = $(this).find('.money').eq(1).html();
                                             const the_old_price_3 = (variant_price*3).toFixed(2);
-                                            var update_the_old_price = $(this).find('.money').eq(1).html("R " + the_old_price_3);
+                                            var update_the_old_price = $(this).find('.money').eq(1).html("R&nbsp;" + the_old_price_3);
                                         } else {
                                             console.log('clicked subscribe...');
                                             //console.log('Yes Second...');
@@ -838,11 +908,11 @@ setTimeout(function(){
                                             var amountToSubtract1 = discounted_price_3 * (0.1);
                                             var newTotal2 = (discounted_price_3 - amountToSubtract1).toFixed(2);
                                             console.log(newTotal2); // Output: 90
-                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R " + newTotal2);
+                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R&nbsp;" + newTotal2);
                                             //the_discounted_price = the_discounted_price.substring(the_discounted_price.indexOf(";") + 1);
                                             var the_old_price = $(this).find('.money').eq(1).html();
                                             const the_old_price_3 = (variant_price*3).toFixed(2);
-                                            var update_the_old_price = $(this).find('.money').eq(1).html("R " + the_old_price_3);
+                                            var update_the_old_price = $(this).find('.money').eq(1).html("R&nbsp;" + the_old_price_3);
                                         }
                                     } else if(count == 3){
                                         //console.log('FOURTH PRCE!!!!!!!...' + price_is*4);
@@ -853,11 +923,11 @@ setTimeout(function(){
                                             var amountToSubtract3 = discounted_price_4 * (0.15);
                                             var newTotal3 = (discounted_price_4 - amountToSubtract3).toFixed(2);
                                             console.log(newTotal3); // Output: 90
-                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R " + newTotal3);
+                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R&nbsp;" + newTotal3);
                                             //the_discounted_price = the_discounted_price.substring(the_discounted_price.indexOf(";") + 1);
                                             var the_old_price = $(this).find('.money').eq(1).html();
                                             const the_old_price_4 = (variant_price*4).toFixed(2);
-                                            var update_the_old_price = $(this).find('.money').eq(1).html("R " + the_old_price_4);
+                                            var update_the_old_price = $(this).find('.money').eq(1).html("R&nbsp;" + the_old_price_4);
                                         } else {
                                             console.log('clicked subscribe...');
                                             //console.log('Yes Second...');
@@ -1192,6 +1262,8 @@ setTimeout(function(){
                     const clickedElement = event.target;
                     //alert(clickedElement.tagName);
                     console.log("TARGET: ", clickedElement);
+                    $('.block_4_quantity').text('4');
+                    $('.pb-6b5d:first').click(); 
                     if (clickedElement.tagName === 'INPUT') {
                           console.log("Element clicked was an INPUT");
 
@@ -1250,10 +1322,10 @@ setTimeout(function(){
                                         var the_discounted_price = $(this).find('.money').eq(0).html();
                                         if(the_selling_plan.includes('one_time_purchase') == true){
                                             console.log('clicked one time...');
-                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R " + variant_price.toFixed(2));
+                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R&nbsp;" + variant_price.toFixed(2));
                                             //the_discounted_price = the_discounted_price.substring(the_discounted_price.indexOf(";") + 1);
                                             var the_old_price = $(this).find('.money').eq(1).html();
-                                            var update_the_old_price = $(this).find('.money').eq(1).html("R " + variant_compare_at_price.toFixed(2));
+                                            var update_the_old_price = $(this).find('.money').eq(1).html("R&nbsp;" + variant_compare_at_price.toFixed(2));
                                             if(the_old_price == undefined){
                                               //alert('undefined!');
                                               the_old_price = the_discounted_price;
@@ -1262,10 +1334,10 @@ setTimeout(function(){
                                             }
                                         } else {
                                             console.log('clicked subscribe...');
-                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R " + variant_price.toFixed(2));
+                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R&nbsp;" + variant_price.toFixed(2));
                                             //the_discounted_price = the_discounted_price.substring(the_discounted_price.indexOf(";") + 1);
                                             var the_old_price = $(this).find('.money').eq(1).html();
-                                            var update_the_old_price = $(this).find('.money').eq(1).html("R " + variant_compare_at_price.toFixed(2));
+                                            var update_the_old_price = $(this).find('.money').eq(1).html("R&nbsp;" + variant_compare_at_price.toFixed(2));
                                             if(the_old_price == undefined){
                                               //alert('undefined!');
                                               the_old_price = the_discounted_price;
@@ -1283,11 +1355,11 @@ setTimeout(function(){
                                             var amountToSubtract = discounted_price_2 * (0.05);
                                             var newTotal1 = (discounted_price_2 - amountToSubtract).toFixed(2);
                                             console.log(newTotal1); // Output: 90
-                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R " + newTotal1);
+                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R&nbsp;" + newTotal1);
                                             //the_discounted_price = the_discounted_price.substring(the_discounted_price.indexOf(";") + 1);
                                             var the_old_price = $(this).find('.money').eq(1).html();
                                             const the_old_price_2 = (variant_price*2).toFixed(2);
-                                            var update_the_old_price = $(this).find('.money').eq(1).html("R " + the_old_price_2);
+                                            var update_the_old_price = $(this).find('.money').eq(1).html("R&nbsp;" + the_old_price_2);
                                         } else {
                                             console.log('clicked subscribe...');
                                             //console.log('Yes Second...');
@@ -1296,11 +1368,11 @@ setTimeout(function(){
                                             var amountToSubtract = discounted_price_2 * (0.05);
                                             var newTotal1 = (discounted_price_2 - amountToSubtract).toFixed(2);
                                             console.log(newTotal1); // Output: 90
-                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R " + newTotal1);
+                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R&nbsp;" + newTotal1);
                                             //the_discounted_price = the_discounted_price.substring(the_discounted_price.indexOf(";") + 1);
                                             var the_old_price = $(this).find('.money').eq(1).html();
                                             const the_old_price_2 = (variant_price*2).toFixed(2);
-                                            var update_the_old_price = $(this).find('.money').eq(1).html("R " + the_old_price_2);
+                                            var update_the_old_price = $(this).find('.money').eq(1).html("R&nbsp;" + the_old_price_2);
                                         }
 
                                     } else if(count == 2){
@@ -1312,11 +1384,11 @@ setTimeout(function(){
                                             var amountToSubtract1 = discounted_price_3 * (0.1);
                                             var newTotal2 = (discounted_price_3 - amountToSubtract1).toFixed(2);
                                             console.log(newTotal2); // Output: 90
-                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R " + newTotal2);
+                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R&nbsp;" + newTotal2);
                                             //the_discounted_price = the_discounted_price.substring(the_discounted_price.indexOf(";") + 1);
                                             var the_old_price = $(this).find('.money').eq(1).html();
                                             const the_old_price_3 = (variant_price*3).toFixed(2);
-                                            var update_the_old_price = $(this).find('.money').eq(1).html("R " + the_old_price_3);
+                                            var update_the_old_price = $(this).find('.money').eq(1).html("R&nbsp;" + the_old_price_3);
                                         } else {
                                             console.log('clicked subscribe...');
                                             //console.log('Yes Second...');
@@ -1325,11 +1397,11 @@ setTimeout(function(){
                                             var amountToSubtract1 = discounted_price_3 * (0.1);
                                             var newTotal2 = (discounted_price_3 - amountToSubtract1).toFixed(2);
                                             console.log(newTotal2); // Output: 90
-                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R " + newTotal2);
+                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R&nbsp;" + newTotal2);
                                             //the_discounted_price = the_discounted_price.substring(the_discounted_price.indexOf(";") + 1);
                                             var the_old_price = $(this).find('.money').eq(1).html();
                                             const the_old_price_3 = (variant_price*3).toFixed(2);
-                                            var update_the_old_price = $(this).find('.money').eq(1).html("R " + the_old_price_3);
+                                            var update_the_old_price = $(this).find('.money').eq(1).html("R&nbsp;" + the_old_price_3);
                                         }
                                     } else if(count == 3){
                                         //console.log('FOURTH PRCE!!!!!!!...' + price_is*4);
@@ -1340,11 +1412,11 @@ setTimeout(function(){
                                             var amountToSubtract3 = discounted_price_4 * (0.15);
                                             var newTotal3 = (discounted_price_4 - amountToSubtract3).toFixed(2);
                                             console.log(newTotal3); // Output: 90
-                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R " + newTotal3);
+                                            var update_the_discounted_price = $(this).find('.money').eq(0).html("R&nbsp;" + newTotal3);
                                             //the_discounted_price = the_discounted_price.substring(the_discounted_price.indexOf(";") + 1);
                                             var the_old_price = $(this).find('.money').eq(1).html();
                                             const the_old_price_4 = (variant_price*4).toFixed(2);
-                                            var update_the_old_price = $(this).find('.money').eq(1).html("R " + the_old_price_4);
+                                            var update_the_old_price = $(this).find('.money').eq(1).html("R&nbsp;" + the_old_price_4);
                                         } else {
                                             console.log('clicked subscribe...');
                                             //console.log('Yes Second...');
