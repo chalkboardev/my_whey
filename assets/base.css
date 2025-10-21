@@ -3307,6 +3307,28 @@ quick-add-modal .product__title>a:hover {
     display: none !important;
 }
 
+.pb-19ed,
+.pb-c3a6 {
+    grid-gap: 0px !important;
+    display: flex;
+    gap: 0px !important;
+}
+
+.pb-1856 {
+    position: relative;
+    top: -2px;
+}
+
+.pb-0bed {
+    position: relative;
+    top: -2px;
+}
+
+.pb-3373 {
+    grid-gap: 4px !important;
+    gap: 4px !important;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
