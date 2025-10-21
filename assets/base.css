@@ -2420,6 +2420,8 @@ body .menu-drawer__close-button {
 }
 
 .shopify_subscriptions_purchase_option_wrapper label {
+    position: relative !important;
+    z-index: 9999999999 !important;
     cursor: pointer !important;
     -webkit-tap-highlight-color: transparent !important;
 }
@@ -3505,8 +3507,8 @@ quick-add-modal .product__title>a:hover {
         padding: 1px 0 0 0;
     }
     .shopify_subscriptions_app_block_label input {
-        /* position: relative;
-        top: 4px; */
+        position: relative;
+        top: 4px;
     }
     .related-products .card__information {
         min-height: 164px;
