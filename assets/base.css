@@ -2849,6 +2849,7 @@ quick-add-modal .product__title>a:hover {
     animation-name: fadeIn !important;
     animation-duration: 1s !important;
     animation-iteration-count: 1 !important;
+    padding-bottom: 12px;
 }
 
 .menu-drawer__menu-item {
