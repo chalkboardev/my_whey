@@ -13,12 +13,12 @@
             {{ section.settings.title }}
           </h1>
         {% comment %} <span>
-            {%- if current_tags %} 
-            <h2 style="color: #111;font-weight: 600;margin: 0 auto;padding: 10px 10px 10px 0;">
-            By Goal: <span style="color:#ff6700;">{{ current_tags | join: ', ' }}</span>
-            </h2>  
-            {% endif -%} 
-                </span> {% endcomment %}
+                      {%- if current_tags %} 
+                      <h2 style="color: #111;font-weight: 600;margin: 0 auto;padding: 10px 10px 10px 0;">
+                      By Goal: <span style="color:#ff6700;">{{ current_tags | join: ', ' }}</span>
+                      </h2>  
+                      {% endif -%} 
+                        </span> {% endcomment %}
         </div>
       </div>
     </div>
@@ -64,9 +64,11 @@
         {% comment %} {{ collection.title }} {% endcomment %}
         {%- elsif collection.title == 'Hot Specials' -%}
         {% comment %} {{ collection.title }} {% endcomment %}
+        {%- elsif collection.title == 'My Formulas' -%}
+        {% comment %} {{ collection.title }} {% endcomment %}
         {%- elsif collection.title == 'Home page' -%}
         {% comment %} {{ collection.title }} {% endcomment %}
-        {% comment %} {%- elsif collection.title == 'Flavours' -%} {% endcomment %}
+          {% comment %} {%- elsif collection.title == 'Flavours' -%} {% endcomment %}
         {% comment %} {{ collection.title }} {% endcomment %}
         {%- else -%}
           <li
