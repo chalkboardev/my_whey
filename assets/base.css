@@ -2402,6 +2402,12 @@ body .menu-drawer__close-button {
     color: #444;
 }
 
+.mw_product_grid .mw_price_div .price-item {
+    font-size: 1.8rem !important;
+    /* font-size: 2.4rem !important; */
+    color: #fff;
+}
+
 .shopify_subscriptions_app_policy:before {
     content: "*";
     text-transform: capitalize !important;
