@@ -2386,12 +2386,13 @@ body .menu-drawer__close-button {
     position: relative;
 }
 
-.product__info-wrapper .price-item.price-item--sale.price-item--last .heighten_me {
+
+/* .product__info-wrapper .price-item.price-item--sale.price-item--last .heighten_me {
     font-size: 2.4rem !important;
-}
+} */
 
 .product__info-wrapper .price-item.price-item--regular .heighten_me {
-    font-size: 2.4rem !important;
+    font-size: 2.4rem;
     top: -1px;
     position: relative;
 }
@@ -2602,7 +2603,7 @@ body .menu-drawer__close-button {
     height: 20px;
     display: flex;
     position: relative;
-    padding: 0px 10px 0px 8px;
+    padding: 0px 10px 0px 4px;
     text-align: center;
     justify-content: center;
     background: #929292 !important;
