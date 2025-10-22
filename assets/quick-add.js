@@ -57,17 +57,12 @@ if (!customElements.get('quick-add-modal')) {
                   //e.stopPropagation();
                   const clickedElement = event.target;
                   //alert(clickedElement.tagName);
-                  if (clickedElement.tagName === 'INPUT') {
-                    console.log("Element clicked was an INPUT");
-                      //console.log("Element clicked was an INPUT: ", clickedElement);
-                      // You can now access properties of clickedElement, e.g., clickedElement.id, clickedElement.value
-                  }
                  
                   //const inputElements = container.querySelectorAll('input');
                   
                     var targetElement = clickedElement; // Select by class, ID, tag, etc.
-                    if (targetElement) {
-                      console.log("Found the target input: ");
+                    if (clickedElement.tagName === 'INPUT') {
+                      console.log("Element clicked was an INPUT");
                       //console.log("Found the target input: ", targetElement);
                       //targetElement.parentNode.parentNode.parentNode.parentNode.previousSibling.remove();
                       targetElement.checked = true;
