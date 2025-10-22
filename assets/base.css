@@ -2603,7 +2603,7 @@ body .menu-drawer__close-button {
     height: 20px;
     display: flex;
     position: relative;
-    padding: 0px 10px 0px 4px;
+    padding: 0px 10px 0px 6px;
     text-align: center;
     justify-content: center;
     background: #929292 !important;
@@ -3542,6 +3542,10 @@ quick-add-modal .product__title>a:hover {
         flex-wrap: wrap;
         vertical-align: middle;
         padding-top: 2px !important;
+        animation-name: swing;
+        animation-direction: alternate;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
     }
     .dietary_icons .icon-wrap {
         width: 34px;
