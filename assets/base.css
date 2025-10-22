@@ -3845,18 +3845,25 @@ quick-add-modal .product__title>a:hover {
         right: -72px;
     }
     .mw_corner_no_stock {
-        border-top: 60px solid;
-        border-bottom: 60px solid transparent;
-        border-right: 60px solid transparent;
-        border-radius: 6px !important;
+        border-top: 84px solid;
+        border-bottom: 84px solid transparent;
+        border-right: 84px solid transparent;
+        border-top-left-radius: 6px !important;
+        border-top-right-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+        border-bottom-left-radius: 0px !important;
     }
     .no_stock_text_span {
-        top: -57px;
+        /* top: -60px;
         letter-spacing: 1px !important;
-        width: 78px;
+        width: 80px;
         font-size: 11px !important;
-        right: -60px;
-        font-weight: 400;
+        right: -74px;
+        font-weight: 600; */
+        top: -60px;
+        width: 100px;
+        font-size: 11px !important;
+        right: -84px;
     }
     .product-option dt,
     dd {
