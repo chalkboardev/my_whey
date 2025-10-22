@@ -383,14 +383,107 @@ if (!customElements.get('product-info')) {
               single_price_is = single_price_is.substring(single_price_is.indexOf("R ") + 1).trim();
               single_price_is = single_price_is.replace(/,/g, ""); // Remove all commas
               single_price_is = parseFloat(single_price_is);
-              console.log('SINGLE PRICE IS:' + single_price_is);
+              console.log('SINGLE PRICE IS:' + single_price_is); 
+
+
+                            //       // ----- START RESET THE LAST BLOCKS PRICING WHEN ANY OTHER PANDA BLOCKS ARE CLICKED -----
+                                  var the_blocks_in_panda = document.querySelectorAll('.pb-6b5d');
+                                  // Check if any elements were found
+                                  if (the_blocks_in_panda.length > 0) {
+                                        // Access the last element in the NodeList
+                                        var lastElement_is = the_blocks_in_panda[the_blocks_in_panda.length - 1];
+                                        var reset_last_block_totals = +single_price_is;
+                                        var the_discount_here = $(lastElement_is).find('.money').eq(0).html();
+                                        
+                                        var the_percentage_off_4thBlck = $(lastElement_is).find('.pb-1856').eq(0).html();
+                                        var symbolToFind_4thBlck = "%"
+                                        var symbolIndex_4thBlck = the_percentage_off_4thBlck.indexOf(symbolToFind_4thBlck);
+                                        if (symbolIndex_4thBlck !== -1 && symbolIndex_4thBlck >= 2) {
+                                            var startIndex_4thBlck = symbolIndex_4thBlck - 2;
+                                            var get_percent = the_percentage_off_4thBlck.substring(startIndex_4thBlck, symbolIndex_4thBlck);
+                                            get_percent = +get_percent;
+                                            console.log("The two characters before the symbol are:", get_percent);
+                                        } else if (symbolIndex_4thBlck !== -1 && symbolIndex_4thBlck < 2) {
+                                            //console.log("The symbol is found, but there are not enough characters before it.");
+                                        } else {
+                                            //console.log("The symbol was not found in the string.");
+                                        }
+
+                                        var original_pricing = (single_price_is*4).toFixed(2);
+                                        var discounted_new = (original_pricing - (original_pricing*(get_percent/100)) ).toFixed(2);
+
+                                        $(lastElement_is).find('.money').eq(0).html("R " + discounted_new);
+                                        $(lastElement_is).find('.money').eq(1).html("R " + original_pricing);
+                                        //$(lastElement).find('.money').eq(1).html("R " + original_pricing.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+                                        //console.log("The last element with class 'pb-6b5d' is:", lastElement);
+                                  } else {
+                                    console.log("No elements with 'pb-6b5d' were found.");
+                                  }
+                            //       // ----- END RESET THE LAST BLOCKS PRICING WHEN ANY OTHER PANDA BLOCKS ARE CLICKED -----
+
 
               var panda_elementsStartingWith = document.querySelectorAll('[id^="offers-list-container-"]');
               if (panda_elementsStartingWith.length > 0) {
                 // At least one element with "your-class-name" is visible
               console.log("YES An element with id that contains 'offers-list-container-' is visible.");
               //console.log(panda_elementsStartingWith);
+              $(panda_elementsStartingWith).children().children().children().each(function() {
+                      $(this).click(function() {
+                            // ----- FIND WHICH PANDA BLOCK IS CLICKED -----
+                            var the_block_single_name_is = $(this).find('.pb-56aa').html().toLowerCase();
+                            console.log('The block title IS:' + the_block_single_name_is);
+                            if(the_block_single_name_is == "single" || the_block_single_name_is == "buy 1"){
+                                var use_quantity = 1;
+                            } else if(the_block_single_name_is == "buy 2"){
+                                var use_quantity = 2;
+                            } else if(the_block_single_name_is == "buy 3"){
+                                var use_quantity = 3;
+                            } else if(the_block_single_name_is == "buy 4+"){
+                                var use_quantity = 4;
+                            }
 
+                            if(use_quantity == 4){
+                                  //console.log('clicked on last block...dont clear');
+                            } else {
+                                  //console.log('Did NOT click on last block...proceed to clear');
+                                  // ----- START RESET THE LAST BLOCKS PRICING WHEN ANY OTHER PANDA BLOCKS ARE CLICKED -----
+                                  var the_blocks_in_panda = document.querySelectorAll('.pb-6b5d');
+                                  // Check if any elements were found
+                                  if (the_blocks_in_panda.length > 0) {
+                                        // Access the last element in the NodeList
+                                        var lastElement_is = the_blocks_in_panda[the_blocks_in_panda.length - 1];
+                                        var reset_last_block_totals = +single_price_is;
+                                        var the_discount_here = $(lastElement_is).find('.money').eq(0).html();
+                                        
+                                        var the_percentage_off_4thBlck = $(lastElement_is).find('.pb-1856').eq(0).html();
+                                        var symbolToFind_4thBlck = "%"
+                                        var symbolIndex_4thBlck = the_percentage_off_4thBlck.indexOf(symbolToFind_4thBlck);
+                                        if (symbolIndex_4thBlck !== -1 && symbolIndex_4thBlck >= 2) {
+                                            var startIndex_4thBlck = symbolIndex_4thBlck - 2;
+                                            var get_percent = the_percentage_off_4thBlck.substring(startIndex_4thBlck, symbolIndex_4thBlck);
+                                            get_percent = +get_percent;
+                                            console.log("The two characters before the symbol are:", get_percent);
+                                        } else if (symbolIndex_4thBlck !== -1 && symbolIndex_4thBlck < 2) {
+                                            //console.log("The symbol is found, but there are not enough characters before it.");
+                                        } else {
+                                            //console.log("The symbol was not found in the string.");
+                                        }
+
+                                        var original_pricing = (single_price_is*4).toFixed(2);
+                                        var discounted_new = (original_pricing - (original_pricing*(get_percent/100)) ).toFixed(2);
+
+                                        $(lastElement_is).find('.money').eq(0).html("R " + discounted_new);
+                                        $(lastElement_is).find('.money').eq(1).html("R " + original_pricing);
+                                        //$(lastElement).find('.money').eq(1).html("R " + original_pricing.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+                                        //console.log("The last element with class 'pb-6b5d' is:", lastElement);
+                                  } else {
+                                    console.log("No elements with 'pb-6b5d' were found.");
+                                  }
+                                  // ----- END RESET THE LAST BLOCKS PRICING WHEN ANY OTHER PANDA BLOCKS ARE CLICKED -----
+                            }
+
+                      });
+              });
               const firstContainer = panda_elementsStartingWith[0];
               // 3. Select the first input within that container
               const firstInputInContainer = firstContainer.querySelector('input');

@@ -610,45 +610,45 @@ setTimeout(function(){
                                 var use_quantity = 4;
                             }
 
-                            // if(use_quantity == 4){
-                            //       //console.log('clicked on last block...dont clear');
-                            // } else {
-                            //       //console.log('Did NOT click on last block...proceed to clear');
-                            //       // ----- START RESET THE LAST BLOCKS PRICING WHEN ANY OTHER PANDA BLOCKS ARE CLICKED -----
-                            //       var the_blocks_in_panda = document.querySelectorAll('.pb-6b5d');
-                            //       // Check if any elements were found
-                            //       if (the_blocks_in_panda.length > 0) {
-                            //             // Access the last element in the NodeList
-                            //             var lastElement_is = the_blocks_in_panda[the_blocks_in_panda.length - 1];
-                            //             var reset_last_block_totals = +single_item_price;
-                            //             var the_discount_here = $(lastElement_is).find('.money').eq(0).html();
+                            if(use_quantity == 4){
+                                  //console.log('clicked on last block...dont clear');
+                            } else {
+                                  //console.log('Did NOT click on last block...proceed to clear');
+                                  // ----- START RESET THE LAST BLOCKS PRICING WHEN ANY OTHER PANDA BLOCKS ARE CLICKED -----
+                                  var the_blocks_in_panda = document.querySelectorAll('.pb-6b5d');
+                                  // Check if any elements were found
+                                  if (the_blocks_in_panda.length > 0) {
+                                        // Access the last element in the NodeList
+                                        var lastElement_is = the_blocks_in_panda[the_blocks_in_panda.length - 1];
+                                        var reset_last_block_totals = +single_item_price;
+                                        var the_discount_here = $(lastElement_is).find('.money').eq(0).html();
                                         
-                            //             var the_percentage_off_4thBlck = $(lastElement_is).find('.pb-1856').eq(0).html();
-                            //             var symbolToFind_4thBlck = "%"
-                            //             var symbolIndex_4thBlck = the_percentage_off_4thBlck.indexOf(symbolToFind_4thBlck);
-                            //             if (symbolIndex_4thBlck !== -1 && symbolIndex_4thBlck >= 2) {
-                            //                 var startIndex_4thBlck = symbolIndex_4thBlck - 2;
-                            //                 var get_percent = the_percentage_off_4thBlck.substring(startIndex_4thBlck, symbolIndex_4thBlck);
-                            //                 get_percent = +get_percent;
-                            //                 console.log("The two characters before the symbol are:", get_percent);
-                            //             } else if (symbolIndex_4thBlck !== -1 && symbolIndex_4thBlck < 2) {
-                            //                 //console.log("The symbol is found, but there are not enough characters before it.");
-                            //             } else {
-                            //                 //console.log("The symbol was not found in the string.");
-                            //             }
+                                        var the_percentage_off_4thBlck = $(lastElement_is).find('.pb-1856').eq(0).html();
+                                        var symbolToFind_4thBlck = "%"
+                                        var symbolIndex_4thBlck = the_percentage_off_4thBlck.indexOf(symbolToFind_4thBlck);
+                                        if (symbolIndex_4thBlck !== -1 && symbolIndex_4thBlck >= 2) {
+                                            var startIndex_4thBlck = symbolIndex_4thBlck - 2;
+                                            var get_percent = the_percentage_off_4thBlck.substring(startIndex_4thBlck, symbolIndex_4thBlck);
+                                            get_percent = +get_percent;
+                                            console.log("The two characters before the symbol are:", get_percent);
+                                        } else if (symbolIndex_4thBlck !== -1 && symbolIndex_4thBlck < 2) {
+                                            //console.log("The symbol is found, but there are not enough characters before it.");
+                                        } else {
+                                            //console.log("The symbol was not found in the string.");
+                                        }
 
-                            //             var original_pricing = (single_item_price*4).toFixed(2);
-                            //             var discounted_new = (original_pricing - (original_pricing*(get_percent/100)) ).toFixed(2);
+                                        var original_pricing = (single_item_price*4).toFixed(2);
+                                        var discounted_new = (original_pricing - (original_pricing*(get_percent/100)) ).toFixed(2);
 
-                            //             $(lastElement_is).find('.money').eq(0).html("R " + discounted_new);
-                            //             $(lastElement_is).find('.money').eq(1).html("R " + original_pricing);
-                            //             //$(lastElement).find('.money').eq(1).html("R " + original_pricing.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
-                            //             //console.log("The last element with class 'pb-6b5d' is:", lastElement);
-                            //       } else {
-                            //         console.log("No elements with 'pb-6b5d' were found.");
-                            //       }
-                            //       // ----- END RESET THE LAST BLOCKS PRICING WHEN ANY OTHER PANDA BLOCKS ARE CLICKED -----
-                            // }
+                                        $(lastElement_is).find('.money').eq(0).html("R " + discounted_new);
+                                        $(lastElement_is).find('.money').eq(1).html("R " + original_pricing);
+                                        //$(lastElement).find('.money').eq(1).html("R " + original_pricing.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+                                        //console.log("The last element with class 'pb-6b5d' is:", lastElement);
+                                  } else {
+                                    console.log("No elements with 'pb-6b5d' were found.");
+                                  }
+                                  // ----- END RESET THE LAST BLOCKS PRICING WHEN ANY OTHER PANDA BLOCKS ARE CLICKED -----
+                            }
 
 
                             // ----- FIND PRICES FROM SUBSCRIPTION BLOCKS -----
