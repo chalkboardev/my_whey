@@ -2863,6 +2863,10 @@ quick-add-modal .product__title>a:hover {
     padding-bottom: 20px;
 }
 
+[id^="MainProduct-quickadd-template--"] #product_info_tabs {
+    padding-bottom: 0px;
+}
+
 .menu-drawer__menu-item {
     font-size: 2.4rem !important;
     font-weight: 600;
