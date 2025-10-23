@@ -3569,7 +3569,7 @@ quick-add-modal .product__title>a:hover {
         white-space: nowrap;
         overflow: hidden;
         display: inline-block;
-        animation: heading_marquee 120s linear infinite;
+        animation: heading_marquee 70s linear infinite;
     }
     .mw_collection_div {
         padding-bottom: 10px !important;
