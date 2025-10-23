@@ -3883,12 +3883,15 @@ quick-add-modal .product__title>a:hover {
         display: flex !important;
     }
     .product_card_title {
-        font-size: 1.8rem;
+        font-size: 2rem;
         font-weight: 600;
         color: #333333 !important;
         /* max-height: 48px;
     min-height: 48px; */
         overflow: hidden;
+    }
+    [id^="Slider-template--"] .product_card_title {
+        font-size: 1.8rem;
     }
     .page_width_custom {
         padding: 0;
