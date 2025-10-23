@@ -3893,6 +3893,10 @@ quick-add-modal .product__title>a:hover {
     [id^="Slider-template--"] .product_card_title {
         font-size: 1.8rem;
     }
+    .related-products .product_card_title {
+        font-size: 1.8rem;
+        white-space: normal;
+    }
     .page_width_custom {
         padding: 0;
         max-width: var(--page-width);
