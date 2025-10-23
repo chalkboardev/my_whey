@@ -3883,7 +3883,7 @@ quick-add-modal .product__title>a:hover {
         display: flex !important;
     }
     .product_card_title {
-        font-size: 2rem;
+        font-size: 1.8rem;
         font-weight: 600;
         color: #333333 !important;
         /* max-height: 48px;
