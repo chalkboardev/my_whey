@@ -24,6 +24,30 @@
     assign posts_displayed = section.settings.post_limit
   endif
 -%}
+
+
+{% comment %} ---------- START SEARCH BLOGS FOR SPECIFIC TAGS ---------- {% endcomment %}
+{% comment %} Page Title: {{ page_title }}  {% endcomment %}
+{% assign count = 0 %}
+{% comment %} Replace 'your-blog-handle' with the actual handle of your blog {% endcomment %}
+{% for article in section.settings.blog.articles %}
+  {%- if current_tags %}
+      {% assign searched_tag = current_tags.first %}
+      {% assign searched_tag_lowercase = current_tags.first | downcase %}
+      {% comment %} <p>The searched tag is: {{ first_tag }}</p> {% endcomment %}
+      {% assign tag_to_count = searched_tag_lowercase %}
+      {%- for tags in article.tags -%}
+          {% assign all_tags = tags | downcase %}
+          {% if all_tags contains tag_to_count %}
+            {% assign count = count | plus: 1 %}
+          {% endif %}
+      {% endfor %}
+  {% endif %}
+
+{% endfor %}
+{% comment %} ---------- END SEARCH BLOGS FOR SPECIFIC TAGS ---------- {% endcomment %}
+
+
 <div class="blog color-{{ section.settings.color_scheme }} gradient{% if section.settings.heading == blank %} no-heading{% endif %}">
 
   {% comment %} ------------------- START SECTION HEADER ------------------- {% endcomment %}
@@ -98,30 +122,37 @@
 
 
     <script>
-          // --------------- START IF QUERY STRING  ---------------
-          var queryString = window.location.pathname; // "?name=John%20Doe&age=30"
-          if (queryString.includes("/tagged/")) {
-            console.log("Currently viewing a tag search...");
-          }
+$(document).ready(function() {
+  
+    function capitalizeFirstLetter(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+    // --------------- START IF QUERY STRING  ---------------
+    var queryString = window.location.pathname; // "?name=John%20Doe&age=30"
+    if (queryString.includes("/tagged/")) {
+      console.log("Currently viewing a tag search...");
+    }
 
-          var lastSlashIndex = queryString.lastIndexOf('/');
-          var lastSegment;
-          if (lastSlashIndex !== -1) {
-              lastSegment = queryString.substring(lastSlashIndex + 1);
-          } else {
-              // No slash found, the entire pathname is the "last segment"
-              lastSegment = queryString;
-          }
-          console.log("Searched tag: " + lastSegment + ""); 
+    var lastSlashIndex = queryString.lastIndexOf('/');
+    var lastSegment;
+    if (lastSlashIndex !== -1) {
+        lastSegment = queryString.substring(lastSlashIndex + 1);
+    } else {
+        // No slash found, the entire pathname is the "last segment"
+        lastSegment = queryString;
+    }
+    console.log("Searched tag: " + lastSegment + ""); 
+    $(".tag_text_tag").html("<span class='tag_title'>" + capitalizeFirstLetter(lastSegment) + "</span>" ); 
+          
+});
+
 
     </script>
 
-      {% comment %} Page Title: {{ page_title }}  {% endcomment %}
-      {%- if current_tags %}
-        {% assign first_tag = current_tags.first | downcase %}
-        {% comment %} <p>The first active tag is: {{ first_tag }}</p> {% endcomment %}
-       <p style="padding: 0 0 0 20px;margin: 0 0 0 0;">Articles Tagged: {{ current_tags | join: ', '  }} </p> 
-      {% endif -%}
+
+
+<p style="padding: 0 0 0 20px;margin: 0 0 0 0;">Articles Tagged: "{{ searched_tag }}": {{ count }}</p>
+
 
     <slider-component class="slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       <ul
@@ -135,8 +166,8 @@
                 {%- for tags in article.tags -%}
                   {% assign all_tags = tags | downcase %}
                   {% comment %} Tag: {{ tags }} <br> {% endcomment %}
-                  {% if all_tags contains first_tag %}
-                    {% comment %} <p>This blog has a tag containing {{ first_tag }}.</p> {% endcomment %}
+                  {% if all_tags contains searched_tag_lowercase %}
+                    {% comment %} <p>This blog has a tag containing {{ searched_tag_lowercase }}.</p> {% endcomment %}
                     <li
                     id="Slide-{{ section.id }}-{{ forloop.index }}"
                     class="blog__post grid__item article slider__slide slider__slide--full-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"

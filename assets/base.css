@@ -3412,6 +3412,11 @@ quick-add-modal .product__title>a:hover {
     position: relative;
 }
 
+.tag_title {
+    color: #fff;
+    text-shadow: none;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
