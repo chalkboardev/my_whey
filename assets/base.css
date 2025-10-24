@@ -2632,6 +2632,10 @@ body .menu-drawer__close-button {
     flex-wrap: wrap;
     align-content: center;
     padding-top: 5px !important;
+    animation-name: swing;
+    animation-direction: alternate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
 }
 
 .product__info-container .badge_price {
