@@ -125,13 +125,18 @@
                     <a href="{{ blog.url | truncate: 50 | escape }}/tagged/{{ tag | handleize }}">{{ tag | handleize }}</a>
                   </li>
               {%- else -%}
+              {% endif %}
+              
+            {% endfor %}
+            
+            {% for tag in blog.all_tags %}
+              {% unless searched_tag == tag %}
                   {% comment %} <a href="{{ blog.url }}/tagged/{{ tag | handleize }}">{{ tag }}</a> {% endcomment %}
                   <li class="horizontal-scrolling-items__item color-scheme-5 gradient">
                     <a href="{{ blog.url | truncate: 50 | escape }}/tagged/{{ tag | handleize }}">{{ tag | handleize }}</a>
                   </li>
-              {% endif %}
-              
-            {% endfor %}
+            {% endunless %}
+          {% endfor %}
           </ul>
         </div>
       </div>
