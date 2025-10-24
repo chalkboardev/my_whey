@@ -2578,7 +2578,7 @@ body .menu-drawer__close-button {
 }
 
 [id^="MainProduct-quickadd-template--"] .price__badge-sale {
-    top: 2px;
+    top: 0px;
     align-content: flex-start;
     padding-top: 2px !important;
     font-size: 12px !important;
@@ -2592,7 +2592,7 @@ body .menu-drawer__close-button {
     background: #929292 !important;
     /* background: #ff512b; */
     border-radius: 50px;
-    margin: 2px 4px 2px 0px;
+    margin: 0px 4px 2px 0px;
     align-items: center;
     flex-flow: wrap;
     vertical-align: middle !important;
