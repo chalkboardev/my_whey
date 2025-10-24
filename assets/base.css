@@ -3361,6 +3361,11 @@ quick-add-modal .product__title>a:hover {
     border-radius: var(--inputs-radius);
 }
 
+.desk_search_modal .icon-search {
+    top: 5px;
+    position: relative;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
@@ -3998,8 +4003,8 @@ quick-add-modal .product__title>a:hover {
         justify-content: center;
         align-items: center;
         font-size: 0.9rem;
-        top: -2px !important;
-        left: 2.5rem !important;
+        top: -3px !important;
+        left: 2.6rem !important;
         line-height: calc(1 + 0.1 / var(--font-body-scale));
     }
     details[open]>.header__icon--menu .icon-close {
@@ -6789,35 +6794,6 @@ input[type='checkbox'] {
     display: none;
 }
 
-.cart-count-bubble {
-    /* position: absolute;
-  background-color: rgb(var(--color-button));
-  color: rgb(var(--color-button-text));
-  height: 1.7rem;
-  width: 1.7rem;
-  border-radius: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.9rem;
-  bottom: 0.8rem;
-  left: 2.2rem;
-  line-height: calc(1 + 0.1 / var(--font-body-scale)); */
-    position: absolute;
-    background-color: rgb(18 18 18 / 57%);
-    color: rgb(var(--color-button-text));
-    height: 1.7rem;
-    width: 1.7rem;
-    border-radius: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 0.9rem;
-    top: -0.3rem;
-    left: 3rem;
-    line-height: calc(1 + 0.1 / var(--font-body-scale));
-}
-
 
 /* utility-bar */
 
@@ -6848,24 +6824,26 @@ input[type='checkbox'] {
     grid-area: social-icons;
 }
 
-@media screen and (max-width: 989px) {
-    .utility-bar .utility-bar__grid .list-social {
-        display: none;
-    }
+@media screen and (min-width: 480px) and (max-width: 749px) {
     .cart-count-bubble {
-        /* position: absolute;
-    background-color: rgb(var(--color-button));
-    color: rgb(var(--color-button-text));
-    height: 1.7rem;
-    width: 1.7rem;
-    border-radius: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 0.9rem;
-    bottom: 0.8rem;
-    left: 2.2rem;
-    line-height: calc(1 + 0.1 / var(--font-body-scale)); */
+        position: absolute;
+        background-color: rgb(18 18 18 / 57%);
+        color: rgb(var(--color-button-text));
+        height: 1.7rem;
+        width: 1.7rem;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.9rem;
+        top: -0.3rem;
+        left: 2.5rem;
+        line-height: calc(1 + 0.1 / var(--font-body-scale));
+    }
+}
+
+@media screen and (min-width: 750px) and (max-width: 989px) {
+    .cart-count-bubble {
         position: absolute;
         background-color: rgb(18 18 18 / 57%);
         color: rgb(var(--color-button-text));
@@ -6878,6 +6856,66 @@ input[type='checkbox'] {
         font-size: 0.9rem;
         top: 0.7rem;
         left: 2.5rem;
+        line-height: calc(1 + 0.1 / var(--font-body-scale));
+    }
+}
+
+@media screen and (max-width: 989px) {
+    .utility-bar .utility-bar__grid .list-social {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 990px) and (max-width: 1100px) {
+    .cart-count-bubble {
+        position: absolute;
+        background-color: rgb(18 18 18 / 57%);
+        color: rgb(var(--color-button-text));
+        height: 1.7rem;
+        width: 1.7rem;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.9rem;
+        top: 0.3rem;
+        left: 2.5rem;
+        line-height: calc(1 + 0.1 / var(--font-body-scale));
+    }
+}
+
+@media screen and (min-width: 1101px) and (max-width: 1440px) {
+    .cart-count-bubble {
+        position: absolute;
+        background-color: rgb(18 18 18 / 57%);
+        color: rgb(var(--color-button-text));
+        height: 1.7rem;
+        width: 1.7rem;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.9rem;
+        top: 0.1rem;
+        left: 3.1rem;
+        line-height: calc(1 + 0.1 / var(--font-body-scale));
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .cart-count-bubble {
+        position: absolute;
+        background-color: rgb(18 18 18 / 57%);
+        color: rgb(var(--color-button-text));
+        height: 1.7rem;
+        width: 1.7rem;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.9rem;
+        top: 0.3rem;
+        left: 3rem;
         line-height: calc(1 + 0.1 / var(--font-body-scale));
     }
 }
