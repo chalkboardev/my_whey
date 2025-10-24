@@ -28,7 +28,15 @@
 
 {% comment %} ---------- START SEARCH BLOGS FOR SPECIFIC TAGS ---------- {% endcomment %}
 {% comment %} Page Title: {{ page_title }}  {% endcomment %}
+ {%- if current_tags %}
+{% comment %} Current Tags: {{ current_tags }} {% endcomment %}
 {% assign count = 0 %}
+{%- else -%}
+{% comment %} No Current Tags: {{ current_tags }} {% endcomment %}
+{% assign count = section.settings.blog.articles_count %}
+{% endif %}
+
+
 {% comment %} Replace 'your-blog-handle' with the actual handle of your blog {% endcomment %}
 {% for article in section.settings.blog.articles %}
   {%- if current_tags %}
@@ -58,28 +66,30 @@
       class="blog_list_header page-width{% if settings.animations_reveal_on_scroll %} animate--fade-in{% endif %}"
       style="{%- if section.settings.image != blank -%} background-size:cover !important;background: url('{{ section.settings.image | image_url }}') no-repeat 100% {{ section.settings.background_height_position }}%/100%;   {% endif %}">
 
-      <div class="title-wrapper-with-link{% if posts_displayed > 2 %} title-wrapper--self-padded-tablet-down{% else %} title-wrapper--self-padded-mobile{% endif %} title-wrapper--no-top-margin">
-        <h2
-          id="SectionHeading-{{ section.id }}"
-          class="mw_header_img_txt blog__title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-          {% if settings.animations_reveal_on_scroll %}
-          data-cascade
-          {% endif %}>
-          {{ section.settings.heading }}
+    <a class="blog_head_link" href="{{ section.settings.blog.url }}">
+        <div class="title-wrapper-with-link{% if posts_displayed > 2 %} title-wrapper--self-padded-tablet-down{% else %} title-wrapper--self-padded-mobile{% endif %} title-wrapper--no-top-margin">
+          <h2
+            id="SectionHeading-{{ section.id }}"
+            class="mw_header_img_txt blog__title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            {% if settings.animations_reveal_on_scroll %}
+            data-cascade
+            {% endif %}>
+            {{ section.settings.heading }}
 
-          <span class="tag_text">
-            <span class="tag_text_tag">Blogs</span>
-          </span>
+            <span style="min-height:33px;" class="tag_text">
+              <span class="tag_text_tag"></span>
+            </span>
 
-        </h2>
+          </h2>
 
-        {%- if section.settings.blog != blank and section.settings.show_view_all and section.settings.post_limit < section.settings.blog.articles_count
-        -%}
-          <a href="{{ section.settings.blog.url }}" class="link underlined-link large-up-hide{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-            {{ 'sections.featured_blog.view_all' | t }}
-          </a>
-        {%- endif -%}
-      </div>
+          {%- if section.settings.blog != blank and section.settings.show_view_all and section.settings.post_limit < section.settings.blog.articles_count
+          -%}
+            <a href="{{ section.settings.blog.url }}" class="link underlined-link large-up-hide{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+              {{ 'sections.featured_blog.view_all' | t }}
+            </a>
+          {%- endif -%}
+        </div>
+     </a>
 
     </div>
 
@@ -129,6 +139,7 @@ $(document).ready(function() {
     }
     // --------------- START IF QUERY STRING  ---------------
     var queryString = window.location.pathname; // "?name=John%20Doe&age=30"
+    console.log("QueryString: " + queryString);
     if (queryString.includes("/tagged/")) {
       console.log("Currently viewing a tag search...");
     }
@@ -141,8 +152,13 @@ $(document).ready(function() {
         // No slash found, the entire pathname is the "last segment"
         lastSegment = queryString;
     }
-    console.log("Searched tag: " + lastSegment + ""); 
-    $(".tag_text_tag").html("<span class='tag_title'>" + capitalizeFirstLetter(lastSegment) + "</span>" ); 
+    console.log("Searched tag: " + lastSegment + "");  
+    if(lastSegment == 'community'){
+      $(".tag_text_tag").html("<span class='tag_title'>Blogs</span>" ); 
+    } else {
+      $(".tag_text_tag").html("<span class='tag_title'>" + capitalizeFirstLetter(lastSegment) + "</span>" ); 
+    }
+    
           
 });
 
@@ -150,8 +166,10 @@ $(document).ready(function() {
     </script>
 
 
+{%- if current_tags %}
+  <p style="padding: 0 0 0 20px;margin: 0 0 0 0;">Articles relating to {{ searched_tag }}: {{ count }}</p>
+{% endif %}
 
-<p style="padding: 0 0 0 20px;margin: 0 0 0 0;">Articles Tagged: "{{ searched_tag }}": {{ count }}</p>
 
 
     <slider-component class="slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
@@ -263,7 +281,7 @@ $(document).ready(function() {
         {%- endif -%}
       </ul>
       {%- if posts_exceed_limit -%}
-        <div class="slider-buttons{% if section.settings.post_limit < 3 %} medium-hide{% endif %}{% if section.settings.post_limit < 2 %} small-hide{% endif %}">
+        <div class="slider-buttons{% if section.settings.post_limit < 3 %} medium-hide{% endif %}{% if section.settings.post_limit < 2 %} small-hide{% endif %}{% if count < 2 %} small-hide{% endif %}">
           <button
             type="button"
             class="slider-button slider-button--prev"

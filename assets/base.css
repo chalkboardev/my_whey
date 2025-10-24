@@ -2744,7 +2744,7 @@ quick-add-modal .product__title>a:hover {
 }
 
 .blog_list_header .tag_text {
-    color: #ee5535;
+    color: #ff6700;
     text-shadow: 0px 0px 6px #ffffff82;
     font-weight: 600;
     font-size: 2.5rem;
@@ -3415,6 +3415,14 @@ quick-add-modal .product__title>a:hover {
 .tag_title {
     color: #fff;
     text-shadow: none;
+    animation-direction: alternate !important;
+    animation-name: fadeIn !important;
+    animation-duration: 3s !important;
+    animation-iteration-count: 1 !important;
+}
+
+.blog_head_link {
+    text-decoration: none !important;
 }
 
 
