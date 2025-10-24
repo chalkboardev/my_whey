@@ -17,7 +17,7 @@
         "background_img_position": 50,
         "trigger": "subscribe_me",
         "modal_title": "Subscribe & Save!",
-        "modal_content": "<p><strong>SUBSCRIBE NOW</strong> and get 1<strong>0% LESS</strong> on your first order!</p>"
+        "modal_content": "<p><strong>SUBSCRIBE NOW</strong> and get <strong>10% LESS</strong> on your first order!</p>"
       }
     },
     "custom_slideshow_wMQLCP": {
@@ -576,7 +576,7 @@
         "toast_bg_color": "#ffffff",
         "toast_trigger": "toast_notification",
         "toast_modal_title": "Notification:",
-        "toast_modal_content": "<p></p>"
+        "toast_modal_content": "<p>Testing...</p>"
       }
     },
     "flavour_modal_QdakFr": {
