@@ -3490,7 +3490,7 @@ quick-add-modal .product__title>a:hover {
         display: inline-flex;
     }
     [id^="MainProduct-quickadd-template--"] .price__badge-sale {
-        top: 0px;
+        top: 1px;
     }
     [id^="MainProduct-quickadd-template--"] .slider--mobile:after {
         padding-left: 0 !important;
