@@ -3361,6 +3361,12 @@ quick-add-modal .product__title>a:hover {
     border-radius: var(--inputs-radius);
 }
 
+.desk_search_modal {
+    display: flex;
+    top: 2px;
+    position: relative;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
@@ -7352,6 +7358,9 @@ input[type='checkbox'] {
     width: 5.4rem;
     padding: 0;
 }
+
+.header__icon,
+.header__icon--cart .icon {}
 
 .header__icon--cart {
     position: relative;
