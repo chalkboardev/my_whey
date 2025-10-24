@@ -120,7 +120,7 @@
       {%- if current_tags %}
         {% assign first_tag = current_tags.first | downcase %}
         {% comment %} <p>The first active tag is: {{ first_tag }}</p> {% endcomment %}
-       <p>Articles Tagged: {{ current_tags | join: ', '  }} </p> 
+       <p style="padding: 0 0 0 20px;margin: 0 0 0 0;">Articles Tagged: {{ current_tags | join: ', '  }} </p> 
       {% endif -%}
 
     <slider-component class="slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
