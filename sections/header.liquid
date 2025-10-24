@@ -899,6 +899,9 @@ transform: scale(1.03);
 
   </details>
 </header-drawer>
+<span class="desk-hide mobile_head_search">
+  {% render 'header-search', input_id: 'Search-In-Modal' %}
+</span>
 {% comment %} -------------- END MOBILE MENU -------------- {% endcomment %} 
 
      {%-  endif -%}
@@ -1256,7 +1259,10 @@ transform: scale(1.03);
       </a> 
     </span>
     {%- endif -%}
-    {% render 'header-search', input_id: 'Search-In-Modal' %}
+
+    <span class="small-hide">
+      {% render 'header-search', input_id: 'Search-In-Modal' %}
+    </span>
 
 
      {% comment %} <header-menu>
