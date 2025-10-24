@@ -119,10 +119,18 @@
         <div class="horizontal-scrolling-items">
           <ul class="blog-tags">
             {% for tag in blog.all_tags %}
-              {% comment %} <a href="{{ blog.url }}/tagged/{{ tag | handleize }}">{{ tag }}</a> {% endcomment %}
-              <li class="horizontal-scrolling-items__item color-scheme-5 gradient">
-                <a href="{{ blog.url | truncate: 50 | escape }}/tagged/{{ tag | handleize }}">{{ tag | handleize }}</a>
-              </li>
+              {% if searched_tag == tag %}
+                  {% comment %} <a href="{{ blog.url }}/tagged/{{ tag | handleize }}">{{ tag }}</a> {% endcomment %}
+                  <li class="current horizontal-scrolling-items__item color-scheme-5 gradient">
+                    <a href="{{ blog.url | truncate: 50 | escape }}/tagged/{{ tag | handleize }}">{{ tag | handleize }}</a>
+                  </li>
+              {%- else -%}
+                  {% comment %} <a href="{{ blog.url }}/tagged/{{ tag | handleize }}">{{ tag }}</a> {% endcomment %}
+                  <li class="horizontal-scrolling-items__item color-scheme-5 gradient">
+                    <a href="{{ blog.url | truncate: 50 | escape }}/tagged/{{ tag | handleize }}">{{ tag | handleize }}</a>
+                  </li>
+              {% endif %}
+              
             {% endfor %}
           </ul>
         </div>
@@ -130,6 +138,9 @@
     {% endif %}
 
 
+    {%- if current_tags %}
+      <p style="padding: 0 0 0 20px;margin: 0 0 0 0;">Articles relating to {{ searched_tag }}: {{ count }}</p>
+    {% endif %}
 
     <script>
 $(document).ready(function() {
@@ -164,13 +175,6 @@ $(document).ready(function() {
 
 
     </script>
-
-
-{%- if current_tags %}
-  <p style="padding: 0 0 0 20px;margin: 0 0 0 0;">Articles relating to {{ searched_tag }}: {{ count }}</p>
-{% endif %}
-
-
 
     <slider-component class="slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       <ul

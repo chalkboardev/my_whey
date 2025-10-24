@@ -2164,6 +2164,17 @@ body .menu-drawer__close-button {
     word-break: normal !important;
 }
 
+.blog-tags .current {
+    height: 30px;
+    filter: hue-rotate(88deg);
+    background: #ff6700;
+    box-shadow: inset 2px 1px 7px #454545;
+    top: -4px;
+    border: 2px solid #ffffffeb;
+    padding: 10px 16px 10px 16px;
+    font-size: 16px;
+}
+
 .product-tags a {
     text-decoration: none;
     font-weight: bold;
