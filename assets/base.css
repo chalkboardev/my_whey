@@ -501,6 +501,10 @@ table:not([class]) th {
     background: linear-gradient(180deg, rgb(255 134 52), rgb(229 81 1) 50%, rgb(197 69 2) 100%) padding-box, linear-gradient(180deg, rgb(255 134 52), rgb(229 81 1) 50%, rgb(197 69 2) 100%) border-box;
 }
 
+.blog-tags .color-scheme-5 {
+    background: linear-gradient(180deg, rgb(255 134 52), rgb(229 81 1) 50%, rgb(197 69 2) 100%) padding-box, linear-gradient(180deg, rgb(255 134 52), rgb(229 81 1) 50%, rgb(197 69 2) 100%) border-box;
+}
+
 .shopify_subscriptions_app_block_label .color-scheme-5 {
     background: linear-gradient(180deg, rgb(255 134 52), rgb(229 81 1) 50%, rgb(197 69 2) 100%) padding-box, linear-gradient(180deg, rgb(255 134 52), rgb(229 81 1) 50%, rgb(197 69 2) 100%) border-box;
 }
@@ -2109,6 +2113,17 @@ body .menu-drawer__close-button {
     max-width: 100%;
 }
 
+.blog-tags {
+    display: inline-flex;
+    list-style-type: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 6px 0 6px 0;
+    margin: 0 !important;
+    overflow: scroll;
+    max-width: 100%;
+}
+
 .product-tags li {
     font-size: 12px;
     white-space: nowrap;
@@ -2129,7 +2144,34 @@ body .menu-drawer__close-button {
     word-break: normal !important;
 }
 
+.blog-tags li {
+    font-size: 12px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    height: 22px;
+    display: flex;
+    position: relative;
+    padding: 6px 10px 6px 10px;
+    text-align: center;
+    justify-content: center;
+    background: var(--gradient-background);
+    /* background: #ff512b; */
+    border-radius: 50px;
+    margin: 2px 4px 2px 0px;
+    align-items: center;
+    flex-flow: wrap;
+    align-content: center;
+    word-break: normal !important;
+}
+
 .product-tags a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0px 0px 2px #333;
+}
+
+.blog-tags a {
     text-decoration: none;
     font-weight: bold;
     color: #fff;
@@ -3468,14 +3510,17 @@ quick-add-modal .product__title>a:hover {
         word-break: unset;
         overflow: scroll;
         width: 100%;
-        /* animation: scrollText 10s infinite linear; */
-        /* display: -webkit-inline-box;
+    }
+    .blog-tags {
+        margin: 0 0 0 8px !important;
+        display: inline-flex;
         list-style-type: none;
         flex-direction: row;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         padding: 6px 0 6px 0;
+        word-break: unset;
         overflow: scroll;
-        max-width: 100%; */
+        width: 100%;
     }
     .quick-add-modal .h1 {
         font-size: 2.5rem !important;

@@ -65,37 +65,63 @@
   <div class="mw_blog_back page-width-desktop isolate{% if posts_displayed < 3 %} page-width-tablet{% endif %} section-{{ section.id }}-padding" style="background-color: {{ section.settings.color_bg }};">
 
 
-
     {% comment %} 
-      <div class="tag_container">
-      <div class="horizontal-scrolling-items">
-        <ul class="product-tags">
-          {%- for article in section.settings.blog.articles limit: section.settings.post_limit -%}
-            {% render 'article-tags_navigation'
-              , article: article
-            %}
-          {%- endfor -%}
-        </ul>
-      </div>
-    </div> 
-    {% endcomment %}
+        <div class="tag_container">
+        <div class="horizontal-scrolling-items">
+          <ul class="product-tags">
+            {%- for article in section.settings.blog.articles limit: section.settings.post_limit -%}
+              {% render 'article-tags_navigation'
+                , article: article
+              %}
+            {%- endfor -%}
+          </ul>
+        </div>
+      </div> 
+{% endcomment %}
 
 
     {% if blog.all_tags.size > 0 %}
       <div class="tag_container">
         <div class="horizontal-scrolling-items">
-          <ul class="product-tags">
-        {% for tag in blog.all_tags %}
-          {% comment %} <a href="{{ blog.url }}/tagged/{{ tag | handleize }}">{{ tag }}</a> {% endcomment %}
-          <li class="horizontal-scrolling-items__item color-scheme-5 gradient">
-            <a href="{{ blog.url | truncate: 50 | escape }}/tagged/{{ tag | handleize }}">{{ tag | handleize }}</a>
-          </li>
-        {% endfor %}
-        </ul>
+          <ul class="blog-tags">
+            {% for tag in blog.all_tags %}
+              {% comment %} <a href="{{ blog.url }}/tagged/{{ tag | handleize }}">{{ tag }}</a> {% endcomment %}
+              <li class="horizontal-scrolling-items__item color-scheme-5 gradient">
+                <a href="{{ blog.url | truncate: 50 | escape }}/tagged/{{ tag | handleize }}">{{ tag | handleize }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
       </div>
-    </div>
     {% endif %}
 
+
+
+    <script>
+          // --------------- START IF QUERY STRING  ---------------
+          var queryString = window.location.pathname; // "?name=John%20Doe&age=30"
+          if (queryString.includes("/tagged/")) {
+            console.log("Currently viewing a tag search...");
+          }
+
+          var lastSlashIndex = queryString.lastIndexOf('/');
+          var lastSegment;
+          if (lastSlashIndex !== -1) {
+              lastSegment = queryString.substring(lastSlashIndex + 1);
+          } else {
+              // No slash found, the entire pathname is the "last segment"
+              lastSegment = queryString;
+          }
+          console.log("Searched tag: " + lastSegment + ""); 
+
+    </script>
+
+      {% comment %} Page Title: {{ page_title }}  {% endcomment %}
+      {%- if current_tags %}
+        {% assign first_tag = current_tags.first | downcase %}
+        {% comment %} <p>The first active tag is: {{ first_tag }}</p> {% endcomment %}
+       <p>Articles Tagged: {{ current_tags | join: ', '  }} </p> 
+      {% endif -%}
 
     <slider-component class="slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       <ul
@@ -104,23 +130,54 @@
         role="list">
         {%- if section.settings.blog != blank and section.settings.blog.articles_count > 0 -%}
           {%- for article in section.settings.blog.articles limit: section.settings.post_limit -%}
+
+            {%- if current_tags %}
+                {%- for tags in article.tags -%}
+                  {% assign all_tags = tags | downcase %}
+                  {% comment %} Tag: {{ tags }} <br> {% endcomment %}
+                  {% if all_tags contains first_tag %}
+                    {% comment %} <p>This blog has a tag containing {{ first_tag }}.</p> {% endcomment %}
+                    <li
+                    id="Slide-{{ section.id }}-{{ forloop.index }}"
+                    class="blog__post grid__item article slider__slide slider__slide--full-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                    {% if settings.animations_reveal_on_scroll %}
+                    data-cascade
+                    style="--animation-order: {{ forloop.index }};"
+                    {% endif %}>
+                    {% render 'article-card'
+                      , blog: section.settings.blog
+                      , article: article
+                      , media_aspect_ratio: 1.66
+                      , show_image: section.settings.show_image
+                      , show_date: section.settings.show_date
+                      , show_author: section.settings.show_author
+                      , show_excerpt: true
+                    %}
+                  </li>
+                  {% endif %}
+                {%- endfor -%}
+            {%- else -%}
             <li
-              id="Slide-{{ section.id }}-{{ forloop.index }}"
-              class="blog__post grid__item article slider__slide slider__slide--full-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-              {% if settings.animations_reveal_on_scroll %}
-              data-cascade
-              style="--animation-order: {{ forloop.index }};"
-              {% endif %}>
-              {% render 'article-card'
-                , blog: section.settings.blog
-                , article: article
-                , media_aspect_ratio: 1.66
-                , show_image: section.settings.show_image
-                , show_date: section.settings.show_date
-                , show_author: section.settings.show_author
-                , show_excerpt: true
-              %}
-            </li>
+            id="Slide-{{ section.id }}-{{ forloop.index }}"
+            class="blog__post grid__item article slider__slide slider__slide--full-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            {% if settings.animations_reveal_on_scroll %}
+            data-cascade
+            style="--animation-order: {{ forloop.index }};"
+            {% endif %}>
+            {% render 'article-card'
+              , blog: section.settings.blog
+              , article: article
+              , media_aspect_ratio: 1.66
+              , show_image: section.settings.show_image
+              , show_date: section.settings.show_date
+              , show_author: section.settings.show_author
+              , show_excerpt: true
+            %}
+          </li>
+            {% endif -%}
+           
+
+ 
           {%- endfor -%}
         {%- else -%}
           {% for i in (1..section.settings.post_limit) -%}
