@@ -26,8 +26,8 @@
       "type": "featured-blog",
       "name": "t:sections.featured-blog.presets.name",
       "settings": {
-        "image": "shopify://shop_images/the-benefits-of-buying-wholesale-pre-workout-supplements-saving-money-while-maximizing-performance-196215.jpg",
-        "background_height_position": 40,
+        "image": "shopify://shop_images/outdoor_group_exercise2.jpg",
+        "background_height_position": 0,
         "color_bg": "#ececec",
         "heading": "Community",
         "heading_size": "h1",
