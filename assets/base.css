@@ -3341,6 +3341,26 @@ quick-add-modal .product__title>a:hover {
     gap: 4px !important;
 }
 
+.search-modal__content .field:after,
+.select:after,
+.customer .field:after,
+.customer select:after,
+.localization-form__select:after {
+    box-shadow: none !important;
+    outline: 0;
+    border-radius: var(--inputs-radius);
+}
+
+.search-modal__content .field__input:focus,
+.select__select:focus,
+.customer .field input:focus,
+.customer select:focus,
+.localization-form__select:focus.localization-form__select:after {
+    box-shadow: none !important;
+    outline: 0;
+    border-radius: var(--inputs-radius);
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
