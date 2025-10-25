@@ -2172,7 +2172,7 @@ body .menu-drawer__close-button {
 }
 
 .blog-tags li:hover {
-    filter: hue-rotate(88deg);
+    /* filter: hue-rotate(88deg); */
     /* background: #fff; */
     box-shadow: inset 0px 0px 7px #454545;
     transition: all ease 0.5s;
