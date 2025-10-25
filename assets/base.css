@@ -2838,6 +2838,17 @@ quick-add-modal .product__title>a:hover {
     animation-timing-function: linear;
 }
 
+.tag_container .horizontal-scrolling-items {
+    display: flex;
+    font-size: 40px;
+    width: 100%;
+    /* width: max-content; */
+    /* animation-name: infiniteScroll; */
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
 .horizontal-scrolling-items__item {
     white-space: nowrap;
 }
@@ -3457,10 +3468,25 @@ quick-add-modal .product__title>a:hover {
     text-decoration: none !important;
 }
 
+.article-template .article-template__social-sharing {
+    margin-top: -20px;
+}
+
+.article-template__social-sharing {
+    display: flex;
+    float: right;
+    right: 15rem;
+    position: relative;
+    top: -30px;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    .article-template__social-sharing {
+        margin-bottom: -24px;
+    }
     .mw_price_div .price-item {
         /* font-size: 2.2rem !important;
         color: #444; */
