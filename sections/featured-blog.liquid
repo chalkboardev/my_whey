@@ -68,7 +68,7 @@
 
     <a class="blog_head_link" href="{{ section.settings.blog.url }}">
         <div class="title-wrapper-with-link{% if posts_displayed > 2 %} title-wrapper--self-padded-tablet-down{% else %} title-wrapper--self-padded-mobile{% endif %} title-wrapper--no-top-margin">
-          <h2
+          <h1
             id="SectionHeading-{{ section.id }}"
             class="mw_header_img_txt blog__title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
             {% if settings.animations_reveal_on_scroll %}
@@ -80,7 +80,7 @@
               <span class="tag_text_tag"></span>
             </span>
 
-          </h2>
+          </h1>
 
           {%- if section.settings.blog != blank and section.settings.show_view_all and section.settings.post_limit < section.settings.blog.articles_count
           -%}
@@ -118,6 +118,8 @@
       <div class="tag_container">
         <div class="horizontal-scrolling-items">
           <ul class="blog-tags">
+
+          {% comment %} ------ DISPLAY SEARCHED TAG FIRST ------ {% endcomment %}
             {% for tag in blog.all_tags %}
               {% if searched_tag == tag %}
                   {% comment %} <a href="{{ blog.url }}/tagged/{{ tag | handleize }}">{{ tag }}</a> {% endcomment %}
@@ -128,7 +130,20 @@
               {% endif %}
               
             {% endfor %}
-            
+         
+            {% comment %} Searched: {{ searched_tag }} {% endcomment %}
+          {% if searched_tag == nil %}
+            <li class="all_blog_tag current horizontal-scrolling-items__item color-scheme-5 gradient">
+              <a href="{{ section.settings.blog.url }}">ALL</a>
+            </li>
+          {%- else -%}
+          <li class="all_blog_tag horizontal-scrolling-items__item color-scheme-5 gradient">
+            <a href="{{ section.settings.blog.url }}">ALL</a>
+          </li>
+          {% endif %}
+
+          {% comment %} ------ THE LOOP THROUGH THE REST OF THE TAGS ------ {% endcomment %}
+         
             {% for tag in blog.all_tags %}
               {% unless searched_tag == tag %}
                   {% comment %} <a href="{{ blog.url }}/tagged/{{ tag | handleize }}">{{ tag }}</a> {% endcomment %}
@@ -140,6 +155,7 @@
           </ul>
         </div>
       </div>
+      {%- else -%}
     {% endif %}
 
 
