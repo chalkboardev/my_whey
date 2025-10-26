@@ -3468,17 +3468,10 @@ quick-add-modal .product__title>a:hover {
     text-decoration: none !important;
 }
 
-.article-template .article-template__social-sharing {
-    margin-top: -20px;
-}
 
-.article-template__social-sharing {
-    display: flex;
-    float: right;
-    right: 15rem;
-    position: relative;
-    top: -30px;
-}
+/* .article-template .article-template__social-sharing {
+  
+} */
 
 .article-card__image-wrapper {
     /* min-height: 280px; */
@@ -3511,8 +3504,13 @@ quick-add-modal .product__title>a:hover {
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
-    .article-template__social-sharing {
-        margin-bottom: -24px;
+    .mw_block_template .article-template__social-sharing {
+        display: flex;
+        float: right;
+        right: 1rem;
+        position: relative;
+        top: -30px;
+        margin-top: -20px;
     }
     .mw_price_div .price-item {
         /* font-size: 2.2rem !important;
@@ -4370,6 +4368,14 @@ quick-add-modal .product__title>a:hover {
 }
 
 @media only screen and (min-width:1080px) {
+    .mw_block_template .article-template__social-sharing {
+        display: flex;
+        float: right;
+        right: 20% !important;
+        position: relative;
+        top: -30px;
+        margin-top: -20px;
+    }
     .my_product_thumb {
         max-height: 200px;
         border-radius: 6px;
@@ -4382,7 +4388,18 @@ quick-add-modal .product__title>a:hover {
     } */
 }
 
-@media screen and (min-width: 480px) and (max-width: 989px) {
+
+/* @media screen and (min-width: 480px) and (max-width: 989px) { */
+
+@media screen and (max-width: 989px) {
+    .mw_block_template .article-template__social-sharing {
+        display: flex;
+        float: right;
+        right: 2%;
+        position: relative;
+        top: -4px;
+        margin-top: -44px;
+    }
     .dietary_icons {
         min-width: 70px;
         max-width: 71px;
@@ -4635,6 +4652,14 @@ quick-add-modal .product__title>a:hover {
 /* --------- ONLY MEDIUM SIZE SCREENS START --------- */
 
 @media screen and (min-width: 990px) {
+    .mw_block_template .article-template__social-sharing {
+        display: flex;
+        float: right;
+        right: 16%;
+        position: relative;
+        top: -2px;
+        margin-top: -44px;
+    }
     .blog-tags {
         display: inline-flex;
         list-style-type: none;
@@ -4706,6 +4731,14 @@ quick-add-modal .product__title>a:hover {
 /* ---------- LARGE SCREEN 1200px START ---------- */
 
 @media screen and (min-width: 1120px) {
+    .mw_block_template .article-template__social-sharing {
+        display: flex;
+        float: right;
+        right: 22% !important;
+        position: relative;
+        top: -2px;
+        margin-top: -44px;
+    }
     .product__title h1 {
         font-weight: 600;
         font-size: 4rem;
@@ -4742,6 +4775,14 @@ quick-add-modal .product__title>a:hover {
 /* ---------- EXTRA LARGE SCREEN 1440px START ---------- */
 
 @media screen and (min-width: 1440px) {
+    .mw_block_template .article-template__social-sharing {
+        display: flex;
+        float: right;
+        right: 26% !important;
+        position: relative;
+        top: -2px;
+        margin-top: -44px;
+    }
     .marq_wrapper {
         margin: -22px 0 -28px 0;
         max-width: 100%;
@@ -4805,6 +4846,14 @@ quick-add-modal .product__title>a:hover {
 /* ---------- EXTRA EXTRA WIDE SCREEN 1600px START ---------- */
 
 @media screen and (min-width: 1600px) {
+    .mw_block_template .article-template__social-sharing {
+        display: flex;
+        float: right;
+        right: 28% !important;
+        position: relative;
+        top: -2px;
+        margin-top: -44px;
+    }
     .last_image_mutli .media--adapt {
         padding-bottom: 65.8rem !important;
     }
