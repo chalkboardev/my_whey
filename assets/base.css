@@ -3515,6 +3515,11 @@ h3 {
     text-decoration-color: #ff6700;
 }
 
+.mw_block_template ul {
+    list-style-position: outside !important;
+    padding-left: 2rem !important;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
