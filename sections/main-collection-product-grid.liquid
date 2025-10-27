@@ -97,6 +97,16 @@
       </facet-filters-form>
     {%- endif -%}
 
+      <div 
+        class="meta_collection_blurb page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        id="meta_collection_blurb"
+        {% if settings.animations_reveal_on_scroll %}
+          data-cascade
+        {% endif %}
+      >
+    {{ collection.metafields.custom.collection_blurb | metafield_tag  }}
+    </div>
+    
     <div class="collection_s {% if section.settings.filter_type == 'vertical' %} facets-vertical page-width{% endif %}">
       {{ 'component-facets.css' | asset_url | stylesheet_tag }}
       <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
@@ -117,7 +127,7 @@
         </aside>
       {%- endif -%}
 
-      <div
+      <div 
         class="product-grid-container{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
         id="ProductGridContainer"
         {% if settings.animations_reveal_on_scroll %}
