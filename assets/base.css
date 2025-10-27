@@ -1066,7 +1066,7 @@ body .menu-drawer__close-button {
 
 @media screen and (min-width: 990px) and (max-width: 1330px) {
     .related-products .featured_card_title .small-hide {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     .marq_wrapper {
         margin: -16px 0 -20px 0;
