@@ -1055,9 +1055,40 @@ body .menu-drawer__close-button {
 }
 
 @media screen and (min-width: 1330px) {
+    .related-products .featured_card_title .small-hide {
+        font-size: 2.5rem;
+    }
     .small-hide {
         font-size: 2rem;
         padding: 0 0 4px 0;
+    }
+}
+
+@media screen and (min-width: 990px) and (max-width: 1330px) {
+    .related-products .featured_card_title .small-hide {
+        font-size: 2rem;
+    }
+    .marq_wrapper {
+        margin: -16px 0 -20px 0;
+        max-width: 100%;
+        overflow: hidden;
+    }
+    .product_card_title {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #333333 !important;
+        max-height: 52px;
+        overflow: hidden;
+    }
+    .small-hide {
+        font-size: 1.6rem;
+        padding: 0 0 4px 0;
+    }
+    .product_card_title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 232px;
     }
 }
 
@@ -3529,6 +3560,11 @@ h3 {
    color: #fff !important; */
 }
 
+.mw_blog_badge {
+    padding: 0 10px 0 10px;
+    font-weight: 600;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
@@ -5076,6 +5112,9 @@ h3 {
     .product_card_title {
         font-size: 2.4rem !important;
     }
+    .related-products .featured_card_title .product_card_title {
+        font-size: 1.7rem !important;
+    }
     [id^="Slider-template--"] .product_card_title {
         font-size: 2rem !important;
     }
@@ -5118,6 +5157,19 @@ h3 {
 }
 
 @media screen and (min-width: 750px) and (max-width: 989px) {
+    .related-products .featured_card_title .small-hide .heading_marquee p {
+        display: inline-block;
+        cursor: pointer;
+        white-space: normal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: auto;
+        height: 34px;
+        max-width: auto;
+    }
+    .related-products .featured_card_title .small-hide {
+        font-size: 2.3rem;
+    }
     .small-hide {
         font-size: 2.5rem;
         padding: 0 0 4px 0;
@@ -5227,31 +5279,6 @@ h3 {
     }
     .blurry_menu {
         display: none !important;
-    }
-}
-
-@media screen and (min-width: 990px) and (max-width: 1330px) {
-    .marq_wrapper {
-        margin: -16px 0 -20px 0;
-        max-width: 100%;
-        overflow: hidden;
-    }
-    .product_card_title {
-        font-size: 1.4rem;
-        font-weight: 600;
-        color: #333333 !important;
-        max-height: 52px;
-        overflow: hidden;
-    }
-    .small-hide {
-        font-size: 1.6rem;
-        padding: 0 0 4px 0;
-    }
-    .product_card_title {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 232px;
     }
 }
 

@@ -77,7 +77,7 @@
           <div class="card__information">
             <h3 class="mw_blog_title card__heading{% if show_excerpt %} h2{% endif %}">
               <a href="{{ article.url }}" class="full-unstyled-link">
-                {{ article.title | truncate: 50 | escape }}
+                {{ article.title | truncate: 60 | escape }}
               </a>
             </h3>
             <div class="article-card__info caption-with-letter-spacing h5">
@@ -107,7 +107,7 @@
           </div>
           {%- if show_badge -%}
             <div class="card__badge {{ settings.badge_position }}">
-              <span class="badge color-{{ settings.color_schemes | first }}">{{ 'blogs.article.blog' | t }}</span>
+              <span class="mw_blog_badge badge color-{{ settings.color_schemes | first }}">{{ 'blogs.article.blog' | t }}</span>
             </div>
           {%- endif -%}
         </div>
@@ -116,7 +116,7 @@
         <div class="card__information">
           <h3 class="mw_blog_title card__heading{% if show_excerpt %} h2{% endif %}">
             <a href="{{ article.url }}" class="full-unstyled-link">
-              {{ article.title | truncate: 64 | escape }}
+              {{ article.title | truncate: 60 | escape }}
             </a>
           </h3>
           <div class="article-card__info caption-with-letter-spacing h5">
@@ -146,7 +146,7 @@
         </div>
         {%- if show_badge -%}
           <div class="card__badge {{ settings.badge_position }}">
-            <span class="badge color-{{ settings.color_schemes | first }}">{{ 'blogs.article.blog' | t }}</span>
+            <span class="mw_blog_badge badge color-{{ settings.color_schemes | first }}">{{ 'blogs.article.blog' | t }}</span>
           </div>
         {%- endif -%}
       </div>
