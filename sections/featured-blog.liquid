@@ -113,6 +113,58 @@
       </div> 
 {% endcomment %}
 
+<div 
+class="meta_blog_blurb page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+id="meta_blog_blurb"
+{% if settings.animations_reveal_on_scroll %}
+  data-cascade
+{% endif %}
+>
+{{ blog.metafields.custom.blog_blurb | metafield_tag  }}
+</div>
+
+
+
+{% comment %} <div class="three-column-section color-{{ section.settings.color_scheme }} section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="three-column-grid">
+
+    <div class="mw_grid_item grid__item">
+      <div class="column-content">
+        <a href="" class="button">
+          STAY INFORMED
+        </a>
+          <div class="rte">
+            Stay informed and inspired with informative, easy-to-read articles on supplements, vitamins, and healthy living. 
+          </div>
+      </div>
+    </div>
+    
+    <div class="mw_grid_item grid__item">
+      <div class="column-content">
+           <a href="" class="button">
+            NUTITIONAL CLARITY
+          </a>
+          <div class="rte">
+            Our community blog is here to help you make confident, informed choices about your health — bringing clarity to nutrition, one post at a time.
+          </div>
+      </div>
+    </div>
+
+    <div class="mw_grid_item grid__item">
+      <div class="column-content">
+        <a href="" class="button">
+          ADVICE
+        </a>
+          <div class="rte">
+            Topics and advice ranging from supplements and vitamins, to lifestyle, excercise and general wellbeing.
+          </div>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</div> {% endcomment %}
 
     {% if blog.all_tags.size > 0 %}
       <div class="tag_container">
