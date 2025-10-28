@@ -4183,6 +4183,7 @@ h3 {
         padding: 2rem;
         text-align: center;
         min-width: 200px;
+        font-size: 3.2rem !important;
     }
     .mw_old_price {
         position: absolute;
