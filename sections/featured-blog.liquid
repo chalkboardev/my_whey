@@ -100,9 +100,9 @@
 
     {% comment %} {{ blog.metafields.custom.blog_blurb | metafield_tag  }} {% endcomment %}
     {% assign my_metafield_variable = blog.metafields.custom.blog_blurb | metafield_tag  %} 
-    {% assign content_with_placeholders = my_metafield_variable | replace: '<p>', '@@@_PARAGRAPH_OPEN_@@@' | replace: '</p>', '@@@_PARAGRAPH_CLOSE_@@@' %}
+    {% assign content_with_placeholders = my_metafield_variable | replace: '<p>', '@@@_PARAGRAPH_OPEN_@@@' | replace: '</p>', '@@@_PARAGRAPH_CLOSE_@@@' | replace: '<em>', '@@@_ITALIC_OPEN_@@@' | replace: '</em>', '@@@_ITALIC_CLOSED_@@@' | replace: '<strong>', '@@@_BOLD_OPEN_@@@' | replace: '</strong>', '@@@_BOLD_CLOSED_@@@' %}
     {% assign stripped_content = content_with_placeholders | strip_html %}
-    {% assign final_content = stripped_content | replace: '@@@_PARAGRAPH_OPEN_@@@', '<p>' | replace: '@@@_PARAGRAPH_CLOSE_@@@', '</p>' %}
+    {% assign final_content = stripped_content | replace: '@@@_PARAGRAPH_OPEN_@@@', '<p>' | replace: '@@@_PARAGRAPH_CLOSE_@@@', '</p>' | replace: '@@@_ITALIC_OPEN_@@@', '<em>' | replace: '@@@_ITALIC_CLOSED_@@@', '</em>' | replace: '@@@_BOLD_OPEN_@@@', '<strong>' | replace: '@@@_BOLD_CLOSED_@@@', '</strong>' %}
     
     {% comment %} {%- assign paragraphs = my_metafield_variable |  strip_html | split: '</p>' -%} {% endcomment %}
     {%- assign paragraphs = final_content | split: '</p>'  -%}
