@@ -3655,9 +3655,25 @@ h3 {
     font-size: 3rem;
 }
 
+.mw_blog_icon_left_single {
+    position: absolute;
+    top: 1rem;
+    color: #ff6700;
+    left: 5rem;
+    font-size: 3rem;
+}
+
 .mw_blog_icon_right {
     position: absolute;
     bottom: 0;
+    font-size: 3rem;
+    right: 5rem;
+    color: #ff6700;
+}
+
+.mw_blog_icon_right_single {
+    position: absolute;
+    bottom: 1rem;
     font-size: 3rem;
     right: 5rem;
     color: #ff6700;
@@ -3719,10 +3735,24 @@ h3 {
     margin: 0;
 }
 
+.single_blurb {
+    background: #f5f4f4;
+    border-radius: 9px;
+}
+
+.meta_blog_blurb.single_blurb p {
+    padding: 2rem;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    .single_blurb {
+        background: none;
+        margin-top: -1.5rem;
+        margin-bottom: -1rem;
+    }
     .mw_blog_slider {
         margin: 0;
     }
@@ -3755,9 +3785,23 @@ h3 {
         left: 0;
         font-size: 3rem;
     }
+    .mw_blog_icon_left_single {
+        position: absolute;
+        top: 1rem;
+        color: #ff6700;
+        left: 0;
+        font-size: 3rem;
+    }
     .mw_blog_icon_right {
         position: absolute;
         bottom: -1rem;
+        font-size: 3rem;
+        right: 1rem !important;
+        color: #ff6700;
+    }
+    .mw_blog_icon_right_single {
+        position: absolute;
+        bottom: 1rem;
         font-size: 3rem;
         right: 1rem !important;
         color: #ff6700;
@@ -5010,9 +5054,23 @@ h3 {
         left: 6%;
         font-size: 4rem;
     }
+    .mw_blog_icon_left_single {
+        position: absolute;
+        top: 1rem;
+        color: #ff6700;
+        left: 6%;
+        font-size: 4rem;
+    }
     .mw_blog_icon_right {
         position: absolute;
         bottom: -1.5rem;
+        font-size: 4rem;
+        right: 6%;
+        color: #ff6700;
+    }
+    .mw_blog_icon_right_single {
+        position: absolute;
+        bottom: 1.5rem;
         font-size: 4rem;
         right: 6%;
         color: #ff6700;
