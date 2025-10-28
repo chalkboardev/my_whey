@@ -3744,10 +3744,17 @@ h3 {
     padding: 2rem;
 }
 
+.meta_blog_blurb p {
+    padding: 1rem 2rem 1rem 2rem;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    .meta_blog_blurb p {
+        padding: 0 2rem 0 2rem;
+    }
     .single_blurb {
         background: none;
         margin-top: -1.5rem;
