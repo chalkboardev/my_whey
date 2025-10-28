@@ -3611,9 +3611,10 @@ h3 {
     text-align: center;
 }
 
-.meta_blog_blurb.metafield-rich_text_field p:first-child {
+
+/* .meta_blog_blurb.metafield-rich_text_field p:first-child {
     margin-bottom: -1.2rem;
-}
+} */
 
 .mw_sold_out_badge {
     padding: 2px 10px 2px 10px;
@@ -3707,10 +3708,15 @@ h3 {
     justify-content: center;
     background: #f5f4f4;
     border-radius: 9px;
+    --focus-outline-padding: 0;
 }
 
 .mw_blog_slider {
-    margin: 2rem 0 1rem 0;
+    margin: 0;
+}
+
+.mw_slider_grid {
+    margin: 0;
 }
 
 
@@ -3718,7 +3724,7 @@ h3 {
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
     .mw_blog_slider {
-        margin: 0 0 0 0;
+        margin: 0;
     }
     .mw_blog_slide {
         display: flex;
