@@ -98,6 +98,25 @@
 
   <div class="mw_blog_back page-width-desktop isolate{% if posts_displayed < 3 %} page-width-tablet{% endif %} section-{{ section.id }}-padding" style="background-color: {{ section.settings.color_bg }};">
 
+    {% comment %} {{ blog.metafields.custom.blog_blurb | metafield_tag  }} {% endcomment %}
+    {% assign my_metafield_variable = blog.metafields.custom.blog_blurb | metafield_tag  %} 
+    {% assign content_with_placeholders = my_metafield_variable | replace: '<p>', '@@@_PARAGRAPH_OPEN_@@@' | replace: '</p>', '@@@_PARAGRAPH_CLOSE_@@@' %}
+    {% assign stripped_content = content_with_placeholders | strip_html %}
+    {% assign final_content = stripped_content | replace: '@@@_PARAGRAPH_OPEN_@@@', '<p>' | replace: '@@@_PARAGRAPH_CLOSE_@@@', '</p>' %}
+    
+    {% comment %} {%- assign paragraphs = my_metafield_variable |  strip_html | split: '</p>' -%} {% endcomment %}
+    {%- assign paragraphs = final_content | split: '</p>'  -%}
+    {%- assign blurb_paragraph_count = paragraphs | size  -%}
+    {% comment %} Blurb:{{ paragraphs  }} {% endcomment %}
+    {% comment %} <p>There are {{ blurb_paragraph_count }} paragraph elements...</p> {% endcomment %}
+
+    {% comment %} {%- for paragraph in paragraphs -%}
+      {%- unless paragraph == blank -%}
+        <div class="paragraph-content">
+         {{ paragraph | strip | remove: '<p>' }}
+        </div>
+      {%- endunless -%}
+    {%- endfor -%} {% endcomment %}
 
     {% comment %} 
         <div class="tag_container">
@@ -113,19 +132,85 @@
       </div> 
 {% endcomment %}
 
-<div 
-class="meta_blog_blurb page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-id="meta_blog_blurb"
-{% if settings.animations_reveal_on_scroll %}
-  data-cascade
-{% endif %}
+{% comment %} 
+      <div class="meta_blog_blurb page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" id="meta_blog_blurb" {% if settings.animations_reveal_on_scroll %} data-cascade {% endif %}
+      >
+          <span>
+            <i class="mw_blog_icon_left fa-solid fa-quote-left"></i> {{ blog.metafields.custom.blog_blurb | metafield_tag  }} <i class="mw_blog_icon_right fa-solid fa-quote-right"></i>
+          </span>
+      </div>
+{% endcomment %}
+
+<slider-component
+class="mw_blog_slider"
+role="region"
+aria-roledescription="blog_slider"
+aria-label="blog_slider"
 >
-<span>
-  {{ blog.metafields.custom.blog_blurb | metafield_tag  }}
-</span>
+<div class="slider-buttons">
+  <button
+    type="button"
+    class="blog_blurb_prev_btn slider-button slider-button--prev"
+    name="previous"
+    aria-label="{{ 'sections.announcements.previous_announcement' | t }}"
+    aria-controls="Slider-{{ section.id }}"
+  >
+    <span class="svg-wrapper">
+      {{- 'icon-caret.svg' | inline_asset_content -}}
+    </span>
+  </button>
+  <div
+    class="grid grid--1-col slider slider--everywhere"
+    id="Slider-{{ section.id }}"
+    aria-live="polite"
+    aria-atomic="true"
+    data-autoplay="true"
+    data-speed="5"
+  >
+
+  {%- for paragraph in paragraphs -%}
+    {%- unless paragraph == blank -%}
+      <div
+      class="slideshow__slide slider__slide grid__item grid--1-col"
+      id="Slide-{{ section.id }}-{{ forloop.index }}"
+      role="group"
+      aria-roledescription="Announcement"
+      aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
+      tabindex="-1"
+    >
+        <div
+          class=""
+          role="region"
+          aria-label="{{ 'sections.header.announcement' | t }}"
+        >
+       
+          <div class="meta_blog_blurb metafield-rich_text_field page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" id="meta_blog_blurb" {% if settings.animations_reveal_on_scroll %} data-cascade {% endif %}
+          >
+              <span>
+                <i class="mw_blog_icon_left fa-solid fa-quote-left"></i> {{ paragraph }} <i class="mw_blog_icon_right fa-solid fa-quote-right"></i>
+              </span>
+          </div>
+    
+      </div>
+    </div>
+    {%- endunless -%}
+  {%- endfor -%}
+
+
+  </div>
+  <button
+    type="button"
+    class="blog_blurb_nxt_btn slider-button slider-button--next"
+    name="next"
+    aria-label="{{ 'sections.announcements.next_announcement' | t }}"
+    aria-controls="Slider-{{ section.id }}"
+  >
+    <span class="svg-wrapper">
+      {{- 'icon-caret.svg' | inline_asset_content -}}
+    </span>
+  </button>
 </div>
-
-
+</slider-component>
 
 {% comment %} <div class="three-column-section color-{{ section.settings.color_scheme }} section-{{ section.id }}-padding">
   <div class="page-width">
