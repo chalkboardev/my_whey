@@ -3735,6 +3735,42 @@ h3 {
     margin: 0;
 }
 
+.mw_blog_slide a {
+    background: #ff6700;
+    padding: 0.2rem 2rem 0.2rem 2rem;
+    text-align: center;
+    justify-content: center;
+    max-width: 300px;
+    margin: 0 auto;
+    position: relative;
+    color: #fff;
+    text-shadow: 0px 0px 2px #333;
+    font-weight: 600;
+    top: 5px;
+    border-radius: 9px;
+    text-decoration: none;
+    display: flex;
+    transition: all ease 0.25s;
+}
+
+.mw_blog_slide a:hover {
+    background: #fff;
+    padding: 0.2rem 2rem 0.2rem 2rem;
+    text-align: center;
+    justify-content: center;
+    max-width: 300px;
+    margin: 0 auto;
+    position: relative;
+    color: #ff6700;
+    text-shadow: none;
+    font-weight: 600;
+    top: 5px;
+    border-radius: 9px;
+    text-decoration: none;
+    display: flex;
+    transition: all ease 0.25s;
+}
+
 .single_blurb {
     background: #f5f4f4;
     border-radius: 9px;
