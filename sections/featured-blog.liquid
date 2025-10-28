@@ -105,10 +105,40 @@
     {% assign final_content = stripped_content | replace: '@@@_PARAGRAPH_OPEN_@@@', '<p>' | replace: '@@@_PARAGRAPH_CLOSE_@@@', '</p>' | replace: '@@@_ITALIC_OPEN_@@@', '<em>' | replace: '@@@_ITALIC_CLOSED_@@@', '</em>' | replace: '@@@_BOLD_OPEN_@@@', '<strong>' | replace: '@@@_BOLD_CLOSED_@@@', '</strong>' %}
     
     {% comment %} {%- assign paragraphs = my_metafield_variable |  strip_html | split: '</p>' -%} {% endcomment %}
-    {%- assign paragraphs = final_content | split: '</p>'  -%}
+    {%- assign paragraphs = final_content  | replace: '<p>&nbsp;</p>', '' | replace: '<p></p>', '' | remove: '<p> </p>' | split: '</p>'  -%}
     {%- assign blurb_paragraph_count = paragraphs | size  -%}
-    {% comment %} Blurb:{{ paragraphs  }} {% endcomment %}
-    {% comment %} <p>There are {{ blurb_paragraph_count }} paragraph elements...</p> {% endcomment %}
+{% comment %} Blurb:{{ paragraphs  }} {% endcomment %}
+{% comment %} {{ paragraphs }} {% endcomment %}
+{% comment %} <p>There are {{ blurb_paragraph_count }} paragraph elements...</p> {% endcomment %}
+  {% if blurb_paragraph_count > 1 %} 
+  {% comment %} show slider... {% endcomment %}
+  {%- else -%}
+  no slider...
+  <div
+  class="mw_blog_slide slideshow__slide slider__slide grid__item grid--1-col"
+  id="Slide-{{ section.id }}-"
+  role="group"
+  aria-roledescription="Announcement"
+  aria-label="1 of 1"
+  tabindex="-1"
+>
+    <div
+      class=""
+      role="region"
+      aria-label="{{ 'sections.header.announcement' | t }}"
+    >
+   
+      <div class="meta_blog_blurb metafield-rich_text_field page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" id="meta_blog_blurb" {% if settings.animations_reveal_on_scroll %} data-cascade {% endif %}
+      >
+          <span>
+            <i class="mw_blog_icon_left fa-solid fa-quote-left"></i> {{ paragraphs }} <i class="mw_blog_icon_right fa-solid fa-quote-right"></i>
+          </span>
+      </div>
+
+  </div>
+</div>
+  {% endif %}
+    
 
     {% comment %} {%- for paragraph in paragraphs -%}
       {%- unless paragraph == blank -%}
