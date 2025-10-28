@@ -5051,28 +5051,28 @@ h3 {
         position: absolute;
         top: -1rem;
         color: #ff6700;
-        left: 6%;
+        left: 5%;
         font-size: 4rem;
     }
     .mw_blog_icon_left_single {
         position: absolute;
         top: 1rem;
         color: #ff6700;
-        left: 6%;
+        left: 5%;
         font-size: 4rem;
     }
     .mw_blog_icon_right {
         position: absolute;
         bottom: -1.5rem;
         font-size: 4rem;
-        right: 6%;
+        right: 5%;
         color: #ff6700;
     }
     .mw_blog_icon_right_single {
         position: absolute;
         bottom: 1.5rem;
         font-size: 4rem;
-        right: 6%;
+        right: 5%;
         color: #ff6700;
     }
     .mw_block_template .article-template__social-sharing {
