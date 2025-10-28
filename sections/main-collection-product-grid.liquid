@@ -188,7 +188,7 @@
     {%- else -%}
     {% comment %} {%- assign paragraphs = paragraphs  | replace: '<p>', '<p class="zip">'  -%} {% endcomment %}
           {% comment %} no slider... {% endcomment %}
-        <div class="meta_blog_blurb single_blurb metafield-rich_text_field page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" id="meta_blog_blurb" {% if settings.animations_reveal_on_scroll %} data-cascade {% endif %}
+        <div class="{% if my_metafield_variable == "" %} small-hide desk-hide {% endif %} meta_blog_blurb single_blurb metafield-rich_text_field page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" id="meta_blog_blurb" {% if settings.animations_reveal_on_scroll %} data-cascade {% endif %}
           >
               <span>
                 <i class="mw_blog_icon_left_single fa-solid fa-quote-left"></i> {{ paragraphs }} <i class="mw_blog_icon_right_single fa-solid fa-quote-right"></i>
