@@ -142,7 +142,7 @@
 {% endcomment %}
 
 <slider-component
-class="mw_blog_slider"
+class="mw_blog_slider slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
 role="region"
 aria-roledescription="blog_slider"
 aria-label="blog_slider"
@@ -171,7 +171,7 @@ aria-label="blog_slider"
   {%- for paragraph in paragraphs -%}
     {%- unless paragraph == blank -%}
       <div
-      class="slideshow__slide slider__slide grid__item grid--1-col"
+      class="mw_blog_slide slideshow__slide slider__slide grid__item grid--1-col"
       id="Slide-{{ section.id }}-{{ forloop.index }}"
       role="group"
       aria-roledescription="Announcement"
@@ -212,6 +212,32 @@ aria-label="blog_slider"
 </div>
 </slider-component>
 
+
+<script>
+  function startAutoplayForSliders() {
+  document.querySelectorAll('.mw_blog_slider').forEach(slider => {
+    const sliderElement = slider.querySelector('[id^="Slider-"]');
+    if (sliderElement && !slider.classList.contains('slideshow-component')) {
+      let currentIndex = 0;
+      const slideInterval = setInterval(() => {
+        const slides = sliderElement.querySelectorAll('.mw_blog_slide');
+        if (slides.length > 0) {
+          currentIndex = (currentIndex + 1) % slides.length;
+          sliderElement.scrollTo({
+            left: slides[currentIndex].offsetLeft,
+            behavior: 'smooth'
+          });
+        }
+      }, 5000); // Set autoplay speed in milliseconds (e.g., 5000 for 5 seconds)
+      // Optional: Pause on hover
+      slider.addEventListener('mouseenter', () => clearInterval(slideInterval));
+      slider.addEventListener('mouseleave', () => startAutoplayForSliders());
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', startAutoplayForSliders);
+</script>
 {% comment %} <div class="three-column-section color-{{ section.settings.color_scheme }} section-{{ section.id }}-padding">
   <div class="page-width">
     <div class="three-column-grid">
