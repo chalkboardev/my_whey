@@ -783,6 +783,20 @@ class SliderComponent extends HTMLElement {
           },
         })
       );
+      
+
+
+      this.collectionBlurbSlider = this.querySelector('.collection_blurb_slider_component');
+      if (this.collectionBlurbSlider) {
+        const elementsWithClass = document.querySelectorAll('.pagination-dot');
+      elementsWithClass.forEach(element => {
+        element.classList.remove('active');
+      });
+        console.log("Current Slide: " + this.currentPage);
+        const target_slide_index = this.currentPage -1;
+        this.paginateDot = this.querySelector('#slider_dot_' + target_slide_index);
+        this.paginateDot.classList.add('active');
+      }
     }
 
     if (this.enableSliderLooping) return;
@@ -820,6 +834,20 @@ class SliderComponent extends HTMLElement {
       left: position,
     });
   }
+
+  goToSlide(index) {
+  const slides = this.slider.querySelectorAll('.slider__slide');
+  const targetSlide = slides[index];
+
+  if (targetSlide) {
+    const scrollPosition = targetSlide.offsetLeft;
+    this.slider.scrollTo({
+      left: scrollPosition,
+      behavior: 'smooth'
+    });
+  }
+}
+
 }
 
 customElements.define('slider-component', SliderComponent);

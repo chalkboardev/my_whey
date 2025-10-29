@@ -3700,6 +3700,14 @@ h3 {
     z-index: 99;
 }
 
+.collection_blurb_nxt_btn {
+    right: 4%;
+    position: absolute;
+    top: 30%;
+    color: #999;
+    z-index: 99;
+}
+
 .blog_blurb_prev_btn {
     left: 0;
     position: absolute;
@@ -3840,10 +3848,41 @@ h3 {
     padding: 1rem 2rem 1rem 2rem;
 }
 
+.slider-dots {
+    position: absolute;
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    margin-top: -3.3rem;
+    width: 100%;
+    left: 0;
+    right: 0;
+    transition: all ease 1s;
+}
+
+.slider-dots .dot {
+    width: 12px;
+    height: 12px;
+    background: #ccc;
+    /* Inactive dot color */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all ease 1s;
+}
+
+.slider-dots .dot.active {
+    background: #ff6700;
+    transition: all ease 1s;
+    /* Active dot color */
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    .slider-dots {
+        margin-top: -1rem;
+    }
     .collection_blurb_slide a:hover {
         transform: scale(1);
         letter-spacing: 2px;

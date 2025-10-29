@@ -119,7 +119,7 @@
         aria-roledescription="blurb_slider"
         aria-label="blurb_slider"
         >
-        <div class="slider-buttons">
+        <div class="collection_blurb_slider_component slider-buttons">
 
           <button
             type="button"
@@ -152,6 +152,7 @@
               aria-roledescription="Collection Blurb"
               aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
               tabindex="-1"
+              data-index="{{ forloop.index0 }}"
             >
                 <div
                   class=""
@@ -168,15 +169,16 @@
             
               </div>
             </div>
+            
             {%- endunless -%}
+            
           {%- endfor -%}
-
 
           </div>
 
           <button
             type="button"
-            class="blog_blurb_nxt_btn slider-button slider-button--next"
+            class="collection_blurb_nxt_btn slider-button slider-button--next"
             name="next"
             aria-label="{{ 'sections.announcements.next_announcement' | t }}"
             aria-controls="Slider-{{ section.id }}"
@@ -187,6 +189,14 @@
           </button>
           
         </div>
+
+        <div class="slider-dots">
+        {%- for paragraph in paragraphs -%}
+            {%- unless paragraph == blank -%}
+                  <span id="slider_dot_{{ forloop.index0 }}" class="pagination-dot dot" data-index="{{ forloop.index0 }}"></span>
+            {%- endunless -%}
+        {% endfor %}
+</div>
         </slider-component>
 
     {%- else -%}
@@ -201,6 +211,45 @@
     {% endif %}
 
     <script>
+      // Example of how to add the event listener
+document.addEventListener('DOMContentLoaded', () => {
+  const sliderComponent = document.querySelector('slider-component');
+  const thumbnailLinks = document.querySelectorAll('.pagination-dot');
+
+  if (sliderComponent && thumbnailLinks) {
+    thumbnailLinks.forEach(link => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const index = event.currentTarget.dataset.index;
+        sliderComponent.goToSlide(index);
+      });
+    });
+  }
+});
+   // Example (adapt to your slider's specific implementation)
+   document.addEventListener('DOMContentLoaded', () => {
+      const slider = document.querySelector('.mw_blurb_slider'); // Replace with your slider's selector
+      const paginationDots = document.querySelectorAll('.pagination-dot');
+
+      if (slider && paginationDots.length > 0) {
+        paginationDots.forEach(dot => {
+          dot.addEventListener('click', (event) => {
+            const slideIndex = parseInt(event.target.dataset.slideIndex);
+            // Logic to change the slider's current slide based on slideIndex
+            // This will depend on your slider's JavaScript API
+            // For example, if using Flickity: slider.flickity.select(slideIndex);
+
+            // Update active dot class
+            paginationDots.forEach(d => d.classList.remove('active'));
+            event.target.classList.add('active');
+          });
+        });
+
+        // Add logic to update active dot when slider changes (e.g., on slide change event)
+      }
+    });
+
+      
       function startAutoplayForSliders() {
       document.querySelectorAll('.mw_blurb_slider').forEach(slider => {
         const sliderElement = slider.querySelector('[id^="Slider-"]');
