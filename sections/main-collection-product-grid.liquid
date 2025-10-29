@@ -227,27 +227,27 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
    // Example (adapt to your slider's specific implementation)
-   document.addEventListener('DOMContentLoaded', () => {
-      const slider = document.querySelector('.mw_blurb_slider'); // Replace with your slider's selector
-      const paginationDots = document.querySelectorAll('.pagination-dot');
+  //  document.addEventListener('DOMContentLoaded', () => {
+  //     const slider = document.querySelector('.mw_blurb_slider'); // Replace with your slider's selector
+  //     const paginationDots = document.querySelectorAll('.pagination-dot');
 
-      if (slider && paginationDots.length > 0) {
-        paginationDots.forEach(dot => {
-          dot.addEventListener('click', (event) => {
-            const slideIndex = parseInt(event.target.dataset.slideIndex);
-            // Logic to change the slider's current slide based on slideIndex
-            // This will depend on your slider's JavaScript API
-            // For example, if using Flickity: slider.flickity.select(slideIndex);
+  //     if (slider && paginationDots.length > 0) {
+  //       paginationDots.forEach(dot => {
+  //         dot.addEventListener('click', (event) => {
+  //           const slideIndex = parseInt(event.target.dataset.slideIndex);
+  //           // Logic to change the slider's current slide based on slideIndex
+  //           // This will depend on your slider's JavaScript API
+  //           // For example, if using Flickity: slider.flickity.select(slideIndex);
 
-            // Update active dot class
-            paginationDots.forEach(d => d.classList.remove('active'));
-            event.target.classList.add('active');
-          });
-        });
+  //           // Update active dot class
+  //           paginationDots.forEach(d => d.classList.remove('active'));
+  //           event.target.classList.add('active');
+  //         });
+  //       });
 
-        // Add logic to update active dot when slider changes (e.g., on slide change event)
-      }
-    });
+  //       // Add logic to update active dot when slider changes (e.g., on slide change event)
+  //     }
+  //   });
 
       
       function startAutoplayForSliders() {

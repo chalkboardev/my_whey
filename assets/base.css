@@ -3853,7 +3853,7 @@ h3 {
     display: flex;
     gap: 6px;
     justify-content: center;
-    margin-top: -3.3rem;
+    /* margin-top: -3.3rem; */
     width: 100%;
     left: 0;
     right: 0;

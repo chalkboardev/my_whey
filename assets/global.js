@@ -783,20 +783,21 @@ class SliderComponent extends HTMLElement {
           },
         })
       );
-      
 
-
+// ------- START TARGET BLURB SLIDER AND CURRENT SLIDE -------
       this.collectionBlurbSlider = this.querySelector('.collection_blurb_slider_component');
       if (this.collectionBlurbSlider) {
         const elementsWithClass = document.querySelectorAll('.pagination-dot');
       elementsWithClass.forEach(element => {
         element.classList.remove('active');
       });
-        console.log("Current Slide: " + this.currentPage);
-        const target_slide_index = this.currentPage -1;
-        this.paginateDot = this.querySelector('#slider_dot_' + target_slide_index);
-        this.paginateDot.classList.add('active');
+      //console.log("Current Slide: " + this.currentPage);
+      const target_slide_index = this.currentPage -1;
+      this.paginateDot = this.querySelector('#slider_dot_' + target_slide_index);
+      this.paginateDot.classList.add('active');
       }
+// ------- END TARGET BLURB SLIDER AND CURRENT SLIDE -------
+
     }
 
     if (this.enableSliderLooping) return;
@@ -835,6 +836,7 @@ class SliderComponent extends HTMLElement {
     });
   }
 
+// ------- START NEW FUNCTION FOR PAGINATION DOTS -------
   goToSlide(index) {
   const slides = this.slider.querySelectorAll('.slider__slide');
   const targetSlide = slides[index];
@@ -847,6 +849,7 @@ class SliderComponent extends HTMLElement {
     });
   }
 }
+// ------- END NEW FUNCTION FOR PAGINATION DOTS -------
 
 }
 
