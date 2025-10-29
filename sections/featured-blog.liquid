@@ -158,9 +158,9 @@
               
                   <div class="meta_blog_blurb metafield-rich_text_field page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" id="meta_blog_blurb" {% if settings.animations_reveal_on_scroll %} data-cascade {% endif %}
                   >
-                      <span>
+                    
                         <i class="mw_blog_icon_left fa-solid fa-quote-left"></i> {{ paragraph }} <i class="mw_blog_icon_right fa-solid fa-quote-right"></i>
-                      </span>
+                    
                   </div>
             
               </div>
@@ -196,64 +196,31 @@
     {% endif %}
     
 
-    {% comment %} {%- for paragraph in paragraphs -%}
-      {%- unless paragraph == blank -%}
-        <div class="paragraph-content">
-         {{ paragraph | strip | remove: '<p>' }}
-        </div>
-      {%- endunless -%}
-    {%- endfor -%} {% endcomment %}
-
-    {% comment %} 
-        <div class="tag_container">
-        <div class="horizontal-scrolling-items">
-          <ul class="product-tags">
-            {%- for article in section.settings.blog.articles limit: section.settings.post_limit -%}
-              {% render 'article-tags_navigation'
-                , article: article
-              %}
-            {%- endfor -%}
-          </ul>
-        </div>
-      </div> 
-{% endcomment %}
-
-{% comment %} 
-      <div class="meta_blog_blurb page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" id="meta_blog_blurb" {% if settings.animations_reveal_on_scroll %} data-cascade {% endif %}
-      >
-          <span>
-            <i class="mw_blog_icon_left fa-solid fa-quote-left"></i> {{ blog.metafields.custom.blog_blurb | metafield_tag  }} <i class="mw_blog_icon_right fa-solid fa-quote-right"></i>
-          </span>
-      </div>
-{% endcomment %}
-
-
-
 
 <script>
-  function startAutoplayForSliders() {
-  document.querySelectorAll('.mw_blog_slider').forEach(slider => {
-    const sliderElement = slider.querySelector('[id^="Slider-"]');
-    if (sliderElement && !slider.classList.contains('slideshow-component')) {
-      let currentIndex = 0;
-      const slideInterval = setInterval(() => {
-        const slides = sliderElement.querySelectorAll('.mw_blog_slide');
-        if (slides.length > 0) {
-          currentIndex = (currentIndex + 1) % slides.length;
-          sliderElement.scrollTo({
-            left: slides[currentIndex].offsetLeft,
-            behavior: 'smooth'
-          });
-        }
-      }, 7000); // Set autoplay speed in milliseconds (e.g., 5000 for 5 seconds)
-      // Optional: Pause on hover
-      slider.addEventListener('mouseenter', () => clearInterval(slideInterval));
-      slider.addEventListener('mouseleave', () => startAutoplayForSliders());
-    }
-  });
-}
+//   function startAutoplayForSliders() {
+//   document.querySelectorAll('.mw_blog_slider').forEach(slider => {
+//     const sliderElement = slider.querySelector('[id^="Slider-"]');
+//     if (sliderElement && !slider.classList.contains('slideshow-component')) {
+//       let currentIndex = 0;
+//       const slideInterval = setInterval(() => {
+//         const slides = sliderElement.querySelectorAll('.mw_blog_slide');
+//         if (slides.length > 0) {
+//           currentIndex = (currentIndex + 1) % slides.length;
+//           sliderElement.scrollTo({
+//             left: slides[currentIndex].offsetLeft,
+//             behavior: 'smooth'
+//           });
+//         }
+//       }, 7000); // Set autoplay speed in milliseconds (e.g., 5000 for 5 seconds)
+//       // Optional: Pause on hover
+//       slider.addEventListener('mouseenter', () => clearInterval(slideInterval));
+//       slider.addEventListener('mouseleave', () => startAutoplayForSliders());
+//     }
+//   });
+// }
 
-document.addEventListener('DOMContentLoaded', startAutoplayForSliders);
+// document.addEventListener('DOMContentLoaded', startAutoplayForSliders);
 </script>
 {% comment %} <div class="three-column-section color-{{ section.settings.color_scheme }} section-{{ section.id }}-padding">
   <div class="page-width">

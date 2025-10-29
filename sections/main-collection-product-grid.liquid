@@ -113,16 +113,17 @@
     {% if blurb_paragraph_count > 1 %} 
         {% comment %} show slider... {% endcomment %}
         <slider-component
-        style="margin-top:0px;"
-        class="page-width mw_blog_slider slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        style="margin-top:0px;" 
+        class="page-width mw_blurb_slider slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
         role="region"
-        aria-roledescription="blog_slider"
-        aria-label="blog_slider"
+        aria-roledescription="blurb_slider"
+        aria-label="blurb_slider"
         >
         <div class="slider-buttons">
+
           <button
             type="button"
-            class="blog_blurb_prev_btn slider-button slider-button--prev"
+            class="collection_blurb_prev_btn slider-button slider-button--prev"
             name="previous"
             aria-label="{{ 'sections.announcements.previous_announcement' | t }}"
             aria-controls="Slider-{{ section.id }}"
@@ -131,6 +132,7 @@
               {{- 'icon-caret.svg' | inline_asset_content -}}
             </span>
           </button>
+
           <div
           style="overflow-y: hidden;"
             class="mw_slider_grid grid grid--1-col slider slider--everywhere"
@@ -144,10 +146,10 @@
           {%- for paragraph in paragraphs -%}
             {%- unless paragraph == blank -%}
               <div
-              class="mw_blog_slide slideshow__slide slider__slide grid__item grid--1-col"
+              class="collection_blurb_slide slideshow__slide slider__slide grid__item grid--1-col"
               id="Slide-{{ section.id }}-{{ forloop.index }}"
               role="group"
-              aria-roledescription="Announcement"
+              aria-roledescription="Collection Blurb"
               aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
               tabindex="-1"
             >
@@ -157,7 +159,7 @@
                   aria-label="{{ 'sections.header.announcement' | t }}"
                 >
               
-                  <div class="meta_blog_blurb metafield-rich_text_field page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" id="meta_blog_blurb" {% if settings.animations_reveal_on_scroll %} data-cascade {% endif %}
+                  <div class="meta_collection_blurb metafield-rich_text_field page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" id="meta_collection_blurb" {% if settings.animations_reveal_on_scroll %} data-cascade {% endif %}
                   >
                       <span>
                         <i class="mw_blog_icon_left fa-solid fa-quote-left"></i> {{ paragraph }} <i class="mw_blog_icon_right fa-solid fa-quote-right"></i>
@@ -171,6 +173,7 @@
 
 
           </div>
+
           <button
             type="button"
             class="blog_blurb_nxt_btn slider-button slider-button--next"
@@ -182,13 +185,14 @@
               {{- 'icon-caret.svg' | inline_asset_content -}}
             </span>
           </button>
+          
         </div>
         </slider-component>
 
     {%- else -%}
     {% comment %} {%- assign paragraphs = paragraphs  | replace: '<p>', '<p class="zip">'  -%} {% endcomment %}
           {% comment %} no slider... {% endcomment %}
-        <div class="{% if my_metafield_variable == "" %} small-hide desk-hide {% endif %} meta_blog_blurb single_blurb metafield-rich_text_field page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" id="meta_blog_blurb" {% if settings.animations_reveal_on_scroll %} data-cascade {% endif %}
+        <div class="{% if my_metafield_variable == "" %} small-hide desk-hide {% endif %} meta_collection_blurb single_blurb metafield-rich_text_field page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" id="meta_collection_blurb" {% if settings.animations_reveal_on_scroll %} data-cascade {% endif %}
           >
               <span>
                 <i class="mw_blog_icon_left_single fa-solid fa-quote-left"></i> {{ paragraphs }} <i class="mw_blog_icon_right_single fa-solid fa-quote-right"></i>
@@ -198,12 +202,12 @@
 
     <script>
       function startAutoplayForSliders() {
-      document.querySelectorAll('.mw_blog_slider').forEach(slider => {
+      document.querySelectorAll('.mw_blurb_slider').forEach(slider => {
         const sliderElement = slider.querySelector('[id^="Slider-"]');
         if (sliderElement && !slider.classList.contains('slideshow-component')) {
           let currentIndex = 0;
           const slideInterval = setInterval(() => {
-            const slides = sliderElement.querySelectorAll('.mw_blog_slide');
+            const slides = sliderElement.querySelectorAll('.collection_blurb_slide');
             if (slides.length > 0) {
               currentIndex = (currentIndex + 1) % slides.length;
               sliderElement.scrollTo({
