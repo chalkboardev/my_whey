@@ -640,6 +640,7 @@ transform: scale(1.03);
           <script>
             function change_it(summary) {
               //console.log('hi...');
+
               // $(summary).children('span').eq(1).attr("id")
               var the_svg_span = $(summary).children('span').eq(1).children('svg').eq(0);
               //console.log();
@@ -671,7 +672,10 @@ transform: scale(1.03);
             $(".header__icon--summary").click(function (){
               $('.icon-caret').removeClass('flip_svg');
               //alert('hi...');
-              $("#HeaderDrawer-shop").click();
+              setTimeout(function(){
+                $("#HeaderDrawer-shop").click();
+}, 1000);
+        
             });
 
             
