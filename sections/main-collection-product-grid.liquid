@@ -211,8 +211,10 @@
         </div>
     {% endif %}
 
-    <script>
-      // Example of how to add the event listener
+<script>
+  $(".collection_blurb_slide a").click(function (){
+    alert('hi.....');
+  });
 document.addEventListener('DOMContentLoaded', () => {
   const sliderComponent = document.querySelector('slider-component');
   const thumbnailLinks = document.querySelectorAll('.pagination-dot');
@@ -227,53 +229,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
-   // Example (adapt to your slider's specific implementation)
-  //  document.addEventListener('DOMContentLoaded', () => {
-  //     const slider = document.querySelector('.mw_blurb_slider'); // Replace with your slider's selector
-  //     const paginationDots = document.querySelectorAll('.pagination-dot');
 
-  //     if (slider && paginationDots.length > 0) {
-  //       paginationDots.forEach(dot => {
-  //         dot.addEventListener('click', (event) => {
-  //           const slideIndex = parseInt(event.target.dataset.slideIndex);
-  //           // Logic to change the slider's current slide based on slideIndex
-  //           // This will depend on your slider's JavaScript API
-  //           // For example, if using Flickity: slider.flickity.select(slideIndex);
+function startAutoplayForSliders() {
+    document.querySelectorAll('.mw_blurb_slider').forEach(slider => {
+      const sliderElement = slider.querySelector('[id^="Slider-"]');
+      if (sliderElement && !slider.classList.contains('slideshow-component')) {
+        let currentIndex = 0;
+        const slideInterval = setInterval(() => {
+          const slides = sliderElement.querySelectorAll('.collection_blurb_slide');
+          if (slides.length > 0) {
+            currentIndex = (currentIndex + 1) % slides.length;
+            sliderElement.scrollTo({
+              left: slides[currentIndex].offsetLeft,
+              behavior: 'smooth'
+            });
+          }
+        }, 7000); // Set autoplay speed in milliseconds (e.g., 5000 for 5 seconds)
+        // Optional: Pause on hover
+        slider.addEventListener('mouseenter', () => clearInterval(slideInterval));
+        slider.addEventListener('mouseleave', () => startAutoplayForSliders());
+      }
+    });
+}
 
-  //           // Update active dot class
-  //           paginationDots.forEach(d => d.classList.remove('active'));
-  //           event.target.classList.add('active');
-  //         });
-  //       });
-
-  //       // Add logic to update active dot when slider changes (e.g., on slide change event)
-  //     }
-  //   });
-
-      
-      function startAutoplayForSliders() {
-      document.querySelectorAll('.mw_blurb_slider').forEach(slider => {
-        const sliderElement = slider.querySelector('[id^="Slider-"]');
-        if (sliderElement && !slider.classList.contains('slideshow-component')) {
-          let currentIndex = 0;
-          const slideInterval = setInterval(() => {
-            const slides = sliderElement.querySelectorAll('.collection_blurb_slide');
-            if (slides.length > 0) {
-              currentIndex = (currentIndex + 1) % slides.length;
-              sliderElement.scrollTo({
-                left: slides[currentIndex].offsetLeft,
-                behavior: 'smooth'
-              });
-            }
-          }, 7000); // Set autoplay speed in milliseconds (e.g., 5000 for 5 seconds)
-          // Optional: Pause on hover
-          slider.addEventListener('mouseenter', () => clearInterval(slideInterval));
-          slider.addEventListener('mouseleave', () => startAutoplayForSliders());
-        }
-      });
-    }
-    
-    document.addEventListener('DOMContentLoaded', startAutoplayForSliders);
+document.addEventListener('DOMContentLoaded', startAutoplayForSliders);
     </script>
     {% comment %} <div 
         class="meta_collection_blurb page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
