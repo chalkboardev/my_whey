@@ -44,7 +44,7 @@
       "type": "flavour_modal",
       "name": "Pop-up Flavour Modal",
       "settings": {
-        "flavour_bg_color": "#fff",
+        "flavour_bg_color": "#ffffff",
         "flavour_trigger": "flavour_modal",
         "title": "Add a flavour?",
         "heading_size": "h1",
@@ -70,11 +70,22 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "toast_modal_BwWyQN": {
+      "type": "toast_modal",
+      "name": "Toast Modal",
+      "settings": {
+        "toast_bg_color": "#fff",
+        "toast_trigger": "submit_formula",
+        "toast_modal_title": "Submit Formula",
+        "toast_modal_content": "<p>Submit a formula...</p>"
+      }
     }
   },
   "order": [
     "banner",
     "product-grid",
-    "flavour_modal_D7WbVA"
+    "flavour_modal_D7WbVA",
+    "toast_modal_BwWyQN"
   ]
 }
