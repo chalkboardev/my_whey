@@ -3691,17 +3691,17 @@ h3 {
 }
 
 .blog_blurb_nxt_btn {
-    right: 4%;
+    right: 0;
     position: absolute;
-    top: 33%;
+    top: 30%;
     color: #999;
     z-index: 99;
 }
 
 .blog_blurb_prev_btn {
-    left: 4%;
+    left: 0;
     position: absolute;
-    top: 33%;
+    top: 30%;
     color: #999;
     z-index: 99;
 }
@@ -3719,7 +3719,7 @@ h3 {
     justify-content: center;
     background: #f5f4f4;
     border-radius: 9px;
-    --focus-outline-padding: 0;
+    min-height: 110px;
 }
 
 .collection_blurb_slide {
@@ -3784,7 +3784,7 @@ h3 {
     text-align: center;
     justify-content: center;
     max-width: 300px;
-    margin: 1.2rem auto 1.5rem auto;
+    margin: 1.2rem auto 1.2rem auto;
     position: relative;
     color: #fff;
     text-shadow: 0px 0px 2px #333;
@@ -3803,7 +3803,7 @@ h3 {
     text-align: center;
     justify-content: center;
     max-width: 300px;
-    margin: 1.2rem auto 1.5rem auto;
+    margin: 1.2rem auto 1.2rem auto;
     position: relative;
     transform: scale(1.05);
     color: #ff6700;
