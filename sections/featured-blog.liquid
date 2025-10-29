@@ -63,7 +63,7 @@
 
     <div
       id="blog_list_header"
-      class="blog_list_header page-width{% if settings.animations_reveal_on_scroll %} animate--fade-in{% endif %}"
+      class="blog_list_header {% if settings.animations_reveal_on_scroll %} animate--fade-in{% endif %}"
       style="{%- if section.settings.image != blank -%} background-size:cover !important;background: url('{{ section.settings.image | image_url }}') no-repeat 100% {{ section.settings.background_height_position }}%/100%;   {% endif %}">
 
     <a class="blog_head_link" href="{{ section.settings.blog.url }}">
