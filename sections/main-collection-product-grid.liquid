@@ -212,8 +212,13 @@
     {% endif %}
 
 <script>
-  $(".collection_blurb_slide a").click(function (){
-    alert('hi.....');
+  $(".collection_blurb_slide a").click(function (e){
+    e.preventDefault();
+    $('#submit_formula.toast__overlay').css("visibility", "visible");
+    $('#submit_formula.toast__overlay').css("opacity", "1");
+    $('#submit_formula.toast__overlay').css("z-index", "999");
+    $('#submit_formula.toast__overlay').css("background", "rgb(0 0 0 / 50%)")
+
   });
 document.addEventListener('DOMContentLoaded', () => {
   const sliderComponent = document.querySelector('slider-component');
