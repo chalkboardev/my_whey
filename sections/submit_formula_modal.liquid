@@ -11,9 +11,12 @@
   {% comment %} <div class="modal_window"></div> {% endcomment %}
   <div style="background:{{ section.settings.formula_modal_bg_color }}" class="toast__box">
 
-    <span class="toast__close" id="toast__close">&times;</span>
+    
 
-    <p class="heading">{{ section.settings.formula_modal_toast_modal_title }}</p>
+    <p class="heading">
+        {{ section.settings.formula_modal_toast_modal_title }} 
+        <span class="toast__close" id="toast__close">&times;</span>
+    </p>
 
     <div class="toast__content_div">
 
@@ -310,6 +313,7 @@
     top: 0px;
     z-index: 9999;
     align-items: center;
+    align-content: center;
     color: #fff;
     text-shadow: 0 0 3px #111;
     text-align: left;
