@@ -99,9 +99,9 @@
 
 
     {% if collection.metafields.custom.collection_blurb %} 
-      Yes blurb...
+      {% comment %} Yes there is a collection blurb... {% endcomment %}
       {%- else -%}
-      No blurb...
+      {% comment %} No there is no collection blurb... {% endcomment %}
     {% endif %}
 
     {% comment %} {{ collection.metafields.custom.collection_blurb | metafield_tag  }} {% endcomment %}
