@@ -145,7 +145,6 @@
               class="field__input"
               autocomplete=""
               name="contact[{{ 'templates.contact.modal_form.ingredient3' | t }}]"
-              pattern="[0-9\-]*"
               value="{% if form.ingredient3 %}{{ form.ingredient3 }}{% elsif customer %}{{ customer.ingredient3 }}{% endif %}"
               placeholder="{{ 'templates.contact.modal_form.ingredient3' | t }}"
             >
@@ -159,7 +158,6 @@
               class="field__input"
               autocomplete=""
               name="contact[{{ 'templates.contact.modal_form.ingredient4' | t }}]"
-              pattern="[0-9\-]*"
               value="{% if form.ingredient4 %}{{ form.ingredient4 }}{% elsif customer %}{{ customer.ingredient4 }}{% endif %}"
               placeholder="{{ 'templates.contact.modal_form.ingredient4' | t }}"
             >
