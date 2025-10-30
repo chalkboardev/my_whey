@@ -245,21 +245,25 @@ document.addEventListener('DOMContentLoaded', () => {
                   urlParams[decodeURIComponent(keyValue[0])] = decodeURIComponent(keyValue[1]);
               }
           });
+          //var queryStringName = urlParams.name;
+          console.log(urlParams);
           if (queryString.includes("contact")) {
-            console.log("Query string contains 'contact...open modal...");
-            if (queryString.includes("contact_posted=true#ModalForm")) {
-                alert('Suggestion sent!');
-            } 
-            //var queryStringName = urlParams.name;
-            console.log(urlParams.form_type);
-                $('#submit_formula.toast__overlay').css("visibility", "visible");
-                $('#submit_formula.toast__overlay').css("opacity", "1");
-                $('#submit_formula.toast__overlay').css("z-index", "999");
-                $('#submit_formula.toast__overlay').css("background", "rgb(0 0 0 / 50%)");
-                $('.toast__box').animate({
-                    scrollTop: 0
-                }, 500); // 500ms for a smooth animation
-            
+                console.log("Query string contains 'contact...open modal...");
+                if (queryString.includes("contact_posted=true")) {
+                    //alert('Suggestion sent!');
+                    var form_feedback = $.trim($(".form-status.form-status-list.form__message").text());
+                    console.log(form_feedback);
+
+                } else {
+                  $('#submit_formula.toast__overlay').css("visibility", "visible");
+                  $('#submit_formula.toast__overlay').css("opacity", "1");
+                  $('#submit_formula.toast__overlay').css("z-index", "999");
+                  $('#submit_formula.toast__overlay').css("background", "rgb(0 0 0 / 50%)");
+                  $('body').addClass('preventBodyScroll');
+                  $('.toast__box').animate({scrollTop: 0}, 500);
+                  
+                }
+
           } else {
             console.log("Yes query string but string does not contain 'contact'.");
           }
@@ -274,6 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
         $('#submit_formula.toast__overlay').css("opacity", "1");
         $('#submit_formula.toast__overlay').css("z-index", "999");
         $('#submit_formula.toast__overlay').css("background", "rgb(0 0 0 / 50%)");
+        $('body').addClass('preventBodyScroll');
       });
 
 });

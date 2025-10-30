@@ -579,6 +579,7 @@ body {
           $('#submit_formula.toast__overlay').css("opacity", "1");
           $('#submit_formula.toast__overlay').css("z-index", "999");
           $('#submit_formula.toast__overlay').css("background", "rgb(0 0 0 / 50%)");
+          $('body').addClass('preventBodyScroll');
       });
 
       $("#open_formula_modal").click(function (e) {
@@ -587,6 +588,7 @@ body {
           $('#submit_formula.toast__overlay').css("opacity", "1");
           $('#submit_formula.toast__overlay').css("z-index", "999");
           $('#submit_formula.toast__overlay').css("background", "rgb(0 0 0 / 50%)");
+          $('body').addClass('preventBodyScroll');
       });
 
       $("#submit_formula .toast__close").click(function () {
@@ -594,6 +596,10 @@ body {
           currentUrl.search = '';
           currentUrl.hash = '';
           window.history.pushState({}, '', currentUrl.toString());
+          setTimeout(function(){
+              $('.toast__box').animate({scrollTop: 0 }, 500);
+          }, 1000);
+          $('body').removeClass('preventBodyScroll');
       });
 
       $(".flavour_popup__close").click(function () {
