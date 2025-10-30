@@ -3892,7 +3892,7 @@ h3 {
 }
 
 .submit_formula_btn {
-    margin: 2rem 0 0 0;
+    margin: 0rem 0 0 0;
     min-width: 280px !important;
     border: 2px solid #ff2f0075 !important;
     font-weight: 600 !important;

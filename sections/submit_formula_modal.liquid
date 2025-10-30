@@ -110,7 +110,7 @@
             <label class="field__label" for="ModalForm-phone">{{ 'templates.contact.modal_form.phone' | t }}</label>
           </div>
           
-          <h3>Ingredient List</h3>
+          <p>Your Ingredient List:</p>
           
           <div class="field">
             <input
@@ -119,12 +119,54 @@
               class="field__input"
               autocomplete=""
               name="contact[{{ 'templates.contact.modal_form.ingredient1' | t }}]"
-              pattern="[0-9\-]*"
-              value="{% if form.ingredient1 %}{{ form.phone_two }}{% elsif customer %}{{ customer.ingredient1 }}{% endif %}"
+              value="{% if form.ingredient1 %}{{ form.ingredient1 }}{% elsif customer %}{{ customer.ingredient1 }}{% endif %}"
               placeholder="{{ 'templates.contact.modal_form.ingredient1' | t }}"
             >
-            <label class="field__label" for="ModalForm-phone">{{ 'templates.contact.modal_form.ingredient1' | t }}</label>
+            <label class="field__label" for="ModalForm-ingredient1">{{ 'templates.contact.modal_form.ingredient1' | t }}</label>
           </div>
+
+          <div class="field">
+            <input
+              type="text"
+              id="ModalForm-ingredient2"
+              class="field__input"
+              autocomplete=""
+              name="contact[{{ 'templates.contact.modal_form.ingredient2' | t }}]"
+              value="{% if form.ingredient2 %}{{ form.ingredient2 }}{% elsif customer %}{{ customer.ingredient2 }}{% endif %}"
+              placeholder="{{ 'templates.contact.modal_form.ingredient2' | t }}"
+            >
+            <label class="field__label" for="ModalForm-ingredient2">{{ 'templates.contact.modal_form.ingredient2' | t }}</label>
+          </div>
+
+          <div class="field">
+            <input
+              type="text"
+              id="ModalForm-ingredient3"
+              class="field__input"
+              autocomplete=""
+              name="contact[{{ 'templates.contact.modal_form.ingredient3' | t }}]"
+              pattern="[0-9\-]*"
+              value="{% if form.ingredient3 %}{{ form.ingredient3 }}{% elsif customer %}{{ customer.ingredient3 }}{% endif %}"
+              placeholder="{{ 'templates.contact.modal_form.ingredient3' | t }}"
+            >
+            <label class="field__label" for="ModalForm-ingredient3">{{ 'templates.contact.modal_form.ingredient3' | t }}</label>
+          </div>
+
+          <div class="field">
+            <input
+              type="text"
+              id="ModalForm-ingredient4"
+              class="field__input"
+              autocomplete=""
+              name="contact[{{ 'templates.contact.modal_form.ingredient4' | t }}]"
+              pattern="[0-9\-]*"
+              value="{% if form.ingredient4 %}{{ form.ingredient4 }}{% elsif customer %}{{ customer.ingredient4 }}{% endif %}"
+              placeholder="{{ 'templates.contact.modal_form.ingredient4' | t }}"
+            >
+            <label class="field__label" for="ModalForm-ingredient4">{{ 'templates.contact.modal_form.ingredient4' | t }}</label>
+          </div>
+          
+
           <div class="text_area field">
             <textarea
               rows="10"
@@ -136,15 +178,16 @@
               {{- form.body -}}
             </textarea>
             <label class="form__label field__label" for="ModalForm-body">
-              {% comment %} {{- 'templates.contact.contact.mo.comment' | t -}}  {% endcomment %}
-              Formula Suggestion
+              {{- 'templates.contact.modal_form.comment' | t -}}
             </label>
           </div>
+
           <div class="center contact__button">
             <button type="submit" class="color-scheme-5 gradient submit_formula_btn button">
               {{ 'templates.contact.modal_form.send' | t }}
             </button>
           </div>
+
         {%- endform -%}
       </div>
 
@@ -188,7 +231,7 @@
 
 {% stylesheet %}
   #ModalForm {
-    padding: 1rem 0 4rem 0;
+    padding: 0rem 0 4rem 0;
   }
   .modal_window {
     display: flex;
@@ -200,7 +243,12 @@
   }
   #submit_formula.toast__overlay {
     align-items: center;
+    padding-top: 2rem !important;
   }
+  .field__input:focus, .field__input:not(:placeholder-shown), .field__input:-webkit-autofill, .customer .field input:focus, .customer .field input:not(:placeholder-shown), .customer .field input:-webkit-autofill {
+    padding: 2.2rem 1.5rem 0.8rem 5rem;
+    margin: var(--inputs-border-width);
+}
   .toast__overlay {
     height: 100vh;
     position: fixed;
@@ -277,6 +325,7 @@
 
   #submit_formula .toast__content p {
     text-align:center;
+    font-weight:600;
   }
   #submit_formula .toast__content h3 {
     text-align:center;
@@ -318,6 +367,27 @@
   .toast__close:hover {
     color: #c1c1c1;
   }
+
+  #submit_formula .toast__close {
+    position: sticky;
+    top: 6px;
+    right: 1rem;
+    justify-content: center;
+    float: right;
+    display: flex;
+    transition: 200ms ease-out;
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    height: 26px;
+    border-radius: 50%;
+    width: 26px;
+    background: rgba(51, 51, 51, 0.49);
+    font-weight: 300;
+    line-height: 25px;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 99999;
+}
 
   .toast__content {
     max-height: 30%;
@@ -364,6 +434,17 @@
     }
     #submit_formula .toast__box {
       width: 90% !important;
+    }
+    #submit_formula .toast__box {
+      overflow: scroll;
+      border: 1px solid #ffffff;
+      background: #fff;
+      border-radius: 8px;
+      width: 50%;
+      height: auto;
+      position: relative;
+      transition: all ease .5s;
+      text-align: center;
     }
   }
 
