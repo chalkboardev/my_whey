@@ -212,27 +212,59 @@
     {% endif %}
 
 <script>
-  $(".collection_blurb_slide a").click(function (e){
-    e.preventDefault();
-    $('#submit_formula.toast__overlay').css("visibility", "visible");
-    $('#submit_formula.toast__overlay').css("opacity", "1");
-    $('#submit_formula.toast__overlay').css("z-index", "999");
-    $('#submit_formula.toast__overlay').css("background", "rgb(0 0 0 / 50%)")
-
-  });
 document.addEventListener('DOMContentLoaded', () => {
-  const sliderComponent = document.querySelector('slider-component');
-  const thumbnailLinks = document.querySelectorAll('.pagination-dot');
 
-  if (sliderComponent && thumbnailLinks) {
-    thumbnailLinks.forEach(link => {
-      link.addEventListener('click', (event) => {
-        event.preventDefault();
-        const index = event.currentTarget.dataset.index;
-        sliderComponent.goToSlide(index);
+      const sliderComponent = document.querySelector('slider-component');
+      const thumbnailLinks = document.querySelectorAll('.pagination-dot');
+
+      if (sliderComponent && thumbnailLinks) {
+        thumbnailLinks.forEach(link => {
+          link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const index = event.currentTarget.dataset.index;
+            sliderComponent.goToSlide(index);
+          });
+        });
+      }
+
+      var queryString = window.location.search; // "?name=John%20Doe&age=30"
+      if(queryString){
+          console.log("YES query string...");
+          var paramsArray = queryString.substring(1).split('&'); // ["name=John%20Doe", "age=30"]
+
+          var urlParams = {};
+          $.each(paramsArray, function(index, param) {
+              var keyValue = param.split('=');
+              if (keyValue.length === 2) {
+                  urlParams[decodeURIComponent(keyValue[0])] = decodeURIComponent(keyValue[1]);
+              }
+          });
+          if (queryString.includes("contact")) {
+            console.log("Query string contains 'contact...open modal'.");
+            var variantId = urlParams.variant; // "John Doe"
+            console.log(urlParams.form_type);
+                $('#submit_formula.toast__overlay').css("visibility", "visible");
+                $('#submit_formula.toast__overlay').css("opacity", "1");
+                $('#submit_formula.toast__overlay').css("z-index", "999");
+                $('#submit_formula.toast__overlay').css("background", "rgb(0 0 0 / 50%)");
+            
+          } else {
+            console.log("Query string does not contain 'contact'.");
+            // Perform other actions
+          }
+          
+      } else {
+          console.log("No query string in url...default product view...");
+      }
+      
+      $(".collection_blurb_slide a").click(function (e){
+        e.preventDefault();
+        $('#submit_formula.toast__overlay').css("visibility", "visible");
+        $('#submit_formula.toast__overlay').css("opacity", "1");
+        $('#submit_formula.toast__overlay').css("z-index", "999");
+        $('#submit_formula.toast__overlay').css("background", "rgb(0 0 0 / 50%)");
       });
-    });
-  }
+
 });
 
 function startAutoplayForSliders() {
@@ -256,7 +288,6 @@ function startAutoplayForSliders() {
       }
     });
 }
-
 document.addEventListener('DOMContentLoaded', startAutoplayForSliders);
     </script>
     {% comment %} <div 

@@ -572,6 +572,7 @@ body {
           //window.location.hash = ''; 
           // alert(this_id);
       });
+
       $("#click_submit_formula").click(function (e) {
           e.preventDefault();
           $('#submit_formula.toast__overlay').css("visibility", "visible");
@@ -582,6 +583,12 @@ body {
           // $('body').click();
           //window.location.hash = ''; 
           // alert(this_id);
+      });
+      $("#submit_formula .toast__close").click(function () {
+          const currentUrl = new URL(window.location.href);
+          currentUrl.search = '';
+          currentUrl.hash = '';
+          window.history.pushState({}, '', currentUrl.toString());
       });
 
       $(".flavour_popup__close").click(function () {
