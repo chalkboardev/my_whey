@@ -19,6 +19,13 @@
 
       <div class="toast__content">
         {{ section.settings.formula_modal_toast_modal_content }}
+
+        {%- liquid
+        assign contact_form_class = 'isolate'
+        if settings.animations_reveal_on_scroll
+          assign contact_form_class = 'isolate scroll-trigger animate--slide-in'
+        endif
+      -%}
         {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
           {%- if form.posted_successfully? -%}
             <h2 class="form-status form-status-list form__message" tabindex="-1" >  {% comment %} (left) autofocus {% endcomment %}
