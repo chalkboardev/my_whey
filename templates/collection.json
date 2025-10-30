@@ -75,10 +75,10 @@
       "type": "submit_formula_modal",
       "name": "Submit Formula Modal",
       "settings": {
-        "formula_modal_bg_color": "#fff",
+        "formula_modal_bg_color": "#ffffff",
         "formula_modal_toast_trigger": "submit_formula",
         "formula_modal_toast_modal_title": "Submit Formula",
-        "formula_modal_toast_modal_content": "<p>Submit a formula using the form below...</p>"
+        "formula_modal_toast_modal_content": "<p>Submit a Formula using the form below...</p>"
       }
     }
   },
