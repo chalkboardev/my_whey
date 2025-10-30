@@ -3985,16 +3985,22 @@ h3 {
 }
 
 .my_formula_info_btn_container {
+    justify-self: anchor-center;
+    width: 92%;
     display: flex;
+    border: 4px solid #ffffff;
     flex-direction: column;
     text-align: center;
     justify-content: center;
     align-items: center;
     align-content: center;
-    background: #fff;
+    /* background: #fff;  */
+    background: url("https://cdn.shopify.com/s/files/1/0713/8685/7724/files/dots_pattern.png?v=1760521949");
+    background-size: cover;
     min-height: 160px;
+    overflow: hidden;
     border-radius: 10px;
-    margin: 6rem 2rem 2rem 2rem;
+    margin: 3.5rem 2rem 2rem 2rem;
 }
 
 .open_formula_modal_btn {
@@ -4052,18 +4058,71 @@ h3 {
     text-align: center;
 }
 
+.mw_corner_container_t_left {
+    background: none !important;
+    background-color: unset !important;
+    width: 0;
+    height: 0;
+    border-top: 130px solid;
+    border-top-color: #ff6700 !important;
+    border-bottom: 130px solid transparent;
+    border-right: 130px solid transparent;
+    position: absolute;
+    left: 0;
+    top: 0rem;
+    border-top-left-radius: 6px !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 6px !important;
+    border-bottom-left-radius: 0 !important;
+    z-index: -1;
+}
+
+.mw_corner_container_b_rght {
+    background: none !important;
+    background-color: unset !important;
+    width: 0;
+    height: 0;
+    border-top: 130px solid transparent;
+    border-bottom: 130px solid;
+    border-bottom-color: #ff6700 !important;
+    border-left: 130px solid transparent;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-top-left-radius: 6px !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 6px !important;
+    border-bottom-left-radius: 0 !important;
+    z-index: -1;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    .mw_corner_container_t_left {
+        display: none;
+        border-top: 80px solid;
+        border-top-color: rgba(187, 187, 187, 0.8) !important;
+        border-bottom: 80px solid transparent;
+        border-right: 80px solid transparent;
+    }
+    .mw_corner_container_b_rght {
+        display: none;
+        border-top: 80px solid transparent;
+        border-bottom: 80px solid;
+        border-bottom-color: rgba(187, 187, 187, 0.8) !important;
+        border-left: 80px solid transparent;
+    }
     .my_formula_info_btn_container {
+        background: url("https://cdn.shopify.com/s/files/1/0713/8685/7724/files/dots_pattern.png?v=1760521949");
+        background-size: cover;
         display: flex;
         flex-direction: column;
         text-align: center;
         justify-content: center;
         align-items: center;
         align-content: center;
-        background: #fff;
         min-height: 220px;
         border-radius: 10px;
         margin: 4rem 1.5rem 2rem 1.5rem;
@@ -5413,6 +5472,21 @@ h3 {
 /* ---------- LARGE SCREEN 1200px START ---------- */
 
 @media screen and (min-width: 1120px) {
+    .mw_corner_container_t_left {
+        border-top: 260px solid;
+        border-top-color: rgb(239 98 54 / 49%) !important;
+        /* border-top-color: rgba(187, 187, 187, 0.8) !important; */
+        border-bottom: 260px solid transparent;
+        border-right: 260px solid transparent;
+    }
+    .mw_corner_container_b_rght {
+        border-top: 260px solid transparent;
+        border-bottom: 260px solid;
+        border-bottom-color: rgb(239 98 54 / 49%) !important;
+        /* border-bottom-color: rgba(187, 187, 187, 0.8) !important; */
+        border-left: 260px solid transparent;
+        overflow: hidden;
+    }
     .meta_blog_blurb .metafield-rich_text_field {
         /* border-left: 3px solid #ee5535; */
         padding: 0 10rem 0 10rem;
