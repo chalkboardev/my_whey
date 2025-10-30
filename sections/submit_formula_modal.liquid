@@ -109,6 +109,19 @@
             >
             <label class="field__label" for="ModalForm-phone">{{ 'templates.contact.modal_form.phone' | t }}</label>
           </div>
+          <div class="field">
+            <input
+              type="tel"
+              id="ModalForm-phone"
+              class="field__input"
+              autocomplete="tel"
+              name="contact[{{ 'templates.contact.modal_form.phone' | t }}]"
+              pattern="[0-9\-]*"
+              value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+              placeholder="{{ 'templates.contact.modal_form.phone' | t }}"
+            >
+            <label class="field__label" for="ModalForm-phone">{{ 'templates.contact.modal_form.phone' | t }}</label>
+          </div>
           <div class="text_area field">
             <textarea
               rows="10"
