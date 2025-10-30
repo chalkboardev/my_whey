@@ -240,8 +240,11 @@ document.addEventListener('DOMContentLoaded', () => {
               }
           });
           if (queryString.includes("contact")) {
-            console.log("Query string contains 'contact...open modal'.");
-            var variantId = urlParams.variant; // "John Doe"
+            console.log("Query string contains 'contact...open modal...");
+            if (queryString.includes("contact_posted=true#ModalForm")) {
+                alert('Suggestion sent!');
+            } 
+            //var queryStringName = urlParams.name;
             console.log(urlParams.form_type);
                 $('#submit_formula.toast__overlay').css("visibility", "visible");
                 $('#submit_formula.toast__overlay').css("opacity", "1");
@@ -250,13 +253,12 @@ document.addEventListener('DOMContentLoaded', () => {
             
           } else {
             console.log("Query string does not contain 'contact'.");
-            // Perform other actions
           }
           
       } else {
           console.log("No query string in url...default product view...");
       }
-      
+
       $(".collection_blurb_slide a").click(function (e){
         e.preventDefault();
         $('#submit_formula.toast__overlay').css("visibility", "visible");
