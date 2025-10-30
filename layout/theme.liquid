@@ -546,7 +546,7 @@ body {
       });
 
       $("#toast__close").click(function () {
-          // alert('close modal...');
+          //alert('close modal...');
           $('.toast__overlay').css("visibility", "hidden");
           $('.toast__overlay').css("opacity", "0");
           $('.toast__overlay').css("z-index", "-1");
@@ -592,6 +592,22 @@ body {
       });
 
       $("#submit_formula .toast__close").click(function () {
+          const currentUrl = new URL(window.location.href);
+          currentUrl.search = '';
+          currentUrl.hash = '';
+          window.history.pushState({}, '', currentUrl.toString());
+          setTimeout(function(){
+              $('.toast__box').animate({scrollTop: 0 }, 500);
+          }, 1000);
+          $('body').removeClass('preventBodyScroll');
+      });
+
+
+      $("#notification_toast .toast__close").click(function () {
+          $('.toast__overlay').css("visibility", "hidden");
+          $('.toast__overlay').css("opacity", "0");
+          $('.toast__overlay').css("z-index", "-1");
+          $('body').removeClass('preventBodyScroll');
           const currentUrl = new URL(window.location.href);
           currentUrl.search = '';
           currentUrl.hash = '';
