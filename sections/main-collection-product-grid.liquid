@@ -98,6 +98,12 @@
     {%- endif -%}
 
 
+    {% if collection.metafields.custom.collection_blurb %} 
+      Yes blurb...
+      {%- else -%}
+      No blurb...
+    {% endif %}
+
     {% comment %} {{ collection.metafields.custom.collection_blurb | metafield_tag  }} {% endcomment %}
     {% assign my_metafield_variable = collection.metafields.custom.collection_blurb | metafield_tag   %} 
     {% assign content_with_placeholders = my_metafield_variable | replace: '<p>', '@@@_PARAGRAPH_OPEN_@@@' | replace: '</p>', '@@@_PARAGRAPH_CLOSE_@@@' | replace: '<em>', '@@@_ITALIC_OPEN_@@@' | replace: '</em>', '@@@_ITALIC_CLOSED_@@@' | replace: '<strong>', '@@@_BOLD_OPEN_@@@' | replace: '</strong>', '@@@_BOLD_CLOSED_@@@' | replace: '<a href="#submit_formula">', '@@@_LINK_OPEN_@@@' | replace: '</a>', '@@@_LINK_CLOSED_@@@' %}
@@ -255,11 +261,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 500); // 500ms for a smooth animation
             
           } else {
-            console.log("Query string does not contain 'contact'.");
+            console.log("Yes query string but string does not contain 'contact'.");
           }
           
       } else {
-          console.log("No query string in url...default product view...");
+          console.log("No query string in url...default main-collection-product-grid.liquid view...");
       }
 
       $(".collection_blurb_slide a").click(function (e){
@@ -410,6 +416,29 @@ document.addEventListener('DOMContentLoaded', startAutoplayForSliders);
   {% if section.settings.image_shape == 'arch' %}
     {{ 'mask-arch.svg' | inline_asset_content }}
   {%- endif -%}
+  
+
+  {% if collection.handle == 'my-formulas' %}
+        <!-- Content to display only on the My Formulas collection page -->
+        {% comment %} <p>This is content for the {{ collection.title }} page.</p> {% endcomment %}
+
+        <div class="my_formula_info_btn_container metafield-rich_text_field page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" id="" {% if settings.animations_reveal_on_scroll %} data-cascade {% endif %}
+          >
+              <span>
+                <i class="mw_blog_icon_left_single fa-solid fa-quote-left"></i> Got a Formula that you'd like added to this range? <i class="mw_blog_icon_right_single fa-solid fa-quote-right"></i>
+              </span>
+
+                <div class="">
+                  <a id="open_formula_modal" href="#" class="open_formula_modal_btn button color-scheme-5"> 
+                    SUBMIT A FORMULA
+                  </a>
+                </div>
+        </div>
+  {% else %}
+        <!-- Content to display on all other collection pages -->
+        {% comment %} <p>This is the default content for other collection pages.</p> {% endcomment %}
+  {% endif %}
+
 </div>
 
 {% schema %}

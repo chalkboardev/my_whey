@@ -3590,7 +3590,7 @@ h3 {
 }
 
 .meta_collection_blurb .metafield-rich_text_field {
-    border-left: 3px solid #ee5535;
+    /* border-left: 3px solid #ee5535; */
     padding-left: 20px;
 }
 
@@ -3966,6 +3966,45 @@ h3 {
     box-shadow: none !important;
     border: none !important;
     outline: 0 !important;
+}
+
+.my_formula_info_btn_container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background: #fff;
+    min-height: 120px;
+    border-radius: 10px;
+    margin: 6rem 2rem 2rem 2rem;
+}
+
+.open_formula_modal_btn {
+    margin: 1rem 0 1rem 0;
+    font-weight: 600 !important;
+    min-width: 280px !important;
+    text-transform: uppercase;
+    min-height: 4.5rem !important;
+    background: linear-gradient(180deg, rgba(255, 103, 0, 1), rgba(227, 79, 0, 1) 50%, rgba(197, 69, 2, 1) 100%) !important;
+    border: 2px solid #ff67005c !important;
+    border-radius: 50px !important;
+    -webkit-tap-highlight-color: transparent !important;
+    letter-spacing: 3px !important;
+    transition: all .25s ease !important;
+}
+
+.open_formula_modal_btn:hover {
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    min-height: 4.5rem !important;
+    background: linear-gradient(180deg, rgba(255, 103, 0, 1), rgba(227, 79, 0, 1) 50%, rgba(197, 69, 2, 1) 100%) !important;
+    border: 2px solid #ff67005c !important;
+    border-radius: 50px !important;
+    -webkit-tap-highlight-color: transparent !important;
+    letter-spacing: 4px !important;
+    transition: all .25s ease !important;
 }
 
 

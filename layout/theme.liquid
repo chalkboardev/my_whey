@@ -578,12 +578,17 @@ body {
           $('#submit_formula.toast__overlay').css("visibility", "visible");
           $('#submit_formula.toast__overlay').css("opacity", "1");
           $('#submit_formula.toast__overlay').css("z-index", "999");
-          // alert('close modal...');
-          // $('.popup__overlay').removeAttr("target");
-          // $('body').click();
-          //window.location.hash = ''; 
-          // alert(this_id);
+          $('#submit_formula.toast__overlay').css("background", "rgb(0 0 0 / 50%)");
       });
+
+      $("#open_formula_modal").click(function (e) {
+          e.preventDefault();
+          $('#submit_formula.toast__overlay').css("visibility", "visible");
+          $('#submit_formula.toast__overlay').css("opacity", "1");
+          $('#submit_formula.toast__overlay').css("z-index", "999");
+          $('#submit_formula.toast__overlay').css("background", "rgb(0 0 0 / 50%)");
+      });
+
       $("#submit_formula .toast__close").click(function () {
           const currentUrl = new URL(window.location.href);
           currentUrl.search = '';
