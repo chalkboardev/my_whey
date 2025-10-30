@@ -272,6 +272,7 @@
         "name": "Name",
         "email": "Email",
         "phone": "Phone number",
+        "phone_two": "Phone number 2",
         "comment": "Formula Suggestion",
         "send": "Send",
         "post_success": "Thanks for submitting your formula! We'll get back to you as soon as possible.",

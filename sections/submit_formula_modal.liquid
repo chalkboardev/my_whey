@@ -112,13 +112,13 @@
           <div class="field">
             <input
               type="tel"
-              id="ModalForm-phone"
+              id="ModalForm-phone2"
               class="field__input"
               autocomplete="tel"
-              name="contact[{{ 'templates.contact.modal_form.phone' | t }}]"
+              name="contact[{{ 'templates.contact.modal_form.phone_two' | t }}]"
               pattern="[0-9\-]*"
-              value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
-              placeholder="{{ 'templates.contact.modal_form.phone' | t }}"
+              value="{% if form.phone_two %}{{ form.phone_two }}{% elsif customer %}{{ customer.phone_two }}{% endif %}"
+              placeholder="{{ 'templates.contact.modal_form.phone_two' | t }}"
             >
             <label class="field__label" for="ModalForm-phone">{{ 'templates.contact.modal_form.phone' | t }}</label>
           </div>
