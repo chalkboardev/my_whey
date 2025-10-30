@@ -280,7 +280,7 @@
         "ingredient6": "Ingredient 6",
         "ingredient7": "Ingredient 7",
         "comment": "Formula Description",
-        "send": "Send Formula",
+        "send": "Submit Formula",
         "post_success": "Thanks for submitting your formula! We'll get back to you as soon as possible.",
         "error_heading": "Please adjust the following:"
       }

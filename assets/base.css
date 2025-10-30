@@ -3676,6 +3676,14 @@ h3 {
     font-size: 3rem;
 }
 
+.mw_collection_blurb_icon_left_single {
+    position: absolute;
+    top: 1rem;
+    color: #ff6700;
+    left: 5rem;
+    font-size: 3rem;
+}
+
 .mw_blog_icon_right {
     position: absolute;
     bottom: 0;
@@ -3685,6 +3693,14 @@ h3 {
 }
 
 .mw_blog_icon_right_single {
+    position: absolute;
+    bottom: 1rem;
+    font-size: 3rem;
+    right: 5rem;
+    color: #ff6700;
+}
+
+.mw_collection_blurb_icon_right_single {
     position: absolute;
     bottom: 1rem;
     font-size: 3rem;
@@ -3976,13 +3992,13 @@ h3 {
     align-items: center;
     align-content: center;
     background: #fff;
-    min-height: 120px;
+    min-height: 160px;
     border-radius: 10px;
     margin: 6rem 2rem 2rem 2rem;
 }
 
 .open_formula_modal_btn {
-    margin: 1rem 0 1rem 0;
+    margin: 1rem 0 0.6rem 0;
     font-weight: 600 !important;
     min-width: 280px !important;
     text-transform: uppercase;
@@ -4007,10 +4023,29 @@ h3 {
     transition: all .25s ease !important;
 }
 
+.my_formula_info_btn_container span {
+    font-weight: 600;
+    font-size: 2rem;
+    padding-bottom: 0.6rem;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    .my_formula_info_btn_container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        background: #fff;
+        min-height: 220px;
+        border-radius: 10px;
+        margin: 4rem 1.5rem 2rem 1.5rem;
+        padding: 0 4rem 0 4rem;
+    }
     .slider-dots {
         margin-top: -1rem;
     }
@@ -4090,6 +4125,13 @@ h3 {
         left: 0;
         font-size: 3rem;
     }
+    .mw_collection_blurb_icon_left_single {
+        position: absolute;
+        top: 1rem;
+        color: #ff6700;
+        left: 1.5rem;
+        font-size: 3rem;
+    }
     .mw_blog_icon_right {
         position: absolute;
         bottom: -1rem;
@@ -4102,6 +4144,13 @@ h3 {
         bottom: 1rem;
         font-size: 3rem;
         right: 1rem !important;
+        color: #ff6700;
+    }
+    .mw_collection_blurb_icon_right_single {
+        position: absolute;
+        bottom: 1rem;
+        font-size: 3rem;
+        right: 1.5rem !important;
         color: #ff6700;
     }
     .mw_block_template .article-template__social-sharing {
@@ -5365,6 +5414,13 @@ h3 {
         left: 5%;
         font-size: 4rem;
     }
+    .mw_collection_blurb_icon_left_single {
+        position: absolute;
+        top: 1rem;
+        color: #ff6700;
+        left: 5%;
+        font-size: 4rem;
+    }
     .mw_blog_icon_right {
         position: absolute;
         bottom: -1.5rem;
@@ -5373,6 +5429,13 @@ h3 {
         color: #ff6700;
     }
     .mw_blog_icon_right_single {
+        position: absolute;
+        bottom: 1.5rem;
+        font-size: 4rem;
+        right: 5%;
+        color: #ff6700;
+    }
+    .mw_collection_blurb_icon_right_single {
         position: absolute;
         bottom: 1.5rem;
         font-size: 4rem;
