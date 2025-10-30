@@ -109,18 +109,21 @@
             >
             <label class="field__label" for="ModalForm-phone">{{ 'templates.contact.modal_form.phone' | t }}</label>
           </div>
+          
+          <h3>Ingredient List</h3>
+          
           <div class="field">
             <input
-              type="tel"
-              id="ModalForm-phone2"
+              type="text"
+              id="ModalForm-ingredient1"
               class="field__input"
-              autocomplete="tel"
-              name="contact[{{ 'templates.contact.modal_form.phone_two' | t }}]"
+              autocomplete=""
+              name="contact[{{ 'templates.contact.modal_form.ingredient1' | t }}]"
               pattern="[0-9\-]*"
-              value="{% if form.phone_two %}{{ form.phone_two }}{% elsif customer %}{{ customer.phone_two }}{% endif %}"
-              placeholder="{{ 'templates.contact.modal_form.phone_two' | t }}"
+              value="{% if form.ingredient1 %}{{ form.phone_two }}{% elsif customer %}{{ customer.ingredient1 }}{% endif %}"
+              placeholder="{{ 'templates.contact.modal_form.ingredient1' | t }}"
             >
-            <label class="field__label" for="ModalForm-phone">{{ 'templates.contact.modal_form.phone_two' | t }}</label>
+            <label class="field__label" for="ModalForm-phone">{{ 'templates.contact.modal_form.ingredient1' | t }}</label>
           </div>
           <div class="text_area field">
             <textarea
@@ -138,7 +141,7 @@
             </label>
           </div>
           <div class="center contact__button">
-            <button type="submit" class="color-{{ section.settings.button_color_scheme }} gradient contact_button button">
+            <button type="submit" class="color-scheme-5 gradient submit_formula_btn button">
               {{ 'templates.contact.modal_form.send' | t }}
             </button>
           </div>
@@ -184,6 +187,9 @@
 {% endschema %}
 
 {% stylesheet %}
+  #ModalForm {
+    padding: 2rem 0 4rem 0;
+  }
   .modal_window {
     display: flex;
     flex-direction: column;
@@ -191,9 +197,6 @@
     justify-content: center;
     align-items: center;
     transition: all ease 0.5s;
-  }
-  #cancellation_policy.toast__overlay {
-    align-items: center;
   }
   #submit_formula.toast__overlay {
     align-items: center;
@@ -242,17 +245,6 @@
     padding: 0 1.5rem;
   }
 
-  #cancellation_policy .toast__box {
-    overflow: hidden;
-    border: 1px solid #ffffff;
-    background: #fff;
-    border-radius: 8px;
-    width: 50%;
-    height: auto;
-    position: relative;
-    transition: all ease 0.5s;
-    text-align: center;
-  }
   #submit_formula .toast__box {
     overflow: hidden;
     border: 1px solid #ffffff;
@@ -263,6 +255,13 @@
     position: relative;
     transition: all ease 0.5s;
     text-align: center;
+  }
+
+  #submit_formula .toast__content p {
+    text-align:center;
+  }
+  #submit_formula .toast__content h3 {
+    text-align:center;
   }
 
   .toast__box .heading {
@@ -340,14 +339,6 @@
   }
 
   @media screen and (max-width: 479px) {
-    #cancellation_policy.toast__overlay {
-      align-items: flex-start !important;
-      padding-top: 20px;
-      overflow-y: auto;
-    }
-    #cancellation_policy .toast__box {
-      width: 90% !important;
-    }
     #submit_formula.toast__overlay {
       align-items: flex-start !important;
       padding-top: 20px;
@@ -359,9 +350,6 @@
   }
 
   @media screen and (max-width: 989px) {
-    #cancellation_policy .toast__box {
-      width: 80%;
-    }
     #submit_formula .toast__box {
       width: 80%;
     }

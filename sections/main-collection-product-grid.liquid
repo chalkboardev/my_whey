@@ -100,7 +100,7 @@
 
     {% comment %} {{ collection.metafields.custom.collection_blurb | metafield_tag  }} {% endcomment %}
     {% assign my_metafield_variable = collection.metafields.custom.collection_blurb | metafield_tag   %} 
-    {% assign content_with_placeholders = my_metafield_variable | replace: '<p>', '@@@_PARAGRAPH_OPEN_@@@' | replace: '</p>', '@@@_PARAGRAPH_CLOSE_@@@' | replace: '<em>', '@@@_ITALIC_OPEN_@@@' | replace: '</em>', '@@@_ITALIC_CLOSED_@@@' | replace: '<strong>', '@@@_BOLD_OPEN_@@@' | replace: '</strong>', '@@@_BOLD_CLOSED_@@@' | replace: '<a href="#test">', '@@@_LINK_OPEN_@@@' | replace: '</a>', '@@@_LINK_CLOSED_@@@' %}
+    {% assign content_with_placeholders = my_metafield_variable | replace: '<p>', '@@@_PARAGRAPH_OPEN_@@@' | replace: '</p>', '@@@_PARAGRAPH_CLOSE_@@@' | replace: '<em>', '@@@_ITALIC_OPEN_@@@' | replace: '</em>', '@@@_ITALIC_CLOSED_@@@' | replace: '<strong>', '@@@_BOLD_OPEN_@@@' | replace: '</strong>', '@@@_BOLD_CLOSED_@@@' | replace: '<a href="#submit_formula">', '@@@_LINK_OPEN_@@@' | replace: '</a>', '@@@_LINK_CLOSED_@@@' %}
     {% assign stripped_content = content_with_placeholders | strip_html %}
     {% assign final_content = stripped_content | replace: '@@@_PARAGRAPH_OPEN_@@@', '<p>' | replace: '@@@_PARAGRAPH_CLOSE_@@@', '</p>' | replace: '@@@_ITALIC_OPEN_@@@', '<em>' | replace: '@@@_ITALIC_CLOSED_@@@', '</em>' | replace: '@@@_BOLD_OPEN_@@@', '<strong>' | replace: '@@@_BOLD_CLOSED_@@@', '</strong>' | replace: '@@@_LINK_OPEN_@@@', '<a href="#" target="_blank">' | replace: '@@@_LINK_CLOSED_@@@', '</a>' %}
     

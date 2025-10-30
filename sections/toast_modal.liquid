@@ -71,9 +71,6 @@
   #cancellation_policy.toast__overlay {
     align-items: center;
   }
-  #submit_formula.toast__overlay {
-    align-items: center;
-  }
   .toast__overlay {
     height: 100vh;
     position: fixed;
@@ -119,17 +116,6 @@
   }
 
   #cancellation_policy .toast__box {
-    overflow: hidden;
-    border: 1px solid #ffffff;
-    background: #fff;
-    border-radius: 8px;
-    width: 50%;
-    height: auto;
-    position: relative;
-    transition: all ease 0.5s;
-    text-align: center;
-  }
-  #submit_formula .toast__box {
     overflow: hidden;
     border: 1px solid #ffffff;
     background: #fff;
@@ -224,21 +210,10 @@
     #cancellation_policy .toast__box {
       width: 90% !important;
     }
-    #submit_formula.toast__overlay {
-      align-items: flex-start !important;
-      padding-top: 20px;
-      overflow-y: auto;
-    }
-    #submit_formula .toast__box {
-      width: 90% !important;
-    }
   }
 
   @media screen and (max-width: 989px) {
     #cancellation_policy .toast__box {
-      width: 80%;
-    }
-    #submit_formula .toast__box {
       width: 80%;
     }
   }

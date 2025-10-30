@@ -3877,6 +3877,98 @@ h3 {
 }
 
 
+/* #submit_formula .contact__fields {
+    padding: 0 1rem 0 1rem;
+} */
+
+#submit_formula .field {
+    margin: 0 auto 1.7rem auto;
+    width: 90%;
+    box-shadow: none !important;
+}
+
+#submit_formula .field:hover {
+    box-shadow: none !important;
+}
+
+.submit_formula_btn {
+    margin: 2rem 0 0 0;
+    min-width: 280px !important;
+    border: 2px solid #ff2f0075 !important;
+    font-weight: 600 !important;
+    letter-spacing: 5px !important;
+    text-transform: uppercase;
+    border-radius: 50px !important;
+    text-decoration: none !important;
+    transition: all 0.25s !important;
+    min-height: 50px !important;
+}
+
+.submit_formula_btn:hover {
+    min-width: 280px;
+    letter-spacing: 8px !important;
+    color: #fff;
+    font-weight: 600 !important;
+    border-radius: 50px !important;
+    border: 1px solid #a33921 !important;
+    text-decoration: none !important;
+    transition: all 0.25s !important;
+}
+
+#submit_formula .field__input:hover {
+    box-shadow: none !important;
+    outline: 0 !important;
+    border: none !important;
+    border-radius: var(--inputs-radius);
+}
+
+#submit_formula .field:hover {
+    box-shadow: none !important;
+    border: none !important;
+    outline: 0 !important;
+    border-radius: var(--inputs-radius);
+}
+
+#submit_formula .field__input:focus {
+    box-shadow: none !important;
+    border: none !important;
+    outline: 0 !important;
+    border-radius: var(--inputs-radius);
+}
+
+#submit_formula .field:hover,
+#submit_formula .select__select:focus,
+#submit_formula .customer .field input:focus,
+#submit_formula .customer select:focus,
+#submit_formula .localization-form__select:focus.localization-form__select:after {
+    box-shadow: none !important;
+    border: none !important;
+    outline: 0;
+    border-radius: var(--inputs-radius);
+}
+
+#submit_formula .field:hover.field:after,
+.select:hover.select:after,
+.select__select:hover.select__select:after,
+.customer .field:hover.field:after,
+.customer select:hover.select:after,
+.localization-form__select:hover.localization-form__select:after {
+    box-shadow: 0 0 0 var(--inputs-border-width) rgba(var(--color-foreground), var(--inputs-border-opacity));
+    outline: 0;
+    border-radius: var(--inputs-radius);
+}
+
+#submit_formula .field:before,
+#submit_formula .select:before,
+#submit_formula .customer .field:before,
+#submit_formula .customer select:before,
+#submit_formula .localization-form__select:before {
+    box-shadow: none !important;
+    border: none !important;
+    outline: 0 !important;
+}
+
+
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {

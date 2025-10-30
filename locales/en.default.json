@@ -272,9 +272,15 @@
         "name": "Name",
         "email": "Email",
         "phone": "Phone number",
-        "phone_two": "Phone number 2",
+        "ingredient1": "Ingredient 1",
+        "ingredient2": "Ingredient 2",
+        "ingredient3": "Ingredient 3",
+        "ingredient4": "Ingredient 4",
+        "ingredient5": "Ingredient 5",
+        "ingredient6": "Ingredient 6",
+        "ingredient7": "Ingredient 7",
         "comment": "Formula Suggestion",
-        "send": "Send",
+        "send": "Send Formula",
         "post_success": "Thanks for submitting your formula! We'll get back to you as soon as possible.",
         "error_heading": "Please adjust the following:"
       }
