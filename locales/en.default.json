@@ -266,6 +266,16 @@
         "send": "Send",
         "post_success": "Thanks for contacting us. We'll get back to you as soon as possible.",
         "error_heading": "Please adjust the following:"
+      },
+      "modal_form": { 
+        "title": "Formula Suggestion form",
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone number",
+        "comment": "Formula Suggestion",
+        "send": "Send",
+        "post_success": "Thanks for submitting your formula! We'll get back to you as soon as possible.",
+        "error_heading": "Please adjust the following:"
       }
     },
     "404": {
