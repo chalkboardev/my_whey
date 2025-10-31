@@ -643,15 +643,31 @@ transform: scale(1.03);
               // $(summary).children('span').eq(1).attr("id")
               var the_svg_span = $(summary).children('span').eq(1).children('svg').eq(0);
               //console.log();
+              var hasOpenAttribute = $("#HeaderDrawer-shop").parent().attr('open') !== undefined;
+                if (hasOpenAttribute) {
+                  // The parent has the 'open' attribute
+                  if($(the_svg_span).hasClass('flip_svg')){
+                      $(the_svg_span).removeClass('flip_svg');
+                      //$(the_svg_span).hide();
+                      // $("#svg_is").css('transform','rotate(180deg)');
+                  } else {
+                      $(the_svg_span).addClass('flip_svg');
+                      // $(the_svg_span).show();
+                  }
+                } else {
+                  if($(the_svg_span).hasClass('flip_svg')){
+                      $(the_svg_span).removeClass('flip_svg');
+                      //$(the_svg_span).hide();
+                      // $("#svg_is").css('transform','rotate(180deg)');
+                  } else {
+                      $(the_svg_span).addClass('flip_svg');
+                      // $(the_svg_span).show();
+                  }
+                  // The parent does not have the 'open' attribute
+                  //$("#HeaderDrawer-shop").click();
+                }
 
-              if($(the_svg_span).hasClass('flip_svg')){
-                $(the_svg_span).removeClass('flip_svg');
-                //$(the_svg_span).hide();
-                // $("#svg_is").css('transform','rotate(180deg)');
-              } else {
-                $(the_svg_span).addClass('flip_svg');
-               // $(the_svg_span).show();
-              }
+              
               
               // if( $(the_svg_span).css('transform') == 'rotate(180deg)') {
               //   alert('already rotated...');
