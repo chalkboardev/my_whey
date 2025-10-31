@@ -671,7 +671,17 @@ transform: scale(1.03);
             $(".header__icon--summary").click(function (){
               $('.icon-caret').removeClass('flip_svg');
               //alert('hi...');
-              $("#HeaderDrawer-shop").click();
+              setTimeout(function(){
+                var hasOpenAttribute = $("#HeaderDrawer-shop").parent().attr('open') !== undefined;
+                if (hasOpenAttribute) {
+                  // The parent has the 'open' attribute
+                } else {
+                  // The parent does not have the 'open' attribute
+                  $("#HeaderDrawer-shop").click();
+                }
+               
+            }, 500);
+              
             });
 
             
