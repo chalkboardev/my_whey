@@ -3365,14 +3365,15 @@ quick-add-modal .product__title>a:hover {
 } */
 
 .coming_soon_pill {
-    position: relative;
+    position: absolute;
     font-size: 9px;
     background: #ff6700;
     display: inline-flex;
     width: auto;
     letter-spacing: 5px;
     font-weight: 600;
-    top: -8px;
+    left: 3rem;
+    margin-top: 2.2rem;
     color: #fff;
     padding: 1px 6px 1px 6px;
     border-top-left-radius: 0px;
@@ -4339,7 +4340,7 @@ h3 {
         width: 90%;
     }
     .coming_soon_pill {
-        position: relative;
+        /* position: relative;
         font-size: 9px;
         background: #ff6700;
         display: inline-flex;
@@ -4349,6 +4350,21 @@ h3 {
         text-align: left;
         top: 18px;
         left: -96px;
+        color: #fff;
+        padding: 1px 6px 1px 6px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 6px;
+        border-bottom-left-radius: 6px; */
+        position: absolute;
+        font-size: 9px;
+        background: #ff6700;
+        display: inline-flex;
+        width: auto;
+        letter-spacing: 3px;
+        font-weight: 600;
+        text-align: left;
+        margin: 4rem 0 0 1rem;
         color: #fff;
         padding: 1px 6px 1px 6px;
         border-top-left-radius: 0px;
@@ -5212,8 +5228,25 @@ h3 {
     } */
 }
 
-
-/* @media screen and (min-width: 480px) and (max-width: 989px) { */
+@media screen and (min-width: 480px) and (max-width: 989px) {
+    .coming_soon_pill {
+        position: absolute;
+        font-size: 9px;
+        background: #ff6700;
+        display: inline-flex;
+        width: auto;
+        letter-spacing: 5px;
+        font-weight: 600;
+        left: 4rem;
+        margin-top: 4rem;
+        color: #fff;
+        padding: 1px 6px 1px 6px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 6px;
+        border-bottom-left-radius: 6px;
+    }
+}
 
 @media screen and (max-width: 989px) {
     .mw_block_template .article-template__social-sharing {
@@ -5684,6 +5717,23 @@ h3 {
 /* ---------- EXTRA LARGE SCREEN 1440px START ---------- */
 
 @media screen and (min-width: 1440px) {
+    .coming_soon_pill {
+        position: absolute;
+        font-size: 9px;
+        background: #ff6700;
+        display: inline-flex;
+        width: auto;
+        letter-spacing: 5px;
+        font-weight: 600;
+        left: 5rem;
+        margin-top: 2.2rem;
+        color: #fff;
+        padding: 1px 6px 1px 6px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 6px;
+        border-bottom-left-radius: 6px;
+    }
     .mw_block_template .article-template__social-sharing {
         display: flex;
         float: right;
@@ -5789,6 +5839,27 @@ h3 {
         width: 100% !important;
         object-fit: cover;
         object-position: 100% 100%;
+    }
+}
+
+@media screen and (min-width: 1890px) {
+    .coming_soon_pill {
+        position: relative;
+        font-size: 9px;
+        background: #ff6700;
+        display: inline-flex;
+        width: auto;
+        letter-spacing: 5px;
+        font-weight: 600;
+        left: -12.5rem;
+        top: 1.5rem;
+        /* margin: 2rem 0 0 5rem; */
+        color: #fff;
+        padding: 1px 6px 1px 6px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 6px;
+        border-bottom-left-radius: 6px;
     }
 }
 
