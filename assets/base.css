@@ -4081,7 +4081,7 @@ h3 {
     border-top-right-radius: 0 !important;
     border-bottom-right-radius: 6px !important;
     border-bottom-left-radius: 0 !important;
-    z-index: -1;
+    z-index: 0;
 }
 
 .mw_corner_container_b_rght {
@@ -4100,7 +4100,7 @@ h3 {
     border-top-right-radius: 0 !important;
     border-bottom-right-radius: 6px !important;
     border-bottom-left-radius: 0 !important;
-    z-index: -1;
+    z-index: 0;
 }
 
 
