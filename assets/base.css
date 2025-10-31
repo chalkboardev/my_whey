@@ -4065,6 +4065,10 @@ h3 {
     text-align: center;
 }
 
+#submit_formula .toast__content_div {
+    padding-top: 2rem;
+}
+
 .mw_corner_container_t_left {
     background: none !important;
     background-color: unset !important;
