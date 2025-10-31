@@ -78,14 +78,14 @@
         "formula_modal_bg_color": "#ffffff",
         "formula_modal_toast_trigger": "submit_formula",
         "formula_modal_toast_modal_title": "Submit Formula",
-        "formula_modal_toast_modal_content": "<p>Submit a Formula using the form below...</p>"
+        "formula_modal_toast_modal_content": "<p>Submit your Formula below...</p>"
       }
     },
     "toast_modal_6BbytA": {
       "type": "toast_modal",
       "name": "Toast Modal",
       "settings": {
-        "toast_bg_color": "#fff",
+        "toast_bg_color": "#ffffff",
         "toast_trigger": "notification_toast",
         "toast_modal_title": "Notification",
         "toast_modal_content": ""
