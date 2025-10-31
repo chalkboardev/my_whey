@@ -8448,7 +8448,7 @@ input[type='checkbox'] {
 .header__heading-logo {
     height: auto;
     max-width: 100%;
-    filter: opacity(0.92);
+    filter: opacity(0.93);
 }
 
 .header__heading-logo-wrapper {
