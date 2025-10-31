@@ -3798,6 +3798,7 @@ h3 {
     position: relative;
     color: #ff6700;
     text-shadow: none;
+    font-size: initial;
     font-weight: 600;
     top: 5px;
     border-radius: 9px;
@@ -3819,6 +3820,7 @@ h3 {
     color: #fff;
     text-shadow: 0px 0px 2px #333;
     letter-spacing: 2px;
+    font-size: initial;
     font-weight: 600;
     /* top: 5px; */
     border-radius: 9px;
@@ -3866,7 +3868,7 @@ h3 {
     padding: 2rem;
 }
 
-.meta_collection_blurb p:not(a) {
+.meta_collection_blurb p {
     padding: 1rem 2rem 1rem 2rem;
     font-size: 1.8rem;
 }
@@ -4112,7 +4114,8 @@ h3 {
     align-items: center;
     display: flex;
     gap: 10px;
-    margin-bottom: 10px;
+    width: 90%;
+    margin: 0 auto 1rem auto;
 }
 
 .modal_clr_span {
@@ -4131,6 +4134,14 @@ h3 {
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    .mw_modal_title {
+        grid-gap: 10px;
+        align-items: center;
+        display: flex;
+        gap: 10px;
+        width: 100%;
+        margin: 0 auto 1rem auto;
+    }
     .collection_blurb_slide a {
         background: linear-gradient(180deg, rgba(255, 103, 0, 1), rgba(227, 79, 0, 1) 50%, rgba(197, 69, 2, 1) 100%) !important;
         border: 2px solid #ff67005c !important;
