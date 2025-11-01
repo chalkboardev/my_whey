@@ -3709,14 +3709,6 @@ h3 {
     color: #ff6700;
 }
 
-.blog_blurb_nxt_btn {
-    right: 0;
-    position: absolute;
-    top: 30%;
-    color: #999;
-    z-index: 99;
-}
-
 .collection_blurb_nxt_btn {
     right: 4%;
     position: absolute;
@@ -3733,6 +3725,14 @@ h3 {
     z-index: 99;
 }
 
+.blog_blurb_nxt_btn {
+    right: 0;
+    position: absolute;
+    top: 30%;
+    color: #999;
+    z-index: 99;
+}
+
 .collection_blurb_prev_btn {
     left: 4%;
     position: absolute;
@@ -3742,11 +3742,18 @@ h3 {
 }
 
 .mw_blog_slide {
-    display: flex;
+    /* display: flex;
     justify-content: center;
     background: #f5f4f4;
     border-radius: 9px;
-    min-height: 110px;
+    min-height: 110px; */
+    display: flex;
+    justify-content: center;
+    border: 4px solid #ffffff;
+    background: url(https://cdn.shopify.com/s/files/1/0713/8685/7724/files/dots_pattern.png);
+    background-size: cover;
+    border-radius: 9px;
+    --focus-outline-padding: 0;
 }
 
 .collection_blurb_slide {
@@ -4343,6 +4350,7 @@ h3 {
         display: flex;
         justify-content: center;
         background: none;
+        border: none;
         border-radius: 9px;
     }
     .collection_blurb_slide {
@@ -5821,6 +5829,20 @@ h3 {
 /* ---------- EXTRA LARGE SCREEN 1440px START ---------- */
 
 @media screen and (min-width: 1440px) {
+    .blog_blurb_prev_btn {
+        left: 0;
+        position: absolute;
+        top: 25%;
+        color: #999;
+        z-index: 99;
+    }
+    .blog_blurb_nxt_btn {
+        right: 0;
+        position: absolute;
+        top: 25%;
+        color: #999;
+        z-index: 99;
+    }
     .coming_soon_pill {
         position: absolute;
         font-size: 9px;
