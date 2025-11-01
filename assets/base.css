@@ -4131,6 +4131,7 @@ h3 {
     color: #555 !important;
 }
 
+.template-404 .button,
 .shopify-challenge__button.btn {
     font-weight: 600;
     padding: 1rem;
@@ -4145,6 +4146,7 @@ h3 {
     transition: all .25s ease !important;
 }
 
+.template-404 .button:hover,
 .shopify-challenge__button.btn:hover {
     font-weight: 600 !important;
     text-transform: uppercase;
