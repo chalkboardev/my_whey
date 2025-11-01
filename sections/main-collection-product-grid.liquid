@@ -247,8 +247,37 @@ document.addEventListener('DOMContentLoaded', () => {
                   urlParams[decodeURIComponent(keyValue[0])] = decodeURIComponent(keyValue[1]);
               }
           });
-          //var queryStringName = urlParams.name;
           console.log(urlParams);
+
+          var searchParams = new URLSearchParams(queryString);
+          // 2. The key in the query string is 'contact[Formula Description]'
+
+          var key_name = 'contact[Name]';
+          var nameValue = searchParams.get(key_name);
+          var key_email = 'contact[Email]';
+          var emailValue = searchParams.get(key_email);
+          var key_phone = 'contact[Phone number]';
+          var phoneValue = searchParams.get(key_phone);
+          var key_ingredient1 = 'contact[Ingredient 1]';
+          var ingredient1Value = searchParams.get(key_ingredient1);
+          var key_ingredient2 = 'contact[Ingredient 2]';
+          var ingredient2Value = searchParams.get(key_ingredient2);
+          var key_ingredient3 = 'contact[Ingredient 3]';
+          var ingredient3Value = searchParams.get(key_ingredient3);
+          var key_ingredient4 = 'contact[Ingredient 4]';
+          var ingredient4Value = searchParams.get(key_ingredient4);
+          var key_ingredient5 = 'contact[Ingredient 5]';
+          var ingredient5Value = searchParams.get(key_ingredient5);
+          var key_ingredient6 = 'contact[Ingredient 6]';
+          var ingredient6Value = searchParams.get(key_ingredient6);
+          var key_ingredient7 = 'contact[Ingredient 7]';
+          var ingredient7Value = searchParams.get(key_ingredient7);
+          var key_formula_desc = 'contact[Formula Description]';
+          var descriptionValue = searchParams.get(key_formula_desc);
+  
+          console.log(descriptionValue);
+          console.log("Email Value: " + emailValue);
+          
           if (queryString.includes("contact")) {
                 console.log("Query string contains 'contact...open modal...");
                 if (queryString.includes("contact_posted=true")) {
@@ -271,7 +300,42 @@ document.addEventListener('DOMContentLoaded', () => {
                   $('#submit_formula.toast__overlay').css("background", "rgb(0 0 0 / 50%)");
                   $('body').addClass('preventBodyScroll');
                   $('.toast__box').animate({scrollTop: 0}, 500);
+                 
+                  if(nameValue != null){
+                    $('#ModalForm-name').val(nameValue); 
+                  }
+                  if(emailValue != null){
+                    $('#ModalForm-email').val(emailValue); 
+                  }
+                  if(phoneValue != null){
+                    $('#ModalForm-phone').val(phoneValue); 
+                  }
+                  if(ingredient1Value != null){
+                    $('#ModalForm-ingredient1').val(ingredient1Value); 
+                  }
+                  if(ingredient2Value != null){
+                    $('#ModalForm-ingredient2').val(ingredient2Value); 
+                  }
+                  if(ingredient3Value != null){
+                    $('#ModalForm-ingredient3').val(ingredient3Value); 
+                  }
+                  if(ingredient4Value != null){
+                    $('#ModalForm-ingredient4').val(ingredient4Value); 
+                  }
+                  if(ingredient5Value != null){
+                    $('#ModalForm-ingredient5').val(ingredient5Value); 
+                  }
+                  if(ingredient6Value != null){
+                    $('#ModalForm-ingredient6').val(ingredient6Value); 
+                  }
+                  if(ingredient7Value != null){
+                    $('#ModalForm-ingredient7').val(ingredient7Value); 
+                  }
+                  if(descriptionValue != null){
+                    $('#ModalForm-body').val(descriptionValue); 
+                  }
                   
+
                 }
 
           } else {
