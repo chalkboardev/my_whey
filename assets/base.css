@@ -3922,7 +3922,7 @@ h3 {
     min-width: 280px !important;
     border: 2px solid #ff2f0075 !important;
     font-weight: 600 !important;
-    letter-spacing: 5px !important;
+    letter-spacing: 4px !important;
     text-transform: uppercase;
     border-radius: 50px !important;
     text-decoration: none !important;
@@ -3932,7 +3932,7 @@ h3 {
 
 .submit_formula_btn:hover {
     min-width: 280px;
-    letter-spacing: 8px !important;
+    letter-spacing: 6px !important;
     color: #fff;
     font-weight: 600 !important;
     border-radius: 50px !important;
@@ -4157,6 +4157,22 @@ h3 {
     -webkit-tap-highlight-color: transparent !important;
     letter-spacing: 4px !important;
     transition: all .25s ease !important;
+}
+
+.shop-hcaptcha-badge-container {
+    display: none !important;
+}
+
+#shop-hcaptcha-badge-container {
+    display: none !important;
+}
+
+.formula_gif {
+    display: inline-flex;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: -1px;
 }
 
 
