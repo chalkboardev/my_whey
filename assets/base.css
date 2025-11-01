@@ -4131,6 +4131,32 @@ h3 {
     color: #555 !important;
 }
 
+.shopify-challenge__button.btn {
+    font-weight: 600;
+    padding: 1rem;
+    min-width: 280px !important;
+    text-transform: uppercase;
+    min-height: 4.5rem !important;
+    background: linear-gradient(180deg, rgba(255, 103, 0, 1), rgba(227, 79, 0, 1) 50%, rgba(197, 69, 2, 1) 100%) !important;
+    border: 2px solid #ff67005c !important;
+    border-radius: 50px !important;
+    -webkit-tap-highlight-color: transparent !important;
+    letter-spacing: 3px !important;
+    transition: all .25s ease !important;
+}
+
+.shopify-challenge__button.btn:hover {
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    min-height: 4.5rem !important;
+    background: linear-gradient(180deg, rgba(255, 103, 0, 1), rgba(227, 79, 0, 1) 50%, rgba(197, 69, 2, 1) 100%) !important;
+    border: 2px solid #ff67005c !important;
+    border-radius: 50px !important;
+    -webkit-tap-highlight-color: transparent !important;
+    letter-spacing: 4px !important;
+    transition: all .25s ease !important;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
