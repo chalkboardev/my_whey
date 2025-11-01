@@ -798,6 +798,20 @@ class SliderComponent extends HTMLElement {
       }
 // ------- END TARGET BLURB SLIDER AND CURRENT SLIDE -------
 
+// ------- START TARGET BLURB SLIDER AND CURRENT SLIDE -------
+this.blogBlurbSlider = this.querySelector('.blog_blurb_slider_component');
+      if (this.blogBlurbSlider) {
+        const elementsWithBlogClass = document.querySelectorAll('.pagination-dot');
+        elementsWithBlogClass.forEach(element_dot => {
+          element_dot.classList.remove('active');
+      });
+      //console.log("Current Slide: " + this.currentPage);
+      const target_slide_index_blog = this.currentPage -1;
+      this.paginateDotBlog = this.querySelector('#slider_dot_' + target_slide_index_blog);
+      this.paginateDotBlog.classList.add('active');
+      }
+// ------- END TARGET BLURB SLIDER AND CURRENT SLIDE -------
+
     }
 
     if (this.enableSliderLooping) return;

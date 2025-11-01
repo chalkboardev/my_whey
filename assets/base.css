@@ -3760,7 +3760,7 @@ h3 {
 }
 
 .mw_blog_slider {
-    margin: 2rem 0 1.1rem 0;
+    margin: 3rem 0 3.5rem 0;
 }
 
 .mw_blurb_slider {
@@ -4176,6 +4176,65 @@ h3 {
     top: -1px;
 }
 
+#submit_formula .form-status {
+    margin: 0 auto;
+}
+
+#submit_formula .form-status-list {
+    margin: 1rem auto 2rem auto;
+    width: fit-content;
+    justify-content: center;
+    display: flex;
+    list-style: none;
+    border: 1px solid transparent;
+    border-radius: var(--badge-corner-radius);
+    background: linear-gradient(180deg, rgba(255, 103, 0, 1), rgba(227, 79, 0, 1) 50%, rgba(197, 69, 2, 1) 100%) !important;
+    letter-spacing: 0.1rem;
+    /* line-height: 1; */
+    line-height: normal;
+    /* padding: 0.5rem 1.3rem 0.6rem 1.3rem; */
+    text-align: center;
+    background-color: rgb(var(--color-badge-background));
+    border-color: rgba(var(--color-badge-border), var(--alpha-badge-border));
+    color: rgb(var(--color-badge-foreground));
+    word-break: break-word;
+}
+
+#submit_formula .form-status-list a {
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: #fff;
+    padding: 0rem 2rem 0rem 2rem;
+}
+
+#submit_formula .form-status.caption-large .icon.icon-error {
+    flex-shrink: 0;
+    position: relative;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+    width: 1.5rem;
+    top: -3px;
+    /* animation-direction: alternate !important;
+    animation-name: flipInX !important;
+    animation-duration: 2s !important;
+    animation-iteration-count: infinite; */
+}
+
+#submit_formula .form__message .icon.icon-error {
+    flex-shrink: 0;
+    position: relative;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+    width: 1.5rem;
+    top: -5px;
+}
+
+#submit_formula .contact__field-error {
+    margin: 0 auto;
+    justify-content: center;
+    display: flex;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
@@ -4275,7 +4334,7 @@ h3 {
         margin-bottom: -1rem;
     }
     .mw_blog_slider {
-        margin: 0;
+        margin: 0.5rem 0 2rem 0;
     }
     .mw_blurb_slider {
         margin: -1.6rem 0 0 0;

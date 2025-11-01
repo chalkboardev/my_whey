@@ -118,7 +118,7 @@
         aria-roledescription="blog_slider"
         aria-label="blog_slider"
         >
-        <div class="slider-buttons">
+        <div class="blog_blurb_slider_component slider-buttons">
           <button
             type="button"
             class="blog_blurb_prev_btn slider-button slider-button--prev"
@@ -182,7 +182,16 @@
             </span>
           </button>
         </div>
-        </slider-component>
+
+        <div class="slider-dots">
+          {%- for paragraph in paragraphs -%}
+              {%- unless paragraph == blank -%}
+                    <span id="slider_dot_{{ forloop.index0 }}" class="pagination-dot dot" data-index="{{ forloop.index0 }}"></span>
+              {%- endunless -%}
+          {% endfor %}
+        </div>
+
+        </slider-component> 
 
     {%- else -%}
     {% comment %} {%- assign paragraphs = paragraphs  | replace: '<p>', '<p class="zip">'  -%} {% endcomment %}
@@ -198,29 +207,43 @@
 
 
 <script>
-//   function startAutoplayForSliders() {
-//   document.querySelectorAll('.mw_blog_slider').forEach(slider => {
-//     const sliderElement = slider.querySelector('[id^="Slider-"]');
-//     if (sliderElement && !slider.classList.contains('slideshow-component')) {
-//       let currentIndex = 0;
-//       const slideInterval = setInterval(() => {
-//         const slides = sliderElement.querySelectorAll('.mw_blog_slide');
-//         if (slides.length > 0) {
-//           currentIndex = (currentIndex + 1) % slides.length;
-//           sliderElement.scrollTo({
-//             left: slides[currentIndex].offsetLeft,
-//             behavior: 'smooth'
-//           });
-//         }
-//       }, 7000); // Set autoplay speed in milliseconds (e.g., 5000 for 5 seconds)
-//       // Optional: Pause on hover
-//       slider.addEventListener('mouseenter', () => clearInterval(slideInterval));
-//       slider.addEventListener('mouseleave', () => startAutoplayForSliders());
-//     }
-//   });
-// }
+  document.addEventListener('DOMContentLoaded', () => {
 
-// document.addEventListener('DOMContentLoaded', startAutoplayForSliders);
+  const sliderComponent = document.querySelector('slider-component');
+      const thumbnailLinks = document.querySelectorAll('.pagination-dot');
+
+      if (sliderComponent && thumbnailLinks) {
+        thumbnailLinks.forEach(link => {
+          link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const index = event.currentTarget.dataset.index;
+            sliderComponent.goToSlide(index);
+          });
+        });
+      }
+});
+  function startAutoplayForSliders() {
+  document.querySelectorAll('.mw_blog_slider').forEach(slider => {
+    const sliderElement = slider.querySelector('[id^="Slider-"]');
+    if (sliderElement && !slider.classList.contains('slideshow-component')) {
+      let currentIndex = 0;
+      const slideInterval = setInterval(() => {
+        const slides = sliderElement.querySelectorAll('.mw_blog_slide');
+        if (slides.length > 0) {
+          currentIndex = (currentIndex + 1) % slides.length;
+          sliderElement.scrollTo({
+            left: slides[currentIndex].offsetLeft,
+            behavior: 'smooth'
+          });
+        }
+      }, 7000); // Set autoplay speed in milliseconds (e.g., 5000 for 5 seconds)
+      // Optional: Pause on hover
+      slider.addEventListener('mouseenter', () => clearInterval(slideInterval));
+      slider.addEventListener('mouseleave', () => startAutoplayForSliders());
+    }
+  });
+}
+document.addEventListener('DOMContentLoaded', startAutoplayForSliders);
 </script>
 {% comment %} <div class="three-column-section color-{{ section.settings.color_scheme }} section-{{ section.id }}-padding">
   <div class="page-width">

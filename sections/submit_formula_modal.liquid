@@ -38,7 +38,8 @@
           {%- elsif form.errors -%}
             <div class="form__message">
               <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>
-                {{- 'icon-error.svg' | inline_asset_content -}}
+                <span class="svg-wrapper"> {{- 'icon-error.svg' | inline_asset_content -}}</span>
+               
                 {{ 'templates.contact.modal_form.error_heading' | t }}
               </h2>
             </div>
