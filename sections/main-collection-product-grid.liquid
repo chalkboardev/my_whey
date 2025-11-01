@@ -353,9 +353,16 @@ document.addEventListener('DOMContentLoaded', () => {
         $('#submit_formula.toast__overlay').css("z-index", "999");
         $('#submit_formula.toast__overlay').css("background", "rgb(0 0 0 / 50%)");
         $('body').addClass('preventBodyScroll');
+       
+        setTimeout(function(){
+          $('.submit_formula_btn').click();
+          $('.submit_formula_btn').trigger('click')
+          // $('#ModalForm').submit();
+        }, 2000);
+        
       });
 
-});
+}); // ------ END 'DOMContentLoaded' -------
 
 function startAutoplayForSliders() {
     document.querySelectorAll('.mw_blurb_slider').forEach(slider => {
