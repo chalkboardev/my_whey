@@ -3848,7 +3848,7 @@ h3 {
     background: linear-gradient(180deg, rgba(255, 103, 0, 1), rgba(227, 79, 0, 1) 50%, rgba(197, 69, 2, 1) 100%) !important;
     border: 2px solid #ff67005c !important;
     border-radius: 50px !important;
-    padding: 0.2rem 1rem 0.4rem 1rem;
+    padding: 0.4rem 1rem 0.4rem 1rem;
     text-align: center;
     justify-content: center;
     max-width: 300px;

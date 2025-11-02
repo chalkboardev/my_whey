@@ -480,7 +480,8 @@ $(document).ready(function() {
       
       {%- if posts_exceed_limit -%}
         <div class="slider-buttons{% if section.settings.post_limit < 3 %} medium-hide{% endif %}{% if section.settings.post_limit < 2 %} small-hide{% endif %}{% if count < 2 %} small-hide{% endif %}">
-          <button
+          {%- if count > 4 -%}
+            <button
             type="button"
             class="desk_slider_prev_middle slider-button slider-button--prev"
             name="previous"
@@ -489,6 +490,8 @@ $(document).ready(function() {
               {{- 'icon-caret.svg' | inline_asset_content -}}
             </span>
           </button>
+          {%- endif -%}
+         
           <button
           type="button"
           class="mobile_slider_prev_bottom slider-button slider-button--prev"
@@ -510,7 +513,9 @@ $(document).ready(function() {
               {% comment %} {{ section.settings.blog.articles_count }} {% endcomment %}
               </span>
           </div>
-          <button
+          {% comment %} {{ count }} {% endcomment %}
+          {%- if count > 4 -%}
+            <button
             type="button"
             class="desk_slider_nxt_middle slider-button slider-button--next"
             name="next"
@@ -519,6 +524,9 @@ $(document).ready(function() {
               {{- 'icon-caret.svg' | inline_asset_content -}}
             </span>
           </button>
+          {%- endif -%}
+          
+          
           <button
           type="button"
           class="mobile_slider_nxt_bottom slider-button slider-button--next"
