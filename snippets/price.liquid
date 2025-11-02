@@ -105,14 +105,13 @@
         {%- unless product.price_varies == false and product.compare_at_price_varies %}
           <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
           <span style="display: flex;">
-            <span class="my_normal_price price-item price-item--regular">
-              {% comment %} <span class="was_span">WAS</span> {% endcomment %}
+            {% comment %} <span class="my_normal_price price-item price-item--regular">
               {% if settings.currency_code_enabled %}
-                {{ compare_at_price | money_with_currency }}
+                {{ product.selected_or_first_available_variant.compare_at_price | money_with_currency }}
               {% else %}
-                {{ compare_at_price | money }}
+                {{ product.selected_or_first_available_variant.compare_at_price | money }} 
               {% endif %}
-            </span>
+            </span> {% endcomment %}
           </span>
         {%- endunless -%}
       </div>

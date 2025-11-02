@@ -91,29 +91,55 @@
       padding-top: 0.5rem;
     }
   }
-  {%- comment -%} mega-menu-images-style {%- endcomment -%}
-  .mega_menu_img img{
-  max-width:100%;
-  height: auto;
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  object-fit: cover;
-  text-decoration: none;
-  transition: transform var(--duration-long) ease;
-}
-.mega_menu_img{
-  padding-bottom: 0px;
-}
-.mega_menu_img .mega-menu__link{
-  padding-top: 0;
-}
-.mega_menu_img div{
-  text-align: center;
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
-}
+
+  .mega_menu_img img {
+    /* max-width:100%; */
+    max-width: 320px;
+    overflow: hidden;
+    height: auto;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    object-fit: cover;
+    text-decoration: none;
+    /* transition: transform var(--duration-long) ease; */
+    transition: all 0.5s ease; 
+  }
+  .mega_menu_img:hover img  {
+    transform: scale(1.1);
+    transition: all 0.5s ease; 
+    max-width: 320px;
+    overflow: hidden;
+  }  
+  /* .mega_menu_img:hover .mega-menu__link  {
+    transform: scale(1.02);
+    transition: all 0.5s ease; 
+  } */
+  /* .mega_menu_img:hover .title {
+    transform: scale(1.01);
+    transition: transform 0.5s ease; 
+  } */
+  .mega_menu_img {
+    padding-bottom: 0px;
+    transition: all 0.5s ease; 
+  }
+  .mega_menu_img .mega-menu__link {
+    padding-top: 0;
+    max-width: 320px;
+    overflow: hidden;
+  }
+  .mega_menu_img div {
+    max-width: 320px;
+    overflow: hidden;
+    text-align: center;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
 
 /* .mega_menu_img .title{
  padding: 1.8rem;
@@ -121,7 +147,6 @@
 } */
 .mega_menu_img .title {
     padding: 1.8rem;
-    border: none;
     font-size: 1.5rem;
     /* background:  linear-gradient(180deg, rgba(254, 89, 0, 1) 0%, rgba(204, 71, 0, 1) 50%, rgba(156, 54, 0, 1) 100%) !important; */
     font-weight: 600;
@@ -131,13 +156,26 @@
     border-top-right-radius: 0;
     border-bottom-right-radius: 9px;
     border-bottom-left-radius: 9px;
+    border-top-width: 2px !important;
+    border-right-width: 0px !important;
+    border-bottom-width: 2px !important;
+    border-left-width: 0px !important;
+    border-top-style: solid !important;
+    border-right-style: solid !important;
+    border-bottom-style: solid !important;
+    border-left-style: solid !important;
+    border-top-color: rgb(238, 238, 238) !important;
+    border-right-color: rgb(238, 238, 238) !important;
+    border-bottom-color: rgb(238, 238, 238) !important;
+    border-left-color: rgb(238, 238, 238) !important;
+    border-image-source: initial !important;
+    border-image-slice: initial !important;
+    border-image-width: initial !important;
+    border-image-outset: initial !important;
+    border-image-repeat: initial !important;
+    transition: all 0.5s ease; 
 }
-.mega_menu_img img{
-  transition: transform 0.5s ease;
-}
-.mega_menu_img:hover img{
-transform: scale(1.03);
-}
+
 .mega-menu__list {
     gap: 0;
     display: flex;
@@ -173,29 +211,31 @@ transform: scale(1.03);
         border-right: 1px solid #e6e2e2;
   }
 
-  .mega-menu__list > li:nth-child(3){
+  .mega-menu__list > li:nth-child(3) {
       list-style: none;
       display: block;
       flex: 0 0 12%;
       max-width: 12%;
-      padding-right: 15px;  
+      padding-right: 15px;
   }
 }
 
-.mega_menu_img.slide{
+.mega_menu_img.slide {
     flex: 0 0 320px;
-    max-width: 100%;
+    /* max-width: 100%; */
+    max-width: 320px;
+    overflow: hidden; 
     margin: 0;
     padding-right: 15px;
     scroll-snap-align: start;
 }
-.mega_menu_img.slide:first-child{
+.mega_menu_img.slide:first-child {
     padding-left: 0;
 }
-.js .menu-drawer__submenu{
+.js .menu-drawer__submenu {
   z-index: 2;
 }
-.swiper{
+.swiper {
   /* margin-top: 15px;  */
   padding: 0 3rem;
 }  
@@ -272,8 +312,8 @@ transform: scale(1.03);
 
 .menu_swiper .swiper-pagination-bullet {
     background: #c2c2c2 !important;
-    width: 12px;
-    height: 12px;
+    width: 16px;
+    height: 16px;
 }
 .menu_swiper .swiper-pagination-bullet-active {
   opacity: var(--swiper-pagination-bullet-opacity, 1);
@@ -1118,7 +1158,7 @@ transform: scale(1.03);
                           <div class="title color-scheme-5 gradient">
                             {% comment %} {{ block.settings.link_title}} {% endcomment %}
                             {{ product.title }} |
-                            From {{ product.price | money_without_trailing_zeros }}
+                            From {{ product.price | money_without_trailing_zeros | remove: " " }}
                           </div>
 
                         </a>

@@ -58,11 +58,10 @@
           - div.price__sale: Displayed when a variant is a sale
       {%- endcomment -%}
 
-      <div class="price__sale">
+      {% comment %} <div class="price__sale">
         {%- unless product.price_varies == false and product.compare_at_price_varies %} 
           <span>
             <s class="mw_price_class">
-              {% comment %} <span class="was_span">WAS</span> {% endcomment %}
               {% if settings.currency_code_enabled %}
                 {{ compare_at_price | money_with_currency }}
               {% else %}
@@ -71,7 +70,7 @@
             </s>
           </span>
         {%- endunless -%}
-      </div>
+      </div> {% endcomment %}
 
     </div>
   </div>
