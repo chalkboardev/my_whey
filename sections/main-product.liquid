@@ -1396,7 +1396,7 @@ setTimeout(function(){
                               var the_discounted_price = $(this).find('.money').eq(0).html();
                               if(the_selling_plan.includes('one_time_purchase') == true){
                                   console.log('clicked one time...');
-                                  var update_the_discounted_price = $(this).find('.money').eq(0).html("R&nbsp;" + variant_price.toFixed(2));
+                                  var update_the_discounted_price = $(this).find('.money').eq(0).html("R&nbsp;" + variant_price.toFixed(2)); 
                                   //the_discounted_price = the_discounted_price.substring(the_discounted_price.indexOf(";") + 1);
                                   var the_old_price = $(this).find('.money').eq(1).html();
                                   var update_the_old_price = $(this).find('.money').eq(1).html("R&nbsp;" + variant_compare_at_price.toFixed(2));
