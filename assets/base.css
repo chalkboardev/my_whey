@@ -4253,6 +4253,26 @@ h3 {
 }
 
 
+/* .pb-a7ce text:before {
+    content: "";
+    background-image: url(/cdn/shop/files/star_2.png?v=1754731649);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-flex;
+    width: 10px;
+    height: 12px;
+    margin-right: -2px;
+    margin-left: 0px;
+    flex-wrap: wrap;
+    align-content: center;
+    padding-top: 5px !important;
+    animation-name: swing;
+    animation-direction: alternate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+} */
+
+
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
