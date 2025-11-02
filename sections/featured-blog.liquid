@@ -477,17 +477,27 @@ $(document).ready(function() {
           {%- endfor -%}
         {%- endif -%}
       </ul>
+      
       {%- if posts_exceed_limit -%}
         <div class="slider-buttons{% if section.settings.post_limit < 3 %} medium-hide{% endif %}{% if section.settings.post_limit < 2 %} small-hide{% endif %}{% if count < 2 %} small-hide{% endif %}">
           <button
             type="button"
-            class="slider-button slider-button--prev"
+            class="desk_slider_prev_middle slider-button slider-button--prev"
             name="previous"
             aria-label="{{ 'general.slider.previous_slide' | t }}">
             <span class="svg-wrapper">
               {{- 'icon-caret.svg' | inline_asset_content -}}
             </span>
           </button>
+          <button
+          type="button"
+          class="mobile_slider_prev_bottom slider-button slider-button--prev"
+          name="previous"
+          aria-label="{{ 'general.slider.previous_slide' | t }}">
+          <span class="svg-wrapper">
+            {{- 'icon-caret.svg' | inline_asset_content -}}
+          </span>
+        </button>
           <div class="slider-counter caption">
             <span class="desk-hide slider-counter--current">1</span>
             <span class="desk-hide" aria-hidden="true">
@@ -495,17 +505,29 @@ $(document).ready(function() {
             </span>
             <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
             <span class="desk-hide slider-counter--total">{{ section.settings.post_limit }}</span>
-            <span class="desk_blog_count small-hide slider-counter--total">{{ section.settings.blog.articles_count }}</span>
+            <span class="desk_blog_count small-hide slider-counter--total"> 
+              {% comment %} BROWSE {% endcomment %}
+              {% comment %} {{ section.settings.blog.articles_count }} {% endcomment %}
+              </span>
           </div>
           <button
             type="button"
-            class="slider-button slider-button--next"
+            class="desk_slider_nxt_middle slider-button slider-button--next"
             name="next"
             aria-label="{{ 'general.slider.next_slide' | t }}">
             <span class="svg-wrapper">
               {{- 'icon-caret.svg' | inline_asset_content -}}
             </span>
           </button>
+          <button
+          type="button"
+          class="mobile_slider_nxt_bottom slider-button slider-button--next"
+          name="next"
+          aria-label="{{ 'general.slider.next_slide' | t }}">
+          <span class="svg-wrapper">
+            {{- 'icon-caret.svg' | inline_asset_content -}}
+          </span>
+        </button>
         </div>
       {%- endif -%}
     </slider-component>
