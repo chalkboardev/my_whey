@@ -4243,6 +4243,15 @@ h3 {
     display: flex;
 }
 
+.menu_slider_price_from {
+    position: absolute;
+    margin: -8px 0 0 0;
+    display: inline-flex;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #dadada;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
