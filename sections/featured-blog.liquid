@@ -369,13 +369,13 @@ $(document).ready(function() {
 
     </script>
 
-    <slider-component class="slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    <slider-component class="blog_slider slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       <ul
         id="Slider-{{ section.id }}"
         class="blog__posts articles-wrapper contains-card contains-card--article{% if settings.blog_card_style == 'standard' %} contains-card--standard{% endif %} grid grid--peek grid--2-col-tablet grid--{{ section.settings.columns_desktop }}-col-desktop slider {% if posts_displayed > 2 %}slider--tablet{% else %}slider--mobile{% endif %}"
         role="list">
         {%- if section.settings.blog != blank and section.settings.blog.articles_count > 0 -%}
-          {%- for article in section.settings.blog.articles limit: section.settings.post_limit -%}
+          {%- for article in section.settings.blog.articles limit: section.settings.blog.articles_count -%}
 
             {%- if current_tags %}
                 {%- for tags in article.tags -%}
@@ -489,12 +489,13 @@ $(document).ready(function() {
             </span>
           </button>
           <div class="slider-counter caption">
-            <span class="slider-counter--current">1</span>
-            <span aria-hidden="true">
+            <span class="desk-hide slider-counter--current">1</span>
+            <span class="desk-hide" aria-hidden="true">
               /
             </span>
             <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
-            <span class="slider-counter--total">{{ section.settings.post_limit }}</span>
+            <span class="desk-hide slider-counter--total">{{ section.settings.post_limit }}</span>
+            <span class="desk_blog_count small-hide slider-counter--total">{{ section.settings.blog.articles_count }}</span>
           </div>
           <button
             type="button"

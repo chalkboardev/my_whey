@@ -4272,6 +4272,27 @@ h3 {
     animation-iteration-count: infinite;
 } */
 
+.blog__posts.articles-wrapper {
+    position: relative;
+    flex-wrap: inherit;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scroll-padding-left: 1.5rem;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 1rem;
+}
+
+.blog_slider .slider-buttons {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.desk_blog_count {
+    font-size: 1.6rem !important;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
