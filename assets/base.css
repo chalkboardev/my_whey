@@ -4274,13 +4274,17 @@ h3 {
 
 .blog__posts.articles-wrapper {
     position: relative;
-    flex-wrap: inherit;
+    flex-wrap: nowrap;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     scroll-padding-left: 1.5rem;
     -webkit-overflow-scrolling: touch;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
+    overflow-y: clip;
+    display: flex;
+    justify-content: flex-start;
+    align-items: normal;
 }
 
 .blog_slider .slider-buttons {
