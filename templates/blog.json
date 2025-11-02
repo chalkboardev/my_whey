@@ -32,7 +32,7 @@
         "heading": "Community",
         "heading_size": "h1",
         "blog": "community",
-        "post_limit": 3,
+        "post_limit": 4,
         "columns_desktop": 3,
         "color_scheme": "",
         "show_image": true,
