@@ -3726,7 +3726,7 @@ h3 {
 .blog_blurb_prev_btn {
     left: 0;
     position: absolute;
-    top: 30%;
+    top: 32%;
     color: #999;
     z-index: 99;
 }
@@ -3734,7 +3734,7 @@ h3 {
 .blog_blurb_nxt_btn {
     right: 0;
     position: absolute;
-    top: 30%;
+    top: 32%;
     color: #999;
     z-index: 99;
 }
@@ -5416,6 +5416,20 @@ h3 {
 }
 
 @media screen and (min-width: 480px) and (max-width: 989px) {
+    .blog_blurb_prev_btn {
+        left: 0;
+        position: absolute;
+        top: 37%;
+        color: #999;
+        z-index: 99;
+    }
+    .blog_blurb_nxt_btn {
+        right: 0;
+        position: absolute;
+        top: 37%;
+        color: #999;
+        z-index: 99;
+    }
     .coming_soon_pill {
         position: absolute;
         font-size: 9px;
@@ -5913,14 +5927,14 @@ h3 {
     .blog_blurb_prev_btn {
         left: 0;
         position: absolute;
-        top: 25%;
+        top: 32%;
         color: #999;
         z-index: 99;
     }
     .blog_blurb_nxt_btn {
         right: 0;
         position: absolute;
-        top: 25%;
+        top: 32%;
         color: #999;
         z-index: 99;
     }
