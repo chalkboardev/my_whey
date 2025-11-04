@@ -122,121 +122,6 @@
               <span class="modal_clr_span" style="background-color: rgb(255, 103, 0); height: 4px;"></span>
           </div>
           
-          <div class="field">
-            
-            <input
-              type="text"
-              id="ModalForm-ingredient1"
-              class="field__input"
-              autocomplete=""
-              name="contact[{{ 'templates.contact.modal_form.ingredient1' | t }}]"
-              value="{% if form.ingredient1 %}{{ form.ingredient1 }}{% elsif customer %}{{ customer.ingredient1 }}{% endif %}"
-              placeholder="{{ 'templates.contact.modal_form.ingredient1' | t }}"
-            >
-            <label class="field__label" for="ModalForm-ingredient1">{{ 'templates.contact.modal_form.ingredient1' | t }}</label>
-
-            <select id="mw_formula_percentDropdown" class="mw_formula_percentDropdown">
-                <option value="5">5%</option>
-                <option value="10">10%</option>
-                <option value="15">15%</option>
-                <option value="20">20%</option>
-                <option value="25">25%</option>
-                <option value="30">30%</option>
-                <option value="35">35%</option>
-                <option value="40">40%</option>
-                <option value="45">45%</option>
-                <option value="50">50%</option>
-                <option value="55">55%</option>
-                <option value="60">60%</option>
-                <option value="65">65%</option>
-                <option value="70">70%</option>
-                <option value="75">75%</option>
-                <option value="80">80%</option>
-                <option value="85">85%</option>
-                <option value="90">90%</option>
-                <option value="95">95%</option>
-            </select>
-
-          </div>
-
-          <div class="field">
-            <input
-              type="text"
-              id="ModalForm-ingredient2"
-              class="field__input"
-              autocomplete=""
-              name="contact[{{ 'templates.contact.modal_form.ingredient2' | t }}]"
-              value="{% if form.ingredient2 %}{{ form.ingredient2 }}{% elsif customer %}{{ customer.ingredient2 }}{% endif %}"
-              placeholder="{{ 'templates.contact.modal_form.ingredient2' | t }}"
-            >
-            <label class="field__label" for="ModalForm-ingredient2">{{ 'templates.contact.modal_form.ingredient2' | t }}</label>
-          </div>
-
-          <div class="field">
-            <input
-              type="text"
-              id="ModalForm-ingredient3"
-              class="field__input"
-              autocomplete=""
-              name="contact[{{ 'templates.contact.modal_form.ingredient3' | t }}]"
-              value="{% if form.ingredient3 %}{{ form.ingredient3 }}{% elsif customer %}{{ customer.ingredient3 }}{% endif %}"
-              placeholder="{{ 'templates.contact.modal_form.ingredient3' | t }}"
-            >
-            <label class="field__label" for="ModalForm-ingredient3">{{ 'templates.contact.modal_form.ingredient3' | t }}</label>
-          </div>
-
-          <div class="field">
-            <input
-              type="text"
-              id="ModalForm-ingredient4"
-              class="field__input"
-              autocomplete=""
-              name="contact[{{ 'templates.contact.modal_form.ingredient4' | t }}]"
-              value="{% if form.ingredient4 %}{{ form.ingredient4 }}{% elsif customer %}{{ customer.ingredient4 }}{% endif %}"
-              placeholder="{{ 'templates.contact.modal_form.ingredient4' | t }}"
-            >
-            <label class="field__label" for="ModalForm-ingredient4">{{ 'templates.contact.modal_form.ingredient4' | t }}</label>
-          </div>
-          
-          <div class="field">
-            <input
-              type="text"
-              id="ModalForm-ingredient5"
-              class="field__input"
-              autocomplete=""
-              name="contact[{{ 'templates.contact.modal_form.ingredient5' | t }}]"
-              value="{% if form.ingredient5 %}{{ form.ingredient5 }}{% elsif customer %}{{ customer.ingredient5 }}{% endif %}"
-              placeholder="{{ 'templates.contact.modal_form.ingredient5' | t }}"
-            >
-            <label class="field__label" for="ModalForm-ingredient5">{{ 'templates.contact.modal_form.ingredient5' | t }}</label>
-          </div>
-
-          <div class="field">
-            <input
-              type="text"
-              id="ModalForm-ingredient6"
-              class="field__input"
-              autocomplete=""
-              name="contact[{{ 'templates.contact.modal_form.ingredient6' | t }}]"
-              value="{% if form.ingredient6 %}{{ form.ingredient6 }}{% elsif customer %}{{ customer.ingredient6 }}{% endif %}"
-              placeholder="{{ 'templates.contact.modal_form.ingredient6' | t }}"
-            >
-            <label class="field__label" for="ModalForm-ingredient6">{{ 'templates.contact.modal_form.ingredient6' | t }}</label>
-          </div>
-
-          <div class="field">
-            <input
-              type="text"
-              id="ModalForm-ingredient7"
-              class="field__input"
-              autocomplete=""
-              name="contact[{{ 'templates.contact.modal_form.ingredient7' | t }}]"
-              value="{% if form.ingredient7 %}{{ form.ingredient7 }}{% elsif customer %}{{ customer.ingredient7 }}{% endif %}"
-              placeholder="{{ 'templates.contact.modal_form.ingredient7' | t }}"
-            >
-            <label class="field__label" for="ModalForm-ingredient7">{{ 'templates.contact.modal_form.ingredient7' | t }}</label>
-          </div>
-          
 
           <div class="text_area field">
             <textarea
@@ -253,6 +138,266 @@
             </label>
           </div>
 
+          <div class="field">
+                <input
+                  type="text"
+                  id="ModalForm-ingredient_1"
+                  class="field__input"
+                  autocomplete=""
+                  name="contact[{{ 'templates.contact.modal_form.ingredient1' | t }}]"
+                  value="{% if form.ingredient1 %}{{ form.ingredient1 }}{% elsif customer %}{{ customer.ingredient1 }}{% endif %}"
+                  placeholder="{{ 'templates.contact.modal_form.ingredient1' | t }}"
+                >
+                <label class="field__label" for="ModalForm-ingredient_1">{{ 'templates.contact.modal_form.ingredient1' | t }}</label>
+
+                <select id="mw_formula_percentDropdown_1" class="mw_formula_percentDropdown">
+                    <option selected disabled value="">0%</option>
+                    <option value="5">5%</option>
+                    <option value="10">10%</option>
+                    <option value="15">15%</option>
+                    <option value="20">20%</option>
+                    <option value="25">25%</option>
+                    <option value="30">30%</option>
+                    <option value="35">35%</option>
+                    <option value="40">40%</option>
+                    <option value="45">45%</option>
+                    <option value="50">50%</option>
+                    <option value="55">55%</option>
+                    <option value="60">60%</option>
+                    <option value="65">65%</option>
+                    <option value="70">70%</option>
+                    <option value="75">75%</option>
+                    <option value="80">80%</option>
+                    <option value="85">85%</option>
+                    <option value="90">90%</option>
+                    <option value="95">95%</option>
+                </select>
+                <input type="hidden" id="valueInput_1" placeholder="Value">
+          </div>
+
+          <div class="field">
+                  <input
+                    type="text"
+                    id="ModalForm-ingredient_2"
+                    class="field__input"
+                    autocomplete=""
+                    name="contact[{{ 'templates.contact.modal_form.ingredient2' | t }}]"
+                    value="{% if form.ingredient2 %}{{ form.ingredient2 }}{% elsif customer %}{{ customer.ingredient2 }}{% endif %}"
+                    placeholder="{{ 'templates.contact.modal_form.ingredient2' | t }}"
+                  >
+                  <label class="field__label" for="ModalForm-ingredient_2">{{ 'templates.contact.modal_form.ingredient2' | t }}</label>
+                  
+                  <select id="mw_formula_percentDropdown_2" class="mw_formula_percentDropdown">
+                    <option selected disabled value="">0%</option>
+                    <option value="5">5%</option>
+                    <option value="10">10%</option>
+                    <option value="15">15%</option>
+                    <option value="20">20%</option>
+                    <option value="25">25%</option>
+                    <option value="30">30%</option>
+                    <option value="35">35%</option>
+                    <option value="40">40%</option>
+                    <option value="45">45%</option>
+                    <option value="50">50%</option>
+                    <option value="55">55%</option>
+                    <option value="60">60%</option>
+                    <option value="65">65%</option>
+                    <option value="70">70%</option>
+                    <option value="75">75%</option>
+                    <option value="80">80%</option>
+                    <option value="85">85%</option>
+                    <option value="90">90%</option>
+                    <option value="95">95%</option>
+                </select>
+                <input type="hidden" id="valueInput_2" placeholder="Value">
+          </div>
+
+          <div class="field">
+                  <input
+                    type="text"
+                    id="ModalForm-ingredient_3"
+                    class="field__input"
+                    autocomplete=""
+                    name="contact[{{ 'templates.contact.modal_form.ingredient3' | t }}]"
+                    value="{% if form.ingredient3 %}{{ form.ingredient3 }}{% elsif customer %}{{ customer.ingredient3 }}{% endif %}"
+                    placeholder="{{ 'templates.contact.modal_form.ingredient3' | t }}"
+                  >
+                  <label class="field__label" for="ModalForm-ingredient_3">{{ 'templates.contact.modal_form.ingredient3' | t }}</label>
+
+                  <select id="mw_formula_percentDropdown_3" class="mw_formula_percentDropdown">
+                    <option selected disabled value="">0%</option>
+                    <option value="5">5%</option>
+                    <option value="10">10%</option>
+                    <option value="15">15%</option>
+                    <option value="20">20%</option>
+                    <option value="25">25%</option>
+                    <option value="30">30%</option>
+                    <option value="35">35%</option>
+                    <option value="40">40%</option>
+                    <option value="45">45%</option>
+                    <option value="50">50%</option>
+                    <option value="55">55%</option>
+                    <option value="60">60%</option>
+                    <option value="65">65%</option>
+                    <option value="70">70%</option>
+                    <option value="75">75%</option>
+                    <option value="80">80%</option>
+                    <option value="85">85%</option>
+                    <option value="90">90%</option>
+                    <option value="95">95%</option>
+                  </select>
+                  <input type="hidden" id="valueInput_3" placeholder="Value">
+          </div>
+
+          <div class="field">
+            <input
+              type="text"
+              id="ModalForm-ingredient_4"
+              class="field__input"
+              autocomplete=""
+              name="contact[{{ 'templates.contact.modal_form.ingredient4' | t }}]"
+              value="{% if form.ingredient4 %}{{ form.ingredient4 }}{% elsif customer %}{{ customer.ingredient4 }}{% endif %}"
+              placeholder="{{ 'templates.contact.modal_form.ingredient4' | t }}"
+            >
+            <label class="field__label" for="ModalForm-ingredient_4">{{ 'templates.contact.modal_form.ingredient4' | t }}</label>
+            
+            <select id="mw_formula_percentDropdown_4" class="mw_formula_percentDropdown">
+              <option selected disabled value="">0%</option>
+              <option value="5">5%</option>
+              <option value="10">10%</option>
+              <option value="15">15%</option>
+              <option value="20">20%</option>
+              <option value="25">25%</option>
+              <option value="30">30%</option>
+              <option value="35">35%</option>
+              <option value="40">40%</option>
+              <option value="45">45%</option>
+              <option value="50">50%</option>
+              <option value="55">55%</option>
+              <option value="60">60%</option>
+              <option value="65">65%</option>
+              <option value="70">70%</option>
+              <option value="75">75%</option>
+              <option value="80">80%</option>
+              <option value="85">85%</option>
+              <option value="90">90%</option>
+              <option value="95">95%</option>
+            </select>
+            <input type="hidden" id="valueInput_4" placeholder="Value">
+          </div>
+          
+          <div class="field">
+            <input
+              type="text"
+              id="ModalForm-ingredient_5"
+              class="field__input"
+              autocomplete=""
+              name="contact[{{ 'templates.contact.modal_form.ingredient5' | t }}]"
+              value="{% if form.ingredient5 %}{{ form.ingredient5 }}{% elsif customer %}{{ customer.ingredient5 }}{% endif %}"
+              placeholder="{{ 'templates.contact.modal_form.ingredient5' | t }}"
+            >
+            <label class="field__label" for="ModalForm-ingredient_5">{{ 'templates.contact.modal_form.ingredient5' | t }}</label>
+           
+            <select id="mw_formula_percentDropdown_5" class="mw_formula_percentDropdown">
+              <option selected disabled value="">0%</option>
+              <option value="5">5%</option>
+              <option value="10">10%</option>
+              <option value="15">15%</option>
+              <option value="20">20%</option>
+              <option value="25">25%</option>
+              <option value="30">30%</option>
+              <option value="35">35%</option>
+              <option value="40">40%</option>
+              <option value="45">45%</option>
+              <option value="50">50%</option>
+              <option value="55">55%</option>
+              <option value="60">60%</option>
+              <option value="65">65%</option>
+              <option value="70">70%</option>
+              <option value="75">75%</option>
+              <option value="80">80%</option>
+              <option value="85">85%</option>
+              <option value="90">90%</option>
+              <option value="95">95%</option>
+            </select>
+            <input type="hidden" id="valueInput_5" placeholder="Value">
+          </div>
+
+          <div class="field">
+            <input
+              type="text"
+              id="ModalForm-ingredient_6"
+              class="field__input"
+              autocomplete=""
+              name="contact[{{ 'templates.contact.modal_form.ingredient6' | t }}]"
+              value="{% if form.ingredient6 %}{{ form.ingredient6 }}{% elsif customer %}{{ customer.ingredient6 }}{% endif %}"
+              placeholder="{{ 'templates.contact.modal_form.ingredient6' | t }}"
+            >
+            <label class="field__label" for="ModalForm-ingredient_6">{{ 'templates.contact.modal_form.ingredient6' | t }}</label>
+           
+            <select id="mw_formula_percentDropdown_6" class="mw_formula_percentDropdown">
+              <option selected disabled value="">0%</option>
+              <option value="5">5%</option>
+              <option value="10">10%</option>
+              <option value="15">15%</option>
+              <option value="20">20%</option>
+              <option value="25">25%</option>
+              <option value="30">30%</option>
+              <option value="35">35%</option>
+              <option value="40">40%</option>
+              <option value="45">45%</option>
+              <option value="50">50%</option>
+              <option value="55">55%</option>
+              <option value="60">60%</option>
+              <option value="65">65%</option>
+              <option value="70">70%</option>
+              <option value="75">75%</option>
+              <option value="80">80%</option>
+              <option value="85">85%</option>
+              <option value="90">90%</option>
+              <option value="95">95%</option>
+            </select>
+            <input type="hidden" id="valueInput_6" placeholder="Value">
+          </div>
+
+          <div class="field">
+            <input
+              type="text"
+              id="ModalForm-ingredient_7"
+              class="field__input"
+              autocomplete=""
+              name="contact[{{ 'templates.contact.modal_form.ingredient7' | t }}]"
+              value="{% if form.ingredient7 %}{{ form.ingredient7 }}{% elsif customer %}{{ customer.ingredient7 }}{% endif %}"
+              placeholder="{{ 'templates.contact.modal_form.ingredient7' | t }}"
+            >
+            <label class="field__label" for="ModalForm-ingredient_7">{{ 'templates.contact.modal_form.ingredient7' | t }}</label>
+           
+            <select id="mw_formula_percentDropdown_7" class="mw_formula_percentDropdown">
+              <option selected disabled value="">0%</option>
+              <option value="5">5%</option>
+              <option value="10">10%</option>
+              <option value="15">15%</option>
+              <option value="20">20%</option>
+              <option value="25">25%</option>
+              <option value="30">30%</option>
+              <option value="35">35%</option>
+              <option value="40">40%</option>
+              <option value="45">45%</option>
+              <option value="50">50%</option>
+              <option value="55">55%</option>
+              <option value="60">60%</option>
+              <option value="65">65%</option>
+              <option value="70">70%</option>
+              <option value="75">75%</option>
+              <option value="80">80%</option>
+              <option value="85">85%</option>
+              <option value="90">90%</option>
+              <option value="95">95%</option>
+            </select>
+            <input type="hidden" id="valueInput_7" placeholder="Value">
+          </div>
+          
+
           <div class="center contact__button">
             <button type="submit" class="color-scheme-5 gradient submit_formula_btn button">
                {{ 'templates.contact.modal_form.send' | t }} 
@@ -266,6 +411,286 @@
 
   </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+function containsPercentage(str) {
+  // This regex matches a number (integer or float) followed by a '%' sign.
+  // It handles optional decimal points and multiple digits.
+  const regex = /\d+(\.\d+)?%/; 
+  return str.match(regex) !== null;
+}
+
+// ------- START GET INGREDIENT 1 VALUES ---------
+var percentDropdown1 = document.getElementById('mw_formula_percentDropdown_1');
+percentDropdown1.addEventListener('change', () => {
+    var valueInput_1 = document.getElementById('valueInput_1');
+    var mainInput1 = document.getElementById('ModalForm-ingredient_1');
+    var mainInput1_value = mainInput1.value;
+    var selectedPercentage = parseFloat(percentDropdown1.value); // Get selected percentage as a decimal
+    valueInput_1.value = selectedPercentage;
+    if(mainInput1_value == "") {
+          //alert('Please enter the ingredient first.');
+          mainInput1.value = "Please first enter an ingredient...";
+          $('#mw_formula_percentDropdown_1 option:first-child').prop('selected', true); 
+          $(valueInput_1).val("");
+          setTimeout(function(){
+            mainInput1.value = "";
+            valueInput_1.value = "";
+            
+          }, 4000);
+    } else {
+        if (containsPercentage(mainInput1_value)) {
+          console.log("The string contains a percentage number.");
+          var originalString1 = mainInput1.value;
+          var newString1 = originalString1.replace(/(\d+(?:\.\d+)?)%/g, selectedPercentage + '%');
+          mainInput1.value = newString1;
+          // You can add further logic here, e.g., display a message
+        } else {
+          console.log("The string does not contain a percentage number.");
+          mainInput1.value = mainInput1_value + " " + selectedPercentage + '%';
+        }
+    }
+});
+// ------- END GET INGREDIENT 1 VALUES ---------
+
+// ------- START GET INGREDIENT 2 VALUES ---------
+  var percentDropdown_2 = document.getElementById('mw_formula_percentDropdown_2');
+percentDropdown_2.addEventListener('change', () => {
+    var valueInput_2 = document.getElementById('valueInput_2');
+    var mainInput_2 = document.getElementById('ModalForm-ingredient_2');
+    var mainInput_2_value = mainInput_2.value;
+    var selectedPercentage_2 = parseFloat(percentDropdown_2.value); // Get selected percentage as a decimal
+    valueInput_2.value = selectedPercentage_2;
+    if(mainInput_2_value == "") {
+          //alert('Please enter the ingredient first.');
+          mainInput_2.value = "Please first enter an ingredient...";
+          $('#mw_formula_percentDropdown_2 option:first-child').prop('selected', true); 
+          $(valueInput_2).val("");
+          setTimeout(function(){
+            mainInput_2.value = "";
+            valueInput_2.value = "";
+            
+          }, 4000);
+    } else {
+        if (containsPercentage(mainInput_2_value)) {
+          console.log("The string contains a percentage number.");
+          var originalString_2 = mainInput_2.value;
+          var newString_2 = originalString_2.replace(/(\d+(?:\.\d+)?)%/g, selectedPercentage_2 + '%');
+          mainInput_2.value = newString_2;
+          // You can add further logic here, e.g., display a message
+        } else {
+          console.log("The string does not contain a percentage number.");
+          mainInput_2.value = mainInput_2_value + " " + selectedPercentage_2 + '%';
+        }
+    }
+});
+// ------- END GET INGREDIENT 2 VALUES ---------
+
+// ------- START GET INGREDIENT 3 VALUES ---------
+  var percentDropdown_3 = document.getElementById('mw_formula_percentDropdown_3');
+percentDropdown_3.addEventListener('change', () => {
+    var valueInput_3 = document.getElementById('valueInput_3');
+    var mainInput_3 = document.getElementById('ModalForm-ingredient_3');
+    var mainInput_3_value = mainInput_3.value;
+    var selectedPercentage_3 = parseFloat(percentDropdown_3.value); // Get selected percentage as a decimal
+    valueInput_3.value = selectedPercentage_3;
+    if(mainInput_3_value == "") {
+          //alert('Please enter the ingredient first.');
+          mainInput_3.value = "Please first enter an ingredient...";
+          $('#mw_formula_percentDropdown_3 option:first-child').prop('selected', true); 
+          $(valueInput_3).val("");
+          setTimeout(function(){
+            mainInput_3.value = "";
+            valueInput_3.value = "";
+            
+          }, 4000);
+    } else {
+        if (containsPercentage(mainInput_3_value)) {
+          console.log("The string contains a percentage number.");
+          var originalString_3 = mainInput_3.value;
+          var newString_3 = originalString_3.replace(/(\d+(?:\.\d+)?)%/g, selectedPercentage_3 + '%');
+          mainInput_3.value = newString_3;
+          // You can add further logic here, e.g., display a message
+        } else {
+          console.log("The string does not contain a percentage number.");
+          mainInput_3.value = mainInput_3_value + " " + selectedPercentage_3 + '%';
+        }
+    }
+});
+// ------- END GET INGREDIENT 3 VALUES ---------
+
+// ------- START GET INGREDIENT 4 VALUES ---------
+  var percentDropdown_4 = document.getElementById('mw_formula_percentDropdown_4');
+percentDropdown_4.addEventListener('change', () => {
+    var valueInput_4 = document.getElementById('valueInput_4');
+    var mainInput_4 = document.getElementById('ModalForm-ingredient_4');
+    var mainInput_4_value = mainInput_4.value;
+    var selectedPercentage_4 = parseFloat(percentDropdown_4.value); // Get selected percentage as a decimal
+    valueInput_4.value = selectedPercentage_4;
+    if(mainInput_4_value == "") {
+          //alert('Please enter the ingredient first.');
+          mainInput_4.value = "Please first enter an ingredient...";
+          $('#mw_formula_percentDropdown_4 option:first-child').prop('selected', true); 
+          $(valueInput_4).val("");
+          setTimeout(function(){
+            mainInput_4.value = "";
+            valueInput_4.value = "";
+            
+          }, 4000);
+    } else {
+        if (containsPercentage(mainInput_4_value)) {
+          console.log("The string contains a percentage number.");
+          var originalString_4 = mainInput_4.value;
+          var newString_4 = originalString_4.replace(/(\d+(?:\.\d+)?)%/g, selectedPercentage_4 + '%');
+          mainInput_4.value = newString_4;
+          // You can add further logic here, e.g., display a message
+        } else {
+          console.log("The string does not contain a percentage number.");
+          mainInput_4.value = mainInput_4_value + " " + selectedPercentage_4 + '%';
+        }
+    }
+});
+// ------- END GET INGREDIENT 4 VALUES ---------
+
+// ------- START GET INGREDIENT 5 VALUES ---------
+  var percentDropdown_5 = document.getElementById('mw_formula_percentDropdown_5');
+percentDropdown_5.addEventListener('change', () => {
+    var valueInput_5 = document.getElementById('valueInput_5');
+    var mainInput_5 = document.getElementById('ModalForm-ingredient_5');
+    var mainInput_5_value = mainInput_5.value;
+    var selectedPercentage_5 = parseFloat(percentDropdown_5.value); // Get selected percentage as a decimal
+    valueInput_5.value = selectedPercentage_5;
+    if(mainInput_5_value == "") {
+          //alert('Please enter the ingredient first.');
+          mainInput_5.value = "Please first enter an ingredient...";
+          $('#mw_formula_percentDropdown_5 option:first-child').prop('selected', true); 
+          $(valueInput_5).val("");
+          setTimeout(function(){
+            mainInput_5.value = "";
+            valueInput_5.value = "";
+            
+          }, 4000);
+    } else {
+        if (containsPercentage(mainInput_5_value)) {
+          console.log("The string contains a percentage number.");
+          var originalString_5 = mainInput_5.value;
+          var newString_5 = originalString_5.replace(/(\d+(?:\.\d+)?)%/g, selectedPercentage_5 + '%');
+          mainInput_5.value = newString_5;
+          // You can add further logic here, e.g., display a message
+        } else {
+          console.log("The string does not contain a percentage number.");
+          mainInput_5.value = mainInput_5_value + " " + selectedPercentage_5 + '%';
+        }
+    }
+});
+// ------- END GET INGREDIENT 5 VALUES ---------
+
+// ------- START GET INGREDIENT 6 VALUES ---------
+  var percentDropdown_6 = document.getElementById('mw_formula_percentDropdown_6');
+percentDropdown_6.addEventListener('change', () => {
+    var valueInput_6 = document.getElementById('valueInput_6');
+    var mainInput_6 = document.getElementById('ModalForm-ingredient_6');
+    var mainInput_6_value = mainInput_6.value;
+    var selectedPercentage_6 = parseFloat(percentDropdown_6.value); // Get selected percentage as a decimal
+    valueInput_6.value = selectedPercentage_6;
+    if(mainInput_6_value == "") {
+          //alert('Please enter the ingredient first.');
+          mainInput_6.value = "Please first enter an ingredient...";
+          $('#mw_formula_percentDropdown_6 option:first-child').prop('selected', true); 
+          $(valueInput_6).val("");
+          setTimeout(function(){
+            mainInput_6.value = "";
+            valueInput_6.value = "";
+            
+          }, 4000);
+    } else {
+        if (containsPercentage(mainInput_6_value)) {
+          console.log("The string contains a percentage number.");
+          var originalString_6 = mainInput_6.value;
+          var newString_6 = originalString_6.replace(/(\d+(?:\.\d+)?)%/g, selectedPercentage_6 + '%');
+          mainInput_6.value = newString_6;
+          // You can add further logic here, e.g., display a message
+        } else {
+          console.log("The string does not contain a percentage number.");
+          mainInput_6.value = mainInput_6_value + " " + selectedPercentage_6 + '%';
+        }
+    }
+});
+// ------- END GET INGREDIENT 6 VALUES ---------
+
+// ------- START GET INGREDIENT 7 VALUES ---------
+  var percentDropdown_7 = document.getElementById('mw_formula_percentDropdown_7');
+  percentDropdown_7.addEventListener('change', () => {
+      var valueInput_7 = document.getElementById('valueInput_7');
+      var mainInput_7 = document.getElementById('ModalForm-ingredient_7');
+      var mainInput_7_value = mainInput_7.value;
+      var selectedPercentage_7 = parseFloat(percentDropdown_7.value); // Get selected percentage as a decimal
+      valueInput_7.value = selectedPercentage_7;
+      if(mainInput_7_value == "") {
+            //alert('Please enter the ingredient first.');
+            mainInput_7.value = "Please first enter an ingredient...";
+            $('#mw_formula_percentDropdown_7 option:first-child').prop('selected', true); 
+            $(valueInput_7).val("");
+            setTimeout(function(){
+              mainInput_7.value = "";
+              valueInput_7.value = "";
+              
+            }, 4000);
+      } else {
+          if (containsPercentage(mainInput_7_value)) {
+            console.log("The string contains a percentage number.");
+            var originalString_7 = mainInput_7.value;
+            var newString_7 = originalString_7.replace(/(\d+(?:\.\d+)?)%/g, selectedPercentage_7 + '%');
+            mainInput_7.value = newString_7;
+            // You can add further logic here, e.g., display a message
+          } else {
+            console.log("The string does not contain a percentage number.");
+            mainInput_7.value = mainInput_7_value + " " + selectedPercentage_7 + '%';
+          }
+      }
+  });
+// ------- END GET INGREDIENT 7 VALUES ---------
+
+$(".submit_formula_btn").click(function (e){
+  e.preventDefault();
+  var my_html_elmnt = $(this);
+  $(my_html_elmnt).html('Submitting <img style="margin-top:-2px;filter:brightness(1.3);" width="16" src="https://cdn.shopify.com/s/files/1/0713/8685/7724/files/loader.gif?v=1743590298" />');
+  var perc1 = $('#valueInput_1').val();
+  var perc2 = $('#valueInput_2').val();
+  var perc3 = $('#valueInput_3').val();
+  var perc4 = $('#valueInput_4').val();
+  var perc5 = $('#valueInput_5').val();
+  var perc6 = $('#valueInput_6').val();
+  var perc7 = $('#valueInput_7').val();
+  var total_perc = +perc1 + +perc2 + +perc3 + +perc4 + +perc5 + +perc6 + +perc7;
+  //alert('Percent Value Total: ' + total_perc );
+  if(total_perc > 100){
+    $(my_html_elmnt).html('Ingedients can not exceed 100%. <br>Currently: ' + total_perc + '%');
+    setTimeout(function(){
+      $(my_html_elmnt).html('Submit Formula');
+    }, 70000);
+    return false;
+  } else if(total_perc < 100){
+    $(my_html_elmnt).html('Ingedients must total 100%. <br> Currently: ' + total_perc + '%');
+    setTimeout(function(){
+      $(my_html_elmnt).html('Submit Formula');
+    }, 70000);
+    return false;
+  } else {
+    return true;
+  }
+  console.log('submitting...');
+
+  //$('#submit_formula #ModalForm').submit();
+  setTimeout(function(){
+    $(my_html_elmnt).html('Submit Formula');
+  }, 7000);
+});
+
+}); // -------- END document ready ------------
+</script>
 
 
 {% schema %}
@@ -300,6 +725,7 @@
     ]
   }
 {% endschema %}
+
 
 {% stylesheet %}
   #ModalForm {

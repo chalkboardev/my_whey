@@ -3946,7 +3946,7 @@ h3 {
 
 .submit_formula_btn:hover {
     min-width: 280px;
-    letter-spacing: 6px !important;
+    letter-spacing: 2px !important;
     color: #fff;
     font-weight: 600 !important;
     border-radius: 50px !important;
@@ -4318,7 +4318,13 @@ h3 {
 }
 
 .mw_formula_percentDropdown {
-    border: none;
+    /* border: none; */
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+    right: 20px;
+    padding-left: 8px;
+    position: relative;
 }
 
 
