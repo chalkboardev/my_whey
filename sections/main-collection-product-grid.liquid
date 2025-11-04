@@ -314,26 +314,65 @@ document.addEventListener('DOMContentLoaded', () => {
                   }
                   if(ingredient1Value != null){
                     var perc_1 = ingredient1Value.match(/(\d+(\.\d+)?)\s*%/);
+                    if(perc_1){
+                        // alert('Yes percentage...');
+                        $('#valueInput_1').val(perc_1[1]);
+                    } else {
+                    }
                     $('#ModalForm-ingredient_1').val(ingredient1Value);
-                    $('#valueInput_1').val(perc_1);
-                    
                   }
                   if(ingredient2Value != null){
+                    var perc_2 = ingredient2Value.match(/(\d+(\.\d+)?)\s*%/);
+                    if(perc_2){
+                        // alert('Yes percentage...');
+                        $('#valueInput_2').val(perc_2[1]);
+                    } else {
+                    }
                     $('#ModalForm-ingredient_2').val(ingredient2Value); 
                   }
                   if(ingredient3Value != null){
+                    var perc_3 = ingredient3Value.match(/(\d+(\.\d+)?)\s*%/);
+                    if(perc_3){
+                        // alert('Yes percentage...');
+                        $('#valueInput_3').val(perc_3[1]);
+                    } else {
+                    }
                     $('#ModalForm-ingredient_3').val(ingredient3Value); 
                   }
                   if(ingredient4Value != null){
+                    var perc_4 = ingredient4Value.match(/(\d+(\.\d+)?)\s*%/);
+                    if(perc_4){
+                        // alert('Yes percentage...');
+                        $('#valueInput_4').val(perc_4[1]);
+                    } else {
+                    }
                     $('#ModalForm-ingredient_4').val(ingredient4Value); 
                   }
                   if(ingredient5Value != null){
+                    var perc_5 = ingredient5Value.match(/(\d+(\.\d+)?)\s*%/);
+                    if(perc_5){
+                        // alert('Yes percentage...');
+                        $('#valueInput_5').val(perc_5[1]);
+                    } else {
+                    }
                     $('#ModalForm-ingredient_5').val(ingredient5Value); 
                   }
                   if(ingredient6Value != null){
+                    var perc_6 = ingredient6Value.match(/(\d+(\.\d+)?)\s*%/);
+                    if(perc_6){
+                        // alert('Yes percentage...');
+                        $('#valueInput_6').val(perc_6[1]);
+                    } else {
+                    }
                     $('#ModalForm-ingredient_6').val(ingredient6Value); 
                   }
                   if(ingredient7Value != null){
+                    var perc_7 = ingredient7Value.match(/(\d+(\.\d+)?)\s*%/);
+                    if(perc_7){
+                        // alert('Yes percentage...');
+                        $('#valueInput_7').val(perc_7[1]);
+                    } else {
+                    }
                     $('#ModalForm-ingredient_7').val(ingredient7Value); 
                   }
                   if(descriptionValue != null){
