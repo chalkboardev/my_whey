@@ -428,9 +428,14 @@
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 
+// $('#ModalForm-ingredient_1, #ModalForm-ingredient_2, #ModalForm-ingredient_3, #ModalForm-ingredient_4, #ModalForm-ingredient_5, #ModalForm-ingredient_6, #ModalForm-ingredient_7').on('blur', function() {
+//   $(this).next().next().hide();
+// });
+$('#ModalForm-ingredient_1, #ModalForm-ingredient_2, #ModalForm-ingredient_3, #ModalForm-ingredient_4, #ModalForm-ingredient_5, #ModalForm-ingredient_6, #ModalForm-ingredient_7').on('click', function() {
+    $(this).next().next().show();
+  });
+
 function containsPercentage(str) {
-  // This regex matches a number (integer or float) followed by a '%' sign.
-  // It handles optional decimal points and multiple digits.
   const regex = /\d+(\.\d+)?%/; 
   return str.match(regex) !== null;
 }
@@ -451,19 +456,19 @@ percentDropdown1.addEventListener('change', () => {
           setTimeout(function(){
             mainInput1.value = "";
             valueInput_1.value = "";
-            
           }, 4000);
     } else {
         if (containsPercentage(mainInput1_value)) {
           console.log("The string contains a percentage number.");
           var originalString1 = mainInput1.value;
-          var newString1 = originalString1.replace(/(\d+(?:\.\d+)?)%/g, selectedPercentage + '%');
+          var newString1 = originalString1.replace(/\s*\d+(?:\.\d+)?%/g, ' ' + selectedPercentage + '%');
           mainInput1.value = newString1;
           // You can add further logic here, e.g., display a message
         } else {
           console.log("The string does not contain a percentage number.");
           mainInput1.value = mainInput1_value + " " + selectedPercentage + '%';
         }
+        $("#mw_formula_percentDropdown_1").hide();
     }
 });
 // ------- END GET INGREDIENT 1 VALUES ---------
@@ -484,19 +489,19 @@ percentDropdown_2.addEventListener('change', () => {
           setTimeout(function(){
             mainInput_2.value = "";
             valueInput_2.value = "";
-            
           }, 4000);
     } else {
         if (containsPercentage(mainInput_2_value)) {
           console.log("The string contains a percentage number.");
           var originalString_2 = mainInput_2.value;
-          var newString_2 = originalString_2.replace(/(\d+(?:\.\d+)?)%/g, selectedPercentage_2 + '%');
+          var newString_2 = originalString_2.replace(/\s*\d+(?:\.\d+)?%/g, ' ' + selectedPercentage_2 + '%');
           mainInput_2.value = newString_2;
           // You can add further logic here, e.g., display a message
         } else {
           console.log("The string does not contain a percentage number.");
           mainInput_2.value = mainInput_2_value + " " + selectedPercentage_2 + '%';
         }
+        $("#mw_formula_percentDropdown_2").hide();
     }
 });
 // ------- END GET INGREDIENT 2 VALUES ---------
@@ -523,13 +528,14 @@ percentDropdown_3.addEventListener('change', () => {
         if (containsPercentage(mainInput_3_value)) {
           console.log("The string contains a percentage number.");
           var originalString_3 = mainInput_3.value;
-          var newString_3 = originalString_3.replace(/(\d+(?:\.\d+)?)%/g, selectedPercentage_3 + '%');
+          var newString_3 = originalString_3.replace(/\s*\d+(?:\.\d+)?%/g, ' ' + selectedPercentage_3 + '%');
           mainInput_3.value = newString_3;
           // You can add further logic here, e.g., display a message
         } else {
           console.log("The string does not contain a percentage number.");
           mainInput_3.value = mainInput_3_value + " " + selectedPercentage_3 + '%';
         }
+        $("#mw_formula_percentDropdown_3").hide();
     }
 });
 // ------- END GET INGREDIENT 3 VALUES ---------
@@ -556,13 +562,14 @@ percentDropdown_4.addEventListener('change', () => {
         if (containsPercentage(mainInput_4_value)) {
           console.log("The string contains a percentage number.");
           var originalString_4 = mainInput_4.value;
-          var newString_4 = originalString_4.replace(/(\d+(?:\.\d+)?)%/g, selectedPercentage_4 + '%');
+          var newString_4 = originalString_4.replace(/\s*\d+(?:\.\d+)?%/g, ' ' + selectedPercentage_4 + '%');
           mainInput_4.value = newString_4;
           // You can add further logic here, e.g., display a message
         } else {
           console.log("The string does not contain a percentage number.");
           mainInput_4.value = mainInput_4_value + " " + selectedPercentage_4 + '%';
         }
+        $("#mw_formula_percentDropdown_4").hide();
     }
 });
 // ------- END GET INGREDIENT 4 VALUES ---------
@@ -589,13 +596,14 @@ percentDropdown_5.addEventListener('change', () => {
         if (containsPercentage(mainInput_5_value)) {
           console.log("The string contains a percentage number.");
           var originalString_5 = mainInput_5.value;
-          var newString_5 = originalString_5.replace(/(\d+(?:\.\d+)?)%/g, selectedPercentage_5 + '%');
+          var newString_5 = originalString_5.replace(/\s*\d+(?:\.\d+)?%/g, ' ' + selectedPercentage_5 + '%');
           mainInput_5.value = newString_5;
           // You can add further logic here, e.g., display a message
         } else {
           console.log("The string does not contain a percentage number.");
           mainInput_5.value = mainInput_5_value + " " + selectedPercentage_5 + '%';
         }
+        $("#mw_formula_percentDropdown_5").hide();
     }
 });
 // ------- END GET INGREDIENT 5 VALUES ---------
@@ -622,13 +630,14 @@ percentDropdown_6.addEventListener('change', () => {
         if (containsPercentage(mainInput_6_value)) {
           console.log("The string contains a percentage number.");
           var originalString_6 = mainInput_6.value;
-          var newString_6 = originalString_6.replace(/(\d+(?:\.\d+)?)%/g, selectedPercentage_6 + '%');
+          var newString_6 = originalString_6.replace(/\s*\d+(?:\.\d+)?%/g, ' ' + selectedPercentage_6 + '%');
           mainInput_6.value = newString_6;
           // You can add further logic here, e.g., display a message
         } else {
           console.log("The string does not contain a percentage number.");
           mainInput_6.value = mainInput_6_value + " " + selectedPercentage_6 + '%';
         }
+        $("#mw_formula_percentDropdown_6").hide();
     }
 });
 // ------- END GET INGREDIENT 6 VALUES ---------
@@ -655,13 +664,14 @@ percentDropdown_6.addEventListener('change', () => {
           if (containsPercentage(mainInput_7_value)) {
             console.log("The string contains a percentage number.");
             var originalString_7 = mainInput_7.value;
-            var newString_7 = originalString_7.replace(/(\d+(?:\.\d+)?)%/g, selectedPercentage_7 + '%');
+            var newString_7 = originalString_7.replace(/\s*\d+(?:\.\d+)?%/g, ' ' + selectedPercentage_7 + '%');
             mainInput_7.value = newString_7;
             // You can add further logic here, e.g., display a message
           } else {
             console.log("The string does not contain a percentage number.");
             mainInput_7.value = mainInput_7_value + " " + selectedPercentage_7 + '%';
           }
+          $("#mw_formula_percentDropdown_7").hide();
       }
   });
 // ------- END GET INGREDIENT 7 VALUES ---------
