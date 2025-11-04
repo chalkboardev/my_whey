@@ -4317,6 +4317,10 @@ h3 {
     transform: scale(1.3);
 }
 
+.mw_formula_percentDropdown {
+    border: none;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
@@ -8674,6 +8678,17 @@ input[type='checkbox'] {
     max-width: 100%;
     filter: opacity(0.93);
 }
+
+
+/* .header__heading-logo:hover {
+    height: auto;
+    max-width: 100%;
+    filter: opacity(0.93);
+    animation-direction: alternate !important;
+    animation-name: flipInX !important;
+    animation-duration: 1s !important;
+    animation-iteration-count: 1 !important;
+} */
 
 .header__heading-logo-wrapper {
     width: 100%;
