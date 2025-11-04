@@ -164,7 +164,7 @@
                 <label class="field__label" for="ModalForm-ingredient_1">{{ 'templates.contact.modal_form.ingredient1' | t }}</label>
 
                 <select id="mw_formula_percentDropdown_1" class="mw_formula_percentDropdown_1">
-                    <option selected disabled value="">0%</option>
+                    <option selected disabled value="0">0%</option>
                     <option value="5">5%</option>
                     <option value="10">10%</option>
                     <option value="15">15%</option>
@@ -201,7 +201,7 @@
                   <label class="field__label" for="ModalForm-ingredient_2">{{ 'templates.contact.modal_form.ingredient2' | t }}</label>
                   
                   <select id="mw_formula_percentDropdown_2" class="mw_formula_percentDropdown_1">
-                    <option selected disabled value="">0%</option>
+                    <option selected disabled value="0">0%</option>
                     <option value="5">5%</option>
                     <option value="10">10%</option>
                     <option value="15">15%</option>
@@ -238,7 +238,7 @@
                   <label class="field__label" for="ModalForm-ingredient_3">{{ 'templates.contact.modal_form.ingredient3' | t }}</label>
 
                   <select id="mw_formula_percentDropdown_3" class="mw_formula_percentDropdown_1">
-                    <option selected disabled value="">0%</option>
+                    <option selected disabled value="0">0%</option>
                     <option value="5">5%</option>
                     <option value="10">10%</option>
                     <option value="15">15%</option>
@@ -275,7 +275,7 @@
             <label class="field__label" for="ModalForm-ingredient_4">{{ 'templates.contact.modal_form.ingredient4' | t }}</label>
             
             <select id="mw_formula_percentDropdown_4" class="mw_formula_percentDropdown_1">
-              <option selected disabled value="">0%</option>
+              <option selected disabled value="0">0%</option>
               <option value="5">5%</option>
               <option value="10">10%</option>
               <option value="15">15%</option>
@@ -312,7 +312,7 @@
             <label class="field__label" for="ModalForm-ingredient_5">{{ 'templates.contact.modal_form.ingredient5' | t }}</label>
            
             <select id="mw_formula_percentDropdown_5" class="mw_formula_percentDropdown_1">
-              <option selected disabled value="">0%</option>
+              <option selected disabled value="0">0%</option>
               <option value="5">5%</option>
               <option value="10">10%</option>
               <option value="15">15%</option>
@@ -349,7 +349,7 @@
             <label class="field__label" for="ModalForm-ingredient_6">{{ 'templates.contact.modal_form.ingredient6' | t }}</label>
            
             <select id="mw_formula_percentDropdown_6" class="mw_formula_percentDropdown_1">
-              <option selected disabled value="">0%</option>
+              <option selected disabled value="0">0%</option>
               <option value="5">5%</option>
               <option value="10">10%</option>
               <option value="15">15%</option>
@@ -386,7 +386,7 @@
             <label class="field__label" for="ModalForm-ingredient_7">{{ 'templates.contact.modal_form.ingredient7' | t }}</label>
            
             <select id="mw_formula_percentDropdown_7" class="mw_formula_percentDropdown_1">
-              <option selected disabled value="">0%</option>
+              <option selected disabled value="0">0%</option>
               <option value="5">5%</option>
               <option value="10">10%</option>
               <option value="15">15%</option>
@@ -428,9 +428,10 @@
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 
-// $('#ModalForm-ingredient_1, #ModalForm-ingredient_2, #ModalForm-ingredient_3, #ModalForm-ingredient_4, #ModalForm-ingredient_5, #ModalForm-ingredient_6, #ModalForm-ingredient_7').on('blur', function() {
-//   $(this).next().next().hide();
-// });
+$('#ModalForm-ingredient_1, #ModalForm-ingredient_2, #ModalForm-ingredient_3, #ModalForm-ingredient_4, #ModalForm-ingredient_5, #ModalForm-ingredient_6, #ModalForm-ingredient_7').on('blur', function() {
+  // $(this).next().next().hide();
+  $(this).next().next().trigger('change');
+});
 $('#ModalForm-ingredient_1, #ModalForm-ingredient_2, #ModalForm-ingredient_3, #ModalForm-ingredient_4, #ModalForm-ingredient_5, #ModalForm-ingredient_6, #ModalForm-ingredient_7').on('click', function() {
     $(this).next().next().show();
   });
@@ -441,46 +442,66 @@ function containsPercentage(str) {
 }
 
 // ------- START GET INGREDIENT 1 VALUES ---------
-var percentDropdown1 = document.getElementById('mw_formula_percentDropdown_1');
-percentDropdown1.addEventListener('change', () => {
+function function_1(){
+    //alert('changed/ing...');
     var valueInput_1 = document.getElementById('valueInput_1');
-    var mainInput1 = document.getElementById('ModalForm-ingredient_1');
-    var mainInput1_value = mainInput1.value;
-    var selectedPercentage = parseFloat(percentDropdown1.value); // Get selected percentage as a decimal
+    var mainInput_1 = document.getElementById('ModalForm-ingredient_1');
+    var percentDropdown_1 = document.getElementById('mw_formula_percentDropdown_1');
+    var mainInput_1_value = mainInput_1.value;
+    var selectedPercentage = parseFloat(percentDropdown_1.value); // Get selected percentage as a decimal
     valueInput_1.value = selectedPercentage;
-    if(mainInput1_value == "") {
+    if(mainInput_1_value == "") {
           //alert('Please enter the ingredient first.');
-          mainInput1.value = "Enter ingredient first...";
+          mainInput_1.value = "Enter ingredient first...";
           $('#mw_formula_percentDropdown_1 option:first-child').prop('selected', true); 
           $(valueInput_1).val("");
           setTimeout(function(){
-            mainInput1.value = "";
+            mainInput_1.value = "";
             valueInput_1.value = "";
           }, 4000);
     } else {
-        if (containsPercentage(mainInput1_value)) {
+        if (containsPercentage(mainInput_1_value)) {
           console.log("The string contains a percentage number.");
-          var originalString1 = mainInput1.value;
-          var newString1 = originalString1.replace(/\s*\d+(?:\.\d+)?%/g, ' ' + selectedPercentage + '%');
-          mainInput1.value = newString1;
+          var originalString_1 = mainInput_1.value;
+          var stripString_1 = originalString_1.replace(/\|/g, '');
+          var newString1 = stripString_1.replace(/\s*\d+(?:\.\d+)?%/g, ' | ' + selectedPercentage + '%');
+          mainInput_1.value = newString1;
+          $("#mw_formula_percentDropdown_1").hide();
           // You can add further logic here, e.g., display a message
         } else {
           console.log("The string does not contain a percentage number.");
-          mainInput1.value = mainInput1_value + " " + selectedPercentage + '%';
+          var stripString_1 = mainInput_1_value.replace(/\|/g, '');
+          if(selectedPercentage == 0){
+            //alert('Its zero...');
+            mainInput_1.value = stripString_1;
+            //$("#mw_formula_percentDropdown_7").hide();
+          } else {
+            mainInput_1.value = stripString_1 + " | " + selectedPercentage + '%';
+            $("#mw_formula_percentDropdown_1").hide();
+          }
         }
-        $("#mw_formula_percentDropdown_1").hide();
+        
     }
+}
+var percentDropdownUse_1 = document.getElementById('mw_formula_percentDropdown_1');
+percentDropdownUse_1.addEventListener('change', () => {
+  function_1();
+});
+var mainInputUse_1 = document.getElementById('ModalForm-ingredient_1');
+mainInputUse_1.addEventListener('change', () => {
+  function_1();
 });
 // ------- END GET INGREDIENT 1 VALUES ---------
 
 // ------- START GET INGREDIENT 2 VALUES ---------
-  var percentDropdown_2 = document.getElementById('mw_formula_percentDropdown_2');
-percentDropdown_2.addEventListener('change', () => {
+  function function_2(){
+    //alert('changed/ing...');
     var valueInput_2 = document.getElementById('valueInput_2');
     var mainInput_2 = document.getElementById('ModalForm-ingredient_2');
+    var percentDropdown_2 = document.getElementById('mw_formula_percentDropdown_2');
     var mainInput_2_value = mainInput_2.value;
-    var selectedPercentage_2 = parseFloat(percentDropdown_2.value); // Get selected percentage as a decimal
-    valueInput_2.value = selectedPercentage_2;
+    var selectedPercentage = parseFloat(percentDropdown_2.value); // Get selected percentage as a decimal
+    valueInput_2.value = selectedPercentage;
     if(mainInput_2_value == "") {
           //alert('Please enter the ingredient first.');
           mainInput_2.value = "Enter ingredient first...";
@@ -494,26 +515,45 @@ percentDropdown_2.addEventListener('change', () => {
         if (containsPercentage(mainInput_2_value)) {
           console.log("The string contains a percentage number.");
           var originalString_2 = mainInput_2.value;
-          var newString_2 = originalString_2.replace(/\s*\d+(?:\.\d+)?%/g, ' ' + selectedPercentage_2 + '%');
-          mainInput_2.value = newString_2;
+          var stripString_2 = originalString_2.replace(/\|/g, '');
+          var newString1 = stripString_2.replace(/\s*\d+(?:\.\d+)?%/g, ' | ' + selectedPercentage + '%');
+          mainInput_2.value = newString1;
+          $("#mw_formula_percentDropdown_2").hide();
           // You can add further logic here, e.g., display a message
         } else {
           console.log("The string does not contain a percentage number.");
-          mainInput_2.value = mainInput_2_value + " " + selectedPercentage_2 + '%';
+          var stripString_2 = mainInput_2_value.replace(/\|/g, '');
+          if(selectedPercentage == 0){
+            //alert('Its zero...');
+            mainInput_2.value = stripString_2;
+            //$("#mw_formula_percentDropdown_7").hide();
+          } else {
+            mainInput_2.value = stripString_2 + " | " + selectedPercentage + '%';
+            $("#mw_formula_percentDropdown_2").hide();
+          }
         }
-        $("#mw_formula_percentDropdown_2").hide();
+        
     }
+}
+var percentDropdownUse_2 = document.getElementById('mw_formula_percentDropdown_2');
+percentDropdownUse_2.addEventListener('change', () => {
+  function_2();
+});
+var mainInputUse_2 = document.getElementById('ModalForm-ingredient_2');
+mainInputUse_2.addEventListener('change', () => {
+  function_2();
 });
 // ------- END GET INGREDIENT 2 VALUES ---------
 
 // ------- START GET INGREDIENT 3 VALUES ---------
-  var percentDropdown_3 = document.getElementById('mw_formula_percentDropdown_3');
-percentDropdown_3.addEventListener('change', () => {
+  function function_3(){
+    //alert('changed/ing...');
     var valueInput_3 = document.getElementById('valueInput_3');
     var mainInput_3 = document.getElementById('ModalForm-ingredient_3');
+    var percentDropdown_3 = document.getElementById('mw_formula_percentDropdown_3');
     var mainInput_3_value = mainInput_3.value;
-    var selectedPercentage_3 = parseFloat(percentDropdown_3.value); // Get selected percentage as a decimal
-    valueInput_3.value = selectedPercentage_3;
+    var selectedPercentage = parseFloat(percentDropdown_3.value); // Get selected percentage as a decimal
+    valueInput_3.value = selectedPercentage;
     if(mainInput_3_value == "") {
           //alert('Please enter the ingredient first.');
           mainInput_3.value = "Enter ingredient first...";
@@ -522,32 +562,50 @@ percentDropdown_3.addEventListener('change', () => {
           setTimeout(function(){
             mainInput_3.value = "";
             valueInput_3.value = "";
-            
           }, 4000);
     } else {
         if (containsPercentage(mainInput_3_value)) {
           console.log("The string contains a percentage number.");
           var originalString_3 = mainInput_3.value;
-          var newString_3 = originalString_3.replace(/\s*\d+(?:\.\d+)?%/g, ' ' + selectedPercentage_3 + '%');
-          mainInput_3.value = newString_3;
+          var stripString_3 = originalString_3.replace(/\|/g, '');
+          var newString1 = stripString_3.replace(/\s*\d+(?:\.\d+)?%/g, ' | ' + selectedPercentage + '%');
+          mainInput_3.value = newString1;
+          $("#mw_formula_percentDropdown_3").hide();
           // You can add further logic here, e.g., display a message
         } else {
           console.log("The string does not contain a percentage number.");
-          mainInput_3.value = mainInput_3_value + " " + selectedPercentage_3 + '%';
+          var stripString_3 = mainInput_3_value.replace(/\|/g, '');
+          if(selectedPercentage == 0){
+            //alert('Its zero...');
+            mainInput_3.value = stripString_3;
+            //$("#mw_formula_percentDropdown_7").hide();
+          } else {
+            mainInput_3.value = stripString_3 + " | " + selectedPercentage + '%';
+            $("#mw_formula_percentDropdown_3").hide();
+          }
         }
-        $("#mw_formula_percentDropdown_3").hide();
+        
     }
+}
+var percentDropdownUse_3 = document.getElementById('mw_formula_percentDropdown_3');
+percentDropdownUse_3.addEventListener('change', () => {
+  function_3();
+});
+var mainInputUse_3 = document.getElementById('ModalForm-ingredient_3');
+mainInputUse_3.addEventListener('change', () => {
+  function_3();
 });
 // ------- END GET INGREDIENT 3 VALUES ---------
 
 // ------- START GET INGREDIENT 4 VALUES ---------
-  var percentDropdown_4 = document.getElementById('mw_formula_percentDropdown_4');
-percentDropdown_4.addEventListener('change', () => {
+  function function_4(){
+    //alert('changed/ing...');
     var valueInput_4 = document.getElementById('valueInput_4');
     var mainInput_4 = document.getElementById('ModalForm-ingredient_4');
+    var percentDropdown_4 = document.getElementById('mw_formula_percentDropdown_4');
     var mainInput_4_value = mainInput_4.value;
-    var selectedPercentage_4 = parseFloat(percentDropdown_4.value); // Get selected percentage as a decimal
-    valueInput_4.value = selectedPercentage_4;
+    var selectedPercentage = parseFloat(percentDropdown_4.value); // Get selected percentage as a decimal
+    valueInput_4.value = selectedPercentage;
     if(mainInput_4_value == "") {
           //alert('Please enter the ingredient first.');
           mainInput_4.value = "Enter ingredient first...";
@@ -556,32 +614,50 @@ percentDropdown_4.addEventListener('change', () => {
           setTimeout(function(){
             mainInput_4.value = "";
             valueInput_4.value = "";
-            
           }, 4000);
     } else {
         if (containsPercentage(mainInput_4_value)) {
           console.log("The string contains a percentage number.");
           var originalString_4 = mainInput_4.value;
-          var newString_4 = originalString_4.replace(/\s*\d+(?:\.\d+)?%/g, ' ' + selectedPercentage_4 + '%');
-          mainInput_4.value = newString_4;
+          var stripString_4 = originalString_4.replace(/\|/g, '');
+          var newString1 = stripString_4.replace(/\s*\d+(?:\.\d+)?%/g, ' | ' + selectedPercentage + '%');
+          mainInput_4.value = newString1;
+          $("#mw_formula_percentDropdown_4").hide();
           // You can add further logic here, e.g., display a message
         } else {
           console.log("The string does not contain a percentage number.");
-          mainInput_4.value = mainInput_4_value + " " + selectedPercentage_4 + '%';
+          var stripString_4 = mainInput_4_value.replace(/\|/g, '');
+          if(selectedPercentage == 0){
+            //alert('Its zero...');
+            mainInput_4.value = stripString_4;
+            //$("#mw_formula_percentDropdown_7").hide();
+          } else {
+            mainInput_4.value = stripString_4 + " | " + selectedPercentage + '%';
+            $("#mw_formula_percentDropdown_4").hide();
+          }
         }
-        $("#mw_formula_percentDropdown_4").hide();
+        
     }
+}
+var percentDropdownUse_4 = document.getElementById('mw_formula_percentDropdown_4');
+percentDropdownUse_4.addEventListener('change', () => {
+  function_4();
+});
+var mainInputUse_4 = document.getElementById('ModalForm-ingredient_4');
+mainInputUse_4.addEventListener('change', () => {
+  function_4();
 });
 // ------- END GET INGREDIENT 4 VALUES ---------
 
 // ------- START GET INGREDIENT 5 VALUES ---------
-  var percentDropdown_5 = document.getElementById('mw_formula_percentDropdown_5');
-percentDropdown_5.addEventListener('change', () => {
+  function function_5(){
+    //alert('changed/ing...');
     var valueInput_5 = document.getElementById('valueInput_5');
     var mainInput_5 = document.getElementById('ModalForm-ingredient_5');
+    var percentDropdown_5 = document.getElementById('mw_formula_percentDropdown_5');
     var mainInput_5_value = mainInput_5.value;
-    var selectedPercentage_5 = parseFloat(percentDropdown_5.value); // Get selected percentage as a decimal
-    valueInput_5.value = selectedPercentage_5;
+    var selectedPercentage = parseFloat(percentDropdown_5.value); // Get selected percentage as a decimal
+    valueInput_5.value = selectedPercentage;
     if(mainInput_5_value == "") {
           //alert('Please enter the ingredient first.');
           mainInput_5.value = "Enter ingredient first...";
@@ -590,32 +666,50 @@ percentDropdown_5.addEventListener('change', () => {
           setTimeout(function(){
             mainInput_5.value = "";
             valueInput_5.value = "";
-            
           }, 4000);
     } else {
         if (containsPercentage(mainInput_5_value)) {
           console.log("The string contains a percentage number.");
           var originalString_5 = mainInput_5.value;
-          var newString_5 = originalString_5.replace(/\s*\d+(?:\.\d+)?%/g, ' ' + selectedPercentage_5 + '%');
-          mainInput_5.value = newString_5;
+          var stripString_5 = originalString_5.replace(/\|/g, '');
+          var newString1 = stripString_5.replace(/\s*\d+(?:\.\d+)?%/g, ' | ' + selectedPercentage + '%');
+          mainInput_5.value = newString1;
+          $("#mw_formula_percentDropdown_5").hide();
           // You can add further logic here, e.g., display a message
         } else {
           console.log("The string does not contain a percentage number.");
-          mainInput_5.value = mainInput_5_value + " " + selectedPercentage_5 + '%';
+          var stripString_5 = mainInput_5_value.replace(/\|/g, '');
+          if(selectedPercentage == 0){
+            //alert('Its zero...');
+            mainInput_5.value = stripString_5;
+            //$("#mw_formula_percentDropdown_7").hide();
+          } else {
+            mainInput_5.value = stripString_5 + " | " + selectedPercentage + '%';
+            $("#mw_formula_percentDropdown_5").hide();
+          }
         }
-        $("#mw_formula_percentDropdown_5").hide();
+        
     }
+}
+var percentDropdownUse_5 = document.getElementById('mw_formula_percentDropdown_5');
+percentDropdownUse_5.addEventListener('change', () => {
+  function_5();
+});
+var mainInputUse_5 = document.getElementById('ModalForm-ingredient_5');
+mainInputUse_5.addEventListener('change', () => {
+  function_5();
 });
 // ------- END GET INGREDIENT 5 VALUES ---------
 
 // ------- START GET INGREDIENT 6 VALUES ---------
-  var percentDropdown_6 = document.getElementById('mw_formula_percentDropdown_6');
-percentDropdown_6.addEventListener('change', () => {
+  function function_6(){
+    //alert('changed/ing...');
     var valueInput_6 = document.getElementById('valueInput_6');
     var mainInput_6 = document.getElementById('ModalForm-ingredient_6');
+    var percentDropdown_6 = document.getElementById('mw_formula_percentDropdown_6');
     var mainInput_6_value = mainInput_6.value;
-    var selectedPercentage_6 = parseFloat(percentDropdown_6.value); // Get selected percentage as a decimal
-    valueInput_6.value = selectedPercentage_6;
+    var selectedPercentage = parseFloat(percentDropdown_6.value); // Get selected percentage as a decimal
+    valueInput_6.value = selectedPercentage;
     if(mainInput_6_value == "") {
           //alert('Please enter the ingredient first.');
           mainInput_6.value = "Enter ingredient first...";
@@ -624,56 +718,91 @@ percentDropdown_6.addEventListener('change', () => {
           setTimeout(function(){
             mainInput_6.value = "";
             valueInput_6.value = "";
-            
           }, 4000);
     } else {
         if (containsPercentage(mainInput_6_value)) {
           console.log("The string contains a percentage number.");
           var originalString_6 = mainInput_6.value;
-          var newString_6 = originalString_6.replace(/\s*\d+(?:\.\d+)?%/g, ' ' + selectedPercentage_6 + '%');
-          mainInput_6.value = newString_6;
+          var stripString_6 = originalString_6.replace(/\|/g, '');
+          var newString1 = stripString_6.replace(/\s*\d+(?:\.\d+)?%/g, ' | ' + selectedPercentage + '%');
+          mainInput_6.value = newString1;
+          $("#mw_formula_percentDropdown_6").hide();
           // You can add further logic here, e.g., display a message
         } else {
           console.log("The string does not contain a percentage number.");
-          mainInput_6.value = mainInput_6_value + " " + selectedPercentage_6 + '%';
+          var stripString_6 = mainInput_6_value.replace(/\|/g, '');
+          if(selectedPercentage == 0){
+            //alert('Its zero...');
+            mainInput_6.value = stripString_6;
+            //$("#mw_formula_percentDropdown_7").hide();
+          } else {
+            mainInput_6.value = stripString_6 + " | " + selectedPercentage + '%';
+            $("#mw_formula_percentDropdown_6").hide();
+          }
         }
-        $("#mw_formula_percentDropdown_6").hide();
+        
     }
+}
+var percentDropdownUse_6 = document.getElementById('mw_formula_percentDropdown_6');
+percentDropdownUse_6.addEventListener('change', () => {
+  function_6();
+});
+var mainInputUse_6 = document.getElementById('ModalForm-ingredient_6');
+mainInputUse_6.addEventListener('change', () => {
+  function_6();
 });
 // ------- END GET INGREDIENT 6 VALUES ---------
 
 // ------- START GET INGREDIENT 7 VALUES ---------
-  var percentDropdown_7 = document.getElementById('mw_formula_percentDropdown_7');
-  percentDropdown_7.addEventListener('change', () => {
-      var valueInput_7 = document.getElementById('valueInput_7');
-      var mainInput_7 = document.getElementById('ModalForm-ingredient_7');
-      var mainInput_7_value = mainInput_7.value;
-      var selectedPercentage_7 = parseFloat(percentDropdown_7.value); // Get selected percentage as a decimal
-      valueInput_7.value = selectedPercentage_7;
-      if(mainInput_7_value == "") {
-            //alert('Please enter the ingredient first.');
-            mainInput_7.value = "Enter ingredient first...";
-            $('#mw_formula_percentDropdown_7 option:first-child').prop('selected', true); 
-            $(valueInput_7).val("");
-            setTimeout(function(){
-              mainInput_7.value = "";
-              valueInput_7.value = "";
-              
-            }, 4000);
-      } else {
-          if (containsPercentage(mainInput_7_value)) {
-            console.log("The string contains a percentage number.");
-            var originalString_7 = mainInput_7.value;
-            var newString_7 = originalString_7.replace(/\s*\d+(?:\.\d+)?%/g, ' ' + selectedPercentage_7 + '%');
-            mainInput_7.value = newString_7;
-            // You can add further logic here, e.g., display a message
-          } else {
-            console.log("The string does not contain a percentage number.");
-            mainInput_7.value = mainInput_7_value + " " + selectedPercentage_7 + '%';
-          }
+  function function_7(){
+    //alert('changed/ing...');
+    var valueInput_7 = document.getElementById('valueInput_7');
+    var mainInput_7 = document.getElementById('ModalForm-ingredient_7');
+    var percentDropdown_7 = document.getElementById('mw_formula_percentDropdown_7');
+    var mainInput_7_value = mainInput_7.value;
+    var selectedPercentage = parseFloat(percentDropdown_7.value); // Get selected percentage as a decimal
+    valueInput_7.value = selectedPercentage;
+    if(mainInput_7_value == "") {
+          //alert('Please enter the ingredient first.');
+          mainInput_7.value = "Enter ingredient first...";
+          $('#mw_formula_percentDropdown_7 option:first-child').prop('selected', true); 
+          $(valueInput_7).val("");
+          setTimeout(function(){
+            mainInput_7.value = "";
+            valueInput_7.value = "";
+          }, 4000);
+    } else {
+        if (containsPercentage(mainInput_7_value)) {
+          console.log("The string contains a percentage number.");
+          var originalString_7 = mainInput_7.value;
+          var stripString_7 = originalString_7.replace(/\|/g, '');
+          var newString1 = stripString_7.replace(/\s*\d+(?:\.\d+)?%/g, ' | ' + selectedPercentage + '%');
+          mainInput_7.value = newString1;
           $("#mw_formula_percentDropdown_7").hide();
-      }
-  });
+          // You can add further logic here, e.g., display a message
+        } else {
+          console.log("The string does not contain a percentage number.");
+          var stripString_7 = mainInput_7_value.replace(/\|/g, '');
+          if(selectedPercentage == 0){
+            //alert('Its zero...');
+            mainInput_7.value = stripString_7;
+            //$("#mw_formula_percentDropdown_7").hide();
+          } else {
+            mainInput_7.value = stripString_7 + " | " + selectedPercentage + '%';
+            $("#mw_formula_percentDropdown_7").hide();
+          }
+        }
+        
+    }
+}
+var percentDropdownUse_7 = document.getElementById('mw_formula_percentDropdown_7');
+percentDropdownUse_7.addEventListener('change', () => {
+  function_7();
+});
+var mainInputUse_7 = document.getElementById('ModalForm-ingredient_7');
+mainInputUse_7.addEventListener('change', () => {
+  function_7();
+});
 // ------- END GET INGREDIENT 7 VALUES ---------
 
 $(".submit_formula_btn").click(function (e){
