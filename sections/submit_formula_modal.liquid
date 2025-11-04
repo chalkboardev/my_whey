@@ -432,7 +432,7 @@ percentDropdown1.addEventListener('change', () => {
     valueInput_1.value = selectedPercentage;
     if(mainInput1_value == "") {
           //alert('Please enter the ingredient first.');
-          mainInput1.value = "Please first enter an ingredient...";
+          mainInput1.value = "Enter ingredient first...";
           $('#mw_formula_percentDropdown_1 option:first-child').prop('selected', true); 
           $(valueInput_1).val("");
           setTimeout(function(){
@@ -465,7 +465,7 @@ percentDropdown_2.addEventListener('change', () => {
     valueInput_2.value = selectedPercentage_2;
     if(mainInput_2_value == "") {
           //alert('Please enter the ingredient first.');
-          mainInput_2.value = "Please first enter an ingredient...";
+          mainInput_2.value = "Enter ingredient first...";
           $('#mw_formula_percentDropdown_2 option:first-child').prop('selected', true); 
           $(valueInput_2).val("");
           setTimeout(function(){
@@ -498,7 +498,7 @@ percentDropdown_3.addEventListener('change', () => {
     valueInput_3.value = selectedPercentage_3;
     if(mainInput_3_value == "") {
           //alert('Please enter the ingredient first.');
-          mainInput_3.value = "Please first enter an ingredient...";
+          mainInput_3.value = "Enter ingredient first...";
           $('#mw_formula_percentDropdown_3 option:first-child').prop('selected', true); 
           $(valueInput_3).val("");
           setTimeout(function(){
@@ -531,7 +531,7 @@ percentDropdown_4.addEventListener('change', () => {
     valueInput_4.value = selectedPercentage_4;
     if(mainInput_4_value == "") {
           //alert('Please enter the ingredient first.');
-          mainInput_4.value = "Please first enter an ingredient...";
+          mainInput_4.value = "Enter ingredient first...";
           $('#mw_formula_percentDropdown_4 option:first-child').prop('selected', true); 
           $(valueInput_4).val("");
           setTimeout(function(){
@@ -564,7 +564,7 @@ percentDropdown_5.addEventListener('change', () => {
     valueInput_5.value = selectedPercentage_5;
     if(mainInput_5_value == "") {
           //alert('Please enter the ingredient first.');
-          mainInput_5.value = "Please first enter an ingredient...";
+          mainInput_5.value = "Enter ingredient first...";
           $('#mw_formula_percentDropdown_5 option:first-child').prop('selected', true); 
           $(valueInput_5).val("");
           setTimeout(function(){
@@ -597,7 +597,7 @@ percentDropdown_6.addEventListener('change', () => {
     valueInput_6.value = selectedPercentage_6;
     if(mainInput_6_value == "") {
           //alert('Please enter the ingredient first.');
-          mainInput_6.value = "Please first enter an ingredient...";
+          mainInput_6.value = "Enter ingredient first...";
           $('#mw_formula_percentDropdown_6 option:first-child').prop('selected', true); 
           $(valueInput_6).val("");
           setTimeout(function(){
@@ -630,7 +630,7 @@ percentDropdown_6.addEventListener('change', () => {
       valueInput_7.value = selectedPercentage_7;
       if(mainInput_7_value == "") {
             //alert('Please enter the ingredient first.');
-            mainInput_7.value = "Please first enter an ingredient...";
+            mainInput_7.value = "Enter ingredient first...";
             $('#mw_formula_percentDropdown_7 option:first-child').prop('selected', true); 
             $(valueInput_7).val("");
             setTimeout(function(){
@@ -667,13 +667,13 @@ $(".submit_formula_btn").click(function (e){
   var total_perc = +perc1 + +perc2 + +perc3 + +perc4 + +perc5 + +perc6 + +perc7;
   //alert('Percent Value Total: ' + total_perc );
   if(total_perc > 100){
-    $(my_html_elmnt).html('Ingedients can not exceed 100%. <br>Currently: ' + total_perc + '%');
+    $(my_html_elmnt).html('Ingedients can not exceed 100% <br>Currently: ' + total_perc + '%');
     setTimeout(function(){
       $(my_html_elmnt).html('Submit Formula');
     }, 70000);
     return false;
   } else if(total_perc < 100){
-    $(my_html_elmnt).html('Ingedients must total 100%. <br> Currently: ' + total_perc + '%');
+    $(my_html_elmnt).html('Ingedients must total 100% <br> Currently: ' + total_perc + '%');
     setTimeout(function(){
       $(my_html_elmnt).html('Submit Formula');
     }, 70000);
