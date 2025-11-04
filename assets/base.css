@@ -3936,7 +3936,7 @@ h3 {
     min-width: 280px !important;
     border: 2px solid #ff2f0075 !important;
     font-weight: 600 !important;
-    letter-spacing: 4px !important;
+    letter-spacing: 2px !important;
     text-transform: uppercase;
     border-radius: 50px !important;
     text-decoration: none !important;
@@ -3976,17 +3976,6 @@ h3 {
     border-radius: var(--inputs-radius);
 }
 
-#submit_formula .field:hover,
-#submit_formula .select__select:focus,
-#submit_formula .customer .field input:focus,
-#submit_formula .customer select:focus,
-#submit_formula .localization-form__select:focus.localization-form__select:after {
-    box-shadow: none !important;
-    border: none !important;
-    outline: 0;
-    border-radius: var(--inputs-radius);
-}
-
 #submit_formula .field:hover.field:after,
 .select:hover.select:after,
 .select__select:hover.select__select:after,
@@ -3996,16 +3985,6 @@ h3 {
     box-shadow: 0 0 0 var(--inputs-border-width) rgba(var(--color-foreground), var(--inputs-border-opacity));
     outline: 0;
     border-radius: var(--inputs-radius);
-}
-
-#submit_formula .field:before,
-#submit_formula .select:before,
-#submit_formula .customer .field:before,
-#submit_formula .customer select:before,
-#submit_formula .localization-form__select:before {
-    box-shadow: none !important;
-    border: none !important;
-    outline: 0 !important;
 }
 
 .my_formula_info_btn_container {
@@ -4317,7 +4296,8 @@ h3 {
     transform: scale(1.3);
 }
 
-.mw_formula_percentDropdown {
+.mw_formula_percentDropdown_1 {
+    background: #fff !important;
     /* border: none; */
     border-right: none;
     border-top: none;
