@@ -4314,7 +4314,7 @@ h3 {
     position: relative;
     display: inline-block;
     cursor: pointer;
-    /* Changes the cursor to a help icon on hover */
+    -webkit-tap-highlight-color: transparent !important;
 }
 
 
