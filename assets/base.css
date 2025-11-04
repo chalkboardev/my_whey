@@ -4308,6 +4308,66 @@ h3 {
 }
 
 
+/* General tooltip container */
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    /* Changes the cursor to a help icon on hover */
+}
+
+
+/* The actual text/info tip */
+
+.tooltip .tooltiptext {
+    font-size: 12px;
+    visibility: hidden;
+    width: 170px;
+    background-color: #555;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 5px 8px 5px 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: -150%;
+    margin-left: -12.5rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip i {
+    color: #555555;
+    position: relative;
+    top: -2px;
+}
+
+
+/* Show the tooltip text when the user hovers over the tooltip container */
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* Optional: Add an arrow to the tooltip */
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
