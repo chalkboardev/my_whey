@@ -693,20 +693,20 @@ $(".submit_formula_btn").click(function (e){
     $(my_html_elmnt).html('Ingedients can not exceed 100% <br>Currently: ' + total_perc + '%');
     setTimeout(function(){
       $(my_html_elmnt).html('Submit Formula');
-    }, 70000);
+    }, 7000);
     return false;
   } else if(total_perc < 100){
     $(my_html_elmnt).html('Ingedients must total 100% <br> Currently: ' + total_perc + '%');
     setTimeout(function(){
       $(my_html_elmnt).html('Submit Formula');
-    }, 70000);
+    }, 7000);
     return false;
   } else {
     return true;
   }
   console.log('submitting...');
 
-  //$('#submit_formula #ModalForm').submit();
+  $('#submit_formula #ModalForm').submit();
   setTimeout(function(){
     $(my_html_elmnt).html('Submit Formula');
   }, 7000);
