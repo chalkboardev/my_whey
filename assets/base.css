@@ -4371,6 +4371,11 @@ h3 {
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    .tooltip i {
+        color: #555555;
+        position: relative;
+        top: -2px;
+    }
     .mw_modal_title {
         grid-gap: 10px;
         align-items: center;
