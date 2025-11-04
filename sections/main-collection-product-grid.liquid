@@ -315,7 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   if(ingredient1Value != null){
                     var prec_1 = ingredient1Value.match(/(\d+(\.\d+)?)\s*%/);
                     $('#ModalForm-ingredient_1').val(ingredient1Value);
-                    $('#valueInput_1').val(ingredient1Value);
+                    $('#valueInput_1').val(prec_1);
                     
                   }
                   if(ingredient2Value != null){
