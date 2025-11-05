@@ -806,6 +806,7 @@ mainInputUse_7.addEventListener('change', () => {
 });
 // ------- END GET INGREDIENT 7 VALUES ---------
 
+// ------- START SUBMIT THE FORMULA FORM ---------
 $(".submit_formula_btn").click(function (e){
   e.preventDefault();
   var my_html_elmnt = $(this);
@@ -874,11 +875,56 @@ $(".submit_formula_btn").click(function (e){
   
   }
   console.log('submitting...');
+
+  var formula_description = $("#ModalForm-body").val();
+  var ingredient_1 = $('#ModalForm-ingredient_1').val();
+  var ingredient_2 = $('#ModalForm-ingredient_2').val();
+  var ingredient_3 = $('#ModalForm-ingredient_3').val();
+  var ingredient_4 = $('#ModalForm-ingredient_4').val();
+  var ingredient_5 = $('#ModalForm-ingredient_5').val();
+  var ingredient_6 = $('#ModalForm-ingredient_6').val();
+  var ingredient_7 = $('#ModalForm-ingredient_7').val();
+  var perc1 = $('#valueInput_1').val();
+  var perc2 = $('#valueInput_2').val();
+  var perc3 = $('#valueInput_3').val();
+  var perc4 = $('#valueInput_4').val();
+  var perc5 = $('#valueInput_5').val();
+  var perc6 = $('#valueInput_6').val();
+  var perc7 = $('#valueInput_7').val();
+
+  var data_formula_form = 'user_name=' + user_name + '&user_email=' + user_email + '&user_tel=' + user_tel + '&formula_description=' + formula_description + '&ingredient_1=' + ingredient_1 + '&ingredient_2=' + ingredient_2 + '&ingredient_3=' + ingredient_3 + '&ingredient_4=' + ingredient_4 + '&ingredient_5=' + ingredient_5 + '&ingredient_6=' + ingredient_6 + '&ingredient_7=' + ingredient_7;
+  alert(data_formula_form);
+  //return false;
+          $.ajax({
+            type:'POST',
+            // enctype: 'multipart/form-data',
+            //url: $(this).attr('action'),
+            url: "https://mw-portal.co.za/db/my_whey_formula_ajax/send_my_formula.php", 
+            data:data_formula_form,
+            cache:false,
+            // contentType: false,
+            // processData: false,
+            success:function(res){
+                //alert('finished collecting...');
+                console.log(res);
+                // if(res.indexOf("No results") >= 0){
+                // }
+            },
+            error:function(res){
+                //alert('finished collecting...');
+                console.log(res);
+                // if(res.indexOf("No results") >= 0){
+                // }
+            }
+        });
+
+  return false;
   $('#submit_formula #ModalForm').submit();
   setTimeout(function(){
     $(my_html_elmnt).html('Submit Formula');
   }, 9000);
-});
+
+}); // ------- END SUBMIT THE FORMULA FORM ---------
 
 }); // -------- END document ready ------------
 </script>
