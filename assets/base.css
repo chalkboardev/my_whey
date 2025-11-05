@@ -7296,13 +7296,11 @@ button.shopify-payment-button__button--unbranded {
 .shopify-challenge__button,
 .customer button,
 button.shopify-payment-button__button--unbranded {
-    /* background: linear-gradient(180deg, rgba(254, 89, 0, 1) 0%, rgba(204, 71, 0, 1) 50%, rgba(156, 54, 0, 1) 100%) !important; */
     background: linear-gradient(180deg, rgb(255 134 52), rgb(229 81 1) 50%, rgb(197 69 2) 100%) padding-box, linear-gradient(180deg, rgb(255 134 52), rgb(229 81 1) 50%, rgb(197 69 2) 100%) border-box;
-    /* border: 2px solid #a33921 !important; */
     border: 2px solid #ffffff00 !important;
     font-weight: 600 !important;
     min-height: 52px !important;
-    letter-spacing: 2px !important;
+    letter-spacing: 2px;
     min-width: calc(12rem + var(--buttons-border-width) * 2);
     min-height: calc(4.5rem + var(--buttons-border-width) * 2);
     text-transform: uppercase;
@@ -7311,13 +7309,11 @@ button.shopify-payment-button__button--unbranded {
 }
 
 .password-button {
-    /* background: linear-gradient(180deg, rgba(254, 89, 0, 1) 0%, rgba(204, 71, 0, 1) 50%, rgba(156, 54, 0, 1) 100%) !important; */
     background: linear-gradient(180deg, rgb(255 134 52), rgb(229 81 1) 50%, rgb(197 69 2) 100%) padding-box, linear-gradient(180deg, rgb(255 134 52), rgb(229 81 1) 50%, rgb(197 69 2) 100%) border-box;
-    /* border: 2px solid #a33921 !important; */
     border: 2px solid #ffffff00 !important;
     font-weight: 600 !important;
     min-height: 52px !important;
-    letter-spacing: 2px !important;
+    letter-spacing: 2px;
     min-width: calc(16rem + var(--buttons-border-width) * 2);
     min-height: calc(4.5rem + var(--buttons-border-width) * 2);
     text-transform: uppercase;
@@ -7325,13 +7321,11 @@ button.shopify-payment-button__button--unbranded {
 }
 
 .password-button:hover {
-    /* background: linear-gradient(180deg, rgba(254, 89, 0, 1) 0%, rgba(204, 71, 0, 1) 50%, rgba(156, 54, 0, 1) 100%) !important; */
     background: linear-gradient(180deg, rgb(255 134 52), rgb(229 81 1) 50%, rgb(197 69 2) 100%) padding-box, linear-gradient(180deg, rgb(255 134 52), rgb(229 81 1) 50%, rgb(197 69 2) 100%) border-box;
-    /* border: 2px solid #a33921 !important; */
     border: 2px solid #ffffff00 !important;
     font-weight: 600 !important;
     min-height: 52px !important;
-    letter-spacing: 4px !important;
+    letter-spacing: 4px;
     min-width: calc(16rem + var(--buttons-border-width) * 2);
     min-height: calc(4.5rem + var(--buttons-border-width) * 2);
     text-transform: uppercase;
@@ -7339,9 +7333,7 @@ button.shopify-payment-button__button--unbranded {
 }
 
 .shopify-payment-button__button {
-    /* background: linear-gradient(180deg, rgba(254, 89, 0, 1) 0%, rgba(204, 71, 0, 1) 50%, rgba(156, 54, 0, 1) 100%) !important; */
     background: linear-gradient(180deg, rgb(255 134 52), rgb(229 81 1) 50%, rgb(197 69 2) 100%) padding-box, linear-gradient(180deg, rgb(255 134 52), rgb(229 81 1) 50%, rgb(197 69 2) 100%) border-box;
-    /* border: 2px solid #a33921 !important; */
     border: 2px solid #ffffff00 !important;
     font-weight: 600 !important;
     min-height: 52px !important;
