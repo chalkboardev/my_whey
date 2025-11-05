@@ -766,7 +766,21 @@ body {
       //   console.log('PPPP buttons...');
       // });
 
-          
+      
+      $('#imageBoxInfoBtn1').on('click', function(event) {
+          event.preventDefault();
+          const href = $(this).attr('href');
+          if (href && href.startsWith('#')) {
+            console.log("This link's href starts with a hash:", this);
+            var target = $(this.getAttribute('href'));
+            if (target.length) {
+              $('html, body').stop().animate({
+                scrollTop: target.offset().top - headerHeight
+              }, 1000); // Adjust the scroll speed as desired
+            }
+          }
+      });
+
         }); // end docready
 
       var observer = new MutationObserver(function(mutations) {
