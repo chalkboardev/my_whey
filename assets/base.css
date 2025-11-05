@@ -7325,7 +7325,7 @@ button.shopify-payment-button__button--unbranded {
     border: 2px solid #ffffff00 !important;
     font-weight: 600 !important;
     min-height: 52px !important;
-    letter-spacing: 4px;
+    letter-spacing: 4px !important;
     min-width: calc(16rem + var(--buttons-border-width) * 2);
     min-height: calc(4.5rem + var(--buttons-border-width) * 2);
     text-transform: uppercase;
@@ -7448,7 +7448,7 @@ button.shopify-payment-button__button--unbranded {
 .shopify-challenge__button,
 .customer button {
     font-size: 1.5rem;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.2rem;
     line-height: calc(1 + 0.2 / var(--font-body-scale));
 }
 
