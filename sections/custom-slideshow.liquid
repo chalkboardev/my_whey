@@ -239,11 +239,11 @@ document.addEventListener('DOMContentLoaded',  function() {
         // freeMode: true,
         // centeredSlides: true,
         //autoplay: true,
-         autoplay: {
-          delay: 500,
-          disableOnInteraction: false,
+        autoplay: {
+          delay: 3000, // Delay in milliseconds (3 seconds)
+          disableOnInteraction: false, // Autoplay won't stop after user interaction
         },
-        delay: 500,
+        // delay: 9500,
         direction: 'horizontal',
         lazy: {
           enabled: true,
@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded',  function() {
           loadPrevNext: true,
           loadPrevNextAmount: 1
         },
-
+        disableOnInteraction: false, 
       loop: true,
     
       // If we need pagination
