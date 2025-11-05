@@ -909,7 +909,7 @@ $(".submit_formula_btn").click(function (e){
                 console.log(res);
                 if(res.indexOf("Email successfully sent") >= 0){
                   console.log('Email sent...');
-                  $(my_html_elmnt).html('Submission successful!<br>Please check your inbox');
+                  $(my_html_elmnt).html('Submission successful<br>Please check your inbox');
                   $('#submit_formula #ModalForm')[0].reset(); 
                   setTimeout(function(){
                     $(my_html_elmnt).html('Submit Formula');
