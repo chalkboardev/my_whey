@@ -3956,7 +3956,7 @@ h3 {
     border: 2px solid #ff2f0075 !important;
     text-decoration: none !important;
     transition: all ease 0.25s !important;
-    min-height: 60px !important;
+    min-height: 52px !important;
 }
 
 #submit_formula .field__input:hover {
