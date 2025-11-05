@@ -4375,6 +4375,23 @@ h3 {
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    #notification_toast.toast__overlay {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 6rem;
+        align-items: end;
+        background: rgb(0, 0, 0, 0);
+        transition: opacity 500ms ease-in-out;
+        visibility: hidden;
+        opacity: 0;
+        transition: all ease 0.5s;
+    }
     .tooltip i {
         color: #555555;
         position: relative;
