@@ -7301,7 +7301,23 @@ button.shopify-payment-button__button--unbranded {
     font-weight: 600 !important;
     min-height: 52px !important;
     letter-spacing: 2px !important;
-    min-width: calc(12rem + var(--buttons-border-width) * 2);
+    min-width: calc(16rem + var(--buttons-border-width) * 2);
+    min-height: calc(4.5rem + var(--buttons-border-width) * 2);
+    text-transform: uppercase;
+    border-radius: 50px;
+    transition: all ease 0.25s;
+}
+
+.button,
+.shopify-challenge__button,
+.customer button,
+button.shopify-payment-button__button--unbranded:hover {
+    background: linear-gradient(180deg, rgb(255 134 52), rgb(229 81 1) 50%, rgb(197 69 2) 100%) padding-box, linear-gradient(180deg, rgb(255 134 52), rgb(229 81 1) 50%, rgb(197 69 2) 100%) border-box;
+    border: 2px solid #ffffff00 !important;
+    font-weight: 600 !important;
+    min-height: 52px !important;
+    letter-spacing: 3px !important;
+    min-width: calc(16rem + var(--buttons-border-width) * 2);
     min-height: calc(4.5rem + var(--buttons-border-width) * 2);
     text-transform: uppercase;
     border-radius: 50px;
