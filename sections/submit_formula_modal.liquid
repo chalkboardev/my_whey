@@ -907,18 +907,20 @@ $(".submit_formula_btn").click(function (e){
             success:function(res){
                 //alert('finished collecting...');
                 console.log(res);
-                // if(res.indexOf("No results") >= 0){
-                // }
+                if(res.indexOf("Email successfully sent") >= 0){
+                  console.log('Email sent...');
+                } else {
+                  console.log('Could not send email...');
+                }
             },
             error:function(res){
                 //alert('finished collecting...');
                 console.log(res);
-                // if(res.indexOf("No results") >= 0){
-                // }
+                if(res.indexOf("No results") >= 0){
+                }
             }
         });
 
-  return false;
   $('#submit_formula #ModalForm').submit();
   setTimeout(function(){
     $(my_html_elmnt).html('Submit Formula');
