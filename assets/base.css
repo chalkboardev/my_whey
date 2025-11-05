@@ -4182,6 +4182,7 @@ h3 {
     width: fit-content;
     justify-content: center;
     display: flex;
+    padding: 12px;
     list-style: none;
     border: 1px solid transparent;
     border-radius: var(--badge-corner-radius);
@@ -4193,7 +4194,8 @@ h3 {
     text-align: center;
     background-color: rgb(var(--color-badge-background));
     border-color: rgba(var(--color-badge-border), var(--alpha-badge-border));
-    color: rgb(var(--color-badge-foreground));
+    /* color: rgb(var(--color-badge-foreground)); */
+    color: #fff;
     word-break: break-word;
 }
 
