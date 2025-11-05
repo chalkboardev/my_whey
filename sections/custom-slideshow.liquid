@@ -18,7 +18,7 @@
 
   {%- for block in section.blocks -%}
        <!-- Slides -->
-       <div class="swiper-slide" data-swiper-autoplay="75000">
+       <div class="swiper-slide" data-swiper-autoplay="7000">
   {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
    
   {% if block.type == 'video' %}
@@ -203,8 +203,8 @@
   <div class="swiper-pagination"></div>
 
   <!-- If we need navigation buttons --> 
-  {% comment %} <div class="swiper-button-prev"> </div>
-  <div class="swiper-button-next"> </div> {% endcomment %}
+  {% comment %} {% endcomment %}<div class="swiper-button-prev"> </div>
+  <div class="swiper-button-next"> </div> 
 
   <!-- If we need scrollbar -->
   {% comment %} <div class="swiper-scrollbar"></div> {% endcomment %}
@@ -238,12 +238,9 @@ document.addEventListener('DOMContentLoaded',  function() {
         // slidesOffsetAfter:0,
         // freeMode: true,
         // centeredSlides: true,
-        //autoplay: true,
-        autoplay: {
-          delay: 3000, // Delay in milliseconds (3 seconds)
-          disableOnInteraction: false, // Autoplay won't stop after user interaction
-        },
-        // delay: 9500,
+        // control the autoplay timimng on the actual slide element above
+        autoplay: true,
+        delay: 9500,
         direction: 'horizontal',
         lazy: {
           enabled: true,
@@ -252,7 +249,7 @@ document.addEventListener('DOMContentLoaded',  function() {
           loadPrevNext: true,
           loadPrevNextAmount: 1
         },
-        disableOnInteraction: false, 
+
       loop: true,
     
       // If we need pagination
