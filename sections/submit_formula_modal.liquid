@@ -810,6 +810,25 @@ $(".submit_formula_btn").click(function (e){
   e.preventDefault();
   var my_html_elmnt = $(this);
   $(my_html_elmnt).html('Submitting <img style="margin-top:-2px;filter:brightness(1.3);" width="16" src="https://cdn.shopify.com/s/files/1/0713/8685/7724/files/loader.gif?v=1743590298" />');
+  // ----------- Check Name, Tel, Mail -----------
+  var user_name = $('#ModalForm-name').val();
+  var user_email = $('#ModalForm-email').val();
+  var user_tel = $('#ModalForm-phone').val();
+  //alert("Name: " + user_name);
+  if (user_name == ""){
+    $(my_html_elmnt).html('Please enter your name');
+    setTimeout(function(){
+      $(my_html_elmnt).html('Submit Formula');
+    }, 5000);
+    return false;
+  }
+  if (user_email == ""){
+    $(my_html_elmnt).html('Please enter your email');
+    setTimeout(function(){
+      $(my_html_elmnt).html('Submit Formula');
+    }, 5000);
+    return false;
+  }
   var perc1 = $('#valueInput_1').val();
   var perc2 = $('#valueInput_2').val();
   var perc3 = $('#valueInput_3').val();
@@ -817,29 +836,48 @@ $(".submit_formula_btn").click(function (e){
   var perc5 = $('#valueInput_5').val();
   var perc6 = $('#valueInput_6').val();
   var perc7 = $('#valueInput_7').val();
+
+  var populatedFields = [];
+  $('#valueInput_1, #valueInput_2, #valueInput_3, #valueInput_4, #valueInput_5, #valueInput_6, #valueInput_7').each(function() {
+      var inputValue = $.trim($(this).val()); // Get and trim the value
+      if (inputValue != '') {
+        populatedFields.push($(this).attr('id')); // Add the ID of the empty field
+      }
+  });
+  //alert(populatedFields.length);
+  if (populatedFields.length < 2) {
+      // alert('The following fields are empty: ' + emptyFields.join(', '));
+      //alert('Formula requires at least two ingredients');
+      $(my_html_elmnt).html('Formula requires at least two ingredients <br> Current Ingredients: ' + populatedFields.length);
+      setTimeout(function(){
+        $(my_html_elmnt).html('Submit Formula');
+      }, 7000);
+  } else {
+     // alert('All specified fields are filled.');
+  }
+
   var total_perc = +perc1 + +perc2 + +perc3 + +perc4 + +perc5 + +perc6 + +perc7;
   //alert('Percent Value Total: ' + total_perc );
   if(total_perc > 100){
     $(my_html_elmnt).html('Ingedients can not exceed 100% <br>Currently: ' + total_perc + '%');
     setTimeout(function(){
       $(my_html_elmnt).html('Submit Formula');
-    }, 7000);
+    }, 5000);
     return false;
   } else if(total_perc < 100){
     $(my_html_elmnt).html('Ingedients must total 100% <br> Currently: ' + total_perc + '%');
     setTimeout(function(){
       $(my_html_elmnt).html('Submit Formula');
-    }, 7000);
+    }, 5000);
     return false;
   } else {
   
   }
   console.log('submitting...');
-
   $('#submit_formula #ModalForm').submit();
   setTimeout(function(){
     $(my_html_elmnt).html('Submit Formula');
-  }, 7000);
+  }, 9000);
 });
 
 }); // -------- END document ready ------------

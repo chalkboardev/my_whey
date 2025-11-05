@@ -3937,18 +3937,18 @@ h3 {
     border: 2px solid #ff2f0075 !important;
     font-weight: 600 !important;
     letter-spacing: 1px !important;
-    padding: 9px 9px 9px 9px;
+    padding: 12px 9px 12px 9px !important;
     text-transform: uppercase;
     border-radius: 50px !important;
     text-decoration: none !important;
     transition: all ease 0.25s !important;
-    min-height: 60px !important;
+    min-height: 52px !important;
 }
 
 .submit_formula_btn:hover {
     min-width: 280px;
     letter-spacing: 1px !important;
-    padding: 9px 9px 9px 9px;
+    /* padding: 9px 9px 9px 9px; */
     /* transform: scale(1.05); */
     color: #fff;
     font-weight: 600 !important;
