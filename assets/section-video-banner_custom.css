@@ -410,6 +410,8 @@
     border-radius: 50%;
     background: #ffffff4a;
     top: var(--swiper-navigation-top-offset, 48%) !important;
+    /* width: var(--swiper-navigation-size) !important;
+    height: var(--swiper-navigation-size); */
     width: 30px !important;
     height: 30px !important;
     right: 4rem !important;
