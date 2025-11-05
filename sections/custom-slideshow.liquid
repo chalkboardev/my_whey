@@ -238,8 +238,12 @@ document.addEventListener('DOMContentLoaded',  function() {
         // slidesOffsetAfter:0,
         // freeMode: true,
         // centeredSlides: true,
-        autoplay: true,
-        delay: 95000,
+        //autoplay: true,
+         autoplay: {
+          delay: 500,
+          disableOnInteraction: false,
+        },
+        delay: 500,
         direction: 'horizontal',
         lazy: {
           enabled: true,
