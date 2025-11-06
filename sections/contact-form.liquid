@@ -24,23 +24,21 @@
       <h2 class="visually-hidden">{{ 'templates.contact.form.title' | t }}</h2>
     {%- endif -%}
 
-    {%- if section.settings.heading != blank -%}
+    {%- if section.settings.mw_rich_text_content != blank -%}
+      <div class="mw_blog_slide slideshow__slide slider__slide" id="Slide-template--19937707294972__featured_blog_8NfNCg-1" role="group" aria-roledescription="Announcement" aria-label="1 of 3" tabindex="-1">
+        <div class="" role="region" aria-label="Announcement">
+      
+          <div class="meta_blog_blurb metafield-rich_text_field page-width  scroll-trigger animate--slide-in" id="meta_blog_blurb" data-cascade="">
+            {{ section.settings.mw_rich_text_content  }}
+          </div>
 
+      </div>
+    </div>
   {%- else -%}
   
   {%- endif -%}
 
-    {% comment %} <div class="mw_blog_slide slideshow__slide slider__slide" id="Slide-template--19937707294972__featured_blog_8NfNCg-1" role="group" aria-roledescription="Announcement" aria-label="1 of 3" tabindex="-1">
-        <div class="" role="region" aria-label="Announcement">
-      
-          <div class="meta_blog_blurb metafield-rich_text_field page-width  scroll-trigger animate--slide-in" id="meta_blog_blurb" data-cascade="">
-            
-              <p>Our community blog is here to help <em>you</em> make confident, <strong>informed choices </strong>about your <strong>wellbeing</strong> — bringing clarity to nutrition, one post at a time. 
-            
-          </p></div>
-
-      </div>
-    </div> {% endcomment %}
+    {% comment %}  {% endcomment %}
 
     {%- liquid
       assign contact_form_class = 'isolate'
@@ -203,6 +201,11 @@
       ],
       "default": "h1",
       "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "richtext",
+      "id": "mw_rich_text_content",
+      "label": "Section Content"
     },
     {
       "type": "color_scheme",
