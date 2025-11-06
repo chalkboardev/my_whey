@@ -17,18 +17,18 @@
 <div  style="background:{{ section.settings.page_bg }}" class="color-{{ section.settings.color_scheme }} gradient">
   <div class="contact page-width page-width--narrow section-{{ section.id }}-padding">
     {%- if section.settings.heading != blank -%}
-      <h2 class="title title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      <h2 style="margin-bottom:20px" class="title title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         {{ section.settings.heading }}
       </h2>
     {%- else -%}
-      <h2 class="visually-hidden">{{ 'templates.contact.form.title' | t }}</h2>
+      <h2 style="margin-bottom:20px" class="visually-hidden">{{ 'templates.contact.form.title' | t }}</h2>
     {%- endif -%}
 
     {%- if section.settings.mw_rich_text_content != blank -%}
-      <div class="mw_blog_slide slideshow__slide slider__slide" id="Slide-template--19937707294972__featured_blog_8NfNCg-1" role="group" aria-roledescription="Announcement" aria-label="1 of 3" tabindex="-1">
+      <div class="mw_contact_block slideshow__slide slider__slide" id="Slide-template--19937707294972__featured_blog_8NfNCg-1" role="group" aria-roledescription="Announcement" aria-label="1 of 3" tabindex="-1">
         <div class="" role="region" aria-label="Announcement">
       
-          <div class="meta_blog_blurb metafield-rich_text_field page-width  scroll-trigger animate--slide-in" id="meta_blog_blurb" data-cascade="">
+          <div class="contact_text metafield-rich_text_field page-width  scroll-trigger animate--slide-in" id="contact_text" data-cascade="">
             {{ section.settings.mw_rich_text_content  }}
           </div>
 
