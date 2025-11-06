@@ -13,7 +13,7 @@
       "type": "pop_up_modal",
       "name": "Pop-up Modal",
       "settings": {
-        "modal_image": "shopify://shop_images/mw_bulk_wallpaper3b.jpg",
+        "modal_image": "shopify://shop_images/mw_moda_2.jpg",
         "background_img_position": 50,
         "trigger": "subscribe_me",
         "modal_title": "Subscribe & Save!",
