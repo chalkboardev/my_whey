@@ -4373,6 +4373,11 @@ h3 {
     border-color: #555 transparent transparent transparent;
 }
 
+#ContactForm .field__input,
+.customer .field input {
+    border-radius: 25px !important;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 

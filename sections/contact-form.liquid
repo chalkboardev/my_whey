@@ -14,7 +14,7 @@
   }
 {%- endstyle -%}
 
-<div class="color-{{ section.settings.color_scheme }} gradient">
+<div {%- if section.settings.page_bg != blank -%} style="background-color: #ececec;"  {%- endif -%} class="color-{{ section.settings.color_scheme }} gradient">
   <div class="contact page-width page-width--narrow section-{{ section.id }}-padding">
     {%- if section.settings.heading != blank -%}
       <h2 class="title title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
@@ -23,6 +23,25 @@
     {%- else -%}
       <h2 class="visually-hidden">{{ 'templates.contact.form.title' | t }}</h2>
     {%- endif -%}
+
+    {%- if section.settings.heading != blank -%}
+
+  {%- else -%}
+  
+  {%- endif -%}
+
+    {% comment %} <div class="mw_blog_slide slideshow__slide slider__slide" id="Slide-template--19937707294972__featured_blog_8NfNCg-1" role="group" aria-roledescription="Announcement" aria-label="1 of 3" tabindex="-1">
+        <div class="" role="region" aria-label="Announcement">
+      
+          <div class="meta_blog_blurb metafield-rich_text_field page-width  scroll-trigger animate--slide-in" id="meta_blog_blurb" data-cascade="">
+            
+              <p>Our community blog is here to help <em>you</em> make confident, <strong>informed choices </strong>about your <strong>wellbeing</strong> — bringing clarity to nutrition, one post at a time. 
+            
+          </p></div>
+
+      </div>
+    </div> {% endcomment %}
+
     {%- liquid
       assign contact_form_class = 'isolate'
       if settings.animations_reveal_on_scroll
@@ -145,6 +164,12 @@
     "groups": ["header", "footer"]
   },
   "settings": [
+    {
+    "type": "color",
+    "id": "page_bg",
+    "label": "Background Color",
+    "default": "#ffffff"
+    },
     {
       "type": "inline_richtext",
       "id": "heading",
