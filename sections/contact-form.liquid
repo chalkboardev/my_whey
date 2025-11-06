@@ -13,8 +13,8 @@
     }
   }
 {%- endstyle -%}
-
-<div {%- if section.settings.page_bg != blank -%} style="background-color: #ececec;"  {%- endif -%} class="color-{{ section.settings.color_scheme }} gradient">
+{{ section.settings.page_bg }}
+<div  style="background:{{ section.settings.page_bg }}" class="color-{{ section.settings.color_scheme }} gradient">
   <div class="contact page-width page-width--narrow section-{{ section.id }}-padding">
     {%- if section.settings.heading != blank -%}
       <h2 class="title title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
@@ -168,7 +168,7 @@
     "type": "color",
     "id": "page_bg",
     "label": "Background Color",
-    "default": "#ffffff"
+    "default": "#ececec"
     },
     {
       "type": "inline_richtext",

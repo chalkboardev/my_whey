@@ -22,6 +22,7 @@
     "form": {
       "type": "contact-form",
       "settings": {
+        "page_bg": "#ececec",
         "heading": "",
         "heading_size": "h1",
         "color_scheme": "scheme-1",
