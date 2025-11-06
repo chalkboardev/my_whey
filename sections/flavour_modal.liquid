@@ -205,7 +205,7 @@
                 </div> {% endcomment %}
         
                 <div class="footer_flavour_modal">
-                  <p class="desktop_flav_count">{{ section.settings.collection.all_products_count }} Delicious Flavours!</p>
+                  <p class="desktop_flav_count"> <span class="desktop_flav_count_num">{{ section.settings.collection.all_products_count }} </span> Delicious Flavours!</p>
                   <div class="mobile_flav_count slider-counter caption">
                     {% comment %} <div class="pagination-dots">
                        {%- for product in section.settings.collection.products limit: section.settings.products_to_show  -%}
@@ -215,7 +215,7 @@
                      
                      <p>
                       {% comment %} {{ products_to_display }} Delicious Flavours! {% endcomment %}
-                      {{ section.settings.collection.all_products_count }} Delicious Flavours!
+                     <span class="mobile_flav_count_num"> {{ section.settings.collection.all_products_count }}</span> Delicious Flavours!
                       {% comment %} <span class="slider-counter--current">1</span>
                       <span aria-hidden="true"> / </span>
                       <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
@@ -801,6 +801,14 @@
     .mobile_flav_count {
       display:block !important; 
     }
+    .mobile_flav_count_num {
+        background: #ff6700;
+        text-shadow: 0px 0px 3px #505050;
+        display: inline-block;
+        width: 32px !important;
+        height: 32px !important;
+        border-radius: 50%;
+    }
     .flavour_popup__close {
         position: absolute;
         z-index: 9;
@@ -890,6 +898,14 @@
       font-weight: 700 !important;
       margin-top: -0.3em !important;
     }
+    .desktop_flav_count_num {
+        background: #ff6700;
+        text-shadow: 0px 0px 3px #505050;
+        display: inline-block;
+        width: 40px !important;
+        height: 40px !important;
+        border-radius: 50%;
+    }
     .mobile_flav_count {
       display:none !important; 
     }
@@ -938,7 +954,7 @@
       border-radius: 50%;
       position: absolute;
       left: 0;
-      top: 93%;
+      top: 92.2%;
       z-index: 999999999999;
     }
     .flavour_popup__box .slider-button--prev .icon {
@@ -951,7 +967,7 @@
       border-radius: 50%;
       position: absolute;
       right: 0;
-      top: 93%;
+      top: 92.2%;
       z-index: 999999999999;
     }
     .flavour_popup__box .slider-button--next .icon {
