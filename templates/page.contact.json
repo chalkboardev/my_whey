@@ -15,8 +15,7 @@
         "header_image": "shopify://shop_images/creatina_para_bariatricos.jpg",
         "background_height_position": 70,
         "padding_top": 72,
-        "padding_bottom": 40,
-        "ctct_bg_height_position": 0
+        "padding_bottom": 40
       }
     },
     "form": {
