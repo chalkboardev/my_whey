@@ -125,10 +125,7 @@
                 <li
                   id="Slide-{{ section.id }}-{{ forloop.index }}"
                   class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                  {% if settings.animations_reveal_on_scroll %}
-                    data-cascade
-                    style="--animation-order: {{ forloop.index }};"
-                  {% endif %}
+               
                 >
                   {% render 'card-product',
                     card_product: product,
@@ -692,7 +689,7 @@
   }
   .flavour_modal__overlay {
     position: fixed;
-    backdrop-filter: blur(4px);
+    /* backdrop-filter: blur(4px); */
     top: 0;
     bottom: 0;
     left: 0;
@@ -889,7 +886,7 @@
 @media screen and (min-width: 990px) {
     .desktop_flav_count {
       display:block !important; 
-      font-size: 2em !important;
+      font-size: calc(var(--font-heading-scale) * 3rem) !important;
       font-weight: 700 !important;
       margin-top: -0.3em !important;
     }
@@ -973,7 +970,7 @@
     }
     .flavour_modal__overlay {
       position: fixed;
-      backdrop-filter: blur(4px);
+      /* backdrop-filter: blur(4px); */
       top: 0;
       bottom: 0;
       left: 0;
