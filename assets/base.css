@@ -3377,6 +3377,10 @@ quick-add-modal .product__title>a:hover {
     background: #ff6700;
     display: inline-flex;
     width: auto;
+    justify-content: center;
+    text-shadow: 0 0 2px #333;
+    text-align: center;
+    min-width: 120px;
     letter-spacing: 5px;
     font-weight: 600;
     left: 3rem;
