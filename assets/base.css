@@ -2630,13 +2630,24 @@ body .menu-drawer__close-button {
     z-index: 0;
 }
 
+
+/* ------ START HIDE SUBSCRIPTION BLOCKS ------- */
+
 .shopify_subscriptions_app_block {
+    display: none !important;
     /* display: flex;
   flex-direction: row-reverse;
   margin-top: -42%;
   position: absolute;
   right:0; */
 }
+
+.loading_subscription {
+    display: none !important;
+}
+
+
+/* ------ END HIDE SUBSCRIPTION BLOCKS ------- */
 
 .mw_variants_select {
     /* width: 60%; */
