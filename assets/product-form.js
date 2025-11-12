@@ -248,7 +248,7 @@ if (!customElements.get('product-form')) {
                 addClassToExistingElements('mw_corner_sale_cart_drawer', 'active_sale');
                 // ----------------------- END Implement check for sales corners usage: -----------------------
             }, 2500);
-            
+
             // async function checkIfProductIsInCart(productIdToCheck) {
             async function checkIfProductIsInCart() {
               try {
@@ -310,6 +310,24 @@ if (!customElements.get('product-form')) {
                                   main_flavour_modal.style.zIndex = '99999';
                                   main_flavour_modal.style.opacity = '1';
                                   main_flavour_modal.style.display = 'flex';
+                                  // ----------------------- START Implement check for sales corners usage: -----------------------
+                                  function addClassToExistingElements(targetClass, classToAdd) {
+                                      // Get all elements with the targetClass
+                                      const elements = document.getElementsByClassName(targetClass);
+
+                                      // Check if any elements with the targetClass exist
+                                      if (elements.length > 0) {
+                                        // Iterate over the collection and add the new class to each element
+                                        for (let i = 0; i < elements.length; i++) {
+                                          elements[i].classList.add(classToAdd);
+                                        }
+                                        console.log(`Class '${classToAdd}' added to all elements with class '${targetClass}'.`);
+                                      } else {
+                                        console.log(`No elements found with class '${targetClass}'.`);
+                                      }
+                                  }
+                                  addClassToExistingElements('mw_corner_sale_cart_drawer', 'active_sale');
+                                  // ----------------------- END Implement check for sales corners usage: -----------------------
                                 }
                                 var product_flavour_modal = document.getElementById('flavour_modal_product');
                                 // Set CSS properties directly
