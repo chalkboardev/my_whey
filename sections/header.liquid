@@ -1299,7 +1299,7 @@
     
       
       <span>
-        <a href="/collections/hot-specials" class="sign_in_span small-hide medium-hide header__menu-item list-menu__item link link--text focus-inset">
+        <a href="/collections/hot-specials" class="small-hide medium-hide header__menu-item list-menu__item link link--text focus-inset">
           <span>
             HOT SPECIALS
           </span> 
@@ -1318,7 +1318,7 @@
     </span>
       {%- else -%}
       <span>
-      <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class=" small-hide medium-hide header__menu-item list-menu__item link link--text focus-inset">
+      <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="sign_in_span small-hide medium-hide header__menu-item list-menu__item link link--text focus-inset">
         <span>
         {%- liquid
         echo 'customer.log_in' | t | upcase
