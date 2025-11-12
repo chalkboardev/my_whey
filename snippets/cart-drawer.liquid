@@ -202,9 +202,11 @@
                             </div>
                           {%- else -%}
 
-                            {% comment %} <div class="product-option">
-                                                                                                                                                                                                                                                                              {{ item.original_price | money }}
-                                                                                                                                                                                                                                                            </div> {% endcomment %}
+                            {% comment %} 
+                            <div class="product-option">
+                            {{ item.original_price | money }}
+                            </div> 
+                            {% endcomment %}
 
                             {% comment %} ------------ END SHOW DISCOUNT NORMAL PRICE IF ON **DISCOUNT** ------------ {% endcomment %}
 
@@ -222,13 +224,10 @@
 
                               {{ item.original_price | money }}
 
-                            {% comment %} {%- if item.product.has_only_default_variant == false -%}
-                                                                                                                                                                                                                                                                                  <span style="padding: 0 4px 0 0;">
-                                                                                                                                                                                                                                                                                    |
-                                                                                                                                                                                                                                                                                  </span>
-                                                                                                                                                                                                                                                                                  {%- else -%}
-                                                                                                                                                                                                                                                                                  | {{ item.variant.weight }}g
-                                                                                                                                                                                                                                                                {% endif %} {% endcomment %}
+                        {% comment %} 
+                        {%- if item.product.has_only_default_variant == false -%} 
+                        {% endif %} 
+                        {% endcomment %}
 
                             </div>
 
@@ -279,15 +278,13 @@
 
 
                           {% comment %} {% if item.product.compare_at_price_max > 0 %}
-                                                                                                                                                                                                                                                            <span class="cart-item__old-price">
-                                                                                                                                                                                                                                                              <span class="sale_pill">On Sale </span> 
-                                                                                                                                                                                                                                                            </span>
-                                                                                                                                                                                                                                            {% endif %} {% endcomment %}
-
-
+                          <span class="cart-item__old-price">
+                          <span class="sale_pill">On Sale </span> 
+                          </span>
+                          {% endif %} {% endcomment %}
                           {% comment %} {%- if item.product.has_only_default_variant == false or item.properties.size != 0 or item.selling_plan_allocation != null -%}
-                                                                                                                                                                                                                                                              <p style="font-size:12px;" class="product-option">{{ item.selling_plan_allocation.selling_plan.name | replace: ',', ' | ' }}</p>
-                                                                                                                                                                                                                                          {%- endif -%} {% endcomment %}
+                          <p style="font-size:12px;" class="product-option">{{ item.selling_plan_allocation.selling_plan.name | replace: ',', ' | ' }}</p>
+                          {%- endif -%} {% endcomment %}
 
                           <ul
                             class="discounts list-unstyled"
@@ -304,24 +301,31 @@
                                     BUY 4+ |
                                   {%- endif -%}
                                 </span>
-                                <span class="save_it">
-                                  SAVE {{ discount.discount_application.value }}%
+                                <span class="save_it"> 
+                                  {%- assign the_amount_off = discount.discount_application.value -%}
+                                  {%- assign the_original_tally = item.original_line_price | divided_by: 100.00 -%}
+                                  {% assign percentage_saved = the_amount_off | divided_by: the_original_tally | times: 100.00  %}
+                                  SAVE {{ percentage_saved }}%  
+                                  {% comment %} {{ the_original_tally }} | {{ percentage_saved }} {% endcomment %}
+                                  {% comment %} SAVE {{ discount.discount_application.value }}% {% endcomment %}
                                 </span>
-                              {% comment %} TOTAL SAVED: {{ discount.discount_application.total_allocated_amount | money }} <br> {% endcomment %}
-                              {% comment %} TARGET SELECTION: {{ discount.discount_application.target_selection }} <br> {% endcomment %}
-                              {% comment %} TARGET TYPE: {{ discount.discount_application.target_type }} <br> {% endcomment %}
-                              {% comment %} VALUE TYPE: {{ discount.discount_application.value_type }} <br> {% endcomment %}
+                           
                               </li>
-
+                              {% comment %} <br> PANDA PLAN TITLE: {{ discount.discount_application.title }}
+                              <br> TOTAL SAVED: {{ discount.discount_application.total_allocated_amount | money }} 
+                              <br> TARGET SELECTION: {{ discount.discount_application.target_selection }} 
+                              <br> TARGET TYPE: {{ discount.discount_application.target_type }}
+                              <br>DISCOUNT TYPE: {{ discount.discount_application.value_type }} <br> {% endcomment %}
                             {% else %}
-                              {% comment %} {% if item.product.compare_at_price_max > 0 %}
-                                                                                                                                                                                                                                                                                                <ul class="discounts list-unstyled" role="list" aria-label="Discount">
-                                                                                                                                                                                                                                                                                                  <li class="discounts__discount">
-                                                                                                                                                                                                                                                                                                      {{- 'icon-discount.svg' | inline_asset_content -}}
-                                                                                                                                                                                                                                                                                                      <span id="buy_x" class="buy_x"> SALE </span>
-                                                                                                                                                                                                                                                                                                  </li>
-                                                                                                                                                                                                                                                                                                </ul>
-                                                                                                                                                                                                                                                                              {% endif %}  {% endcomment %}
+                            {% comment %} {% if item.product.compare_at_price_max > 0 %}
+                              <ul class="discounts list-unstyled" role="list" aria-label="Discount">
+                              <li class="discounts__discount">
+                              {{- 'icon-discount.svg' | inline_asset_content -}}
+                              <span id="buy_x" class="buy_x"> SALE </span>
+                              </li>
+                              </ul>
+                              {% endif %}  
+                            {% endcomment %}
                             {%- endfor -%}
                           </ul>
                         </td>
