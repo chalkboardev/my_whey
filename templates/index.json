@@ -70,7 +70,7 @@
             "mobile_x_position": 52,
             "desktop_content_position": "header-middle-left",
             "title": "Sale NOW ON!",
-            "text": "<p>- BUNDLE & SAVE -</p><p>BUY 2 AND <strong>GET 5% OFF!</strong></p><p>BUY 3 AND <strong>GET 10% OFF!</strong></p><p>BUY 4+ AND <strong>GET 15% OFF!</strong></p>",
+            "text": "<h3><strong>- BUNDLE & SAVE -</strong></h3><p>BUY 2 AND <strong>GET 5% OFF!</strong></p><p>BUY 3 AND <strong>GET 10% OFF!</strong></p><p>BUY 4+ AND <strong>GET 15% OFF!</strong></p>",
             "color_text": "#ffffff",
             "img_button_1_label": "",
             "img_button_1_link": "",
