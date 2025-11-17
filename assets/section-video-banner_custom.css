@@ -535,7 +535,7 @@ h4 {
     }
     .videoBackground .mobile_header_adjust {
         position: relative;
-        margin-top: -6rem;
+        margin-top: -12rem;
         display: block;
     }
     .videoBackground .videoBoxInfo,
