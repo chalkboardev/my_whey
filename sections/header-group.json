@@ -34,12 +34,20 @@
             "text": "BUNDLE & SAVE UP TO 15%",
             "link": ""
           }
+        },
+        "announcement_dVfHyy": {
+          "type": "announcement",
+          "settings": {
+            "text": "QUALITY. PURITY.",
+            "link": ""
+          }
         }
       },
       "block_order": [
         "announcement-bar-0",
         "announcement_pNF8Xg",
-        "announcement_hRTdhd"
+        "announcement_hRTdhd",
+        "announcement_dVfHyy"
       ],
       "settings": {
         "color_scheme": "scheme-5",
