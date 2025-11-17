@@ -475,13 +475,17 @@
 .videoBackground h3 {
     font-size: 2.5rem;
     color: #fff;
-    margin: 1rem 0 0 0;
+    margin: 0.3rem 0 0 0;
 }
 
 .videoBackground .videoBoxInfoTitle,
 .videoBackground h3:first-of-type {
     text-decoration: underline #ff6700;
     text-underline-offset: 6px;
+    animation-name: flipInX;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 .videoBackground .videoBoxInfoTitle,
@@ -579,7 +583,7 @@ h4 {
         font-size: 17px;
         line-height: 28px;
         text-shadow: 0 0 3px #4b4b4b;
-        padding: 0 0 0 4px;
+        padding: 0 0 0 0;
         margin: 1rem 0 1rem 0;
     }
     .banner {
