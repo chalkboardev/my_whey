@@ -493,22 +493,26 @@
         background-position: center;
         background-repeat: no-repeat;
         position: relative;
-        min-height: calc(100vh - 102px);
+        /* min-height: calc(100vh - 70px); */
         /* min-height: 100vh; */
         height: 100%;
     }
+    .videoBackground .mobile_header_adjust {
+        position: relative;
+        margin-top: -6rem;
+        display: block;
+    }
     .videoBackground .videoBoxInfo,
     .videoBackground .imageBoxInfo {
-        margin: -6rem auto 0 auto !important;
-        padding: 0 40px 6rem 20px;
+        margin: 0rem auto 0 auto !important;
+        padding: 0 40px 0rem 20px;
         align-items: center;
         position: relative;
         display: flex;
         justify-content: flex-start;
         flex-direction: column;
         z-index: 2;
-        /* height: 100dvh; */
-        height: 120%;
+        height: 100%;
         background: #00000070;
         /* backdrop-filter: blur(2px); */
     }
