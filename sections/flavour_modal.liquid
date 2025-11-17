@@ -217,9 +217,9 @@
                        {%- endfor -%}
                      </div>  {% endcomment %}
                      
-                     <p>
+                     <p class="mobile_flav_count_num">
                       {% comment %} {{ products_to_display }} Delicious Flavours! {% endcomment %}
-                     <span class="mobile_flav_count_num"> {{ section.settings.collection.all_products_count }}</span> Delicious Flavours!
+                     <span> {{ section.settings.collection.all_products_count }}</span> Delicious Flavours!
                       {% comment %} <span class="slider-counter--current">1</span>
                       <span aria-hidden="true"> / </span>
                       <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
@@ -805,11 +805,12 @@
     }
     .mobile_flav_count_num {
         background: #3f3f3f;
-        text-shadow: 0px 0px 3px #505050;
+        /* text-shadow: 0px 0px 3px #505050;
         display: inline-block;
         width: 32px !important;
-        height: 32px !important;
-        border-radius: 50%;
+        height: 32px !important; */
+        border-radius: 50px;
+        line-height:2;
     }
     .flavour_popup__close {
         position: absolute;
