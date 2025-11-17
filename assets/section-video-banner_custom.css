@@ -263,6 +263,9 @@
     z-index: 2;
     margin: auto;
     height: 100dvh;
+    background: #00000070;
+    width: 100vw;
+    padding: 0 8rem 0rem 8rem;
     text-shadow: 0px 0px 4px #00000099;
 }
 
@@ -395,7 +398,7 @@
     align-content: flex-start;
     justify-content: flex-end;
     flex-direction: column;
-    padding: 0px 7rem 0px;
+    padding: 0px 0rem 0px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
