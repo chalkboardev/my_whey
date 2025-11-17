@@ -610,6 +610,14 @@ setTimeout(function(){
                                 var use_quantity = 4;
                             }
 
+                            if(single_item_price == ""){
+                              // var findme = $(this).find('.money').eq(0).html();
+                              single_item_price = $('.pb-6b5d:visible').eq(0).find('.money').eq(0).html();
+                              single_item_price = single_item_price.substring(single_item_price.indexOf(";") + 1);
+                              // console.log("FINDEME: " + findme);
+                              console.log("FIND_FIRST: " + single_item_price );
+                            }
+
                             if(use_quantity == 4){
                                   //console.log('clicked on last block...dont clear');
                             } else {
@@ -707,9 +715,12 @@ setTimeout(function(){
                                                     $('.product-form__error-message').html('');
                                                     $('.product-form__error-message-wrapper').attr("hidden", "");
                                                   }
+                                                  // single_item_price = $(".pb-1aad .money:first").html();
                                                   var update_block_total = newQuant*single_item_price;
+                                                  console.log("newQuant: " + newQuant);
+                                                  console.log("single_item_price: " + single_item_price);
                                                   var update_block_total_discounted = update_block_total - ((twoCharsBefore / 100) * update_block_total);
-                                                  console.log("New Total: " + update_block_total);
+                                                  console.log("ZNew Total: " + update_block_total);
                                                   the_discounted_price_element.html("R " + update_block_total_discounted.toFixed(2));
                                                   the_strikethrough_price_element.html("R " + update_block_total.toFixed(2));
                                                   // Perform actions based on the content change
@@ -1680,6 +1691,14 @@ setTimeout(function(){
                                 var use_quantity = 4;
                             }
 
+                            if(single_item_price == ""){
+                              // var findme = $(this).find('.money').eq(0).html();
+                              single_item_price = $('.pb-6b5d:visible').eq(0).find('.money').eq(0).html();
+                              single_item_price = single_item_price.substring(single_item_price.indexOf(";") + 1);
+                              // console.log("FINDEME: " + findme);
+                              console.log("FIND_FIRST: " + single_item_price );
+                            }
+
                             if(use_quantity == 4){
                                   //console.log('clicked on last block...dont clear');
                             } else {
@@ -1779,7 +1798,7 @@ setTimeout(function(){
                                                   }
                                                   var update_block_total = newQuant*single_item_price;
                                                   var update_block_total_discounted = update_block_total - ((twoCharsBefore / 100) * update_block_total);
-                                                  console.log("New Total: " + update_block_total);
+                                                  console.log("XNew Total: " + update_block_total);
                                                   the_discounted_price_element.html("R " + update_block_total_discounted.toFixed(2));
                                                   the_strikethrough_price_element.html("R " + update_block_total.toFixed(2));
                                                   // Perform actions based on the content change
