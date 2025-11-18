@@ -180,7 +180,7 @@
         "text_cbt7eN": {
           "type": "text",
           "settings": {
-            "text": "<p>BUY <strong>2</strong> AND <strong>GET 5% OFF!</strong></p><p>BUY <strong>3</strong> AND <strong>GET 10% OFF!</strong></p><p>BUY <strong>4</strong> AND <strong>GET 15% OFF!</strong></p><p>*Sale on <strong>all</strong> products!</p>",
+            "text": "<p>BUY <strong>2</strong> AND <strong>GET 5% OFF!</strong></p><p>BUY <strong>3</strong> AND <strong>GET 10% OFF!</strong></p><p>BUY <strong>4</strong> AND <strong>GET 15% OFF!</strong></p><p>*Sale on <strong>ALL</strong> products!</p>",
             "text_style": "body"
           }
         },
