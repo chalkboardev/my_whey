@@ -167,6 +167,59 @@
         "show_text_below": false
       }
     },
+    "image_with_text_RgMmqt": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_WenxJx": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Sale Now On!</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_cbt7eN": {
+          "type": "text",
+          "settings": {
+            "text": "<p>BUY <strong>2</strong> AND <strong>GET 5% OFF!</strong></p><p>BUY <strong>3</strong> AND <strong>GET 10% OFF!</strong></p><p>BUY <strong>4</strong> AND <strong>GET 15% OFF!</strong></p><p>*Sale on <strong>all</strong> products!</p>",
+            "text_style": "body"
+          }
+        },
+        "button_GYWiN4": {
+          "type": "button",
+          "settings": {
+            "button_label": "ALL PRODUCTS",
+            "button_link": "shopify://collections/all",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_WenxJx",
+        "text_cbt7eN",
+        "button_GYWiN4"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/mw_bulk_wallpaper_light_sq.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "scheme-5",
+        "image_behavior": "ambient",
+        "full_width_mobile": false,
+        "mobile_content_alignment": "left",
+        "style_text_container": false,
+        "text_div_bg_color": "#f6f3eb",
+        "padding_top": 36,
+        "padding_bottom": 28,
+        "mobile_padding_top": 20,
+        "mobile_padding_bottom": 20
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -636,6 +689,7 @@
     "custom_slideshow_wMQLCP",
     "video_banner_687P9e",
     "image_banner",
+    "image_with_text_RgMmqt",
     "featured_collection",
     "custom_marquee_nigaHz",
     "multicolumn_new_9dH7mP",
