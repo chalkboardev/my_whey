@@ -303,7 +303,7 @@ if (!customElements.get('product-info')) {
           }
         });
       }
-// -------------- END CHANGE THE META INFO / IMAGE WHEN VARINAT PTION CHANGED --------------
+// -------------- END CHANGE THE META INFO / IMAGE WHEN VARIANT OPTION CHANGED --------------
 
         this.updateMedia(html, variant ?. featured_media ?. id);
 
