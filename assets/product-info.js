@@ -296,9 +296,7 @@ if (!customElements.get('product-info')) {
           if (source_imgs.dataset.variantId == selectedVariantId) {
             if(source_imgs.innerHTML.trim() == ""){
               //metafieldImgDestination.classList.add('hide_image'); 
-              //alert('Empty!');
             } else {
-              //alert('Not empty!!');
               metafieldImgDestination.classList.remove('hide_image'); 
             }
             metafieldImgDestination.src = "/cdn/shop/" + source_imgs.innerHTML.trim();
