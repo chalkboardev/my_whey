@@ -1222,6 +1222,14 @@ body .menu-drawer__close-button {
     padding: 0;
 }
 
+.product_supp_info_img_meta {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
 .more_btn {
     width: 280px;
     border-radius: 50px !important;

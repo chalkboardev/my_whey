@@ -230,6 +230,8 @@ if (!customElements.get('product-info')) {
         : null;
     }
 
+    
+
     buildRequestUrlWithParams(url, optionValues, shouldFetchFullPage = false) {
       const params = [];
 
@@ -265,7 +267,7 @@ if (!customElements.get('product-info')) {
       return(html) => {
         const variant = this.getSelectedVariant(html);
 
-// alert("Variant NAME: " + variant?.name);
+ //alert("Variant NAME: " + variant?.name);
 // console.log("Variant NAME: " + variant);
         this.pickupAvailability ?. update(variant);
         this.updateOptionValues(html);
@@ -276,6 +278,27 @@ if (!customElements.get('product-info')) {
           this.setUnavailable();
           return;
         }
+
+// -------------- START CHANGE THE META INFO / IMAGE WHEN VARINAT PTION CHANGED --------------
+       //alert("VARANT ID: " + variant ?. id);
+      //const metafieldDestination = document.getElementById('selected-variant-metafield-text');
+      const metafieldImgDestination = document.getElementById('product_supp_info_img_meta');
+      if (metafieldImgDestination) {
+        const selectedVariantId = variant ?. id;
+        //const allMetafieldSources = document.querySelectorAll('.variant-metafield-text');
+        const allMetafieldImgSources = document.querySelectorAll('.variant_metafield_img_src');
+        // allMetafieldSources.forEach(source => {
+        //   if (source.dataset.variantId == selectedVariantId) {
+        //     metafieldDestination.innerHTML = source.innerHTML;
+        //   }
+        // });
+        allMetafieldImgSources.forEach(source_imgs => {
+          if (source_imgs.dataset.variantId == selectedVariantId) {
+            metafieldImgDestination.src = "/cdn/shop/" + source_imgs.innerHTML.trim();
+          }
+        });
+      }
+// -------------- END CHANGE THE META INFO / IMAGE WHEN VARINAT PTION CHANGED --------------
 
         this.updateMedia(html, variant ?. featured_media ?. id);
 
@@ -632,19 +655,16 @@ if (!customElements.get('product-info')) {
       }
 
 // document.querySelectorAll(selectors).forEach(({ classList }) => classList.add('hidden'));
-    }updateMedia(html, variantFeaturedMediaId) {
+    } 
+    updateMedia(html, variantFeaturedMediaId) {
       if (!variantFeaturedMediaId) return;
       
-
-
       const mediaGallerySource = this.querySelector('media-gallery ul');
       const mediaGalleryDestination = html.querySelector(`media-gallery ul`);
 
       const refreshSourceData = () => {
         if (this.hasAttribute('data-zoom-on-hover')) 
           enableZoomOnHover(3);
-        
-
 
         const mediaGallerySourceItems = Array.from(mediaGallerySource.querySelectorAll('li[data-media-id]'));
         const sourceSet = new Set(mediaGallerySourceItems.map((item) => item.dataset.mediaId));

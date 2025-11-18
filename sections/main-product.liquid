@@ -2088,12 +2088,33 @@ function openTab(evt, cityName) {
     </div>
 
     <div id="tab-3" class="tabcontent-cus ">
+
+    
+    {% for variant in product.variants %}
+      <div class="variant-metafield-text" data-variant-id="{{ variant.id }}" style="display: none;">
+        {{ variant.metafields.custom.product_supplemental_info.value }} 
+       </div>
+      <div class="variant_metafield_img_src" data-variant-id="{{ variant.id }}" style="display: none;">
+        {{ variant.metafields.custom.product_supplemental_info.value }}
+      </div>
+    {% endfor %}
+
+     {% comment %} <div id="selected-variant-metafield-text">
+        {{ product.selected_or_first_available_variant.metafields.custom.product_supplemental_info.value }}
+      </div> {% endcomment %}
+
+
       {% comment %} {{ pages.policy.content }} {% endcomment %}
+         {% comment %} {{  product.metafields.custom.product_supplemental_image.value }} <br>
+          Variant Meta:  {{ product.selected_or_first_available_variant.metafields.custom.product_supplemental_info.value }} <br>
+         {{ product.selected_or_first_available_variant.id }} {% endcomment %}
+         {% comment %} {{  product.metafields.custom.product_supplemental_image.value }} {% endcomment %}
       {% assign image_url = product.metafields.custom.product_supplemental_image.value %}
       {% if image_url != blank %}
-        <img width="" height="" class="product_supp_info_img" src="{{ image_url | image_url: width: 960 }}" alt="Additional Image">
+        {% comment %} <img width="" height="" class="product_supp_info_img" src="{{ image_url | image_url: width: 1440 }}" alt="Additional Image"> {% endcomment %}
+        <img width="" height="" class="product_supp_info_img_meta" id="product_supp_info_img_meta" src="{{ image_url | image_url: width: 1440 }}" alt="Additional Image">
       {% endif %}
-      {{ product.metafields.custom.product_supplemental_info | metafield_tag }}
+      {% comment %} {{ product.metafields.custom.product_supplemental_info | metafield_tag }} {% endcomment %}
     </div>
 
     <div id="tab-4" class="tabcontent-cus ">
