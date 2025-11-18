@@ -1223,10 +1223,10 @@ body .menu-drawer__close-button {
 }
 
 .product_supp_info_img_meta {
-    max-width: 100%;
+    max-width: 980px;
     width: 100%;
     display: flex;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
 }
 
