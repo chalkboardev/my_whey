@@ -536,6 +536,8 @@
 
 
   <script>
+     $(document).ready(function(){
+
 // ---------- START DETECT WHEN THE PANDA QUANTITY SELECTOR ON THE 4TH BLOCK IS ADDED TO THE DOM --------
 const observer1 = new MutationObserver((mutationsList, observer) => {
         for (const mutation of mutationsList) {
@@ -1596,7 +1598,7 @@ $(".click_shopify-subscription-policy-button").click(function () {
   // }, 1000);
 }); 
 
-
+ 
 // $(".shopify_subscriptions_app_block_label:visible:first").click(function (e) {
 //   //e.preventDefault();
 //   e.stopPropagation();
@@ -1608,6 +1610,40 @@ $(".click_shopify-subscription-policy-button").click(function () {
 //   // alert(this_id);
 // }); 
 
+// -------------- START CHANGE THE META INFO / IMAGE WHEN VARIANT OPTION CHANGED --------------
+       //alert("VARANT ID: " + variant ?. id);
+       var newby = $(".product-form form input:eq(2)").val();
+      // alert(newby);
+      //const metafieldDestination = document.getElementById('selected-variant-metafield-text');
+      const metafieldImgDestination = document.getElementById('product_supp_info_img_meta');
+      if (metafieldImgDestination) {
+        const selectedVariantId = newby;
+        //const allMetafieldSources = document.querySelectorAll('.variant-metafield-text');
+        const allMetafieldImgSources = document.querySelectorAll('.variant_metafield_img_src');
+        // allMetafieldSources.forEach(source => {
+        //   if (source.dataset.variantId == selectedVariantId) {
+        //     metafieldDestination.innerHTML = source.innerHTML;
+        //   }
+        // }); 
+        allMetafieldImgSources.forEach(source_imgs => {
+          if (source_imgs.dataset.variantId == selectedVariantId) {
+            if(source_imgs.innerHTML.trim() == ""){
+              //metafieldImgDestination.classList.add('hide_image'); 
+              //alert('Empty!');
+            } else {
+              //alert('Not empty!!');
+              metafieldImgDestination.classList.remove('hide_image'); 
+            }
+            metafieldImgDestination.src = "/cdn/shop/" + source_imgs.innerHTML.trim();
+          } else {
+            //alert('Nothing!!');
+          }
+        });
+      }
+// -------------- END CHANGE THE META INFO / IMAGE WHEN VARINAT PTION CHANGED --------------
+
+
+}); //----- END DOCREADY
    </script>
 {% else %}
   {% comment %} This product is a one-time purchase. {% endcomment %}
@@ -2114,8 +2150,12 @@ function openTab(evt, cityName) {
         {% comment %} <img width="" height="" class="product_supp_info_img" src="{{ image_url | image_url: width: 1440 }}" alt="Additional Image"> {% endcomment %}
         <img width="" height="" class="product_supp_info_img_meta" id="product_supp_info_img_meta" src="{{ image_url | image_url: width: 1440 }}" alt="Additional Image">
         {% else %}
-        {% assign image_url_two = product.selected_or_first_available_variant.metafields.custom.product_supplemental_info.value %}
-        <img width="" height="" class="product_supp_info_img_meta" id="product_supp_info_img_meta" src="{{ image_url_two | image_url: width: 1440 }}" alt="Additional Image">
+        {% comment %} Result: {{ product.selected_or_first_available_variant.metafields.custom.product_supplemental_info.value }} {% endcomment %}
+        {% if product.selected_or_first_available_variant.metafields.custom.product_supplemental_info.value != "" %}
+          {% assign image_url_two = product.selected_or_first_available_variant.metafields.custom.product_supplemental_info.value %}
+          <img width="" height="" class="product_supp_info_img_meta hide_image" id="product_supp_info_img_meta" src="{{ image_url_two | image_url: width: 1440 }}" alt="Additional Image">
+        {% endif %}
+       
       {% endif %}
       {% comment %} {{ product.metafields.custom.product_supplemental_info | metafield_tag }} {% endcomment %}
     </div>
