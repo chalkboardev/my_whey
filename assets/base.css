@@ -773,7 +773,7 @@ body .menu-drawer__close-button {
 .cart_count .cart-count-bubble {
     position: absolute;
     background-color: unset;
-    color: rgb(0 0 0);
+    color: #333;
     height: auto;
     width: max-content;
     border-radius: 100%;
@@ -5469,6 +5469,11 @@ h3 {
 @media screen and (min-width: 750px) {
     .slider_header {
         font-size: 5rem !important;
+        animation-direction: alternate;
+        animation-delay: 2s;
+        animation-name: flipOutX;
+        animation-duration: 2s;
+        animation-iteration-count: 49;
     }
     .product .price .badge {
         /* margin-bottom: 0rem !important; */
@@ -8397,6 +8402,7 @@ input[type='checkbox'] {
 .drawer__heading {
     font-weight: 600;
     text-transform: uppercase;
+    color: #333;
 }
 
 
