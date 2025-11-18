@@ -2091,7 +2091,7 @@ function openTab(evt, cityName) {
       {% comment %} {{ pages.policy.content }} {% endcomment %}
       {% assign image_url = product.metafields.custom.product_supplemental_image.value %}
       {% if image_url != blank %}
-        <img width="" height="" class="product_supp_info_img" src="{{ image_url | image_url: width: 460 }}" alt="Additional Image">
+        <img width="" height="" class="product_supp_info_img" src="{{ image_url | image_url: width: 960 }}" alt="Additional Image">
       {% endif %}
       {{ product.metafields.custom.product_supplemental_info | metafield_tag }}
     </div>

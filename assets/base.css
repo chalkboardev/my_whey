@@ -1216,8 +1216,10 @@ body .menu-drawer__close-button {
 
 .product_supp_info_img {
     max-width: 100%;
+    width: 100%;
     display: flex;
-    margin: 0 auto;
+    margin: 0;
+    padding: 0;
 }
 
 .more_btn {
