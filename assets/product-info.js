@@ -294,6 +294,11 @@ if (!customElements.get('product-info')) {
         // });
         allMetafieldImgSources.forEach(source_imgs => {
           if (source_imgs.dataset.variantId == selectedVariantId) {
+            if(source_imgs.innerHTML.trim() == ""){
+              //metafieldImgDestination.classList.add('hide_image'); 
+            } else {
+              metafieldImgDestination.classList.remove('hide_image'); 
+            }
             metafieldImgDestination.src = "/cdn/shop/" + source_imgs.innerHTML.trim();
           }
         });

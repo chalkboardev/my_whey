@@ -2114,8 +2114,12 @@ function openTab(evt, cityName) {
         {% comment %} <img width="" height="" class="product_supp_info_img" src="{{ image_url | image_url: width: 1440 }}" alt="Additional Image"> {% endcomment %}
         <img width="" height="" class="product_supp_info_img_meta" id="product_supp_info_img_meta" src="{{ image_url | image_url: width: 1440 }}" alt="Additional Image">
         {% else %}
-        {% assign image_url_two = product.selected_or_first_available_variant.metafields.custom.product_supplemental_info.value %}
-        <img width="" height="" class="product_supp_info_img_meta" id="product_supp_info_img_meta" src="{{ image_url_two | image_url: width: 1440 }}" alt="Additional Image">
+        {% comment %} Result: {{ product.selected_or_first_available_variant.metafields.custom.product_supplemental_info.value }} {% endcomment %}
+        {% if product.selected_or_first_available_variant.metafields.custom.product_supplemental_info.value != "" %}
+          {% assign image_url_two = product.selected_or_first_available_variant.metafields.custom.product_supplemental_info.value %}
+          <img width="" height="" class="product_supp_info_img_meta hide_image" id="product_supp_info_img_meta" src="{{ image_url_two | image_url: width: 1440 }}" alt="Additional Image">
+        {% endif %}
+       
       {% endif %}
       {% comment %} {{ product.metafields.custom.product_supplemental_info | metafield_tag }} {% endcomment %}
     </div>
