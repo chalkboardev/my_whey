@@ -1147,6 +1147,10 @@ body .menu-drawer__close-button {
     margin: 9px auto 0 auto;
 }
 
+.product__description.rte ul {
+    list-style-position: outside !important;
+}
+
 .tab_customize {
     padding-bottom: 12px;
     width: 100%;
