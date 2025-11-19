@@ -116,11 +116,57 @@
             >
             <label class="field__label" for="ModalForm-phone">{{ 'templates.contact.modal_form.phone' | t }}</label>
           </div>
+
+            <div class="mw_modal_title">
+              <span class="modal_clr_span" style="background-color: rgb(255, 103, 0); height: 4px;"></span>
+              <p class="modal_title_txt" style="margin-right:-4px;color: black; font-size: 16px;">
+              Formula Size 
+              <div class="tooltip">
+                <span class="info-icon">
+                  <i class="fa-solid fa-circle-question"></i>
+                </span> 
+                <span class="tooltiptext">
+                 Choose which size you would like your Formula supplied in... <br>
+                </span>
+              </div>
+              </p>
+              <span class="modal_clr_span" style="background-color: rgb(255, 103, 0); height: 4px;"></span>
+          </div>
+
+          {% comment %} ------- START RADIO BUTTONS --------- {% endcomment %}
+          <span class="mw_formula_radio_btns">
+                <input type="radio" 
+                id="ModalForm-200g" 
+                class=""
+                name="contact[{{ 'templates.contact.modal_form.formula_size' | t }}]" 
+                value="200g Tub" 
+                >
+                <label for="ModalForm-200g">200g Tub</label>
+
+                <input type="radio" 
+                id="ModalForm-500g" 
+                class=""
+                name="contact[{{ 'templates.contact.modal_form.formula_size' | t }}]" 
+                value="500g Tub" 
+                >
+                <label for="ModalForm-500g">500g Tub</label>
+
+                  <input type="radio" 
+                id="ModalForm-1kg" 
+                class=""
+                name="contact[{{ 'templates.contact.modal_form.formula_size' | t }}]" 
+                value="1kg Tub" 
+                >
+                <label for="ModalForm-1kg">1kg Tub</label>
+          </span>
+          {% comment %} ------- END RADIO BUTTONS --------- {% endcomment %}
           
           {% comment %} <p>Your Ingredient List:</p> {% endcomment %}
           <div class="mw_modal_title">
               <span class="modal_clr_span" style="background-color: rgb(255, 103, 0); height: 4px;"></span>
-              <p class="modal_title_txt" style="margin-right:-4px;color: black; font-size: 16px;">Your Ingredient List <div class="tooltip">
+              <p class="modal_title_txt" style="margin-right:-4px;color: black; font-size: 16px;">
+              Your Ingredient List 
+              <div class="tooltip">
                 <span class="info-icon">
                   <i class="fa-solid fa-circle-question"></i>
                 </span> 
@@ -131,7 +177,8 @@
                  Hemp Protein | 40% <br>
                 <b>...These ingredients total 100%</b> 
                 </span>
-              </div></p>
+              </div>
+              </p>
               <span class="modal_clr_span" style="background-color: rgb(255, 103, 0); height: 4px;"></span>
           </div>
 
@@ -810,25 +857,44 @@ $(".submit_formula_btn").click(function (e){
   e.preventDefault();
   var my_html_elmnt = $(this);
   $(my_html_elmnt).html('Submitting <img style="margin-top:-2px;filter:brightness(1.3);" width="16" src="https://cdn.shopify.com/s/files/1/0713/8685/7724/files/loader.gif?v=1743590298" />');
-  // ----------- Check Name, Tel, Mail -----------
+
+  // ----------- Check Name, Tel, Mail, Size, Formula Name -----------
   var user_name = $('#ModalForm-name').val();
   var user_email = $('#ModalForm-email').val();
   var user_tel = $('#ModalForm-phone').val();
+  var selectedSizeValue = $('input[name="contact[Formula Size]"]:checked').val();
+  var formula_description = $("#ModalForm-body").val();
   //alert("Name: " + user_name);
+
   if (user_name == ""){
     $(my_html_elmnt).html('Please enter your name');
     setTimeout(function(){
       $(my_html_elmnt).html('Submit Formula');
-    }, 5000);
+    }, 3000);
     return false;
   }
   if (user_email == ""){
     $(my_html_elmnt).html('Please enter your email');
     setTimeout(function(){
       $(my_html_elmnt).html('Submit Formula');
-    }, 5000);
+    }, 3000);
     return false;
   }
+  if (selectedSizeValue === undefined ){
+    $(my_html_elmnt).html('Please select a tub size');
+    setTimeout(function(){
+      $(my_html_elmnt).html('Submit Formula');
+    }, 3000);
+    return false;
+  }
+  if (formula_description == ""){
+    $(my_html_elmnt).html('Please enter your formula name');
+    setTimeout(function(){
+      $(my_html_elmnt).html('Submit Formula');
+    }, 3000);
+    return false;
+  }
+
   var perc1 = $('#valueInput_1').val();
   var perc2 = $('#valueInput_2').val();
   var perc3 = $('#valueInput_3').val();
@@ -875,7 +941,6 @@ $(".submit_formula_btn").click(function (e){
   }
   console.log('submitting...');
 
-  var formula_description = $("#ModalForm-body").val();
   var ingredient_1 = $('#ModalForm-ingredient_1').val();
   var ingredient_2 = $('#ModalForm-ingredient_2').val();
   var ingredient_3 = $('#ModalForm-ingredient_3').val();
@@ -891,9 +956,9 @@ $(".submit_formula_btn").click(function (e){
   var perc6 = $('#valueInput_6').val();
   var perc7 = $('#valueInput_7').val();
 
-  var data_formula_form = 'user_name=' + user_name + '&user_email=' + user_email + '&user_tel=' + user_tel + '&formula_description=' + formula_description + '&ingredient_1=' + ingredient_1 + '&ingredient_2=' + ingredient_2 + '&ingredient_3=' + ingredient_3 + '&ingredient_4=' + ingredient_4 + '&ingredient_5=' + ingredient_5 + '&ingredient_6=' + ingredient_6 + '&ingredient_7=' + ingredient_7;
-  //alert(data_formula_form);
-  //return false;
+  var data_formula_form = 'user_name=' + user_name + '&user_email=' + user_email + '&user_tel=' + user_tel + '&tub_size=' + selectedSizeValue + '&formula_description=' + formula_description + '&ingredient_1=' + ingredient_1 + '&ingredient_2=' + ingredient_2 + '&ingredient_3=' + ingredient_3 + '&ingredient_4=' + ingredient_4 + '&ingredient_5=' + ingredient_5 + '&ingredient_6=' + ingredient_6 + '&ingredient_7=' + ingredient_7;
+  // console.log(data_formula_form);
+  // return false;
           $.ajax({
             type:'POST',
             // enctype: 'multipart/form-data',

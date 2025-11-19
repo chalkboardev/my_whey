@@ -272,6 +272,7 @@
         "name": "Name",
         "email": "Email",
         "phone": "Phone number",
+        "formula_size": "Formula Size",
         "ingredient1": "Ingredient 1",
         "ingredient2": "Ingredient 2",
         "ingredient3": "Ingredient 3",
@@ -279,7 +280,7 @@
         "ingredient5": "Ingredient 5",
         "ingredient6": "Ingredient 6",
         "ingredient7": "Ingredient 7",
-        "comment": "Formula Description",
+        "comment": "Formula Name",
         "send": "Submit Formula",
         "post_success": "Thanks for submitting your formula! We'll get back to you as soon as possible.",
         "error_heading": "Please adjust the following:"

@@ -4472,6 +4472,17 @@ h3 {
     color: #333;
 }
 
+.mw_formula_radio_btns {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2rem;
+}
+
+.mw_formula_radio_btns label {
+    margin-right: 16px;
+    padding-left: 4px;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
