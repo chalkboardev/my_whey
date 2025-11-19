@@ -4479,7 +4479,7 @@ h3 {
 }
 
 .mw_formula_radio_btns input {
-    accent-color: #ff6700;
+    /* accent-color: #ff6700; */
 }
 
 .mw_formula_radio_btns label {
