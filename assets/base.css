@@ -4478,6 +4478,10 @@ h3 {
     padding-bottom: 2rem;
 }
 
+.mw_formula_radio_btns input {
+    accent-color: #ff6700;
+}
+
 .mw_formula_radio_btns label {
     margin-right: 10px;
     padding-left: 4px;
