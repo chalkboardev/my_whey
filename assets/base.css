@@ -4464,6 +4464,10 @@ h3 {
     display: none !important;
 }
 
+#collection-template--18522096697596__featured_collection {
+    scroll-margin-top: 100px;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
