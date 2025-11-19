@@ -4480,6 +4480,21 @@ h3 {
 
 .mw_formula_radio_btns input {
     /* accent-color: #ff6700; */
+    border: none;
+    outline: none;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: 3px;
+}
+
+.mw_formula_radio_btns input[type='radio']:checked {
+    /* -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; */
+    accent-color: #ef6637;
+    width: 16px;
+    height: 16px;
 }
 
 .mw_formula_radio_btns label {
