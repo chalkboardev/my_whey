@@ -4468,10 +4468,39 @@ h3 {
     scroll-margin-top: 100px;
 }
 
+.info_multi_column .about_large_title h1 {
+    color: #333;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    .section-template--19937707426044__image_with_text_RgMmqt-padding .image-with-text__text-item.grid__item {
+        display: flex;
+        justify-content: center;
+    }
+    .section-template--19937707426044__image_with_text_RgMmqt-padding .image-with-text__content {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+        text-align: center;
+        align-self: center;
+        padding: 0rem calc(2rem / var(--font-body-scale)) 5rem;
+        position: relative;
+        z-index: 1;
+    }
+    .section-template--19937707426044__image_with_text_RgMmqt-padding h2 {
+        /* animation-name: flipInY;
+        animation-direction: alternate;
+        animation-duration: 3s;
+        animation-iteration-count: infinite; */
+        /* text-decoration: underline;
+        text-underline-offset: 0.5rem;
+        text-decoration-color: #ff6700; */
+    }
     .mail_icon {
         font-size: 1.7rem;
         color: #999;
