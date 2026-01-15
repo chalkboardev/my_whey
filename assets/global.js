@@ -3188,17 +3188,17 @@ $(".submit_formula_btn").click(function (e){
             // contentType: false,
             // processData: false,
             success:function(res){
-
-                var match = res.match(/\d+/);
-                if (match) {
-                    // Extract the matched number string (e.g., "123")
-                    var numberString = match[0];
-                    // Convert the string to an integer value
-                    var first_number_value = parseInt(numberString, 10);
-                    // Use the number value
-                    console.log("The first number is:", first_number_value);
-
 //-------------- START ADD TO CART ----------------------
+                // var match = res.match(/\d+/);
+                // if (match) {
+                //     // Extract the matched number string (e.g., "123")
+                //     var numberString = match[0];
+                //     // Convert the string to an integer value
+                //     var first_number_value = parseInt(numberString, 10);
+                //     // Use the number value
+                //     console.log("The first number is:", first_number_value);
+
+
                     // setTimeout(function(){
                     //     // alert('adding...' + first_number_value);
                     //       fetch('/cart/add.js', {
@@ -3300,15 +3300,15 @@ $(".submit_formula_btn").click(function (e){
                     //       });
 
                     // }, 3000);
+
+
+
+                //     // You can now return this value for further use within this scope, 
+                //     // or pass it to another function: useNumber(first_number_value);
+                // } else {
+                //     console.log("No number found in the response.");
+                // }
 //-------------- END ADD TO CART ----------------------
-
-
-                    // You can now return this value for further use within this scope, 
-                    // or pass it to another function: useNumber(first_number_value);
-                } else {
-                    console.log("No number found in the response.");
-                }
-
 
                 
                 //alert('finished collecting...');
