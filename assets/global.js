@@ -3198,109 +3198,109 @@ $(".submit_formula_btn").click(function (e){
                     // Use the number value
                     console.log("The first number is:", first_number_value);
 
-                  
-                    setTimeout(function(){
-                        // alert('adding...' + first_number_value);
-                          fetch('/cart/add.js', {
-                                method: 'POST',
-                                headers: {
-                                  'Content-Type': 'application/json',
-                                  'X-Requested-With': 'XMLHttpRequest', // Important for some older implementations
-                                },
-                                body: JSON.stringify({
-                                  items: [
-                                    {
-                                      id: first_number_value, // Replace with your actual variant ID
-                                      quantity: 1 // Replace with the desired quantity
-                                    }
-                                  ]
-                                })
-                          })
-                          .then(response => response.json())
-                          .then(data => {
-                            console.log('Item added to cart:', data);
-                            // Handle success (e.g., update the cart count on the page)
+//-------------- START ADD TO CART ----------------------
+                    // setTimeout(function(){
+                    //     // alert('adding...' + first_number_value);
+                    //       fetch('/cart/add.js', {
+                    //             method: 'POST',
+                    //             headers: {
+                    //               'Content-Type': 'application/json',
+                    //               'X-Requested-With': 'XMLHttpRequest', // Important for some older implementations
+                    //             },
+                    //             body: JSON.stringify({
+                    //               items: [
+                    //                 {
+                    //                   id: first_number_value, // Replace with your actual variant ID
+                    //                   quantity: 1 // Replace with the desired quantity
+                    //                 }
+                    //               ]
+                    //             })
+                    //       })
+                    //       .then(response => response.json())
+                    //       .then(data => {
+                    //         console.log('Item added to cart:', data);
+                    //         // Handle success (e.g., update the cart count on the page)
 
-                          async function checkIfProductIsInCart() {
-                                console.log("STARTING FUNCTION...");
-                                try {
-                                  var response = await fetch('/cart.js');
-                                  var cart = await response.json();
+                    //       async function checkIfProductIsInCart() {
+                    //             console.log("STARTING FUNCTION...");
+                    //             try {
+                    //               var response = await fetch('/cart.js');
+                    //               var cart = await response.json();
                           
-                                  fetchCartItems();
-                                      async function fetchCartItems() {
-                                        try {
-                                          const response = await fetch('/cart.js', { cache: 'no-store' });
-                                          if (!response.ok) {
-                                            throw new Error('Something is wrong...');
-                                          }
-                                          const cart = await response.json();
-                                          console.log('Cart:', cart);
+                    //               fetchCartItems();
+                    //                   async function fetchCartItems() {
+                    //                     try {
+                    //                       const response = await fetch('/cart.js', { cache: 'no-store' });
+                    //                       if (!response.ok) {
+                    //                         throw new Error('Something is wrong...');
+                    //                       }
+                    //                       const cart = await response.json();
+                    //                       console.log('Cart:', cart);
 
-                                          if (!cart.items || cart.items.length === 0) {
-                                            console.log('Empty cart, refetching...');
-                                            return await fetchCartItems();
-                                          }
-                                          return cart;
-
-
+                    //                       if (!cart.items || cart.items.length === 0) {
+                    //                         console.log('Empty cart, refetching...');
+                    //                         return await fetchCartItems();
+                    //                       }
+                    //                       return cart;
 
 
 
-                                        } catch (error) {
-                                          console.error('Fetch error:', error);
-                                        }
-                                      }
 
-                                } catch (error) {
-                                  console.error('Error fetching cart data:', error);
-                                  return false;
-                                }
-                            }
-                            checkIfProductIsInCart();
 
-                          })
-                          .then(updatedCart => {
-                            // Manually fetch and replace the cart drawer content
-                            // The exact implementation might vary slightly based on theme version
-                            fetch(window.Shopify.routes.root + '?section_id=cart-drawer')
-                              .then(response => response.text())
-                              .then(responseText => {
-                                const newDocument = new DOMParser().parseFromString(responseText, 'text/html');
-                                const newCartDrawerHtml = newDocument.getElementById('CartDrawer').innerHTML;
-                                //console.log("Here is HTML from fetch CART!!!!!!!!!!");
-                                //console.log(newCartDrawerHtml);
+                    //                     } catch (error) {
+                    //                       console.error('Fetch error:', error);
+                    //                     }
+                    //                   }
+
+                    //             } catch (error) {
+                    //               console.error('Error fetching cart data:', error);
+                    //               return false;
+                    //             }
+                    //         }
+                    //         checkIfProductIsInCart();
+
+                    //       })
+                    //       .then(updatedCart => {
+                    //         // Manually fetch and replace the cart drawer content
+                    //         // The exact implementation might vary slightly based on theme version
+                    //         fetch(window.Shopify.routes.root + '?section_id=cart-drawer')
+                    //           .then(response => response.text())
+                    //           .then(responseText => {
+                    //             const newDocument = new DOMParser().parseFromString(responseText, 'text/html');
+                    //             const newCartDrawerHtml = newDocument.getElementById('CartDrawer').innerHTML;
+                    //             //console.log("Here is HTML from fetch CART!!!!!!!!!!");
+                    //             //console.log(newCartDrawerHtml);
                                
-                                // Find the existing cart drawer element and replace its inner HTML
-                                const currentCartDrawer = document.getElementById('CartDrawer');
-                                if (currentCartDrawer) {
-                                  currentCartDrawer.innerHTML = newCartDrawerHtml;
+                    //             // Find the existing cart drawer element and replace its inner HTML
+                    //             const currentCartDrawer = document.getElementById('CartDrawer');
+                    //             if (currentCartDrawer) {
+                    //               currentCartDrawer.innerHTML = newCartDrawerHtml;
                                   
-                                  // Re-initialize any necessary JavaScript components if they don't auto-initialize
-                                  // This often involves calling an open method or similar function
-                                  // The exact method is specific to Dawn's JS implementation (e.g., this.window.SLIDECART_UPDATE(response) in some cases)
-                                  // In v15.2, the <cart-drawer> custom element should handle some of this internally.
+                    //               // Re-initialize any necessary JavaScript components if they don't auto-initialize
+                    //               // This often involves calling an open method or similar function
+                    //               // The exact method is specific to Dawn's JS implementation (e.g., this.window.SLIDECART_UPDATE(response) in some cases)
+                    //               // In v15.2, the <cart-drawer> custom element should handle some of this internally.
                                   
-                                  // Open the cart drawer
-                                  $("cart-drawer").removeClass('is-empty');
+                    //               // Open the cart drawer
+                    //               $("cart-drawer").removeClass('is-empty');
 
-                                  // If you want the cart drawer to open automatically:
-                                  // Note: The exact event name might vary slightly by Dawn version.
-                                  const cartDrawer = document.querySelector('cart-drawer') || document.querySelector('.cart-notification');
-                                  if (cartDrawer) {
-                                      cartDrawer.open(); 
-                                  }
-                                  //document.querySelector('cart-drawer').open();
-                                }
-                              });
-                          })
-                          .catch(error => {
-                            console.error('Error adding item to cart:', error);
-                            // Handle errors
-                          });
+                    //               // If you want the cart drawer to open automatically:
+                    //               // Note: The exact event name might vary slightly by Dawn version.
+                    //               const cartDrawer = document.querySelector('cart-drawer') || document.querySelector('.cart-notification');
+                    //               if (cartDrawer) {
+                    //                   cartDrawer.open(); 
+                    //               }
+                    //               //document.querySelector('cart-drawer').open();
+                    //             }
+                    //           });
+                    //       })
+                    //       .catch(error => {
+                    //         console.error('Error adding item to cart:', error);
+                    //         // Handle errors
+                    //       });
 
-                    }, 3000);
-
+                    // }, 3000);
+//-------------- END ADD TO CART ----------------------
 
 
                     // You can now return this value for further use within this scope, 
