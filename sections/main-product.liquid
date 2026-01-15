@@ -536,7 +536,7 @@
 
 
   <script>
-     $(document).ready(function(){
+$(document).ready(function(){
 
 // ---------- START DETECT WHEN THE PANDA QUANTITY SELECTOR ON THE 4TH BLOCK IS ADDED TO THE DOM --------
 const observer1 = new MutationObserver((mutationsList, observer) => {
@@ -601,7 +601,7 @@ setTimeout(function(){
                             
                             // ----- FIND WHICH PANDA BLOCK IS CLICKED -----
                             var the_block_single_name_is = $(this).find('.pb-56aa').html().toLowerCase();
-                            console.log('The block title IS:' + the_block_single_name_is);
+                            //console.log('The block title IS:' + the_block_single_name_is);
                             if(the_block_single_name_is == "single" || the_block_single_name_is == "buy 1"){
                                 var use_quantity = 1;
                             } else if(the_block_single_name_is == "buy 2"){
@@ -630,6 +630,12 @@ setTimeout(function(){
                                   if (the_blocks_in_panda.length > 0) {
                                         // Access the last element in the NodeList
                                         var lastElement_is = the_blocks_in_panda[the_blocks_in_panda.length - 1];
+
+                                        single_item_price = single_item_price.replace(/,/g, ""); // Remove all commas
+                                        single_item_price = parseFloat(single_item_price)/100;
+                                        single_item_price = single_item_price.toFixed(2);
+                                        console.log("For Block Click -> single_item_price: " + single_item_price);
+                                        
                                         var reset_last_block_totals = +single_item_price;
                                         var the_discount_here = $(lastElement_is).find('.money').eq(0).html();
                                         
@@ -640,7 +646,7 @@ setTimeout(function(){
                                             var startIndex_4thBlck = symbolIndex_4thBlck - 2;
                                             var get_percent = the_percentage_off_4thBlck.substring(startIndex_4thBlck, symbolIndex_4thBlck);
                                             get_percent = +get_percent;
-                                            console.log("The two characters before the symbol are:", get_percent);
+                                            //console.log("The two characters before the symbol are:", get_percent);
                                         } else if (symbolIndex_4thBlck !== -1 && symbolIndex_4thBlck < 2) {
                                             //console.log("The symbol is found, but there are not enough characters before it.");
                                         } else {
@@ -668,10 +674,19 @@ setTimeout(function(){
                             var the_strikethrough_price_element = $(this).find('.money').eq(1);
                             var the_old_price_is = $(this).find('.money').eq(1).html();
                             console.log("The use_quantity: " + use_quantity + " | single_item_price " + single_item_price );
+                           
+                            single_item_price = single_item_price.replace(/,/g, ""); // Remove all commas
+                            single_item_price = parseFloat(single_item_price)/100;
+                            single_item_price = single_item_price.toFixed(2);
+
+                            console.log("Okay single_item_price: " + single_item_price);
+                            console.log("Okay use_quantity: " + use_quantity);
                             var the_single_price_is = use_quantity*single_item_price;
+                            
                             the_single_price_is = +the_single_price_is;
-                            console.log("Discounted Price: " + the_discounted_price_is);
-                            console.log("Calc use_quantity x single_item_price: " + the_single_price_is + ". Block: " + use_quantity);
+                            console.log("Okay the_single_price_is: " + the_single_price_is);
+                            console.log("Discounted Price: " + the_discounted_price_is); 
+                            console.log("Calc use_quantity x single_item_price: " + the_single_price_is + " | Block: " + use_quantity);
                             // ----- FIND THE VOLUME PERCENTAGE DISCOUNTED IN PANDA BLOCKS -----
                             var the_percentage_off = $(this).find('.pb-1856').eq(0).html();
                             var symbolToFind = "%"
@@ -695,6 +710,7 @@ setTimeout(function(){
                                       //console.log(this);
                                       // $(this).prev().attr('onclick', 'myFunction(event)');
                                       $(this).addClass('plus_button');
+                                      //$(this).attr('disabled', 'true');
                                       $(this).prev().addClass('block_4_quantity');
                                       const mySpan = document.querySelector('.block_4_quantity');
                                       const observer = new MutationObserver(function(mutationsList, observer) {
@@ -718,9 +734,11 @@ setTimeout(function(){
                                                     $('.product-form__error-message-wrapper').attr("hidden", "");
                                                   }
                                                   // single_item_price = $(".pb-1aad .money:first").html();
+                                                  console.log("For quantity block -> single_item_price: " + single_item_price);
                                                   var update_block_total = newQuant*single_item_price;
+                                                  console.log("update_block_total: " + update_block_total);
                                                   console.log("newQuant: " + newQuant);
-                                                  console.log("single_item_price: " + single_item_price);
+                                                  console.log("twoCharsBefore: " + twoCharsBefore);
                                                   var update_block_total_discounted = update_block_total - ((twoCharsBefore / 100) * update_block_total);
                                                   console.log("ZNew Total: " + update_block_total);
                                                   the_discounted_price_element.html("R " + update_block_total_discounted.toFixed(2));
@@ -745,7 +763,7 @@ setTimeout(function(){
           } else {
             console.log("Did not find a panda section:");
           }
-}, 5000);
+}, 3000);
 
     var is_quickv_open = document.querySelector('[id^="QuickAdd-"]');
     if ($("[id^='QuickAdd-']").length > 0) {
@@ -1642,9 +1660,8 @@ $(".click_shopify-subscription-policy-button").click(function () {
       }
 // -------------- END CHANGE THE META INFO / IMAGE WHEN VARINAT PTION CHANGED --------------
 
-
 }); //----- END DOCREADY
-   </script>
+</script>
 {% else %}
   {% comment %} This product is a one-time purchase. {% endcomment %}
   <script>
@@ -1727,12 +1744,13 @@ setTimeout(function(){
                                 var use_quantity = 4;
                             }
 
+                            // ----- FIND SINGLE ITEM PRICE -----
                             if(single_item_price == ""){
                               // var findme = $(this).find('.money').eq(0).html();
                               single_item_price = $('.pb-6b5d:visible').eq(0).find('.money').eq(0).html();
                               single_item_price = single_item_price.substring(single_item_price.indexOf(";") + 1);
                               // console.log("FINDEME: " + findme);
-                              console.log("FIND_FIRST: " + single_item_price );
+                              //console.log("FIND_FIRST: " + single_item_price );
                             }
 
                             if(use_quantity == 4){
@@ -1857,7 +1875,7 @@ setTimeout(function(){
           } else {
             console.log("Did not find a panda section:");
           }
-}, 5000);
+}, 2000);
 
    </script>
 {% endif %}

@@ -280,8 +280,11 @@
         "ingredient5": "Ingredient 5",
         "ingredient6": "Ingredient 6",
         "ingredient7": "Ingredient 7",
+        "ingredient8": "Ingredient 8",
+        "ingredient9": "Ingredient 9",
+        "ingredient10": "Ingredient 10",
         "comment": "Formula Name",
-        "send": "Submit Formula",
+        "send": "Add Formula To Cart",
         "post_success": "Thanks for submitting your formula! We'll get back to you as soon as possible.",
         "error_heading": "Please adjust the following:"
       }

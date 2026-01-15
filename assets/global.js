@@ -1319,3 +1319,2383 @@ class BulkAdd extends HTMLElement {
 if (!customElements.get('bulk-add')) {
   customElements.define('bulk-add', BulkAdd);
 }
+
+
+// ------------------ ***************** START MY FORMULA MODAL SCRIPT ***************** ------------------
+document.addEventListener('DOMContentLoaded', () => {
+
+$('#ModalForm-ingredient_1, #ModalForm-ingredient_2, #ModalForm-ingredient_3, #ModalForm-ingredient_4, #ModalForm-ingredient_5, #ModalForm-ingredient_6, #ModalForm-ingredient_7').on('blur', function() {
+  // $(this).next().next().hide();
+  $(this).next().next().trigger('change');
+});
+$('#ModalForm-ingredient_1, #ModalForm-ingredient_2, #ModalForm-ingredient_3, #ModalForm-ingredient_4, #ModalForm-ingredient_5, #ModalForm-ingredient_6, #ModalForm-ingredient_7').on('click', function() {
+    $(this).next().next().show();
+  });
+
+function containsPercentage(str) {
+  const regex = /\d+(\.\d+)?%/; 
+  return str.match(regex) !== null;
+}
+
+
+// ------- START GET PRODUCT FROM DROPDOWN SELECT INGREDIENT 1 ---------
+    var productDropdown = document.getElementById('all_products_dropdown_1');
+    productDropdown.addEventListener('change', () => {
+      function_product_1();
+    });
+    function function_product_1(){
+        //alert('changed/ing...');
+        var productDropdown_1 = document.getElementById('all_products_dropdown_1');
+        var selectedProduct_1 = productDropdown_1.value;
+        if(selectedProduct_1 != ""){
+            $("#clear_ingredient_1").removeClass('hide_element');
+            var formula_size = $('input[name="contact[Formula Size]"]:checked').val();
+            var product_name = $('#all_products_dropdown_1 option:checked').attr('data-variant-name').trim();
+            var product_price = $('#all_products_dropdown_1 option:checked').attr('data-price');
+            var product_weight = $('#all_products_dropdown_1 option:checked').attr('data-weight');
+            var product_price_per_gram = $('#all_products_dropdown_1 option:checked').attr('data-price_pg');
+            var percentDropdown_1A = document.getElementById('mw_formula_percentDropdown_1');
+            var selectedPercentageA = parseFloat(percentDropdown_1A.value); // Get selected percentage as a decimal
+            if (selectedPercentageA > 0){
+              product_name = product_name + " | " + selectedPercentageA + "%";
+            }
+            $('#ModalForm-ingredient_1').val(product_name);
+
+            if (formula_size) {
+              var edit_size = formula_size.match(/\d+(\.\d+)?/g); 
+              if(edit_size == 1){
+                edit_size = 1000;
+              }
+              // console.log("Selected Tub Size: ", edit_size);
+            } else {
+              console.log("No product size selected.");
+              $("#form_help").fadeIn();
+              $("#form_help").removeClass('form_help_hide');
+              $("#form_help").html('Please select a product size');
+              $(".mw_formula_radio_btns").addClass('flash_me');
+              setTimeout(function(){
+                  $("#form_help").addClass('form_help_hide');
+                  $("#form_help").fadeOut();
+                  setTimeout(function(){
+                    $("#form_help").removeClass('form_help_hide');
+                  }, 1500);
+              }, 5000);
+              setTimeout(function(){
+                $(".mw_formula_radio_btns").removeClass('flash_me');
+              }, 6500);
+            }
+            console.log("Variant Price 1: " + product_price);
+            console.log("Variant Weight 1: " + product_weight);
+            console.log("Selected Percent 1: " + selectedPercentageA);
+            console.log("Tub Size Chosen (g) 1: " + edit_size);
+            console.log("Variant Price 1 p/g: " + product_price_per_gram);
+            var new_price = (selectedPercentageA/100 * (edit_size)) * product_price_per_gram ;
+            console.log("Price 1 so far: R" + new_price.toFixed(2) );
+            function_1();
+      } 
+    }
+// ------- START GET PRODUCT FROM DROPDOWN SELECT INGREDIENT 1  ---------
+
+// ------- START GET INGREDIENT 1 VALUES FROM PERCENT DROPDOWN SELECT ---------
+function function_1(){
+    console.log("Starting function_1...");
+    var valueInput_1 = document.getElementById('valueInput_1');
+    var mainInput_1 = document.getElementById('ModalForm-ingredient_1');
+    var percentDropdown_1 = document.getElementById('mw_formula_percentDropdown_1');
+    var productDropdown_1a = document.getElementById('all_products_dropdown_1');
+    var selectedProduct_1a = productDropdown_1a.value;
+    //alert(selectedProduct_1a);
+    var mainInput_1_value = mainInput_1.value;
+    var selectedPercentage = parseFloat(percentDropdown_1.value); // Get selected percentage as a decimal
+    valueInput_1.value = selectedPercentage;
+    var product_weight = $('#all_products_dropdown_1 option:checked').attr('data-weight');
+    var product_price_per_gram = $('#all_products_dropdown_1 option:checked').attr('data-price_pg');
+    var formula_size = $('input[name="contact[Formula Size]"]:checked').val();
+    if (formula_size) {
+        var edit_size = formula_size.match(/\d+(\.\d+)?/g); 
+        if(edit_size == 1){
+          edit_size = 1000;
+        }
+        // console.log("Selected Tub Size: ", edit_size);
+    } else {
+        var edit_size = ""; 
+    }
+
+    if(mainInput_1_value == "") {
+          //alert('Please enter the ingredient first.');
+          mainInput_1.value = "Enter ingredient first...";
+          $('#mw_formula_percentDropdown_1 option:first-child').prop('selected', true);
+          $('#all_products_dropdown_1 option:first-child').prop('selected', true);
+          $(valueInput_1).val("");
+          mainInput_1.value = "";
+          valueInput_1.value = "";
+          selectedProduct_1a.value = "";
+          $(".form_help").html("");
+          $("#valueInput_1_price").val("");
+          $("#valueInput_1_weight").val("");
+          calculate_totals();
+    } else {
+        if (containsPercentage(mainInput_1_value)) {
+          console.log("The string contains a percentage number.");
+          var originalString_1 = mainInput_1.value;
+          var stripString_1 = originalString_1.replace(/\|/g, '');
+          var newString1 = stripString_1.replace(/\s*\d+(?:\.\d+)?%/g, ' | ' + selectedPercentage + '%');
+          mainInput_1.value = newString1;
+          
+          //$("#mw_formula_percentDropdown_1").hide();
+          // You can add further logic here, e.g., display a message
+        } else {
+          console.log("The string does not contain a percentage number.");
+          var stripString_1 = mainInput_1_value.replace(/\|/g, '');
+          if(selectedPercentage == 0){
+            //alert('Its zero...');
+            mainInput_1.value = stripString_1;
+            //$("#mw_formula_percentDropdown_7").hide();
+          } else {
+            mainInput_1.value = stripString_1 + " | " + selectedPercentage + '%';
+           // $("#mw_formula_percentDropdown_1").hide();
+          }
+
+        }
+        console.log("Product selected: " + mainInput_1_value);
+        console.log("Selected percent: " + selectedPercentage);
+        console.log("Product Weight: " + product_weight);
+        console.log("Tub Size Chosen (g): " + edit_size);
+        console.log("Variant Price p/g: " + product_price_per_gram);
+        var current_weight = selectedPercentage/100 * (edit_size);
+        var new_price = current_weight * product_price_per_gram ;
+        $("#valueInput_1_price").val(new_price.toFixed(2));
+        $("#valueInput_1_weight").val(current_weight);
+        console.log("Price so far: R" + new_price.toFixed(2) );
+        calculate_totals();
+    }
+}
+var percentDropdownUse_1 = document.getElementById('mw_formula_percentDropdown_1');
+percentDropdownUse_1.addEventListener('change', () => {
+  function_1();
+});
+var mainInputUse_1 = document.getElementById('ModalForm-ingredient_1');
+mainInputUse_1.addEventListener('change', () => {
+  function_1();
+}); 
+// ------- END GET INGREDIENT 1 VALUES FROM PERCENT DROPDOWN SELECT ---------
+
+
+
+// ------- START GET PRODUCT FROM DROPDOWN SELECT INGREDIENT 2 ---------
+  var productDropdown = document.getElementById('all_products_dropdown_2');
+    productDropdown.addEventListener('change', () => {
+      function_product_2();
+    });
+    function function_product_2(){
+      //alert('changed/ing...');
+      var productDropdown_1 = document.getElementById('all_products_dropdown_2');
+      var selectedProduct_1 = productDropdown_1.value;
+      if(selectedProduct_1 != ""){
+            $("#clear_ingredient_2").removeClass('hide_element');
+            var formula_size = $('input[name="contact[Formula Size]"]:checked').val();
+            var product_name = $('#all_products_dropdown_2 option:checked').attr('data-variant-name').trim();
+            var product_price = $('#all_products_dropdown_2 option:checked').attr('data-price');
+            var product_weight = $('#all_products_dropdown_2 option:checked').attr('data-weight');
+            var product_price_per_gram = $('#all_products_dropdown_2 option:checked').attr('data-price_pg');
+            var percentDropdown_1A = document.getElementById('mw_formula_percentDropdown_2');
+            var selectedPercentageA = parseFloat(percentDropdown_1A.value); // Get selected percentage as a decimal
+            if (selectedPercentageA > 0){
+              product_name = product_name + " | " + selectedPercentageA + "%";
+            }
+            $('#ModalForm-ingredient_2').val(product_name);
+
+            if (formula_size) {
+              var edit_size = formula_size.match(/\d+(\.\d+)?/g); 
+              if(edit_size == 1){
+                edit_size = 1000;
+              }
+              // console.log("Selected Tub Size: ", edit_size);
+            } else {
+              console.log("No product size selected.");
+              $("#form_help").fadeIn();
+              $("#form_help").removeClass('form_help_hide');
+              $("#form_help").html('Please select a product size');
+              $(".mw_formula_radio_btns").addClass('flash_me');
+              setTimeout(function(){
+                  $("#form_help").addClass('form_help_hide');
+                  $("#form_help").fadeOut();
+                  setTimeout(function(){
+                    $("#form_help").removeClass('form_help_hide');
+                  }, 1500);
+              }, 5000);
+              setTimeout(function(){
+                $(".mw_formula_radio_btns").removeClass('flash_me');
+              }, 6500);
+            }
+            console.log("Variant Price 2: " + product_price);
+            console.log("Variant Weight 2: " + product_weight);
+            console.log("Selected Percent 2: " + selectedPercentageA);
+            console.log("Tub Size Chosen (g) 2: " + edit_size);
+            console.log("Variant Price 2 p/g: " + product_price_per_gram);
+            var new_price = (selectedPercentageA/100 * (edit_size)) * product_price_per_gram ;
+            console.log("Price 2 so far: R" + new_price.toFixed(2) );
+            function_2();
+      }
+    }
+// ------- START GET PRODUCT FROM DROPDOWN SELECT INGREDIENT 2  ---------
+
+// ------- START GET INGREDIENT 2 VALUES FROM PERCENT DROPDOWN SELECT ---------
+function function_2(){
+    console.log("Starting function_2...");
+    var valueInput_1 = document.getElementById('valueInput_2');
+    var mainInput_1 = document.getElementById('ModalForm-ingredient_2');
+    var percentDropdown_1 = document.getElementById('mw_formula_percentDropdown_2');
+    var productDropdown_1a = document.getElementById('all_products_dropdown_2');
+    var selectedProduct_1a = productDropdown_1a.value;
+    //alert(selectedProduct_1a);
+    var mainInput_1_value = mainInput_1.value;
+    var selectedPercentage = parseFloat(percentDropdown_1.value); // Get selected percentage as a decimal
+    valueInput_1.value = selectedPercentage;
+    var product_weight = $('#all_products_dropdown_2 option:checked').attr('data-weight');
+    var product_price_per_gram = $('#all_products_dropdown_2 option:checked').attr('data-price_pg');
+    var formula_size = $('input[name="contact[Formula Size]"]:checked').val();
+    if (formula_size) {
+        var edit_size = formula_size.match(/\d+(\.\d+)?/g); 
+        if(edit_size == 1){
+          edit_size = 1000;
+        }
+        // console.log("Selected Tub Size: ", edit_size);
+    } else {
+        var edit_size = ""; 
+    }
+
+    if(mainInput_1_value == "") {
+          console.log('Please enter the Ingredient 2 first.');
+          mainInput_1.value = "Enter ingredient first...";
+          $('#mw_formula_percentDropdown_2 option:first-child').prop('selected', true);
+          $('#all_products_dropdown_2 option:first-child').prop('selected', true);
+          $(valueInput_1).val("");
+          mainInput_1.value = "";
+          valueInput_1.value = "";
+          selectedProduct_1a.value = "";
+          $(".form_help").html("");
+          $("#valueInput_2_price").val("");
+          $("#valueInput_2_weight").val("");
+          calculate_totals();
+    } else {
+        if (containsPercentage(mainInput_1_value)) {
+          console.log("The string contains a percentage number.");
+          var originalString_1 = mainInput_1.value;
+          var stripString_1 = originalString_1.replace(/\|/g, '');
+          var newString1 = stripString_1.replace(/\s*\d+(?:\.\d+)?%/g, ' | ' + selectedPercentage + '%');
+          mainInput_1.value = newString1;
+          
+          //$("#mw_formula_percentDropdown_1").hide();
+          // You can add further logic here, e.g., display a message
+        } else {
+          console.log("The string does not contain a percentage number.");
+          var stripString_1 = mainInput_1_value.replace(/\|/g, '');
+          if(selectedPercentage == 0){
+            //alert('Its zero...');
+            mainInput_1.value = stripString_1;
+            //$("#mw_formula_percentDropdown_7").hide();
+          } else {
+            mainInput_1.value = stripString_1 + " | " + selectedPercentage + '%';
+           // $("#mw_formula_percentDropdown_1").hide();
+          }
+
+        }
+        console.log("Product selected 2: " + mainInput_1_value);
+        console.log("Selected percent 2: " + selectedPercentage);
+        console.log("Product Weight 2: " + product_weight);
+        console.log("Tub Size Chosen (g) 2: " + edit_size);
+        console.log("Variant Price p/g 2: " + product_price_per_gram);
+        var current_weight = selectedPercentage/100 * (edit_size);
+        var new_price = current_weight * product_price_per_gram ;
+        $("#valueInput_2_price").val(new_price.toFixed(2));
+        $("#valueInput_2_weight").val(current_weight);
+        console.log("Price so far 2: R" + new_price.toFixed(2) );
+        calculate_totals();
+    }
+}
+var percentDropdownUse_1 = document.getElementById('mw_formula_percentDropdown_2');
+percentDropdownUse_1.addEventListener('change', () => {
+  function_2();
+});
+var mainInputUse_1 = document.getElementById('ModalForm-ingredient_2');
+mainInputUse_1.addEventListener('change', () => {
+  function_2();
+}); 
+// ------- END GET INGREDIENT 2 VALUES FROM PERCENT DROPDOWN SELECT ---------
+
+
+// ------- START GET PRODUCT FROM DROPDOWN SELECT INGREDIENT 3 ---------
+  var productDropdown = document.getElementById('all_products_dropdown_3');
+    productDropdown.addEventListener('change', () => {
+      function_product_3();
+    });
+    function function_product_3(){
+      //alert('changed/ing...');
+      var productDropdown_1 = document.getElementById('all_products_dropdown_3');
+      var selectedProduct_1 = productDropdown_1.value;
+      if(selectedProduct_1 != ""){
+            $("#clear_ingredient_3").removeClass('hide_element');
+            var formula_size = $('input[name="contact[Formula Size]"]:checked').val();
+            var product_name = $('#all_products_dropdown_3 option:checked').attr('data-variant-name').trim();
+            var product_price = $('#all_products_dropdown_3 option:checked').attr('data-price');
+            var product_weight = $('#all_products_dropdown_3 option:checked').attr('data-weight');
+            var product_price_per_gram = $('#all_products_dropdown_3 option:checked').attr('data-price_pg');
+            var percentDropdown_1A = document.getElementById('mw_formula_percentDropdown_3');
+            var selectedPercentageA = parseFloat(percentDropdown_1A.value); // Get selected percentage as a decimal
+            if (selectedPercentageA > 0){
+              product_name = product_name + " | " + selectedPercentageA + "%";
+            }
+            $('#ModalForm-ingredient_3').val(product_name);
+
+            if (formula_size) {
+              var edit_size = formula_size.match(/\d+(\.\d+)?/g); 
+              if(edit_size == 1){
+                edit_size = 1000;
+              }
+              // console.log("Selected Tub Size: ", edit_size);
+            } else {
+              console.log("No product size selected.");
+              $("#form_help").fadeIn();
+              $("#form_help").removeClass('form_help_hide');
+              $("#form_help").html('Please select a product size');
+              $(".mw_formula_radio_btns").addClass('flash_me');
+              setTimeout(function(){
+                  $("#form_help").addClass('form_help_hide');
+                  $("#form_help").fadeOut();
+                  setTimeout(function(){
+                    $("#form_help").removeClass('form_help_hide');
+                  }, 1500);
+              }, 5000);
+              setTimeout(function(){
+                $(".mw_formula_radio_btns").removeClass('flash_me');
+              }, 6500);
+            }
+            console.log("Variant Price 3: " + product_price);
+            console.log("Variant Weight 3: " + product_weight);
+            console.log("Selected Percent 3: " + selectedPercentageA);
+            console.log("Tub Size Chosen (g) 3: " + edit_size);
+            console.log("Variant Price 3 p/g: " + product_price_per_gram);
+            var new_price = (selectedPercentageA/100 * (edit_size)) * product_price_per_gram ;
+            console.log("Price 3 so far: R" + new_price.toFixed(2) );
+            function_3();
+      }
+    }
+// ------- START GET PRODUCT FROM DROPDOWN SELECT INGREDIENT 3  ---------
+
+// ------- START GET INGREDIENT 3 VALUES FROM PERCENT DROPDOWN SELECT ---------
+function function_3(){
+    console.log("Starting function_3...");
+    var valueInput_1 = document.getElementById('valueInput_3');
+    var mainInput_1 = document.getElementById('ModalForm-ingredient_3');
+    var percentDropdown_1 = document.getElementById('mw_formula_percentDropdown_3');
+    var productDropdown_1a = document.getElementById('all_products_dropdown_3');
+    var selectedProduct_1a = productDropdown_1a.value;
+    //alert(selectedProduct_1a);
+    var mainInput_1_value = mainInput_1.value;
+    var selectedPercentage = parseFloat(percentDropdown_1.value); // Get selected percentage as a decimal
+    valueInput_1.value = selectedPercentage;
+    var product_weight = $('#all_products_dropdown_3 option:checked').attr('data-weight');
+    var product_price_per_gram = $('#all_products_dropdown_3 option:checked').attr('data-price_pg');
+    var formula_size = $('input[name="contact[Formula Size]"]:checked').val();
+    if (formula_size) {
+        var edit_size = formula_size.match(/\d+(\.\d+)?/g); 
+        if(edit_size == 1){
+          edit_size = 1000;
+        }
+        // console.log("Selected Tub Size: ", edit_size);
+    } else {
+        var edit_size = ""; 
+    }
+
+    if(mainInput_1_value == "") {
+          console.log('Please enter the Ingredient 3 first.');
+          mainInput_1.value = "Enter ingredient 3 first...";
+          $('#mw_formula_percentDropdown_3 option:first-child').prop('selected', true);
+          $('#all_products_dropdown_3 option:first-child').prop('selected', true);
+          $(valueInput_1).val("");
+          mainInput_1.value = "";
+          valueInput_1.value = "";
+          selectedProduct_1a.value = "";
+          $(".form_help").html("");
+          $("#valueInput_3_price").val("");
+          $("#valueInput_3_weight").val("");
+          calculate_totals();
+    } else {
+        if (containsPercentage(mainInput_1_value)) {
+          console.log("The string contains a percentage number.");
+          var originalString_1 = mainInput_1.value;
+          var stripString_1 = originalString_1.replace(/\|/g, '');
+          var newString1 = stripString_1.replace(/\s*\d+(?:\.\d+)?%/g, ' | ' + selectedPercentage + '%');
+          mainInput_1.value = newString1;
+          
+          //$("#mw_formula_percentDropdown_1").hide();
+          // You can add further logic here, e.g., display a message
+        } else {
+          console.log("The string 3 does not contain a percentage number.");
+          var stripString_1 = mainInput_1_value.replace(/\|/g, '');
+          if(selectedPercentage == 0){
+            //alert('Its zero...');
+            mainInput_1.value = stripString_1;
+            //$("#mw_formula_percentDropdown_7").hide();
+          } else {
+            mainInput_1.value = stripString_1 + " | " + selectedPercentage + '%';
+           // $("#mw_formula_percentDropdown_1").hide();
+          }
+
+        }
+        console.log("Product selected 3: " + mainInput_1_value);
+        console.log("Selected percent 3: " + selectedPercentage);
+        console.log("Product Weight 3: " + product_weight);
+        console.log("Tub Size Chosen (g) 3: " + edit_size);
+        console.log("Variant Price p/g 3: " + product_price_per_gram);
+        var current_weight = selectedPercentage/100 * (edit_size);
+        var new_price = current_weight * product_price_per_gram ;
+        $("#valueInput_3_price").val(new_price.toFixed(2));
+        $("#valueInput_3_weight").val(current_weight);
+        console.log("Price so far 3: R" + new_price.toFixed(2) );
+        calculate_totals();
+    }
+}
+var percentDropdownUse_1 = document.getElementById('mw_formula_percentDropdown_3');
+percentDropdownUse_1.addEventListener('change', () => {
+  function_3();
+});
+var mainInputUse_1 = document.getElementById('ModalForm-ingredient_3');
+mainInputUse_1.addEventListener('change', () => {
+  function_3();
+}); 
+// ------- END GET INGREDIENT 3 VALUES FROM PERCENT DROPDOWN SELECT ---------
+
+
+// ------- START GET PRODUCT FROM DROPDOWN SELECT INGREDIENT 4 ---------
+  var productDropdown = document.getElementById('all_products_dropdown_4');
+    productDropdown.addEventListener('change', () => {
+      function_product_4();
+    });
+    function function_product_4(){
+      //alert('changed/ing...');
+      var productDropdown_1 = document.getElementById('all_products_dropdown_4');
+      var selectedProduct_1 = productDropdown_1.value;
+      if(selectedProduct_1 != ""){
+            $("#clear_ingredient_4").removeClass('hide_element');
+            var formula_size = $('input[name="contact[Formula Size]"]:checked').val();
+            var product_name = $('#all_products_dropdown_4 option:checked').attr('data-variant-name').trim();
+            var product_price = $('#all_products_dropdown_4 option:checked').attr('data-price');
+            var product_weight = $('#all_products_dropdown_4 option:checked').attr('data-weight');
+            var product_price_per_gram = $('#all_products_dropdown_4 option:checked').attr('data-price_pg');
+            var percentDropdown_1A = document.getElementById('mw_formula_percentDropdown_4');
+            var selectedPercentageA = parseFloat(percentDropdown_1A.value); // Get selected percentage as a decimal
+            if (selectedPercentageA > 0){
+              product_name = product_name + " | " + selectedPercentageA + "%";
+            }
+            $('#ModalForm-ingredient_4').val(product_name);
+
+            if (formula_size) {
+              var edit_size = formula_size.match(/\d+(\.\d+)?/g); 
+              if(edit_size == 1){
+                edit_size = 1000;
+              }
+              // console.log("Selected Tub Size: ", edit_size);
+            } else {
+              console.log("No product size selected.");
+              $("#form_help").fadeIn();
+              $("#form_help").removeClass('form_help_hide');
+              $("#form_help").html('Please select a product size');
+              $(".mw_formula_radio_btns").addClass('flash_me');
+              setTimeout(function(){
+                  $("#form_help").addClass('form_help_hide');
+                  $("#form_help").fadeOut();
+                  setTimeout(function(){
+                    $("#form_help").removeClass('form_help_hide');
+                  }, 1500);
+              }, 5000);
+              setTimeout(function(){
+                $(".mw_formula_radio_btns").removeClass('flash_me');
+              }, 6500);
+            }
+            console.log("Variant Price 4: " + product_price);
+            console.log("Variant Weight 4: " + product_weight);
+            console.log("Selected Percent 4: " + selectedPercentageA);
+            console.log("Tub Size Chosen (g) 4: " + edit_size);
+            console.log("Variant Price 4 p/g: " + product_price_per_gram);
+            var new_price = (selectedPercentageA/100 * (edit_size)) * product_price_per_gram ;
+            console.log("Price 4 so far: R" + new_price.toFixed(2) );
+            function_4();
+      }
+    }
+// ------- START GET PRODUCT FROM DROPDOWN SELECT INGREDIENT 4  ---------
+
+// ------- START GET INGREDIENT 4 VALUES FROM PERCENT DROPDOWN SELECT ---------
+function function_4(){
+    console.log("Starting function_4...");
+    var valueInput_1 = document.getElementById('valueInput_4');
+    var mainInput_1 = document.getElementById('ModalForm-ingredient_4');
+    var percentDropdown_1 = document.getElementById('mw_formula_percentDropdown_4');
+    var productDropdown_1a = document.getElementById('all_products_dropdown_4');
+    var selectedProduct_1a = productDropdown_1a.value;
+    //alert(selectedProduct_1a);
+    var mainInput_1_value = mainInput_1.value;
+    var selectedPercentage = parseFloat(percentDropdown_1.value); // Get selected percentage as a decimal
+    valueInput_1.value = selectedPercentage;
+    var product_weight = $('#all_products_dropdown_4 option:checked').attr('data-weight');
+    var product_price_per_gram = $('#all_products_dropdown_4 option:checked').attr('data-price_pg');
+    var formula_size = $('input[name="contact[Formula Size]"]:checked').val();
+    if (formula_size) {
+        var edit_size = formula_size.match(/\d+(\.\d+)?/g); 
+        if(edit_size == 1){
+          edit_size = 1000;
+        }
+        // console.log("Selected Tub Size: ", edit_size);
+    } else {
+        var edit_size = ""; 
+    }
+
+    if(mainInput_1_value == "") {
+          console.log('Please enter the Ingredient 4 first.');
+          mainInput_1.value = "Enter ingredient 4 first...";
+          $('#mw_formula_percentDropdown_4 option:first-child').prop('selected', true);
+          $('#all_products_dropdown_4 option:first-child').prop('selected', true);
+          $(valueInput_1).val("");
+          mainInput_1.value = "";
+          valueInput_1.value = "";
+          selectedProduct_1a.value = "";
+          $(".form_help").html("");
+          $("#valueInput_4_price").val("");
+          $("#valueInput_4_weight").val("");
+          calculate_totals();
+    } else {
+        if (containsPercentage(mainInput_1_value)) {
+          console.log("The string contains a percentage number.");
+          var originalString_1 = mainInput_1.value;
+          var stripString_1 = originalString_1.replace(/\|/g, '');
+          var newString1 = stripString_1.replace(/\s*\d+(?:\.\d+)?%/g, ' | ' + selectedPercentage + '%');
+          mainInput_1.value = newString1;
+          
+          //$("#mw_formula_percentDropdown_1").hide();
+          // You can add further logic here, e.g., display a message
+        } else {
+          console.log("The string 4 does not contain a percentage number.");
+          var stripString_1 = mainInput_1_value.replace(/\|/g, '');
+          if(selectedPercentage == 0){
+            //alert('Its zero...');
+            mainInput_1.value = stripString_1;
+            //$("#mw_formula_percentDropdown_7").hide();
+          } else {
+            mainInput_1.value = stripString_1 + " | " + selectedPercentage + '%';
+           // $("#mw_formula_percentDropdown_1").hide();
+          }
+
+        }
+        console.log("Product selected 4: " + mainInput_1_value);
+        console.log("Selected percent 4: " + selectedPercentage);
+        console.log("Product Weight 4: " + product_weight);
+        console.log("Tub Size Chosen (g) 4: " + edit_size);
+        console.log("Variant Price p/g 4: " + product_price_per_gram);
+        var current_weight = selectedPercentage/100 * (edit_size);
+        var new_price = current_weight * product_price_per_gram ;
+        $("#valueInput_4_price").val(new_price.toFixed(2));
+        $("#valueInput_4_weight").val(current_weight);
+        console.log("Price so far 4: R" + new_price.toFixed(2) );
+        calculate_totals();
+    }
+}
+var percentDropdownUse_1 = document.getElementById('mw_formula_percentDropdown_4');
+percentDropdownUse_1.addEventListener('change', () => {
+  function_4();
+});
+var mainInputUse_1 = document.getElementById('ModalForm-ingredient_4');
+mainInputUse_1.addEventListener('change', () => {
+  function_4();
+}); 
+// ------- END GET INGREDIENT 4 VALUES FROM PERCENT DROPDOWN SELECT ---------
+
+
+// ------- START GET PRODUCT FROM DROPDOWN SELECT INGREDIENT 5 ---------
+  var productDropdown = document.getElementById('all_products_dropdown_5');
+    productDropdown.addEventListener('change', () => {
+      function_product_5();
+    });
+    function function_product_5(){
+      //alert('changed/ing...');
+      var productDropdown_1 = document.getElementById('all_products_dropdown_5');
+      var selectedProduct_1 = productDropdown_1.value;
+      if(selectedProduct_1 != ""){
+            $("#clear_ingredient_5").removeClass('hide_element');
+            var formula_size = $('input[name="contact[Formula Size]"]:checked').val();
+            var product_name = $('#all_products_dropdown_5 option:checked').attr('data-variant-name').trim();
+            var product_price = $('#all_products_dropdown_5 option:checked').attr('data-price');
+            var product_weight = $('#all_products_dropdown_5 option:checked').attr('data-weight');
+            var product_price_per_gram = $('#all_products_dropdown_5 option:checked').attr('data-price_pg');
+            var percentDropdown_1A = document.getElementById('mw_formula_percentDropdown_5');
+            var selectedPercentageA = parseFloat(percentDropdown_1A.value); // Get selected percentage as a decimal
+            if (selectedPercentageA > 0){
+              product_name = product_name + " | " + selectedPercentageA + "%";
+            }
+            $('#ModalForm-ingredient_5').val(product_name);
+
+            if (formula_size) {
+              var edit_size = formula_size.match(/\d+(\.\d+)?/g); 
+              if(edit_size == 1){
+                edit_size = 1000;
+              }
+              // console.log("Selected Tub Size: ", edit_size);
+            } else {
+              console.log("No product size selected.");
+              $("#form_help").fadeIn();
+              $("#form_help").removeClass('form_help_hide');
+              $("#form_help").html('Please select a product size');
+              $(".mw_formula_radio_btns").addClass('flash_me');
+              setTimeout(function(){
+                  $("#form_help").addClass('form_help_hide');
+                  $("#form_help").fadeOut();
+                  setTimeout(function(){
+                    $("#form_help").removeClass('form_help_hide');
+                  }, 1500);
+              }, 5000);
+              setTimeout(function(){
+                $(".mw_formula_radio_btns").removeClass('flash_me');
+              }, 6500);
+            }
+            console.log("Variant Price 5: " + product_price);
+            console.log("Variant Weight 5: " + product_weight);
+            console.log("Selected Percent 5: " + selectedPercentageA);
+            console.log("Tub Size Chosen (g) 5: " + edit_size);
+            console.log("Variant Price 5 p/g: " + product_price_per_gram);
+            var new_price = (selectedPercentageA/100 * (edit_size)) * product_price_per_gram ;
+            console.log("Price 5 so far: R" + new_price.toFixed(2) );
+            function_5();
+      }
+    }
+// ------- START GET PRODUCT FROM DROPDOWN SELECT INGREDIENT 5  ---------
+
+// ------- START GET INGREDIENT 5 VALUES FROM PERCENT DROPDOWN SELECT ---------
+function function_5(){
+    console.log("Starting function_5...");
+    var valueInput_1 = document.getElementById('valueInput_5');
+    var mainInput_1 = document.getElementById('ModalForm-ingredient_5');
+    var percentDropdown_1 = document.getElementById('mw_formula_percentDropdown_5');
+    var productDropdown_1a = document.getElementById('all_products_dropdown_5');
+    var selectedProduct_1a = productDropdown_1a.value;
+    //alert(selectedProduct_1a);
+    var mainInput_1_value = mainInput_1.value;
+    var selectedPercentage = parseFloat(percentDropdown_1.value); // Get selected percentage as a decimal
+    valueInput_1.value = selectedPercentage;
+    var product_weight = $('#all_products_dropdown_5 option:checked').attr('data-weight');
+    var product_price_per_gram = $('#all_products_dropdown_5 option:checked').attr('data-price_pg');
+    var formula_size = $('input[name="contact[Formula Size]"]:checked').val();
+    if (formula_size) {
+        var edit_size = formula_size.match(/\d+(\.\d+)?/g); 
+        if(edit_size == 1){
+          edit_size = 1000;
+        }
+        // console.log("Selected Tub Size: ", edit_size);
+    } else {
+        var edit_size = ""; 
+    }
+
+    if(mainInput_1_value == "") {
+          console.log('Please enter the Ingredient 5 first.');
+          mainInput_1.value = "Enter ingredient 5 first...";
+          $('#mw_formula_percentDropdown_5 option:first-child').prop('selected', true);
+          $('#all_products_dropdown_5 option:first-child').prop('selected', true);
+          $(valueInput_1).val("");
+          mainInput_1.value = "";
+          valueInput_1.value = "";
+          selectedProduct_1a.value = "";
+          $(".form_help").html("");
+          $("#valueInput_5_price").val("");
+          $("#valueInput_5_weight").val("");
+          calculate_totals();
+    } else {
+        if (containsPercentage(mainInput_1_value)) {
+          console.log("The string 5 contains a percentage number.");
+          var originalString_1 = mainInput_1.value;
+          var stripString_1 = originalString_1.replace(/\|/g, '');
+          var newString1 = stripString_1.replace(/\s*\d+(?:\.\d+)?%/g, ' | ' + selectedPercentage + '%');
+          mainInput_1.value = newString1;
+          
+          //$("#mw_formula_percentDropdown_1").hide();
+          // You can add further logic here, e.g., display a message
+        } else {
+          console.log("The string 5 does not contain a percentage number.");
+          var stripString_1 = mainInput_1_value.replace(/\|/g, '');
+          if(selectedPercentage == 0){
+            //alert('Its zero...');
+            mainInput_1.value = stripString_1;
+            //$("#mw_formula_percentDropdown_7").hide();
+          } else {
+            mainInput_1.value = stripString_1 + " | " + selectedPercentage + '%';
+           // $("#mw_formula_percentDropdown_1").hide();
+          }
+
+        }
+        console.log("Product selected 5: " + mainInput_1_value);
+        console.log("Selected percent 5: " + selectedPercentage);
+        console.log("Product Weight 5: " + product_weight);
+        console.log("Tub Size Chosen (g) 5: " + edit_size);
+        console.log("Variant Price p/g 5: " + product_price_per_gram);
+        var current_weight = selectedPercentage/100 * (edit_size);
+        var new_price = current_weight * product_price_per_gram ;
+        $("#valueInput_5_price").val(new_price.toFixed(2));
+        $("#valueInput_5_weight").val(current_weight);
+        console.log("Price so far 5: R" + new_price.toFixed(2) );
+        calculate_totals();
+    }
+}
+var percentDropdownUse_1 = document.getElementById('mw_formula_percentDropdown_5');
+percentDropdownUse_1.addEventListener('change', () => {
+  function_5();
+});
+var mainInputUse_1 = document.getElementById('ModalForm-ingredient_5');
+mainInputUse_1.addEventListener('change', () => {
+  function_5();
+}); 
+// ------- END GET INGREDIENT 5 VALUES FROM PERCENT DROPDOWN SELECT ---------
+
+
+// ------- START GET PRODUCT FROM DROPDOWN SELECT INGREDIENT 6 ---------
+  var productDropdown = document.getElementById('all_products_dropdown_6');
+    productDropdown.addEventListener('change', () => {
+      function_product_6();
+    });
+    function function_product_6(){
+      //alert('changed/ing...');
+      var productDropdown_1 = document.getElementById('all_products_dropdown_6');
+      var selectedProduct_1 = productDropdown_1.value;
+      if(selectedProduct_1 != ""){
+            $("#clear_ingredient_6").removeClass('hide_element');
+            var formula_size = $('input[name="contact[Formula Size]"]:checked').val();
+            var product_name = $('#all_products_dropdown_6 option:checked').attr('data-variant-name').trim();
+            var product_price = $('#all_products_dropdown_6 option:checked').attr('data-price');
+            var product_weight = $('#all_products_dropdown_6 option:checked').attr('data-weight');
+            var product_price_per_gram = $('#all_products_dropdown_6 option:checked').attr('data-price_pg');
+            var percentDropdown_1A = document.getElementById('mw_formula_percentDropdown_6');
+            var selectedPercentageA = parseFloat(percentDropdown_1A.value); // Get selected percentage as a decimal
+            if (selectedPercentageA > 0){
+              product_name = product_name + " | " + selectedPercentageA + "%";
+            }
+            $('#ModalForm-ingredient_6').val(product_name);
+
+            if (formula_size) {
+              var edit_size = formula_size.match(/\d+(\.\d+)?/g); 
+              if(edit_size == 1){
+                edit_size = 1000;
+              }
+              // console.log("Selected Tub Size: ", edit_size);
+            } else {
+              console.log("No product size selected.");
+              $("#form_help").fadeIn();
+              $("#form_help").removeClass('form_help_hide');
+              $("#form_help").html('Please select a product size');
+              $(".mw_formula_radio_btns").addClass('flash_me');
+              setTimeout(function(){
+                  $("#form_help").addClass('form_help_hide');
+                  $("#form_help").fadeOut();
+                  setTimeout(function(){
+                    $("#form_help").removeClass('form_help_hide');
+                  }, 1500);
+              }, 5000);
+              setTimeout(function(){
+                $(".mw_formula_radio_btns").removeClass('flash_me');
+              }, 6500);
+            }
+            console.log("Variant Price 6: " + product_price);
+            console.log("Variant Weight 6: " + product_weight);
+            console.log("Selected Percent 6: " + selectedPercentageA);
+            console.log("Tub Size Chosen (g) 6: " + edit_size);
+            console.log("Variant Price 6 p/g: " + product_price_per_gram);
+            var new_price = (selectedPercentageA/100 * (edit_size)) * product_price_per_gram ;
+            console.log("Price 6 so far: R" + new_price.toFixed(2) );
+            function_6();
+      }
+    }
+// ------- START GET PRODUCT FROM DROPDOWN SELECT INGREDIENT 6  ---------
+
+// ------- START GET INGREDIENT 6 VALUES FROM PERCENT DROPDOWN SELECT ---------
+function function_6(){
+    console.log("Starting function_6...");
+    var valueInput_1 = document.getElementById('valueInput_6');
+    var mainInput_1 = document.getElementById('ModalForm-ingredient_6');
+    var percentDropdown_1 = document.getElementById('mw_formula_percentDropdown_6');
+    var productDropdown_1a = document.getElementById('all_products_dropdown_6');
+    var selectedProduct_1a = productDropdown_1a.value;
+    //alert(selectedProduct_1a);
+    var mainInput_1_value = mainInput_1.value;
+    var selectedPercentage = parseFloat(percentDropdown_1.value); // Get selected percentage as a decimal
+    valueInput_1.value = selectedPercentage;
+    var product_weight = $('#all_products_dropdown_6 option:checked').attr('data-weight');
+    var product_price_per_gram = $('#all_products_dropdown_6 option:checked').attr('data-price_pg');
+    var formula_size = $('input[name="contact[Formula Size]"]:checked').val();
+    if (formula_size) {
+        var edit_size = formula_size.match(/\d+(\.\d+)?/g); 
+        if(edit_size == 1){
+          edit_size = 1000;
+        }
+        // console.log("Selected Tub Size: ", edit_size);
+    } else {
+        var edit_size = ""; 
+    }
+
+    if(mainInput_1_value == "") {
+          console.log('Please enter the Ingredient 6 first.');
+          mainInput_1.value = "Enter ingredient 6 first...";
+          $('#mw_formula_percentDropdown_6 option:first-child').prop('selected', true);
+          $('#all_products_dropdown_6 option:first-child').prop('selected', true);
+          $(valueInput_1).val("");
+          mainInput_1.value = "";
+          valueInput_1.value = "";
+          selectedProduct_1a.value = "";
+          $(".form_help").html("");
+          $("#valueInput_6_price").val("");
+          $("#valueInput_6_weight").val("");
+          calculate_totals();
+    } else {
+        if (containsPercentage(mainInput_1_value)) {
+          console.log("The string 6 contains a percentage number.");
+          var originalString_1 = mainInput_1.value;
+          var stripString_1 = originalString_1.replace(/\|/g, '');
+          var newString1 = stripString_1.replace(/\s*\d+(?:\.\d+)?%/g, ' | ' + selectedPercentage + '%');
+          mainInput_1.value = newString1;
+          
+          //$("#mw_formula_percentDropdown_1").hide();
+          // You can add further logic here, e.g., display a message
+        } else {
+          console.log("The string 6 does not contain a percentage number.");
+          var stripString_1 = mainInput_1_value.replace(/\|/g, '');
+          if(selectedPercentage == 0){
+            //alert('Its zero...');
+            mainInput_1.value = stripString_1;
+            //$("#mw_formula_percentDropdown_7").hide();
+          } else {
+            mainInput_1.value = stripString_1 + " | " + selectedPercentage + '%';
+           // $("#mw_formula_percentDropdown_1").hide();
+          }
+
+        }
+        console.log("Product selected 6: " + mainInput_1_value);
+        console.log("Selected percent 6: " + selectedPercentage);
+        console.log("Product Weight 6: " + product_weight);
+        console.log("Tub Size Chosen (g) 6: " + edit_size);
+        console.log("Variant Price p/g 6: " + product_price_per_gram);
+        var current_weight = selectedPercentage/100 * (edit_size);
+        var new_price = current_weight * product_price_per_gram ;
+        $("#valueInput_6_price").val(new_price.toFixed(2));
+        $("#valueInput_6_weight").val(current_weight);
+        console.log("Price so far 6: R" + new_price.toFixed(2) );
+        calculate_totals();
+    }
+}
+var percentDropdownUse_1 = document.getElementById('mw_formula_percentDropdown_6');
+percentDropdownUse_1.addEventListener('change', () => {
+  function_6();
+});
+var mainInputUse_1 = document.getElementById('ModalForm-ingredient_6');
+mainInputUse_1.addEventListener('change', () => {
+  function_6();
+}); 
+// ------- END GET INGREDIENT 6 VALUES FROM PERCENT DROPDOWN SELECT ---------
+
+// ------- START GET PRODUCT FROM DROPDOWN SELECT INGREDIENT 7 ---------
+  var productDropdown = document.getElementById('all_products_dropdown_7');
+    productDropdown.addEventListener('change', () => {
+      function_product_7();
+    });
+    function function_product_7(){
+      //alert('changed/ing...');
+      var productDropdown_1 = document.getElementById('all_products_dropdown_7');
+      var selectedProduct_1 = productDropdown_1.value;
+      if(selectedProduct_1 != ""){
+            $("#clear_ingredient_7").removeClass('hide_element');
+            var formula_size = $('input[name="contact[Formula Size]"]:checked').val();
+            var product_name = $('#all_products_dropdown_7 option:checked').attr('data-variant-name').trim();
+            var product_price = $('#all_products_dropdown_7 option:checked').attr('data-price');
+            var product_weight = $('#all_products_dropdown_7 option:checked').attr('data-weight');
+            var product_price_per_gram = $('#all_products_dropdown_7 option:checked').attr('data-price_pg');
+            var percentDropdown_1A = document.getElementById('mw_formula_percentDropdown_7');
+            var selectedPercentageA = parseFloat(percentDropdown_1A.value); // Get selected percentage as a decimal
+            if (selectedPercentageA > 0){
+              product_name = product_name + " | " + selectedPercentageA + "%";
+            }
+            $('#ModalForm-ingredient_7').val(product_name);
+
+            if (formula_size) {
+              var edit_size = formula_size.match(/\d+(\.\d+)?/g); 
+              if(edit_size == 1){
+                edit_size = 1000;
+              }
+              // console.log("Selected Tub Size: ", edit_size);
+            } else {
+              console.log("No product size selected.");
+              $("#form_help").fadeIn();
+              $("#form_help").removeClass('form_help_hide');
+              $("#form_help").html('Please select a product size');
+              $(".mw_formula_radio_btns").addClass('flash_me');
+              setTimeout(function(){
+                  $("#form_help").addClass('form_help_hide');
+                  $("#form_help").fadeOut();
+                  setTimeout(function(){
+                    $("#form_help").removeClass('form_help_hide');
+                  }, 1500);
+              }, 5000);
+              setTimeout(function(){
+                $(".mw_formula_radio_btns").removeClass('flash_me');
+              }, 6500);
+            }
+            console.log("Variant Price 7: " + product_price);
+            console.log("Variant Weight 7: " + product_weight);
+            console.log("Selected Percent 7: " + selectedPercentageA);
+            console.log("Tub Size Chosen (g) 7: " + edit_size);
+            console.log("Variant Price 7 p/g: " + product_price_per_gram);
+            var new_price = (selectedPercentageA/100 * (edit_size)) * product_price_per_gram ;
+            console.log("Price 7 so far: R" + new_price.toFixed(2) );
+            function_7();
+      }
+    }
+// ------- START GET PRODUCT FROM DROPDOWN SELECT INGREDIENT 7  ---------
+
+// ------- START GET INGREDIENT 7 VALUES FROM PERCENT DROPDOWN SELECT ---------
+function function_7(){
+    console.log("Starting function_7...");
+    var valueInput_1 = document.getElementById('valueInput_7');
+    var mainInput_1 = document.getElementById('ModalForm-ingredient_7');
+    var percentDropdown_1 = document.getElementById('mw_formula_percentDropdown_7');
+    var productDropdown_1a = document.getElementById('all_products_dropdown_7');
+    var selectedProduct_1a = productDropdown_1a.value;
+    //alert(selectedProduct_1a);
+    var mainInput_1_value = mainInput_1.value;
+    var selectedPercentage = parseFloat(percentDropdown_1.value); // Get selected percentage as a decimal
+    valueInput_1.value = selectedPercentage;
+    var product_weight = $('#all_products_dropdown_7 option:checked').attr('data-weight');
+    var product_price_per_gram = $('#all_products_dropdown_7 option:checked').attr('data-price_pg');
+    var formula_size = $('input[name="contact[Formula Size]"]:checked').val();
+    if (formula_size) {
+        var edit_size = formula_size.match(/\d+(\.\d+)?/g); 
+        if(edit_size == 1){
+          edit_size = 1000;
+        }
+        // console.log("Selected Tub Size: ", edit_size);
+    } else {
+        var edit_size = ""; 
+    }
+
+    if(mainInput_1_value == "") {
+          console.log('Please enter the Ingredient 7 first.');
+          mainInput_1.value = "Enter ingredient 7 first...";
+          $('#mw_formula_percentDropdown_7 option:first-child').prop('selected', true);
+          $('#all_products_dropdown_7 option:first-child').prop('selected', true);
+          $(valueInput_1).val("");
+          mainInput_1.value = "";
+          valueInput_1.value = "";
+          selectedProduct_1a.value = "";
+          $(".form_help").html("");
+          $("#valueInput_7_price").val("");
+          $("#valueInput_7_weight").val("");
+          calculate_totals();
+    } else {
+        if (containsPercentage(mainInput_1_value)) {
+          console.log("The string 7 contains a percentage number.");
+          var originalString_1 = mainInput_1.value;
+          var stripString_1 = originalString_1.replace(/\|/g, '');
+          var newString1 = stripString_1.replace(/\s*\d+(?:\.\d+)?%/g, ' | ' + selectedPercentage + '%');
+          mainInput_1.value = newString1;
+          
+          //$("#mw_formula_percentDropdown_1").hide();
+          // You can add further logic here, e.g., display a message
+        } else {
+          console.log("The string 7 does not contain a percentage number.");
+          var stripString_1 = mainInput_1_value.replace(/\|/g, '');
+          if(selectedPercentage == 0){
+            //alert('Its zero...');
+            mainInput_1.value = stripString_1;
+            //$("#mw_formula_percentDropdown_7").hide();
+          } else {
+            mainInput_1.value = stripString_1 + " | " + selectedPercentage + '%';
+           // $("#mw_formula_percentDropdown_1").hide();
+          }
+
+        }
+        console.log("Product selected 7: " + mainInput_1_value);
+        console.log("Selected percent 7: " + selectedPercentage);
+        console.log("Product Weight 7: " + product_weight);
+        console.log("Tub Size Chosen (g) 7: " + edit_size);
+        console.log("Variant Price p/g 7: " + product_price_per_gram);
+        var current_weight = selectedPercentage/100 * (edit_size);
+        var new_price = current_weight * product_price_per_gram ;
+        $("#valueInput_7_price").val(new_price.toFixed(2));
+        $("#valueInput_7_weight").val(current_weight);
+        console.log("Price so far 7: R" + new_price.toFixed(2) );
+        calculate_totals();
+    }
+}
+var percentDropdownUse_1 = document.getElementById('mw_formula_percentDropdown_7');
+percentDropdownUse_1.addEventListener('change', () => {
+  function_7();
+});
+var mainInputUse_1 = document.getElementById('ModalForm-ingredient_7');
+mainInputUse_1.addEventListener('change', () => {
+  function_7();
+}); 
+// ------- END GET INGREDIENT 7 VALUES FROM PERCENT DROPDOWN SELECT ---------
+
+// ------- START GET PRODUCT FROM DROPDOWN SELECT INGREDIENT 8 ---------
+var productDropdown = document.getElementById('all_products_dropdown_8');
+    productDropdown.addEventListener('change', () => {
+      function_product_8();
+    });
+    function function_product_8(){
+      //alert('changed/ing...');
+      var productDropdown_1 = document.getElementById('all_products_dropdown_8');
+      var selectedProduct_1 = productDropdown_1.value;
+      if(selectedProduct_1 != ""){
+            $("#clear_ingredient_8").removeClass('hide_element');
+            var formula_size = $('input[name="contact[Formula Size]"]:checked').val();
+            var product_name = $('#all_products_dropdown_8 option:checked').attr('data-variant-name').trim();
+            var product_price = $('#all_products_dropdown_8 option:checked').attr('data-price');
+            var product_weight = $('#all_products_dropdown_8 option:checked').attr('data-weight');
+            var product_price_per_gram = $('#all_products_dropdown_8 option:checked').attr('data-price_pg');
+            var percentDropdown_1A = document.getElementById('mw_formula_percentDropdown_8');
+            var selectedPercentageA = parseFloat(percentDropdown_1A.value); // Get selected percentage as a decimal
+            if (selectedPercentageA > 0){
+              product_name = product_name + " | " + selectedPercentageA + "%";
+            }
+            $('#ModalForm-ingredient_8').val(product_name);
+
+            if (formula_size) {
+              var edit_size = formula_size.match(/\d+(\.\d+)?/g); 
+              if(edit_size == 1){
+                edit_size = 1000;
+              }
+              // console.log("Selected Tub Size: ", edit_size);
+            } else {
+              console.log("No product size selected.");
+              $("#form_help").fadeIn();
+              $("#form_help").removeClass('form_help_hide');
+              $("#form_help").html('Please select a product size');
+              $(".mw_formula_radio_btns").addClass('flash_me');
+              setTimeout(function(){
+                  $("#form_help").addClass('form_help_hide');
+                  $("#form_help").fadeOut();
+                  setTimeout(function(){
+                    $("#form_help").removeClass('form_help_hide');
+                  }, 1500);
+              }, 5000);
+              setTimeout(function(){
+                $(".mw_formula_radio_btns").removeClass('flash_me');
+              }, 6500);
+            }
+            console.log("Variant Price 8: " + product_price);
+            console.log("Variant Weight 8: " + product_weight);
+            console.log("Selected Percent 8: " + selectedPercentageA);
+            console.log("Tub Size Chosen (g) 8: " + edit_size);
+            console.log("Variant Price 8 p/g: " + product_price_per_gram);
+            var new_price = (selectedPercentageA/100 * (edit_size)) * product_price_per_gram ;
+            console.log("Price 8 so far: R" + new_price.toFixed(2) );
+            function_7();
+      }
+    }
+// ------- START GET PRODUCT FROM DROPDOWN SELECT INGREDIENT 8  ---------
+
+// ------- START GET INGREDIENT 8 VALUES FROM PERCENT DROPDOWN SELECT ---------
+function function_8(){
+    console.log("Starting function_8...");
+    var valueInput_1 = document.getElementById('valueInput_8');
+    var mainInput_1 = document.getElementById('ModalForm-ingredient_8');
+    var percentDropdown_1 = document.getElementById('mw_formula_percentDropdown_8');
+    var productDropdown_1a = document.getElementById('all_products_dropdown_8');
+    var selectedProduct_1a = productDropdown_1a.value;
+    //alert(selectedProduct_1a);
+    var mainInput_1_value = mainInput_1.value;
+    var selectedPercentage = parseFloat(percentDropdown_1.value); // Get selected percentage as a decimal
+    valueInput_1.value = selectedPercentage;
+    var product_weight = $('#all_products_dropdown_8 option:checked').attr('data-weight');
+    var product_price_per_gram = $('#all_products_dropdown_8 option:checked').attr('data-price_pg');
+    var formula_size = $('input[name="contact[Formula Size]"]:checked').val();
+    if (formula_size) {
+        var edit_size = formula_size.match(/\d+(\.\d+)?/g); 
+        if(edit_size == 1){
+          edit_size = 1000;
+        }
+        // console.log("Selected Tub Size: ", edit_size);
+    } else {
+        var edit_size = ""; 
+    }
+
+    if(mainInput_1_value == "") {
+          console.log('Please enter the Ingredient 8 first.');
+          mainInput_1.value = "Enter ingredient 8 first...";
+          $('#mw_formula_percentDropdown_8 option:first-child').prop('selected', true);
+          $('#all_products_dropdown_8 option:first-child').prop('selected', true);
+          $(valueInput_1).val("");
+          mainInput_1.value = "";
+          valueInput_1.value = "";
+          selectedProduct_1a.value = "";
+          $(".form_help").html("");
+          $("#valueInput_8_price").val("");
+          $("#valueInput_8_weight").val("");
+          calculate_totals();
+    } else {
+        if (containsPercentage(mainInput_1_value)) {
+          console.log("The string 8 contains a percentage number.");
+          var originalString_1 = mainInput_1.value;
+          var stripString_1 = originalString_1.replace(/\|/g, '');
+          var newString1 = stripString_1.replace(/\s*\d+(?:\.\d+)?%/g, ' | ' + selectedPercentage + '%');
+          mainInput_1.value = newString1;
+          
+          //$("#mw_formula_percentDropdown_1").hide();
+          // You can add further logic here, e.g., display a message
+        } else {
+          console.log("The string 8 does not contain a percentage number.");
+          var stripString_1 = mainInput_1_value.replace(/\|/g, '');
+          if(selectedPercentage == 0){
+            //alert('Its zero...');
+            mainInput_1.value = stripString_1;
+            //$("#mw_formula_percentDropdown_7").hide();
+          } else {
+            mainInput_1.value = stripString_1 + " | " + selectedPercentage + '%';
+           // $("#mw_formula_percentDropdown_1").hide();
+          }
+
+        }
+        console.log("Product selected 8: " + mainInput_1_value);
+        console.log("Selected percent 8: " + selectedPercentage);
+        console.log("Product Weight 8: " + product_weight);
+        console.log("Tub Size Chosen (g) 8: " + edit_size);
+        console.log("Variant Price p/g 8: " + product_price_per_gram);
+        var current_weight = selectedPercentage/100 * (edit_size);
+        var new_price = current_weight * product_price_per_gram ;
+        $("#valueInput_8_price").val(new_price.toFixed(2));
+        $("#valueInput_8_weight").val(current_weight);
+        console.log("Price so far 8: R" + new_price.toFixed(2) );
+        calculate_totals();
+    }
+}
+var percentDropdownUse_1 = document.getElementById('mw_formula_percentDropdown_8');
+percentDropdownUse_1.addEventListener('change', () => {
+  function_8();
+});
+var mainInputUse_1 = document.getElementById('ModalForm-ingredient_8');
+mainInputUse_1.addEventListener('change', () => {
+  function_8();
+}); 
+// ------- END GET INGREDIENT 8 VALUES FROM PERCENT DROPDOWN SELECT ---------
+
+// ------- START GET PRODUCT FROM DROPDOWN SELECT INGREDIENT 9 ---------
+var productDropdown = document.getElementById('all_products_dropdown_9');
+    productDropdown.addEventListener('change', () => {
+      function_product_9();
+    });
+    function function_product_9(){
+      //alert('changed/ing...');
+      var productDropdown_1 = document.getElementById('all_products_dropdown_9');
+      var selectedProduct_1 = productDropdown_1.value;
+      if(selectedProduct_1 != ""){
+            $("#clear_ingredient_9").removeClass('hide_element');
+            var formula_size = $('input[name="contact[Formula Size]"]:checked').val();
+            var product_name = $('#all_products_dropdown_9 option:checked').attr('data-variant-name').trim();
+            var product_price = $('#all_products_dropdown_9 option:checked').attr('data-price');
+            var product_weight = $('#all_products_dropdown_9 option:checked').attr('data-weight');
+            var product_price_per_gram = $('#all_products_dropdown_9 option:checked').attr('data-price_pg');
+            var percentDropdown_1A = document.getElementById('mw_formula_percentDropdown_9');
+            var selectedPercentageA = parseFloat(percentDropdown_1A.value); // Get selected percentage as a decimal
+            if (selectedPercentageA > 0){
+              product_name = product_name + " | " + selectedPercentageA + "%";
+            }
+            $('#ModalForm-ingredient_9').val(product_name);
+
+            if (formula_size) {
+              var edit_size = formula_size.match(/\d+(\.\d+)?/g); 
+              if(edit_size == 1){
+                edit_size = 1000;
+              }
+              // console.log("Selected Tub Size: ", edit_size);
+            } else {
+              console.log("No product size selected.");
+              $("#form_help").fadeIn();
+              $("#form_help").removeClass('form_help_hide');
+              $("#form_help").html('Please select a product size');
+              $(".mw_formula_radio_btns").addClass('flash_me');
+              setTimeout(function(){
+                  $("#form_help").addClass('form_help_hide');
+                  $("#form_help").fadeOut();
+                  setTimeout(function(){
+                    $("#form_help").removeClass('form_help_hide');
+                  }, 1500);
+              }, 5000);
+              setTimeout(function(){
+                $(".mw_formula_radio_btns").removeClass('flash_me');
+              }, 6500);
+            }
+            console.log("Variant Price 9: " + product_price);
+            console.log("Variant Weight 9: " + product_weight);
+            console.log("Selected Percent 9: " + selectedPercentageA);
+            console.log("Tub Size Chosen (g) 9: " + edit_size);
+            console.log("Variant Price 9 p/g: " + product_price_per_gram);
+            var new_price = (selectedPercentageA/100 * (edit_size)) * product_price_per_gram ;
+            console.log("Price 9 so far: R" + new_price.toFixed(2) );
+            function_7();
+      }
+    }
+// ------- START GET PRODUCT FROM DROPDOWN SELECT INGREDIENT 9  ---------
+
+// ------- START GET INGREDIENT 9 VALUES FROM PERCENT DROPDOWN SELECT ---------
+function function_9(){
+    console.log("Starting function_9...");
+    var valueInput_1 = document.getElementById('valueInput_9');
+    var mainInput_1 = document.getElementById('ModalForm-ingredient_9');
+    var percentDropdown_1 = document.getElementById('mw_formula_percentDropdown_9');
+    var productDropdown_1a = document.getElementById('all_products_dropdown_9');
+    var selectedProduct_1a = productDropdown_1a.value;
+    //alert(selectedProduct_1a);
+    var mainInput_1_value = mainInput_1.value;
+    var selectedPercentage = parseFloat(percentDropdown_1.value); // Get selected percentage as a decimal
+    valueInput_1.value = selectedPercentage;
+    var product_weight = $('#all_products_dropdown_9 option:checked').attr('data-weight');
+    var product_price_per_gram = $('#all_products_dropdown_9 option:checked').attr('data-price_pg');
+    var formula_size = $('input[name="contact[Formula Size]"]:checked').val();
+    if (formula_size) {
+        var edit_size = formula_size.match(/\d+(\.\d+)?/g); 
+        if(edit_size == 1){
+          edit_size = 1000;
+        }
+        // console.log("Selected Tub Size: ", edit_size);
+    } else {
+        var edit_size = ""; 
+    }
+
+    if(mainInput_1_value == "") {
+          console.log('Please enter the Ingredient 9 first.');
+          mainInput_1.value = "Enter ingredient 9 first...";
+          $('#mw_formula_percentDropdown_9 option:first-child').prop('selected', true);
+          $('#all_products_dropdown_9 option:first-child').prop('selected', true);
+          $(valueInput_1).val("");
+          mainInput_1.value = "";
+          valueInput_1.value = "";
+          selectedProduct_1a.value = "";
+          $(".form_help").html("");
+          $("#valueInput_9_price").val("");
+          $("#valueInput_9_weight").val("");
+          calculate_totals();
+    } else {
+        if (containsPercentage(mainInput_1_value)) {
+          console.log("The string 9 contains a percentage number.");
+          var originalString_1 = mainInput_1.value;
+          var stripString_1 = originalString_1.replace(/\|/g, '');
+          var newString1 = stripString_1.replace(/\s*\d+(?:\.\d+)?%/g, ' | ' + selectedPercentage + '%');
+          mainInput_1.value = newString1;
+          
+          //$("#mw_formula_percentDropdown_1").hide();
+          // You can add further logic here, e.g., display a message
+        } else {
+          console.log("The string 9 does not contain a percentage number.");
+          var stripString_1 = mainInput_1_value.replace(/\|/g, '');
+          if(selectedPercentage == 0){
+            //alert('Its zero...');
+            mainInput_1.value = stripString_1;
+            //$("#mw_formula_percentDropdown_7").hide();
+          } else {
+            mainInput_1.value = stripString_1 + " | " + selectedPercentage + '%';
+           // $("#mw_formula_percentDropdown_1").hide();
+          }
+
+        }
+        console.log("Product selected 9: " + mainInput_1_value);
+        console.log("Selected percent 9: " + selectedPercentage);
+        console.log("Product Weight 9: " + product_weight);
+        console.log("Tub Size Chosen (g) 9: " + edit_size);
+        console.log("Variant Price p/g 9: " + product_price_per_gram);
+        var current_weight = selectedPercentage/100 * (edit_size);
+        var new_price = current_weight * product_price_per_gram ;
+        $("#valueInput_9_price").val(new_price.toFixed(2));
+        $("#valueInput_9_weight").val(current_weight);
+        console.log("Price so far 9: R" + new_price.toFixed(2) );
+        calculate_totals();
+    }
+}
+var percentDropdownUse_1 = document.getElementById('mw_formula_percentDropdown_9');
+percentDropdownUse_1.addEventListener('change', () => {
+  function_9();
+});
+var mainInputUse_1 = document.getElementById('ModalForm-ingredient_9');
+mainInputUse_1.addEventListener('change', () => {
+  function_9();
+}); 
+// ------- END GET INGREDIENT 9 VALUES FROM PERCENT DROPDOWN SELECT ---------
+
+// ------- START GET PRODUCT FROM DROPDOWN SELECT INGREDIENT 10 ---------
+var productDropdown = document.getElementById('all_products_dropdown_10');
+    productDropdown.addEventListener('change', () => {
+      function_product_10();
+    });
+    function function_product_10(){
+      //alert('changed/ing...');
+      var productDropdown_1 = document.getElementById('all_products_dropdown_10');
+      var selectedProduct_1 = productDropdown_1.value;
+      if(selectedProduct_1 != ""){
+            $("#clear_ingredient_10").removeClass('hide_element');
+            var formula_size = $('input[name="contact[Formula Size]"]:checked').val();
+            var product_name = $('#all_products_dropdown_10 option:checked').attr('data-variant-name').trim();
+            var product_price = $('#all_products_dropdown_10 option:checked').attr('data-price');
+            var product_weight = $('#all_products_dropdown_10 option:checked').attr('data-weight');
+            var product_price_per_gram = $('#all_products_dropdown_10 option:checked').attr('data-price_pg');
+            var percentDropdown_1A = document.getElementById('mw_formula_percentDropdown_10');
+            var selectedPercentageA = parseFloat(percentDropdown_1A.value); // Get selected percentage as a decimal
+            if (selectedPercentageA > 0){
+              product_name = product_name + " | " + selectedPercentageA + "%";
+            }
+            $('#ModalForm-ingredient_10').val(product_name);
+
+            if (formula_size) {
+              var edit_size = formula_size.match(/\d+(\.\d+)?/g); 
+              if(edit_size == 1){
+                edit_size = 1000;
+              }
+              // console.log("Selected Tub Size: ", edit_size);
+            } else {
+              console.log("No product size selected.");
+              $("#form_help").fadeIn();
+              $("#form_help").removeClass('form_help_hide');
+              $("#form_help").html('Please select a product size');
+              $(".mw_formula_radio_btns").addClass('flash_me');
+              setTimeout(function(){
+                  $("#form_help").addClass('form_help_hide');
+                  $("#form_help").fadeOut();
+                  setTimeout(function(){
+                    $("#form_help").removeClass('form_help_hide');
+                  }, 1500);
+              }, 5000);
+              setTimeout(function(){
+                $(".mw_formula_radio_btns").removeClass('flash_me');
+              }, 6500);
+            }
+            console.log("Variant Price 10: " + product_price);
+            console.log("Variant Weight 10: " + product_weight);
+            console.log("Selected Percent 10: " + selectedPercentageA);
+            console.log("Tub Size Chosen (g) 10: " + edit_size);
+            console.log("Variant Price 10 p/g: " + product_price_per_gram);
+            var new_price = (selectedPercentageA/100 * (edit_size)) * product_price_per_gram ;
+            console.log("Price 10 so far: R" + new_price.toFixed(2) );
+            function_10();
+      }
+    }
+// ------- START GET PRODUCT FROM DROPDOWN SELECT INGREDIENT 10  ---------
+
+// ------- START GET INGREDIENT 10 VALUES FROM PERCENT DROPDOWN SELECT ---------
+function function_10(){
+    console.log("Starting function_10...");
+    var valueInput_1 = document.getElementById('valueInput_10');
+    var mainInput_1 = document.getElementById('ModalForm-ingredient_10');
+    var percentDropdown_1 = document.getElementById('mw_formula_percentDropdown_10');
+    var productDropdown_1a = document.getElementById('all_products_dropdown_10');
+    var selectedProduct_1a = productDropdown_1a.value;
+    //alert(selectedProduct_1a);
+    var mainInput_1_value = mainInput_1.value;
+    var selectedPercentage = parseFloat(percentDropdown_1.value); // Get selected percentage as a decimal
+    valueInput_1.value = selectedPercentage;
+    var product_weight = $('#all_products_dropdown_10 option:checked').attr('data-weight');
+    var product_price_per_gram = $('#all_products_dropdown_10 option:checked').attr('data-price_pg');
+    var formula_size = $('input[name="contact[Formula Size]"]:checked').val();
+    if (formula_size) {
+        var edit_size = formula_size.match(/\d+(\.\d+)?/g); 
+        if(edit_size == 1){
+          edit_size = 1000;
+        }
+        // console.log("Selected Tub Size: ", edit_size);
+    } else {
+        var edit_size = ""; 
+    }
+
+    if(mainInput_1_value == "") {
+          console.log('Please enter the Ingredient 10 first.');
+          mainInput_1.value = "Enter ingredient 10 first...";
+          $('#mw_formula_percentDropdown_10 option:first-child').prop('selected', true);
+          $('#all_products_dropdown_10 option:first-child').prop('selected', true);
+          $(valueInput_1).val("");
+          mainInput_1.value = "";
+          valueInput_1.value = "";
+          selectedProduct_1a.value = "";
+          $(".form_help").html("");
+          $("#valueInput_10_price").val("");
+          $("#valueInput_10_weight").val("");
+          calculate_totals();
+    } else {
+        if (containsPercentage(mainInput_1_value)) {
+          console.log("The string 10 contains a percentage number.");
+          var originalString_1 = mainInput_1.value;
+          var stripString_1 = originalString_1.replace(/\|/g, '');
+          var newString1 = stripString_1.replace(/\s*\d+(?:\.\d+)?%/g, ' | ' + selectedPercentage + '%');
+          mainInput_1.value = newString1;
+          
+          //$("#mw_formula_percentDropdown_1").hide();
+          // You can add further logic here, e.g., display a message
+        } else {
+          console.log("The string 10 does not contain a percentage number.");
+          var stripString_1 = mainInput_1_value.replace(/\|/g, '');
+          if(selectedPercentage == 0){
+            //alert('Its zero...');
+            mainInput_1.value = stripString_1;
+            //$("#mw_formula_percentDropdown_7").hide();
+          } else {
+            mainInput_1.value = stripString_1 + " | " + selectedPercentage + '%';
+           // $("#mw_formula_percentDropdown_1").hide();
+          }
+
+        }
+        console.log("Product selected 10: " + mainInput_1_value);
+        console.log("Selected percent 10: " + selectedPercentage);
+        console.log("Product Weight 10: " + product_weight);
+        console.log("Tub Size Chosen (g) 10: " + edit_size);
+        console.log("Variant Price p/g 10: " + product_price_per_gram);
+        var current_weight = selectedPercentage/100 * (edit_size);
+        var new_price = current_weight * product_price_per_gram ;
+        $("#valueInput_10_price").val(new_price.toFixed(2));
+        $("#valueInput_10_weight").val(current_weight);
+        console.log("Price so far 10: R" + new_price.toFixed(2) );
+        calculate_totals();
+    }
+}
+var percentDropdownUse_1 = document.getElementById('mw_formula_percentDropdown_10');
+percentDropdownUse_1.addEventListener('change', () => {
+  function_10();
+});
+var mainInputUse_1 = document.getElementById('ModalForm-ingredient_9');
+mainInputUse_1.addEventListener('change', () => {
+  function_10();
+}); 
+// ------- END GET INGREDIENT 10 VALUES FROM PERCENT DROPDOWN SELECT ---------
+
+// -------------- -------------- *************** START CACULATE ALL TOTALS *************** -------------- --------------
+  function calculate_totals() {
+    console.log("Calculating...");
+  // ------- INGREDIENT 1 ----------
+    var price_1 = $("#valueInput_1_price").val();
+    if(price_1 == ""){
+      price_1 = 0;
+    }
+    var current_weight_1 = $("#valueInput_1_weight").val();
+    var percentage_1 = $("#valueInput_1").val();
+    var formula_size_1 = $('input[name="contact[Formula Size]"]:checked').val();
+    if (formula_size_1) {
+        var chosen_tub_size = formula_size_1.match(/\d+(\.\d+)?/g); 
+        if(chosen_tub_size == 1){
+          chosen_tub_size = 1000;
+        }
+    } else {
+        var chosen_tub_size = ""; 
+    }
+
+  // ------- INGREDIENT 2 ----------
+    var price_2 = $("#valueInput_2_price").val();
+    if(price_2 == ""){
+      price_2 = 0;
+    }
+    var current_weight_2 = $("#valueInput_2_weight").val();
+    var percentage_2 = $("#valueInput_2").val();
+    var formula_size_2 = $('input[name="contact[Formula Size]"]:checked').val();
+    if (formula_size_2) {
+        var chosen_tub_size = formula_size_2.match(/\d+(\.\d+)?/g); 
+        if(chosen_tub_size == 1){
+          chosen_tub_size = 1000;
+        }
+    } else {
+        var chosen_tub_size = ""; 
+    }
+
+  // ------- INGREDIENT 3 ----------
+    var price_3 = $("#valueInput_3_price").val();
+    if(price_3 == ""){
+      price_3 = 0;
+    }
+    var current_weight_3 = $("#valueInput_3_weight").val();
+    var percentage_3 = $("#valueInput_3").val();
+    var formula_size_3 = $('input[name="contact[Formula Size]"]:checked').val();
+    if (formula_size_3) {
+        var chosen_tub_size = formula_size_3.match(/\d+(\.\d+)?/g); 
+        if(chosen_tub_size == 1){
+          chosen_tub_size = 1000;
+        }
+    } else {
+        var chosen_tub_size = ""; 
+    }
+
+    // ------- INGREDIENT 4 ----------
+    var price_4 = $("#valueInput_4_price").val();
+    if(price_4 == ""){
+      price_4 = 0;
+    }
+    var current_weight_4 = $("#valueInput_4_weight").val();
+    var percentage_4 = $("#valueInput_4").val();
+    var formula_size_4 = $('input[name="contact[Formula Size]"]:checked').val();
+    if (formula_size_4) {
+        var chosen_tub_size = formula_size_4.match(/\d+(\.\d+)?/g); 
+        if(chosen_tub_size == 1){
+          chosen_tub_size = 1000;
+        }
+    } else {
+        var chosen_tub_size = ""; 
+    }
+
+    // ------- INGREDIENT 5 ----------
+    var price_5 = $("#valueInput_5_price").val();
+    if(price_5 == ""){
+      price_5 = 0;
+    }
+    var current_weight_5 = $("#valueInput_5_weight").val();
+    var percentage_5 = $("#valueInput_5").val();
+    var formula_size_5 = $('input[name="contact[Formula Size]"]:checked').val();
+    if (formula_size_5) {
+        var chosen_tub_size = formula_size_5.match(/\d+(\.\d+)?/g); 
+        if(chosen_tub_size == 1){
+          chosen_tub_size = 1000;
+        }
+    } else {
+        var chosen_tub_size = ""; 
+    }
+
+    // ------- INGREDIENT 6 ----------
+    var price_6 = $("#valueInput_6_price").val();
+    if(price_6 == ""){
+      price_6 = 0;
+    }
+    var current_weight_6 = $("#valueInput_6_weight").val();
+    var percentage_6 = $("#valueInput_6").val();
+    var formula_size_6 = $('input[name="contact[Formula Size]"]:checked').val();
+    if (formula_size_6) {
+        var chosen_tub_size = formula_size_6.match(/\d+(\.\d+)?/g); 
+        if(chosen_tub_size == 1){
+          chosen_tub_size = 1000;
+        }
+    } else {
+        var chosen_tub_size = ""; 
+    }
+
+    // ------- INGREDIENT 7 ----------
+    var price_7 = $("#valueInput_7_price").val();
+    if(price_7 == ""){
+      price_7 = 0;
+    }
+    var current_weight_7 = $("#valueInput_7_weight").val();
+    var percentage_7 = $("#valueInput_7").val();
+    var formula_size_7 = $('input[name="contact[Formula Size]"]:checked').val();
+    if (formula_size_7) {
+        var chosen_tub_size = formula_size_7.match(/\d+(\.\d+)?/g); 
+        if(chosen_tub_size == 1){
+          chosen_tub_size = 1000;
+        }
+    } else {
+        var chosen_tub_size = ""; 
+    }
+
+    // ------- INGREDIENT 8 ----------
+    var price_8 = $("#valueInput_8_price").val();
+    if(price_8 == ""){
+      price_8 = 0;
+    }
+    var current_weight_8 = $("#valueInput_8_weight").val();
+    var percentage_8 = $("#valueInput_8").val();
+    var formula_size_8 = $('input[name="contact[Formula Size]"]:checked').val();
+    if (formula_size_8) {
+        var chosen_tub_size = formula_size_8.match(/\d+(\.\d+)?/g); 
+        if(chosen_tub_size == 1){
+          chosen_tub_size = 1000;
+        }
+    } else {
+        var chosen_tub_size = ""; 
+    }
+
+    // ------- INGREDIENT 9 ----------
+    var price_9 = $("#valueInput_9_price").val();
+    if(price_9 == ""){
+      price_9 = 0;
+    }
+    var current_weight_9 = $("#valueInput_9_weight").val();
+    var percentage_9 = $("#valueInput_9").val();
+    var formula_size_9 = $('input[name="contact[Formula Size]"]:checked').val();
+    if (formula_size_9) {
+        var chosen_tub_size = formula_size_9.match(/\d+(\.\d+)?/g); 
+        if(chosen_tub_size == 1){
+          chosen_tub_size = 1000;
+        }
+    } else {
+        var chosen_tub_size = ""; 
+    }
+
+    // ------- INGREDIENT 10 ----------
+    var price_10 = $("#valueInput_10_price").val();
+    if(price_10 == ""){
+      price_10 = 0;
+    }
+    var current_weight_10 = $("#valueInput_10_weight").val();
+    var percentage_10 = $("#valueInput_10").val();
+    var formula_size_10 = $('input[name="contact[Formula Size]"]:checked').val();
+    if (formula_size_10) {
+        var chosen_tub_size = formula_size_10.match(/\d+(\.\d+)?/g); 
+        if(chosen_tub_size == 1){
+          chosen_tub_size = 1000;
+        }
+    } else {
+        var chosen_tub_size = ""; 
+    }
+
+    console.log("price_1: " + price_1 + "price_2: " + price_2 + "price_3: " + price_3 + "price_4: " + price_4 + "price_5: " + price_5 + "price_6: " + price_6 + "price_7: " + price_7 + "price_8: " + price_8 + "price_9: " + price_9 + "price_10: " + price_10);
+    console.log("current_weight_8: " + current_weight_8);
+    console.log("percentage_8: " + percentage_8);
+
+
+    if(chosen_tub_size == "" || chosen_tub_size == undefined ){
+        $("#form_help").fadeIn();
+        $("#form_help").removeClass('form_help_hide');
+        $("#form_help").html('Please select a product size');
+        $(".mw_formula_radio_btns").addClass('flash_me');
+        setTimeout(function(){
+            $("#form_help").addClass('form_help_hide');
+            $("#form_help").fadeOut();
+            setTimeout(function(){
+              $("#form_help").removeClass('form_help_hide');
+            }, 1500);
+        }, 5000);
+        setTimeout(function(){
+          $(".mw_formula_radio_btns").removeClass('flash_me');
+        }, 6500);
+        return false;
+    }
+    
+    var percent_total  = +percentage_1 + +percentage_2 + +percentage_3 + +percentage_4 + +percentage_5 + +percentage_6 + +percentage_7 + +percentage_8 + +percentage_9 + +percentage_10;
+    var price_total  = +price_1 + +price_2 + +price_3 + +price_4 + +price_5 + +price_6 + +price_7 + +price_8 + +price_9 + +price_10 + 50;
+    console.log("price_total: " + price_total);
+    console.log("percent_total: " + percent_total);
+    var weight_total  = +current_weight_1 + +current_weight_2 + +current_weight_3 + +current_weight_4 + +current_weight_5 + +current_weight_6 + +current_weight_7 + +current_weight_8 + +current_weight_9 + +current_weight_10;
+
+
+    if(price_total == 0 || price_total == 0.00 || price_total == 50.00 || price_total == 50){
+      console.log("Price totals equlas 0...");
+       $("#totals_container").addClass('form_help_hide');
+      // $("#totals_container").fadeOut();
+      return false;
+    }
+
+    if(weight_total > chosen_tub_size){
+      $("#totals_container").fadeIn();
+      $("#totals_container").html('<p style="font-weight:600;">Can not exceed selected product weight: <br> Current Weight: '  + weight_total + "g / " + chosen_tub_size + "g</p>");
+      console.log("Weight total more than tub size...");
+      return false;
+    }
+
+    console.log("Calculate Price Total: " + price_total.toFixed(2));
+    console.log("Calculate Weight Total: " + weight_total);
+    console.log("Calculate Chosen Tub Size: " + chosen_tub_size);
+
+  
+    $("#totals_container").removeClass('form_help_hide');
+    $("#totals_container").fadeIn();
+    $("#totals_container").html('<p class="formula_totals_div">Current Price: R<span id="total_price">' + price_total.toFixed(2) + "</span><span class='packaging_fee'>*Includes R50.00 blending & packing fee</span> Current Weight: <span id='total_weight'>"  + weight_total + "</span>g / " + chosen_tub_size + "g</p>");
+    if(weight_total == chosen_tub_size){
+        if ($('.formula_ready').length > 0) {
+          $(".formula_ready").fadeIn();
+        } else {
+          $("#totals_container").append("<p class='formula_ready'>Formula Ready!</p>");
+        }
+    } else {
+      $(".formula_ready").fadeOut();
+    }
+
+    if(percent_total != 0 ){
+        if ($('.formula_ready').length > 0) {
+          $(".formula_ready").fadeIn();
+        } else {
+          $("#totals_container").append("<p class='formula_ready'>" + percent_total + "% Complete</p>");
+        }
+    }
+
+    if(chosen_tub_size == 200){
+      $("#totals_container").prepend('<img style="background: #fff;padding: 4px;border-radius: 4px;margin-right: 12px;" width="42" height="auto" src="https://cdn.shopify.com/s/files/1/0713/8685/7724/files/tub_size_200g.jpg" />');
+    } else if(chosen_tub_size == 500){
+      $("#totals_container").prepend('<img style="background: #fff;padding: 4px;border-radius: 4px;margin-right: 12px;" width="42" height="auto" src="https://cdn.shopify.com/s/files/1/0713/8685/7724/files/tub_size_500g.jpg" />');
+    } else if(chosen_tub_size == 1000){
+      $("#totals_container").prepend('<img style="background: #fff;padding: 4px;border-radius: 4px;margin-right: 12px;" width="42" height="auto" src="https://cdn.shopify.com/s/files/1/0713/8685/7724/files/tub_size_1kg.jpg" />');
+    } else {
+
+    }
+    
+    // setTimeout(function(){
+    //     $("#totals_container").addClass('form_help_hide');
+    //     $("#totals_container").fadeOut();
+    //     setTimeout(function(){
+    //       $("#totals_container").removeClass('form_help_hide');
+    //     }, 1500);
+    // }, 10000);
+}
+// -------------- -------------- *************** END CACULATE ALL TOTALS *************** -------------- --------------
+
+
+
+// ------- START SUBMIT THE FORMULA FORM ---------
+$(".submit_formula_btn").click(function (e){
+  e.preventDefault();
+  var my_html_elmnt = $(this);
+  $(my_html_elmnt).html('Submitting <img style="margin-top:-2px;margin-left:2px;filter:brightness(1.3);" width="16" src="https://cdn.shopify.com/s/files/1/0713/8685/7724/files/loader.gif?v=1743590298" />');
+
+  // ----------- Check Name, Tel, Mail, Size, Formula Name -----------
+  var user_name = $('#ModalForm-name').val();
+  var user_email = $('#ModalForm-email').val();
+  var user_tel = $('#ModalForm-phone').val();
+  var selectedSizeValue = $('input[name="contact[Formula Size]"]:checked').val();
+  var formula_description = $("#ModalForm-body").val();
+  //alert("Name: " + user_name);
+
+  if (user_name == ""){
+    $(my_html_elmnt).html('Please enter your name');
+    setTimeout(function(){
+      $(my_html_elmnt).html('Add Formula To Cart');
+    }, 3000);
+    return false;
+  }
+  if (user_email == ""){
+    $(my_html_elmnt).html('Please enter your email');
+    setTimeout(function(){
+      $(my_html_elmnt).html('Add Formula To Cart');
+    }, 3000);
+    return false;
+  }
+  if (selectedSizeValue === undefined ){
+    $(my_html_elmnt).html('Please select a tub size');
+    setTimeout(function(){
+      $(my_html_elmnt).html('Add Formula To Cart');
+    }, 3000);
+    return false;
+  }
+  if (formula_description == ""){
+    $(my_html_elmnt).html('Please enter your formula name');
+    setTimeout(function(){
+      $(my_html_elmnt).html('Add Formula To Cart');
+    }, 3000);
+    return false;
+  }
+
+  var perc1 = $('#valueInput_1').val();
+  var perc2 = $('#valueInput_2').val();
+  var perc3 = $('#valueInput_3').val();
+  var perc4 = $('#valueInput_4').val();
+  var perc5 = $('#valueInput_5').val();
+  var perc6 = $('#valueInput_6').val();
+  var perc7 = $('#valueInput_7').val();
+  var perc8 = $('#valueInput_8').val();
+  var perc9 = $('#valueInput_9').val();
+  var perc10 = $('#valueInput_10').val();
+
+  var populatedFields = [];
+  $('#valueInput_1, #valueInput_2, #valueInput_3, #valueInput_4, #valueInput_5, #valueInput_6, #valueInput_7, #valueInput_8, #valueInput_9, #valueInput_10').each(function() {
+      var inputValue = $.trim($(this).val()); // Get and trim the value
+      if (inputValue != '') {
+        populatedFields.push($(this).attr('id')); // Add the ID of the empty field
+      }
+  });
+  //alert(populatedFields.length);
+  if (populatedFields.length < 2) {
+      // alert('The following fields are empty: ' + emptyFields.join(', '));
+      //alert('Formula requires at least two ingredients');
+      $(my_html_elmnt).html('Formula requires at least two ingredients <br> Current Ingredients: ' + populatedFields.length);
+      setTimeout(function(){
+        $(my_html_elmnt).html('Add Formula To Cart');
+      }, 7000);
+  } else {
+     // alert('All specified fields are filled.');
+  }
+
+  var total_perc = +perc1 + +perc2 + +perc3 + +perc4 + +perc5 + +perc6 + +perc7 + +perc8 + +perc9 + +perc10;
+  //alert('Percent Value Total: ' + total_perc );
+  if(total_perc > 100){
+    $(my_html_elmnt).html('Ingedients can not exceed 100% <br>Currently: ' + total_perc + '%');
+    setTimeout(function(){
+      $(my_html_elmnt).html('Add Formula To Cart');
+    }, 5000);
+    return false;
+  } else if(total_perc < 100){
+    $(my_html_elmnt).html('Ingedients must total 100% <br> Currently: ' + total_perc + '%');
+    setTimeout(function(){
+      $(my_html_elmnt).html('Add Formula To Cart');
+    }, 5000);
+    return false;
+  } else {
+  
+  }
+  console.log('submitting...');
+
+  var ingredient_1 = $('#ModalForm-ingredient_1').val();
+  var ingredient_2 = $('#ModalForm-ingredient_2').val();
+  var ingredient_3 = $('#ModalForm-ingredient_3').val();
+  var ingredient_4 = $('#ModalForm-ingredient_4').val();
+  var ingredient_5 = $('#ModalForm-ingredient_5').val();
+  var ingredient_6 = $('#ModalForm-ingredient_6').val();
+  var ingredient_7 = $('#ModalForm-ingredient_7').val();
+  var ingredient_8 = $('#ModalForm-ingredient_8').val();
+  var ingredient_9 = $('#ModalForm-ingredient_9').val();
+  var ingredient_10 = $('#ModalForm-ingredient_10').val();
+
+  var perc1 = $('#valueInput_1').val();
+  var perc2 = $('#valueInput_2').val();
+  var perc3 = $('#valueInput_3').val();
+  var perc4 = $('#valueInput_4').val();
+  var perc5 = $('#valueInput_5').val();
+  var perc6 = $('#valueInput_6').val();
+  var perc7 = $('#valueInput_7').val();
+  var perc8 = $('#valueInput_8').val();
+  var perc9 = $('#valueInput_9').val();
+  var perc10 = $('#valueInput_10').val();
+
+  var weight_1 = $('#valueInput_1_weight').val();
+  var weight_2 = $('#valueInput_2_weight').val();
+  var weight_3 = $('#valueInput_3_weight').val();
+  var weight_4 = $('#valueInput_4_weight').val();
+  var weight_5 = $('#valueInput_5_weight').val();
+  var weight_6 = $('#valueInput_6_weight').val();
+  var weight_7 = $('#valueInput_7_weight').val();
+  var weight_8 = $('#valueInput_8_weight').val();
+  var weight_9 = $('#valueInput_9_weight').val();
+  var weight_10 = $('#valueInput_10_weight').val();
+
+  var submit_price = $('#total_price').html();
+  var submit_weight = $('#total_weight').html();
+
+  var myCheckbox = document.getElementById('myFormulaCheckbox');
+  if (myCheckbox.checked) {
+    console.log('The checkbox is checked.');
+  } else {
+    console.log('The checkbox is not checked.');
+    $(my_html_elmnt).html('Please accept the terms & conditions');
+    setTimeout(function(){
+      $(my_html_elmnt).html('Add Formula To Cart');
+    }, 3000);
+    return false;
+  }
+  
+  // // Example: Check on change event
+  // myCheckbox.addEventListener('change', isCheckboxChecked);
+  //return false;
+
+  var data_formula_form = 'user_name=' + user_name + '&user_email=' + user_email + '&user_tel=' + user_tel + '&selectedSizeValue=' + selectedSizeValue + '&formula_description=' + formula_description + '&ingredient_1=' + ingredient_1 + '&ingredient_2=' + ingredient_2 + '&ingredient_3=' + ingredient_3 + '&ingredient_4=' + ingredient_4 + '&ingredient_5=' + ingredient_5 + '&ingredient_6=' + ingredient_6 + '&ingredient_7=' + ingredient_7 + '&ingredient_8=' + ingredient_8 + '&ingredient_9=' + ingredient_9 + '&ingredient_10=' + ingredient_10 + '&weight_1=' + weight_1 + '&weight_2=' + weight_2 + '&weight_3=' + weight_3 + '&weight_4=' + weight_4 + '&weight_5=' + weight_5 + '&weight_6=' + weight_6 + '&weight_7=' + weight_7 + '&weight_8=' + weight_8 + '&weight_9=' + weight_9 + '&weight_10=' + weight_10 + '&submit_price=' + submit_price + '&submit_weight=' + submit_weight;
+  //alert('submit_price: ' + submit_price);
+  //alert('submit_weight: ' + submit_weight);
+  console.log(data_formula_form);
+  //return false;
+          $.ajax({
+            type:'POST',
+            // enctype: 'multipart/form-data',
+            //url: $(this).attr('action'),
+            url: "https://mw-portal.co.za/db/my_whey_formula_ajax/send_my_formula2.php", 
+            data:data_formula_form,
+            cache:false,
+            // contentType: false,
+            // processData: false,
+            success:function(res){
+
+                var match = res.match(/\d+/);
+                if (match) {
+                    // Extract the matched number string (e.g., "123")
+                    var numberString = match[0];
+                    // Convert the string to an integer value
+                    var first_number_value = parseInt(numberString, 10);
+                    // Use the number value
+                    console.log("The first number is:", first_number_value);
+
+                  
+                    setTimeout(function(){
+                        // alert('adding...' + first_number_value);
+                          fetch('/cart/add.js', {
+                                method: 'POST',
+                                headers: {
+                                  'Content-Type': 'application/json',
+                                  'X-Requested-With': 'XMLHttpRequest', // Important for some older implementations
+                                },
+                                body: JSON.stringify({
+                                  items: [
+                                    {
+                                      id: first_number_value, // Replace with your actual variant ID
+                                      quantity: 1 // Replace with the desired quantity
+                                    }
+                                  ]
+                                })
+                          })
+                          .then(response => response.json())
+                          .then(data => {
+                            console.log('Item added to cart:', data);
+                            // Handle success (e.g., update the cart count on the page)
+
+                          async function checkIfProductIsInCart() {
+                                console.log("STARTING FUNCTION...");
+                                try {
+                                  var response = await fetch('/cart.js');
+                                  var cart = await response.json();
+                          
+                                  fetchCartItems();
+                                      async function fetchCartItems() {
+                                        try {
+                                          const response = await fetch('/cart.js', { cache: 'no-store' });
+                                          if (!response.ok) {
+                                            throw new Error('Something is wrong...');
+                                          }
+                                          const cart = await response.json();
+                                          console.log('Cart:', cart);
+
+                                          if (!cart.items || cart.items.length === 0) {
+                                            console.log('Empty cart, refetching...');
+                                            return await fetchCartItems();
+                                          }
+                                          return cart;
+
+
+
+
+
+                                        } catch (error) {
+                                          console.error('Fetch error:', error);
+                                        }
+                                      }
+
+                                } catch (error) {
+                                  console.error('Error fetching cart data:', error);
+                                  return false;
+                                }
+                            }
+                            checkIfProductIsInCart();
+
+                          })
+                          .then(updatedCart => {
+                            // Manually fetch and replace the cart drawer content
+                            // The exact implementation might vary slightly based on theme version
+                            fetch(window.Shopify.routes.root + '?section_id=cart-drawer')
+                              .then(response => response.text())
+                              .then(responseText => {
+                                const newDocument = new DOMParser().parseFromString(responseText, 'text/html');
+                                const newCartDrawerHtml = newDocument.getElementById('CartDrawer').innerHTML;
+                                //console.log("Here is HTML from fetch CART!!!!!!!!!!");
+                                //console.log(newCartDrawerHtml);
+                               
+                                // Find the existing cart drawer element and replace its inner HTML
+                                const currentCartDrawer = document.getElementById('CartDrawer');
+                                if (currentCartDrawer) {
+                                  currentCartDrawer.innerHTML = newCartDrawerHtml;
+                                  
+                                  // Re-initialize any necessary JavaScript components if they don't auto-initialize
+                                  // This often involves calling an open method or similar function
+                                  // The exact method is specific to Dawn's JS implementation (e.g., this.window.SLIDECART_UPDATE(response) in some cases)
+                                  // In v15.2, the <cart-drawer> custom element should handle some of this internally.
+                                  
+                                  // Open the cart drawer
+                                  $("cart-drawer").removeClass('is-empty');
+
+                                  // If you want the cart drawer to open automatically:
+                                  // Note: The exact event name might vary slightly by Dawn version.
+                                  const cartDrawer = document.querySelector('cart-drawer') || document.querySelector('.cart-notification');
+                                  if (cartDrawer) {
+                                      cartDrawer.open(); 
+                                  }
+                                  //document.querySelector('cart-drawer').open();
+                                }
+                              });
+                          })
+                          .catch(error => {
+                            console.error('Error adding item to cart:', error);
+                            // Handle errors
+                          });
+
+                    }, 3000);
+
+
+
+                    // You can now return this value for further use within this scope, 
+                    // or pass it to another function: useNumber(first_number_value);
+                } else {
+                    console.log("No number found in the response.");
+                }
+
+
+                
+                //alert('finished collecting...');
+                console.log(res);
+                if(res.indexOf("Email successfully sent") >= 0){
+                  console.log('Email sent...');
+                  $(my_html_elmnt).html('Successful<br>Adding to cart...');
+                  $('#submit_formula #ModalForm')[0].reset(); 
+                  $("#totals_container").fadeOut();
+                  $(".clear_ingredient").addClass('fade_element');
+                  setTimeout(function(){
+                    $(".clear_ingredient").addClass('hide_element');
+                  }, 2000);
+                  $("#totals_container").html('');
+                  setTimeout(function(){
+                    $(my_html_elmnt).html('Add Formula To Cart');
+                  }, 8000);
+                } else {
+                  console.log('Could not send email...');
+                  $(my_html_elmnt).html('Could not subimt form<br>Please check your connection or try again later');
+                  $('#submit_formula #ModalForm')[0].reset(); 
+                  $("#totals_container").fadeOut();
+                  $("#totals_container").html('');
+                  $(".clear_ingredient").addClass('hide_element');
+                  setTimeout(function(){
+                    $(my_html_elmnt).html('Add Formula To Cart');
+                  }, 8000);
+                }
+            },
+            error:function(res){
+                //alert('finished collecting...');
+                console.log(res);
+                // if(res.indexOf("No results") >= 0){
+                // }
+            }
+        });
+
+  //$('#submit_formula #ModalForm').submit();
+  // setTimeout(function(){
+  //   $(my_html_elmnt).html('Add Formula To Cart');
+  // }, 12000);
+
+}); // ------- END SUBMIT THE FORMULA FORM ---------
+
+// ---- HIDE FORM HELP -----
+$(".form_help").hide();
+
+ // ------- TUB SIZE RADIO BUTTON OPTION CLICK ---------
+  $('.mw_formula_radio_btns input[type="radio"]').on('click', function() {
+    $("#form_help").addClass('form_help_hide');
+    $("#form_help").fadeOut();
+    $(".mw_formula_radio_btns").removeClass('flash_me');
+    var selectedValue = $(this).val();
+    console.log("Radio button clicked! Value: " + selectedValue);
+    function_product_1(); 
+    function_1();
+    function_product_2();
+    function_2(); 
+    function_product_3();
+    function_3();
+    function_product_4();
+    function_4();
+    function_product_5();
+    function_5();
+    function_product_6();
+    function_6();
+    function_product_7();
+    function_7();
+    function_product_8();
+    function_8();
+    function_product_9();
+    function_9();
+    function_product_10();
+    function_10();
+  });
+
+  $("#clear_ingredient_1").click(function (){
+    $('#mw_formula_percentDropdown_1 option:first-child').prop('selected', true);
+    $('#all_products_dropdown_1 option:first-child').prop('selected', true);
+    $("#valueInput_1").val("");
+    $("#valueInput_1_price").val("");
+    $("#valueInput_1_weight").val("");
+    $("#all_products_dropdown_1").val("");
+    $("#ModalForm-ingredient_1").val("");
+    function_product_1();
+    function_1();
+    function_product_2();
+    function_2();
+    function_product_3();
+    function_3();
+    function_product_4();
+    function_4();
+    function_product_5();
+    function_5();
+    function_product_6();
+    function_6();
+    function_product_7();
+    function_7();
+    function_product_8();
+    function_8();
+    function_product_9();
+    function_9();
+    function_product_10();
+    function_10();
+    $("#clear_ingredient_1").addClass('hide_element');
+  });
+
+  $("#clear_ingredient_2").click(function (){
+    $('#mw_formula_percentDropdown_2 option:first-child').prop('selected', true);
+    $('#all_products_dropdown_2 option:first-child').prop('selected', true);
+    $("#valueInput_2").val("");
+    $("#valueInput_2_price").val("");
+    $("#valueInput_2_weight").val("");
+    $("#all_products_dropdown_2").val("");
+    $("#ModalForm-ingredient_2").val("");
+    function_product_1();
+    function_1();
+    function_product_2();
+    function_2();
+    function_product_3();
+    function_3();
+    function_product_4();
+    function_4();
+    function_product_5();
+    function_5();
+    function_product_6();
+    function_6();
+    function_product_7();
+    function_7();
+    function_product_8();
+    function_8();
+    function_product_9();
+    function_9();
+    function_product_10();
+    function_10();
+    $("#clear_ingredient_2").addClass('hide_element');
+  });
+
+  $("#clear_ingredient_3").click(function (){
+    $('#mw_formula_percentDropdown_3 option:first-child').prop('selected', true);
+    $('#all_products_dropdown_3 option:first-child').prop('selected', true);
+    $("#valueInput_3").val("");
+    $("#valueInput_3_price").val("");
+    $("#valueInput_3_weight").val("");
+    $("#all_products_dropdown_3").val("");
+    $("#ModalForm-ingredient_3").val("");
+    function_product_1();
+    function_1();
+    function_product_2();
+    function_2();
+    function_product_3();
+    function_3();
+    function_product_4();
+    function_4();
+    function_product_5();
+    function_5();
+    function_product_6();
+    function_6();
+    function_product_7();
+    function_7();
+    function_product_8();
+    function_8();
+    function_product_9();
+    function_9();
+    function_product_10();
+    function_10();
+    $("#clear_ingredient_3").addClass('hide_element');
+  });
+
+  $("#clear_ingredient_4").click(function (){
+    $('#mw_formula_percentDropdown_4 option:first-child').prop('selected', true);
+    $('#all_products_dropdown_4 option:first-child').prop('selected', true);
+    $("#valueInput_4").val("");
+    $("#valueInput_4_price").val("");
+    $("#valueInput_4_weight").val("");
+    $("#all_products_dropdown_4").val("");
+    $("#ModalForm-ingredient_4").val("");
+    function_product_1();
+    function_1();
+    function_product_2();
+    function_2();
+    function_product_3();
+    function_3();
+    function_product_4();
+    function_4();
+    function_product_5();
+    function_5();
+    function_product_6();
+    function_6();
+    function_product_7();
+    function_7();
+    function_product_8();
+    function_8();
+    function_product_9();
+    function_9();
+    function_product_10();
+    function_10();
+    $("#clear_ingredient_4").addClass('hide_element');
+  });
+
+  $("#clear_ingredient_5").click(function (){
+    $('#mw_formula_percentDropdown_5 option:first-child').prop('selected', true);
+    $('#all_products_dropdown_5 option:first-child').prop('selected', true);
+    $("#valueInput_5").val("");
+    $("#valueInput_5_price").val("");
+    $("#valueInput_5_weight").val("");
+    $("#all_products_dropdown_5").val("");
+    $("#ModalForm-ingredient_5").val("");
+    function_product_1();
+    function_1();
+    function_product_2();
+    function_2();
+    function_product_3();
+    function_3();
+    function_product_4();
+    function_4();
+    function_product_5();
+    function_5();
+    function_product_6();
+    function_6();
+    function_product_7();
+    function_7();
+    function_product_8();
+    function_8();
+    function_product_9();
+    function_9();
+    function_product_10();
+    function_10();
+    $("#clear_ingredient_5").addClass('hide_element');
+  });
+
+  $("#clear_ingredient_6").click(function (){
+    $('#mw_formula_percentDropdown_6 option:first-child').prop('selected', true);
+    $('#all_products_dropdown_6 option:first-child').prop('selected', true);
+    $("#valueInput_6").val("");
+    $("#valueInput_6_price").val("");
+    $("#valueInput_6_weight").val("");
+    $("#all_products_dropdown_6").val("");
+    $("#ModalForm-ingredient_6").val("");
+    function_product_1();
+    function_1();
+    function_product_2();
+    function_2();
+    function_product_3();
+    function_3();
+    function_product_4();
+    function_4();
+    function_product_5();
+    function_5();
+    function_product_6();
+    function_6();
+    function_product_7();
+    function_7();
+    function_product_8();
+    function_8();
+    function_product_9();
+    function_9();
+    function_product_10();
+    function_10();
+    $("#clear_ingredient_6").addClass('hide_element');
+  });
+
+  $("#clear_ingredient_7").click(function (){
+    $('#mw_formula_percentDropdown_7 option:first-child').prop('selected', true);
+    $('#all_products_dropdown_7 option:first-child').prop('selected', true);
+    $("#valueInput_7").val("");
+    $("#valueInput_7_price").val("");
+    $("#valueInput_7_weight").val("");
+    $("#all_products_dropdown_7").val("");
+    $("#ModalForm-ingredient_7").val("");
+    function_product_1();
+    function_1();
+    function_product_2();
+    function_2();
+    function_product_3();
+    function_3();
+    function_product_4();
+    function_4();
+    function_product_5();
+    function_5();
+    function_product_6();
+    function_6();
+    function_product_7();
+    function_7();
+    function_product_8();
+    function_8();
+    function_product_9();
+    function_9();
+    function_product_10();
+    function_10();
+    $("#clear_ingredient_7").addClass('hide_element');
+  });
+
+  $("#clear_ingredient_8").click(function (){
+    $('#mw_formula_percentDropdown_8 option:first-child').prop('selected', true);
+    $('#all_products_dropdown_8 option:first-child').prop('selected', true);
+    $("#valueInput_8").val("");
+    $("#valueInput_8_price").val("");
+    $("#valueInput_8_weight").val("");
+    $("#all_products_dropdown_8").val("");
+    $("#ModalForm-ingredient_8").val("");
+    function_product_1();
+    function_1();
+    function_product_2();
+    function_2();
+    function_product_3();
+    function_3();
+    function_product_4();
+    function_4();
+    function_product_5();
+    function_5();
+    function_product_6();
+    function_6();
+    function_product_7();
+    function_7();
+    function_product_8();
+    function_8();
+    function_product_9();
+    function_9();
+    function_product_10();
+    function_10();
+    $("#clear_ingredient_8").addClass('hide_element');
+  });
+
+  $("#clear_ingredient_9").click(function (){
+    $('#mw_formula_percentDropdown_9 option:first-child').prop('selected', true);
+    $('#all_products_dropdown_9 option:first-child').prop('selected', true);
+    $("#valueInput_9").val("");
+    $("#valueInput_9_price").val("");
+    $("#valueInput_9_weight").val("");
+    $("#all_products_dropdown_9").val("");
+    $("#ModalForm-ingredient_9").val("");
+    function_product_1();
+    function_1();
+    function_product_2();
+    function_2();
+    function_product_3();
+    function_3();
+    function_product_4();
+    function_4();
+    function_product_5();
+    function_5();
+    function_product_6();
+    function_6();
+    function_product_7();
+    function_7();
+    function_product_8();
+    function_8();
+    function_product_9();
+    function_9();
+    function_product_10();
+    function_10();
+    $("#clear_ingredient_9").addClass('hide_element');
+  });
+
+  $("#clear_ingredient_10").click(function (){
+    $('#mw_formula_percentDropdown_10 option:first-child').prop('selected', true);
+    $('#all_products_dropdown_10 option:first-child').prop('selected', true);
+    $("#valueInput_10").val("");
+    $("#valueInput_10_price").val("");
+    $("#valueInput_10_weight").val("");
+    $("#all_products_dropdown_10").val("");
+    $("#ModalForm-ingredient_10").val("");
+    function_product_1();
+    function_1();
+    function_product_2();
+    function_2();
+    function_product_3();
+    function_3();
+    function_product_4();
+    function_4();
+    function_product_5();
+    function_5();
+    function_product_6();
+    function_6();
+    function_product_7();
+    function_7();
+    function_product_8();
+    function_8();
+    function_product_9();
+    function_9();
+    function_product_10();
+    function_10();
+    $("#clear_ingredient_10").addClass('hide_element');
+  });
+ 
+
+}); // -------- END document ready ------------
+
+// ------------------ ***************** END MY FORMULA MODAL SCRIPT ***************** ------------------
