@@ -4623,7 +4623,9 @@ h3 {
     font-weight: 600;
 }
 
-
+.totals__total {
+    color:#444;
+}
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
