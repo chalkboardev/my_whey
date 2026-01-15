@@ -3046,28 +3046,28 @@ $(".submit_formula_btn").click(function (e){
   if (user_name == ""){
     $(my_html_elmnt).html('Please enter your name');
     setTimeout(function(){
-      $(my_html_elmnt).html('Add Formula To Cart');
+      $(my_html_elmnt).html('Submit Formula');
     }, 3000);
     return false;
   }
   if (user_email == ""){
     $(my_html_elmnt).html('Please enter your email');
     setTimeout(function(){
-      $(my_html_elmnt).html('Add Formula To Cart');
+      $(my_html_elmnt).html('Submit Formula');
     }, 3000);
     return false;
   }
   if (selectedSizeValue === undefined ){
     $(my_html_elmnt).html('Please select a tub size');
     setTimeout(function(){
-      $(my_html_elmnt).html('Add Formula To Cart');
+      $(my_html_elmnt).html('Submit Formula');
     }, 3000);
     return false;
   }
   if (formula_description == ""){
     $(my_html_elmnt).html('Please enter your formula name');
     setTimeout(function(){
-      $(my_html_elmnt).html('Add Formula To Cart');
+      $(my_html_elmnt).html('Submit Formula');
     }, 3000);
     return false;
   }
@@ -3096,7 +3096,7 @@ $(".submit_formula_btn").click(function (e){
       //alert('Formula requires at least two ingredients');
       $(my_html_elmnt).html('Formula requires at least two ingredients <br> Current Ingredients: ' + populatedFields.length);
       setTimeout(function(){
-        $(my_html_elmnt).html('Add Formula To Cart');
+        $(my_html_elmnt).html('Submit Formula');
       }, 7000);
   } else {
      // alert('All specified fields are filled.');
@@ -3107,13 +3107,13 @@ $(".submit_formula_btn").click(function (e){
   if(total_perc > 100){
     $(my_html_elmnt).html('Ingedients can not exceed 100% <br>Currently: ' + total_perc + '%');
     setTimeout(function(){
-      $(my_html_elmnt).html('Add Formula To Cart');
+      $(my_html_elmnt).html('Submit Formula');
     }, 5000);
     return false;
   } else if(total_perc < 100){
     $(my_html_elmnt).html('Ingedients must total 100% <br> Currently: ' + total_perc + '%');
     setTimeout(function(){
-      $(my_html_elmnt).html('Add Formula To Cart');
+      $(my_html_elmnt).html('Submit Formula');
     }, 5000);
     return false;
   } else {
@@ -3164,7 +3164,7 @@ $(".submit_formula_btn").click(function (e){
     console.log('The checkbox is not checked.');
     $(my_html_elmnt).html('Please accept the terms & conditions');
     setTimeout(function(){
-      $(my_html_elmnt).html('Add Formula To Cart');
+      $(my_html_elmnt).html('Submit Formula');
     }, 3000);
     return false;
   }
@@ -3315,7 +3315,7 @@ $(".submit_formula_btn").click(function (e){
                 console.log(res);
                 if(res.indexOf("Email successfully sent") >= 0){
                   console.log('Email sent...');
-                  $(my_html_elmnt).html('Successful<br>Adding to cart...');
+                  $(my_html_elmnt).html('Submission successful<br>Please check your inbox');
                   $('#submit_formula #ModalForm')[0].reset(); 
                   $("#totals_container").fadeOut();
                   $(".clear_ingredient").addClass('fade_element');
@@ -3324,7 +3324,7 @@ $(".submit_formula_btn").click(function (e){
                   }, 2000);
                   $("#totals_container").html('');
                   setTimeout(function(){
-                    $(my_html_elmnt).html('Add Formula To Cart');
+                    $(my_html_elmnt).html('Submit Formula');
                   }, 8000);
                 } else {
                   console.log('Could not send email...');
@@ -3334,7 +3334,7 @@ $(".submit_formula_btn").click(function (e){
                   $("#totals_container").html('');
                   $(".clear_ingredient").addClass('hide_element');
                   setTimeout(function(){
-                    $(my_html_elmnt).html('Add Formula To Cart');
+                    $(my_html_elmnt).html('Submit Formula');
                   }, 8000);
                 }
             },
@@ -3348,7 +3348,7 @@ $(".submit_formula_btn").click(function (e){
 
   //$('#submit_formula #ModalForm').submit();
   // setTimeout(function(){
-  //   $(my_html_elmnt).html('Add Formula To Cart');
+  //   $(my_html_elmnt).html('Submit Formula');
   // }, 12000);
 
 }); // ------- END SUBMIT THE FORMULA FORM ---------
