@@ -284,7 +284,8 @@
         "ingredient9": "Ingredient 9",
         "ingredient10": "Ingredient 10",
         "comment": "Formula Name",
-        "send": "Add Formula To Cart",
+        // "send": "Add Formula To Cart",
+        "send": "Submit Formula",
         "post_success": "Thanks for submitting your formula! We'll get back to you as soon as possible.",
         "error_heading": "Please adjust the following:"
       }
