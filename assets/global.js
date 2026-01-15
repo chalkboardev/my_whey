@@ -3182,7 +3182,7 @@ $(".submit_formula_btn").click(function (e){
             type:'POST',
             // enctype: 'multipart/form-data',
             //url: $(this).attr('action'),
-            url: "https://mw-portal.co.za/db/my_whey_formula_ajax/send_my_formula2.php", 
+            url: "https://mw-portal.co.za/db/my_whey_formula_ajax/send_my_formula.php", 
             data:data_formula_form,
             cache:false,
             // contentType: false,
