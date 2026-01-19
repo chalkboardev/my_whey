@@ -4624,8 +4624,14 @@ h3 {
 }
 
 .totals__total {
-    color:#444;
+    color: #444;
 }
+
+#toast_notification.toast__overlay {
+    height: 92vh;
+}
+
+
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
