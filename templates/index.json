@@ -612,6 +612,38 @@
         "padding_bottom": 36
       }
     },
+    "176894822957e5a359": {
+      "type": "apps",
+      "blocks": {
+        "loox_reviews_loox_dynamic_carousel_PiPn7H": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-carousel/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "corner-radius": 24,
+            "items-per-view": 2,
+            "items-per-view-mobile": 3,
+            "max-characters": 180,
+            "autoplay": true,
+            "autoplay-delay": 5,
+            "main-color": "#AE8868",
+            "stars-color": "#FF8D00",
+            "show-review-text": true,
+            "text-color": "",
+            "reviewer-name-color": "",
+            "verified-badge-color": "",
+            "quote-marks-icon": "style-1",
+            "quote-marks-icon-color": "",
+            "review-background-color": "",
+            "product-ids": "creatine-monohydrate-500g"
+          }
+        }
+      },
+      "block_order": [
+        "loox_reviews_loox_dynamic_carousel_PiPn7H"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "featured_collection_inyndE": {
       "type": "featured-collection",
       "disabled": true,
@@ -697,6 +729,7 @@
     "featured_collection_3CGfTT",
     "image_with_text_QnRYJR",
     "featured_collection_PQDGEE",
+    "176894822957e5a359",
     "featured_collection_inyndE",
     "toast_modal_VwYXMa",
     "flavour_modal_QdakFr"
