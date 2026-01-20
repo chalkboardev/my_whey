@@ -617,6 +617,7 @@
       "blocks": {
         "loox_reviews_loox_dynamic_carousel_PiPn7H": {
           "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-carousel/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "disabled": true,
           "settings": {
             "corner-radius": 24,
             "items-per-view": 2,
