@@ -4633,6 +4633,7 @@ h3 {
 
 .shopify-email-marketing-confirmation__container {
     padding-bottom: 4rem;
+    max-width: 76ch !important;
 }
 
 
