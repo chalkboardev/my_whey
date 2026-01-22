@@ -625,7 +625,7 @@
         "text_WBBBmM": {
           "type": "text",
           "settings": {
-            "text": "<p>With <strong>My Formulas</strong>, we have carefully developed products that have the correct amount of <strong>effective</strong> ingredients.</p><p>Got a custom Formula Idea? </p><p>We can make it for you.</p>",
+            "text": "<p>With <strong>My Formulas</strong>, we have carefully developed products that have the correct amount of <strong>effective</strong> ingredients.</p><p>We came up with what we believe, are the <strong>best ingredients</strong> for intended goals.</p><p>Got a custom Formula Idea? View our Formula page, we can make it for you.</p>",
             "text_style": "body"
           }
         },
