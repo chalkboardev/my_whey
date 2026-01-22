@@ -4642,11 +4642,18 @@ h3 {
     /* border: 2px solid #a33921 !important; */
     border: 2px solid #ffffff00 !important;
     font-weight: 600 !important;
-    min-height: 52px !important;
+    min-height: 5rem !important;
     letter-spacing: 2px !important;
-    min-width: calc(12rem + var(--buttons-border-width) * 2);
+    min-width: 200px;
+    display: flex;
+    line-height: 4.5rem;
+    color: #fff;
+    text-decoration: none;
+    flex-direction: column;
+    text-align: center;
     min-height: calc(4.5rem + var(--buttons-border-width) * 2);
     text-transform: uppercase;
+    border-radius: 6px;
     transition: all ease 0.25s;
 }
 
@@ -4656,10 +4663,18 @@ h3 {
     border: 2px solid #ffffff00 !important;
     letter-spacing: 4px !important;
     font-weight: 600 !important;
-    min-height: 52px !important;
-    min-width: calc(12rem + var(--buttons-border-width) * 2);
+    min-height: 5rem !important;
+    letter-spacing: 2px !important;
+    min-width: 200px;
+    display: flex;
+    line-height: 4.5rem;
+    color: #fff;
+    text-decoration: none;
+    flex-direction: column;
+    text-align: center;
     min-height: calc(4.5rem + var(--buttons-border-width) * 2);
     text-transform: uppercase;
+    border-radius: 6px;
     transition: all ease 0.25s;
 }
 
