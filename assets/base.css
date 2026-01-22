@@ -4682,19 +4682,19 @@ h3 {
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
     .more_btn {
-        width: 280px !important;
+        width: 266px !important;
         border-radius: 50px !important;
         font-weight: 600 !important;
         font-size: 16px !important;
         letter-spacing: 2px !important;
         border: 2px solid #ff522b85 !important;
         background: var(--gradient-background);
-        padding: 1.5rem 2rem !important;
+        padding: 1.5rem 1rem !important;
         /* transform: translateY(0px) !important; */
         transition: all ease 0.25s;
     }
     .more_btn:hover {
-        width: 280px !important;
+        width: 266px !important;
         border-radius: 50px !important;
         background: #ffffff00;
         color: #ff512b;
@@ -4702,7 +4702,7 @@ h3 {
         font-weight: 600 !important;
         font-size: 16px !important;
         letter-spacing: 4px !important;
-        padding: 1.5rem 2rem !important;
+        padding: 1.5rem 1rem !important;
         /* transform: translateY(-2px) !important; */
         transition: all ease 0.25s;
     }
