@@ -616,7 +616,7 @@
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
-        "title": "",
+        "title": "OUR RANGE",
         "heading_size": "h2",
         "description": "<p><strong>My Formulas</strong></p>",
         "show_description": false,
