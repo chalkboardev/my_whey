@@ -632,7 +632,7 @@
         "button_gKbtCV": {
           "type": "button",
           "settings": {
-            "button_label": "My Formulas",
+            "button_label": "Create My Formula",
             "button_link": "shopify://collections/my-formulas",
             "button_style_secondary": true
           }
