@@ -654,7 +654,7 @@
         "content_layout": "no-overlap",
         "section_color_scheme": "scheme-1",
         "color_scheme": "scheme-5",
-        "image_behavior": "zoom-in",
+        "image_behavior": "none",
         "full_width_mobile": false,
         "mobile_content_alignment": "left",
         "style_text_container": false,
