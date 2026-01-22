@@ -618,7 +618,7 @@
         "heading_rjx6bL": {
           "type": "heading",
           "settings": {
-            "heading": "My Formulas",
+            "heading": "<strong>My Formulas</strong>",
             "heading_size": "h1"
           }
         },
