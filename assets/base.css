@@ -4677,6 +4677,10 @@ h3 {
     transition: all ease 0.25s;
 }
 
+.mw_image_with_text_media {
+    border: none !important;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
