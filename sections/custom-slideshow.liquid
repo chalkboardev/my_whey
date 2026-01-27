@@ -75,7 +75,17 @@
    
   </div>
    
-  {% endif %}
+  {% endif %} 
+
+  {% if block.settings.description_image != blank %}
+   
+    <div class="imageBoxInfoDescription {{ block.settings.desktop_txt_head_position }}" id="{{ block.id }}" style="color: {{ block.settings.color_text }}">
+     
+    {{ block.settings.description_image }}
+     
+    </div>
+     
+    {% endif %} 
    
    <div class="header_buttons">
   {% if block.settings.button_link_video_1 != blank and block.settings.button_video_label_1 != blank %} 
@@ -549,8 +559,8 @@ document.addEventListener('DOMContentLoaded',  function() {
           },
           {
             "type": "image_picker",
-            "id": "desc_image",
-            "label": "Desc  Image"
+            "id": "description_image",
+            "label": "Description Image"
           },
           {
           "type": "color",
