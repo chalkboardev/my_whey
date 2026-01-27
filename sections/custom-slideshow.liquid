@@ -180,7 +180,7 @@
    
   {{ block.settings.text }}
   {% if block.settings.description_image != blank %}
-    {{ block.settings.description_image | image_url: width: 1000 | image_tag: alt: 'ALternate' }}
+    {{ block.settings.description_image | image_url: width: 300 | image_tag: alt: 'ALternate' }}
 {% else %}
     <p>No image selected.</p>
 {% endif %}
