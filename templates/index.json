@@ -674,7 +674,7 @@
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
-        "image": "shopify://shop_images/my-whey_about_1_898d0a86-c778-4409-acfa-396970e6d654.png",
+        "image": "shopify://shop_images/mw_poster_8.jpg",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
