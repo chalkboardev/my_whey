@@ -77,15 +77,18 @@
    
   {% endif %} 
 
+
+
+
   {% if block.settings.description_image != blank %}
    
-    <div class="imageBoxInfoDescription {{ block.settings.desktop_txt_head_position }}" id="{{ block.id }}" style="color: {{ block.settings.color_text }}">
+    {{ section.settings.description_image | image_url: width: 1000 | image_tag: alt: 'ALternate' }}
      
-    {{ block.settings.description_image }}
-     
-    </div>
-     
-    {% endif %} 
+    {% else %}
+      <p>No image selected.</p>
+    {% endif %}
+
+
    
    <div class="header_buttons">
   {% if block.settings.button_link_video_1 != blank and block.settings.button_video_label_1 != blank %} 
