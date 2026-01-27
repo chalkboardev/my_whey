@@ -69,24 +69,25 @@
    
   {% if block.settings.text != blank %}
    
-  <div class="imageBoxInfoDescription {{ block.settings.desktop_txt_head_position }}" id="{{ block.id }}" style="color: {{ block.settings.color_text }}">
-   
-  {{ block.settings.text }}
-   
-  </div>
+      <div class="imageBoxInfoDescription {{ block.settings.desktop_txt_head_position }}" id="{{ block.id }}" style="color: {{ block.settings.color_text }}">
+        
+        {{ block.settings.text }}
+
+
+        {% if block.settings.description_image != blank %}
+            {{ section.settings.description_image | image_url: width: 1000 | image_tag: alt: 'ALternate' }}
+        {% else %}
+            <p>No image selected.</p>
+        {% endif %}
+          
+      </div>
    
   {% endif %} 
 
 
 
 
-  {% if block.settings.description_image != blank %}
-   
-    {{ section.settings.description_image | image_url: width: 1000 | image_tag: alt: 'ALternate' }}
-     
-    {% else %}
-      <p>No image selected.</p>
-    {% endif %}
+
 
 
    
