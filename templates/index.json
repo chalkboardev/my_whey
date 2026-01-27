@@ -23,6 +23,26 @@
     "custom_slideshow_wMQLCP": {
       "type": "custom-slideshow",
       "blocks": {
+        "image_3KcJWb": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "color_bg": "#16165b",
+            "image_bg": "shopify://shop_images/mw_poster_6.jpg",
+            "overlay_opacity": 0,
+            "mobile_x_position": 92,
+            "desktop_content_position": "header-middle-left",
+            "title": "Creatine SALE!",
+            "text": "<h2>Creatine Monohydrate 500g only R195. </h2>",
+            "color_text": "#ffffff",
+            "img_button_1_label": "",
+            "img_button_1_link": "",
+            "img_button_1_color_scheme": "scheme-5",
+            "img_button_2_label": "",
+            "img_button_2_link": "",
+            "img_button_2_color_scheme": "scheme-5"
+          }
+        },
         "image_TmpTe7": {
           "type": "image",
           "settings": {
@@ -100,6 +120,7 @@
         }
       },
       "block_order": [
+        "image_3KcJWb",
         "image_TmpTe7",
         "image_kpaBih",
         "image_hUJfqh",
