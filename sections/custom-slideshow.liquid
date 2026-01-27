@@ -72,28 +72,10 @@
       <div class="imageBoxInfoDescription {{ block.settings.desktop_txt_head_position }}" id="{{ block.id }}" style="color: {{ block.settings.color_text }}">
         
         {{ block.settings.text }}
-
-
-        {% if block.settings.description_image != blank %}
-            {{ section.settings.description_image | image_url: width: 1000 | image_tag: alt: 'ALternate' }}
-        {% else %}
-            <p>No image selected.</p>
-        {% endif %}
           
       </div>
    
   {% endif %} 
-
-
-  {% if block.settings.description_image != blank %}
-    {{ block.settings.description_image | image_url: width: 1000 | image_tag: alt: 'ALternate' }}
-{% else %}
-    <p>No image selected.</p>
-{% endif %}
-
-
-
-
    
    <div class="header_buttons">
   {% if block.settings.button_link_video_1 != blank and block.settings.button_video_label_1 != blank %} 
@@ -179,11 +161,11 @@
   <div class="imageBoxInfoDescription" id="{{ block.id }}" style="color: {{ block.settings.color_text }}">
    
   {{ block.settings.text }}
+  
   {% if block.settings.description_image != blank %}
-    {{ block.settings.description_image | image_url: width: 300 | image_tag: alt: 'ALternate' }}
-{% else %}
-    <p>No image selected.</p>
-{% endif %}
+      {{ block.settings.description_image | image_url: width: 300 | image_tag: alt: 'ALternate' }}
+  {% endif %}
+
   </div>
    
   {% endif %}
