@@ -4683,6 +4683,7 @@ h3 {
 
 .desc_pic_div {
     margin-top: 14px;
+    max-width: 100% !important;
 }
 
 .desc_pic {
@@ -4694,7 +4695,7 @@ h3 {
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
     .desc_pic_div {
-        /* max-width: 320px !important; */
+        max-width: 100% !important;
     }
     .desc_pic {
         max-width: 100% !important;
