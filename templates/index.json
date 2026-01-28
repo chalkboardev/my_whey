@@ -26,7 +26,7 @@
         "image_3KcJWb": {
           "type": "image",
           "settings": {
-            "color_bg": "#16165b",
+            "color_bg": "#ffffff",
             "image_bg": "shopify://shop_images/mw_poster_6.jpg",
             "overlay_opacity": 0,
             "mobile_x_position": 92,
