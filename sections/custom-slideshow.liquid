@@ -163,7 +163,10 @@
   {{ block.settings.text }}
   
   {% if block.settings.description_image != blank %}
-      {{ block.settings.description_image | image_url: width: 300 | image_tag: alt: 'ALternate' }}
+     <div>
+      <img src="{{ block.settings.description_image | image_url: width: 300 | image_tag: alt: 'Alternate' }}">
+        {{ block.settings.description_image | image_url: width: 300 | image_tag: alt: 'Alternate' }}
+     </div> 
   {% endif %}
 
   </div>
