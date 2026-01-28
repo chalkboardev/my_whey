@@ -163,15 +163,16 @@
   {{ block.settings.text }}
 
   </div>
+   
+  {% endif %}
 
   {% if block.settings.description_image != blank %}
     <div class="desc_pic_div">
        {{ block.settings.description_image | image_url: width: 320 | image_tag: alt: 'Alternate' }}
     </div> 
  {% endif %}
+
  
-   
-  {% endif %}
   </span>
    
 <div class="header_buttons">
