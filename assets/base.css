@@ -4687,10 +4687,10 @@ h3 {
 }
 
 .desc_pic {
-    animation-name: flipInX;
+    animation-name: fadeInRight;
     animation-direction: alternate;
     animation-duration: 2s;
-    animation-iteration-count: 5;
+    animation-iteration-count: 1;
     max-width: 420px !important;
     border-top-left-radius: 16px;
     border-top-right-radius: 0;
