@@ -4698,7 +4698,7 @@ h3 {
         max-width: 100% !important;
     }
     .desc_pic {
-        max-width: 100% !important;
+        max-width: 320px !important;
     }
     .more_btn {
         width: 266px !important;
