@@ -4684,18 +4684,29 @@ h3 {
 .desc_pic_div {
     margin-top: 14px;
     max-width: 100% !important;
-}
-
-.desc_pic {
     animation-name: fadeInRight;
     animation-direction: alternate;
     animation-duration: 2s;
     animation-iteration-count: 1;
+}
+
+.desc_pic {
     max-width: 420px !important;
     border-top-left-radius: 16px;
     border-top-right-radius: 0;
     border-bottom-right-radius: 16px;
     border-bottom-left-radius: 0;
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+.desc_pic:hover {
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
 }
 
 
