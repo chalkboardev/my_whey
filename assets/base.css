@@ -4681,7 +4681,9 @@ h3 {
     border: none !important;
 }
 
-.desc_pic_div {}
+.desc_pic_div {
+    margin-top: 10px;
+}
 
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
