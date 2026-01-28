@@ -161,14 +161,15 @@
   <div class="imageBoxInfoDescription" id="{{ block.id }}" style="color: {{ block.settings.color_text }}">
    
   {{ block.settings.text }}
-  
-  {% if block.settings.description_image != blank %}
-     <div class="desc_pic_div">
-        {{ block.settings.description_image | image_url: width: 320 | image_tag: alt: 'Alternate' }}
-     </div> 
-  {% endif %}
 
   </div>
+
+  {% if block.settings.description_image != blank %}
+    <div class="desc_pic_div">
+       {{ block.settings.description_image | image_url: width: 320 | image_tag: alt: 'Alternate' }}
+    </div> 
+ {% endif %}
+ 
    
   {% endif %}
   </span>
