@@ -165,7 +165,7 @@
   {% if block.settings.description_image != blank %}
      <div>
       <img src="{{ block.settings.description_image | image_url: width: 300 | image_tag: alt: 'Alternate' }}">
-        {{ block.settings.description_image | image_url: width: 300 | image_tag: alt: 'Alternate' }}
+        {% comment %} {{ block.settings.description_image | image_url: width: 300 | image_tag: alt: 'Alternate' }} {% endcomment %}
      </div> 
   {% endif %}
 
