@@ -4685,10 +4685,20 @@ h3 {
     margin-top: 14px;
 }
 
+.desc_pic {
+    max-width: 420px !important;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    .desc_pic_div {
+        /* max-width: 320px !important; */
+    }
+    .desc_pic {
+        max-width: 100% !important;
+    }
     .more_btn {
         width: 266px !important;
         border-radius: 50px !important;

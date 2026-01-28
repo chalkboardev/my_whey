@@ -168,11 +168,12 @@
 
   {% if block.settings.description_image != blank %}
     <div class="desc_pic_div">
-       {{ block.settings.description_image | image_url: width: 320 | image_tag: alt: 'Alternate' }}
+       {% comment %} {{ block.settings.description_image | image_url: width: 520 | image_tag: alt: 'Alternate' }} {% endcomment %}
+       <img class="desc_pic" src="{{ block.settings.description_image | img_url: 'master' }}" alt="Alternate" />
     </div> 
  {% endif %}
 
- 
+
   </span>
    
 <div class="header_buttons">
