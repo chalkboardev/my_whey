@@ -4702,6 +4702,24 @@ h3 {
     animation-iteration-count: infinite;
 }
 
+.sales_pic_div {
+    margin-top: 14px;
+    max-width: 100% !important;
+    /* animation-name: fadeInRight;
+    animation-direction: alternate;
+    animation-duration: 2s;
+    animation-iteration-count: 1; */
+}
+
+.sales_pic {
+    max-width: 100% !important;
+    border-radius: 16px;
+    /* animation-name: pulse;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite; */
+}
+
 .desc_pic:hover {
     /* animation-name: pulse;
     animation-duration: 2s;
