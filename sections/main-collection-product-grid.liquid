@@ -583,6 +583,41 @@ document.addEventListener('DOMContentLoaded', startAutoplayForSliders);
         {% comment %} <p>This is the default content for other collection pages.</p> {% endcomment %}
   {% endif %}
 
+  {% if collection.handle == 'hot-specials' %} 
+    <!-- Content to display only on the My Formulas collection page -->
+    {% comment %} <p>This is content for the {{ collection.title }} page.</p> {% endcomment %}
+
+    <div class="my_formula_info_btn_container metafield-rich_text_field page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" id="" {% if settings.animations_reveal_on_scroll %} data-cascade {% endif %}
+      >
+      <div class="mw_corner_container_t_left card__badge color-scheme-3 top left">
+      </div>
+          <span>
+            {% comment %} <i class="mw_collection_blurb_icon_left_single fa-solid fa-quote-left"></i> {% endcomment %}
+             LIMITED OFFER
+             {% comment %} <i class="mw_collection_blurb_icon_right_single fa-solid fa-quote-right"></i> {% endcomment %}
+          </span>
+
+          {% if block.settings.sales_image_1 != blank %}
+            <div class="desc_pic_div">
+               {% comment %} {{ block.settings.description_image | image_url: width: 520 | image_tag: alt: 'Alternate' }} {% endcomment %}
+               <img class="desc_pic" src="{{ block.settings.sales_image_1 | img_url: 'master' }}" alt="Alternate" loading="lazy" />
+            </div> 
+         {% endif %}
+
+            {% comment %} <div class="">
+              <a id="open_formula_modal" href="#" class="open_formula_modal_btn button color-scheme-5"> 
+                CREATE MY FORMULA
+              </a>
+            </div> {% endcomment %}
+            
+            <div class="mw_corner_container_b_rght card__badge color-scheme-3 top left">
+              </div>
+    </div>
+{% else %}
+    <!-- Content to display on all other collection pages -->
+    {% comment %} <p>This is the default content for other collection pages.</p> {% endcomment %}
+{% endif %}
+
 </div>
 
 {% schema %}
@@ -807,6 +842,11 @@ document.addEventListener('DOMContentLoaded', startAutoplayForSliders);
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
+    },
+    {
+      "type": "image_picker",
+      "id": "sales_image_1",
+      "label": "Image with SALE information"
     }
   ]
 }

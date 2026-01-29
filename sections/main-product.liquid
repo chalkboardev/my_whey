@@ -516,6 +516,7 @@
                   show_pickup_availability: true
                 -%}
 
+ 
 {% comment %}---------- CHECK IF THE PRODUCT IS A SUBSCRIPTION PRODUCT {% endcomment %}
 {% if product.selling_plan_groups.size > 0 or card_product.selling_plan_groups.size > 0 %}
   {% comment %} This product is available for subscription. {% endcomment %}
@@ -1820,7 +1821,7 @@ setTimeout(function(){
                             } else {
                               console.log("The symbol was not found in the string.");
                             }
-                            // ----- HANDLE PANDA BLOCK QUANTITY CHANGE -----
+                            // ----- HANDLE PANDA BLOCK QUANTITY CHANGE ----- 
                             $('button').each(function() {
                                   // Check if the button's text contains a "+" sign
                                   if ($(this).text().includes('+')) {
