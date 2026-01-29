@@ -448,6 +448,41 @@ document.addEventListener('DOMContentLoaded', startAutoplayForSliders);
       >
         {{ collection.metafields.custom.collection_blurb | metafield_tag  }}
     </div> {% endcomment %}
+
+    {% if collection.handle == 'hot-specials' %} 
+      <!-- Content to display only on the My Formulas collection page -->
+      {% comment %} <p>This is content for the {{ collection.title }} page.</p> {% endcomment %}
+  
+      <div class=" metafield-rich_text_field page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" id="" {% if settings.animations_reveal_on_scroll %} data-cascade {% endif %}
+        >
+        <div class=" card__badge color-scheme-3 top left">
+        </div>
+            <span style="height:20px;">
+              {% comment %} <i class="mw_collection_blurb_icon_left_single fa-solid fa-quote-left"></i> {% endcomment %}
+               {% comment %} LIMITED OFFER {% endcomment %}
+               {% comment %} <i class="mw_collection_blurb_icon_right_single fa-solid fa-quote-right"></i> {% endcomment %}
+            </span>
+  
+            {% if section.settings.sales_image_1 != blank %}
+              <div class="sales_pic_div">
+                 {% comment %} {{ block.settings.description_image | image_url: width: 520 | image_tag: alt: 'Alternate' }} {% endcomment %}
+                 <img class="sales_pic" src="{{ section.settings.sales_image_1 | img_url: 'master' }}" alt="Alternate" loading="lazy" />
+              </div> 
+           {% endif %}
+  
+              {% comment %} <div class="">
+                <a id="open_formula_modal" href="#" class="open_formula_modal_btn button color-scheme-5"> 
+                  CREATE MY FORMULA
+                </a>
+              </div> {% endcomment %}
+              
+              <div class=" card__badge color-scheme-3 top left">
+                </div>
+      </div>
+  {% else %}
+      <!-- Content to display on all other collection pages -->
+      {% comment %} <p>This is the default content for other collection pages.</p> {% endcomment %}
+  {% endif %}
     
     <div class="collection_s {% if section.settings.filter_type == 'vertical' %} facets-vertical page-width{% endif %}">
       {{ 'component-facets.css' | asset_url | stylesheet_tag }}
@@ -583,40 +618,7 @@ document.addEventListener('DOMContentLoaded', startAutoplayForSliders);
         {% comment %} <p>This is the default content for other collection pages.</p> {% endcomment %}
   {% endif %}
 
-  {% if collection.handle == 'hot-specials' %} 
-    <!-- Content to display only on the My Formulas collection page -->
-    {% comment %} <p>This is content for the {{ collection.title }} page.</p> {% endcomment %}
 
-    <div class=" metafield-rich_text_field page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" id="" {% if settings.animations_reveal_on_scroll %} data-cascade {% endif %}
-      >
-      <div class=" card__badge color-scheme-3 top left">
-      </div>
-          <span style="height:20px;">
-            {% comment %} <i class="mw_collection_blurb_icon_left_single fa-solid fa-quote-left"></i> {% endcomment %}
-             {% comment %} LIMITED OFFER {% endcomment %}
-             {% comment %} <i class="mw_collection_blurb_icon_right_single fa-solid fa-quote-right"></i> {% endcomment %}
-          </span>
-
-          {% if section.settings.sales_image_1 != blank %}
-            <div class="sales_pic_div">
-               {% comment %} {{ block.settings.description_image | image_url: width: 520 | image_tag: alt: 'Alternate' }} {% endcomment %}
-               <img class="sales_pic" src="{{ section.settings.sales_image_1 | img_url: 'master' }}" alt="Alternate" loading="lazy" />
-            </div> 
-         {% endif %}
-
-            {% comment %} <div class="">
-              <a id="open_formula_modal" href="#" class="open_formula_modal_btn button color-scheme-5"> 
-                CREATE MY FORMULA
-              </a>
-            </div> {% endcomment %}
-            
-            <div class=" card__badge color-scheme-3 top left">
-              </div>
-    </div>
-{% else %}
-    <!-- Content to display on all other collection pages -->
-    {% comment %} <p>This is the default content for other collection pages.</p> {% endcomment %}
-{% endif %}
 
 </div>
 
