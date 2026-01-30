@@ -4758,6 +4758,7 @@ h3 {
 
 .delivery_icon {
     font-size: 32px;
+    color: #606060;
 }
 
 .delivery_icon_sml {
@@ -4766,9 +4767,10 @@ h3 {
 
 .delivery_txt {
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 600;
     display: block;
     width: 100%;
+    color: #3a3a3a;
 }
 
 .delivery_txt_date {
