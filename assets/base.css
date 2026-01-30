@@ -4733,6 +4733,7 @@ h3 {
     border-style: solid;
     border-color: rgba(5, 150, 105, 0.2);
     padding: 16px;
+    border-radius: 10px;
 }
 
 .mw_flex {
@@ -4740,7 +4741,6 @@ h3 {
     justify-content: space-between;
     /* Distributes items evenly with space between them */
     flex-wrap: nowrap;
-    border-radius: 10px;
     /* Ensures all items stay on a single row (default) */
 }
 
