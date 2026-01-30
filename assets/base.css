@@ -4739,25 +4739,19 @@ h3 {
 .mw_flex {
     display: flex;
     justify-content: space-between;
-    /* Distributes items evenly with space between them */
     flex-wrap: nowrap;
-    /* Ensures all items stay on a single row (default) */
 }
 
 .mw_flex_column {
-    /* flex-grow: 1, flex-shrink: 0, flex-basis: auto (initial width) */
     flex: 1 0 auto;
-    /* A width percentage can also be used, accounting for margins/gaps */
     width: 18%;
-    /* e.g., for 5 boxes with some margin */
     padding: 0px;
-    /* border: 1px solid black; */
     text-align: center;
     line-height: 1.4;
 }
 
 .delivery_icon {
-    font-size: 24px;
+    font-size: 24px !important;
     color: #3a3a3a;
 }
 
