@@ -62,25 +62,6 @@
             "img_button_2_color_scheme": "scheme-5"
           }
         },
-        "image_kpaBih": {
-          "type": "image",
-          "settings": {
-            "color_bg": "#ffffff",
-            "image_bg": "shopify://shop_images/mw_bulk_wallpaper3b.jpg",
-            "overlay_opacity": 0,
-            "mobile_x_position": 57,
-            "desktop_content_position": "header-middle-left",
-            "title": "Bulk Vitamins",
-            "text": "<p><strong>My Whey | </strong>Elevate<strong> your wellness</strong> routine with our <strong>specially formulated</strong> <em>vitamins & supplements. </em></p>",
-            "color_text": "#ffffff",
-            "img_button_1_label": "",
-            "img_button_1_link": "",
-            "img_button_1_color_scheme": "",
-            "img_button_2_label": "SHOP PRODUCTS",
-            "img_button_2_link": "shopify://collections/all",
-            "img_button_2_color_scheme": "scheme-5"
-          }
-        },
         "image_hUJfqh": {
           "type": "image",
           "settings": {
@@ -98,6 +79,25 @@
             "img_button_1_color_scheme": "scheme-5",
             "img_button_2_label": "",
             "img_button_2_link": "",
+            "img_button_2_color_scheme": "scheme-5"
+          }
+        },
+        "image_kpaBih": {
+          "type": "image",
+          "settings": {
+            "color_bg": "#ffffff",
+            "image_bg": "shopify://shop_images/mw_bulk_wallpaper3b.jpg",
+            "overlay_opacity": 0,
+            "mobile_x_position": 57,
+            "desktop_content_position": "header-middle-left",
+            "title": "Bulk Vitamins",
+            "text": "<p><strong>My Whey | </strong>Elevate<strong> your wellness</strong> routine with our <strong>specially formulated</strong> <em>vitamins & supplements. </em></p>",
+            "color_text": "#ffffff",
+            "img_button_1_label": "",
+            "img_button_1_link": "",
+            "img_button_1_color_scheme": "",
+            "img_button_2_label": "SHOP PRODUCTS",
+            "img_button_2_link": "shopify://collections/all",
             "img_button_2_color_scheme": "scheme-5"
           }
         },
@@ -123,8 +123,8 @@
       "block_order": [
         "image_3KcJWb",
         "image_TmpTe7",
-        "image_kpaBih",
         "image_hUJfqh",
+        "image_kpaBih",
         "video_7VPAtJ"
       ],
       "settings": {}
