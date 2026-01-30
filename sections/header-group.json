@@ -14,18 +14,18 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
-        "announcement_G77TeC": {
-          "type": "announcement",
-          "settings": {
-            "text": "*SALE | R195 CREATINE MONOHYDRATE",
-            "link": "shopify://products/creatine-monohydrate-500g"
-          }
-        },
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
             "text": "FREE SHIPPING ON ORDERS OVER R1000",
             "link": ""
+          }
+        },
+        "announcement_G77TeC": {
+          "type": "announcement",
+          "settings": {
+            "text": "*SALE | R195 CREATINE MONOHYDRATE",
+            "link": "shopify://products/creatine-monohydrate-500g"
           }
         },
         "announcement_pNF8Xg": {
@@ -51,8 +51,8 @@
         }
       },
       "block_order": [
-        "announcement_G77TeC",
         "announcement-bar-0",
+        "announcement_G77TeC",
         "announcement_pNF8Xg",
         "announcement_hRTdhd",
         "announcement_dVfHyy"
