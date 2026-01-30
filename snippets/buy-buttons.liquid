@@ -118,48 +118,45 @@
 
     {%- assign pick_up_availabilities = product.selected_or_first_available_variant.store_availabilities | where: 'pick_up_enabled', true
     -%}
- <div class="xxx">
 
- </div>
+    <div class="mw_flex_container">
+        <span class="delivery_info">
+          <i class="fa-solid fa-truck-fast"></i> Order today within 
+        <span class="timer">
+            <span id="hours"></span>:
+            <span id="minutes"></span>:
+            <span id="seconds"></span>
+        </span>
+    , your package will be delivered between <span id="three_day_ddmmyy"></span> - <span id="four_day_ddmmyy"></span>
+        </span>
+        <div class="mw_flex">
+            <div class="mw_flex_column">
+                <i class="delivery_icon fa-solid fa-cart-shopping"></i> 
+                <span class="delivery_txt">Purchased</span>
+                <span id="today_txt" class="delivery_txt_date">Today</span>
+            </div>
+            
+            <div style="max-width: 20px;align-items: center;align-content: center;" class="mw_flex_column">
+                <i class="fa-solid fa-arrow-right-long"></i>
+            </div>
 
-<div class="mw_flex_container">
-    <span class="delivery_info">
-      <i class="fa-solid fa-truck-fast"></i> Order today within 
-    <span class="timer">
-        <span id="hours"></span>:
-        <span id="minutes"></span>:
-        <span id="seconds"></span>
-    </span>
-, your package will be delivered between <span id="three_day_ddmmyy"></span> - <span id="four_day_ddmmyy"></span>
-    </span>
-    <div class="mw_flex">
-        <div class="mw_flex_column">
-            <i class="delivery_icon fa-solid fa-cart-shopping"></i> 
-            <span class="delivery_txt">Purchased</span>
-            <span id="today_txt" class="delivery_txt_date">Today</span>
-        </div>
-        
-        <div style="max-width: 20px;align-items: center;align-content: center;" class="mw_flex_column">
-            <i class="fa-solid fa-arrow-right-long"></i>
-        </div>
+            <div class="mw_flex_column"> 
+              <i class="delivery_icon fa-solid fa-barcode"></i>
+              <span class="delivery_txt">Processing</span>
+              <span id="processing_txt" class="delivery_txt_date"></span>
+            </div>
 
-        <div class="mw_flex_column"> 
-          <i class="delivery_icon fa-solid fa-barcode"></i>
-          <span class="delivery_txt">Processing</span>
-          <span id="processing_txt" class="delivery_txt_date"></span>
-        </div>
+            <div style="max-width: 20px;align-items: center;align-content: center;" class="mw_flex_column">
+                <i class="fa-solid fa-arrow-right-long"></i>
+            </div>
 
-        <div style="max-width: 20px;align-items: center;align-content: center;" class="mw_flex_column">
-            <i class="fa-solid fa-arrow-right-long"></i>
-        </div>
-
-        <div class="mw_flex_column">
-          <i class="delivery_icon fa-solid fa-truck-fast"></i>
-          <span class="delivery_txt">Delivered</span>
-          <span id="delivered_txt" class="delivery_txt_date"></span>
+            <div class="mw_flex_column">
+              <i class="delivery_icon fa-solid fa-truck-fast"></i>
+              <span class="delivery_txt">Delivered</span>
+              <span id="delivered_txt" class="delivery_txt_date"></span>
+            </div>
         </div>
     </div>
-</div>
 
 <script>
 
