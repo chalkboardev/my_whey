@@ -14,6 +14,13 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
+        "announcement_G77TeC": {
+          "type": "announcement",
+          "settings": {
+            "text": "R195 Creatine Monohydrate Sale",
+            "link": ""
+          }
+        },
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
@@ -44,6 +51,7 @@
         }
       },
       "block_order": [
+        "announcement_G77TeC",
         "announcement-bar-0",
         "announcement_pNF8Xg",
         "announcement_hRTdhd",
@@ -66,7 +74,6 @@
           "type": "menu-image",
           "settings": {
             "link_name": "SHOP",
-            "link_image": "shopify://shop_images/Lions_Mane_bb5d5696-3ec7-420f-97f3-b382c6dc3e23.jpg",
             "link_title": "Lions Mane Extract",
             "link_url": "shopify://products/super-lions-mane-60-veggie-caps",
             "selected_product": "super-lions-mane-60-veggie-caps"
