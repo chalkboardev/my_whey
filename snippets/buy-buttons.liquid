@@ -118,6 +118,168 @@
 
     {%- assign pick_up_availabilities = product.selected_or_first_available_variant.store_availabilities | where: 'pick_up_enabled', true
     -%}
+ <div class="xxx">
+
+ </div>
+
+<div class="mw_flex_container">
+    <span class="delivery_info">
+      <i class="fa-solid fa-truck-fast"></i> Order today within 
+    <span class="timer">
+        <span id="hours"></span>:
+        <span id="minutes"></span>:
+        <span id="seconds"></span>
+    </span>
+, your package will be delivered between <span id="three_day_ddmmyy"></span> - <span id="four_day_ddmmyy"></span>
+    </span>
+    <div class="mw_flex">
+        <div class="mw_flex_column">
+            <i class="delivery_icon fa-solid fa-cart-shopping"></i> 
+            <span class="delivery_txt">Purchased</span>
+            <span id="today_txt" class="delivery_txt_date">Today</span>
+        </div>
+        
+        <div style="max-width: 40px;align-items: center;align-content: center;" class="mw_flex_column">
+            <i class="fa-solid fa-arrow-right-long"></i>
+        </div>
+
+        <div class="mw_flex_column"> 
+          <i class="delivery_icon fa-solid fa-barcode"></i>
+          <span class="delivery_txt">Processing</span>
+          <span id="processing_txt" class="delivery_txt_date"></span>
+        </div>
+
+        <div style="max-width: 40px;align-items: center;align-content: center;" class="mw_flex_column">
+            <i class="fa-solid fa-arrow-right-long"></i>
+        </div>
+
+        <div class="mw_flex_column">
+          <i class="delivery_icon fa-solid fa-truck-fast"></i>
+          <span class="delivery_txt">Delivered</span>
+          <span id="delivered_txt" class="delivery_txt_date"></span>
+        </div>
+    </div>
+</div>
+
+<script>
+
+$(document).ready(function() {
+
+
+function addBusinessDays(originalDate, numDaysToAdd) {
+    const Sunday = 0;
+    const Saturday = 6;
+    let daysRemaining = numDaysToAdd;
+    const newDate = new Date(originalDate); // Use a copy to avoid modifying original
+
+    while (daysRemaining > 0) {
+        newDate.setDate(newDate.getDate() + 1);
+        // Check if the new day is a weekday (not Sunday or Saturday)
+        if (newDate.getDay() !== Sunday && newDate.getDay() !== Saturday) {
+            daysRemaining--;
+        }
+    }
+    return newDate;
+}
+
+/**
+ * Formats a Date object into 'dd/mm/yyyy'.
+ * @param {Date} date The date to format.
+ * @returns {string} The date string in 'dd/mm/yyyy' format.
+ */
+function formatDate(date) {
+    let day = date.getDate();
+    let month = date.getMonth() + 1; // Month is zero-based
+    let year = date.getFullYear();
+
+    // Add leading zero if day or month is less than 10
+    if (day < 10) day = '0' + day;
+    if (month < 10) month = '0' + month;
+
+    return `${day}/${month}/${year}`;
+}
+
+/**
+ * Formats a Date object into a descriptive word string (e.g., "Friday, 30 January 2026").
+ * @param {Date} date The date to format.
+ * @returns {string} The date string in words.
+ */
+function formatDateInWords(date) {
+    //const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+    const options = {  month: 'short', day: 'numeric' };
+    return date.toLocaleDateString(undefined, options);
+}
+
+// --- Usage Example ---
+
+const today = new Date();
+const futureDate_2days = addBusinessDays(today, 2);
+const futureDate_3days = addBusinessDays(today, 3);
+const futureDate_4days = addBusinessDays(today, 4);
+
+const formattedDateDMY_2days = formatDate(futureDate_2days);
+const formattedDateWords_2days = formatDateInWords(futureDate_2days);
+
+const formattedDateDMY_3days = formatDate(futureDate_3days);
+const formattedDateWords_3days = formatDateInWords(futureDate_3days);
+
+const formattedDateDMY_4days = formatDate(futureDate_4days);
+const formattedDateWords_4days = formatDateInWords(futureDate_4days);
+
+const today_is = formatDateInWords(today);
+
+//console.log(`Current date: ${formatDateInWords(today)}`);
+//console.log(`Future date (+3 business days) in dd/mm/yyyy: ${formattedDateDMY_3days}`);
+//console.log(`Future date (+3 business days) in words: ${formattedDateWords}`);
+
+console.log(`Current date:` + today_is);
+console.log('Future date (+3 business days) in dd/mm/yyyy:' + formattedDateDMY_3days);
+console.log('Future date (+3 business days) in words:' + formattedDateWords_3days);
+console.log('Future date (+4 business days) in dd/mm/yyyy:' + formattedDateDMY_4days);
+console.log('Future date (+4 business days) in words:' + formattedDateWords_4days);
+
+$("#today_txt").html(today_is);
+$("#processing_txt").html(today_is + " - " + formattedDateWords_2days );
+$("#delivered_txt").html(formattedDateWords_3days + " - " + formattedDateWords_4days );
+$("#three_day_ddmmyy").html(formattedDateDMY_3days);
+$("#four_day_ddmmyy").html(formattedDateDMY_4days);
+
+
+  // setTimeout(function(){
+  //     $('.xxx').hide();
+  // }, 5000);
+
+
+    function updateCountdown() {
+        const now = new Date();
+        const endOfDay = new Date();
+        // Set target to 23:59:59 today
+        endOfDay.setHours(23, 59, 59, 999);
+
+        const timeDifference = endOfDay - now;
+
+        // Calculations
+        const hours = Math.floor((timeDifference / (1000 * 60 * 60)));
+        const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+        // Update HTML
+        $('#hours').text(hours);
+        $('#minutes').text(minutes < 10 ? '0' + minutes : minutes);
+        $('#seconds').text(seconds < 10 ? '0' + seconds : seconds);
+    }
+
+    // Run immediately and then every second
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+
+
+
+});
+
+
+</script>
 
     <pickup-availability
       class="product__pickup-availabilities quick-add-hidden"

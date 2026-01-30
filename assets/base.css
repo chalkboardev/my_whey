@@ -4727,6 +4727,80 @@ h3 {
     animation-iteration-count: infinite; */
 }
 
+.mw_flex_container {
+    background-color: rgba(5, 150, 105, 0.05);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(5, 150, 105, 0.2);
+    padding: 16px;
+}
+
+.mw_flex {
+    display: flex;
+    justify-content: space-between;
+    /* Distributes items evenly with space between them */
+    flex-wrap: nowrap;
+    border-radius: 10px;
+    /* Ensures all items stay on a single row (default) */
+}
+
+.mw_flex_column {
+    /* flex-grow: 1, flex-shrink: 0, flex-basis: auto (initial width) */
+    flex: 1 0 auto;
+    /* A width percentage can also be used, accounting for margins/gaps */
+    width: 18%;
+    /* e.g., for 5 boxes with some margin */
+    padding: 0px;
+    /* border: 1px solid black; */
+    text-align: center;
+    line-height: 1.4;
+}
+
+.delivery_icon {
+    font-size: 32px;
+}
+
+.delivery_icon_sml {
+    font-size: 20px;
+}
+
+.delivery_txt {
+    font-size: 12px;
+    font-weight: 500;
+    display: block;
+    width: 100%;
+}
+
+.delivery_txt_date {
+    font-size: 12px;
+    font-weight: 500;
+    width: 100%;
+    position: relative;
+    display: block;
+}
+
+.delivery_info {
+    font-size: 14px;
+    font-weight: 500;
+    width: 100%;
+    position: relative;
+    display: block;
+    padding-bottom: 14px;
+    text-align: center;
+}
+
+#three_day_ddmmyy {
+    font-weight: 600;
+}
+
+#four_day_ddmmyy {
+    font-weight: 600;
+}
+
+.timer {
+    font-weight: 600;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
