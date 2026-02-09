@@ -48,7 +48,6 @@
         },
         "express_subscriptions_subscription_options_fatdpB": {
           "type": "shopify://apps/express-subscriptions/blocks/subscription-options/019c4133-cf6d-74da-bfa8-aa7e57125a82",
-          "disabled": true,
           "settings": {
             "title_size": 15,
             "subtitle_size": 12,
