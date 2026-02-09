@@ -46,6 +46,21 @@
             "swatch_shape": "circle"
           }
         },
+        "express_subscriptions_subscription_options_fatdpB": {
+          "type": "shopify://apps/express-subscriptions/blocks/subscription-options/019c4133-cf6d-74da-bfa8-aa7e57125a82",
+          "disabled": true,
+          "settings": {
+            "title_size": 16,
+            "subtitle_size": 12,
+            "price_size": 16,
+            "discount_size": 12,
+            "color_primary": "#000000",
+            "color_background": "transparent",
+            "border_radius": 12,
+            "border_width": 1,
+            "button_width": 460
+          }
+        },
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {}
@@ -74,6 +89,7 @@
         "price",
         "subscriptions_app_block_iFiNWw",
         "variant_picker",
+        "express_subscriptions_subscription_options_fatdpB",
         "quantity_selector",
         "buy_buttons",
         "description",
@@ -95,6 +111,31 @@
         "padding_bottom": 12,
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 20
+      }
+    },
+    "17706614869d5b9d91": {
+      "type": "apps",
+      "blocks": {
+        "express_subscriptions_subscription_options_FnACpj": {
+          "type": "shopify://apps/express-subscriptions/blocks/subscription-options/019c4133-cf6d-74da-bfa8-aa7e57125a82",
+          "settings": {
+            "title_size": 16,
+            "subtitle_size": 12,
+            "price_size": 16,
+            "discount_size": 12,
+            "color_primary": "#000000",
+            "color_background": "transparent",
+            "border_radius": 12,
+            "border_width": 1,
+            "button_width": 460
+          }
+        }
+      },
+      "block_order": [
+        "express_subscriptions_subscription_options_FnACpj"
+      ],
+      "settings": {
+        "include_margins": true
       }
     },
     "related-products": {
@@ -159,6 +200,7 @@
   },
   "order": [
     "main",
+    "17706614869d5b9d91",
     "related-products",
     "flavour_modal_xNmGM4",
     "toast_modal_WcNaiB"
