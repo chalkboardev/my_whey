@@ -1597,6 +1597,15 @@ body .menu-drawer__close-button {
 }
 
 @media screen and (max-width: 1120px) {
+    .header__menu-item .icon-caret {
+        right: -0.1rem !important;
+    }
+    .header__menu-item .icon-caret {
+        position: absolute;
+        height: 0.6rem;
+        right: 1.5rem;
+        top: calc(50% - 0.3rem);
+    }
     .header__menu-item {
         padding: 0 1rem 0 1rem !important;
         text-decoration: none;
@@ -7326,7 +7335,7 @@ summary .icon-caret {
     position: absolute;
     height: 0.8rem;
     right: 1.5rem;
-    top: calc(50% - 0.2rem);
+    top: calc(50% - 0.5rem);
 }
 
 summary::-webkit-details-marker {
