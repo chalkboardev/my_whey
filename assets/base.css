@@ -631,6 +631,7 @@ body .menu-drawer__close-button {
 
 .mega-menu__list li:first-child>.mega-menu__link--level-2 {
     font-size: 26px !important;
+    font-weight: 600;
 }
 
 .first_submenu {
@@ -1596,6 +1597,12 @@ body .menu-drawer__close-button {
 }
 
 @media screen and (max-width: 1120px) {
+    .header__menu-item {
+        padding: 0 1rem 0 1rem !important;
+        text-decoration: none;
+        font-weight: 500;
+        color: rgba(var(--color-foreground), 0.75);
+    }
     .dietary_icons .icon-wrap {
         width: 40px;
     }
@@ -6616,7 +6623,7 @@ strong {
     }
     .coming_soon_pill {
         position: absolute;
-        font-size: 9px;
+        font-size: 10px;
         background: #ff6700;
         display: inline-flex;
         width: auto;
@@ -6625,7 +6632,7 @@ strong {
         left: 5rem;
         margin-top: 2.2rem;
         color: #fff;
-        padding: 1px 6px 1px 6px;
+        padding: 1px 16px 1px 16px;
         border-top-left-radius: 0px;
         border-top-right-radius: 0px;
         border-bottom-right-radius: 6px;
