@@ -549,7 +549,10 @@ if (!customElements.get('product-info')) {
           }
         
 
-          const childElement = document.getElementById('most_popular'); // Replace 'yourChildId' with the actual ID of your element
+          const childElement = ""; // Replace 'yourChildId' with the actual ID of your element
+          if(childElement != null){
+            const childElement = document.getElementById('most_popular');
+          }
           const parentElement = childElement.parentNode;
           const grandparentElement = parentElement.parentNode;
 
