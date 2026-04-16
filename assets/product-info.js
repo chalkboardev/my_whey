@@ -395,7 +395,7 @@ if (!customElements.get('product-info')) {
       if (productSections) {
         productSections.forEach(section => {
 
-// console.log("Found a product section:" + variantId );
+          // console.log("Found a product section:" + variantId );
           console.log("Variant " + variantId + " is displaying...");
 
           var closestForm = productSection.closest('.shopify_subscriptions_app_container .shopify_subscriptions_app_block:not(.shopify_subscriptions_app_block--hidden)');
