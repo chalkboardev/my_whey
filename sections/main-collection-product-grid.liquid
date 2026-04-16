@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       var queryString = window.location.search; // "?name=John%20Doe&age=30"
       if(queryString){
-          console.log("YES query string...");
+          //console.log("YES query string...");
           var paramsArray = queryString.substring(1).split('&'); // ["name=John%20Doe", "age=30"]
 
           var urlParams = {};
@@ -454,7 +454,7 @@ document.addEventListener('DOMContentLoaded', startAutoplayForSliders);
 
     {% comment %} {{ collection.handle }} {% endcomment %}
     
-    
+
     {% if collection.handle == 'my-formulas' %} 
      
     {% else %}
