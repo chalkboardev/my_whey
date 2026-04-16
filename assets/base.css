@@ -1075,7 +1075,7 @@ body .menu-drawer__close-button {
 
 @media screen and (min-width: 1330px) {
     .related-products .featured_card_title .small-hide {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
     }
     .product_card_title {
         font-size: 1.8rem;
@@ -5727,7 +5727,7 @@ strong {
         overflow: hidden;
     }
     [id^="Slider-template--"] .product_card_title {
-        font-size: 1.7rem;
+        font-size: 1.6rem;
     }
     .related-products .product_card_title {
         font-size: 1.7rem;
