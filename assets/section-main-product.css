@@ -309,6 +309,18 @@ a.product__text {
     }
 }
 
+@media screen and (min-width: 1600px) {
+    .product__info-container {
+        max-width: 62rem;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .product__info-container {
+        max-width: 76rem;
+    }
+}
+
 .product__description-title {
     font-weight: 600;
 }

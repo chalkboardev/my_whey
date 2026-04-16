@@ -6580,6 +6580,26 @@ strong {
 /* ---------- EXTRA LARGE SCREEN 1440px START ---------- */
 
 @media screen and (min-width: 1440px) {
+    .product-tags li {
+        font-size: 11px;
+        white-space: nowrap;
+        text-transform: uppercase;
+        height: 21px;
+        display: flex;
+        position: relative;
+        padding: 6px 10px 4px 10px;
+        text-align: center;
+        justify-content: center;
+        background: var(--gradient-background);
+        /* background: #ff512b; */
+        border-radius: 50px;
+        margin: 2px 4px 2px 0px;
+        align-items: center;
+        flex-flow: wrap;
+        align-content: center;
+        word-break: normal !important;
+        transition: all ease 2s;
+    }
     .blog_blurb_prev_btn {
         left: 0;
         position: absolute;
