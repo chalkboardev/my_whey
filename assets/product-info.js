@@ -544,7 +544,10 @@ if (!customElements.get('product-info')) {
           newSpan.classList.add("gradient");
           newSpan.textContent = 'Most Popular';
 
-          secondElement.prepend(newSpan);
+          if(secondElement != null){
+            secondElement.prepend(newSpan);
+          }
+        
 
           const childElement = document.getElementById('most_popular'); // Replace 'yourChildId' with the actual ID of your element
           const parentElement = childElement.parentNode;
