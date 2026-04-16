@@ -2764,11 +2764,17 @@ body .menu-drawer__close-button {
     transform: scaleX(-1);
 }
 
+
+/* ------ START HIDE SUBSCRIPTION BLOCKS BADGE ------- */
+
 .price__badge--subscription {
     animation: none !important;
     animation-name: none !important;
     display: none !important;
 }
+
+
+/* ------ START HIDE SUBSCRIPTION BLOCKS BADGE ------- */
 
 .price__badge--subscription:before {
     content: "";
