@@ -1340,9 +1340,12 @@ function containsPercentage(str) {
 
 // ------- START GET PRODUCT FROM DROPDOWN SELECT INGREDIENT 1 ---------
     var productDropdown = document.getElementById('all_products_dropdown_1');
-    productDropdown.addEventListener('change', () => {
-      function_product_1();
-    });
+    if(productDropdown != null){
+      productDropdown.addEventListener('change', () => {
+        function_product_1();
+      });
+    }
+
     function function_product_1(){
         //alert('changed/ing...');
         var productDropdown_1 = document.getElementById('all_products_dropdown_1');
