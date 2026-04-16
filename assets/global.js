@@ -1324,7 +1324,9 @@ if (!customElements.get('bulk-add')) {
 // ------------------ ***************** START MY FORMULA MODAL SCRIPT ***************** ------------------
 document.addEventListener('DOMContentLoaded', () => {
 
-$('#ModalForm-ingredient_1, #ModalForm-ingredient_2, #ModalForm-ingredient_3, #ModalForm-ingredient_4, #ModalForm-ingredient_5, #ModalForm-ingredient_6, #ModalForm-ingredient_7').on('blur', function() {
+if ($("#submit_formula").length) {
+    //console.log('Yes formula page...');
+    $('#ModalForm-ingredient_1, #ModalForm-ingredient_2, #ModalForm-ingredient_3, #ModalForm-ingredient_4, #ModalForm-ingredient_5, #ModalForm-ingredient_6, #ModalForm-ingredient_7').on('blur', function() {
   // $(this).next().next().hide();
   $(this).next().next().trigger('change');
 });
@@ -1338,14 +1340,12 @@ function containsPercentage(str) {
 }
 
 
+
 // ------- START GET PRODUCT FROM DROPDOWN SELECT INGREDIENT 1 ---------
     var productDropdown = document.getElementById('all_products_dropdown_1');
-    if(productDropdown != null){
-      productDropdown.addEventListener('change', () => {
-        function_product_1();
-      });
-    }
-
+    productDropdown.addEventListener('change', () => {
+      function_product_1();
+    });
     function function_product_1(){
         //alert('changed/ing...');
         var productDropdown_1 = document.getElementById('all_products_dropdown_1');
@@ -1474,19 +1474,13 @@ function function_1(){
     }
 }
 var percentDropdownUse_1 = document.getElementById('mw_formula_percentDropdown_1');
-if(percentDropdownUse_1 != null){
-  percentDropdownUse_1.addEventListener('change', () => {
+percentDropdownUse_1.addEventListener('change', () => {
   function_1();
 });
-}
-
-
 var mainInputUse_1 = document.getElementById('ModalForm-ingredient_1');
-if(mainInputUse_1 != null){
-    mainInputUse_1.addEventListener('change', () => {
-      function_1();
-    }); 
-}
+mainInputUse_1.addEventListener('change', () => {
+  function_1();
+}); 
 // ------- END GET INGREDIENT 1 VALUES FROM PERCENT DROPDOWN SELECT ---------
 
 
@@ -3703,8 +3697,13 @@ $(".form_help").hide();
     function_10();
     $("#clear_ingredient_10").addClass('hide_element');
   });
+} else {
+  //console.log('Not formula page...');
+}
+
+
  
 
-}); // -------- END document ready ------------
+}); // -------- END DOMContentLoaded ------------
 
 // ------------------ ***************** END MY FORMULA MODAL SCRIPT ***************** ------------------

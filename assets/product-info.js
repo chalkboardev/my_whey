@@ -548,11 +548,11 @@ if (!customElements.get('product-info')) {
             secondElement.prepend(newSpan);
           }
         
-
-          const childElement = ""; // Replace 'yourChildId' with the actual ID of your element
-          if(childElement != null){
-            const childElement = document.getElementById('most_popular');
-          }
+          const childElement = document.getElementById('most_popular');
+          //const childElement = ""; // Replace 'yourChildId' with the actual ID of your element
+          // if(childElement != null){
+          //   const childElement = document.getElementById('most_popular');
+          // }
           const parentElement = childElement.parentNode;
           const grandparentElement = parentElement.parentNode;
 
