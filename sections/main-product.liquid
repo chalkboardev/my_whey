@@ -578,7 +578,7 @@ setTimeout(function(){
                 $(panda_elementsStartingWith1).children().children().children().each(function() {
                       $(this).click(function() {
                             var single_item_price = "";
-                            console.log(this);
+                           // console.log(this);
                             // ----- FIND WHICH SUBSCRIPTION OPTION/BLOCK IS SELECTED -----
                             $('.shopify_subscriptions_app_block_label:visible').each(function() {
                                 var container = $(this);
@@ -1714,7 +1714,7 @@ setTimeout(function(){
                 $(panda_elementsStartingWith1).children().children().children().each(function() {
                       $(this).click(function() {
                             var single_item_price = "";
-                            console.log(this);
+                           // console.log(this);
                             // ----- FIND WHICH SUBSCRIPTION OPTION/BLOCK IS SELECTED -----
                             $('.shopify_subscriptions_app_block_label:visible').each(function() {
                                 var container = $(this);
@@ -1726,7 +1726,7 @@ setTimeout(function(){
                                     var firstSpaceIndex = radioValue.indexOf(" ");
                                     if (firstSpaceIndex !== -1) { // Check if a space exists in the string
                                         single_item_price = radioValue.substring(firstSpaceIndex + 1);
-                                        console.log(single_item_price); // Output: "is a test string."
+                                       // console.log(single_item_price); // Output: "is a test string."
                                     } else {
                                         console.log("No space found in the string.");
                                     }
