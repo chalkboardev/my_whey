@@ -525,15 +525,13 @@ if (!customElements.get('product-info')) {
                 console.log("NO element with id that contains 'offers-list-container-' is visible.");
               }
 
-            } else {
-              console.log('DIDNT FIND the closest...');
-            }
-
-          } else {
-            console.log('COULDNT find the closest active shopify_subscriptions_app_block section:');
-          }
-
-
+          // ------------------------------ (B) START MOVED THIS SECTION FROM (A) WHEN ------------------------------
+          // if ($(".shopify_subscriptions_app_block_label").length > 0) {
+          //   // Elements with this class exist
+          //   alert('Yes');
+          // } else {
+          //   alert('No');
+          // }
           const elementsWithClass = section.querySelectorAll('.shopify_subscriptions_app_block_label'); // Replace 'myClassName' with the actual class
           const secondElement = elementsWithClass[1];
 
@@ -544,15 +542,9 @@ if (!customElements.get('product-info')) {
           newSpan.classList.add("gradient");
           newSpan.textContent = 'Most Popular';
 
-          if(secondElement != null){
-            secondElement.prepend(newSpan);
-          }
-        
-          const childElement = document.getElementById('most_popular');
-          //const childElement = ""; // Replace 'yourChildId' with the actual ID of your element
-          // if(childElement != null){
-          //   const childElement = document.getElementById('most_popular');
-          // }
+          secondElement.prepend(newSpan);
+
+          const childElement = document.getElementById('most_popular'); // Replace 'yourChildId' with the actual ID of your element  
           const parentElement = childElement.parentNode;
           const grandparentElement = parentElement.parentNode;
 
@@ -588,6 +580,20 @@ if (!customElements.get('product-info')) {
                     bodyElement.classList.add('preventBodyScroll');
                 });
           }
+          // ------------------------------ (B) END MOVED THIS SECTION FROM (A) WHEN ------------------------------
+
+            } else {
+              console.log('DIDNT FIND the closest...');
+            }
+
+          } else {
+            console.log('COULDNT find the closest active shopify_subscriptions_app_block section:');
+          }
+
+// ------------------------------ A) START MOVED THIS SECTION TO (B) WHEN NO SUBSCRIPTIONS OFFERED AS YET ------------------------------
+// ------------------------------ .......PUT BACK HERE WHEN SUBSCRIPTION OFFERED?....... ------------------------------
+// ------------------------------ (A) START MOVED THIS SECTION TO (B) WHEN NO SUBSCRIPTIONS OFFERED AS YET ------------------------------
+
 
         });
       } else {
