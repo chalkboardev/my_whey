@@ -146,6 +146,7 @@
  font-size: 1.5rem;
 } */
 .mega_menu_img .title {
+    white-space: nowrap;
     padding: 1rem 0.8rem 1.6rem 0.8rem;
     font-size: 1.5rem;
     /* background:  linear-gradient(180deg, rgba(254, 89, 0, 1) 0%, rgba(204, 71, 0, 1) 50%, rgba(156, 54, 0, 1) 100%) !important; */
@@ -1157,10 +1158,11 @@
                           </div>
                           <div class="title color-scheme-5 gradient">
                             {% comment %} {{ block.settings.link_title}} {% endcomment %}
-                            {{ product.title }}<br>
+                           <span class="menu_img_title"> {{ product.title }}<br> 
                             {{ product.selected_or_first_available_variant.title  | replace: "/", "|"  }} |
                             {% comment %} <span class="menu_slider_price_from">From</span>  {% endcomment %}
                             {{ product.selected_or_first_available_variant.price | money_without_trailing_zeros | remove: " " }}
+                            </span>
                           </div>
 
                         </a>

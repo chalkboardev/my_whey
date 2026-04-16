@@ -100,7 +100,17 @@
 /* CHANGE FONT HERE */
 
 * {
-    /* font-family: 'Saira' !important; */
+    font-family: 'Saira' !important;
+}
+
+.fa-solid,
+.fas {
+    font-family: "Font Awesome 6 Free" !important;
+}
+
+.pb-56aa,
+.money {
+    font-weight: 400 !important;
 }
 
 
@@ -2717,7 +2727,7 @@ body .menu-drawer__close-button {
     top: 1px;
     align-content: flex-start;
     padding-top: 2px !important;
-    font-size: 12px !important;
+    font-size: 11px !important;
     text-transform: uppercase;
     height: 20px;
     display: flex;
@@ -2738,7 +2748,7 @@ body .menu-drawer__close-button {
     top: 0px;
     align-content: flex-start;
     padding-top: 2px !important;
-    font-size: 12px !important;
+    font-size: 11px !important;
     text-transform: uppercase;
     height: 20px;
     display: flex;
@@ -3722,6 +3732,7 @@ h3 {
 .mw_grid_item .button {}
 
 .mw_blog_icon_left {
+    font-family: "Font Awesome 6 Free" !important;
     position: absolute;
     top: -4px;
     color: #ff6700;
@@ -3746,6 +3757,7 @@ h3 {
 }
 
 .mw_blog_icon_right {
+    font-family: "Font Awesome 6 Free" !important;
     position: absolute;
     bottom: 0;
     font-size: 3rem;
@@ -4791,7 +4803,7 @@ h3 {
 
 .delivery_info {
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     width: 100%;
     position: relative;
     display: block;
@@ -4824,6 +4836,16 @@ h3 {
 
 strong {
     font-weight: 600 !important;
+}
+
+.menu_img_title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2;
+    max-width: 90%;
+    margin: 0 auto;
+    -webkit-box-orient: vertical;
 }
 
 
