@@ -464,22 +464,26 @@ body {
     <script>
         
       // --------- COMMENT THIS BELOW TO WORK ON MEGA MENU - AND DISABLE HOVER OPEN ----------
-      // let items = document.querySelector(".header__inline-menu").querySelectorAll("details");
-      //   //console.log(items)
-      // items.forEach(item => {
-      //     item.addEventListener("mouseover", (e) => {
-      //       let close = false;
-      //       //console.log(e.target.classList);
-      //       item.setAttribute("open", true);
-      //       item.querySelector("ul").addEventListener("mouseleave", () => {
-      //         close = true;
-      //         item.removeAttribute("open");
-      //       });
-      //         item.addEventListener("mouseleave", () => {
-      //           item.removeAttribute("open");
-      //         });
-      //     });
-      // });
+      let items = document.querySelector(".header__inline-menu").querySelectorAll("details");
+      items.forEach(item => {
+        let closeTimer;
+        const menu = item.querySelector("ul");
+        // Open menu on hover
+        item.addEventListener("mouseenter", () => {
+          clearTimeout(closeTimer); // Cancel any pending close
+          item.setAttribute("open", true);
+        });
+        // Start delay timer when leaving the entire item (trigger + menu)
+        item.addEventListener("mouseleave", () => {
+          closeTimer = setTimeout(() => {
+            item.removeAttribute("open");
+          }, 1000); // 500ms delay—adjust as needed
+        });
+        // Optional: If mouse moves from menu back to trigger, keep it open
+        menu.addEventListener("mouseenter", () => {
+          clearTimeout(closeTimer);
+        });
+      });
 
 
       // --- To split up the By Goal menu items ---
