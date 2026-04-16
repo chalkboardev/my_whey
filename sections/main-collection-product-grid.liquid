@@ -441,7 +441,8 @@ function startAutoplayForSliders() {
 }
 document.addEventListener('DOMContentLoaded', startAutoplayForSliders);
     </script>
-    {% comment %} <div 
+   
+   {% comment %} <div 
         class="meta_collection_blurb page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
         id="meta_collection_blurb"
         {% if settings.animations_reveal_on_scroll %}
@@ -450,6 +451,16 @@ document.addEventListener('DOMContentLoaded', startAutoplayForSliders);
       >
         {{ collection.metafields.custom.collection_blurb | metafield_tag  }}
     </div> {% endcomment %}
+
+    {% comment %} {{ collection.handle }} {% endcomment %}
+    
+    
+    {% if collection.handle == 'my-formulas' %} 
+     
+    {% else %}
+
+    {% endif %}
+
 
     {% if collection.handle == 'hot-specials' %} 
       <!-- Content to display only on the My Formulas collection page -->
