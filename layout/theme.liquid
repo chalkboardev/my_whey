@@ -476,8 +476,13 @@ body {
         // Start delay timer when leaving the entire item (trigger + menu)
         item.addEventListener("mouseleave", () => {
           closeTimer = setTimeout(() => {
-            item.removeAttribute("open");
-          }, 1000); // 500ms delay—adjust as needed
+            item.classList.add("is-closing");
+            // 2. Wait for the animation duration (e.g., 300ms) before hiding
+            setTimeout(() => {
+              item.removeAttribute("open");
+              item.classList.remove("is-closing"); // Reset for next time
+            }, 350); 
+          }, 360); // 500ms delay—adjust as needed
         });
         // Optional: If mouse moves from menu back to trigger, keep it open
         menu.addEventListener("mouseenter", () => {
