@@ -555,9 +555,9 @@ if (!customElements.get('product-info')) {
 
           if (grandparentElement) { // const grandparentId = grandparentElement.id;
             grandparentElement.id = 'mw_subscription_block';
-
-// console.log('Grandparent ID:', grandparentElement.id);
-          } else { // console.log('No grandparent found.');
+            // console.log('Grandparent ID:', grandparentElement.id);
+          } else { 
+            // console.log('No grandparent found.');
           }
 
           let img = document.createElement("img");
