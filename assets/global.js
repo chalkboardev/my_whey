@@ -1474,13 +1474,19 @@ function function_1(){
     }
 }
 var percentDropdownUse_1 = document.getElementById('mw_formula_percentDropdown_1');
-percentDropdownUse_1.addEventListener('change', () => {
+if(percentDropdownUse_1 != null){
+  percentDropdownUse_1.addEventListener('change', () => {
   function_1();
 });
+}
+
+
 var mainInputUse_1 = document.getElementById('ModalForm-ingredient_1');
-mainInputUse_1.addEventListener('change', () => {
-  function_1();
-}); 
+if(mainInputUse_1 != null){
+    mainInputUse_1.addEventListener('change', () => {
+      function_1();
+    }); 
+}
 // ------- END GET INGREDIENT 1 VALUES FROM PERCENT DROPDOWN SELECT ---------
 
 
