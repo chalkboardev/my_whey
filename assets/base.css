@@ -1865,7 +1865,7 @@ body .menu-drawer__close-button {
 
 .mw_view_all_formula_btn {
     display: block;
-    width: 200px;
+    width: 266px;
     margin: 0 auto -3.6rem auto;
 }
 
@@ -1877,7 +1877,7 @@ body .menu-drawer__close-button {
     height: 50px;
     font-weight: 600;
     letter-spacing: 1px;
-    width: 222px;
+    width: 266px;
     display: flex;
     justify-content: center;
     margin: 0 0 4rem 0px;
@@ -1894,13 +1894,13 @@ body .menu-drawer__close-button {
     padding: 6px 30px 6px 30px;
     border-radius: 50px;
     height: 50px;
-    width: 222px;
+    width: 266px;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     display: flex;
     justify-content: center;
     margin: 0 0 4rem 0px;
-    color: #444;
+    color: #e85433;
     align-items: center;
     transition: all ease 350ms;
     text-transform: uppercase;
@@ -4952,6 +4952,9 @@ strong {
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    .mw_view_all_formula_btn {
+        display: none;
+    }
     .desc_pic_div {
         max-width: 100% !important;
     }
