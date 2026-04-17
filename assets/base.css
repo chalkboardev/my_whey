@@ -4789,8 +4789,8 @@ h3 {
     border-top-right-radius: 0;
     border-bottom-right-radius: 16px;
     border-bottom-left-radius: 0;
-    animation-name: fadeIn;
-    animation-duration: 4s;
+    animation-name: pulse;
+    animation-duration: 3.2s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
 }
@@ -4976,7 +4976,7 @@ strong {
     border-radius: 50px !important;
     font-weight: 600 !important;
     font-size: 15px !important;
-    margin: 30px auto 0 auto !important;
+    margin: 4rem auto 0 auto !important;
     letter-spacing: 1px !important;
     border: 0px solid #ff522b85 !important;
     color: #fff !important;
@@ -4997,7 +4997,7 @@ strong {
     border-radius: 50px !important;
     font-weight: 600 !important;
     font-size: 15px !important;
-    margin: 30px auto 0 auto !important;
+    margin: 4rem auto 0 auto !important;
     letter-spacing: 1px !important;
     border: 0px solid #ffffff00 !important;
     color: #fff !important;
