@@ -6959,7 +6959,7 @@ strong {
         font-size: 1.7rem !important;
     }
     [id^="Slider-template--"] .product_card_title {
-        font-size: 2rem !important;
+        font-size: 1.7rem !important;
     }
     .heading_marquee p {
         margin: 0px 0 -12px 0;
@@ -7018,7 +7018,7 @@ strong {
         padding: 0 0 4px 0;
     }
     [id^="Slider-template--"] .small-hide {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
         padding: 0 0 4px 0;
     }
     .heading_marquee p {
