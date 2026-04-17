@@ -142,7 +142,7 @@ if (!customElements.get('product-form')) {
                                   //console.log('Main flavour modal...');
                                   console.log("opening main flavour modal from product-form.js...");
                                   main_flavour_modal.style.visibility = 'visible';
-                                  main_flavour_modal.style.zIndex = '99999';
+                                  main_flavour_modal.style.zIndex = '99999999';
                                   main_flavour_modal.style.opacity = '1';
                                   main_flavour_modal.style.display = 'flex';
                                   // ----------------------- START Implement check for sales corners usage: -----------------------
@@ -170,7 +170,7 @@ if (!customElements.get('product-form')) {
                                   //console.log('Product flavour modal...');
                                   console.log("opening product flavour modal from product-form.js...");
                                   product_flavour_modal.style.visibility = 'visible';
-                                  product_flavour_modal.style.zIndex = '99999';
+                                  product_flavour_modal.style.zIndex = '99999999';
                                   product_flavour_modal.style.opacity = '1';
                                   product_flavour_modal.style.display = 'flex';
                                 }
@@ -307,7 +307,7 @@ if (!customElements.get('product-form')) {
                                   //console.log('Main flavour modal...');
                                   console.log("opening main flavour modal from product-form.js...");
                                   main_flavour_modal.style.visibility = 'visible';
-                                  main_flavour_modal.style.zIndex = '99999';
+                                  main_flavour_modal.style.zIndex = '99999999';
                                   main_flavour_modal.style.opacity = '1';
                                   main_flavour_modal.style.display = 'flex';
                                 }
@@ -317,7 +317,7 @@ if (!customElements.get('product-form')) {
                                   //console.log('Product flavour modal...');
                                   console.log("opening product flavour modal from product-form.js...");
                                   product_flavour_modal.style.visibility = 'visible';
-                                  product_flavour_modal.style.zIndex = '99999';
+                                  product_flavour_modal.style.zIndex = '99999999';
                                   product_flavour_modal.style.opacity = '1';
                                   product_flavour_modal.style.display = 'flex';
                                 }
