@@ -1402,6 +1402,59 @@ body .menu-drawer__close-button {
     font-size: 11px;
     text-transform: uppercase;
     /* font-weight: 600; */
+    color: #cacaca;
+    letter-spacing: 1px;
+}
+
+.related-products .from_price_txt {
+    position: absolute;
+    display: flex;
+    visibility: visible;
+    margin-top: -9px;
+    font-size: 11px;
+    text-transform: uppercase;
+    /* font-weight: 600; */
+    color: #9f9f9f;
+    letter-spacing: 1px;
+}
+
+.now_price_txt {
+    visibility: hidden;
+    display: none;
+}
+
+.mw_collection_div .now_price_txt {
+    position: absolute;
+    display: flex;
+    visibility: visible;
+    margin-top: -34px;
+    font-size: 11px;
+    text-transform: uppercase;
+    /* font-weight: 600; */
+    color: #cacaca;
+    letter-spacing: 1px;
+}
+
+.product-grid-container .now_price_txt {
+    position: absolute;
+    display: flex;
+    visibility: visible;
+    margin-top: -24px;
+    font-size: 11px;
+    text-transform: uppercase;
+    /* font-weight: 600; */
+    color: #cacaca;
+    letter-spacing: 1px;
+}
+
+.related-products .now_price_txt {
+    position: absolute;
+    display: flex;
+    visibility: visible;
+    margin-top: -28px;
+    font-size: 11px;
+    text-transform: uppercase;
+    /* font-weight: 600; */
     color: #9f9f9f;
     letter-spacing: 1px;
 }
@@ -5626,7 +5679,7 @@ strong {
         top: 4px;
     }
     .related-products .card__information {
-        min-height: 164px;
+        min-height: 148px;
     }
     cart-drawer-items {
         overflow: scroll !important;
@@ -5979,7 +6032,11 @@ strong {
         font-weight: 600;
         color: #333333 !important;
         max-height: 66px;
+        text-overflow: ellipsis;
         overflow: hidden;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
     }
     [id^="Slider-template--"] .product_card_title {
         font-size: 1.6rem;

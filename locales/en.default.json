@@ -169,6 +169,7 @@
       },
       "price": {
         "from_price_html": "<span class='from_price_txt'>From </span> {{ price }}",
+        "regular_price_html": "<span class='now_price_txt'>Now </span> {{ price }}",
         "regular_price": "Regular price",
         "sale_price": "Sale price",
         "unit_price": "Unit price"

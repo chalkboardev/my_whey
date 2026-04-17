@@ -38,6 +38,8 @@
   if target == product and product.price_varies
     assign money_price = 'products.product.price.from_price_html' | t: price: money_price
     assign zoop = true
+  else 
+  assign money_price = 'products.product.price.regular_price_html' | t: price: money_price
   endif
 -%}
 
@@ -85,7 +87,7 @@
           <span class="price-item price-item--regular">
             {%- if zoop == true -%}
               {{ money_price }}
-            {%- else -%}
+            {%- else -%}  
               <span class="heighten_me">{{ money_price }}</span>
             {%- endif -%}
 
