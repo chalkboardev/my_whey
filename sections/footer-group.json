@@ -53,7 +53,7 @@
         "footer_bg_image": "shopify://shop_images/pattern_3.jpg",
         "footer_font_color": "#ffffff",
         "newsletter_enable": true,
-        "newsletter_heading": "Subscribe to our newsletters",
+        "newsletter_heading": "Subscribe to our newsletter",
         "enable_follow_on_shop": true,
         "show_social": true,
         "enable_country_selector": true,
