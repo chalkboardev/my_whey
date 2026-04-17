@@ -182,10 +182,12 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 
 @media screen and (min-width: 990px) {
     .mobile_slider_nxt_bottom {
-        display: none !important;
+        /* display: none !important; */
+        visibility: hidden !important;
     }
     .mobile_slider_prev_bottom {
-        display: none !important;
+        /* display: none !important; */
+        visibility: hidden !important;
     }
     .header:not(.drawer-menu).page-width {
         /* padding-left: 5rem;
@@ -4948,10 +4950,62 @@ strong {
     text-transform: uppercase;
 }
 
+button.chat-toggle.chat-toggle--icon-button {
+    background-color: rgb(51 51 51 / 50%) !important;
+}
+
+.chat-app .chat-toggle--icon-button {
+    background-color: rgb(51 51 51 / 50%) !important;
+}
+
+#shopify-chat .chat-toggle--icon-button {
+    background-color: rgb(51 51 51 / 50%) !important;
+}
+
+button.chat-toggle.chat-toggle--icon-button {
+    background-color: rgb(51 51 51 / 50%) !important;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    .mw_blog_back {
+        z-index: 9999999;
+    }
+    .article-card__excerpt {
+        width: 100%;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-top: 1.2rem;
+    }
+    .mw_blog_title {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        /* Change this number to show more/fewer lines */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .blog_slider .slider-buttons {
+        justify-content: space-between;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+    .blog_slider .mobile_slider_nxt_bottom {
+        display: block;
+        position: relative;
+        padding-right: 12px;
+    }
+    .blog_slider .mobile_slider_prev_bottom {
+        display: block;
+        position: relative;
+        padding-left: 12px;
+    }
     .mw_view_all_formula_btn {
         display: none;
     }
@@ -6197,10 +6251,12 @@ strong {
 
 @media screen and (max-width: 989px) {
     .desk_slider_nxt_middle {
-        display: none !important;
+        /* display: none !important; */
+        visibility: hidden !important;
     }
     .desk_slider_prev_middle {
-        display: none !important;
+        /* display: none !important; */
+        visibility: hidden !important;
     }
     .mw_block_template .article-template__social-sharing {
         display: flex;

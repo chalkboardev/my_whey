@@ -558,6 +558,16 @@ $(document).ready(function() {
   </div>
 </div>
 
+<script>
+document.querySelector('.mobile_slider_nxt_bottom')?.addEventListener('click', () => {
+  document.querySelector('.desk_slider_nxt_middle')?.click();
+});
+document.querySelector('.mobile_slider_prev_bottom')?.addEventListener('click', () => {
+  document.querySelector('.desk_slider_prev_middle')?.click();
+});
+
+</script>
+
 {% schema %}
   {
     "name": "t:sections.featured-blog.name",
