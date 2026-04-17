@@ -4950,22 +4950,6 @@ strong {
     text-transform: uppercase;
 }
 
-button.chat-toggle.chat-toggle--icon-button {
-    background-color: rgb(51 51 51 / 50%) !important;
-}
-
-.chat-app .chat-toggle--icon-button {
-    background-color: rgb(51 51 51 / 50%) !important;
-}
-
-#shopify-chat .chat-toggle--icon-button {
-    background-color: rgb(51 51 51 / 50%) !important;
-}
-
-button.chat-toggle.chat-toggle--icon-button {
-    background-color: rgb(51 51 51 / 50%) !important;
-}
-
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
