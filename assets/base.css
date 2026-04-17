@@ -5048,6 +5048,10 @@ strong {
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    .related-products .product_card_info {
+        font-size: 1.3rem;
+        margin-top: -1px;
+    }
     .quick-add-modal__content .view_more_btn {
         margin: 0px auto 24px auto !important;
     }
