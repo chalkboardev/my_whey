@@ -942,7 +942,7 @@ body .menu-drawer__close-button {
 .footer_newsletter_txt {
     font-size: 1.5rem !important;
     /* text-transform: uppercase; */
-    font-family: sans-serif !important;
+    /* font-family: inherit !important; */
     color: #696969;
 }
 
