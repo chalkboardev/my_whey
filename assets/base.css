@@ -3643,7 +3643,8 @@ quick-add-modal .product__title>a:hover {
 
 .tag_title {
     color: #fff;
-    text-shadow: none;
+    /* text-shadow: none; */
+    text-shadow: 1px 1px 6px #000000a3;
     animation-direction: alternate !important;
     animation-name: fadeIn !important;
     animation-duration: 3s !important;

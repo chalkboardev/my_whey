@@ -67,7 +67,13 @@
       style="{%- if section.settings.image != blank -%} background-size:cover !important;background: url('{{ section.settings.image | image_url }}') no-repeat 100% {{ section.settings.background_height_position }}%/100%;   {% endif %}">
 
     <a class="blog_head_link" href="{{ section.settings.blog.url }}">
-        <div class="title-wrapper-with-link{% if posts_displayed > 2 %} title-wrapper--self-padded-tablet-down{% else %} title-wrapper--self-padded-mobile{% endif %} title-wrapper--no-top-margin">
+        <div  
+        style="
+        animation-name: slideInUp;
+        animation-duration: 4s;
+        animation-direction: alternate;
+        animation-iteration-count: 1;"
+    class="title-wrapper-with-link{% if posts_displayed > 2 %} title-wrapper--self-padded-tablet-down{% else %} title-wrapper--self-padded-mobile{% endif %} title-wrapper--no-top-margin">
           <h1
             id="SectionHeading-{{ section.id }}"
             class="mw_header_img_txt blog__title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
