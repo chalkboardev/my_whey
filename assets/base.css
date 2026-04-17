@@ -4950,10 +4950,80 @@ strong {
     text-transform: uppercase;
 }
 
+.mw_product_view_details {
+    /* animation-name: fadeIn;
+    animation-duration: 1.5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite; */
+}
+
+.quick-add-modal__content .mw_flex_container {
+    visibility: hidden;
+    display: none;
+}
+
+.quick-add-modal__content .product-form__quantity {
+    visibility: hidden;
+    display: none;
+}
+
+.quick-add-modal__content form[data-type="add-to-cart-form"] {
+    visibility: hidden;
+    display: none;
+}
+
+.view_more_btn {
+    width: 100%;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 2px #656565 !important;
+    border-radius: 50px !important;
+    font-weight: 600 !important;
+    font-size: 15px !important;
+    margin: 30px auto 0 auto !important;
+    letter-spacing: 1px !important;
+    border: 0px solid #ff522b85 !important;
+    color: #fff !important;
+    text-decoration: none !important;
+    text-transform: uppercase;
+    /* background: var(--gradient-background); */
+    background: linear-gradient(180deg, rgba(255, 103, 0, 1), rgba(227, 79, 0, 1) 50%, rgba(197, 69, 2, 1) 100%) !important;
+    padding: 1.5rem 2.2rem !important;
+    transition: all ease 0.5s;
+}
+
+.view_more_btn:hover {
+    width: 100%;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 3px 3px 9px #656565 !important;
+    border-radius: 50px !important;
+    font-weight: 600 !important;
+    font-size: 15px !important;
+    margin: 30px auto 0 auto !important;
+    letter-spacing: 1px !important;
+    border: 0px solid #ffffff00 !important;
+    color: #fff !important;
+    text-decoration: none !important;
+    text-transform: uppercase;
+    /* background: var(--gradient-background); */
+    background: linear-gradient(180deg, rgba(255, 103, 0, 1), rgba(227, 79, 0, 1) 50%, rgba(197, 69, 2, 1) 100%) !important;
+    padding: 1.5rem 2.2rem !important;
+    transition: all ease 0.5s;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    .view_more_btn {
+        margin: 0px auto 24px auto !important;
+    }
+    .view_more_btn:hover {
+        margin: 0px auto 24px auto !important;
+    }
     .section-header.shopify-section-group-header-group {
         z-index: 4 !important;
     }
