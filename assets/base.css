@@ -5010,6 +5010,41 @@ strong {
 }
 
 
+/* Create the smooth panning animation */
+
+@keyframes continuousPan {
+    0% {
+        transform: scale(1.1) translate(0, 0);
+    }
+    25% {
+        transform: scale(1.1) translate(-2%, 2%);
+    }
+    50% {
+        transform: scale(1.1) translate(-3%, -1%);
+    }
+    75% {
+        transform: scale(1.1) translate(1%, -2%);
+    }
+    100% {
+        transform: scale(1.1) translate(0, 0);
+    }
+}
+
+
+/* Apply it to your specific image class */
+
+.mw_custom_pan_img img {
+    animation: continuousPan 20s ease-in-out infinite;
+    object-fit: cover;
+    width: 100%;
+}
+
+.mw_custom_pan_img {
+    overflow: hidden;
+    /* Prevents the scaled image from spilling out */
+}
+
+
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
@@ -6175,6 +6210,9 @@ strong {
 }
 
 @media screen and (max-width: 749px) {
+    #formula_info {
+        padding-top: 1rem;
+    }
     .mobile_head_search {
         /* position: absolute;
         width: 100vw;

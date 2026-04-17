@@ -23,6 +23,358 @@
 {%- endif -%}
 
 {%- style -%}
+.image-with-text .grid {
+    margin-bottom: 0
+}
+
+.image-with-text .grid__item {
+    position: relative
+}
+
+@media screen and (min-width:750px) {
+    .image-with-text__grid--reverse {
+        flex-direction: row-reverse
+    }
+}
+
+.image-with-text__media {
+    min-height: 100%;
+    overflow: visible
+}
+
+.image-with-text__media--small {
+    height: 19.4rem
+}
+
+.image-with-text__media--medium {
+    height: 29.6rem
+}
+
+.image-with-text__media--large {
+    height: 43.5rem
+}
+
+@media screen and (min-width:750px) {
+    .image-with-text__media--small {
+        height: 31.4rem
+    }
+    .image-with-text__media--medium {
+        height: 46rem
+    }
+    .image-with-text__media--large {
+        height: 69.5rem
+    }
+}
+
+.image-with-text__media--placeholder {
+    position: relative;
+    overflow: hidden
+}
+
+.image-with-text__media--placeholder:after {
+    content: "";
+    position: absolute;
+    background: rgba(var(--color-foreground), .04)
+}
+
+.image-with-text__media--placeholder.image-with-text__media--adapt {
+    height: 20rem
+}
+
+@media screen and (min-width:750px) {
+    .image-with-text__media--placeholder.image-with-text__media--adapt {
+        height: 30rem
+    }
+}
+
+.image-with-text__media--placeholder>svg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    fill: currentColor
+}
+
+.image-with-text__media--placeholder:is(.animate--ambient,
+.animate--zoom-in)>.svg-wrapper {
+    top: 0;
+    left: 0;
+    transform: translate(0)
+}
+
+.image-with-text__content {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-self: center;
+    padding: 4rem calc(4rem / var(--font-body-scale)) 5rem;
+    position: relative;
+    z-index: 1
+}
+
+.image-with-text .grid__item:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1
+}
+
+.image-with-text:not(.image-with-text--overlap) .image-with-text__media-item:after {
+    border-radius: var(--media-radius);
+    box-shadow: var(--media-shadow-horizontal-offset) var(--media-shadow-vertical-offset) var(--media-shadow-blur-radius) rgba(var(--color-shadow), var(--media-shadow-opacity))
+}
+
+.image-with-text:not(.image-with-text--overlap) .image-with-text__text-item:after {
+    border-radius: var(--text-boxes-radius);
+    box-shadow: var(--text-boxes-shadow-horizontal-offset) var(--text-boxes-shadow-vertical-offset) var(--text-boxes-shadow-blur-radius) rgba(var(--color-shadow), var(--text-boxes-shadow-opacity))
+}
+
+.image-with-text .image-with-text__media-item>* {
+    border-radius: var(--media-radius);
+    overflow: hidden;
+    box-shadow: var(--media-shadow-horizontal-offset) var(--media-shadow-vertical-offset) var(--media-shadow-blur-radius) rgba(var(--color-shadow), var(--media-shadow-opacity))
+}
+
+.image-with-text .global-media-settings {
+    overflow: hidden!important
+}
+
+.image-with-text .image-with-text__text-item>* {
+    border-radius: var(--text-boxes-radius);
+    overflow: hidden;
+    box-shadow: var(--text-boxes-shadow-horizontal-offset) var(--text-boxes-shadow-vertical-offset) var(--text-boxes-shadow-blur-radius) rgba(var(--color-shadow), var(--text-boxes-shadow-opacity))
+}
+
+.image-with-text:not(.image-with-text--overlap) .image-with-text__media-item>*,
+.image-with-text:not(.image-with-text--overlap) .image-with-text__text-item>* {
+    box-shadow: none
+}
+
+@media screen and (max-width:749px) {
+    .image-with-text.collapse-corners:not(.image-with-text--overlap) .image-with-text__media-item:after,
+    .image-with-text.collapse-corners:not(.image-with-text--overlap) .grid__item .image-with-text__media,
+    .image-with-text.collapse-corners:not(.image-with-text--overlap) .image-with-text__media img,
+    .image-with-text.collapse-corners:not(.image-with-text--overlap) .image-with-text__media .placeholder-svg {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0
+    }
+    .image-with-text.collapse-corners:not(.image-with-text--overlap) .image-with-text__text-item:after,
+    .image-with-text.collapse-corners:not(.image-with-text--overlap) .grid__item .image-with-text__content {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0
+    }
+    .image-with-text.collapse-borders:not(.image-with-text--overlap) .image-with-text__content {
+        border-top: 0
+    }
+}
+
+.image-with-text__content--mobile-right>* {
+    align-self: flex-end;
+    text-align: right
+}
+
+.image-with-text__content--mobile-center>* {
+    align-self: center;
+    text-align: center
+}
+
+.image-with-text--overlap .image-with-text__content {
+    width: 90%;
+    margin: -3rem auto 0
+}
+
+@media screen and (min-width:750px) {
+    .image-with-text__grid--reverse .image-with-text__content {
+        margin-left: auto
+    }
+    .image-with-text__content--bottom {
+        justify-content: flex-end;
+        align-self: flex-end
+    }
+    .image-with-text__content--top {
+        justify-content: flex-start;
+        align-self: flex-start
+    }
+    .image-with-text__content--desktop-right>* {
+        align-self: flex-end;
+        text-align: right
+    }
+    .image-with-text__content--desktop-left>* {
+        align-self: flex-start;
+        text-align: left
+    }
+    .image-with-text__content--desktop-center>* {
+        align-self: center;
+        text-align: center
+    }
+    .image-with-text--overlap .image-with-text__text-item {
+        display: flex;
+        padding: 3rem 0
+    }
+    .image-with-text--overlap .image-with-text__content {
+        height: auto;
+        width: calc(100% + 4rem);
+        min-width: calc(100% + 4rem);
+        margin-top: 0;
+        margin-left: -4rem
+    }
+    .image-with-text--overlap .image-with-text__grid--reverse .image-with-text__content {
+        margin-left: 0;
+        margin-right: -4rem
+    }
+    .image-with-text--overlap .image-with-text__grid--reverse .image-with-text__text-item {
+        justify-content: flex-end
+    }
+    .image-with-text--overlap .image-with-text__media-item--top {
+        align-self: flex-start
+    }
+    .image-with-text--overlap .image-with-text__media-item--middle {
+        align-self: center
+    }
+    .image-with-text--overlap .image-with-text__media-item--bottom {
+        align-self: flex-end
+    }
+    .image-with-text__media-item--small,
+    .image-with-text__media-item--large+.image-with-text__text-item {
+        flex-grow: 0
+    }
+    .image-with-text.collapse-corners:not(.image-with-text--overlap) .grid:not(.image-with-text__grid--reverse) .image-with-text__media-item:after,
+    .image-with-text.collapse-corners:not(.image-with-text--overlap) .grid:not(.image-with-text__grid--reverse) .image-with-text__media,
+    .image-with-text.collapse-corners:not(.image-with-text--overlap) .grid:not(.image-with-text__grid--reverse) .image-with-text__media img,
+    .image-with-text.collapse-corners:not(.image-with-text--overlap) .grid:not(.image-with-text__grid--reverse) .image-with-text__media .placeholder-svg,
+    .image-with-text.collapse-corners:not(.image-with-text--overlap) .image-with-text__grid--reverse .image-with-text__text-item:after,
+    .image-with-text.collapse-corners:not(.image-with-text--overlap) .image-with-text__grid--reverse .image-with-text__content,
+    .image-with-text.collapse-corners:not(.image-with-text--overlap) .image-with-text__grid--reverse .image-with-text__content:after {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0
+    }
+    .image-with-text.collapse-corners:not(.image-with-text--overlap) .grid:not(.image-with-text__grid--reverse) .image-with-text__text-item:after,
+    .image-with-text.collapse-corners:not(.image-with-text--overlap) .grid:not(.image-with-text__grid--reverse) .image-with-text__content,
+    .image-with-text.collapse-corners:not(.image-with-text--overlap) .grid:not(.image-with-text__grid--reverse) .image-with-text__content:after,
+    .image-with-text.collapse-corners:not(.image-with-text--overlap) .image-with-text__grid--reverse .image-with-text__media-item:after,
+    .image-with-text.collapse-corners:not(.image-with-text--overlap) .image-with-text__grid--reverse .image-with-text__media,
+    .image-with-text.collapse-corners:not(.image-with-text--overlap) .image-with-text__grid--reverse .image-with-text__media img,
+    .image-with-text.collapse-corners:not(.image-with-text--overlap) .image-with-text__grid--reverse .image-with-text__media .placeholder-svg {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0
+    }
+    .image-with-text.collapse-borders:not(.image-with-text--overlap) .grid:not(.image-with-text__grid--reverse) .image-with-text__content {
+        border-left: 0
+    }
+    .image-with-text.collapse-borders:not(.image-with-text--overlap) .image-with-text__grid--reverse .image-with-text__content {
+        border-right: 0
+    }
+}
+
+.image-with-text:not(.collapse-corners,
+.image-with-text--overlap) .image-with-text__media-item {
+    z-index: 2
+}
+
+.image-with-text.image-with-text--overlap .backround-transparent,
+.image-with-text:not(.image-with-text--overlap) .background-transparent {
+    background: transparent
+}
+
+.image-with-text .gradient {
+    transform: perspective(0)
+}
+
+.image-with-text__content {
+    border-radius: var(--text-boxes-radius);
+    box-shadow: var(--text-boxes-shadow-horizontal-offset) var(--text-boxes-shadow-vertical-offset) var(--text-boxes-shadow-blur-radius) rgba(var(--color-shadow), var(--text-boxes-shadow-opacity));
+    word-break: break-word
+}
+
+@media screen and (min-width:990px) {
+    .image-with-text__content {
+        padding: 6rem 7rem 7rem
+    }
+}
+
+.image-with-text__content>*+* {
+    margin-top: 2rem
+}
+
+.image-with-text__content>.image-with-text__text:empty~a {
+    margin-top: 2rem
+}
+
+.image-with-text__content>:first-child:is(.image-with-text__heading),
+.image-with-text__text--caption+.image-with-text__heading,
+.image-with-text__text--caption:first-child {
+    margin-top: 0
+}
+
+.image-with-text__content :last-child:is(.image-with-text__heading),
+.image-with-text__text--caption {
+    margin-bottom: 0
+}
+
+.image-with-text__content .button+.image-with-text__text {
+    margin-top: 2rem
+}
+
+.image-with-text__content .image-with-text__text+.button {
+    margin-top: 3rem
+}
+
+.image-with-text__heading {
+    margin-bottom: 0
+}
+
+.image-with-text__text p {
+    margin-top: 0;
+    margin-bottom: 1rem
+}
+
+@media screen and (max-width:749px) {
+    .collapse-padding .image-with-text__grid .image-with-text__content {
+        padding-left: 0;
+        padding-right: 0
+    }
+}
+
+@media screen and (min-width:750px) {
+    .collapse-padding .image-with-text__grid:not(.image-with-text__grid--reverse) .image-with-text__content:not(.image-with-text__content--desktop-center) {
+        padding-right: 0
+    }
+    .collapse-padding .image-with-text__grid--reverse .image-with-text__content:not(.image-with-text__content--desktop-center) {
+        padding-left: 0
+    }
+}
+
+@supports not (inset: 10px) {
+    .image-with-text .grid {
+        margin-left: 0
+    }
+}
+
+.multirow__inner {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--grid-mobile-vertical-spacing)
+}
+
+@media screen and (min-width:750px) {
+    .multirow__inner {
+        row-gap: var(--grid-desktop-vertical-spacing)
+    }
+}
+
+
+/*# sourceMappingURL=/cdn/shop/t/3/assets/component-image-with-text.css.map?v=159347133892345898421734013810 */
+
+
+/* Apply it to your specific image class */
+
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
@@ -34,7 +386,41 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+
+  .section-template--18522096697596__image_with_text_Kr4fVV-padding {
+    padding-top: 27px;
+    padding-bottom: 27px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-template--18522096697596__image_with_text_Kr4fVV-padding {
+      padding-top: 36px;
+      padding-bottom: 36px;
+    }
+  }
+  @media screen and (max-width: 749px) {
+    .section-template--18522096697596__image_with_text_Kr4fVV-padding {
+      padding-top: 50px;
+      padding-bottom: 0px;
+    }
+    .my_formula_about {
+      padding: 0 3rem 0 3rem !important;
+    }
+  }
+
+  @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    .my_formula_about {
+      padding: 0 2rem 0 2rem !important;
+    }
+    .section-template--18522096697596__image_with_text_Kr4fVV-padding {
+      padding-top: 36px;
+      padding-bottom: 0px;
+    }
+  }
 {%- endstyle -%}
+
+
 
 <div style="background:{{ section.settings.collection_div_bg_color }}" class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
   {%- paginate collection.products by section.settings.products_per_page -%}
@@ -121,6 +507,7 @@
     {% if blurb_paragraph_count > 1 %} 
         {% comment %} show slider... {% endcomment %}
         <slider-component
+        style="display:none;"
         class="page-width mw_blurb_slider slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
         role="region"
         aria-roledescription="blurb_slider"
@@ -151,7 +538,7 @@
             data-speed="5"
           >
 
-          {%- for paragraph in paragraphs -%}
+          {%- for paragraph in paragraphs -%} 
             {%- unless paragraph == blank -%}
               <div
               class="collection_blurb_slide slideshow__slide slider__slide grid__item grid--1-col"
@@ -455,8 +842,54 @@ document.addEventListener('DOMContentLoaded', startAutoplayForSliders);
     {% comment %} {{ collection.handle }} {% endcomment %}
     
 
-    {% if collection.handle == 'my-formulas' %} 
+    {% if collection.handle == 'my-formulas' %}
+      
+      <div style="margin-top:-{{ section.settings.padding_top }}px !important;" class="shopify-section section">
      
+
+        <div class="section-template--18522096697596__image_with_text_Kr4fVV-padding gradient color-scheme-1">
+        <div class=" page-width ">
+          <div class="image-with-text image-with-text--no-overlap isolate collapse-corners scroll-trigger animate--slide-in">
+            <div class="image-with-text__grid grid grid--gapless grid--1-col grid--2-col-tablet">
+              <div class="my_formula_about mw_image_with_text_media image-with-text__media-item image-with-text__media-item--medium image-with-text__media-item--middle grid__item">
+                <div class="mw_custom_pan_img mw_image_with_text_media image-with-text__media image-with-text__media--adapt global-media-settings  media" style="border-radius: 10px !important;padding-bottom: 87.22707423580788%;"><img src="//my-whey.co.za/cdn/shop/files/mw_poster_8.jpg?v=1772561308&amp;width=1500" alt="" srcset="//my-whey.co.za/cdn/shop/files/mw_poster_8.jpg?v=1772561308&amp;width=165 165w, //my-whey.co.za/cdn/shop/files/mw_poster_8.jpg?v=1772561308&amp;width=360 360w, //my-whey.co.za/cdn/shop/files/mw_poster_8.jpg?v=1772561308&amp;width=535 535w, //my-whey.co.za/cdn/shop/files/mw_poster_8.jpg?v=1772561308&amp;width=750 750w, //my-whey.co.za/cdn/shop/files/mw_poster_8.jpg?v=1772561308&amp;width=1070 1070w, //my-whey.co.za/cdn/shop/files/mw_poster_8.jpg?v=1772561308&amp;width=1500 1500w" width="1500" height="1308" loading="lazy" sizes="(min-width: 1400px) 650px,
+                    (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)" fetchpriority="auto">
+              </div>
+              </div>
+              <div class="image-with-text__text-item grid__item">
+                  <div id="formula_info" class="image_with_text_div  image-with-text__content image-with-text__content--middle image-with-text__content--desktop-left image-with-text__content--mobile-left image-with-text__content--adapt content-container  }}">
+                      <div>
+                          <h2 class="image-with-text__heading inline-richtext h1">
+                              <strong>My Formulas</strong>
+                          </h2>
+                          <div class="image-with-text__text rte body">
+                            
+                            {%- for paragraph in paragraphs -%}
+                              {%- unless paragraph == blank -%}
+                           
+                              {%- endunless -%}
+                              {{ paragraph }} 
+                            {%- endfor -%}
+
+                            {% comment %} <p> <strong>My Formulas</strong> are developed with care, featuring <strong>key ingredients</strong> in functional amounts.</p>
+                            
+                            <p>High-quality ingredients are <strong>prioritized</strong> to ensure every formula meets your expectations. </p>
+                            
+                            <p>Looking for a specific combination? Click the link below to explore how a <strong>personalized blend</strong> can be created for you.</p> {% endcomment %}
+
+                          </div>
+                          <a href="#" id="open_formula_modal_2" class="more_btn color-scheme-5 gradient button button--secondary"> 
+                              Create Now
+                          </a>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      </div>
     {% else %}
 
     {% endif %}
