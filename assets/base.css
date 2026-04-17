@@ -534,68 +534,62 @@ table:not([class]) th {
     background: linear-gradient(180deg, rgb(255 134 52), rgb(229 81 1) 50%, rgb(197 69 2) 100%) padding-box, linear-gradient(180deg, rgb(255 134 52), rgb(229 81 1) 50%, rgb(197 69 2) 100%) border-box;
 }
 
-.header_buttons .videoBoxInfoBtn {}
-
-.header_buttons .imageBoxInfoBtn {
-    display: flex !important;
-    justify-content: center;
-    align-content: center;
-    height: auto;
-    min-height: 50px;
-    flex-wrap: wrap;
-    width: 280px !important;
-    letter-spacing: 2px;
-    margin-right: 6px;
-    letter-spacing: 2px !important;
-    transition: all ease 0.25s
-}
-
-.header_buttons .imageBoxInfoBtn:hover {
-    width: 280px;
-    border: 1px solid #fff !important;
-    letter-spacing: 4px !important;
-    text-shadow: none;
-    color: #333 !important;
-    transition: all ease 0.25s
+.header_buttons {
+    display: inline-flex;
+    justify-content: left;
+    width: 100%;
 }
 
 .videoBackground .videoBoxInfoBtn,
 .videoBackground .imageBoxInfoBtn {
+    margin: 0;
+    position: relative;
+    display: inline-flex !important;
+    justify-content: center;
+    align-items: center;
     background: var(--gradient-background);
-    margin-right: 6px;
     border: 2px solid #ff512b99 !important;
-    display: inline-block;
-    width: auto;
+    padding: 1rem 2.8rem 1rem 2.8rem !important;
+    height: auto;
+    width: 100%;
     text-decoration: none;
     text-align: center;
     vertical-align: middle;
     cursor: pointer;
     text-shadow: 0px 0px 3px #313131;
     border-radius: 30px;
-    padding: 0;
     font-style: normal;
     font-weight: bolder;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
-    white-space: normal;
-    font-size: 16px;
-    margin-top: 10px;
-    transform: translateY(0px);
     letter-spacing: 2px;
-    backdrop-filter: blur(3px);
-    transition: all ease 0.25s;
+    animation-name: fadeInUp;
+    animation-direction: alternate;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
 }
 
 .videoBackground .videoBoxInfoBtn:hover,
 .videoBackground .imageBoxInfoBtn:hover {
+    position: relative;
+    display: inline-flex !important;
+    justify-content: center;
+    align-items: center;
     background: var(--gradient-background);
-    border: 2px solid #ff512b !important;
-    text-shadow: 0 0 3px #2e2e2e;
-    color: #fff !important;
-    backdrop-filter: blur(3px);
-    transform: translateY(0px);
+    border: 2px solid #ff512b99 !important;
+    padding: 1rem 2.8rem 1rem 2.8rem !important;
+    height: auto;
+    width: 100%;
     letter-spacing: 3px;
-    transition: all ease 0.25s;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    text-shadow: 0px 0px 3px #313131;
+    border-radius: 30px;
+    font-style: normal;
+    font-weight: bolder;
+    text-transform: uppercase;
+    /* letter-spacing: 2px; */
 }
 
 
@@ -4785,7 +4779,7 @@ h3 {
     max-width: 100% !important;
     animation-name: fadeInRight;
     animation-direction: alternate;
-    animation-duration: 2s;
+    animation-duration: 3s;
     animation-iteration-count: 1;
 }
 
@@ -4795,8 +4789,8 @@ h3 {
     border-top-right-radius: 0;
     border-bottom-right-radius: 16px;
     border-bottom-left-radius: 0;
-    animation-name: pulse;
-    animation-duration: 2s;
+    animation-name: fadeIn;
+    animation-duration: 4s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
 }
@@ -6161,9 +6155,9 @@ strong {
     .slider_header {
         font-size: 5rem !important;
         animation-direction: alternate;
-        animation-delay: 2s;
-        animation-name: flipOutX;
-        animation-duration: 2s;
+        animation-delay: 0s;
+        animation-name: fadeInDown;
+        animation-duration: 4s;
     }
     .product .price .badge {
         /* margin-bottom: 0rem !important; */

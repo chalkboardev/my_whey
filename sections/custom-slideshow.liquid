@@ -173,31 +173,32 @@
     </div> 
  {% endif %}
 
+  <div class="header_buttons">
+      {% if block.settings.img_button_1_link != blank and block.settings.img_button_1_label != blank %}
+      
+
+      <a id="imageBoxInfoBtn1" href="{{ block.settings.img_button_1_link }}" class="imageBoxInfoBtn color-{{ block.settings.img_button_1_color_scheme }}"> 
+      
+      {{ block.settings.img_button_1_label | escape }}
+      
+      </a>
+      
+      {% endif %}
+      {% if block.settings.img_button_2_link != blank and block.settings.img_button_2_label != blank %}
+      
+
+        <a id="imageBoxInfoBtn2" href="{{ block.settings.img_button_2_link }}" class="imageBoxInfoBtn color-{{ block.settings.img_button_2_color_scheme }}"> 
+        
+        {{ block.settings.img_button_2_label | escape }}
+        
+        </a>
+        
+        {% endif %}
+  </div>
 
   </span>
    
-<div class="header_buttons">
-  {% if block.settings.img_button_1_link != blank and block.settings.img_button_1_label != blank %}
-   
 
-  <a id="imageBoxInfoBtn1" href="{{ block.settings.img_button_1_link }}" class="imageBoxInfoBtn color-{{ block.settings.img_button_1_color_scheme }}"> 
-   
-  {{ block.settings.img_button_1_label | escape }}
-   
-  </a>
-  
-  {% endif %}
-  {% if block.settings.img_button_2_link != blank and block.settings.img_button_2_label != blank %}
-   
-
-    <a id="imageBoxInfoBtn2" href="{{ block.settings.img_button_2_link }}" class="imageBoxInfoBtn color-{{ block.settings.img_button_2_color_scheme }}"> 
-     
-    {{ block.settings.img_button_2_label | escape }}
-     
-    </a>
-    
-    {% endif %}
-  </div>
 
   </div>
    

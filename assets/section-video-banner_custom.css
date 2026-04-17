@@ -571,12 +571,15 @@ h4 {
     }
     .videoBackground .videoBoxInfoTitle,
     .videoBackground .imageBoxInfoTitle {
+        animation-name: fadeInDown;
+        animation-direction: alternate;
+        animation-duration: 4s;
+        animation-iteration-count: 1;
         margin: 0 0 -0.5rem 0 !important;
         font-size: 3.5rem !important;
         text-shadow: 0 0 3px #4b4b4b;
         font-weight: 800 !important;
         line-height: 40px;
-        display: block;
     }
     .videoBackground .videoBoxInfoTitle,
     .videoBackground h3 {
