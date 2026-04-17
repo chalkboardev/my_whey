@@ -416,7 +416,7 @@
     <div id="menu-drawer" style="padding: 0 !important" class="gradient menu-drawer motion-reduce color-{{ section.settings.menu_color_scheme }} {% if section.settings.keep_announcement_scroll %} announcement_present {% else %}announcement_removed{% endif %}"> 
 
   
-      <span class="header__heading-link mobile_menu_logo link link--text focus-inset">
+      <span class="header__heading-link mobile_menu_logo link link--text focus-inset">  
         {%- if settings.logo != blank -%} 
           <div class="">
             {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
@@ -679,6 +679,36 @@
           </nav>
 
           <script>
+// 1. Target the logo and the parent menu drawer element
+const mobileLogo = document.querySelector('.menu-drawer .mobile_menu_logo');
+// Dawn uses a <details> element with the ID 'Details-menu-drawer-container'
+//const menuDrawerDetails = document.querySelector('#Details-menu-drawer-container');
+// Dawn's mobile menu usually has a specific close button or a summary toggle
+const menuCloseTrigger = document.querySelector('#Details-menu-drawer-container summary');
+
+if (mobileLogo && menuCloseTrigger) {
+  mobileLogo.addEventListener('click', (e) => {
+    //e.preventDefault(); 
+    // 2. Simply removing the 'open' attribute closes the Dawn mobile menu
+    // menuDrawerDetails.removeAttribute('open');
+    // 2. Click the theme's native toggle. 
+    // This triggers the internal 'closeAnimation()' function automatically.
+    menuCloseTrigger.click();
+
+    
+    // Optional: Reset the 'aria-expanded' for accessibility
+    const summary = menuDrawerDetails.querySelector('summary');
+    if (summary) summary.setAttribute('aria-expanded', 'false');
+    
+    console.log("Mobile menu closed via logo click");
+  });
+}
+
+            // $(".mobile_menu_logo").click(function (){
+            //   alert('Hi...');
+            //   $(".menu_close_svg").click();
+            // });
+            
             function change_it(summary) {
               //console.log('hi...');
               // $(summary).children('span').eq(1).attr("id")

@@ -4931,7 +4931,7 @@ strong {
 }
 
 #shopify-chat {
-    z-index: 999999;
+    z-index: 2 !important;
     position: relative;
 }
 
@@ -4954,8 +4954,11 @@ strong {
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    .section-header.shopify-section-group-header-group {
+        z-index: 4 !important;
+    }
     .mw_blog_back {
-        z-index: 9999999;
+        z-index: 3;
     }
     .article-card__excerpt {
         width: 100%;
