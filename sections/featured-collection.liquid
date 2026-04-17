@@ -148,6 +148,16 @@
         {%- endfor -%}
       </ul>
       
+
+      {% comment %} {{ section.settings.description }} {% endcomment %}
+      {% comment %} {% if section.settings.description contains "Formula" %}
+        <div class="wow icon_animate mw_view_all_btn center collection__view-all">
+        <a href="{{ section.settings.collection.url }}" class="mw_view_all_link link underlined-link" aria-label="{{ 'sections.featured_collection.view_all_label' | t: collection_name: section.settings.collection.title | escape }}">
+          View all
+        </a>
+        </div>
+      {% endif %} {% endcomment %}
+      
       {%- if section.settings.show_view_all and more_in_collection -%}
       <div class="wow icon_animate mw_view_all_btn center collection__view-all">
         <a
@@ -158,41 +168,66 @@
           {{ 'sections.featured_collection.view_all' | t }}
         </a>
       </div>
+
+    {%- elsif section.settings.show_view_all and section.settings.description contains "Formula" -%}
+
+        {% comment %} <div class="mw_view_all_formula_btn header_buttons">
+          <a id="imageBoxInfoBtn1" href="#collection-template--18522096697596__featured_collection" class="imageBoxInfoBtn color-scheme-5"> 
+          EXPLORE RANGE 
+          </a>
+        </div> {% endcomment %}
+
+        <div class="wow icon_animate mw_view_all_formula_btn center collection__view-all">
+            <a href="{{ section.settings.collection.url }}" class="link underlined-link" aria-label="{{ 'sections.featured_collection.view_all_label' | t: collection_name: section.settings.collection.title | escape }}">
+              View Formulas 
+            </a>
+        </div>
+    {%- else -%}
+
     {%- endif -%}
 
       {%- if show_mobile_slider or show_desktop_slider -%}
-        <div class="wow icon_animate slider-buttons">
-          <button
-            type="button"
-          {%- if section.settings.show_view_all and more_in_collection -%} style="width:150px"   {%- endif -%}
-            class="slider-button slider-button--prev"
-            name="previous"
-            aria-label="{{ 'general.slider.previous_slide' | t }}"
-            aria-controls="Slider-{{ section.id }}"
-          >
-            <span class="svg-wrapper">
-              {{- 'icon-left_arrow.svg' | inline_asset_content -}}
-            </span>
-          </button>
-          <div class="slider-counter caption">
-            {% comment %} <span class="slider-counter--current">1</span>
-            <span aria-hidden="true"> / </span>
-            <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
-            <span class="slider-counter--total">{{ products_to_display }}</span> {% endcomment %}
-          </div>
-          <button
-            type="button"
-            {%- if section.settings.show_view_all and more_in_collection -%} style="width:150px"  {%- endif -%}
-            class="slider-button slider-button--next"
-            name="next"
-            aria-label="{{ 'general.slider.next_slide' | t }}"
-            aria-controls="Slider-{{ section.id }}"
-          >
-            <span class="svg-wrapper">
-              {{- 'icon-right_arrow.svg' | inline_asset_content -}}
-            </span>
-          </button>
-        </div>
+          {% if section.settings.description contains "Formula" %}
+
+          {%- else -%}
+              <div class="wow icon_animate slider-buttons">
+                <button 
+                  type="button"
+                {%- if section.settings.show_view_all and more_in_collection -%} style="width:150px"   {%- endif -%}
+                  class="slider-button slider-button--prev"
+                  name="previous"
+                  aria-label="{{ 'general.slider.previous_slide' | t }}"
+                  aria-controls="Slider-{{ section.id }}"
+                >
+                  <span class="svg-wrapper">
+                    {{- 'icon-left_arrow.svg' | inline_asset_content -}}
+                  </span>
+                </button>
+
+
+
+                <div class="slider-counter caption">
+                  
+                  {% comment %} <span class="slider-counter--current">1</span>
+                  <span aria-hidden="true"> / </span>
+                  <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+                  <span class="slider-counter--total">{{ products_to_display }}</span> {% endcomment %}
+                </div>
+                
+                <button
+                  type="button"
+                  {%- if section.settings.show_view_all and more_in_collection -%} style="width:150px"  {%- endif -%}
+                  class="slider-button slider-button--next"
+                  name="next"
+                  aria-label="{{ 'general.slider.next_slide' | t }}"
+                  aria-controls="Slider-{{ section.id }}"
+                >
+                  <span class="svg-wrapper">
+                    {{- 'icon-right_arrow.svg' | inline_asset_content -}}
+                  </span>
+                </button>
+              </div>
+          {%- endif -%}
       {%- endif -%}
     
     </slider-component>

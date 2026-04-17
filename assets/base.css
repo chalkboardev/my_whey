@@ -1863,6 +1863,50 @@ body .menu-drawer__close-button {
     vertical-align: middle;
 }
 
+.mw_view_all_formula_btn {
+    display: block;
+    width: 200px;
+    margin: 0 auto -3.6rem auto;
+}
+
+.mw_view_all_formula_btn a {
+    background: #e85433;
+    border: 2px solid #e85433;
+    padding: 6px 30px 6px 30px;
+    border-radius: 50px;
+    height: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    width: 222px;
+    display: flex;
+    justify-content: center;
+    margin: 0 0 4rem 0px;
+    color: #fff;
+    align-items: center;
+    transition: all ease 350ms;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.mw_view_all_formula_btn a:hover {
+    background: #ededed;
+    border: 2px solid #e85433;
+    padding: 6px 30px 6px 30px;
+    border-radius: 50px;
+    height: 50px;
+    width: 222px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    margin: 0 0 4rem 0px;
+    color: #444;
+    align-items: center;
+    transition: all ease 350ms;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
 .mw_view_all_btn {
     display: block;
     width: 100px;
@@ -4887,6 +4931,21 @@ strong {
 #shopify-chat {
     z-index: 999999;
     position: relative;
+}
+
+.header__inline-menu details summary {
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
+}
+
+.image-with-text__text-item a {
+    text-transform: uppercase;
 }
 
 
