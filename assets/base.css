@@ -4972,7 +4972,7 @@ strong {
     display: none;
 }
 
-.view_more_btn {
+.quick-add-modal__content .view_more_btn {
     width: 100%;
     display: flex !important;
     justify-content: center;
@@ -4993,7 +4993,7 @@ strong {
     transition: all ease 0.5s;
 }
 
-.view_more_btn:hover {
+.quick-add-modal__content .view_more_btn:hover {
     width: 100%;
     display: flex !important;
     justify-content: center;
@@ -5018,10 +5018,10 @@ strong {
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
-    .view_more_btn {
+    .quick-add-modal__content .view_more_btn {
         margin: 0px auto 24px auto !important;
     }
-    .view_more_btn:hover {
+    .quick-add-modal__content .view_more_btn:hover {
         margin: 0px auto 24px auto !important;
     }
     .section-header.shopify-section-group-header-group {
