@@ -121,6 +121,29 @@
       
       {% if option_disabled  %}
         {% comment %} {{ value | escape }} SOLD OUT {% endcomment %}
+        {% comment %} {{ my_input_name }}
+        {{ value | escape }}  {% endcomment %}
+
+{% comment %}
+        <input
+        disabled 
+        type="radio"
+        id="{{ input_id }}"
+        name="{{ input_name | escape }}"
+        value="{{ value | escape }}"
+        form="{{ product_form_id }}"
+        {% if value.selected %}
+          checked
+        {% endif %}
+       class="disabled"
+        {{ input_dataset }}
+      >
+      <label for="{{ input_id }}">
+        {{ value -}}
+        {{ label_unavailable }}
+      </label> 
+{% endcomment %} 
+
       {%- else -%}
       <input
       type="radio"

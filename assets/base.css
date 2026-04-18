@@ -6031,9 +6031,8 @@ strong {
         font-size: 1.5rem !important;
         font-weight: 600;
         color: #333333 !important;
-        max-height: 66px;
-        text-overflow: ellipsis;
-        overflow: hidden;
+        /* max-height: 66px; */
+        overflow: scroll;
         display: -webkit-box !important;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
