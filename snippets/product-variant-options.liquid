@@ -272,8 +272,14 @@ endfor
               } else {
                 // alert('No QS...');
                // $('input[name*="Size-2"]')[0].click();
-                var $variant = $('input[name*="Size-2"]').eq(0);
-                $variant.click().blur();
+                // var $variant = $('input[name*="Size-2"]').eq(0);
+                // $variant.click().blur();
+                if (window.location.href === "https://my-whey.co.za") {
+                    console.log("You are on the exact homepage.");
+                } else {
+                  $('input[name*="Size-2"]').eq(0).click().trigger('change').blur();
+                }
+               
               }
           });
           //$('input[name*="Size-2"]')[0].click();
