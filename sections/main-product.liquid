@@ -1350,63 +1350,7 @@ setTimeout(function(){
       }
 
 
-    setTimeout(function(){
-        var default_price = $(".mw_price_div .heighten_me").first().contents().filter(function() {
-          return this.nodeType === Node.TEXT_NODE; }).text().trim();
-          default_price = default_price.substring(default_price.indexOf("R ") + 1).trim();
-          default_price = +default_price;
-          default_price = default_price.toFixed(2);
-          //alert("Dafeult Main Price: " + default_price);
 
-        // ----- START RESET THE LAST BLOCKS PRICING WHEN ANY OTHER PANDA BLOCKS ARE CLICKED -----
-          var the_blocks_in_panda = document.querySelectorAll('.pb-6b5d');
-          // Check if any elements were found
-          if (the_blocks_in_panda.length > 0) {
-                // Access the last element in the NodeList
-                var firstElement_is = the_blocks_in_panda[0];
-                var firstElement_panda_price = $(firstElement_is).find('.money').eq(0).html().replace(/[^\d,]/g, '').replace(',', '.');
-                var firstElement_panda_value = parseFloat(firstElement_panda_price).toFixed(2);
-                //alert("Panda first price: " + firstElement_panda_value);
-
-                if (default_price != firstElement_panda_value){
-                    console.log("Main price & Panda Price differ...owing to product unavailability...SO update Panda blocks...");
-                    var secondElement_is = the_blocks_in_panda[1];
-                    var thirdElement_is = the_blocks_in_panda[2];
-                    var lastElement_is = the_blocks_in_panda[the_blocks_in_panda.length - 1];
-                    //alert(default_price);
-
-                    // -------- Update First --------
-                    $(firstElement_is).find('.money').eq(0).html("R&nbsp;" + default_price.replace('.', ','));
-                    //$(firstElement_is).find('.money').eq(1).html("R " + default_price);
-
-                    // -------- Update Second --------
-                    var amountToSubtract5perc = default_price * (0.05);
-                    var newTotal2 = ((default_price - amountToSubtract5perc)*(2)).toFixed(2);
-                    //alert("Second panda block 5%: " + newTotal2);
-                    $(secondElement_is).find('.money').eq(0).html("R&nbsp;" + newTotal2.replace('.', ','));
-                    $(secondElement_is).find('.money').eq(1).html("R&nbsp;" + newTotal2.replace('.', ','));
-
-                    // -------- Update Third --------
-                    var amountToSubtract10perc = default_price * (0.1);
-                    var newTotal3 = ((default_price - amountToSubtract10perc)*(3)).toFixed(2);
-                    //alert("Second panda block 5%: " + newTotal2);
-                    $(thirdElement_is).find('.money').eq(0).html("R&nbsp;" + newTotal3.replace('.', ','));
-                    $(thirdElement_is).find('.money').eq(1).html("R&nbsp;" + newTotal3.replace('.', ','));
-
-                    // -------- Update Fourth --------
-                    var amountToSubtract15perc = default_price * (0.15);
-                    var newTotal4 = ((default_price - amountToSubtract15perc)*(4)).toFixed(2);
-                    //alert("Second panda block 5%: " + newTotal2);
-                    $(lastElement_is).find('.money').eq(0).html("R&nbsp;" + newTotal4.replace('.', ','));
-                    $(lastElement_is).find('.money').eq(1).html("R&nbsp;" + newTotal4.replace('.', ','));
-                } else {
-                   // alert("Same...no update required...");
-                }
-                
-          } else {
-            console.log("No elements with 'pb-6b5d' were found.");
-          }
-    }, 3000);
 
       // var is_quickv_open = document.querySelector('[id^="QuickAdd-"]');
       // if ($("[id^='QuickAdd-']").length > 0) {

@@ -104,18 +104,19 @@ if (!customElements.get('product-info')) {
         .text()
         .trim();
 
-      // alert("Pill name: " + pill_name);
+// alert("Pill name: " + pill_name);
       if (pill_name == 'Powder') {
+        console.log('Powder Clicked...');
         is_powder = true;
         is_capsule = false;
-        console.log('Powder Clicked...');
-        // alert('Powder Clicked...');
-        // alert($(event.target)[0].nodeName);
-        // //$(event.target).nextAll("label").next().first().remove();
-        // $('input[name*="Size-2"]')[0].click();
+// alert('Powder Clicked...');
+// alert($(event.target)[0].nodeName);
+// //$(event.target).nextAll("label").next().first().remove();
+// $('input[name*="Size-2"]')[0].click();
       } else if (pill_name == 'Capsule') {
         console.log('Capsule Clicked...');
-        // $('input[name*="Size-2"]')[0].click();
+
+// $('input[name*="Size-2"]')[0].click();
         is_powder = false;
         is_capsule = true;
       } else {
@@ -638,10 +639,16 @@ if (!customElements.get('product-info')) {
       this.productForm ?. toggleSubmitButton(true, window.variantStrings.unavailable);
 
       if (is_powder === true) {
+        //alert('Yes powder');
         $('input[name*="Size-2"]')[0].click();
+        //$('input[name*="Size-2"]:enabled')[0]?.click();
       } else if (is_capsule === true) {
+        //alert('Yes capsule');
+        //$('input[name*="Size-2"]:enabled')[0]?.click();
         $('input[name*="Size-2"]')[0].click();
       } else {
+        //alert('Dont know...');
+        //$('input[name*="Size-2"]:enabled')[0]?.click();
         $('input[name*="Size-2"]')[0].click();
       }
 

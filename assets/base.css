@@ -5097,6 +5097,21 @@ strong {
     /* Prevents the scaled image from spilling out */
 }
 
+*:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.product-form__input input[type='radio']:focus-visible+label,
+.product-form__input input[type='radio']:focus-visible+label::after {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.product-form__input--pill input[type='radio'].disabled {
+    display: none !important;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 

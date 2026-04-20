@@ -18,10 +18,32 @@
 {% endcomment %}
 {%- liquid
   assign product_form_id = 'product-form-' | append: section.id
+  assign selected_type = product.selected_or_first_available_variant.option1
+-%}
+{%- liquid
+  assign variant_is_available = false
+  # current_selected_type is the first option chosen (Capsule or Powder)
+  assign current_selected_type = product.selected_or_first_available_variant.options[0]
+  for variant in product.variants
+  # 1. Match the current "Type" (Capsule/Powder) 
+  # 2. Match the specific "Size" value being rendered
+  # 3. Check if it's actually in stock
+  if variant.option1 == current_selected_type and variant.options contains value
+    if variant.available
+      assign variant_is_available = true
+      break
+    endif
+  endif
+endfor
+
 -%}
 
 {%- for value in option.values -%}
 
+{%- liquid
+  # Find the variant that matches the selected type AND the current size value
+  assign current_variant = product.variants | where: "option1", selected_type | where: "option2", value | first
+-%}
  {% comment %} {{ option.values }}  {% endcomment %}
 
   {%- liquid
@@ -83,7 +105,6 @@
     
   {%- elsif picker_type == 'button' -%}
  
-     
 
 
     {% assign my_input_name = option.name %}
@@ -113,20 +134,119 @@
             </label>
 
       {%- else -%}
-     
-      {% comment %} {{ value.available}}
-      {{ my_input_name }}
-      {{ value | escape }} {% endcomment %}
-
+      {% comment %} {{ option.name }}
+      {{ value }} {% endcomment %}
+      {% comment %} {{ value.selected }} {% endcomment %}
+      {% if value.selected %}
+        {% comment %} SELECTED
+        {{ my_input_name | escape }}
+        {{ value | escape }} {% endcomment %}
+      {% endif %} 
+      {% comment %} 
+        {{ value.available}}
+        {{ my_input_name }}
+        {{ value | escape }} 
+      {% endcomment %}
+      {% comment %} 
+        {% if value.selected %}
+        I'm selected
+        {% endif %} 
+      {% endcomment %}
       
-      {% if option_disabled  %}
-        {% comment %} {{ value | escape }} SOLD OUT {% endcomment %}
-        {% comment %} {{ my_input_name }}
-        {{ value | escape }}  {% endcomment %}
+      {% if current_selected_type contains 'Powder' %}
+        {% comment %} {{ product.selected_or_first_available_variant.option1 }} {% endcomment %}
+         {% comment %} {{ product.tags }} {% endcomment %}
 
-{% comment %}
+      {% comment %} {% endcomment %} 
+      {% unless value contains 'capsules' %}
+        {% comment %} This item is powder  {% endcomment %}
+      {% endunless %}
+      
+      {% endif %} 
+      {% comment %} {% endcomment %}
+      {% comment %} Current type:{{ current_selected_type  }}
+      Current value:{{ value }} {% endcomment %} 
+
+      {% comment %}
+      {% if current_selected_type contains 'Powder' %}  
+            {% if current_variant.available %}
+                {% if current_selected_type contains 'Powder' %}
+                    SELECTED POWDER {{current_selected_type}}
+                {%- else -%}
+                    SELECTED CAPS {{current_selected_type}}
+                {% endif %}
+                I'm available {{value}}
+                {% if value contains 'capsules' %}
+                  IMMACAP
+              {%- else -%}
+                  IMMAPOW 
+              {% endif %}
+            {%- else -%}
+                {% if current_selected_type contains 'Powder' %}
+                    SELECTED POWDER {{current_selected_type}}
+                {%- else -%}
+                    SELECTED CAPS {{current_selected_type}}
+                {% endif %}
+                Not available {{value}}
+                {% if value contains 'capsules' %}
+                    IMMACAP
+                  {%- else -%}
+                    IMMAPOW 
+                  {% endif %}
+            {% endif %}    
+    {% endif %}  
+    {% endcomment %}
+
+      {% comment %} {% if current_selected_type contains 'Powder' %}
+          POWDER
+      {%- else -%}
+          CAPS
+      {% endif %} {% endcomment %}
+
+      {% if option_disabled  %}
+        {% comment %} {% if current_selected_type contains 'Powder' %}
+            SELECTED POWDER {{current_selected_type}}
+        {%- else -%}
+            SELECTED CAPS {{current_selected_type}}
+        {% endif %} {% endcomment %}
+        {%- if current_variant -%}
+              {%- if current_variant.available -%}
+             
+                  <!-- Standard Available Pill -->
+                  {% comment %} <input
+                  type="radio"
+                  id="{{ input_id }}"
+                  name="{{ input_name | escape }}"
+                  value="{{ value | escape }}"
+                  form="{{ product_form_id }}"
+                  {% if value.selected %}
+                    checked
+                  {% endif %}
+                  {% if option_disabled %}
+                    class="disabled"
+                  {% endif %}
+                  {{ input_dataset }}
+                  >
+                  <label for="{{ input_id }}">
+                    {{ value -}}
+                    {{ label_unavailable }}
+                  </label> {% endcomment %}
+                  {% comment %} <label class="pill">{{ value }}</label> {% endcomment %}
+              {%- else -%}
+
+                  <!-- Out of Stock Pill (Disabled) -->   
+                  {% comment %} <label class="pill is-out-of-stock" style="opacity: 0.5; text-decoration: line-through;">
+                  {{ value }} (Sold Out)
+                  </label> {% endcomment %}
+              
+       {% if current_selected_type contains 'Powder' %}
+        {% comment %} {{ product.selected_or_first_available_variant.option1 }} {% endcomment %}
+         {% comment %} {{ product.tags }} {% endcomment %}
+
+      {% comment %} {% endcomment %} 
+      {% unless value contains 'capsules' %}
+        {% comment %} This item is powder  {% endcomment %}
         <input
-        disabled 
         type="radio"
         id="{{ input_id }}"
         name="{{ input_name | escape }}"
@@ -135,40 +255,68 @@
         {% if value.selected %}
           checked
         {% endif %}
-       class="disabled"
+        {% if option_disabled %}
+          class="disabled"
+        {% endif %}
         {{ input_dataset }}
-      >
-      <label for="{{ input_id }}">
-        {{ value -}}
-        {{ label_unavailable }}
-      </label> 
-{% endcomment %} 
+        >
+        <label for="{{ input_id }}">
+          {{ value -}}
+          {{ label_unavailable }}
+        </label>
+        <script>
+          $(document).ready(function(){
+              var queryString = window.location.search; // "?name=John%20Doe&age=30"
+              if(queryString){
+                // alert('Yes QS...');
+              } else {
+                // alert('No QS...');
+               // $('input[name*="Size-2"]')[0].click();
+                var $variant = $('input[name*="Size-2"]').eq(0);
+                $variant.click().blur();
+              }
+          });
+          //$('input[name*="Size-2"]')[0].click();
+        </script>
+      {% endunless %}
+
+    {% endif %} 
+              {%- endif -%}
+        {%- else -%}
+          <!-- Unavailable Pill (Combination doesn't exist for this type) -->
+          {% comment %} 
+             Only show this if you want to see 'ghost' options that don't belong to this type 
+          {% endcomment %}
+          {% comment %} <label class="pill is-unavailable" style="opacity: 0.2; display: none;">
+            {{ value }}
+          </label> {% endcomment %}
+        {%- endif -%}
 
       {%- else -%}
-      <input
-      type="radio"
-      id="{{ input_id }}"
-      name="{{ input_name | escape }}"
-      value="{{ value | escape }}"
-      form="{{ product_form_id }}"
-      {% if value.selected %}
-        checked
-      {% endif %}
-      {% if option_disabled %}
-        class="disabled"
-      {% endif %}
-      {{ input_dataset }}
-    >
-    <label for="{{ input_id }}">
-      {{ value -}}
-      {{ label_unavailable }}
-    </label>
+
+     
+          <input
+          type="radio"
+          id="{{ input_id }}"
+          name="{{ input_name | escape }}"
+          value="{{ value | escape }}"
+          form="{{ product_form_id }}"
+          {% if value.selected %}
+            checked
+          {% endif %}
+          {% if option_disabled %}
+            class="disabled"
+          {% endif %}
+          {{ input_dataset }}
+          >
+          <label for="{{ input_id }}">
+            {{ value -}}
+            {{ label_unavailable }}
+          </label>
+ 
+     
       {% endif %}
 
-      
-
-    
-            
     {% endif %}
 
   {% comment %} {% endunless %} {% endcomment %}
