@@ -5132,6 +5132,10 @@ details[open] .your-content-class {
     /* Disables animation if it causes flickering */
 }
 
+.mega-menu[open] .mega-menu__content {
+    box-shadow: 0px 0px 9px 0px #000000a3;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
