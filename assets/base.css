@@ -1783,7 +1783,7 @@ body .menu-drawer__close-button {
 
 .cart-item__price-wrapper .price {
     font-size: 1.5rem;
-    min-width: 80px;
+    min-width: 92px;
 }
 
 .cart-drawer .product-option {
@@ -3178,7 +3178,7 @@ quick-add-modal .product__title>a:hover {
 }
 
 .save_it {
-    padding: 0 0 0 4px;
+    padding: 0 0 0 2px;
 }
 
 .discount_price_spacer .cart-item__old-price {
@@ -5140,6 +5140,9 @@ details[open] .your-content-class {
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    .mw_discounts {
+        min-width: 150px;
+    }
     .related-products .product_card_info {
         font-size: 1.3rem;
         margin-top: -1px;
