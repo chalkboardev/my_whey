@@ -4968,12 +4968,13 @@ strong {
     -webkit-box-orient: vertical;
 }
 
-.mega-menu[open] {
+.mega-menu[open] #MegaMenu-Content-1 {
     animation-name: fadeIn;
+    animation-direction: alternate;
     animation-duration: 0.35s;
 }
 
-.mega-menu.is-closing {
+.mega-menu.is-closing #MegaMenu-Content-1 {
     animation-name: fadeOut;
     animation-duration: 0.35s;
 }
@@ -5110,6 +5111,22 @@ strong {
 
 .product-form__input--pill input[type='radio'].disabled {
     display: none !important;
+}
+
+details summary {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    /* Removes mobile tap flash */
+}
+
+
+/* Force instant display to prevent visual lag */
+
+details[open] .your-content-class {
+    display: block;
+    opacity: 1;
+    transition: none;
+    /* Disables animation if it causes flickering */
 }
 
 
