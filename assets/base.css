@@ -401,6 +401,7 @@ h3,
     h3,
     .h3 {
         font-size: calc(var(--font-heading-scale) * 1.8rem);
+        color: #393939;
     }
 }
 
@@ -2084,8 +2085,8 @@ body .menu-drawer__close-button {
     border-radius: 9px;
     padding: 2rem;
     text-align: center;
-    min-width: 300px;
-    max-width: 300px;
+    min-width: 500px;
+    max-width: 500px;
     margin: 0 auto;
 }
 
@@ -2126,12 +2127,14 @@ body .menu-drawer__close-button {
 
 .collection-list .mw_collection_info {
     position: absolute;
-    top: 0;
+    vertical-align: middle;
     background: #ffffff00;
     padding: 1rem 4rem 1rem 4rem !important;
+    left: 0;
+    top: 0;
     display: flex;
+    width: 100%;
     min-height: 100%;
-    width: 96%;
     justify-content: center;
     margin: 0 auto;
     text-align: center;
@@ -5765,7 +5768,14 @@ details[open] .your-content-class {
         position: unset !important;
     }
     .collection-list .mw_collection_info a {
-        font-size: 18px;
+        font-size: 16px;
+        text-shadow: 1px 1px 3px #ffffff;
+    }
+    .collection-list .mw_collection_info a:hover {
+        font-size: 17px;
+        font-weight: 600;
+        transition: all ease 0.25s;
+        text-shadow: 1px 1px 3px #ffffff;
     }
     .footer-block__image-wrapper {
         max-width: 110px !important;
@@ -6896,12 +6906,14 @@ details[open] .your-content-class {
     }
     .collection-list .mw_collection_info {
         position: absolute;
-        top: 0;
+        vertical-align: middle;
         background: #ffffff00;
         padding: 1rem 4rem 1rem 4rem !important;
+        left: 0;
+        top: 0;
         display: flex;
+        width: 100%;
         min-height: 100%;
-        width: 96%;
         justify-content: center;
         margin: 0 auto;
         text-align: center;
@@ -7377,12 +7389,14 @@ details[open] .your-content-class {
     } */
     .collection-list .mw_collection_info {
         position: absolute;
-        top: 0;
+        vertical-align: middle;
         background: #ffffff00;
         padding: 1rem 4rem 1rem 4rem !important;
+        left: 0;
+        top: 0;
         display: flex;
+        width: 100%;
         min-height: 100%;
-        width: 96%;
         justify-content: center;
         margin: 0 auto;
         text-align: center;
@@ -7945,12 +7959,14 @@ summary::-webkit-details-marker {
     }
     .collection-list .mw_collection_info {
         position: absolute;
-        top: 0;
+        vertical-align: middle;
         background: #ffffff00;
-        padding: 1rem 1rem 1rem 1rem !important;
+        padding: 1rem 2rem 1rem 2rem !important;
+        left: 0;
+        top: 0;
         display: flex;
+        width: 100%;
         min-height: 100%;
-        width: 96%;
         justify-content: center;
         margin: 0 auto;
         text-align: center;
