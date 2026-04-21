@@ -6220,7 +6220,7 @@ details[open] .your-content-class {
         align-items: center;
         font-size: 0.9rem;
         top: -3px !important;
-        left: 2.6rem !important;
+        left: 3.2rem !important;
         line-height: calc(0.8 + 0.1 / var(--font-body-scale)) !important;
         /* line-height: 0.9 !important; */
     }
