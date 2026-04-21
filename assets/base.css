@@ -1898,7 +1898,7 @@ body .menu-drawer__close-button {
 }
 
 .cart__items dl .product-option:not(:first-of-type) dd::before {
-    content: " | ";
+    content: " |";
     padding: 0 4px 0 4px;
 }
 
