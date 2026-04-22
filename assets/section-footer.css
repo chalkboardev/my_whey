@@ -411,7 +411,7 @@
 .footer-block__image-wrapper img {
     display: block;
     height: auto;
-    max-width: 100%;
+    max-width: 96%;
 }
 
 .footer-block__brand-info {

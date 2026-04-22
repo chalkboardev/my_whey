@@ -5173,11 +5173,12 @@ details[open] .your-content-class {
     }
 }
 
+.footer-block__brand-info img {
+    transition: transform 1s ease;
+}
+
 .footer-block__brand-info img:hover {
-    animation-name: pulse;
-    animation-duration: 1s;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
+    transform: scale(1.04);
 }
 
 .footer-block__heading {
