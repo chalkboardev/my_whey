@@ -7279,21 +7279,6 @@ details[open] .your-content-class {
         left: 30%;
         top: 26%;
     }
-    .drawer__header .cart_count .cart-count-bubble {
-        position: absolute;
-        background-color: unset;
-        color: rgb(0 0 0);
-        height: auto;
-        width: max-content;
-        border-radius: 100%;
-        display: flex;
-        justify-content: left;
-        align-items: center;
-        font-size: 2rem;
-        top: 0px !important;
-        left: 2.1rem !important;
-        line-height: calc(1 + 0.1 / var(--font-body-scale));
-    }
     .cart_count .cart-count-bubble {
         position: absolute;
         background-color: unset;
