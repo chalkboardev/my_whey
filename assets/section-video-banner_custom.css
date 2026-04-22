@@ -190,6 +190,21 @@
     .swiper {
         height: 92vh;
     }
+    .videoBackground .mobile_header_adjust {
+        position: relative;
+        margin-top: -13rem !important;
+        left: 14rem;
+        display: block;
+    }
+}
+
+@media screen and (min-width: 1900px) {
+    .videoBackground .mobile_header_adjust {
+        position: relative;
+        margin-top: -14rem !important;
+        left: 30rem;
+        display: block;
+    }
 }
 
 .main-content .videoBackground {
