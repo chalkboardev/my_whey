@@ -72,7 +72,7 @@
           <div class="cart-count-bubble">
             {%- if cart.item_count < 100 -%}
               <span aria-hidden="true">
-                &nbsp;&nbsp;{{ cart.item_count }} ITEMS</span>
+               {{ cart.item_count }} ITEMS</span>
             {%- endif -%}
             <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
           </div>
