@@ -932,9 +932,10 @@ body .menu-drawer__close-button {
 
 .footer_mail_icon {
     position: relative;
-    top: 3px;
-    width: 17px !important;
-    height: 17px !important;
+    top: -1px;
+    right: -6px;
+    width: 18px !important;
+    height: 18px !important;
     opacity: 0.7;
 }
 
@@ -5191,11 +5192,25 @@ details[open] .your-content-class {
     cursor: default;
 }
 
-.footer-block__heading:hover {
+.footer-block__heading:not(.mw_footer_new_hd):hover {
     animation-name: pulse;
     animation-duration: 1s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
+}
+
+@media screen and (min-width: 750px) {
+    .footer-block__details-content .list-menu__item span {
+        background: linear-gradient(currentColor 0 0) bottom left/ var(--underline-width, 0%) 0.1em no-repeat;
+        text-decoration: none;
+        transition: background-size 0.5s;
+    }
+    .footer-block__details-content .list-menu__item:hover span {
+        /* text-decoration: underline;
+  text-underline-offset: 0.3rem; */
+        /* color: rgba(var(--color-foreground), 0.65); */
+        --underline-width: 100%;
+    }
 }
 
 
