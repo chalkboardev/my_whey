@@ -186,6 +186,12 @@
     height: 88vh;
 }
 
+@media screen and (min-width: 1600px) {
+    .swiper {
+        height: 92vh;
+    }
+}
+
 .main-content .videoBackground {
     margin-top: -55px;
 }
