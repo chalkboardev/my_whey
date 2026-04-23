@@ -210,6 +210,9 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
         padding-left: 4rem;
         padding-right: 4rem;
     }
+    .mw_image_with_text_media {
+        max-width: 600px !important;
+    }
 }
 
 .isolate {
