@@ -23,6 +23,25 @@
     "custom_slideshow_wMQLCP": {
       "type": "custom-slideshow",
       "blocks": {
+        "image_BPQUCN": {
+          "type": "image",
+          "settings": {
+            "color_bg": "#16165b",
+            "image_bg": "shopify://shop_images/creatine_whey_product_banner_fitness.png",
+            "overlay_opacity": 0,
+            "mobile_x_position": 0,
+            "desktop_content_position": "header-middle-left",
+            "title": "Shop the Full Range",
+            "text": "<p>You Train Hard. We Source Smart.<br/>Premium Supplements. Bulk Pricing. No Nonsense.<br/></p>",
+            "color_text": "#ffffff",
+            "img_button_1_label": "Explore Range",
+            "img_button_1_link": "shopify://collections/all",
+            "img_button_1_color_scheme": "scheme-5",
+            "img_button_2_label": "",
+            "img_button_2_link": "",
+            "img_button_2_color_scheme": "scheme-5"
+          }
+        },
         "image_3KcJWb": {
           "type": "image",
           "settings": {
@@ -106,7 +125,7 @@
           "disabled": true,
           "settings": {
             "video_link": "https://cdn.shopify.com/videos/c/o/v/a487343da3b24ea5a0666c2edc7e7d82.mp4",
-            "video_image": "shopify://shop_images/vid_cover_3f3750a9-244b-4336-b9c0-b9c58b6aff53.jpg",
+            "video_image": "shopify://shop_images/creatine_whey_product_banner_fitness.png",
             "desktop_content_position": "header-middle-left",
             "title": "My Whey",
             "text": "<p>Your <strong>Bulk Supplier</strong> of c<strong>lean, curated, premium</strong> supplements and vitamins.</p>",
@@ -121,6 +140,7 @@
         }
       },
       "block_order": [
+        "image_BPQUCN",
         "image_3KcJWb",
         "image_TmpTe7",
         "image_hUJfqh",
@@ -222,7 +242,7 @@
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
-        "image": "shopify://shop_images/mw_bulk_wallpaper_light_sq.jpg",
+        "image": "shopify://shop_images/nihpro_hydrolysed_protein_iso.png",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
