@@ -26,7 +26,7 @@
         "image_BPQUCN": {
           "type": "image",
           "settings": {
-            "color_bg": "#16165b",
+            "color_bg": "#ffffff",
             "image_bg": "shopify://shop_images/creatine_whey_product_banner_fitness.png",
             "overlay_opacity": 0,
             "mobile_x_position": 55,
