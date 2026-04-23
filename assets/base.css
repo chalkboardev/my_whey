@@ -4995,9 +4995,27 @@ strong {
     animation-duration: 0.35s;
 }
 
-.mw_shopify_chat {
+.mw_shopify_chat_closed {
     z-index: 2 !important;
     position: relative;
+}
+
+.mw_shopify_chat_open {
+    z-index: 4 !important;
+    position: relative;
+}
+
+.shopify_chat_padding {
+    padding: 0 0 20px 0;
+}
+
+.shopify_chat_padding::before {
+    content: "Hello ";
+    color: blue;
+}
+
+.interstitial-view__welcome.is-mobile {
+    display: none !important;
 }
 
 .header__inline-menu details summary {
