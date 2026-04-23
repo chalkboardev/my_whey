@@ -5238,6 +5238,12 @@ details[open] .your-content-class {
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    #ImageWithText--template--21398064693500__image_with_text_Kr4fVV.image_with_text_div {
+        margin: 0 auto;
+        background: #ffffff !important;
+        border-radius: 0 !important;
+        padding: 1rem calc(4rem / var(--font-body-scale)) 5rem
+    }
     .footer-block__heading {
         width: 100%;
     }

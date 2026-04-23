@@ -512,11 +512,11 @@ function initChatObserver() {
 
     // 2. If it's not on the page yet, wait 500ms and try again
     if (!chatWidget) {
-      console.log('No widget found...');
+      //console.log('No widget found...');
       setTimeout(initChatObserver, 3000);
       return;
     } else {
-      console.log('Found widget...');
+      //console.log('Found widget...');
       $('#shopify-chat').addClass('mw_shopify_chat_closed');
     }
 
