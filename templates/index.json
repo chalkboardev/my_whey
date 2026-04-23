@@ -26,10 +26,10 @@
         "image_BPQUCN": {
           "type": "image",
           "settings": {
-            "color_bg": "#fff",
+            "color_bg": "#16165b",
             "image_bg": "shopify://shop_images/creatine_whey_product_banner_fitness.png",
             "overlay_opacity": 0,
-            "mobile_x_position": 0,
+            "mobile_x_position": 55,
             "desktop_content_position": "header-middle-left",
             "title": "Shop the Full Range",
             "text": "<p>You Train Hard. We Source Smart.<br/>Premium Supplements. Bulk Pricing. No Nonsense.<br/></p>",
