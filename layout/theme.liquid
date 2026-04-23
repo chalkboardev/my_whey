@@ -505,6 +505,44 @@ body {
 
 
 $(document).ready(function(){
+
+function initChatObserver() {
+    // 1. Target the correct Web Component tag
+    const chatWidget = document.querySelector('inbox-online-store-chat');
+
+    // 2. If it's not on the page yet, wait 500ms and try again
+    if (!chatWidget) {
+      //console.log('No widget found...');
+      setTimeout(initChatObserver, 3000);
+      return;
+    } else {
+      //console.log('Found widget...');
+      $('#shopify-chat').addClass('mw_shopify_chat');
+    }
+
+    console.log('Shopify Inbox detected. Starting observer...');
+
+    // 3. Observe the 'is-open' attribute directly on the host element
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName === 'is-open') {
+          const isOpen = chatWidget.getAttribute('is-open') === 'true';
+          if (isOpen) {
+            //console.log("Shopify Chat Widget detected as OPEN. Element found?", $('#shopify-chat').length);
+            $('#shopify-chat').removeClass('mw_shopify_chat');
+          } else {
+            //console.log("Shopify Chat is CLOSED. Element found?", $('#shopify-chat').length);
+            $('#shopify-chat').addClass('mw_shopify_chat');
+          }
+        }
+      });
+    });
+
+    observer.observe(chatWidget, { attributes: true });
+  }
+
+  initChatObserver();
+
     $(".utility_cart_link").click(function () {
         $("cart-drawer").addClass('animate active');
         $(".header__icon--menu").click();

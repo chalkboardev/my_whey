@@ -4992,7 +4992,7 @@ strong {
     animation-duration: 0.35s;
 }
 
-#shopify-chat {
+.mw_shopify_chat {
     z-index: 2 !important;
     position: relative;
 }
