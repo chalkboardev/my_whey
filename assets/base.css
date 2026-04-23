@@ -211,7 +211,7 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
         padding-right: 4rem;
     }
     .mw_image_with_text_media {
-        max-width: 600px !important;
+        max-width: 580px !important;
     }
 }
 
