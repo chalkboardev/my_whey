@@ -5244,7 +5244,7 @@ details[open] .your-content-class {
 
 .grid__item.product__media-wrapper {
     animation-name: fadeIn !important;
-    animation-duration: 3s !important;
+    animation-duration: 3.5s !important;
     animation-direction: alternate !important;
     animation-iteration-count: 1 !important;
 }
