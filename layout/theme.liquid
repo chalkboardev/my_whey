@@ -520,28 +520,35 @@ function initChatObserver() {
       $('#shopify-chat').addClass('mw_shopify_chat_closed');
     }
 
-    console.log('Shopify Inbox detected. Starting observer...');
+    //console.log('Shopify Inbox detected. Starting observer...');
     const isOpen = chatWidget.getAttribute('is-open') === 'true';
+    const isMobile = chatWidget.getAttribute('is-mobile') === 'true';
     if (isOpen) {
-      //console.log("Shopify Chat Widget detected as OPEN. Element found?", $('#shopify-chat').length);
-      $('#shopify-chat').removeClass('mw_shopify_chat_closed');
-      $('#shopify-chat').addClass('mw_shopify_chat_open');
-      const shadowRoot = document.querySelector('#ShopifyChat').shadowRoot;
-      const $jqueryElement = $(shadowRoot).find('.interstitial-view__welcome');
-      if ($jqueryElement.hasClass('is-mobile')) {
-          // The first child has the class
-          //console.log('Yes is MOBILE');
-          $jqueryElement.children().first().addClass('shopify_chat_padding');
-          $jqueryElement.children().first().css('padding', '0 0 20px 0');
-          $jqueryElement.children().first().prepend("<img src='https://my-whey.co.za/cdn/shop/files/my_whey_logo_2025_white_bc0052eb-403d-4604-92f8-db4a2f2fa364.png?v=1750689070&width=200' style='position: absolute;display: inline-flex;justify-content: center;text-align: center;align-items: center;width: 74px;color: #fff;font-family:Saira;right: 0;left: 0;margin: 1.3rem auto 0 auto;' />");
-      } else {
-          //console.log('NO not MOBILE');
-      }
-
+          //console.log("Shopify Chat Widget detected as OPEN. Element found?", $('#shopify-chat').length);
+          $('#shopify-chat').removeClass('mw_shopify_chat_closed');
+          $('#shopify-chat').addClass('mw_shopify_chat_open');
+          const shadowRoot = document.querySelector('#ShopifyChat').shadowRoot;
+          if (isMobile) {
+              //console.log('Yes is MOBILE');
+              const checkExist = setInterval(() => {
+              const $jqueryElement = $(shadowRoot).find('.interstitial-view__welcome');
+              if ($jqueryElement.length) {
+                  //console.log('Found it!');
+                  $jqueryElement.children().first().addClass('shopify_chat_padding');
+                  $jqueryElement.children().first().css('padding', '0 0 20px 0');
+                  $jqueryElement.children().first().prepend("<img src='https://my-whey.co.za/cdn/shop/files/my_whey_logo_2025_white_bc0052eb-403d-4604-92f8-db4a2f2fa364.png?v=1750689070&width=200' style='position: absolute;display: inline-flex;justify-content: center;text-align: center;align-items: center;width: 74px;color: #fff;font-family:Saira;right: 0;left: 0;margin: 1.3rem auto 0 auto;' />");
+                  clearInterval(checkExist); // Stop looking once found
+              } else {
+                //console.log('Not found...');
+              }
+          }, 100); // Check every 100ms
+          } else {
+              //console.log('NO not MOBILE');
+          }
     } else {
-      //console.log("Shopify Chat is CLOSED. Element found?", $('#shopify-chat').length);
-      $('#shopify-chat').addClass('mw_shopify_chat_closed');
-      $('#shopify-chat').removeClass('mw_shopify_chat_open');
+          //console.log("Shopify Chat is CLOSED. Element found?", $('#shopify-chat').length);
+          $('#shopify-chat').addClass('mw_shopify_chat_closed');
+          $('#shopify-chat').removeClass('mw_shopify_chat_open');
     }
 
     // 3. Observe the 'is-open' attribute directly on the host element
@@ -549,25 +556,33 @@ function initChatObserver() {
       mutations.forEach((mutation) => {
         if (mutation.attributeName === 'is-open') {
           const isOpen = chatWidget.getAttribute('is-open') === 'true';
+          const isMobile = chatWidget.getAttribute('is-mobile') === 'true';
           if (isOpen) {
-              //console.log("Shopify Chat Widget detected as OPEN. Element found?", $('#shopify-chat').length);
-              $('#shopify-chat').removeClass('mw_shopify_chat_closed');
-              $('#shopify-chat').addClass('mw_shopify_chat_open');
-              const shadowRoot = document.querySelector('#ShopifyChat').shadowRoot;
-              const $jqueryElement = $(shadowRoot).find('.interstitial-view__welcome');
-              if ($jqueryElement.hasClass('is-mobile')) {
-                  // The first child has the class
-                  //console.log('Yes is MOBILE');
-                  $jqueryElement.children().first().addClass('shopify_chat_padding');
-                  $jqueryElement.children().first().css('padding', '0 0 20px 0');
-                  $jqueryElement.children().first().prepend("<img src='https://my-whey.co.za/cdn/shop/files/my_whey_logo_2025_white_bc0052eb-403d-4604-92f8-db4a2f2fa364.png?v=1750689070&width=200' style='position: absolute;display: inline-flex;justify-content: center;text-align: center;align-items: center;width: 74px;color: #fff;font-family:Saira;right: 0;left: 0;margin: 1.3rem auto 0 auto;' />");
-              } else {
-                  //console.log('NO not MOBILE');
-              }
+                //console.log("Observer - Shopify Chat Widget detected as OPEN. Element found?", $('#shopify-chat').length);
+                $('#shopify-chat').removeClass('mw_shopify_chat_closed');
+                $('#shopify-chat').addClass('mw_shopify_chat_open');
+                const shadowRoot = document.querySelector('#ShopifyChat').shadowRoot;
+                if (isMobile) {
+                    //console.log('Observer - Yes is MOBILE');
+                    const checkExist = setInterval(() => {
+                    const $jqueryElement = $(shadowRoot).find('.interstitial-view__welcome');
+                    if ($jqueryElement.length) {
+                        //console.log('Observer - Found it!');
+                        $jqueryElement.children().first().addClass('shopify_chat_padding');
+                        $jqueryElement.children().first().css('padding', '0 0 20px 0');
+                        $jqueryElement.children().first().prepend("<img src='https://my-whey.co.za/cdn/shop/files/my_whey_logo_2025_white_bc0052eb-403d-4604-92f8-db4a2f2fa364.png?v=1750689070&width=200' style='position: absolute;display: inline-flex;justify-content: center;text-align: center;align-items: center;width: 74px;color: #fff;font-family:Saira;right: 0;left: 0;margin: 1.3rem auto 0 auto;' />");
+                        clearInterval(checkExist); // Stop looking once found
+                    } else {
+                      //console.log('Observer - Not found...');
+                    }
+                }, 100); // Check every 100ms
+                } else {
+                    //console.log('Observer - NO not MOBILE');
+                }
           } else {
-              //console.log("Shopify Chat is CLOSED. Element found?", $('#shopify-chat').length);
-              $('#shopify-chat').addClass('mw_shopify_chat_closed');
-              $('#shopify-chat').removeClass('mw_shopify_chat_open');
+                //console.log("Observer - Shopify Chat is CLOSED. Element found?", $('#shopify-chat').length);
+                $('#shopify-chat').addClass('mw_shopify_chat_closed');
+                $('#shopify-chat').removeClass('mw_shopify_chat_open');
           }
         }
       });
