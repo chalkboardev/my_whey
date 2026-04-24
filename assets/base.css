@@ -542,6 +542,7 @@ table:not([class]) th {
     display: inline-flex;
     justify-content: left;
     width: 100%;
+    padding-top: 6px;
 }
 
 .videoBackground .videoBoxInfoBtn,
