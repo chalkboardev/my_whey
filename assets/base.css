@@ -7236,6 +7236,9 @@ details[open] .your-content-class {
     }
 }
 
+
+/* ----------- Incl 1920 ---------- */
+
 @media screen and (min-width: 1890px) {
     .coming_soon_pill {
         position: relative;
@@ -7257,6 +7260,17 @@ details[open] .your-content-class {
     }
     .mw_image_with_text_media {
         max-width: 700px !important;
+    }
+    .desc_pic {
+        max-width: 620px !important;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 16px;
+        border-bottom-left-radius: 0;
+        animation-name: pulse;
+        animation-duration: 3.2s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
     }
 }
 
