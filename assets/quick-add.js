@@ -25,7 +25,6 @@ if (!customElements.get('quick-add-modal')) {
         opener.classList.add('loading');
         opener.querySelector('.loading__spinner').classList.remove('hidden');
         console.log('rendering product quick modal from quick-add.js'); 
-
         
         // var this_modal_id = $(this).attr('id');
         // // alert(this_modal_id);

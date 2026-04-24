@@ -1590,11 +1590,11 @@ body .menu-drawer__close-button {
 .backdrop_blur {
     height: 100%;
     width: 100%;
-    background: #00000073;
+    background: #000000b0;
     position: absolute;
     z-index: 0;
     display: inline-block;
-    backdrop-filter: blur(6px);
+    /* backdrop-filter: blur(6px); */
 }
 
 .quick-add-modal .h1 {
@@ -3439,8 +3439,9 @@ quick-add-modal .product__title>a:hover {
     width: 32px;
     height: 32px;
     font-weight: 300;
-    line-height: 81px;
-    display: inline-flex;
+    /* line-height: 81px; */
+    line-height: 0.93;
+    display: block;
     text-decoration: none;
     cursor: pointer;
     justify-content: center;
