@@ -5242,9 +5242,9 @@ details[open] .your-content-class {
     }
 }
 
-.product__media-item.grid__item {
+.grid__item.product__media-wrapper {
     animation-name: fadeIn !important;
-    animation-duration: 2s !important;
+    animation-duration: 4s !important;
     animation-direction: alternate !important;
     animation-iteration-count: 1 !important;
 }
