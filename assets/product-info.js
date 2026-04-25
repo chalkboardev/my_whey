@@ -106,7 +106,7 @@ if (!customElements.get('product-info')) {
 
 // alert("Pill name: " + pill_name);
       if (pill_name == 'Powder') {
-        console.log('Powder Clicked...');
+        //console.log('Powder Clicked...');
         is_powder = true;
         is_capsule = false;
 // alert('Powder Clicked...');
@@ -114,7 +114,7 @@ if (!customElements.get('product-info')) {
 // //$(event.target).nextAll("label").next().first().remove();
 // $('input[name*="Size-2"]')[0].click();
       } else if (pill_name == 'Capsule') {
-        console.log('Capsule Clicked...');
+        //console.log('Capsule Clicked...');
 
 // $('input[name*="Size-2"]')[0].click();
         is_powder = false;

@@ -1341,11 +1341,11 @@ setTimeout(function(){
           }
 
     } else {
-      console.log("No query string in url...default product view..."); 
+      //console.log("No query string in url...default product view..."); 
       if ($("#most_popular").length > 0) {
-        console.log("most_popular element found...");
+        //console.log("most_popular element found...");
       } else {
-        console.log("most_popular element not found within container.");
+        //console.log("most_popular element not found within container.");
         $(".shopify_subscriptions_app_block .shopify_subscriptions_app_block_label").eq(1).prepend('<span id="most_popular" class="most_popular color-scheme-5 gradient"> <img class="popular_icon" width="9" src="https://cdn.shopify.com/s/files/1/0713/8685/7724/files/thumb_1.png?v=1754842951" /> Most Popular</span>');
       }
 
