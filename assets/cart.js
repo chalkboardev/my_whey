@@ -243,9 +243,9 @@ class CartItems extends HTMLElement {
             for (let i = 0; i < elements.length; i++) {
               elements[i].classList.add(classToAdd);
             }
-            console.log(`Class '${classToAdd}' added to all elements with class '${targetClass}'.`);
+            //console.log(`Class '${classToAdd}' added to all elements with class '${targetClass}'.`);
           } else {
-            console.log(`No elements found with class '${targetClass}'.`);
+            //console.log(`No elements found with class '${targetClass}'.`);
           }
       }
       addClassToExistingElements('mw_corner_sale_cart_drawer', 'active_sale');
@@ -261,9 +261,9 @@ class CartItems extends HTMLElement {
           flavour_link_btn_txt.classList.add('checkout_button_txt_anim');
           flavour_link.addEventListener('click', (event) => {
             event.preventDefault();
-            console.log('testing from cart link open....');
+            //console.log('testing from cart link open....');
             flavour_modal__overlay.classList.add('show_flavour_modal');
-            console.log("opening main flavour modal from cart-drawer.js...");
+            //console.log("opening main flavour modal from cart-drawer.js...");
           });
         }
         if(flavour_link_close && flavour_modal__overlay){

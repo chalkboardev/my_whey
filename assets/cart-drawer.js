@@ -54,9 +54,9 @@ class CartDrawer extends HTMLElement {
               elements[i].style.opacity = '1';
               elements[i].style.display = 'flex !important';
             }
-            console.log(`Class '${classToAdd}' added to all elements with class '${targetClass}'.`);
+            //console.log(`Class '${classToAdd}' added to all elements with class '${targetClass}'.`);
           } else {
-            console.log(`No elements found with class '${targetClass}'.`);
+            //console.log(`No elements found with class '${targetClass}'.`);
           }
       }
       addClassToExistingElements('mw_corner_sale_cart_drawer', 'active_sale');
@@ -70,7 +70,7 @@ class CartDrawer extends HTMLElement {
       if(flavour_link){
         flavour_link.addEventListener('click', (event) => {
           event.preventDefault();
-          console.log('testing from cart link open....');
+          //console.log('testing from cart link open....');
           document.querySelector('.flavour_modal__overlay').classList.add('show_flavour_modal');
           //console.log("opening main flavour modal from cart-drawer.js...");
         });
@@ -113,9 +113,9 @@ class CartDrawer extends HTMLElement {
           for (let i = 0; i < elements.length; i++) {
             elements[i].classList.remove(classToAdd);
           }
-          console.log(`Class '${classToAdd}' added to all elements with class '${targetClass}'.`);
+          //console.log(`Class '${classToAdd}' added to all elements with class '${targetClass}'.`);
         } else {
-          console.log(`No elements found with class '${targetClass}'.`);
+          //console.log(`No elements found with class '${targetClass}'.`);
         }
     }
     addClassToExistingElements('mw_corner_sale_cart_drawer', 'active_sale');

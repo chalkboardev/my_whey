@@ -59,7 +59,7 @@ if (!customElements.get('product-form')) {
               //console.log('Cart is empty!');
               // Perform actions for an empty cart (e.g., hide elements, display empty cart message)
             } else {
-              console.log('Cart has items.');
+              //console.log('Cart has items.');
              // console.log('Cart:', cart);
             }
 
@@ -75,9 +75,9 @@ if (!customElements.get('product-form')) {
                       for (let i = 0; i < elements.length; i++) {
                         elements[i].classList.add(classToAdd);
                       }
-                      console.log(`Class '${classToAdd}' added to all elements with class '${targetClass}'.`);
+                      //console.log(`Class '${classToAdd}' added to all elements with class '${targetClass}'.`);
                     } else {
-                      console.log(`No elements found with class '${targetClass}'.`);
+                      //console.log(`No elements found with class '${targetClass}'.`);
                     }
                 }
                 addClassToExistingElements('mw_corner_sale_cart_drawer', 'active_sale');
@@ -118,12 +118,12 @@ if (!customElements.get('product-form')) {
                             return item.variant_options.some(option => option === 'Powder');
                           } else {
                             // No variant or options array found for this item
-                            console.log('NO we DONT have variant options..');
+                            //console.log('NO we DONT have variant options..');
                           }
                         });
 
                         if (productInCart_powder) {
-                          console.log('The cart contains at least one item with "Powder" as a variant option...');
+                          //console.log('The cart contains at least one item with "Powder" as a variant option...');
                           // Perform actions based on this condition
 
                             // -------- START CHECK IF CART ALREADY HAS FLAVOUR ------
@@ -140,7 +140,7 @@ if (!customElements.get('product-form')) {
                                 // Set CSS properties directly
                                 if (main_flavour_modal) {
                                   //console.log('Main flavour modal...');
-                                  console.log("opening main flavour modal from product-form.js...");
+                                  //console.log("opening main flavour modal from product-form.js...");
                                   main_flavour_modal.style.visibility = 'visible';
                                   main_flavour_modal.style.zIndex = '99999999';
                                   main_flavour_modal.style.opacity = '1';
@@ -156,9 +156,9 @@ if (!customElements.get('product-form')) {
                                         for (let i = 0; i < elements.length; i++) {
                                           elements[i].classList.add(classToAdd);
                                         }
-                                        console.log(`Class '${classToAdd}' added to all elements with class '${targetClass}'.`);
+                                        //console.log(`Class '${classToAdd}' added to all elements with class '${targetClass}'.`);
                                       } else {
-                                        console.log(`No elements found with class '${targetClass}'.`);
+                                        //console.log(`No elements found with class '${targetClass}'.`);
                                       }
                                   }
                                   addClassToExistingElements('mw_corner_sale_cart_drawer', 'active_sale');
@@ -168,7 +168,7 @@ if (!customElements.get('product-form')) {
                                 // Set CSS properties directly
                                 if (product_flavour_modal) {
                                   //console.log('Product flavour modal...');
-                                  console.log("opening product flavour modal from product-form.js...");
+                                  //console.log("opening product flavour modal from product-form.js...");
                                   product_flavour_modal.style.visibility = 'visible';
                                   product_flavour_modal.style.zIndex = '99999999';
                                   product_flavour_modal.style.opacity = '1';
@@ -179,13 +179,13 @@ if (!customElements.get('product-form')) {
                             // -------- END CHECK IF CART ALREADY HAS FLAVOUR ------
 
                         } else {
-                          console.log('No item in the cart has a "Powder" variant option...');
+                          //console.log('No item in the cart has a "Powder" variant option...');
                         }
                         // -------- END Check if any item in the cart has "Powder" as a variant option ------
 
                         ////console.log('Cart:', cart);
                         if (!cart.items || cart.items.length === 0) {
-                          console.log('Empty cart, refetching...');
+                          //console.log('Empty cart, Cart empty, refetching cart items...');
                           return await fetchCartItems();
                         }
                         return cart;
@@ -240,9 +240,9 @@ if (!customElements.get('product-form')) {
                       for (let i = 0; i < elements.length; i++) {
                         elements[i].classList.add(classToAdd);
                       }
-                      console.log(`Class '${classToAdd}' added to all elements with class '${targetClass}'.`);
+                      //console.log(`Class '${classToAdd}' added to all elements with class '${targetClass}'.`);
                     } else {
-                      console.log(`No elements found with class '${targetClass}'.`);
+                      //console.log(`No elements found with class '${targetClass}'.`);
                     }
                 }
                 addClassToExistingElements('mw_corner_sale_cart_drawer', 'active_sale');
@@ -283,12 +283,12 @@ if (!customElements.get('product-form')) {
                             return item.variant_options.some(option => option === 'Powder');
                           } else {
                             // No variant or options array found for this item
-                            console.log('NO we DONT have variant options..');
+                            //console.log('NO we DONT have variant options..');
                           }
                         });
 
                         if (productInCart_powder) {
-                          console.log('The cart contains at least one item with "Powder" as a variant option...');
+                          //console.log('The cart contains at least one item with "Powder" as a variant option...');
                           // Perform actions based on this condition
 
                             // -------- START CHECK IF CART ALREADY HAS FLAVOUR ------
@@ -305,7 +305,7 @@ if (!customElements.get('product-form')) {
                                 // Set CSS properties directly
                                 if (main_flavour_modal) {
                                   //console.log('Main flavour modal...');
-                                  console.log("opening main flavour modal from product-form.js...");
+                                  //console.log("opening main flavour modal from product-form.js...");
                                   main_flavour_modal.style.visibility = 'visible';
                                   main_flavour_modal.style.zIndex = '99999999';
                                   main_flavour_modal.style.opacity = '1';
@@ -315,7 +315,7 @@ if (!customElements.get('product-form')) {
                                 // Set CSS properties directly
                                 if (product_flavour_modal) {
                                   //console.log('Product flavour modal...');
-                                  console.log("opening product flavour modal from product-form.js...");
+                                  //console.log("opening product flavour modal from product-form.js...");
                                   product_flavour_modal.style.visibility = 'visible';
                                   product_flavour_modal.style.zIndex = '99999999';
                                   product_flavour_modal.style.opacity = '1';
@@ -326,13 +326,13 @@ if (!customElements.get('product-form')) {
                             // -------- END CHECK IF CART ALREADY HAS FLAVOUR ------
 
                         } else {
-                          console.log('No item in the cart has a "Powder" variant option...');
+                          //console.log('No item in the cart has a "Powder" variant option...');
                         }
                         // -------- END Check if any item in the cart has "Powder" as a variant option ------
 
                         ////console.log('Cart:', cart);
                         if (!cart.items || cart.items.length === 0) {
-                          console.log('Empty cart, refetching...');
+                          //console.log('Empty cart, Cart empty, refetching cart items...');
                           return await fetchCartItems();
                         }
                         return cart;

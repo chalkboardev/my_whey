@@ -761,7 +761,7 @@ function initChatObserver() {
 
     $("#click_flavour_modal_product").click(function (e) {
       e.preventDefault();
-      console.log("opening product flavour modal from theme.liquid...");
+      //console.log("opening product flavour modal from theme.liquid...");
       $('.flavour_modal__overlay').css("visibility", "visible");
       $('.flavour_modal__overlay').css("opacity", "1");
       $('.flavour_modal__overlay').css("z-index", "99999999");
@@ -884,7 +884,7 @@ function initChatObserver() {
 }); // end docready
 
       var observer = new MutationObserver(function(mutations) {
-        console.log('Flavour modal open!');
+      //console.log('Flavour modal open!');
       });
       var target = document.querySelector('.flavour_modal__overlay');
       if (target) {
