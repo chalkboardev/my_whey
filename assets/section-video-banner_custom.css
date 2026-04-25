@@ -544,6 +544,13 @@ h4 {
     .slider_header.imageBoxInfoTitle {}
 }
 
+@media screen and (max-width: 575px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none !important;
+    }
+}
+
 @media screen and (max-width: 749px) {
     .videoBackground .swiper-horizontal>.swiper-pagination-bullets,
     .swiper-pagination-bullets.swiper-pagination-horizontal,
@@ -556,10 +563,6 @@ h4 {
     }
     .videoBackground .swiper {
         min-height: calc(100vh - 102px);
-    }
-    .swiper-button-next,
-    .swiper-button-prev {
-        display: none !important;
     }
     .videoBackground .imageBox {
         display: block;
