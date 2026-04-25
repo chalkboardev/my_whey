@@ -5373,6 +5373,18 @@ details[open] .your-content-class {
         display: flex;
         justify-content: center;
     }
+    .section-template--21398064693500__image_with_text_RgMmqt-padding .image-with-text__content {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+        text-align: center;
+        align-self: center;
+        padding: 0rem calc(2rem / var(--font-body-scale)) 5rem;
+        position: relative;
+        z-index: 1;
+    }
     .section-template--18522096697596__image_with_text_RgMmqt-padding .image-with-text__content {
         align-items: center;
         display: flex;
