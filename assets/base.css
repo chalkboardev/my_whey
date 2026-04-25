@@ -5253,10 +5253,15 @@ details[open] .your-content-class {
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
-    .mw_custom_img_normal {
-        /* padding-left: 20px !important;
-        padding-right: 20px !important; */
+    .image-with-text__content .image-with-text__text+.more_btn {
+        max-width: 240px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        white-space: nowrap;
     }
+    .image-with-text__content .image-with-text__text+.more_btn:hover {}
     .footer-block__heading {
         width: 100%;
     }
