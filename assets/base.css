@@ -3457,6 +3457,9 @@ quick-add-modal .product__title>a:hover {
 }
 
 @media screen and (max-width: 480px) {
+    .desc_pic {
+        max-width: 120% !important;
+    }
     .product_icons {
         background: #ffffff59;
         right: 1rem !important;
@@ -4861,7 +4864,7 @@ h3 {
 }
 
 .desc_pic {
-    max-width: 460px !important;
+    max-width: 460px;
     border-top-left-radius: 16px;
     border-top-right-radius: 0;
     border-bottom-right-radius: 16px;
@@ -7465,6 +7468,9 @@ details[open] .your-content-class {
 }
 
 @media screen and (min-width: 480px) and (max-width: 749px) {
+    .desc_pic {
+        max-width: 400px !important;
+    }
     .footer-block__heading i {
         top: -2px;
         display: block;
