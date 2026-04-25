@@ -5336,7 +5336,7 @@ details[open] .your-content-class {
         max-width: 100% !important;
     }
     .desc_pic {
-        max-width: 320px !important;
+        max-width: 100% !important;
     }
     .more_btn {
         width: 266px !important;
