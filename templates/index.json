@@ -275,7 +275,7 @@
       ],
       "name": "MW Slider Image Text",
       "settings": {
-        "slider_img_text": "<p>Testing...</p>",
+        "slider_img_text": "",
         "desktop_content_position_sld_text": "center"
       }
     },
