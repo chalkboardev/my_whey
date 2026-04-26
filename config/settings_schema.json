@@ -1451,7 +1451,7 @@
       {
         "type": "number",
         "id": "free_shipping_threshold",
-        "label": "Free shipping threshold",
+        "label": "Free shipping threshold in rands. Do not include 'R'",
         "default": 1000
       },
       {
