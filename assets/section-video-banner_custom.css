@@ -546,6 +546,20 @@ h4 {
     .banner__media {
         height: 100%;
     }
+    #slider_text_div {
+        width: 50%;
+        margin: 0;
+        min-height: 600px;
+    }
+    .imageBoxInfoDescription_sld h4 {
+        text-align: left;
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: #707070;
+        padding-bottom: 0.5rem;
+        margin-bottom: -2rem;
+    }
 }
 
 @media screen and (max-width: 479px) {
