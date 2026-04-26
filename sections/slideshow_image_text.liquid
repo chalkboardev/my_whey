@@ -205,7 +205,8 @@
    <div id="text_div_sld">
     <div class="sld_div">
     
-        {% if settings.slider_img_text != blank %}
+    {%- assign description_check = settings.slider_img_text | strip_html | strip -%}
+    {%- if description_check != blank -%}
            
             {% comment %} 
                
@@ -218,7 +219,7 @@
 
         {% else %}  
         <div style="color: #333" class="imageBoxInfoDescription_sld {{ settings.desktop_content_position_sld_text }}" id="{{ section.id }}" >
-              
+            {{ settings.slider_img_text }}
           
         </div>
          
@@ -302,21 +303,14 @@ document.addEventListener('DOMContentLoaded',  function() {
   {% schema %}
    
   {
-  "name": {
-      "en": "MW Slider Image Text"
-  },
+  "name": "MW Slider Image Text",
   "class": "videoBackground",
   "max_blocks": 6,
   "settings": [
         {
         "type": "richtext",
         "id": "slider_img_text",
-        "label": {
-            "en": "Description"
-        },
-        "default": {
-        "en": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
-        }
+        "label": "Description"
         },
         {
         "type": "select",
