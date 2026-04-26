@@ -191,13 +191,13 @@
             {%- if forloop.first %}
               {{
                 block.settings.image
-                | image_url: width: 3840
+                | image_url: width: 840
                 | image_tag: height: height, sizes: sizes, widths: widths, fetchpriority: fetch_priority
               }}
             {%- else -%}
               {{
                 block.settings.image
-                | image_url: width: 3840
+                | image_url: width: 840
                 | image_tag: loading: 'lazy', height: height, sizes: sizes, widths: widths
               }}
             {%- endif -%}
@@ -308,7 +308,7 @@
     </div>
   {%- endif -%}
 </slideshow-component>
-          <div
+          {% comment %} <div
             class="{% if section.settings.full_width_mobile != false %}mw_custom_img{% else %}mw_custom_img_normal{% endif %} mw_image_with_text_media image-with-text__media image-with-text__media--{{ section.settings.height }} global-media-settings{% unless remove_color_classes %} {% else %} background-transparent{% endunless %}{% if section.settings.image != blank %} media{% else %} image-with-text__media--placeholder placeholder{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}"
             {% if section.settings.height == 'adapt' and section.settings.image != blank %}
               style="border-radius: 10px !important;padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;"
@@ -336,7 +336,7 @@
             {%- else -%}
               {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
             {%- endif -%}
-          </div>
+          </div> {% endcomment %}
         </div>
         <div class="image-with-text__text-item grid__item">
           <div
