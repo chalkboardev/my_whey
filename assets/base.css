@@ -5387,7 +5387,7 @@ details[open] .your-content-class {
 
 #slider_text_div,
 #text_div_sld {
-    display: none !important;
+    /* display: none !important; */
 }
 
 

@@ -204,20 +204,27 @@
 
    <div id="text_div_sld">
     <div class="sld_div">
-    {%- for block in section.blocks -%}
-        {% if block.settings.slider_img_text != blank %}
+    
+        {% if settings.slider_img_text != blank %}
            
             {% comment %} 
                
             {% endcomment %}
-            <div style="color: #333" class="imageBoxInfoDescription_sld {{ block.settings.desktop_txt_head_position }}" id="{{ block.id }}" >
+            <div style="color: #333" class="imageBoxInfoDescription_sld {{ settings.desktop_content_position_sld_text }}" id="{{ block.id }}" >
               
               {{ settings.slider_img_text }}
                 
             </div>
+
+        {% else %}  
+        <div style="color: #333" class="imageBoxInfoDescription_sld {{ settings.desktop_content_position_sld_text }}" id="{{ section.id }}" >
+              
+        sdasdas
+          
+        </div>
          
         {% endif %} 
-        {%- endfor -%}
+       
    </div>
    </div>
 
@@ -302,16 +309,37 @@ document.addEventListener('DOMContentLoaded',  function() {
   "class": "videoBackground",
   "max_blocks": 6,
   "settings": [
-          {
-          "type": "richtext",
-          "id": "slider_img_text",
-          "label": {
-              "en": "Description"
-          },
-          "default": {
-          "en": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
-          }
-          }
+        {
+        "type": "richtext",
+        "id": "slider_img_text",
+        "label": {
+            "en": "Description"
+        },
+        "default": {
+        "en": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+        }
+        },
+        {
+        "type": "select",
+        "id": "desktop_content_position_sld_text",
+        "options": [
+            {
+            "value": "left",
+            "label": "t:sections.rich-text.settings.desktop_content_position.options__1.label"
+            },
+            {
+            "value": "center",
+            "label": "t:sections.rich-text.settings.desktop_content_position.options__2.label"
+            },
+            {
+            "value": "right",
+            "label": "t:sections.rich-text.settings.desktop_content_position.options__3.label"
+            }
+        ],
+        "default": "center",
+        "label": "t:sections.rich-text.settings.desktop_content_position.label",
+        "info": "t:sections.rich-text.settings.desktop_content_position.info"
+        }
   ],
   "blocks": [
           {
