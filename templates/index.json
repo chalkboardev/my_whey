@@ -209,6 +209,72 @@
         "show_text_below": false
       }
     },
+    "slideshow_image_text_JC3XYQ": {
+      "type": "slideshow_image_text",
+      "blocks": {
+        "image_tUChkW": {
+          "type": "image",
+          "settings": {
+            "color_bg": "#ffffff",
+            "image_bg": "shopify://shop_images/ChatGPT_Image_Apr_23_2026_01_54_58_PM.png",
+            "overlay_opacity": 0,
+            "mobile_x_position": 0,
+            "desktop_content_position": "header-middle-left",
+            "title": "Image slide",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "color_text": "#ffffff",
+            "img_button_1_label": "",
+            "img_button_1_link": "",
+            "img_button_1_color_scheme": "scheme-5",
+            "img_button_2_label": "",
+            "img_button_2_link": "",
+            "img_button_2_color_scheme": "scheme-5"
+          }
+        },
+        "image_4JYyyL": {
+          "type": "image",
+          "settings": {
+            "color_bg": "#ffffff",
+            "image_bg": "shopify://shop_images/my_formula_daily_use_case_6b2c87e2-6380-4bae-82b4-8ad331901258.png",
+            "overlay_opacity": 0,
+            "mobile_x_position": 0,
+            "desktop_content_position": "header-middle-left",
+            "title": "Image slide",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "color_text": "#ffffff",
+            "img_button_1_label": "",
+            "img_button_1_link": "",
+            "img_button_1_color_scheme": "scheme-5",
+            "img_button_2_label": "",
+            "img_button_2_link": "",
+            "img_button_2_color_scheme": "scheme-5"
+          }
+        },
+        "video_nUzbyE": {
+          "type": "video",
+          "settings": {
+            "video_link": "",
+            "desktop_content_position": "header-middle-left",
+            "title": "Video slide",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "color_text": "#ffffff",
+            "button_video_label_1": "",
+            "button_link_video_1": "",
+            "color_scheme_video_btn_1": "",
+            "button_video_label_2": "",
+            "button_link_video_2": "",
+            "color_scheme_video_btn_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_tUChkW",
+        "image_4JYyyL",
+        "video_nUzbyE"
+      ],
+      "name": "MW Slider Image Text",
+      "settings": {}
+    },
     "image_with_text_RgMmqt": {
       "type": "image-with-text",
       "blocks": {
@@ -261,53 +327,6 @@
         "mobile_padding_top": 20,
         "mobile_padding_bottom": 20
       }
-    },
-    "slideshow_image_text_JC3XYQ": {
-      "type": "slideshow_image_text",
-      "blocks": {
-        "image_4JYyyL": {
-          "type": "image",
-          "settings": {
-            "color_bg": "#fff",
-            "image_bg": "shopify://shop_images/my_formula_daily_use_case_6b2c87e2-6380-4bae-82b4-8ad331901258.png",
-            "overlay_opacity": 0,
-            "mobile_x_position": 0,
-            "desktop_content_position": "header-middle-left",
-            "title": "Image slide",
-            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
-            "color_text": "#ffffff",
-            "img_button_1_label": "",
-            "img_button_1_link": "",
-            "img_button_1_color_scheme": "scheme-5",
-            "img_button_2_label": "",
-            "img_button_2_link": "",
-            "img_button_2_color_scheme": "scheme-5"
-          }
-        },
-        "video_nUzbyE": {
-          "type": "video",
-          "settings": {
-            "video_link": "",
-            "desktop_content_position": "header-middle-left",
-            "title": "Video slide",
-            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
-            "color_text": "#ffffff",
-            "button_video_label_1": "",
-            "button_link_video_1": "",
-            "color_scheme_video_btn_1": "",
-            "button_video_label_2": "",
-            "button_link_video_2": "",
-            "color_scheme_video_btn_2": ""
-          }
-        }
-      },
-      "block_order": [
-        "image_4JYyyL",
-        "video_nUzbyE"
-      ],
-      "disabled": true,
-      "name": "MW Slider Image Text",
-      "settings": {}
     },
     "featured_collection": {
       "type": "featured-collection",
@@ -902,8 +921,8 @@
     "custom_slideshow_wMQLCP",
     "video_banner_687P9e",
     "image_banner",
-    "image_with_text_RgMmqt",
     "slideshow_image_text_JC3XYQ",
+    "image_with_text_RgMmqt",
     "featured_collection",
     "custom_marquee_nigaHz",
     "multicolumn_new_9dH7mP",
