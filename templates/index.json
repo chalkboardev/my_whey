@@ -274,7 +274,10 @@
         "video_nUzbyE"
       ],
       "name": "MW Slider Image Text",
-      "settings": {}
+      "settings": {
+        "slider_img_text": "<p>Testing...</p>",
+        "desktop_content_position_sld_text": "center"
+      }
     },
     "image_with_text_RgMmqt": {
       "type": "image-with-text",
