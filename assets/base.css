@@ -5390,6 +5390,10 @@ details[open] .your-content-class {
     display: none !important;
 }
 
+#text_slide_flex {
+    display: none !important;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
