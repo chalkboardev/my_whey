@@ -218,7 +218,7 @@
 
         {% else %}  
         <div style="color: #333" class="imageBoxInfoDescription_sld {{ settings.desktop_content_position_sld_text }}" id="{{ section.id }}" >
-            My Whey | Bulk Supplements
+            {{ section.settings.slider_img_text }}
           
         </div>
          
@@ -310,7 +310,7 @@ document.addEventListener('DOMContentLoaded',  function() {
         "type": "richtext",
         "id": "slider_img_text",
         "label": "Description",
-        "default": "<p>This text will show up automatically in the editor.</p>"
+        "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
         },
         {
         "type": "select",
