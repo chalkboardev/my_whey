@@ -131,7 +131,7 @@
   <div class="text_img_sld_img_box imageBox" style="background-position:{{ block.settings.mobile_x_position }}% 50% !important;background-color: {{ block.settings.color_bg }}; {%- if block.settings.image_bg != blank -%}background-image: url('{{ block.settings.image_bg | img_url: 'master' }}');{%- endif -%}">
    
    
-  <div class="imageBoxInfo_padding imageBoxInfo {{ block.settings.desktop_content_position }} ">
+  <div class="imageBoxInfo_sld {{ block.settings.desktop_content_position }} ">
    <span class="mobile_header_adjust">
    
    
@@ -195,8 +195,8 @@
 
   <!-- If we need navigation buttons --> 
   {% comment %} {% endcomment %}
-  <div class="swiper-button-prev_sld"> </div>
-  <div class="swiper-button-next_sld"> </div> 
+  {% comment %} <div class="swiper-button-prev_sld"> </div>
+  <div class="swiper-button-next_sld"> </div>  {% endcomment %}
 
   <!-- If we need scrollbar -->
   {% comment %} <div class="swiper-scrollbar_sld"></div> {% endcomment %}
@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded',  function() {
         // parallax: true,
         speed: 600,
         autoplay: true,
-        delay: 9500,
+        delay: 500,
         direction: 'horizontal',
         lazy: {
           enabled: true,
@@ -310,7 +310,7 @@ document.addEventListener('DOMContentLoaded',  function() {
         "type": "richtext",
         "id": "slider_img_text",
         "label": "Description",
-        "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+        "default": "<h2>Heading Example!</h2><p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
         },
         {
         "type": "select",

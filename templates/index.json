@@ -275,7 +275,7 @@
       ],
       "name": "MW Slider Image Text",
       "settings": {
-        "slider_img_text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+        "slider_img_text": "<h2>Heading Example!</h2><p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
         "desktop_content_position_sld_text": "center"
       }
     },

@@ -590,8 +590,42 @@ h4 {
     color: #333 !important;
 }
 
+#text_div_sld h2 {
+    color: #333 !important;
+    font-weight: 600;
+    font-size: 3rem;
+    margin: 1.8rem 0 0 0;
+}
+
 #text_div_sld .imageBoxInfoDescription_sld {
-    padding: 2rem;
+    padding: 2rem 9rem 2rem 9rem;
+}
+
+.slider_text_div .swiper-wrapper {
+    width: 50% !important;
+}
+
+.videoBackground .videoBoxInfo,
+.videoBackground .imageBoxInfo_sld {
+    margin-top: 0rem !important;
+    align-items: center;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    z-index: 2;
+    margin: auto;
+    height: 100dvh;
+    background: none;
+    /* width: 50vw; */
+    padding: 0 8rem 0rem 8rem;
+    text-shadow: none;
+}
+
+.text_img_sld_img_box {
+    margin: 3.2rem 0 3.2rem 3.2rem;
+    border-radius: 9px;
+    max-height: 90%;
 }
 
 #text_slide_flex {
@@ -599,7 +633,7 @@ h4 {
 }
 
 .sld_div {
-    background: #e6e6e6;
+    background: #ffffff;
     height: 90%;
     width: 90%;
     align-items: center;
@@ -609,21 +643,46 @@ h4 {
     border-radius: 9px;
 }
 
+.text_slide_flex .swiper {
+    min-height: 100% !important;
+}
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    .videoBackground .videoBoxInfo,
+    .videoBackground .imageBoxInfo_sld {
+        background: none;
+        width: 0;
+        height: 100%;
+    }
     .text_img_sld_img_box {
         width: 100%;
         margin: 0;
+        border-radius: 0px;
     }
     #slider_text_div {
         width: 100%;
         margin: 0;
+        height: 100%;
+        min-height: 100%;
+    }
+    #text_div_sld .imageBoxInfoDescription_sld {
+        padding: 1rem 4rem 1rem 4rem;
     }
     #text_div_sld {
+        position: relative;
+        margin: 2rem 0 0 0;
         width: 100%;
-        margin: 0;
+        height: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: 1;
     }
     #text_slide_flex {
         display: block;
+        padding: 0 0 2rem 0;
+        margin: 0 0 2rem 0;
+        background: #ededed;
     }
     .videoBackground .videoBoxInfo,
     .videoBackground .imageBoxInfo {
@@ -642,6 +701,43 @@ h4 {
 }
 
 @media screen and (min-width: 575px) and (max-width: 749px) {
+    .videoBackground .videoBoxInfo,
+    .videoBackground .imageBoxInfo_sld {
+        background: none;
+        width: 0;
+        height: 100%;
+    }
+    .text_img_sld_img_box {
+        width: 100%;
+        margin: 0;
+        border-radius: 0px;
+    }
+    #slider_text_div {
+        width: 100%;
+        margin: 0;
+        height: 100%;
+        min-height: 100%;
+    }
+    #text_div_sld .imageBoxInfoDescription_sld {
+        padding: 1rem 4rem 1rem 4rem;
+    }
+    #text_div_sld {
+        position: relative;
+        margin: 2rem 0 0 0;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: 1;
+    }
+    #text_slide_flex {
+        display: block;
+        display: block;
+        padding: 0 0 2rem 0;
+        margin: 0 0 2rem 0;
+        background: #ededed;
+    }
     .videoBackground .videoBoxInfo,
     .videoBackground .imageBoxInfo {
         margin: 0rem auto 0 auto !important;
