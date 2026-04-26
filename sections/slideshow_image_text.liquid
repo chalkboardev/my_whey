@@ -210,14 +210,15 @@
    
   </div>
   <!-- If we need pagination -->
-  <div class="swiper-pagination"></div>
+  <div class="swiper-pagination_sld"></div>
 
   <!-- If we need navigation buttons --> 
-  {% comment %} {% endcomment %}<div class="swiper-button-prev"> </div>
-  <div class="swiper-button-next"> </div> 
+  {% comment %} {% endcomment %}
+  <div class="swiper-button-prev_sld"> </div>
+  <div class="swiper-button-next_sld"> </div> 
 
   <!-- If we need scrollbar -->
-  {% comment %} <div class="swiper-scrollbar"></div> {% endcomment %}
+  {% comment %} <div class="swiper-scrollbar_sld"></div> {% endcomment %}
 </div>
  
    
@@ -236,7 +237,7 @@
 
 <script>
 document.addEventListener('DOMContentLoaded',  function() {
-      const swiper = new Swiper('.swiper', {
+      const swiper_slide = new Swiper('#slider_text_div', {
       // Optional parameters
         // speed: 400,
         // autoplay: {
@@ -267,20 +268,20 @@ document.addEventListener('DOMContentLoaded',  function() {
     
       // If we need pagination
       pagination: {
-        el: '.swiper-pagination',
+        el: '.swiper-pagination_sld',
         clickable: true,
         // dynamicBullets: true,
       },
     
       // Navigation arrows
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.swiper-button-next_sld',
+        prevEl: '.swiper-button-prev_sld',
       },
     
       // And if we need scrollbar
       scrollbar: {
-        el: '.swiper-scrollbar',
+        el: '.swiper-scrollbar_sld',
       },
     });
 })
