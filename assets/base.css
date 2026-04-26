@@ -5385,7 +5385,7 @@ details[open] .your-content-class {
     padding-right: 8px;
 }
 
-.slider_text_div {
+#slider_text_div {
     display: none;
 }
 
