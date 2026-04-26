@@ -204,22 +204,21 @@
 
    <div id="text_div_sld">
     <div class="sld_div">
-    
-    {%- assign description_check = settings.slider_img_text | strip_html | strip -%}
-    {%- if description_check != blank -%}
+        
+    {%- if section.settings.slider_img_text != blank -%}
            
             {% comment %} 
                
             {% endcomment %}
             <div style="color: #333" class="imageBoxInfoDescription_sld {{ settings.desktop_content_position_sld_text }}" id="{{ section.id }}" >
               
-              {{ settings.slider_img_text }}
+              {{ section.settings.slider_img_text }}
                 
             </div>
 
         {% else %}  
         <div style="color: #333" class="imageBoxInfoDescription_sld {{ settings.desktop_content_position_sld_text }}" id="{{ section.id }}" >
-            {{ settings.slider_img_text }}
+            My Whey | Bulk Supplements
           
         </div>
          
@@ -310,7 +309,8 @@ document.addEventListener('DOMContentLoaded',  function() {
         {
         "type": "richtext",
         "id": "slider_img_text",
-        "label": "Description"
+        "label": "Description",
+        "default": "<p>This text will show up automatically in the editor.</p>"
         },
         {
         "type": "select",
