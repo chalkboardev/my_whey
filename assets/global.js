@@ -1324,6 +1324,47 @@ if (!customElements.get('bulk-add')) {
 // ------------------ ***************** START MY FORMULA MODAL SCRIPT ***************** ------------------
 document.addEventListener('DOMContentLoaded', () => {
 
+// ---------------------- START FREE SHIPPING PROGRESS------------------
+// const goal = 10000; // Your threshold in cents ($100.00)
+
+// function updateShippingBar() {
+//   fetch('/cart.js')
+//     .then(response => response.json())
+//     .then(cart => {
+//       const total = cart.total_price;
+//       const remaining = Math.max(0, goal - total);
+//       const percentage = Math.min((total / goal) * 100, 100);
+
+//       // Update the Bar Fill
+//       const barFill = document.querySelector('.progress-bar-fill');
+//       if (barFill) barFill.style.width = percentage + '%';
+
+//       console.log("Percentage: " + percentage)
+
+//       // Update the Text Message
+//       const messageContainer = document.querySelector('.shipping-message');
+//       if (messageContainer) {
+//         if (total >= goal) {
+//           messageContainer.innerHTML = "🎉 You've unlocked <b>FREE shipping!</b>";
+//         } else {
+//           // Formats currency (e.g., $20.00)
+//           const remainingMoney = new Intl.NumberFormat('en-US', {
+//             style: 'currency',
+//             currency: cart.currency,
+//           }).format(remaining / 100);
+          
+//           messageContainer.innerHTML = `Spend <b>${remainingMoney}</b> more for free shipping`;
+//         }
+//       }
+//     });
+// }
+
+// // Listen for Dawn's specific cart update events
+// // This ensures it updates when quantities change or items are removed
+// document.addEventListener('cart:updated', updateShippingBar);
+// document.addEventListener('cart:changed', updateShippingBar);
+// ---------------------- END FREE SHIPPING PROGRESS------------------
+
 if ($("#submit_formula").length) {
     //console.log('Yes formula page...');
     $('#ModalForm-ingredient_1, #ModalForm-ingredient_2, #ModalForm-ingredient_3, #ModalForm-ingredient_4, #ModalForm-ingredient_5, #ModalForm-ingredient_6, #ModalForm-ingredient_7').on('blur', function() {

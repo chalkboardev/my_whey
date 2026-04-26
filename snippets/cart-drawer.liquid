@@ -90,6 +90,9 @@
           </span>
         </button>
       </div>
+
+      {% render 'free-shipping-threshold' %}
+      
       <cart-drawer-items
         {% if cart == empty %}
         class=" is-empty"
