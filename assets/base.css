@@ -5385,6 +5385,10 @@ details[open] .your-content-class {
     padding-right: 8px;
 }
 
+.swiper-pagination_sld {
+    bottom: 3%;
+}
+
 #text_slide_flex {
     display: none !important;
 }

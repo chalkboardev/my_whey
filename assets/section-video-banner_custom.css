@@ -647,6 +647,15 @@ h4 {
     min-height: 100% !important;
 }
 
+.imageBoxInfoDescription_sld h4 {
+    text-align: left;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #707070;
+    padding-bottom: 0.5rem;
+}
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
     .videoBackground .videoBoxInfo,
     .videoBackground .imageBoxInfo_sld {
