@@ -205,14 +205,14 @@
    <div id="text_div_sld">
     <div class="sld_div">
     {%- for block in section.blocks -%}
-        {% if block.settings.text != blank %}
+        {% if block.settings.slider_img_text != blank %}
            
             {% comment %} 
                
             {% endcomment %}
             <div style="color: #333" class="imageBoxInfoDescription_sld {{ block.settings.desktop_txt_head_position }}" id="{{ block.id }}" >
               
-              {{ block.settings.text }}
+              {{ settings.slider_img_text }}
                 
             </div>
          
@@ -301,6 +301,18 @@ document.addEventListener('DOMContentLoaded',  function() {
   },
   "class": "videoBackground",
   "max_blocks": 6,
+  "settings": [
+          {
+          "type": "richtext",
+          "id": "slider_img_text",
+          "label": {
+              "en": "Description"
+          },
+          "default": {
+          "en": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+          }
+  ],
   "blocks": [
           {
           "type": "video",
