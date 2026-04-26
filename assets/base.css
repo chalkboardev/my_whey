@@ -5386,7 +5386,7 @@ details[open] .your-content-class {
 }
 
 #slider_text_div {
-    display: none;
+    display: none !important;
 }
 
 

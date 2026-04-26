@@ -9,7 +9,7 @@
 
 {%- if section.blocks.size > 0 -%}
 
-
+<div id="text_slide_flex">
      <!-- Slider main container -->
 <div id="slider_text_div" class="swiper">
   <!-- Additional required wrapper -->
@@ -110,6 +110,7 @@
     </a>
      
     {% endif %}
+    
     </div>
   </div>
    
@@ -127,20 +128,11 @@
    
   {% else %}
     
-  <div class="imageBox" style="background-position:{{ block.settings.mobile_x_position }}% 50% !important;background-color: {{ block.settings.color_bg }}; {%- if block.settings.image_bg != blank -%}background-image: url('{{ block.settings.image_bg | img_url: 'master' }}');{%- endif -%}">
+  <div class="text_img_sld_img_box imageBox" style="background-position:{{ block.settings.mobile_x_position }}% 50% !important;background-color: {{ block.settings.color_bg }}; {%- if block.settings.image_bg != blank -%}background-image: url('{{ block.settings.image_bg | img_url: 'master' }}');{%- endif -%}">
    
    
   <div class="imageBoxInfo_padding imageBoxInfo {{ block.settings.desktop_content_position }} ">
    <span class="mobile_header_adjust">
-  {% if block.settings.title != blank %}
-
-  <h2 class="slider_header h1 imageBoxInfoTitle" style="color:{{ block.settings.color_text }};">
-   <strong>
-    {{ block.settings.title | escape }}
-   </strong>
-  </h2>
-   
-  {% endif %}
    
    
    
@@ -154,17 +146,6 @@
    
   {%- endstyle -%}
    
-   
-   
-  {% if block.settings.text != blank %}
-   
-  <div class="imageBoxInfoDescription" id="{{ block.id }}" style="color: {{ block.settings.color_text }}">
-   
-  {{ block.settings.text }}
-
-  </div>
-   
-  {% endif %}
 
   {% if block.settings.description_image != blank %}
     <div class="desc_pic_div">
@@ -210,7 +191,7 @@
    
   </div>
   <!-- If we need pagination -->
-  <div class="swiper-pagination_sld"></div>
+  <div class="swiper-pagination_sld swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"></div>
 
   <!-- If we need navigation buttons --> 
   {% comment %} {% endcomment %}
@@ -220,9 +201,27 @@
   <!-- If we need scrollbar -->
   {% comment %} <div class="swiper-scrollbar_sld"></div> {% endcomment %}
 </div>
- 
-   
-   
+
+   <div id="text_div_sld">
+    <div class="sld_div">
+    {%- for block in section.blocks -%}
+        {% if block.settings.text != blank %}
+           
+            {% comment %} 
+               
+            {% endcomment %}
+            <div style="color: #333" class="imageBoxInfoDescription_sld {{ block.settings.desktop_txt_head_position }}" id="{{ block.id }}" >
+              
+              {{ block.settings.text }}
+                
+            </div>
+         
+        {% endif %} 
+        {%- endfor -%}
+   </div>
+   </div>
+
+</div>
   {% else %}
    
 <div class="placeholderNoblocks">
