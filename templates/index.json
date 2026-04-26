@@ -252,6 +252,7 @@
         },
         "video_nUzbyE": {
           "type": "video",
+          "disabled": true,
           "settings": {
             "video_link": "",
             "desktop_content_position": "header-middle-left",
