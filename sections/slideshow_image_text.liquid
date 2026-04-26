@@ -202,9 +202,9 @@
           {%- else -%}
             {%- assign placeholder_slide = forloop.index | modulo: 2 -%}
             {%- if placeholder_slide == 1 -%}
-              {% comment %} {{ 'hero-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }} {% endcomment %}
+              {{ 'hero-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}
             {%- else -%}
-              {% comment %} {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }} {% endcomment %}
+              {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
             {%- endif -%}
           {%- endif -%}
         </div>
