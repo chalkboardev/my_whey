@@ -5387,6 +5387,7 @@ details[open] .your-content-class {
 
 #text_slide_flex {
     display: none !important;
+    visibility: hidden;
 }
 
 
