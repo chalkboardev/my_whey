@@ -5406,6 +5406,9 @@ details[open] .your-content-class {
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    .mw_collection_div .now_price_txt {
+        margin-top: -29px;
+    }
     .shipping-message i {
         animation-name: fadeInLeft;
         animation-duration: 9s;
