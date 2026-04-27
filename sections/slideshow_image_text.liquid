@@ -210,7 +210,7 @@
             {% comment %} 
                
             {% endcomment %}
-            <div style="color:{{ settings.heading_color_text }}" class="imageBoxInfoDescription_sld {{ settings.desktop_content_position_sld_text }}" id="{{ section.id }}" >
+            <div style="color:{{ section.settings.heading_color_text }}" class="imageBoxInfoDescription_sld {{ section.settings.desktop_content_position_sld_text }}" id="{{ section.id }}" >
               
               {{ section.settings.slider_img_text }}
                 
@@ -237,7 +237,7 @@
                     height: auto;
                     min-height:50px;
                     align-items: center;
-                    " href="{{ section.settings.button_link_main }}" class="videoBoxInfoBtn color-{{ section.settings.color_scheme_video_btn_1 }}">
+                    " href="{{ section.settings.button_link_main }}" class="videoBoxInfoBtn color-{{ section.settings.color_scheme_btn_main }}">
                         <span>{{ section.settings.button_link_main_label | escape }}</span>
                     </a>
             
@@ -362,7 +362,7 @@ document.addEventListener('DOMContentLoaded',  function() {
             "label": "t:sections.rich-text.settings.desktop_content_position.options__3.label"
             }
         ],
-        "default": "center",
+        "default": "left",
         "label": "t:sections.rich-text.settings.desktop_content_position.label",
         "info": "t:sections.rich-text.settings.desktop_content_position.info"
         },
@@ -375,6 +375,12 @@ document.addEventListener('DOMContentLoaded',  function() {
         "type": "url",
         "id": "button_link_main",
         "label": "Button link"
+        },
+        {
+        "type": "color_scheme",
+        "id": "color_scheme_btn_main",
+        "label": "Color Scheme Main Button",
+        "default": "scheme-5"
         }
   ],
   "blocks": [

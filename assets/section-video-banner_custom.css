@@ -595,6 +595,9 @@ h4 {
     }
 }
 
+
+/* -------------- START CUSTOM SLIDER WITH TEXT -------------- */
+
 #slider_text_div {
     width: 50%;
     margin: 0;
@@ -622,7 +625,11 @@ h4 {
 }
 
 #text_div_sld .imageBoxInfoDescription_sld {
-    padding: 2rem 9rem 2rem 9rem;
+    padding: 2rem 9rem 1rem 9rem;
+}
+
+#text_div_sld .header_buttons {
+    padding: 0rem 9rem 2rem 9rem;
 }
 
 .slider_text_div .swiper-wrapper {
@@ -660,10 +667,11 @@ h4 {
     background: #ededed;
     height: 90%;
     width: 93%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     vertical-align: middle;
     justify-content: center;
-    display: flex;
     border-radius: 9px;
 }
 
@@ -683,6 +691,9 @@ h4 {
     color: #707070;
     padding-bottom: 0.5rem;
 }
+
+
+/* -------------- END CUSTOM SLIDER WITH TEXT -------------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
     .swiper-pagination_sld {
