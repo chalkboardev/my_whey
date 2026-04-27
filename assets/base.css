@@ -6450,6 +6450,7 @@ details[open] .your-content-class {
         display: -webkit-box !important;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
+        padding-bottom: 0.1rem;
     }
     /* .card__content {
     display: grid;
