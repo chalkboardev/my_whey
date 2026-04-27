@@ -5408,6 +5408,10 @@ details[open] .your-content-class {
     visibility: hidden;
 }
 
+#shopify-section-template--18522096697596__slideshow_image_text_JC3XYQ {
+    display: none;
+}
+
 [id^="Slider-Gallery-quickadd-template--"] .my_product_thumb {
     animation-name: fadeIn;
     animation-duration: 2s;
