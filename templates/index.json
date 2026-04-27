@@ -820,7 +820,7 @@
       ],
       "name": "MW Slider Image Text",
       "settings": {
-        "slider_img_text": "<h4>7 FLAVOURS</h4><h2>Try our new Flavour Sytem!</h2><p>Whether you prefer rich chocolate, tropical fruit, or vanilla bean, choosing the right flavour ensures you stay consistent with your health goals without sacrificing taste. Choose one of our delicious flavours to add to your nutrition mix!  </p>",
+        "slider_img_text": "<h4>7 FLAVOURS</h4><h2>Try our new Flavour System!</h2><p>Whether you prefer rich chocolate, tropical fruit, or vanilla bean, choosing the right flavour ensures you stay consistent with your health goals without sacrificing taste. Choose one of our delicious flavours to add to your nutrition mix!  </p>",
         "heading_color_text": "#333333",
         "desktop_content_position_sld_text": "left",
         "button_link_main_label": "Flavours",
