@@ -210,7 +210,7 @@
             {% comment %} 
                
             {% endcomment %}
-            <div style="color: #333" class="imageBoxInfoDescription_sld {{ settings.desktop_content_position_sld_text }}" id="{{ section.id }}" >
+            <div style="color:{{ settings.heading_color_text }}" class="imageBoxInfoDescription_sld {{ settings.desktop_content_position_sld_text }}" id="{{ section.id }}" >
               
               {{ section.settings.slider_img_text }}
                 
@@ -222,7 +222,34 @@
           
         </div>
          
-        {% endif %} 
+    {% endif %}
+
+            <div class="header_buttons">
+                {% if section.settings.button_link_main  != blank and section.settings.button_link_main_label != blank %} 
+                <span id="slide_btn_1" style="
+                ">
+                    <a style="width: 280px;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    padding: 0;
+                    margin: 0 auto;
+                    height: auto;
+                    min-height:50px;
+                    align-items: center;
+                    " href="{{ section.settings.button_link_main }}" class="videoBoxInfoBtn color-{{ section.settings.color_scheme_video_btn_1 }}">
+                        <span>{{ section.settings.button_link_main_label | escape }}</span>
+                    </a>
+            
+                
+                
+                </span>
+            
+                
+                {% endif %}
+            
+                
+            </div>
        
    </div>
    </div>
@@ -313,6 +340,12 @@ document.addEventListener('DOMContentLoaded',  function() {
         "default": "<h4>Pre Text</h4><h2>Heading Example!</h2><p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
         },
         {
+        "type": "color", 
+        "id": "heading_color_text",
+        "label": "Heading Text color",
+        "default": "#333333"
+        },
+        {
         "type": "select",
         "id": "desktop_content_position_sld_text",
         "options": [
@@ -333,22 +366,16 @@ document.addEventListener('DOMContentLoaded',  function() {
         "label": "t:sections.rich-text.settings.desktop_content_position.label",
         "info": "t:sections.rich-text.settings.desktop_content_position.info"
         },
-                  {
-          "type": "color", 
-          "id": "color_text",
-          "label": "Text color",
-          "default": "#ffffff"
-          },
-          {
-          "type": "text",
-          "id": "button_video_label_1",
-          "label": "Button 1 label"
-          },
-          {
-          "type": "url",
-          "id": "button_link_video_1",
-          "label": "Button link 1"
-          }
+        {
+        "type": "text",
+        "id": "button_link_main_label",
+        "label": "Main button label"
+        },
+        {
+        "type": "url",
+        "id": "button_link_main",
+        "label": "Button link main"
+        }
   ],
   "blocks": [
           {
