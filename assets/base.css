@@ -5403,14 +5403,18 @@ details[open] .your-content-class {
     padding-right: 8px;
 }
 
-#text_slide_flex {
+
+/* START HIDE HOME PAGE FLAVOUR SECTION  */
+
+#text_slide_flex,
+#shopify-section-template--18522096697596__slideshow_image_text_JC3XYQ,
+#shopify-section-template--21398064693500__slideshow_image_text_JC3XYQ {
     display: none !important;
     visibility: hidden;
 }
 
-#shopify-section-template--18522096697596__slideshow_image_text_JC3XYQ {
-    display: none;
-}
+
+/* END HIDE HOME PAGE FLAVOUR SECTION  */
 
 [id^="Slider-Gallery-quickadd-template--"] .my_product_thumb {
     animation-name: fadeIn;
