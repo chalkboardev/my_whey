@@ -9,9 +9,9 @@
 
 {%- if section.blocks.size > 0 -%}
 
-<div id="text_slide_flex">
+<div class="scroll-trigger animate--slide-in" id="text_slide_flex">
      <!-- Slider main container -->
-<div id="slider_text_div" class="swiper">
+<div id="slider_text_div" class="scroll-trigger animate--slide-in swiper">
   <!-- Additional required wrapper -->
   <div class="swiper-wrapper">
 
@@ -146,6 +146,15 @@
    
   {%- endstyle -%}
    
+    {% comment %} {% if block.settings.text != blank %}
+      
+        <div class="imageBoxInfoDescription {{ block.settings.desktop_txt_head_position }}" id="{{ block.id }}" style="color: {{ block.settings.color_text }}">
+          
+          {{ block.settings.text }}
+            
+        </div>
+    
+    {% endif %}  {% endcomment %}
 
   {% if block.settings.description_image != blank %}
     <div class="desc_pic_div">
@@ -154,11 +163,13 @@
     </div> 
  {% endif %}
 
+ 
+
   <div class="header_buttons">
       {% if block.settings.img_button_1_link != blank and block.settings.img_button_1_label != blank %}
       
 
-      <a id="imageBoxInfoBtn1" href="{{ block.settings.img_button_1_link }}" class="imageBoxInfoBtn_sld color-{{ block.settings.img_button_1_color_scheme }}"> 
+      <a style="height:32px !important;" id="imageBoxInfoBtn1" href="{{ block.settings.img_button_1_link }}" class="imageBoxInfoBtn_sld color-{{ block.settings.img_button_1_color_scheme }}"> 
       
       {{ block.settings.img_button_1_label | escape }}
       
@@ -192,7 +203,7 @@
   {% comment %} <div class="swiper-scrollbar_sld"></div> {% endcomment %}
 </div>
 
-   <div id="text_div_sld">
+   <div id="text_div_sld" class="scroll-trigger animate--slide-in">
     <div class="sld_div">
         
     {%- if section.settings.slider_img_text != blank -%}

@@ -1278,6 +1278,10 @@ body .menu-drawer__close-button {
     padding: 1.5rem 5rem !important;
     /* transform: translateY(0px) !important; */
     transition: all ease 0.25s;
+    animation-name: fadeInUp;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
 }
 
 .more_btn:hover {
