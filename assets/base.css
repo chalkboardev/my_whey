@@ -1469,6 +1469,18 @@ body .menu-drawer__close-button {
     letter-spacing: 1px;
 }
 
+.collection_s .product-grid-container .from_price_txt {
+    position: absolute;
+    display: flex;
+    visibility: visible;
+    margin-top: -26px;
+    font-size: 11px;
+    text-transform: uppercase;
+    /* font-weight: 600; */
+    color: #dcdcdc;
+    letter-spacing: 1px;
+}
+
 .related-products .now_price_txt {
     position: absolute;
     display: flex;
@@ -2036,13 +2048,13 @@ body .menu-drawer__close-button {
 
 #ProductGridContainer .from_price_txt {
     position: absolute;
-    margin-top: -7px;
+    margin-top: -8px;
     margin-bottom: -7px;
     font-size: 11px;
     display: flex;
     justify-self: left;
     text-transform: uppercase;
-    color: #cacaca;
+    color: #dcdcdc;
     letter-spacing: 1px;
 }
 
