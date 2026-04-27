@@ -296,7 +296,10 @@
       "name": "MW Slider Image Text",
       "settings": {
         "slider_img_text": "<h4>Pre Text</h4><h2>Heading Example!</h2><p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
-        "desktop_content_position_sld_text": "center"
+        "heading_color_text": "#333333",
+        "desktop_content_position_sld_text": "center",
+        "button_link_main_label": "Flavours",
+        "button_link_main": "shopify://collections/flavours"
       }
     },
     "image_with_text_RgMmqt": {
