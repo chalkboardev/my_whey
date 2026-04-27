@@ -29,17 +29,71 @@
 .swiper-button-next_sld:after,
 .swiper-rtl .swiper-button-prev_sld:after {
     content: 'next';
+    font-family: swiper-icons;
     font-size: 14px !important;
-    font-weight: 800;
+    text-transform: none !important;
+    letter-spacing: 0;
+    font-variant: initial;
+    line-height: 1;
     color: #fff;
 }
 
 .swiper-button-prev_sld:after,
 .swiper-rtl .swiper-button-next_sld:after {
     content: 'prev';
+    font-family: swiper-icons;
     font-size: 14px !important;
-    font-weight: 800;
+    text-transform: none !important;
+    letter-spacing: 0;
+    font-variant: initial;
+    line-height: 1;
     color: #fff;
+}
+
+.swiper-button-next_sld {
+    display: none !important;
+    background: #8787874a !important;
+    position: absolute;
+    /* filter: invert(1); */
+    padding: 10px 8px 10px 10px;
+    border-radius: 50%;
+    background: #ffffff4a;
+    top: var(--swiper-navigation-top-offset, 48%) !important;
+    /* width: var(--swiper-navigation-size) !important;
+    height: var(--swiper-navigation-size); */
+    width: 30px !important;
+    height: 30px !important;
+    right: 4rem !important;
+    margin-top: calc(0px -(var(--swiper-navigation-size) / 2));
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--swiper-navigation-color, var(--swiper-theme-color));
+}
+
+.swiper-button-prev_sld {
+    display: none !important;
+    background: #8787874a !important;
+    position: absolute;
+    /* filter: invert(1); */
+    padding: 10px 10px 10px 8px;
+    border-radius: 50%;
+    background: #ffffff4a;
+    top: var(--swiper-navigation-top-offset, 48%) !important;
+    /* width: var(--swiper-navigation-size) !important;
+    height: var(--swiper-navigation-size); */
+    width: 30px !important;
+    height: 30px !important;
+    left: 6.5rem !important;
+    margin-top: calc(0px -(var(--swiper-navigation-size) / 2));
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--swiper-navigation-color, var(--swiper-theme-color));
 }
 
 .videoBoxInfo_padding {
@@ -467,8 +521,7 @@
     height: 100%;
 }
 
-.swiper-button-next,
-.swiper-button-next_sld {
+.swiper-button-next {
     position: absolute;
     /* filter: invert(1); */
     /* padding: 10px; */
@@ -489,8 +542,7 @@
     color: var(--swiper-navigation-color, var(--swiper-theme-color));
 }
 
-.swiper-button-prev,
-.swiper-button-prev_sld {
+.swiper-button-prev {
     display: none !important;
     position: absolute;
     /* filter: invert(1); */
