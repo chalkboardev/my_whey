@@ -332,7 +332,23 @@ document.addEventListener('DOMContentLoaded',  function() {
         "default": "center",
         "label": "t:sections.rich-text.settings.desktop_content_position.label",
         "info": "t:sections.rich-text.settings.desktop_content_position.info"
-        }
+        },
+                  {
+          "type": "color", 
+          "id": "color_text",
+          "label": "Text color",
+          "default": "#ffffff"
+          },
+          {
+          "type": "text",
+          "id": "button_video_label_1",
+          "label": "Button 1 label"
+          },
+          {
+          "type": "url",
+          "id": "button_link_video_1",
+          "label": "Button link 1"
+          }
   ],
   "blocks": [
           {
@@ -342,16 +358,12 @@ document.addEventListener('DOMContentLoaded',  function() {
           {
           "type": "url",
           "id": "video_link",
-          "label": {
-              "en": "Video link"
-          }
+          "label": "Video link"
           },
           {
           "type": "image_picker",
           "id": "video_image",
-          "label": {
-              "en": "Cover image"
-          }
+          "label": "Cover image"
           },
           {
           "type": "select",
@@ -399,78 +411,56 @@ document.addEventListener('DOMContentLoaded',  function() {
           },
           {
           "type": "header",
-          "content": {
-          "en": "Text"
-          }
+          "content": "Text"
           },
           {
           "type": "text",
           "id": "title",
-          "label": {
-          "en": "Heading"
-          },
+          "label": "Heading",
           "default": "Video slide"
           },
           {
           "type": "richtext",
           "id": "text",
-          "label": {
-              "en": "Description"
-          },
-          "default": {
-          "en": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
-          }
+          "label":  "Description",
+          "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
           },
           {
           "type": "color", 
           "id": "color_text",
-          "label": {
-          "en": "Text color"
-          },
+          "label": "Text color",
           "default": "#ffffff"
           },
           {
           "type": "text",
           "id": "button_video_label_1",
-          "label": {
-          "en": "Button 1 label"
-          }
+          "label": "Button 1 label"
           },
           {
           "type": "url",
           "id": "button_link_video_1",
-          "label": {
-          "en": "Button link 1"
-          }
+          "label": "Button link 1"
           },
           {
             "type": "color_scheme",
             "id": "color_scheme_video_btn_1",
-            "label": {
-            "en": "Color Scheme Button 1"
-            },
+            "label": "Color Scheme Button 1",
             "default": "scheme-5"
           },
           {
           "type": "text",
           "id": "button_video_label_2",
-          "label": {
-          "en": "Button 2 label"
-          }
+          "label": "Button 2 label"
           },
           {
           "type": "url",
           "id": "button_link_video_2",
-          "label": {
-          "en": "Button link 2"
-          }
+          "label": "Button link 2"
           },
           {
             "type": "color_scheme",
             "id": "color_scheme_video_btn_2",
-            "label": {
-            "en": "Color Scheme Button 2"
-            },
+            "label": "Color Scheme Button 2",
             "default": "scheme-5"
           }
           ]
@@ -482,51 +472,37 @@ document.addEventListener('DOMContentLoaded',  function() {
           {
           "type": "color",
           "id": "color_bg",
-          "label": {
-          "en": "Background color (optional)"
-          },
+          "label":  "Background color (optional)",
           "default": "#fff"
           },
           {
           "type": "image_picker",
           "id": "image_bg",
-          "label": {
-          "en": "or use an image (required)"
-          }
+          "label":  "or use an image (required)"
           },
           {
           "type": "range",
           "id": "overlay_opacity",
-          "label": {
-          "en": "Overlay opacity"
-          },
+          "label":  "Overlay opacity",
           "min": 0,
           "max": 99,
           "step": 1,
-          "unit": {
-          "en": "%"
-          },
+          "unit":"%",
           "default": 0
           },
           {
           "type": "range",
           "id": "mobile_x_position",
-          "label": {
-          "en": "Mobile Image Position"
-          },
+          "label": "Mobile Image Position",
           "min": 0,
           "max": 99,
           "step": 1,
-          "unit": {
-          "en": "%"
-          },
+          "unit": "%",
           "default": 0
           },
           {
           "type": "header",
-          "content": {
-          "en": "Text"
-          }
+          "content": "Text"
           },
           {
           "type": "select",
@@ -576,19 +552,13 @@ document.addEventListener('DOMContentLoaded',  function() {
           "type": "text",
           "id": "title",
           "default": "Image slide",
-          "label": {
-          "en": "Heading"
-          }
+          "label": "Heading"
           },
           {
           "type": "richtext",
           "id": "text",
-          "label": {
-          "en": "Description"
-          },
-          "default": {
-          "en": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
-          }
+          "label": "Description",
+          "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
           },
           {
             "type": "image_picker",
@@ -598,24 +568,18 @@ document.addEventListener('DOMContentLoaded',  function() {
           {
           "type": "color",
           "id": "color_text",
-          "label": {
-          "en": "Text color"
-          },
+          "label": "Text color",
           "default": "#ffffff"
           },
           {
           "type": "text",
           "id": "img_button_1_label",
-          "label": {
-          "en": "Button 1 label"
-          }
+          "label": "Button 1 label"
           },
           {
           "type": "url",
           "id": "img_button_1_link",
-          "label": {
-          "en": "Button 1 link"
-          }
+          "label": "Button 1 link"
           },
           {
             "type": "color_scheme",
@@ -644,12 +608,8 @@ document.addEventListener('DOMContentLoaded',  function() {
   ],
   "presets": [
   {
-    "name": {
-    "en": "MW Slider Image Text" 
-    },
-    "category": {
-    "en": "Main"
-    },
+    "name": "MW Slider Image Text" ,
+    "category": "Main",
     "blocks": [
     {
     "type": "video"
