@@ -2364,7 +2364,7 @@ body .menu-drawer__close-button {
     height: 21px;
     display: flex;
     position: relative;
-    padding: 6px 10px 4px 10px;
+    padding: 4px 10px 4px 10px;
     text-align: center;
     justify-content: center;
     background: var(--gradient-background);
@@ -5414,6 +5414,12 @@ details[open] .your-content-class {
     animation-iteration-count: 1;
 }
 
+.product .price .mw_sold_out_badge {
+    margin-left: -6px !important;
+    margin-top: 3px !important;
+    height: 20px;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
@@ -5981,6 +5987,12 @@ details[open] .your-content-class {
     }
     .product .price .badge {
         margin-left: -4px !important;
+        margin-bottom: 6px !important;
+        height: 20px;
+    }
+    .product .price .mw_sold_out_badge {
+        margin-left: -4px !important;
+        margin-bottom: 6px !important;
     }
     .product__description h3 {
         font-weight: 600;
@@ -10695,7 +10707,7 @@ details-disclosure>details {
     border: 1px solid transparent;
     border-radius: var(--badge-corner-radius);
     display: inline-block;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     letter-spacing: 0.1rem;
     /* line-height: 1; */
     line-height: normal;
