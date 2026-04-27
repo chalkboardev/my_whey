@@ -1457,15 +1457,15 @@ body .menu-drawer__close-button {
     letter-spacing: 1px;
 }
 
-.product-grid-container .now_price_txt {
+.collection_s .product-grid-container .now_price_txt {
     position: absolute;
     display: flex;
     visibility: visible;
-    margin-top: -24px;
+    margin-top: -26px;
     font-size: 11px;
     text-transform: uppercase;
     /* font-weight: 600; */
-    color: #cacaca;
+    color: #dcdcdc;
     letter-spacing: 1px;
 }
 
