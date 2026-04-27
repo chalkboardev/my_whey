@@ -1268,6 +1268,7 @@ body .menu-drawer__close-button {
 
 .more_btn {
     width: 310px;
+    max-width: 310px !important;
     border-radius: 50px !important;
     font-weight: 600 !important;
     font-size: 16px !important;
@@ -1281,6 +1282,7 @@ body .menu-drawer__close-button {
 
 .more_btn:hover {
     width: 310px;
+    /* max-width: max-content; */
     border-radius: 50px !important;
     background: #ffffff00;
     color: #ff512b;
@@ -1291,6 +1293,10 @@ body .menu-drawer__close-button {
     padding: 1.5rem 5rem !important;
     /* transform: translateY(-2px) !important; */
     transition: all ease 0.25s;
+}
+
+.image-with-text__content .image-with-text__text+.button {
+    max-height: 50px;
 }
 
 .image-with-text__content .image-with-text__text+.button {
@@ -5507,6 +5513,7 @@ details[open] .your-content-class {
     }
     .more_btn:hover {
         width: 266px !important;
+        max-width: max-content;
         border-radius: 50px !important;
         background: #ffffff00;
         color: #ff512b;
@@ -6628,6 +6635,14 @@ details[open] .your-content-class {
 }
 
 @media screen and (min-width: 750px) {
+    .more_btn {
+        max-width: fit-content;
+    }
+    .image-with-text__content--desktop-left>* {
+        align-self: flex-start;
+        text-align: left;
+        max-width: 100%;
+    }
     .slider_header {
         font-size: 5rem !important;
         animation-direction: alternate;
