@@ -725,18 +725,34 @@ h4 {
 .videoBackground .videoBoxInfo,
 .videoBackground .imageBoxInfo_sld {
     margin-top: 0rem !important;
-    align-items: center !important;
+    /* align-items: center !important; */
     position: relative;
     display: flex;
-    justify-content: center !important;
+    /* justify-content: center !important; */
     flex-direction: column;
     z-index: 2;
-    margin: 0 0 3rem 0;
+    margin: 1rem 0 2rem 2rem;
     height: 32px;
     background: none;
     width: 100%;
     padding: 0;
     text-shadow: none;
+    font-size: 1.2rem;
+}
+
+.imageBoxInfo_sld.header-bottom-center {
+    align-items: center !important;
+    justify-content: flex-end !important;
+    text-align: center !important;
+    top: -4rem;
+    left: -2rem;
+}
+
+.imageBoxInfo_sld.header-bottom-right {
+    align-items: flex-end !important;
+    justify-content: end !important;
+    text-align: right !important;
+    right: 4rem;
 }
 
 .text_img_sld_img_box {
@@ -841,16 +857,16 @@ h4 {
     font-weight: bolder;
     text-transform: uppercase;
     letter-spacing: 3px;
-    animation-name: fadeInUp;
-    animation-direction: alternate;
-    animation-duration: 4s;
-    animation-iteration-count: 1;
 }
 
 
 /* -------------- END CUSTOM SLIDER WITH TEXT -------------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+    .imageBoxInfo_sld.header-bottom-center {
+        top: -3rem;
+        left: -2rem;
+    }
     .swiper-pagination_sld {
         bottom: 3% !important;
         left: 0rem !important;
@@ -986,10 +1002,15 @@ h4 {
         display: flex !important;
     }
     .swiper-pagination_sld {
-        margin: 2rem 0rem 1rem 0rem !important;
+        margin: -4rem auto 0 auto !important;
         display: block;
-        position: relative !important;
+        position: absolute !important;
         left: 0rem !important;
+        z-index: 9999999999 !important;
+        width: 100% !important;
+        bottom: unset !important;
+        height: 100%;
+        top: unset !important;
     }
     #text_div_sld .header_buttons {
         padding: 0rem 0rem 2rem 3rem;
@@ -1026,6 +1047,7 @@ h4 {
     .videoBackground .mobile_header_adjust {
         position: relative;
         margin-top: -12rem;
+        top: -2rem;
         display: block;
     }
     .videoBackground .videoBoxInfo,
