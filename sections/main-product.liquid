@@ -642,13 +642,24 @@ if (typerToo) {
                               // single_item_price = $('.pb-6b5d:visible').eq(0).find('.money').eq(0).html();
                               // single_item_price = single_item_price.substring(single_item_price.indexOf(";") + 1);
 
-                              var page_single_price = $('.heighten_me:visible').eq(0).text().replace(/R /g, "");
+                              var page_single_price = $('.product__info-wrapper .heighten_me:visible').eq(0).text().replace(/R /g, "");
                               var cleaned_single_price = page_single_price.replace("Now  ", "");
                               cleaned_single_price = Number(cleaned_single_price)*100;
                               single_item_price = cleaned_single_price;
                               //alert("FINDEME: " + findme);
                               //alert("FIND_FIRST: " + single_item_price );
                             }
+
+
+                            alert("BEFORE single_item_price: " + single_item_price);
+                            if(single_item_price == 0){
+                              var page_single_price = $('.price-item:visible').eq(0).text().replace(/R /g, "");
+                              var cleaned_single_price = page_single_price.replace("Now  ", "");
+                              cleaned_single_price = Number(cleaned_single_price);
+                              var single_item_price = cleaned_single_price*100;
+                            }
+                            alert("AFTER single_item_price: " + single_item_price);
+
 
                             if(use_quantity == 4){
                                   //console.log('clicked on last block...dont clear');
@@ -661,7 +672,7 @@ if (typerToo) {
                                           // ---------------- Access the FIRST element in the NodeList-----------------
                                           var firstElement_is = the_blocks_in_panda[0];
                                           //single_item_price = single_item_price.replace(/,/g, ""); // Remove all commas
-                                          single_item_price_1 = parseFloat(single_item_price)/100;
+                                          var single_item_price_1 = parseFloat(single_item_price)/100;
                                           single_item_price_1 = single_item_price_1.toFixed(2);
                                           //console.log("For Block Click -> single_item_price_1: " + single_item_price_1);
                                           
@@ -682,7 +693,7 @@ if (typerToo) {
                                           // ---------------- Access the SECOND element in the NodeList-----------------
                                           var secondElement_is = the_blocks_in_panda[1];
                                           //single_item_price = single_item_price.replace(/,/g, ""); // Remove all commas
-                                          single_item_price_2 = single_item_price;
+                                          var single_item_price_2 = single_item_price;
                                           single_item_price_2 = parseFloat(single_item_price)/100;
                                           single_item_price_2 = single_item_price_2.toFixed(2);
                                           
@@ -710,7 +721,7 @@ if (typerToo) {
                                           // ---------------- Access the THIRD element in the NodeList-----------------
                                           var thirdElement_is = the_blocks_in_panda[2];
                                           //console.log("single_item_price before format: " + single_item_price);
-                                          single_item_price_3 = single_item_price;
+                                          var single_item_price_3 = single_item_price;
                                           single_item_price_3 = parseFloat(single_item_price)/100;
                                           single_item_price_3 = single_item_price_3.toFixed(2);
                                           //console.log("single_item_price after format: " + single_item_price_3);
@@ -931,11 +942,17 @@ if (typerToo) {
          // console.log("YES query string...");
 
          setTimeout(function(){
-                var page_single_price = $('.heighten_me:visible').eq(0).text().replace(/R /g, "");
+                var page_single_price = $('.product__info-wrapper .heighten_me:visible').eq(0).text().replace(/R /g, "");
                 var cleaned_single_price = page_single_price.replace("Now  ", "");
                 cleaned_single_price = Number(cleaned_single_price);
                 var single_item_price = cleaned_single_price;
-                //alert(single_price_is);
+                alert(single_item_price);
+                if(single_item_price == 0){
+                  var page_single_price = $('.price-item:visible').eq(0).text().replace(/R /g, "");
+                  var cleaned_single_price = page_single_price.replace("Now  ", "");
+                  cleaned_single_price = Number(cleaned_single_price);
+                  var single_item_price = cleaned_single_price;
+                }
                         //// ----- START RESET THE LAST BLOCKS PRICING WHEN ANY OTHER PANDA BLOCKS ARE CLICKED -----
                         var the_blocks_in_panda = document.querySelectorAll('.pb-6b5d');
                         // Check if any elements were found
@@ -943,7 +960,7 @@ if (typerToo) {
                               // ---------------- Access the FIRST element in the NodeList-----------------
                               var firstElement_is = the_blocks_in_panda[0];
                               //single_item_price = single_item_price.replace(/,/g, ""); // Remove all commas
-                              single_item_price_1 = parseFloat(single_item_price);
+                              var single_item_price_1 = parseFloat(single_item_price);
                               single_item_price_1 = single_item_price_1.toFixed(2);
                               //console.log("For Block Click -> single_item_price_1: " + single_item_price_1);
                               
@@ -964,7 +981,7 @@ if (typerToo) {
                               // ---------------- Access the SECOND element in the NodeList-----------------
                               var secondElement_is = the_blocks_in_panda[1];
                               //single_item_price = single_item_price.replace(/,/g, ""); // Remove all commas
-                              single_item_price_2 = single_item_price;
+                              var single_item_price_2 = single_item_price;
                               single_item_price_2 = parseFloat(single_item_price);
                               single_item_price_2 = single_item_price_2.toFixed(2);
                               
@@ -992,7 +1009,7 @@ if (typerToo) {
                               // ---------------- Access the THIRD element in the NodeList-----------------
                               var thirdElement_is = the_blocks_in_panda[2];
                               //console.log("single_item_price before format: " + single_item_price);
-                              single_item_price_3 = single_item_price;
+                              var single_item_price_3 = single_item_price;
                               single_item_price_3 = parseFloat(single_item_price);
                               single_item_price_3 = single_item_price_3.toFixed(2);
                               //console.log("single_item_price after format: " + single_item_price_3);
@@ -1538,42 +1555,45 @@ if (typerToo) {
           }
 
               const childElement = document.getElementById('most_popular'); // Replace 'yourChildId' with the actual ID of your element
-              const parentElement = childElement.parentNode;
-              const grandparentElement = parentElement.parentNode;
+              if(childElement){
+                    const parentElement = childElement.parentNode;
+                    const grandparentElement = parentElement.parentNode;
 
-              if (grandparentElement) {
-                //const grandparentId = grandparentElement.id;
-                grandparentElement.id = 'mw_subscription_block';
-                //console.log('Grandparent ID:', grandparentElement.id);
-              } else {
-                //console.log('No grandparent found.');
+                    if (grandparentElement) {
+                      //const grandparentId = grandparentElement.id;
+                      grandparentElement.id = 'mw_subscription_block';
+                      //console.log('Grandparent ID:', grandparentElement.id);
+                    } else {
+                      //console.log('No grandparent found.');
+                    }
+
+                    let img = document.createElement("img");
+                    img.src = "https://cdn.shopify.com/s/files/1/0713/8685/7724/files/thumb_1.png?v=1754842951"; // Replace with your image path
+                    img.alt = "Popular Icon"; // Provide descriptive alt text
+                    img.classList.add('popular_icon');
+                    img.width = 9; // Optional: set image width
+                    img.height = 9; // Optional: set image height
+                    img.style.right = '2px';
+                    newSpan.prepend(img);
+
+                    var elements = document.getElementsByClassName("shopify_subscriptions_app_policy");
+                    for (var i = 0; i < elements.length; i++) {
+                      //Or elements[i].textContent = "<strong>New HTML</strong>";
+                      elements[i].innerHTML = "Subscription auto-renews | <span class='click_shopify-subscription-policy-button'>Cancellation Policy</span>";
+                      elements[i].addEventListener('click', function() {
+                          console.log('Cancellation Policy clicked (main-product.liquid mmm...)');
+                          const cancel_policy_div = document.getElementById('cancellation_policy');
+                          const bodyElement = document.body;
+                          cancel_policy_div.style.background = 'rgb(0 0 0 / 50%)';
+                          cancel_policy_div.style.opacity = '1';
+                          cancel_policy_div.style.zIndex = '999';
+                          cancel_policy_div.style.visibility = 'visible';
+                          //cancel_policy_div.style.alignItems = 'center';
+                          bodyElement.classList.add('preventBodyScroll');
+                      });
+                    }
               }
 
-              let img = document.createElement("img");
-              img.src = "https://cdn.shopify.com/s/files/1/0713/8685/7724/files/thumb_1.png?v=1754842951"; // Replace with your image path
-              img.alt = "Popular Icon"; // Provide descriptive alt text
-              img.classList.add('popular_icon');
-              img.width = 9; // Optional: set image width
-              img.height = 9; // Optional: set image height
-              img.style.right = '2px';
-              newSpan.prepend(img);
-
-              var elements = document.getElementsByClassName("shopify_subscriptions_app_policy");
-              for (var i = 0; i < elements.length; i++) {
-                //Or elements[i].textContent = "<strong>New HTML</strong>";
-                elements[i].innerHTML = "Subscription auto-renews | <span class='click_shopify-subscription-policy-button'>Cancellation Policy</span>";
-                elements[i].addEventListener('click', function() {
-                    console.log('Cancellation Policy clicked (main-product.liquid mmm...)');
-                    const cancel_policy_div = document.getElementById('cancellation_policy');
-                    const bodyElement = document.body;
-                    cancel_policy_div.style.background = 'rgb(0 0 0 / 50%)';
-                    cancel_policy_div.style.opacity = '1';
-                    cancel_policy_div.style.zIndex = '999';
-                    cancel_policy_div.style.visibility = 'visible';
-                    //cancel_policy_div.style.alignItems = 'center';
-                    bodyElement.classList.add('preventBodyScroll');
-                });
-              }
 
 
             });
@@ -1597,7 +1617,7 @@ if (typerToo) {
                               // ---------------- Access the FIRST element in the NodeList-----------------
                               var firstElement_is = the_blocks_in_panda[0];
                               //single_item_price = single_item_price.replace(/,/g, ""); // Remove all commas
-                              single_item_price_1 = parseFloat(single_item_price);
+                              var single_item_price_1 = parseFloat(single_item_price);
                               single_item_price_1 = single_item_price_1.toFixed(2);
                               //console.log("For Block Click -> single_item_price_1: " + single_item_price_1);
                               
@@ -1618,7 +1638,7 @@ if (typerToo) {
                               // ---------------- Access the SECOND element in the NodeList-----------------
                               var secondElement_is = the_blocks_in_panda[1];
                               //single_item_price = single_item_price.replace(/,/g, ""); // Remove all commas
-                              single_item_price_2 = single_item_price;
+                              var single_item_price_2 = single_item_price;
                               single_item_price_2 = parseFloat(single_item_price);
                               single_item_price_2 = single_item_price_2.toFixed(2);
                               
@@ -1646,7 +1666,7 @@ if (typerToo) {
                               // ---------------- Access the THIRD element in the NodeList-----------------
                               var thirdElement_is = the_blocks_in_panda[2];
                               //console.log("single_item_price before format: " + single_item_price);
-                              single_item_price_3 = single_item_price;
+                              var single_item_price_3 = single_item_price;
                               single_item_price_3 = parseFloat(single_item_price);
                               single_item_price_3 = single_item_price_3.toFixed(2);
                               //console.log("single_item_price after format: " + single_item_price_3);
