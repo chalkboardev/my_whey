@@ -618,7 +618,7 @@ if (!customElements.get('product-info')) {
                               // ---------------- Access the SECOND element in the NodeList-----------------
                               var secondElement_is = the_blocks_in_panda[1];
                               //single_item_price = single_item_price.replace(/,/g, ""); // Remove all commas
-                              single_item_price_2 = single_item_price;
+                              var single_item_price_2 = single_item_price;
                               single_item_price_2 = parseFloat(single_item_price);
                               single_item_price_2 = single_item_price_2.toFixed(2);
                               
@@ -645,7 +645,7 @@ if (!customElements.get('product-info')) {
                               // ---------------- Access the THIRD element in the NodeList-----------------
                               var thirdElement_is = the_blocks_in_panda[2];
                               console.log("single_item_price before format: " + single_item_price);
-                              single_item_price_3 = single_item_price;
+                              var single_item_price_3 = single_item_price;
                               single_item_price_3 = parseFloat(single_item_price);
                               single_item_price_3 = single_item_price_3.toFixed(2);
                               console.log("single_item_price after format: " + single_item_price_3);
