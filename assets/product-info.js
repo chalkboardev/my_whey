@@ -586,11 +586,17 @@ if (!customElements.get('product-info')) {
             } else {
               console.log('DIDNT FIND the closest...');
               setTimeout(function(){
-                var page_single_price = $('.heighten_me:visible').eq(0).text().replace(/R /g, "");
+                // ---------------- FIND THE SINGLE ITEM PRICE -----------------
+                var page_single_price = $('.product__info-wrapper .heighten_me:visible').eq(0).text().replace(/R /g, "");
                 var cleaned_single_price = page_single_price.replace("Now  ", "");
                 cleaned_single_price = Number(cleaned_single_price);
                 var single_item_price = cleaned_single_price;
-                //alert(single_price_is);
+                if(single_item_price == 0){
+                  var page_single_price = $('.price-item:visible').eq(0).text().replace(/R /g, "");
+                  var cleaned_single_price = page_single_price.replace("Now  ", "");
+                  cleaned_single_price = Number(cleaned_single_price);
+                  var single_item_price = cleaned_single_price;
+                }
                         //// ----- START RESET THE LAST BLOCKS PRICING WHEN ANY OTHER PANDA BLOCKS ARE CLICKED -----
                         var the_blocks_in_panda = document.querySelectorAll('.pb-6b5d');
                         // Check if any elements were found
@@ -598,16 +604,10 @@ if (!customElements.get('product-info')) {
                               // ---------------- Access the FIRST element in the NodeList-----------------
                               var firstElement_is = the_blocks_in_panda[0];
                               //single_item_price = single_item_price.replace(/,/g, ""); // Remove all commas
-                              single_item_price_1 = parseFloat(single_item_price);
+                              let single_item_price_1 = parseFloat(single_item_price);
                               single_item_price_1 = single_item_price_1.toFixed(2);
-                              //console.log("For Block Click -> single_item_price_1: " + single_item_price_1);
                               
-                              var reset_last_block_totals = +single_item_price_1;
-                              var the_discount_here = $(firstElement_is).find('.money').eq(0).html();
-                              
-                              // var the_percentage_off_1stBlck = $(firstElement_is).find('.pb-1856').eq(0).html();
                               var the_percentage_off_1stBlck = 0;
-                              //alert("the_percentage_off_1stBlck: " + the_percentage_off_1stBlck);
 
                               var original_pricing_1 = (single_item_price_1*1).toFixed(2);
                               var discounted_new_1 = (original_pricing_1 - (original_pricing_1*(the_percentage_off_1stBlck/100)) ).toFixed(2);
