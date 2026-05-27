@@ -707,7 +707,7 @@ if (!customElements.get('product-info')) {
                               //$(lastElement).find('.money').eq(1).html("R " + original_pricing.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
                               //console.log("The last element with class 'pb-6b5d' is:", lastElement);
                         } else {
-                          console.log("No elements with 'pb-6b5d' were found.");
+                          console.log("product-info.js 3rd: No elements with 'pb-6b5d' were found.");
                         }
                   //// ----- END RESET THE LAST BLOCKS PRICING WHEN ANY OTHER PANDA BLOCKS ARE CLICKED -----
               }, 250);
