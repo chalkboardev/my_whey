@@ -246,8 +246,8 @@
                             <span class="save_it">
                               {%- assign the_amount_off = discount.discount_application.value -%}
                               {%- assign the_original_tally = item.original_line_price | divided_by: 100.00 -%}
-                              {% assign percentage_saved = the_amount_off | divided_by: the_original_tally | times: 100.00  %}
-                              SAVE {{ percentage_saved }}%  
+                              {%- assign percentage_saved = the_amount_off | divided_by: the_original_tally | times: 100.00 | round -%}
+                              SAVE {{ percentage_saved }}% 
                               {% comment %} SAVE {{ discount.discount_application.value }}% {% endcomment %}
                             </span>
                           {% comment %} TOTAL SAVED: {{ discount.discount_application.total_allocated_amount | money }} <br> {% endcomment %}
