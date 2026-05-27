@@ -4993,6 +4993,9 @@ h3 {
 
 .timer {
     font-weight: 600;
+    margin-right: -3px;
+    width: 62px;
+    display: inline-block;
 }
 
 .subscribe_me {}
