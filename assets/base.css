@@ -5417,6 +5417,14 @@ details[open] .your-content-class {
     visibility: hidden;
 }
 
+.money {
+    animation-name: fadeIn;
+    /* animation-delay: 1s; */
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+}
+
 
 /* END HIDE HOME PAGE FLAVOUR SECTION  */
 

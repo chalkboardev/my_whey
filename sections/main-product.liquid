@@ -573,8 +573,13 @@ const observer1 = new MutationObserver((mutationsList, observer) => {
 // ---------- END DETECT WHEN THE PANDA QUANTITY SELECTOR ON THE 4TH BLOCK IS ADDED TO THE DOM --------
 
 setTimeout(function(){
-  // $('input[type="radio"][name="Size-2"]:visible:checked').trigger('click');
-  //alert('hello?');
+
+  // $('.money').css('animation-name', 'fadeIn');
+  // $('.money').css('animation-duration', '1s');
+  // $('.money').css('animation-iteration', '1');
+  // $('.money').css('animation-direction', 'alternate');
+  // $('.money').css('visibility', 'visible');
+
 // Native JavaScript equivalent (No jQuery required)
 var typerToo = document.querySelector('input[type="radio"][name^="Size-2"]:checked');
 if (typerToo) {
@@ -870,7 +875,7 @@ if (typerToo) {
           } else {
             console.log("Did not find a panda section:");
           }
-}, 3000);
+}, 2500);
 
     var is_quickv_open = document.querySelector('[id^="QuickAdd-"]');
     if ($("[id^='QuickAdd-']").length > 0) {
