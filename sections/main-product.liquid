@@ -651,14 +651,14 @@ if (typerToo) {
                             }
 
 
-                            alert("BEFORE single_item_price: " + single_item_price);
+                            //alert("BEFORE single_item_price: " + single_item_price);
                             if(single_item_price == 0){
                               var page_single_price = $('.price-item:visible').eq(0).text().replace(/R /g, "");
                               var cleaned_single_price = page_single_price.replace("Now  ", "");
                               cleaned_single_price = Number(cleaned_single_price);
                               var single_item_price = cleaned_single_price*100;
                             }
-                            alert("AFTER single_item_price: " + single_item_price);
+                            //alert("AFTER single_item_price: " + single_item_price);
 
 
                             if(use_quantity == 4){
