@@ -669,7 +669,8 @@ if (typerToo) {
 
                                           var original_pricing_1 = (single_item_price_1*1).toFixed(2);
                                           var discounted_new_1 = (original_pricing_1 - (original_pricing_1*(the_percentage_off_1stBlck/100)) ).toFixed(2);
-                                          //alert(discounted_new_1);
+                                       
+                                          discounted_new_1 = discounted_new_1.replaceAll(".", ",");
                                           $(firstElement_is).find('.money').eq(0).html("R " + discounted_new_1);
                                           $(firstElement_is).find('.money').eq(1).html("R " + original_pricing_1);
 
@@ -697,6 +698,7 @@ if (typerToo) {
                                           var original_pricing_2 = (single_item_price_2*2).toFixed(2);
                                           var discounted_new_2 = (original_pricing_2 - (original_pricing_2*(get_percent_2/100)) ).toFixed(2);
 
+                                          discounted_new_2 = discounted_new_2.replaceAll(".", ",");
                                           $(secondElement_is).find('.money').eq(0).html("R " + discounted_new_2);
                                           $(secondElement_is).find('.money').eq(1).html("R " + original_pricing_2);
 
@@ -727,6 +729,7 @@ if (typerToo) {
                                           var original_pricing_3 = (single_item_price_3*3).toFixed(2);
                                           var discounted_new_3 = (original_pricing_3 - (original_pricing_3*(get_percent_3/100)) ).toFixed(2);
 
+                                          discounted_new_3 = discounted_new_3.replaceAll(".", ",");
                                           $(thirdElement_is).find('.money').eq(0).html("R " + discounted_new_3);
                                           $(thirdElement_is).find('.money').eq(1).html("R " + original_pricing_3);
                                         
@@ -758,6 +761,7 @@ if (typerToo) {
                                         var original_pricing_4 = (single_item_price_4*4).toFixed(2);
                                         var discounted_new_4 = (original_pricing_4 - (original_pricing_4*(get_percent/100)) ).toFixed(2);
 
+                                        discounted_new_4 = discounted_new_4.replaceAll(".", ",");
                                         $(lastElement_is).find('.money').eq(0).html("R " + discounted_new_4);
                                         $(lastElement_is).find('.money').eq(1).html("R " + original_pricing_4);
                                         //$(lastElement).find('.money').eq(1).html("R " + original_pricing.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
@@ -948,6 +952,7 @@ if (typerToo) {
                               var original_pricing_1 = (single_item_price_1*1).toFixed(2);
                               var discounted_new_1 = (original_pricing_1 - (original_pricing_1*(the_percentage_off_1stBlck/100)) ).toFixed(2);
 
+                              discounted_new_1 = discounted_new_1.replaceAll(".", ",");
                               $(firstElement_is).find('.money').eq(0).html("R " + discounted_new_1);
                               $(firstElement_is).find('.money').eq(1).html("R " + original_pricing_1);
 
@@ -972,9 +977,10 @@ if (typerToo) {
                                   //console.log("The symbol was not found in the string.");
                               }
 
-                              var original_pricing_2 = (single_item_price_2*2).toFixed(2);
+                              var original_pricing_2 = (single_item_price_2*2).toFixed(2); 
                               var discounted_new_2 = (original_pricing_2 - (original_pricing_2*(get_percent_2/100)) ).toFixed(2);
 
+                              discounted_new_2 = discounted_new_2.replaceAll(".", ",");
                               $(secondElement_is).find('.money').eq(0).html("R " + discounted_new_2);
                               $(secondElement_is).find('.money').eq(1).html("R " + original_pricing_2);
 
@@ -1005,6 +1011,7 @@ if (typerToo) {
                               var original_pricing_3 = (single_item_price_3*3).toFixed(2);
                               var discounted_new_3 = (original_pricing_3 - (original_pricing_3*(get_percent_3/100)) ).toFixed(2);
 
+                              discounted_new_3 = discounted_new_3.replaceAll(".", ",");
                               $(thirdElement_is).find('.money').eq(0).html("R " + discounted_new_3);
                               $(thirdElement_is).find('.money').eq(1).html("R " + original_pricing_3);
 
@@ -1036,6 +1043,7 @@ if (typerToo) {
                               var original_pricing_4 = (single_item_price_4*4).toFixed(2);
                               var discounted_new_4 = (original_pricing_4 - (original_pricing_4*(get_percent/100)) ).toFixed(2);
 
+                              discounted_new_4 = discounted_new_4.replaceAll(".", ",");
                               $(lastElement_is).find('.money').eq(0).html("R " + discounted_new_4);
                               $(lastElement_is).find('.money').eq(1).html("R " + original_pricing_4);
                               //$(lastElement).find('.money').eq(1).html("R " + original_pricing.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
@@ -1598,6 +1606,7 @@ if (typerToo) {
                               var original_pricing_1 = (single_item_price_1*1).toFixed(2);
                               var discounted_new_1 = (original_pricing_1 - (original_pricing_1*(the_percentage_off_1stBlck/100)) ).toFixed(2);
 
+                              discounted_new_1 = discounted_new_1.replaceAll(".", ",");
                               $(firstElement_is).find('.money').eq(0).html("R " + discounted_new_1);
                               $(firstElement_is).find('.money').eq(1).html("R " + original_pricing_1);
 
@@ -1625,6 +1634,7 @@ if (typerToo) {
                               var original_pricing_2 = (single_item_price_2*2).toFixed(2);
                               var discounted_new_2 = (original_pricing_2 - (original_pricing_2*(get_percent_2/100)) ).toFixed(2);
 
+                              discounted_new_2 = discounted_new_2.replaceAll(".", ",");
                               $(secondElement_is).find('.money').eq(0).html("R " + discounted_new_2);
                               $(secondElement_is).find('.money').eq(1).html("R " + original_pricing_2);
 
@@ -1655,6 +1665,7 @@ if (typerToo) {
                               var original_pricing_3 = (single_item_price_3*3).toFixed(2);
                               var discounted_new_3 = (original_pricing_3 - (original_pricing_3*(get_percent_3/100)) ).toFixed(2);
 
+                              discounted_new_3 = discounted_new_3.replaceAll(".", ",");
                               $(thirdElement_is).find('.money').eq(0).html("R " + discounted_new_3);
                               $(thirdElement_is).find('.money').eq(1).html("R " + original_pricing_3);
 
@@ -1686,6 +1697,7 @@ if (typerToo) {
                               var original_pricing_4 = (single_item_price_4*4).toFixed(2);
                               var discounted_new_4 = (original_pricing_4 - (original_pricing_4*(get_percent/100)) ).toFixed(2);
 
+                              discounted_new_4 = discounted_new_4.replaceAll(".", ",");
                               $(lastElement_is).find('.money').eq(0).html("R " + discounted_new_4);
                               $(lastElement_is).find('.money').eq(1).html("R " + original_pricing_4);
                               //$(lastElement).find('.money').eq(1).html("R " + original_pricing.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
