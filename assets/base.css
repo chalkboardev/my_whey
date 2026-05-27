@@ -5412,7 +5412,7 @@ details[open] .your-content-class {
 }
 
 
-/* START HIDE HOME PAGE FLAVOUR SECTION  */
+/* ----------- START HIDE HOME PAGE FLAVOUR SECTION -------------  */
 
 #text_slide_flex,
 #shopify-section-template--18522096697596__slideshow_image_text_JC3XYQ,
@@ -5421,6 +5421,9 @@ details[open] .your-content-class {
     visibility: hidden;
 }
 
+
+/* END HIDE HOME PAGE FLAVOUR SECTION  */
+
 .money {
     animation-name: fadeIn;
     /* animation-delay: 1s; */
@@ -5428,9 +5431,6 @@ details[open] .your-content-class {
     animation-iteration-count: 1;
     animation-direction: alternate;
 }
-
-
-/* END HIDE HOME PAGE FLAVOUR SECTION  */
 
 [id^="Slider-Gallery-quickadd-template--"] .my_product_thumb {
     animation-name: fadeIn;
