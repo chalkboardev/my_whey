@@ -5450,6 +5450,48 @@ details[open] .your-content-class {
     height: 20px;
 }
 
+.mw_account_link {
+    /* animation-name: flipOutY;
+    animation-direction: alternate;
+    animation-duration: 2s;
+    animation-iteration-count: 1; */
+    transform: scale(1);
+    transition: all ease 300ms;
+}
+
+.mw_account_link:hover {
+    /* animation-name: flipOutY;
+    animation-direction: alternate;
+    animation-duration: 2s;
+    animation-iteration-count: 1; */
+    transform: scale(1.2);
+    transition: all ease 300ms;
+}
+
+.desk_search_modal .icon-search {
+    transform: scale(1);
+    transition: all ease 300ms;
+}
+
+.desk_search_modal .icon-search:hover {
+    transform: scale(1.2);
+    transition: all ease 300ms;
+    /* animation-name: flipInY;
+    animation-direction: alternate;
+    animation-duration: 4s;
+    animation-iteration-count: 1; */
+}
+
+.header__icon--cart {
+    transform: scale(1);
+    transition: all ease 300ms;
+}
+
+.header__icon--cart:hover {
+    transform: scale(1.2);
+    transition: all ease 300ms;
+}
+
 
 /* ---------- ONLY MOBILE ONLY START ---------- */
 
@@ -10258,6 +10300,7 @@ input[type='checkbox'] {
     justify-self: end;
     padding-right: 0.8rem;
     z-index: 3;
+    transition: all ease 2s;
 }
 
 .header__icons .shopify-app-block {
@@ -10289,6 +10332,7 @@ input[type='checkbox'] {
 .header__icon .svg-wrapper_my {
     width: 27px;
     height: 27px;
+    transition: all ease 300ms;
 }
 
 .burger_icon {
@@ -10299,7 +10343,7 @@ input[type='checkbox'] {
 .burger_icon:hover {
     width: 24px;
     height: 24px;
-    transition: all 150ms;
+    transition: all 300ms;
 }
 
 .utility_cart_link .svg-wrapper_my {
@@ -10317,9 +10361,8 @@ input[type='checkbox'] {
 }
 
 .header__icons .svg-wrapper_my:hover {
-    width: 30px;
-    height: 30px;
-    transition: all 150ms;
+    /* transform: scale(1.1);
+    transition: all ease 300ms; */
 }
 
 .menu-drawer__account account-icon>.svg-wrapper {
@@ -10334,7 +10377,7 @@ input[type='checkbox'] {
 
 .header__icon:hover .icon,
 .modal__close-button:hover .icon {
-    transform: scale(1.07);
+    /* transform: scale(1.07); */
 }
 
 .header__icon .icon {
