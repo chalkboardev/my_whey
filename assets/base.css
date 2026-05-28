@@ -9722,6 +9722,12 @@ input[type='checkbox'] {
     height: 3.4rem;
     width: 3.4rem;
     background-color: transparent;
+    transition: all ease 300ms;
+}
+
+.modal__close-button.link:hover {
+    opacity: 0.7;
+    transition: all ease 300ms;
 }
 
 .modal__close-button .icon {
