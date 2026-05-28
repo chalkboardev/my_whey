@@ -5460,12 +5460,13 @@ details[open] .your-content-class {
 }
 
 .mw_account_link:hover {
-    /* animation-name: flipOutY;
-    animation-direction: alternate;
-    animation-duration: 2s;
-    animation-iteration-count: 1; */
     transform: scale(1.2);
     transition: all ease 300ms;
+}
+
+.mw_account_link .account_icon:hover {
+    /* transform: scale(1.2);
+    transition: all ease 300ms; */
 }
 
 .desk_search_modal .icon-search {
