@@ -5462,6 +5462,7 @@ details[open] .your-content-class {
 .mw_account_link:hover {
     transform: scale(1.2);
     transition: all ease 300ms;
+    opacity: 0.7;
 }
 
 .mw_account_link .account_icon:hover {
@@ -5477,6 +5478,7 @@ details[open] .your-content-class {
 .desk_search_modal .icon-search:hover {
     transform: scale(1.2);
     transition: all ease 300ms;
+    opacity: 0.7;
     /* animation-name: flipInY;
     animation-direction: alternate;
     animation-duration: 4s;
@@ -5491,6 +5493,7 @@ details[open] .your-content-class {
 .header__icon--cart:hover {
     transform: scale(1.2);
     transition: all ease 300ms;
+    opacity: 0.7;
 }
 
 
