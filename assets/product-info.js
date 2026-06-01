@@ -460,7 +460,7 @@ if (!customElements.get('product-info')) {
                       $(this).click(function() {
                             // ----- FIND WHICH PANDA BLOCK IS CLICKED -----
                             var the_block_single_name_is = $(this).find('.pb-56aa').html().toLowerCase();
-                            console.log('The block title IS:' + the_block_single_name_is);
+                            //console.log('The block title IS:' + the_block_single_name_is);
                             if(the_block_single_name_is == "single" || the_block_single_name_is == "buy 1"){
                                 var use_quantity = 1;
                             } else if(the_block_single_name_is == "buy 2"){
