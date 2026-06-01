@@ -431,7 +431,7 @@ if (!customElements.get('product-info')) {
                                             var startIndex_4thBlck = symbolIndex_4thBlck - 2;
                                             var get_percent = the_percentage_off_4thBlck.substring(startIndex_4thBlck, symbolIndex_4thBlck);
                                             get_percent = +get_percent;
-                                            console.log("The two characters before the symbol are:", get_percent);
+                                            //console.log("The two characters before the symbol are:", get_percent);
                                         } else if (symbolIndex_4thBlck !== -1 && symbolIndex_4thBlck < 2) {
                                             //console.log("The symbol is found, but there are not enough characters before it.");
                                         } else {
@@ -491,7 +491,7 @@ if (!customElements.get('product-info')) {
                                             var startIndex_4thBlck = symbolIndex_4thBlck - 2;
                                             var get_percent = the_percentage_off_4thBlck.substring(startIndex_4thBlck, symbolIndex_4thBlck);
                                             get_percent = +get_percent;
-                                            console.log("The two characters before the symbol are:", get_percent);
+                                            //console.log("The two characters before the symbol are:", get_percent);
                                         } else if (symbolIndex_4thBlck !== -1 && symbolIndex_4thBlck < 2) {
                                             //console.log("The symbol is found, but there are not enough characters before it.");
                                         } else {
@@ -659,7 +659,7 @@ if (!customElements.get('product-info')) {
                                   var startIndex_3rdBlck = symbolIndex_3rdBlck - 2;
                                   var get_percent_3 = the_percentage_off_3rdBlck.substring(startIndex_3rdBlck, symbolIndex_3rdBlck);
                                   get_percent_3 = +get_percent_3;
-                                  console.log("The two characters before the symbol are:", get_percent_3);
+                                  //console.log("The two characters before the symbol are:", get_percent_3);
                               } else if (symbolIndex_3rdBlck !== -1 && symbolIndex_3rdBlck < 2) {
                                   console.log("The symbol is found, but there are not enough characters before it.");
                               } else {
