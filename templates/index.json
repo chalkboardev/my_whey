@@ -666,14 +666,10 @@
             "mobile_x_position": 50,
             "desktop_content_position": "header-bottom-center",
             "title": "Tropical",
-            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
             "color_text": "#ffffff",
             "img_button_1_label": "Tropical",
             "img_button_1_link": "shopify://products/real-apple-juice-powder",
-            "img_button_1_color_scheme": "scheme-5",
-            "img_button_2_label": "",
-            "img_button_2_link": "",
-            "img_button_2_color_scheme": "scheme-5"
+            "img_button_1_color_scheme": "scheme-5"
           }
         },
         "image_E9CBWg": {
@@ -685,14 +681,10 @@
             "mobile_x_position": 50,
             "desktop_content_position": "header-middle-left",
             "title": "Image slide",
-            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
             "color_text": "#ffffff",
-            "img_button_1_label": "",
+            "img_button_1_label": "Vanilla",
             "img_button_1_link": "",
-            "img_button_1_color_scheme": "scheme-5",
-            "img_button_2_label": "",
-            "img_button_2_link": "",
-            "img_button_2_color_scheme": "scheme-5"
+            "img_button_1_color_scheme": "scheme-5"
           }
         },
         "image_cAzMpb": {
@@ -704,14 +696,10 @@
             "mobile_x_position": 50,
             "desktop_content_position": "header-middle-left",
             "title": "Image slide",
-            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
             "color_text": "#ffffff",
             "img_button_1_label": "",
             "img_button_1_link": "",
-            "img_button_1_color_scheme": "scheme-5",
-            "img_button_2_label": "",
-            "img_button_2_link": "",
-            "img_button_2_color_scheme": "scheme-5"
+            "img_button_1_color_scheme": "scheme-5"
           }
         },
         "image_tHXkhM": {
@@ -723,14 +711,10 @@
             "mobile_x_position": 50,
             "desktop_content_position": "header-middle-left",
             "title": "Image slide",
-            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
             "color_text": "#ffffff",
             "img_button_1_label": "",
             "img_button_1_link": "",
-            "img_button_1_color_scheme": "scheme-5",
-            "img_button_2_label": "",
-            "img_button_2_link": "",
-            "img_button_2_color_scheme": "scheme-5"
+            "img_button_1_color_scheme": "scheme-5"
           }
         },
         "image_Eht8VV": {
@@ -742,14 +726,10 @@
             "mobile_x_position": 50,
             "desktop_content_position": "header-middle-left",
             "title": "Image slide",
-            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
             "color_text": "#ffffff",
             "img_button_1_label": "",
             "img_button_1_link": "",
-            "img_button_1_color_scheme": "scheme-5",
-            "img_button_2_label": "",
-            "img_button_2_link": "",
-            "img_button_2_color_scheme": "scheme-5"
+            "img_button_1_color_scheme": "scheme-5"
           }
         },
         "image_tUChkW": {
@@ -761,14 +741,10 @@
             "mobile_x_position": 50,
             "desktop_content_position": "header-middle-left",
             "title": "Image slide",
-            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
             "color_text": "#ffffff",
             "img_button_1_label": "",
             "img_button_1_link": "",
-            "img_button_1_color_scheme": "scheme-5",
-            "img_button_2_label": "",
-            "img_button_2_link": "",
-            "img_button_2_color_scheme": "scheme-5"
+            "img_button_1_color_scheme": "scheme-5"
           }
         },
         "image_4JYyyL": {
@@ -780,14 +756,10 @@
             "mobile_x_position": 50,
             "desktop_content_position": "header-middle-left",
             "title": "Image slide",
-            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
             "color_text": "#ffffff",
             "img_button_1_label": "",
             "img_button_1_link": "",
-            "img_button_1_color_scheme": "scheme-5",
-            "img_button_2_label": "",
-            "img_button_2_link": "",
-            "img_button_2_color_scheme": "scheme-5"
+            "img_button_1_color_scheme": "scheme-5"
           }
         },
         "video_nUzbyE": {
@@ -796,15 +768,9 @@
           "settings": {
             "video_link": "",
             "desktop_content_position": "header-middle-left",
-            "title": "Video slide",
-            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
-            "color_text": "#ffffff",
             "button_video_label_1": "",
             "button_link_video_1": "",
-            "color_scheme_video_btn_1": "",
-            "button_video_label_2": "",
-            "button_link_video_2": "",
-            "color_scheme_video_btn_2": ""
+            "color_scheme_video_btn_1": ""
           }
         }
       },
