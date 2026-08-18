@@ -20,6 +20,17 @@
         "modal_content": "<p>Get <strong>exclusive</strong> <strong>access to</strong> <strong>specials</strong> via our newsletter.  </p><p><strong>SUBSCRIBE NOW</strong> and get <strong>10% LESS</strong> on your first order!</p>"
       }
     },
+    "pop_up_modal_ywANtw": {
+      "type": "pop_up_modal",
+      "name": "Pop-up Modal",
+      "settings": {
+        "modal_image": "shopify://shop_images/mw_moda_3.jpg",
+        "background_img_position": 0,
+        "trigger": "subscribe_me",
+        "modal_title": "Subscribe & Save!",
+        "modal_content": "<p>Get <strong>exclusive</strong> <strong>access to</strong> <strong>specials</strong> via our newsletter.  </p><p><strong>SUBSCRIBE NOW</strong> and get <strong>10% LESS</strong> on your first order!</p>"
+      }
+    },
     "custom_slideshow_wMQLCP": {
       "type": "custom-slideshow",
       "blocks": {
@@ -992,6 +1003,7 @@
   },
   "order": [
     "pop_up_modal_J6pTLM",
+    "pop_up_modal_ywANtw",
     "custom_slideshow_wMQLCP",
     "video_banner_687P9e",
     "image_banner",

@@ -14,35 +14,59 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
-        "announcement-bar-0": {
+        "announcement_EdQ89j": {
+          "type": "announcement",
+          "settings": {
+            "text": "📦 Production Pause: Orders remain open, but processing is paused from 19–23 August. Orders will begin processing again from Monday, 24 August.",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_EdQ89j"
+      ],
+      "settings": {
+        "color_scheme": "scheme-5",
+        "show_line_separator": true,
+        "show_social": false,
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
+    },
+    "announcement_bar_YYhjVd": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_JHMtEX": {
           "type": "announcement",
           "settings": {
             "text": "FREE SHIPPING ON ORDERS OVER R1000",
             "link": ""
           }
         },
-        "announcement_G77TeC": {
+        "announcement_HmUMxT": {
           "type": "announcement",
           "settings": {
             "text": "*R195 CREATINE MONOHYDRATE",
             "link": "shopify://products/creatine-monohydrate-500g"
           }
         },
-        "announcement_pNF8Xg": {
+        "announcement_JrrYcK": {
           "type": "announcement",
           "settings": {
             "text": "DO IT YOUR WAY WITH MY WHEY...",
             "link": ""
           }
         },
-        "announcement_hRTdhd": {
+        "announcement_xqxrcV": {
           "type": "announcement",
           "settings": {
             "text": "SALE NOW ON! BUNDLE & SAVE UP TO 15%",
             "link": ""
           }
         },
-        "announcement_dVfHyy": {
+        "announcement_UqVjxm": {
           "type": "announcement",
           "settings": {
             "text": "QUALITY. PURITY.",
@@ -51,11 +75,11 @@
         }
       },
       "block_order": [
-        "announcement-bar-0",
-        "announcement_G77TeC",
-        "announcement_pNF8Xg",
-        "announcement_hRTdhd",
-        "announcement_dVfHyy"
+        "announcement_JHMtEX",
+        "announcement_HmUMxT",
+        "announcement_JrrYcK",
+        "announcement_xqxrcV",
+        "announcement_UqVjxm"
       ],
       "settings": {
         "color_scheme": "scheme-5",
@@ -137,6 +161,7 @@
   },
   "order": [
     "announcement-bar",
+    "announcement_bar_YYhjVd",
     "header"
   ]
 }
