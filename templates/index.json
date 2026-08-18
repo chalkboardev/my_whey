@@ -13,15 +13,16 @@
       "type": "pop_up_modal",
       "name": "Pop-up Modal",
       "settings": {
-        "modal_image": "shopify://shop_images/mw_moda_3.jpg",
+        "modal_image": "shopify://shop_images/my_whey_production_pause.png",
         "background_img_position": 0,
         "trigger": "subscribe_me",
-        "modal_title": "Subscribe & Save!",
-        "modal_content": "<p>Get <strong>exclusive</strong> <strong>access to</strong> <strong>specials</strong> via our newsletter.  </p><p><strong>SUBSCRIBE NOW</strong> and get <strong>10% LESS</strong> on your first order!</p>"
+        "modal_title": "Quick Order Update 📦",
+        "modal_content": "<p>Just like your body needs time to recover after a hard session, our production team does too.</p><p>We’ll be taking a short break from <strong>19 to 23 August</strong>.</p><p>You can still order as normal. We’ll be back rested, recharged and processing orders from <strong>Monday, 24 August</strong>.</p>"
       }
     },
     "pop_up_modal_ywANtw": {
       "type": "pop_up_modal",
+      "disabled": true,
       "name": "Pop-up Modal",
       "settings": {
         "modal_image": "shopify://shop_images/mw_moda_3.jpg",
