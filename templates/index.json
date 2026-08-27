@@ -11,6 +11,7 @@
   "sections": {
     "pop_up_modal_J6pTLM": {
       "type": "pop_up_modal",
+      "disabled": true,
       "name": "Pop-up Modal",
       "settings": {
         "modal_image": "shopify://shop_images/my_whey_production_pause.png",
@@ -22,7 +23,6 @@
     },
     "pop_up_modal_ywANtw": {
       "type": "pop_up_modal",
-      "disabled": true,
       "name": "Pop-up Modal",
       "settings": {
         "modal_image": "shopify://shop_images/mw_moda_3.jpg",
